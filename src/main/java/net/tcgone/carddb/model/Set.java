@@ -17,6 +17,7 @@ package net.tcgone.carddb.model;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import java.utils.List;
 
 public class Set {
     public String id;
@@ -25,6 +26,9 @@ public class Set {
     public String seoName;
     public String enumId;
     public String abbr;
+    // respective to all sets
+    public Integer order;
+    public List<String> categories;
 
     public String toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);

@@ -220,6 +220,10 @@ public class Card {
 	 * restarted when failed.
 	 */
 	public Boolean merged;
+	/**
+	 * Sort order (respective to its set)
+	 */
+	public Integer order;
 
 	// public String stage;
 
