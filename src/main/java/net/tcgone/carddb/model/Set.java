@@ -17,7 +17,7 @@ package net.tcgone.carddb.model;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import java.utils.List;
+import java.util.List;
 
 public class Set {
     public String id;
