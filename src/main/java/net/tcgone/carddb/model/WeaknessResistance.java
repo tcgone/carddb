@@ -29,7 +29,7 @@ public class WeaknessResistance {
 	public String value;
 
 	public String toString() {
-		return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
+		return ReflectionToStringBuilder.toString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
 	}
 
 	@Override
