@@ -16,11 +16,9 @@ limitations under the License.
 package net.tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.data.annotation.Id;
 
 import java.util.List;
 
@@ -29,7 +27,6 @@ public class Card {
 	/**
 	 * Experimental id: 101004
 	 */
-	@Id
 	public String id;
 	/**
 	 * Pio id: base1-4
