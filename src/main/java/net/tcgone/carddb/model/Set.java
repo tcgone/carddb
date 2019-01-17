@@ -17,14 +17,20 @@ package net.tcgone.carddb.model;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 public class Set {
+    @NotBlank
     public String id;
+    @NotBlank
     public String name;
     public String pioId;
     public String seoName;
+    @NotBlank
     public String enumId;
+    @NotBlank
     public String abbr;
     // respective to all sets
     public Integer order;

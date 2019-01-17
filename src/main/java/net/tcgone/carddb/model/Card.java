@@ -15,11 +15,12 @@ limitations under the License.
 */
 package net.tcgone.carddb.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,14 +28,17 @@ public class Card {
 	/**
 	 * Experimental id: 101004
 	 */
+	@NotBlank
 	public String id;
 	/**
 	 * Pio id: base1-4
 	 */
+	@NotBlank
 	public String pioId;
 	/**
 	 * Our id: CHARIZARD_4:BASE_SET
 	 */
+	@NotBlank
 	public String enumId;
 	/**
 	 *
@@ -43,6 +47,7 @@ public class Card {
 	/**
 	 * Card name: Charizard
 	 */
+	@NotBlank
 	public String name;
 	/**
 	 * 4
@@ -51,16 +56,15 @@ public class Card {
 	/**
 	 * 4
 	 */
+	@NotBlank
 	public String number;
 	/**
 	 * Img url: https://tcgone.net/scans/m/base_set/004.jpg
 	 */
-	@JsonIgnore
 	public String imageUrl;
 	/**
 	 * Img url: https://tcgone.net/scans/l/base_set/004.jpg
 	 */
-	@JsonIgnore
 	public String imageUrlHiRes;
 	/**
 	 * Array of types: ["R"]
@@ -69,6 +73,7 @@ public class Card {
 	/**
 	 * Either Pokémon, Trainer or Energy
 	 */
+	@NotBlank
 	public String superType;
 	/**
 	 * Stage 2
@@ -101,6 +106,7 @@ public class Card {
 	 "text": "As often as you like during your turn (before your attack), you may turn all Energy attached to Charizard into [R] for the rest of the turn. This power can't be used if Charizard is Asleep, Confused, or Paralyzed."
 	 } ]
 	 */
+	@Valid
 	public List<Ability> abilities;
 	/**
 	 * [ {
@@ -111,6 +117,7 @@ public class Card {
 	 "convertedEnergyCost": 4
 	 } ]
 	 */
+	@Valid
 	public List<Move> moves;
 	/**
 	 * [ {
@@ -118,6 +125,7 @@ public class Card {
 	 "value": "×2"
 	 } ]
 	 */
+	@Valid
 	public List<WeaknessResistance> weaknesses;
 	/**
 	 * [ {
@@ -125,6 +133,7 @@ public class Card {
 	 "value": "-30"
 	 } ]
 	 */
+	@Valid
 	public List<WeaknessResistance> resistances;
 	/**
 	 * Charizard (BS 4)
@@ -137,6 +146,7 @@ public class Card {
 	/**
 	 * Rare Holo
 	 */
+	@NotBlank
 	public String rarity;
 	/**
 	 * Epic

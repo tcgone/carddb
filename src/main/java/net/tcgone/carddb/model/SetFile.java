@@ -18,11 +18,16 @@ package net.tcgone.carddb.model;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class SetFile {
     public String filename;
+    @NotNull
+    @Valid
     public Set set;
+    @Valid
     public List<Card> cards;
 
     public String toString() {

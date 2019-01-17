@@ -18,11 +18,15 @@ package net.tcgone.carddb.model;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 public class Ability {
+	@NotBlank
 	public String type;
+	@NotBlank
 	public String name;
+	@NotBlank
 	public String text;
 
 	public String toString() {

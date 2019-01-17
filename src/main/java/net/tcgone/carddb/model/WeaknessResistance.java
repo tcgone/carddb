@@ -18,14 +18,19 @@ package net.tcgone.carddb.model;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 /**
  * @author axpendix@hotmail.com
  * @since 08.10.2018
  */
+@Valid
 public class WeaknessResistance {
+	@NotBlank
 	public String type;
+	@NotBlank
 	public String value;
 
 	public String toString() {
