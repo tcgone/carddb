@@ -26,7 +26,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Card {
 	/**
-	 * Experimental id: 101004
+	 * Experimental id: 101-4
 	 */
 	@NotBlank
 	public String id;
@@ -140,7 +140,7 @@ public class Card {
 	 */
 	public String fullName;
 	/**
-	 * charizard-bs-4
+	 * 
 	 */
 	public String seoName;
 	/**
@@ -231,6 +231,11 @@ public class Card {
 	 * Sort order (respective to its set)
 	 */
 	public Integer order;
+	
+	/**
+	 * Legal format seoNames (generated at runtime)
+	 */
+	public List<String> formats;
 
 	// public String stage;
 

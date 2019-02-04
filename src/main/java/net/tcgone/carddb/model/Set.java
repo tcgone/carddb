@@ -18,6 +18,8 @@ package net.tcgone.carddb.model;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
@@ -35,7 +37,7 @@ public class Set {
     // respective to all sets
     public Integer order;
     public List<String> categories;
-
+    
     public String toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
