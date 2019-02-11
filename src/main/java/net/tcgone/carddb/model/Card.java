@@ -237,6 +237,16 @@ public class Card {
 	 */
 	public List<String> formats;
 
+	/**
+	 * Contains derived full plain format text
+	 */
+	public String fullText;
+
+	/**
+	 * Contains derived full seo title
+	 */
+	public String seoTitle;
+
 	// public String stage;
 
 	public String toString() {

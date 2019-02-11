@@ -37,6 +37,9 @@ public class Set {
     // respective to all sets
     public Integer order;
     public List<String> categories;
+    public Integer officialCount;
+    public String imageUrl;
+    public String symbolUrl;
     
     public String toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
