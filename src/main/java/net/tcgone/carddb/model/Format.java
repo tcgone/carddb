@@ -21,10 +21,10 @@ public class Format {
     public List<String> sets;
     public List<String> includes;
     public List<String> excludes;
-    public boolean enabled;
     @NotBlank
     public String ruleSet;
     public int order;
+    public List<String> flags;
     
     /**
      * Contains runtime sets
