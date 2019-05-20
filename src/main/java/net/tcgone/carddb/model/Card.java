@@ -215,11 +215,13 @@ public class Card {
 	 */
 	public String script;
 
-	public String copyOfId;
+	// Id of the copied card. Example: cardX
+	public String copyOf;
+	// How did this card get copied. Example, if THIS CARD is Holo version of cardX, put Holo here.
+	public String copyType;
 
-//	public String similarToId;
-//	// reprint-exact, reprint-changed, variation
-//	public String similarityType;
+	// List of variants, managed by api unless explicitly specified.
+	public List<Variant> variants;
 
 	/**
 	 * true when this has been merged with pio, so the definition is finalized.
