@@ -13,8 +13,8 @@ import java.util.Map;
 @Data
 public class Deck {
     private String id; // external id
-    private String internalId; // internal mongo id, can be different for legacy decks
-    private String seoName;
+    private String oldId; // old internal mongo id, stored for legacy decks
+    private String seoName; // generated seo name except id
     private String name;
     private String format; // main format
     private String description;
