@@ -26,10 +26,17 @@ public class Format {
     public int order;
     public List<String> flags;
     
-    /**
-     * Contains runtime sets
-     */
     @JsonIgnore
     public List<Set> _sets;
-   
+    @JsonIgnore
+    public java.util.Set<Card> _cards;
+
+    public boolean fullyCovers(Format format){
+        // TODO
+        return false;
+    }
+    public boolean hasCard(Card card){
+        // TODO
+        return false;
+    }
 }

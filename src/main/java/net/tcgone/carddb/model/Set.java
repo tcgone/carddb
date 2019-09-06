@@ -40,6 +40,9 @@ public class Set {
     public Integer officialCount;
     public String imageUrl;
     public String symbolUrl;
+
+    @JsonIgnore
+    public List<Card> _cards;
     
     public String toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
