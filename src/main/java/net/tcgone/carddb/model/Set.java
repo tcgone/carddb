@@ -41,8 +41,16 @@ public class Set {
     public String imageUrl;
     public String symbolUrl;
 
+    /**
+     * all cards of this set, populated at runtime
+     */
     @JsonIgnore
     public List<Card> _cards;
+    /**
+     * all formats that this set is allowed in, including partial sets, populated at runtime
+     */
+    @JsonIgnore
+    public List<Format> _formats;
     
     public String toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
