@@ -16,6 +16,7 @@ limitations under the License.
 package net.tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import net.tcgone.carddb.model.experimental.Variant;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 

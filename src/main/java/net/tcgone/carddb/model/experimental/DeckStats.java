@@ -1,4 +1,4 @@
-package net.tcgone.carddb.model;
+package net.tcgone.carddb.model.experimental;
 
 import lombok.Data;
 
