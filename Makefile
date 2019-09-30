@@ -1,8 +1,6 @@
 ######################### DEFINITIONS ############################
 
 NAME=carddb
-MVN_REGISTRY=https://maven.pkg.github.com/axpendix
-MVN_TOKEN=${GH_TOKEN}
 
 ifeq ($(RELEASE_VERSION),)
 	RELEASE_VERSION  := $(shell mvn -q -Dexec.executable=echo -Dexec.args='$${project.version}' --non-recursive exec:exec)
@@ -27,7 +25,6 @@ GIT_TREE_STATE=$(shell (git status --porcelain | grep -q .) && echo dirty || ech
 
 test:
 	@echo $(GIT_TREE_STATE)
-	@echo $(MVN_TOKEN)
 
 package:
 	mvn clean package
@@ -53,6 +50,6 @@ ifeq ($(GIT_TREE_STATE),dirty)
 endif
 
 deploy:
-	mvn deploy -Dregistry=$(MVN_REGISTRY) -Dtoken=$(MVN_TOKEN)
+	mvn deploy
 
 release: git-check version-release git-tag-release package deploy version-next
