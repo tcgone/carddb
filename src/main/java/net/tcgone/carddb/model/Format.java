@@ -41,6 +41,8 @@ public class Format {
 
     /**
      * Checks whether the other format is fully covered by this format.
+     * @param other format
+     * @return true if all cards in other is already in this, false otherwise
      */
     public boolean fullyCovers(Format other){
         return _cards.containsAll(other._cards);

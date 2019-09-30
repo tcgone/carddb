@@ -175,8 +175,7 @@ public class Card {
 	 */
 	public String implNotes;
 	/**
-	 *
-		pokemonPower {
+	 * {@code pokemonPower {
 			def set = [] as Set
 			def eff1, eff2
 			onActivate {
@@ -213,7 +212,7 @@ public class Card {
 				discardSelfEnergy(C) // one energy card
 				discardSelfEnergy(C) // one energy card
 			}
-		}
+		}}
 	 */
 	public String script;
 
