@@ -1,492 +1,152 @@
 set:
   id: '426'
   name: Shiny Vault
-  pioId: smp
+  pioId: sma
   enumId: SHINY_VAULT
-  abbr: SMP
+  abbr: SMA
 cards:
-- id: 426-SM01
-  pioId: smp-SM01
-  enumId: ROWLET_SM01
-  name: Rowlet
-  number: SM01
+- id: 426-SV1
+  pioId: sma-SV1
+  enumId: SCYTHER_SV1
+  name: Scyther
+  nationalPokedexNumber: 123
+  number: SV1
   types: [G]
   superType: POKEMON
   subTypes: [BASIC]
-  hp: 50
-  retreatCost: 1
-  moves:
-  - cost: [G]
-    name: Fury Attack
-    damage: 10x
-    text: Flip 3 coins. This attack does 10 damage for each heads.
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM02
-  pioId: smp-SM02
-  enumId: LITTEN_SM02
-  name: Litten
-  number: SM02
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [R, C]
-    name: Combustion
-    damage: '30'
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM03
-  pioId: smp-SM03
-  enumId: POPPLIO_SM03
-  name: Popplio
-  number: SM03
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [W]
-    name: Sing
-    text: Your opponent's Active Pokémon is now Asleep.
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM05
-  pioId: smp-SM05
-  enumId: SNORLAX_GX_SM05
-  name: Snorlax-GX
-  number: SM05
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 190
-  retreatCost: 4
-  moves:
-  - cost: [C, C, C]
-    name: Collapse
-    damage: '80'
-    text: This Pokémon is now Asleep.
-  - cost: [C, C, C, C, C]
-    name: Thunderous Snore
-    damage: '180'
-    text: This attack can be used if this Pokémon is Asleep. If it is not Asleep,
-      this attack does nothing.
-  - cost: [C, C, C, C, C]
-    name: Pulverizing Pancake GX
-    damage: '210'
-    text: This Pokémon is now Asleep. (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM06
-  pioId: smp-SM06
-  enumId: ROCKRUFF_SM06
-  name: Rockruff
-  number: SM06
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [C]
-    name: Tackle
-    damage: '10'
-  - cost: [F, C]
-    name: Rock Throw
-    damage: '20'
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM07
-  pioId: smp-SM07
-  enumId: PIKIPEK_SM07
-  name: Pikipek
-  number: SM07
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [C, C]
-    name: Nosedive
-    damage: '40'
-    text: This Pokémon does 20 damage to itself.
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM08
-  pioId: smp-SM08
-  enumId: LITTEN_SM08
-  name: Litten
-  number: SM08
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [C]
-    name: Collect
-    text: Draw a card.
-  - cost: [R, C]
-    name: Scratch
-    damage: '20'
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM09
-  pioId: smp-SM09
-  enumId: TOGEDEMARU_SM09
-  name: Togedemaru
-  number: SM09
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  evolvesTo: [Scizor]
   hp: 70
   retreatCost: 1
   moves:
   - cost: [C]
-    name: Defense Curl
-    text: Flip a coin. If heads, prevent all damage done to this Pokémon by attacks
-      during your opponent's next turn.
-  - cost: [L]
-    name: Discharge
-    damage: 30x
-    text: Discard all [L] Energy from this Pokémon. This attack does 30 damage for
-      each card you discarded in this way.
+    name: Twin Play
+    text: Search your deck for up to 2 Scyther and put them onto your Bench. Then,
+      shuffle your deck.
+  - cost: [C, C]
+    name: Agility
+    damage: '20'
+    text: Flip a coin. If heads, prevent all effects of attacks, including damage,
+      done to this Pokémon during your opponent's next turn.
+  weaknesses:
+  - type: R
+    value: x2
+  rarity: Common
+  artist: Shigenori Negishi
+- id: 426-SV10
+  pioId: sma-SV10
+  enumId: QUAGSIRE_SV10
+  name: Quagsire
+  nationalPokedexNumber: 195
+  number: SV10
+  types: [W]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE1]
+  evolvesFrom: Wooper
+  hp: 120
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Wash Out
+    text: As often as you like during your turn (before your attack), you may move
+      a [W] Energy from 1 of your Benched Pokémon to your Active Pokémon.
+  moves:
+  - cost: [C, C, C]
+    name: Hydro Pump
+    damage: 60+
+    text: This attack does 20 more damage times the amount of [W] Energy attached
+      to this Pokémon.
+  weaknesses:
+  - type: G
+    value: x2
+  rarity: Common
+  artist: Saya Tsuruta
+- id: 426-SV11
+  pioId: sma-SV11
+  enumId: FROAKIE_SV11
+  name: Froakie
+  nationalPokedexNumber: 656
+  number: SV11
+  types: [W]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Frogadier]
+  hp: 50
+  retreatCost: 1
+  abilities:
+  - type: Ability
+    name: Frubbles
+    text: If this Pokémon has any [W] Energy attached to it, it has no Retreat Cost.
+  moves:
+  - cost: [C, C]
+    name: Flop
+    damage: '20'
+  weaknesses:
+  - type: G
+    value: x2
+  rarity: Common
+  artist: sui
+- id: 426-SV12
+  pioId: sma-SV12
+  enumId: FROGADIER_SV12
+  name: Frogadier
+  nationalPokedexNumber: 657
+  number: SV12
+  types: [W]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE1]
+  evolvesFrom: Froakie
+  evolvesTo: [Greninja]
+  hp: 80
+  retreatCost: 1
+  abilities:
+  - type: Ability
+    name: Gale Shuriken
+    text: When you play this Pokémon from your hand to evolve 1 of your Pokémon during
+      your turn, you may put 2 damage counters on 1 of your opponent's Pokémon.
+  moves:
+  - cost: [W]
+    name: Water Drip
+    damage: '20'
+  weaknesses:
+  - type: G
+    value: x2
+  rarity: Common
+  artist: Anesaki Dynamic
+- id: 426-SV13
+  pioId: sma-SV13
+  enumId: VOLTORB_SV13
+  name: Voltorb
+  nationalPokedexNumber: 100
+  number: SV13
+  types: [L]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Electrode]
+  hp: 50
+  retreatCost: 1
+  abilities:
+  - type: Ability
+    name: Floating Electrons
+    text: If this Pokémon has any Energy attached to it, it has no Retreat Cost.
+  moves:
+  - cost: [L, C]
+    name: Thunder Shock
+    damage: '20'
+    text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
   weaknesses:
   - type: F
     value: x2
   resistances:
   - type: M
     value: '-20'
-  rarity: Rare Promo
-- id: 426-SM10
-  pioId: smp-SM10
-  enumId: SHIINOTIC_SM10
-  name: Shiinotic
-  number: SM10
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Morelull
-  hp: 100
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Illuminate
-    text: Once during your turn (before your attack), you may search your deck for
-      a [G] Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.
-  moves:
-  - cost: [G, C]
-    name: Flickering Spores
-    damage: '30'
-    text: Your opponent's Active Pokémon is now Asleep.
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM100
-  pioId: smp-SM100
-  enumId: LUCARIO_GX_SM100
-  name: Lucario-GX
-  number: SM100
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Riolu
-  hp: 210
-  retreatCost: 2
-  moves:
-  - cost: [F]
-    name: Aura Strike
-    damage: 30+
-    text: If this Pokémon evolved from Riolu during this turn, this attack does 90
-      more damage.
-  - cost: [F, F, C]
-    name: Cyclone Kick
-    damage: '130'
-  - cost: [C, C]
-    name: Cantankerous Beatdown GX
-    damage: 30x
-    text: This attack does 30 damage for each damage counter on this Pokémon. (You
-      can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM101
-  pioId: smp-SM101
-  enumId: DAWN_WINGS_NECROZMA_GX_SM101
-  name: Dawn Wings Necrozma-GX
-  number: SM101
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 180
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Invasion
-    text: Once during your turn (before your attack), if this Pokémon is on your Bench,
-      you may switch it with your Active Pokémon.
-  moves:
-  - cost: [P, P, P]
-    name: Dark Flash
-    damage: '120'
-    text: This attack's damage isn't affected by Resistance.
-  - cost: [P, P, P]
-    name: Moon's Eclipse GX
-    damage: '180'
-    text: You can use this attack only if you have more Prize cards remaining than
-      your opponent. Prevent all effects of attacks, including damage, done to this
-      Pokémon during your opponent's next turn. (You can’t use more than 1 GX attack
-      in a game.)
-  weaknesses:
-  - type: D
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM102
-  pioId: smp-SM102
-  enumId: DUSK_MANE_NECROZMA_GX_SM102
-  name: Dusk Mane Necrozma-GX
-  number: SM102
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 190
-  retreatCost: 3
-  moves:
-  - cost: [C, C, C]
-    name: Claw Slash
-    damage: '60'
-  - cost: [M, M, M, C]
-    name: Meteor Tempest
-    damage: '220'
-    text: Discard 3 Energy from this Pokémon.
-  - cost: [M, M, M]
-    name: Sun's Eclipse GX
-    damage: '250'
-    text: You can use this attack only if you have more Prize cards remaining than
-      your opponent. (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM103
-  pioId: smp-SM103
-  enumId: LUNALA_GX_SM103
-  name: Lunala-GX
-  number: SM103
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Cosmoem
-  hp: 230
-  retreatCost: 0
-  moves:
-  - cost: [C, C]
-    name: Glide
-    damage: '50'
-  - cost: [P, P, C, C]
-    name: Lunar Javelin
-    damage: '200'
-    text: Discard 2 [P] Energy from this Pokémon.
-  - cost: [P, P, P, C]
-    name: Requiem GX
-    damage: '250'
-    text: (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: D
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM104
-  pioId: smp-SM104
-  enumId: SOLGALEO_GX_SM104
-  name: Solgaleo-GX
-  number: SM104
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Cosmoem
-  hp: 250
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Shining Mane
-    text: Your Pokémon in play have no Weakness.
-  moves:
-  - cost: [C, C]
-    name: Turbo Strike
-    damage: '120'
-    text: Attach 2 basic Energy cards from your discard pile to 1 of your Benched
-      Pokémon.
-  - cost: [C, C]
-    name: Prominence GX
-    text: Heal all damage from all of your Pokémon. (You can't use more than 1 GX
-      attack in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM105
-  pioId: smp-SM105
-  enumId: LYCANROC_SM105
-  name: Lycanroc
-  number: SM105
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Rockruff
-  hp: 120
-  retreatCost: 2
-  moves:
-  - cost: [C, C]
-    name: Bite
-    damage: '30'
-  - cost: [F, F, C]
-    name: Stone Edge
-    damage: 90+
-    text: Flip a coin. If heads, this attack does 30 more damage.
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM106
-  pioId: smp-SM106
-  enumId: DAWN_WINGS_NECROZMA_SM106
-  name: Dawn Wings Necrozma
-  number: SM106
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 2
-  moves:
-  - cost: [P]
-    name: Gulf Stream
-    damage: 20+
-    text: If you have exactly 6 Prize cards remaining, this attack does 20 more damage
-      for each damage counter on this Pokémon.
-  - cost: [P, P, P]
-    name: Sword of Dawn
-    damage: '130'
-    text: Discard 2 Energy from this Pokémon.
-  weaknesses:
-  - type: D
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM107
-  pioId: smp-SM107
-  enumId: DUSK_MANE_NECROZMA_SM107
-  name: Dusk Mane Necrozma
-  number: SM107
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 2
-  moves:
-  - cost: [M]
-    name: Dusk Shot
-    text: This attack does 60 damage to 1 of your opponent's Pokémon-GX or Pokémon-EX.
-      This damage isn't affected by Weakness or Resistance.
-  - cost: [M, M, C]
-    name: Rusty Claws
-    damage: 100+
-    text: If your opponent has exactly 1 Prize card remaining, this attack does 100
-      more damage.
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM11
-  pioId: smp-SM11
-  enumId: BRUXISH_SM11
-  name: Bruxish
-  number: SM11
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 2
-  moves:
-  - cost: [C]
-    name: Vivid Charge
-    text: Search your deck for up to 3 basic Energy cards, reveal them, and put them
-      into your hand. Then, shuffle your deck.
-  - cost: [W, W, C]
-    name: Psychic Fangs
-    damage: '90'
-    text: This attack's damage isn't affected by any effects on your opponent's Active
-      Pokémon.
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM115
-  pioId: smp-SM115
-  enumId: PHEROMOSA_SM115
-  name: Pheromosa
-  number: SM115
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 0
-  moves:
-  - cost: [C]
-    name: High Jump Kick
-    damage: '20'
-  - cost: [G, G, C]
-    name: White Ray
-    damage: 90+
-    text: If you have only 1 Prize card remaining, this attack does 90 more damage.
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM116
-  pioId: smp-SM116
-  enumId: XURKITREE_SM116
+  rarity: Common
+  artist: Shin Nagasawa
+- id: 426-SV14
+  pioId: sma-SV14
+  enumId: XURKITREE_SV14
   name: Xurkitree
-  number: SM116
+  nationalPokedexNumber: 796
+  number: SV14
   types: [L]
   superType: POKEMON
   subTypes: [BASIC]
@@ -508,12 +168,87 @@ cards:
   resistances:
   - type: M
     value: '-20'
-  rarity: Rare Promo
-- id: 426-SM117
-  pioId: smp-SM117
-  enumId: MALAMAR_SM117
+  rarity: Common
+  artist: Naoki Saito
+- id: 426-SV15
+  pioId: sma-SV15
+  enumId: SEVIPER_SV15
+  name: Seviper
+  nationalPokedexNumber: 336
+  number: SV15
+  types: [P]
+  superType: POKEMON
+  subTypes: [BASIC]
+  hp: 100
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: More Poison
+    text: Put 1 more damage counter on your opponent's Poisoned Pokémon between turns.
+  moves:
+  - cost: [P, C, C]
+    name: Venomous Fang
+    damage: '30'
+    text: Your opponent's Active Pokémon is now Poisoned.
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Common
+  artist: SATOSHI NAKAI
+- id: 426-SV16
+  pioId: sma-SV16
+  enumId: SHUPPET_SV16
+  name: Shuppet
+  nationalPokedexNumber: 353
+  number: SV16
+  types: [P]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Banette]
+  hp: 60
+  retreatCost: 1
+  moves:
+  - cost: [C]
+    name: Headbutt
+    damage: '10'
+  - cost: [P, C]
+    name: Will-O-Wisp
+    damage: '20'
+  weaknesses:
+  - type: D
+    value: x2
+  resistances:
+  - type: F
+    value: '-20'
+  rarity: Common
+  artist: sui
+- id: 426-SV17
+  pioId: sma-SV17
+  enumId: INKAY_SV17
+  name: Inkay
+  nationalPokedexNumber: 686
+  number: SV17
+  types: [P]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Malamar]
+  hp: 60
+  retreatCost: 1
+  moves:
+  - cost: [P]
+    name: Hypnosis
+    text: Your opponent's Active Pokémon is now Asleep.
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Common
+  artist: Shigenori Negishi
+- id: 426-SV18
+  pioId: sma-SV18
+  enumId: MALAMAR_SV18
   name: Malamar
-  number: SM117
+  nationalPokedexNumber: 687
+  number: SV18
   types: [P]
   superType: POKEMON
   subTypes: [EVOLUTION, STAGE1]
@@ -532,2789 +267,42 @@ cards:
   weaknesses:
   - type: P
     value: x2
-  rarity: Rare Promo
-- id: 426-SM118
-  pioId: smp-SM118
-  enumId: LYCANROC_SM118
-  name: Lycanroc
-  number: SM118
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Rockruff
-  hp: 120
-  retreatCost: 2
-  moves:
-  - cost: [F, C]
-    name: Dangerous Rogue
-    damage: 20+
-    text: This attack does 20 more damage for each of your opponent's Benched Pokémon.
-  - cost: [F, F, C]
-    name: Accelerock
-    damage: '100'
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM119
-  pioId: smp-SM119
-  enumId: EXEGGCUTE_SM119
-  name: Exeggcute
-  number: SM119
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 50
-  retreatCost: 1
-  moves:
-  - cost: [C, C]
-    name: Psy Bolt
-    damage: '10'
-    text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM12
-  pioId: smp-SM12
-  enumId: PASSIMIAN_SM12
-  name: Passimian
-  number: SM12
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 1
-  moves:
-  - cost: [F]
-    name: Fling
-    text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
-      apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [C, C]
-    name: Team Play
-    damage: 10+
-    text: This attack does 30 more damage for each of your Benched Passimian.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM120
-  pioId: smp-SM120
-  enumId: ROCKRUFF_SM120
-  name: Rockruff
-  number: SM120
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 50
-  retreatCost: 1
-  moves:
-  - cost: [C, C]
-    name: Bite
-    damage: '30'
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM121
-  pioId: smp-SM121
-  enumId: RAIKOU_GX_SM121
-  name: Raikou-GX
-  number: SM121
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 170
-  retreatCost: 1
-  moves:
-  - cost: [C, C]
-    name: Dig Claws
-    damage: '30'
-  - cost: [L, L, C, C]
-    name: Thunder
-    damage: '150'
-    text: Flip a coin. If tails, this Pokémon does 50 damage to itself.
-  - cost: [L, L, L, L]
-    name: Thunderous Rain GX
-    text: This attack does 100 damage to each of your opponent's Pokémon that has
-      any Energy attached to it. (Don't apply Weakness and Resistance for Benched
-      Pokémon.) (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM122
-  pioId: smp-SM122
-  enumId: ZYGARDE_GX_SM122
-  name: Zygarde-GX
-  number: SM122
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 180
-  retreatCost: 2
-  moves:
-  - cost: [C]
-    name: Vibration
-    damage: '20'
-  - cost: [F, C, C]
-    name: Cell Storm
-    damage: '80'
-    text: Heal 30 damage from this Pokémon.
-  - cost: [F, F, C, C]
-    name: Liberation GX
-    damage: 120x
-    text: Your opponent reveals their hand. This attack does 120 damage for each Energy
-      card you find there. (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM123
-  pioId: smp-SM123
-  enumId: DAWN_WINGS_NECROZMA_SM123
-  name: Dawn Wings Necrozma
-  number: SM123
+  rarity: Common
+  artist: Hideki Ishikawa
+- id: 426-SV19
+  pioId: sma-SV19
+  enumId: POIPOLE_SV19
+  name: Poipole
+  nationalPokedexNumber: 803
+  number: SV19
   types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 2
-  moves:
-  - cost: [P]
-    name: Gulf Stream
-    damage: 20+
-    text: If you have exactly 6 Prize cards remaining, this attack does 20 more damage
-      for each damage counter on this Pokémon.
-  - cost: [P, P, P]
-    name: Sword of Dawn
-    damage: '130'
-    text: Discard 2 Energy from this Pokémon.
-  weaknesses:
-  - type: D
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-  copyOf: 426-SM106
-  copyType: Reprint
-- id: 426-SM124
-  pioId: smp-SM124
-  enumId: DUSK_MANE_NECROZMA_SM124
-  name: Dusk Mane Necrozma
-  number: SM124
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 2
-  moves:
-  - cost: [M]
-    name: Dusk Shot
-    text: This attack does 60 damage to 1 of your opponent's Pokémon-GX or Pokémon-EX.
-      This damage isn't affected by Weakness or Resistance.
-  - cost: [M, M, C]
-    name: Rusty Claws
-    damage: 100+
-    text: If your opponent has exactly 1 Prize card remaining, this attack does 100
-      more damage.
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-  copyOf: 426-SM107
-  copyType: Reprint
-- id: 426-SM125
-  pioId: smp-SM125
-  enumId: NAGANADEL_GX_SM125
-  name: Naganadel-GX
-  number: SM125
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Poipole
-  hp: 210
-  retreatCost: 1
-  moves:
-  - cost: [C]
-    name: Beast Raid
-    damage: 20x
-    text: This attack does 20 damage for each of your Ultra Beasts in play.
-  - cost: [P, C, C]
-    name: Jet Needle
-    damage: '110'
-    text: This attack's damage isn't affected by Weakness or Resistance.
-  - cost: [C, C, C]
-    name: Stinger GX
-    text: Both players shuffle their Prize cards into their decks. Then, each player
-      puts the top 3 cards of their deck face down as their Prize cards. (You can’t
-      use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM126
-  pioId: smp-SM126
-  enumId: ULTRA_NECROZMA_GX_SM126
-  name: Ultra Necrozma-GX
-  number: SM126
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 190
-  retreatCost: 2
-  moves:
-  - cost: [M, P]
-    name: Photon Geyser
-    damage: 20+
-    text: Discard all basic [P] Energy from this Pokémon. This attack does 80 more
-      damage for each card you discarded in this way.
-  - cost: [M, P]
-    name: Sky-Scorching Light GX
-    text: You can use this attack only if the total of both players’ remaining Prize
-      cards is 6 or less. Put 6 damage counters on each of your opponent’s Pokémon.
-      (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM127
-  pioId: smp-SM127
-  enumId: ALOLAN_SANDSLASH_SM127
-  name: Alolan Sandslash
-  number: SM127
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: AlolanSandshrew
-  hp: 120
-  retreatCost: 2
-  moves:
-  - cost: [M]
-    name: Metal Claw
-    damage: '20'
-  - cost: [M, M, C]
-    name: Tumbling Attack
-    damage: 80+
-    text: Flip a coin. If heads, this attack does 40 more damage.
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM128
-  pioId: smp-SM128
-  enumId: ALOLAN_NINETALES_SM128
-  name: Alolan Ninetales
-  number: SM128
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: AlolanVulpix
-  hp: 110
-  retreatCost: 1
-  moves:
-  - cost: [C, C]
-    name: Smash Kick
-    damage: '30'
-  - cost: [Y, Y, C]
-    name: Spiral Drain
-    damage: '80'
-    text: Heal 30 damage from this Pokémon.
-  weaknesses:
-  - type: M
-    value: x2
-  resistances:
-  - type: D
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM129
-  pioId: smp-SM129
-  enumId: KYOGRE_SM129
-  name: Kyogre
-  number: SM129
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 4
-  moves:
-  - cost: [W, C]
-    name: Dual Splash
-    text: This attack does 30 damage to 2 of your opponent's Pokémon. (Don't apply
-      Weakness and Resistance for Benched Pokémon.)
-  - cost: [W, W, C]
-    name: Grand Wave
-    damage: '120'
-    text: This Pokémon can't use Grand Wave during your next turn.
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM13
-  pioId: smp-SM13
-  enumId: ORANGURU_SM13
-  name: Oranguru
-  number: SM13
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Instruct
-    text: Once during your turn (before your attack), you may draw cards until you
-      have 3 cards in your hand.
-  moves:
-  - cost: [C, C, C]
-    name: Psychic
-    damage: 60+
-    text: This attack does 20 more damage times the amount of Energy attached to your
-      opponent's Active Pokémon.
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM130
-  pioId: smp-SM130
-  enumId: MANECTRIC_SM130
-  name: Manectric
-  number: SM130
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Electrike
-  hp: 110
-  retreatCost: 0
-  abilities:
-  - type: Ability
-    name: Electric Start
-    text: If you go second, and if this Pokémon is in your hand when you are setting
-      up to play, you may put it face down as your Active Pokémon or on your Bench.
-  moves:
-  - cost: [L]
-    name: Double Charge
-    damage: '40'
-    text: You may attach up to 2 basic Energy cards from your hand to 1 of your Benched
-      Pokémon.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM131
-  pioId: smp-SM131
-  enumId: CELESTEELA_SM131
-  name: Celesteela
-  number: SM131
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 140
-  retreatCost: 4
-  moves:
-  - cost: [M, C, C, C, C]
-    name: Moon Raker
-    damage: '160'
-    text: If the total of both players’ remaining Prize cards is exactly 6, this attack
-      can be used for [M].
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM132
-  pioId: smp-SM132
-  enumId: DELCATTY_SM132
-  name: Delcatty
-  number: SM132
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Skitty
-  hp: 90
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Search for Friends
-    text: When you play this Pokémon from your hand to evolve 1 of your Pokémon during
-      your turn, you may put 2 Supporter cards from your discard pile into your hand.
-  moves:
-  - cost: [C, C]
-    name: Cat Kick
-    damage: '40'
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM133
-  pioId: smp-SM133
-  enumId: THUNDURUS_GX_SM133
-  name: Thundurus-GX
-  number: SM133
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 180
-  retreatCost: 2
-  moves:
-  - cost: [L]
-    name: Charge
-    text: Search your deck for a [L] Energy card and attach it to this Pokémon. Then,
-      shuffle your deck.
-  - cost: [L, L, L]
-    name: Electric Ball
-    damage: '140'
-  - cost: [L, L, L]
-    name: Thundering Hurricane GX
-    damage: 100x
-    text: Flip 4 coins. This attack does 100 damage for each heads. (You can't use
-      more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM134
-  pioId: smp-SM134
-  enumId: TORNADUS_GX_SM134
-  name: Tornadus-GX
-  number: SM134
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 180
-  retreatCost: 2
-  moves:
-  - cost: [C, C]
-    name: Gust
-    damage: '50'
-  - cost: [C, C, C]
-    name: Wild Fury
-    damage: 90+
-    text: Flip a coin until you get tails. This attack does 30 more damage for each
-      heads.
-  - cost: [C, C, C]
-    name: Destructive Cyclone GX
-    damage: '130'
-    text: Discard all Energy from your opponent's Active Pokémon. (You can't use more
-      than 1 GX attack in a game.)
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM135
-  pioId: smp-SM135
-  enumId: LATIAS_SM135
-  name: Latias
-  number: SM135
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 1
-  moves:
-  - cost: [C, C]
-    name: Hypnoblast
-    damage: '30'
-    text: The Defending Pokémon is now Asleep.
-  - cost: [R, P, C]
-    name: Mist Ball
-    damage: '110'
-    text: Flip a coin. If tails, discard a [R] Energy and a [P] Energy from this Pokémon.
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM136
-  pioId: smp-SM136
-  enumId: LATIOS_SM136
-  name: Latios
-  number: SM136
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 2
-  moves:
-  - cost: [C]
-    name: Energy Extract
-    damage: '20'
-    text: Search your deck for a basic Energy card and attach it to this Pokémon.
-      Shuffle your deck afterward.
-  - cost: [P, W, C, C]
-    name: Luster Purge
-    damage: '140'
-    text: Flip a coin. If tails, discard all Energy from this Pokémon.
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM137
-  pioId: smp-SM137
-  enumId: RESHIRAM_GX_SM137
-  name: Reshiram-GX
-  number: SM137
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 180
-  retreatCost: 2
-  moves:
-  - cost: [C]
-    name: Flame Charge
-    text: Search your deck for up to 2 [R] Energy cards and attach them to this Pokémon.
-      Then, shuffle your deck.
-  - cost: [R, R, R, C]
-    name: Scorching Column
-    damage: '110'
-    text: Your opponent's Active Pokémon is now Burned.
-  - cost: [R, R, R, C]
-    name: Vermilion GX
-    damage: '180'
-    text: You may attach up to 5 [R] Energy cards from your hand to your Pokémon in
-      any way you like. (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM138
-  pioId: smp-SM138
-  enumId: ZEKROM_GX_SM138
-  name: Zekrom-GX
-  number: SM138
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 180
-  retreatCost: 3
-  moves:
-  - cost: [C]
-    name: Bullet Uppercut
-    damage: 10+
-    text: If your opponent's Active Pokémon is a Pokémon-GX or a Pokémon-EX, this
-      attack does 60 more damage. This attack's damage isn't affected by Weakness.
-  - cost: [L, L, L, C]
-    name: Swift Bolt Strike
-    damage: 80+
-    text: Flip 2 coins. This attack does 60 more damage for each heads.
-  - cost: [L, L, L, C]
-    name: Rampage Bolt GX
-    damage: '200'
-    text: This attack's damage isn't affected by any effects on your opponent's Active
-      Pokémon. (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM139
-  pioId: smp-SM139
-  enumId: SALAMENCE_GX_SM139
-  name: Salamence-GX
-  number: SM139
-  types: [N]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Shelgon
-  hp: 250
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Dragon Lift
-    text: Your Pokémon in play have no Retreat Cost, except Pokémon-GX and Pokémon-EX.
-  moves:
-  - cost: [R, W, C, C]
-    name: Bright Flame
-    damage: '200'
-    text: Discard 2 Energy from this Pokémon.
-  - cost: [R, C, C]
-    name: Flame Jet GX
-    text: This attack does 120 damage to 1 of your opponent's Pokémon. (Don't apply
-      Weakness and Resistance for Benched Pokémon.) (You can’t use more than 1 GX
-      attack in a game.)
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM14
-  pioId: smp-SM14
-  enumId: LYCANROC_GX_SM14
-  name: Lycanroc-GX
-  number: SM14
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Rockruff
-  hp: 200
-  retreatCost: 1
-  moves:
-  - cost: [F, C]
-    name: Crunch
-    damage: '30'
-    text: Discard an Energy from your opponent's Active Pokémon.
-  - cost: [F, F, C]
-    name: Accelerock
-    damage: '120'
-  - cost: [F, F, C]
-    name: Lycanfang GX
-    damage: '200'
-    text: Discard 2 Energy from this Pokémon. (You can't use more than 1 GX attack
-      in a game.)
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM140
-  pioId: smp-SM140
-  enumId: SALAMENCE_SM140
-  name: Salamence
-  number: SM140
-  types: [N]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Shelgon
-  hp: 150
-  retreatCost: 3
-  abilities:
-  - type: Ability
-    name: Dragon Wind
-    text: If this Pokémon is your Active Pokémon, once during your turn (before your
-      attack), you may switch 1 of your opponent’s Benched Pokémon with their Active
-      Pokémon.
-  moves:
-  - cost: [R, W, C, C]
-    name: Dragon Claw
-    damage: '100'
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM141
-  pioId: smp-SM141
-  enumId: WHITE_KYUREM_GX_SM141
-  name: White Kyurem-GX
-  number: SM141
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 190
-  retreatCost: 3
-  moves:
-  - cost: [R]
-    name: Shred
-    damage: '40'
-    text: This attack's damage isn't affected by any effects on your opponent's Active
-      Pokémon.
-  - cost: [R, W, C]
-    name: Raging Blade
-    damage: 80+
-    text: If this Pokémon has any damage counters on it, this attack does 80 more
-      damage.
-  - cost: [R, R, W, C]
-    name: Dragon Nova GX
-    damage: '200'
-    text: Your opponent's Active Pokémon is now Burned and Paralyzed. (You can't use
-      more than 1 GX attack in a game.)
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM142
-  pioId: smp-SM142
-  enumId: KYUREM_SM142
-  name: Kyurem
-  number: SM142
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 2
-  moves:
-  - cost: [C, C]
-    name: Outrage
-    damage: 20+
-    text: This attack does 10 more damage for each damage counter on this Pokémon.
-  - cost: [W, W, C]
-    name: Frost Spear
-    damage: '100'
-    text: This attack does 20 damage to 1 of your opponent's Benched Pokémon. (Don't
-      apply Weakness and Resistance for Benched Pokémon.)
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM143
-  pioId: smp-SM143
-  enumId: MOLTRES_SM143
-  name: Moltres
-  number: SM143
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 1
-  moves:
-  - cost: [R, C, C]
-    name: Wing Attack
-    damage: '70'
-  - cost: [R, C, C, C]
-    name: Sky Attack
-    damage: '150'
-    text: Flip a coin. If tails, this attack does nothing.
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM144
-  pioId: smp-SM144
-  enumId: ARTICUNO_SM144
-  name: Articuno
-  number: SM144
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 1
-  moves:
-  - cost: [C, C]
-    name: Gust
-    damage: '30'
-  - cost: [W, W, C]
-    name: Sheer Cold
-    damage: '100'
-    text: Flip a coin. If heads, the Defending Pokémon can't attack during your opponent's
-      next turn.
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM145
-  pioId: smp-SM145
-  enumId: ZAPDOS_SM145
-  name: Zapdos
-  number: SM145
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 1
-  moves:
-  - cost: [L]
-    name: Thunder Shock
-    damage: '20'
-    text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  - cost: [C, C, C, C]
-    name: Drill Peck
-    damage: '120'
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM146
-  pioId: smp-SM146
-  enumId: LEAFEON_GX_SM146
-  name: Leafeon-GX
-  number: SM146
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Eevee
-  hp: 200
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Breath of the Leaves
-    text: If this Pokémon is your Active Pokémon, once during your turn (before your
-      attack), you may heal 50 damage from 1 of your Pokémon that has any Energy attached
-      to it.
-  moves:
-  - cost: [G, C, C]
-    name: Solar Beam
-    damage: '110'
-  - cost: [G]
-    name: Grand Bloom GX
-    text: For each of your Benched Basic Pokémon, search your deck for a card that
-      evolves from that Pokémon and put it onto that Pokémon to evolve it. Then, shuffle
-      your deck. (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM147
-  pioId: smp-SM147
-  enumId: GLACEON_GX_SM147
-  name: Glaceon-GX
-  number: SM147
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Eevee
-  hp: 200
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Freezing Gaze
-    text: As long as this Pokémon is your Active Pokémon, your opponent’s Pokémon-GX
-      and Pokémon-EX in play, in their hand, and in their discard pile have no Abilities,
-      except for Freezing Gaze.
-  moves:
-  - cost: [W, C, C]
-    name: Frost Bullet
-    damage: '90'
-    text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
-      apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [W, C, C]
-    name: Polar Spear GX
-    damage: 50x
-    text: This attack does 50 damage for each damage counter on your opponent’s Active
-      Pokémon. (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: M
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM148
-  pioId: smp-SM148
-  enumId: CHAMPIONS_FESTIVAL_SM148
-  name: Champions Festival
-  number: SM148
-  superType: TRAINER
-  subTypes: [STADIUM]
-  rarity: Rare Promo
-  text: ['Once during each player''s turn, if that player has 6 Pokémon in play, he
-      or she may heal 10 damage from each of his or her Pokémon.']
-- id: 426-SM149
-  pioId: smp-SM149
-  enumId: SUICUNE_SM149
-  name: Suicune
-  number: SM149
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Frozen Flow
-    text: Once during your turn (before your attack), if this Pokémon is your Active
-      Pokémon, you may have your opponent switch their Active Pokémon with 1 of their
-      Benched Pokémon.
-  moves:
-  - cost: [W, C, C]
-    name: Aurora Gain
-    damage: '70'
-    text: Heal 30 damage from this Pokémon.
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM15
-  pioId: smp-SM15
-  enumId: ZYGARDE_SM15
-  name: Zygarde
-  number: SM15
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 3
-  moves:
-  - cost: [F, C, C]
-    name: Pulse Blast
-    damage: '60'
-  - cost: [F, F, F, C]
-    name: Land's Wrath
-    damage: '130'
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM150
-  pioId: smp-SM150
-  enumId: RAIKOU_SM150
-  name: Raikou
-  number: SM150
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 2
-  moves:
-  - cost: [L, C]
-    name: Lost Voltage
-    damage: 30+
-    text: If you have any [L] Energy cards in the Lost Zone, this attack does 90 more
-      damage.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM151
-  pioId: smp-SM151
-  enumId: GIRATINA_SM151
-  name: Giratina
-  number: SM151
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 3
-  abilities:
-  - type: Ability
-    name: Distortion Door
-    text: Once during your turn (before your attack), if this Pokémon is in your discard
-      pile, you may put it onto your Bench. If you do, put 1 damage counter on 2 of
-      your opponent’s Benched Pokémon.
-  moves:
-  - cost: [P, P, C]
-    name: Shadow Impact
-    damage: '130'
-    text: Put 4 damage counters on 1 of your Pokémon.
-  weaknesses:
-  - type: D
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM152
-  pioId: smp-SM152
-  enumId: TAPU_LELE_SM152
-  name: Tapu Lele
-  number: SM152
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Charmed Charm
-    text: Whenever you attach a Pokémon Tool card that has "Fairy Charm" in its name
-      from your hand to this Pokémon during your turn, you may leave your opponent’s
-      Active Pokémon Confused.
-  moves:
-  - cost: [Y, C, C]
-    name: Magical Shot
-    damage: '70'
-  weaknesses:
-  - type: M
-    value: x2
-  resistances:
-  - type: D
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM153
-  pioId: smp-SM153
-  enumId: ROWLET_SM153
-  name: Rowlet
-  number: SM153
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [G, C]
-    name: Leaf Blade
-    damage: 10+
-    text: Flip a coin. If heads, this attack does 30 more damage.
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM154
-  pioId: smp-SM154
-  enumId: SALANDIT_SM154
-  name: Salandit
-  number: SM154
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [R]
-    name: Smog
-    text: Flip a coin. If heads, your opponent's Active Pokémon is now Poisoned.
-  - cost: [R, C]
-    name: Ember
-    damage: '30'
-    text: Discard an Energy from this Pokémon.
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM155
-  pioId: smp-SM155
-  enumId: KINGDRA_GX_SM155
-  name: Kingdra-GX
-  number: SM155
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Seadra
-  hp: 230
-  retreatCost: 2
-  moves:
-  - cost: [C]
-    name: Hydro Pump
-    damage: 10+
-    text: This attack does 50 more damage times the amount of [W] Energy attached
-      to this Pokémon.
-  - cost: [W]
-    name: Reverse Thrust
-    damage: '30'
-    text: Switch this Pokémon with 1 of your Benched Pokémon.
-  - cost: [W]
-    name: Maelstrom GX
-    text: This attack does 40 damage to each of your opponent's Pokémon. (Don't apply
-      Weakness and Resistance for Benched Pokémon.) (You can’t use more than 1 GX
-      attack in a game.)
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM156
-  pioId: smp-SM156
-  enumId: DRAGONITE_GX_SM156
-  name: Dragonite-GX
-  number: SM156
-  types: [N]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Dragonair
-  hp: 250
-  retreatCost: 3
-  moves:
-  - cost: [L]
-    name: Dragon Claw
-    damage: '70'
-  - cost: [L, W, C, C]
-    name: Giga Impact
-    damage: '200'
-    text: This Pokémon can’t attack during your next turn.
-  - cost: [C, C, C]
-    name: Dragonporter GX
-    text: Put 3 [N] Pokémon from your discard pile onto your Bench. (You can’t use
-      more than 1 GX attack in a game.)
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM157
-  pioId: smp-SM157
-  enumId: PIKACHU_SM157
-  name: Pikachu
-  number: SM157
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Pika Shield
-    text: This Pokémon can't be Paralyzed.
-  moves:
-  - cost: [L]
-    name: Static Shock
-    damage: '10'
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM158
-  pioId: smp-SM158
-  enumId: CHARIZARD_SM158
-  name: Charizard
-  number: SM158
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Charmeleon
-  hp: 150
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Roaring Resolve
-    text: Once during your turn (before your attack), you may put 2 damage counters
-      on this Pokémon. If you do, search your deck for up to 2 [R] Energy cards and
-      attach them to this Pokémon. Then, shuffle your deck.
-  moves:
-  - cost: [R, R]
-    name: Continuous Blaze Ball
-    damage: 30+
-    text: Discard all [R] Energy from this Pokémon. This attack does 50 more damage
-      for each card you discarded in this way.
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM159
-  pioId: smp-SM159
-  enumId: ZAPDOS_SM159
-  name: Zapdos
-  number: SM159
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 2
-  moves:
-  - cost: [L]
-    name: Thunderous Assault
-    damage: 10+
-    text: If this Pokémon was on the Bench and became your Active Pokémon this turn,
-      this attack does 70 more damage. This attack’s damage isn't affected by Weakness.
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM16
-  pioId: smp-SM16
-  enumId: SOLGALEO_GX_SM16
-  name: Solgaleo-GX
-  number: SM16
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Cosmoem
-  hp: 250
-  retreatCost: 3
-  abilities:
-  - type: Ability
-    name: Ultra Road
-    text: Once during your turn (before your attack), you may switch your Active Pokémon
-      with 1 of your Benched Pokémon.
-  moves:
-  - cost: [M, M, C]
-    name: Sunsteel Strike
-    damage: '230'
-    text: Discard all Energy from this Pokémon.
-  - cost: [M]
-    name: Sol Burst GX
-    text: Search your deck for up to 5 Energy cards and attach them to your Pokémon
-      in any way you like. Then, shuffle your deck. (You can't use more than 1 GX
-      attack in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM160
-  pioId: smp-SM160
-  enumId: NIDOQUEEN_SM160
-  name: Nidoqueen
-  number: SM160
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Nidorina
-  hp: 160
-  retreatCost: 3
-  abilities:
-  - type: Ability
-    name: Queen's Call
-    text: Once during your turn (before your attack), you may search your deck for
-      a Pokémon that isn’t a Pokémon-GX or Pokémon-EX, reveal it, and put it into
-      your hand. Then, shuffle your deck.
-  moves:
-  - cost: [C, C, C]
-    name: Power Lariat
-    damage: 10+
-    text: This attack does 50 more damage for each Evolution Pokémon on your Bench.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM161
-  pioId: smp-SM161
-  enumId: JIRACHI_SM161
-  name: Jirachi
-  number: SM161
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Stellar Wish
-    text: Once during your turn (before your attack), if this Pokémon is your Active
-      Pokémon, you may look at the top 5 cards of your deck, reveal a Trainer card
-      you find there, and put it into your hand. Then, shuffle the other cards back
-      into your deck, and this Pokémon is now Asleep.
-  moves:
-  - cost: [M, C]
-    name: Slap
-    damage: '30'
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM162
-  pioId: smp-SM162
-  enumId: PIKACHU_SM162
-  name: Pikachu
-  number: SM162
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [C]
-    name: Nuzzle
-    text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  - cost: [L, C]
-    name: Thunder Jolt
-    damage: '30'
-    text: This Pokémon does 10 damage to itself.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM163
-  pioId: smp-SM163
-  enumId: MIMIKYU_SM163
-  name: Mimikyu
-  number: SM163
-  types: [Y]
   superType: POKEMON
   subTypes: [BASIC]
   hp: 70
   retreatCost: 1
   moves:
-  - cost: [Y]
-    name: Mimic
-    text: Shuffle your hand into your deck. Then, draw a card for each card in your
-      opponent's hand.
-  - cost: [Y, C]
-    name: Play Rough
-    damage: 20+
-    text: Flip a coin. If heads, this attack does 20 more damage.
-  rarity: Rare Promo
-- id: 426-SM164
-  pioId: smp-SM164
-  enumId: DEOXYS_SM164
-  name: Deoxys
-  number: SM164
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Power Suction
-    text: Once during your turn (before your attack), you may move an Energy from
-      1 of your Pokémon to 1 of your Deoxys.
-  moves:
-  - cost: [P, P, C]
-    name: Psycho Boost
-    damage: '100'
-    text: During your next turn, this Pokémon's Psycho Boost attack's base damage
-      is 50.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM165
-  pioId: smp-SM165
-  enumId: ULTRA_NECROZMA_SM165
-  name: Ultra Necrozma
-  number: SM165
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 3
-  moves:
-  - cost: [M, M, P, P]
-    name: Shining Burst
-    damage: 100+
-    text: If the total of both players' remaining Prize cards is 6 or less, discard
-      all Energy from this Pokémon, and this attack does 100 more damage.
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM166
-  pioId: smp-SM166
-  enumId: MAGIKARP_WAILORD_GX_SM166
-  name: Magikarp & Wailord-GX
-  number: SM166
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
-  hp: 300
-  retreatCost: 4
-  moves:
-  - cost: [W, W, W, W, W]
-    name: Super Splash
-    damage: '180'
-  - cost: [W]
-    name: Towering Splash GX
-    damage: '10'
-    text: If this Pokémon has at least 7 extra [W] Energy attached to it (in addition
-      to this attack's cost), this attack does 100 damage to each of your opponent's
-      Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
-      (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM167
-  pioId: smp-SM167
-  enumId: CELEBI_VENUSAUR_GX_SM167
-  name: Celebi & Venusaur-GX
-  number: SM167
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
-  hp: 270
-  retreatCost: 4
-  moves:
-  - cost: [G, C, C]
-    name: Pollen Hazard
-    damage: '50'
-    text: Your opponent's Active Pokémon is now Burned, Confused, and Poisoned.
-  - cost: [G, G, C, C]
-    name: Solar Beam
-    damage: '150'
-  - cost: [G, G, C, C]
-    name: Evergreen GX
-    damage: '180'
-    text: Heal all damage from this Pokémon. If this Pokémon has at least 1 extra
-      [G] Energy attached to it (in addition to this attack's cost), shuffle all cards
-      from your discard pile into your deck. (You can't use more than 1 GX attack
-      in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Ultra Rare
-- id: 426-SM168
-  pioId: smp-SM168
-  enumId: PIKACHU_ZEKROM_GX_SM168
-  name: Pikachu & Zekrom-GX
-  number: SM168
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
-  hp: 240
-  retreatCost: 3
-  moves:
-  - cost: [L, L, L]
-    name: Full Blitz
-    damage: '150'
-    text: Search your deck for up to 3 [L] Energy cards and attach them to 1 of your
-      Pokémon. Then, shuffle your deck.
-  - cost: [L, L, L]
-    name: Tag Bolt GX
-    damage: '200'
-    text: If this Pokémon has at least 3 extra [L] Energy attached to it (in addition
-      to this attack's cost), this attack does 170 damage to 1 of your opponent's
-      Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
-      (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Ultra Rare
-- id: 426-SM169
-  pioId: smp-SM169
-  enumId: EEVEE_SNORLAX_GX_SM169
-  name: Eevee & Snorlax-GX
-  number: SM169
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
-  hp: 270
-  retreatCost: 4
-  moves:
   - cost: [C]
-    name: Cheer Up
-    text: Attach an Energy card from your hand to 1 of your Pokémon.
-  - cost: [C, C, C, C]
-    name: Dump Truck Press
-    damage: 120+
-    text: If your opponent's Active Pokémon is an Evolution Pokémon, this attack does
-      120 more damage.
-  - cost: [C, C, C, C]
-    name: Megaton Friends GX
-    damage: '210'
-    text: If this Pokémon has at least 1 extra Energy attached to it (in addition
-      to this attack's cost), draw cards until you have 10 cards in your hand. (You
-      can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Ultra Rare
-- id: 426-SM17
-  pioId: smp-SM17
-  enumId: LUNALA_GX_SM17
-  name: Lunala-GX
-  number: SM17
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Cosmoem
-  hp: 250
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Psychic Transfer
-    text: As often as you like during your turn (before your attack), you may move
-      a [P] Energy from 1 of your Pokémon to another of your Pokémon.
-  moves:
-  - cost: [P, P, P, P]
-    name: Moongeist Beam
-    damage: '120'
-    text: The Defending Pokémon can't be healed during your opponent's next turn.
-  - cost: [P, P, P]
-    name: Lunar Fall GX
-    text: Knock Out 1 of your opponent's Basic Pokémon that isn't a Pokémon-GX. (You
-      can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: D
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM170
-  pioId: smp-SM170
-  enumId: DETECTIVE_PIKACHU_SM170
-  name: Detective Pikachu
-  number: SM170
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 90
-  retreatCost: 2
-  moves:
-  - cost: [L]
-    name: Scout
-    text: Your opponent reveals their hand.
-  - cost: [C, C, C]
-    name: Surprise Attack
-    damage: '80'
-    text: Flip a coin. If tails, this attack does nothing.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM171
-  pioId: smp-SM171
-  enumId: FLAREON_GX_SM171
-  name: Flareon-GX
-  number: SM171
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Eevee
-  hp: 210
-  retreatCost: 2
-  moves:
-  - cost: [R]
-    name: Heat Stage
-    damage: '30'
-    text: You may attach up to 3 [R] Energy cards from your hand to your Pokémon in
-      any way you like.
-  - cost: [R, R, C]
-    name: Bright Flame
-    damage: '190'
-    text: Discard 2 [R] Energy from this Pokémon.
-  - cost: [R]
-    name: Power Burner GX
-    damage: 20x
-    text: This attack does 20 damage for each [R] Energy card in your discard pile.
-      (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM172
-  pioId: smp-SM172
-  enumId: VAPOREON_GX_SM172
-  name: Vaporeon-GX
-  number: SM172
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Eevee
-  hp: 210
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Hydrating Drops
-    text: Once during your turn (before your attack), you may heal 30 damage from
-      your Active [W] Pokémon.
-  moves:
-  - cost: [C, C, C]
-    name: Hydro Pump
-    damage: 40+
-    text: This attack does 30 more damage times the amount of [W] Energy attached
-      to this Pokémon.
-  - cost: [W]
-    name: Cure Shower GX
-    text: Heal all damage from all of your [W] Pokémon. (You can't use more than 1
-      GX attack in a game.)
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM173
-  pioId: smp-SM173
-  enumId: JOLTEON_GX_SM173
-  name: Jolteon-GX
-  number: SM173
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Eevee
-  hp: 200
-  retreatCost: 0
-  moves:
-  - cost: [L]
-    name: Electrobullet
-    damage: '30'
-    text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
-      apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [L, C]
-    name: Head Bolt
-    damage: '110'
-  - cost: [L, C]
-    name: Swift Run GX
-    damage: '110'
-    text: Prevent all effects of attacks, including damage, done to this Pokémon during
-      your opponent's next turn. (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM174
-  pioId: smp-SM174
-  enumId: EEVEE_GX_SM174
-  name: Eevee-GX
-  number: SM174
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 160
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Ascension DNA
-    text: Once during your turn (before your attack), if you have a Pokémon in your
-      hand that evolves from Eevee, you may put that card onto this Pokémon to evolve
-      it. Before evolving, heal all damage from this Pokémon. You can't use this Ability
-      during your first turn or the turn this Pokémon was put into play.
-  moves:
-  - cost: [C, C, C]
-    name: Boost Dash
-    damage: '100'
-  - cost: [C]
-    name: Joy Maker GX
-    text: Put 3 cards from your discard pile into your hand. (You can’t use more than
-      1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM175
-  pioId: smp-SM175
-  enumId: EEVEE_GX_SM175
-  name: Eevee-GX
-  number: SM175
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 160
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Ascension DNA
-    text: Once during your turn (before your attack), if you have a Pokémon in your
-      hand that evolves from Eevee, you may put that card onto this Pokémon to evolve
-      it. Before evolving, heal all damage from this Pokémon. You can't use this Ability
-      during your first turn or the turn this Pokémon was put into play.
-  moves:
-  - cost: [C, C, C]
-    name: Boost Dash
-    damage: '100'
-  - cost: [C]
-    name: Joy Maker GX
-    text: Put 3 cards from your discard pile into your hand. (You can’t use more than
-      1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-  copyOf: 426-SM174
-  copyType: Reprint
-- id: 426-SM176
-  pioId: smp-SM176
-  enumId: EEVEE_GX_SM176
-  name: Eevee-GX
-  number: SM176
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 160
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Ascension DNA
-    text: Once during your turn (before your attack), if you have a Pokémon in your
-      hand that evolves from Eevee, you may put that card onto this Pokémon to evolve
-      it. Before evolving, heal all damage from this Pokémon. You can't use this Ability
-      during your first turn or the turn this Pokémon was put into play.
-  moves:
-  - cost: [C, C, C]
-    name: Boost Dash
-    damage: '100'
-  - cost: [C]
-    name: Joy Maker GX
-    text: Put 3 cards from your discard pile into your hand. (You can’t use more than
-      1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-  copyOf: 426-SM174
-  copyType: Reprint
-- id: 426-SM177
-  pioId: smp-SM177
-  enumId: MELTAN_SM177
-  name: Meltan
-  number: SM177
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [M]
-    name: Multiply
-    text: Search your deck for Meltan and put it onto your Bench. Then, shuffle your
-      deck.
-  - cost: [C, C]
-    name: Beam
-    damage: '30'
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM178
-  pioId: smp-SM178
-  enumId: MELMETAL_GX_SM178
-  name: Melmetal-GX
-  number: SM178
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Meltan
-  hp: 220
-  retreatCost: 4
-  abilities:
-  - type: Ability
-    name: Hard Coat
-    text: This Pokémon takes 30 less damage from attacks (after applying Weakness
-      and Resistance).
-  moves:
-  - cost: [C, C, C, C]
-    name: Metal Blast
-    damage: 110+
-    text: This attack does 20 more damage times the amount of [M] Energy attached
-      to this Pokémon.
-  - cost: [M]
-    name: Iron Force GX
-    text: Attach any number of [M] Energy cards from your discard pile to this Pokémon.
-      (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM179
-  pioId: smp-SM179
-  enumId: VOLCANION_SM179
-  name: Volcanion
-  number: SM179
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 2
-  moves:
-  - cost: [R]
-    name: Flare Starter
-    text: Search your deck for a [R] Energy card and attach it to 1 of your Pokémon.
-      If you go second and it's your first turn, instead search for up to 3 [R] Energy
-      cards and attach them to your Pokémon in any way you like. Then, shuffle your
-      deck.
-  - cost: [R, R]
-    name: High-Heat Blast
-    damage: 50+
-    text: If you have at least 4 [R] Energy in play, this attack does 60 more damage.
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM18
-  pioId: smp-SM18
-  enumId: ALOLAN_SANDSLASH_SM18
-  name: Alolan Sandslash
-  number: SM18
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: AlolanSandshrew
-  hp: 110
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Slush Rush
-    text: Once during your turn (before your attack), you may draw a card.
-  moves:
-  - cost: [W, C, C]
-    name: Smash Turn
-    damage: '50'
-    text: Switch this Pokémon with 1 of your Benched Pokémon.
-  weaknesses:
-  - type: M
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM180
-  pioId: smp-SM180
-  enumId: STAKATAKA_SM180
-  name: Stakataka
-  number: SM180
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 4
-  abilities:
-  - type: Ability
-    name: Wall of Stone
-    text: If your opponent has 3 or fewer Prize cards remaining, this Pokémon's maximum
-      HP is 200.
-  moves:
-  - cost: [F, F, C]
-    name: Top Down
-    damage: '110'
-    text: Flip a coin until you get tails. For each heads, discard the top card of
-      your opponent's deck.
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM181
-  pioId: smp-SM181
-  enumId: MELMETAL_SM181
-  name: Melmetal
-  number: SM181
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Meltan
-  hp: 150
-  retreatCost: 4
-  abilities:
-  - type: Ability
-    name: Metal Eater
-    text: Once during your turn (before your attack), you may discard a [M] Pokémon
-      from your hand. If you do, heal 100 damage from this Pokémon.
-  moves:
-  - cost: [M, C, C, C]
-    name: Heavy Impact
-    damage: '130'
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM182
-  pioId: smp-SM182
-  enumId: PERSIAN_SM182
-  name: Persian
-  number: SM182
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Meowth
-  hp: 100
-  retreatCost: 0
-  abilities:
-  - type: Ability
-    name: Gathering of Cats
-    text: Ignore all Energy in the attack costs of each of your Pokémon in play that
-      has the Caturday attack.
-  moves:
-  - cost: [C, C, C]
-    name: Claw Slash
-    damage: '90'
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM183
-  pioId: smp-SM183
-  enumId: PIKACHU_SM183
-  name: Pikachu
-  number: SM183
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 1
-  moves:
-  - cost: [L, C]
-    name: Thunder Jolt
-    damage: '40'
-    text: This Pokémon does 20 damage to itself.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM184
-  pioId: smp-SM184
-  enumId: EEVEE_SM184
-  name: Eevee
-  number: SM184
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 50
-  retreatCost: 1
-  moves:
-  - cost: [C]
-    name: Find a Friend
-    text: Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put
-      it into your hand. Then, shuffle your deck.
-  - cost: [C, C]
-    name: Smash Kick
-    damage: '20'
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM185
-  pioId: smp-SM185
-  enumId: TYPHLOSION_SM185
-  name: Typhlosion
-  number: SM185
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Quilava
-  hp: 150
-  retreatCost: 2
-  moves:
-  - cost: [R]
-    name: Exploder
-    text: Search your deck for up to 3 [R] Energy cards and attach them to your Pokémon
-      in any way you like. Then, shuffle your deck.
-  - cost: [R, R, C]
-    name: Bursting Inferno
-    damage: '100'
-    text: Your opponent’s Active Pokémon is now Burned.
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM186
-  pioId: smp-SM186
-  enumId: FLAREON_SM186
-  name: Flareon
-  number: SM186
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Eevee
-  hp: 110
-  retreatCost: 2
-  moves:
-  - cost: [C]
-    name: Bite
-    damage: '20'
-  - cost: [R, R, C]
-    name: Fire Spin
-    damage: '130'
-    text: Discard 2 [R] Energy from this Pokémon.
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM187
-  pioId: smp-SM187
-  enumId: ALOLAN_MAROWAK_GX_SM187
-  name: Alolan Marowak-GX
-  number: SM187
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Cubone
-  hp: 200
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Cursed Body
-    text: If this Pokémon is your Active Pokémon and is damaged by an opponent's attack
-      (even if this Pokémon is Knocked Out), the Attacking Pokémon is now Confused.
-  moves:
-  - cost: [R, C, C]
-    name: Fiery Bone
-    damage: '90'
-    text: Your opponent's Active Pokémon is now Burned.
-  - cost: []
-    name: Lost Boomerang GX
-    text: This attack does 50 damage to 2 of your opponent's Pokémon. This damage
-      isn't affected by Weakness or Resistance. If a Pokémon is Knocked Out by this
-      damage, put that Pokémon and all cards attached to it in the Lost Zone instead
-      of the discard pile. (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM188
-  pioId: smp-SM188
-  enumId: KANGASKHAN_GX_SM188
-  name: Kangaskhan-GX
-  number: SM188
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 180
-  retreatCost: 3
-  moves:
-  - cost: [C]
-    name: Split Spiral Punch
-    damage: '20'
-    text: Your opponent’s Active Pokémon is now Confused.
-  - cost: [C, C, C]
-    name: Enraged Strike
-    damage: 80+
-    text: If your opponent's Active Pokémon is Confused, this attack does 80 more
-      damage.
-  - cost: [C, C, C]
-    name: Familial Combo GX
-    damage: '150'
-    text: Draw 5 cards. (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM189
-  pioId: smp-SM189
-  enumId: BLASTOISE_GX_SM189
-  name: Blastoise-GX
-  number: SM189
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Wartortle
-  hp: 240
-  retreatCost: 3
-  abilities:
-  - type: Ability
-    name: Solid Shell
-    text: This Pokémon takes 30 less damage from attacks (after applying Weakness
-      and Resistance).
-  moves:
-  - cost: [W, W]
-    name: Rocket Splash
-    damage: 60x
-    text: Shuffle any amount of [W] Energy from your Pokémon into your deck. This
-      attack does 60 damage for each card you shuffled into your deck in this way.
-  - cost: [W]
-    name: Giant Geyser GX
-    text: Attach any number of [W] Energy cards from your hand to your Pokémon in
-      any way you like. (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM19
-  pioId: smp-SM19
-  enumId: ORICORIO_SM19
-  name: Oricorio
-  number: SM19
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 90
-  retreatCost: 1
-  moves:
-  - cost: [C]
-    name: Supernatural Dance
-    text: For each Pokémon in your opponent’s discard pile, put 1 damage counter on
-      your opponent's Pokémon in any way you like.
-  - cost: [C]
-    name: Revelation Dance
-    damage: '30'
-    text: If there is no Stadium card in play, this attack does nothing.
-  weaknesses:
-  - type: D
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM190
-  pioId: smp-SM190
-  enumId: DETECTIVE_PIKACHU_SM190
-  name: Detective Pikachu
-  number: SM190
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 90
-  retreatCost: 2
-  moves:
-  - cost: [C]
-    name: Coffee Break
-    text: Heal 30 damage from this Pokémon.
-  - cost: [C, C]
-    name: Corkscrew Punch
-    damage: '20'
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM191
-  pioId: smp-SM191
-  enumId: MEWTWO_MEW_GX_SM191
-  name: Mewtwo & Mew-GX
-  number: SM191
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
-  hp: 270
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Perfection
-    text: This Pokémon can use the attacks of any Pokémon-GX or Pokémon-EX on your
-      Bench or in your discard pile. (You still need the necessary Energy to use each
-      attack.)
-  moves:
-  - cost: [P, P, C]
-    name: Miraculous Duo GX
-    damage: '200'
-    text: If this Pokémon has at least 1 extra Energy attached to it (in addition
-      to this attack’s cost), heal all damage from all of your Pokémon. (You can’t
-      use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM192
-  pioId: smp-SM192
-  enumId: LUCARIO_MELMETAL_GX_SM192
-  name: Lucario & Melmetal-GX
-  number: SM192
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
-  hp: 260
-  retreatCost: 3
-  moves:
-  - cost: [C, C]
-    name: Steel Fist
-    damage: '50'
-    text: Search your deck for a [M] Energy card and attach it to this Pokémon. Then,
-      shuffle your deck.
-  - cost: [M, M, C, C]
-    name: Heavy Impact
-    damage: '150'
-  - cost: [C]
-    name: Full Metal Wall GX
-    text: For the rest of this game, your [M] Pokémon take 30 less damage from your
-      opponent's attacks (after applying Weakness and Resistance). If this Pokémon
-      has at least 1 extra Energy attached to it (in addition to this attack's cost),
-      discard all Energy from your opponent's Active Pokémon. (You can't use more
-      than 1 GX attack in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM193
-  pioId: smp-SM193
-  enumId: GARCHOMP_GIRATINA_GX_SM193
-  name: Garchomp & Giratina-GX
-  number: SM193
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
-  hp: 270
-  retreatCost: 3
-  moves:
-  - cost: [C]
-    name: Linear Attack
-    text: This attack does 40 damage to 1 of your opponent’s Pokémon. (Don’t apply
-      Weakness and Resistance for Benched Pokémon.)
-  - cost: [F, P, C]
-    name: Calamitous Slash
-    damage: 160+
-    text: If your opponent's Active Pokémon already has any damage counters on it,
-      this attack does 80 more damage.
-  - cost: [F, P, P]
-    name: GG End GX
-    text: Discard 1 of your opponent's Pokémon and all cards attached to it. If this
-      Pokémon has at least 3 extra [F] Energy attached to it (in addition to this
-      attack’s cost), discard 2 of your opponent's Pokémon instead. (You can’t use
-      more than 1 GX attack in a game.)
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM194
-  pioId: smp-SM194
-  enumId: DETECTIVE_PIKACHU_SM194
-  name: Detective Pikachu
-  number: SM194
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 90
-  retreatCost: 2
-  moves:
-  - cost: [L]
-    name: Brilliant Deduction
-    text: Look at the top 4 cards of your deck and put 1 of them into your hand. Shuffle
-      the other cards back into your deck.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM195
-  pioId: smp-SM195
-  enumId: CHARIZARD_GX_SM195
-  name: Charizard-GX
-  number: SM195
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Charmeleon
-  hp: 250
-  retreatCost: 4
-  moves:
-  - cost: [R]
-    name: Raging Destruction
-    text: Discard the top 8 cards of your deck. If any of those cards are [R] Energy
-      cards, attach them to this Pokémon.
-  - cost: [R, R, C, C, C]
-    name: Steam Artillery
-    damage: '200'
-  - cost: [R, R, C, C, C]
-    name: Dreadful Flames GX
-    damage: '250'
-    text: Discard an Energy from each of your opponent's Pokémon. (You can't use more
-      than 1 GX attack in a game.)
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM196
-  pioId: smp-SM196
-  enumId: MEWTWO_GX_SM196
-  name: Mewtwo-GX
-  number: SM196
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 190
-  retreatCost: 2
-  moves:
+    name: Spit Poison
+    text: Your opponent's Active Pokémon is now Poisoned.
   - cost: [P, C]
-    name: Telekinesis
-    text: This attack does 50 damage to 1 of your opponent's Pokémon. This damage
-      isn't affected by Weakness or Resistance.
-  - cost: [P, P, C, C]
-    name: Reigning Pulse
-    damage: '120'
-    text: Your opponent’s Active Pokémon is now Confused.
-  - cost: [P, P, C, C]
-    name: Psychic Nova GX
-    damage: '180'
-    text: Prevent all damage done to this Pokémon by attacks during your opponent's
-      next turn. (You can't use more than 1 GX attack in a game.)
+    name: Knockout Reviver
+    text: During your opponent's next turn, if this Pokémon is Knocked Out, your opponent
+      can't take any Prize cards for it.
   weaknesses:
   - type: P
     value: x2
-  rarity: Rare Promo
-- id: 426-SM197
-  pioId: smp-SM197
-  enumId: GRENINJA_GX_SM197
-  name: Greninja-GX
-  number: SM197
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Frogadier
-  hp: 230
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Elusive Master
-    text: Once during your turn (before your attack), if this Pokémon is the last
-      card in your hand, you may play it onto your Bench. If you do, draw 3 cards.
-  moves:
-  - cost: [W, C]
-    name: Mist Slash
-    damage: '130'
-    text: This attack's damage isn't affected by Weakness, Resistance, or any other
-      effects on your opponent's Active Pokémon.
-  - cost: [W]
-    name: Dark Mist GX
-    text: Put 1 of your opponent's Benched Pokémon and all cards attached to it into
-      your opponent’s hand. (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM198
-  pioId: smp-SM198
-  enumId: BULBASAUR_SM198
-  name: Bulbasaur
-  number: SM198
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 2
-  moves:
-  - cost: [C]
-    name: Ram
-    damage: '10'
-  - cost: [G, G, C]
-    name: Vine Whip
-    damage: '50'
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM199
-  pioId: smp-SM199
-  enumId: PSYDUCK_SM199
-  name: Psyduck
-  number: SM199
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 2
-  moves:
-  - cost: [W, C]
-    name: Scratch
-    damage: '30'
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM20
-  pioId: smp-SM20
-  enumId: MUDSDALE_SM20
-  name: Mudsdale
-  number: SM20
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Mudbray
-  hp: 140
-  retreatCost: 4
-  moves:
-  - cost: [F, F, C]
-    name: Enhanced Stomp
-    damage: 60+
-    text: If this Pokémon has a Pokémon Tool card attached to it, this attack does
-      60 more damage.
-  - cost: [F, F, F, C]
-    name: High Horsepower
-    damage: '180'
-    text: This Pokémon does 40 damage to itself.
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM200
-  pioId: smp-SM200
-  enumId: SNUBBULL_SM200
-  name: Snubbull
-  number: SM200
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [Y]
-    name: Bite
-    damage: '10'
-  - cost: [C, C]
-    name: Paralyzing Gaze
-    text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  weaknesses:
-  - type: M
-    value: x2
-  resistances:
-  - type: D
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM201
-  pioId: smp-SM201
-  enumId: RESHIRAM_CHARIZARD_GX_SM201
-  name: Reshiram & Charizard-GX
-  number: SM201
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
-  hp: 270
-  retreatCost: 3
-  moves:
-  - cost: [R, C]
-    name: Outrage
-    damage: 30+
-    text: This attack does 10 more damage for each damage counter on this Pokémon.
-  - cost: [R, R, R, C]
-    name: Flare Strike
-    damage: '230'
-    text: This Pokémon can't use Flare Strike during your next turn.
-  - cost: [R, R, R]
-    name: Double Blaze GX
-    damage: 200+
-    text: If this Pokémon has at least 3 extra [R] Energy attached to it (in addition
-      to this attack's cost), this attack does 100 more damage, and this attack's
-      damage isn't affected by any effects on your opponent's Active Pokémon. (You
-      can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Ultra Rare
-- id: 426-SM202
-  pioId: smp-SM202
-  enumId: AMOONGUSS_SM202
-  name: Amoonguss
-  number: SM202
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Foongus
-  hp: 100
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Bursting Spores
-    text: Whenever you play a Pokémon that has the Spore attack from your hand during
-      your turn, you may leave your opponent's Active Pokémon Asleep and Poisoned.
-  moves:
-  - cost: [C, C]
-    name: Venoshock
-    damage: 20+
-    text: If your opponent's Active Pokémon is Poisoned, this attack does 70 more
-      damage.
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM203
-  pioId: smp-SM203
-  enumId: TAPU_FINI_SM203
-  name: Tapu Fini
-  number: SM203
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 1
-  moves:
-  - cost: [W]
-    name: Razor Fin
-    damage: '20'
-  - cost: [W, W, C]
-    name: Nature Wave
-    damage: '100'
-    text: If your opponent has any Ultra Beasts in play, this attack can be used for
-      [C].
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM204
-  pioId: smp-SM204
-  enumId: NECROZMA_SM204
-  name: Necrozma
-  number: SM204
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 2
-  moves:
-  - cost: [C, C]
-    name: Barrier Attack
-    damage: '30'
-    text: During your opponent’s next turn, this Pokémon takes 30 less damage from
-      attacks (after applying Weakness and Resistance).
-  - cost: [P, P, C]
-    name: Special Laser
-    damage: 100+
-    text: If this Pokémon has any Special Energy attached to it, this attack does
-      60 more damage.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM205
-  pioId: smp-SM205
-  enumId: TERRAKION_SM205
-  name: Terrakion
-  number: SM205
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 140
-  retreatCost: 4
-  moves:
-  - cost: [F, C, C]
-    name: Cavern Counter
-    damage: 50+
-    text: If all of your Benched Pokémon have at least 1 damage counter on them, this
-      attack does 150 more damage.
-  - cost: [F, F, C, C]
-    name: Boulder Crush
-    damage: '110'
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM206
-  pioId: smp-SM206
-  enumId: PIKACHU_SM206
-  name: Pikachu
-  number: SM206
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [L, C, C]
-    name: Thundershock
-    damage: '40'
-    text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM207
-  pioId: smp-SM207
-  enumId: SUDOWOODO_SM207
-  name: Sudowoodo
-  number: SM207
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 2
-  moves:
-  - cost: [F]
-    name: Low Kick
-    damage: '20'
-  - cost: [F, F]
-    name: Territorial Strike
-    damage: '80'
-    text: If you don’t have a Stadium card in play, this attack does nothing.
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM208
-  pioId: smp-SM208
-  enumId: VIKAVOLT_SM208
-  name: Vikavolt
-  number: SM208
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Charjabug
-  hp: 150
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Stealthy Body
-    text: If there is any Stadium card in play, this Pokémon has no Weakness.
-  moves:
-  - cost: [L, L, L, C]
-    name: Electricannon
-    damage: 120+
-    text: You may discard all [L] Energy from this Pokémon. If you do, this attack
-      does 100 more damage.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM209
-  pioId: smp-SM209
-  enumId: STAKATAKA_SM209
-  name: Stakataka
-  number: SM209
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 4
-  abilities:
-  - type: Ability
-    name: Wall of Stone
-    text: If your opponent has 3 or fewer Prize cards remaining, this Pokémon's maximum
-      HP is 200.
-  moves:
-  - cost: [F, F, C]
-    name: Top Down
-    damage: '110'
-    text: Flip a coin until you get tails. For each heads, discard the top card of
-      your opponent's deck.
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-  copyOf: 426-SM180
-  copyType: Reprint
-- id: 426-SM21
-  pioId: smp-SM21
-  enumId: DRAMPA_SM21
-  name: Drampa
-  number: SM21
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 2
-  moves:
-  - cost: [C]
-    name: Amass
-    text: Search your deck for a basic Energy card and attach it to this Pokémon.
-      Then, shuffle your deck.
-  - cost: [C, C, C]
-    name: Power Cyclone
-    damage: '80'
-    text: Move an Energy from this Pokémon to 1 of your Benched Pokémon.
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM211
-  pioId: smp-SM211
-  enumId: CHARIZARD_GX_SM211
-  name: Charizard-GX
-  number: SM211
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Charmeleon
-  hp: 250
-  retreatCost: 3
-  moves:
-  - cost: [R, R, C, C]
-    name: Flamethrower
-    damage: '140'
-  - cost: [R, R, C, C]
-    name: Flare Blitz GX
-    damage: '300'
-    text: (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM212
-  pioId: smp-SM212
-  enumId: GYARADOS_GX_SM212
-  name: Gyarados-GX
-  number: SM212
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Magikarp
-  hp: 230
-  retreatCost: 3
-  moves:
-  - cost: [W, W, W, C]
-    name: Dragon Rage
-    damage: '130'
-  - cost: [W, W, W, C]
-    name: Hyper Beam GX
-    damage: '240'
-    text: (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: L
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM213
-  pioId: smp-SM213
-  enumId: RAICHU_GX_SM213
-  name: Raichu-GX
-  number: SM213
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Pikachu
-  hp: 210
-  retreatCost: 1
-  moves:
-  - cost: [L, L, C]
-    name: Thunderbolt
-    damage: '120'
-  - cost: [L, L, C]
-    name: Spark Ball GX
-    damage: '200'
-    text: (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM214
-  pioId: smp-SM214
-  enumId: MEWTWO_SM214
-  name: Mewtwo
-  number: SM214
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Mind Report
-    text: When you play this Pokémon from your hand onto your Bench during your turn,
-      you may put a Supporter card from your discard pile on top of your deck.
-  moves:
-  - cost: [P, C, C]
-    name: Psyshock
-    damage: '70'
-    text: This attack's damage isn't affected by any effects on your opponent's Active
-      Pokémon.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM215
-  pioId: smp-SM215
-  enumId: MEW_SM215
-  name: Mew
-  number: SM215
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Bench Barrier
-    text: Prevent all damage done to your Benched Pokémon by your opponent's attacks.
-  moves:
-  - cost: [C]
-    name: Psypower
-    text: Put 3 damage counters on your opponent's Pokémon in any way you like.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM22
-  pioId: smp-SM22
-  enumId: ROWLET_SM22
+  rarity: Common
+  artist: Akira Komayama
+- id: 426-SV2
+  pioId: sma-SV2
+  enumId: ROWLET_SV2
   name: Rowlet
-  number: SM22
+  nationalPokedexNumber: 722
+  number: SV2
   types: [G]
   superType: POKEMON
   subTypes: [BASIC]
+  evolvesTo: [Dartrix]
   hp: 60
   retreatCost: 1
   moves:
@@ -3327,1884 +315,66 @@ cards:
   weaknesses:
   - type: R
     value: x2
-  rarity: Rare Promo
-- id: 426-SM23
-  pioId: smp-SM23
-  enumId: LITTEN_SM23
-  name: Litten
-  number: SM23
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 1
-  moves:
-  - cost: [R]
-    name: Bite
-    damage: '10'
-  - cost: [R, C]
-    name: Flare
-    damage: '20'
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM231
-  pioId: smp-SM231
-  enumId: CHAMPIONS_FESTIVAL_SM231
-  name: Champions Festival
-  number: SM231
-  superType: TRAINER
-  subTypes: [STADIUM]
-  rarity: Rare Promo
-  text: ['Once during each player''s turn, if that player has 6 Pokémon in play, he
-      or she may heal 10 damage from each of his or her Pokémon.']
-  copyOf: 426-SM148
-  copyType: Reprint
-- id: 426-SM24
-  pioId: smp-SM24
-  enumId: POPPLIO_SM24
-  name: Popplio
-  number: SM24
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 1
-  moves:
-  - cost: [W]
-    name: Pound
-    damage: '10'
-  - cost: [W, C]
-    name: Water Gun
-    damage: '20'
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM25
-  pioId: smp-SM25
-  enumId: LURANTIS_SM25
-  name: Lurantis
-  number: SM25
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Fomantis
-  hp: 100
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Sunny Day
-    text: The attacks of your [G] Pokémon and [R] Pokémon do 20 more damage to your
-      opponent's Active Pokémon (before applying Weakness and Resistance).
-  moves:
-  - cost: [G, G, C]
-    name: Solar Beam
-    damage: '80'
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM26
-  pioId: smp-SM26
-  enumId: TSAREENA_SM26
-  name: Tsareena
-  number: SM26
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Steenee
-  hp: 140
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Queenly Majesty
-    text: When you play this Pokémon from your hand to evolve 1 of your Pokémon during
-      your turn, you may have your opponent reveal their hand. Then, discard a card
-      from it.
-  moves:
-  - cost: [G, C, C]
-    name: Trop Kick
-    damage: '80'
-    text: Heal 20 damage and remove all Special Conditions from this Pokémon.
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM27
-  pioId: smp-SM27
-  enumId: TURTONATOR_SM27
-  name: Turtonator
-  number: SM27
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 3
-  moves:
-  - cost: [R, C]
-    name: Flame Cloak
-    damage: '30'
-    text: Attach a [R] Energy card from your discard pile to this Pokémon.
-  - cost: [R, C, C]
-    name: Heat Blast
-    damage: '70'
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM28
-  pioId: smp-SM28
-  enumId: VIKAVOLT_SM28
-  name: Vikavolt
-  number: SM28
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Charjabug
-  hp: 150
-  retreatCost: 3
-  abilities:
-  - type: Ability
-    name: Strong Charge
-    text: Once during your turn (before your attack), you may search your deck for
-      a [G] Energy card and a [L] Energy card and attach them to your Pokémon in any
-      way you like. Then, shuffle your deck.
-  moves:
-  - cost: [L, C, C, C]
-    name: Electro Cannon
-    damage: '150'
-    text: Discard 3 Energy from this Pokémon.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM29
-  pioId: smp-SM29
-  enumId: MIMIKYU_SM29
-  name: Mimikyu
-  number: SM29
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 1
-  moves:
-  - cost: [P]
-    name: Haunt
-    text: Put 1 damage counter on your opponent's Active Pokémon.
-  - cost: [C, C]
-    name: Astonish
-    text: Choose a random card from your opponent's hand. Your opponent reveals that
-      card and shuffles it into their deck.
-  rarity: Rare Promo
-- id: 426-SM30
-  pioId: smp-SM30
-  enumId: TAPU_KOKO_SM30
-  name: Tapu Koko
-  number: SM30
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 0
-  moves:
-  - cost: [C, C]
-    name: Flying Flip
-    text: This attack does 20 damage to each of your opponent's Pokémon. (Don't apply
-      Weakness and Resistance for Benched Pokémon.)
-  - cost: [L, L, C]
-    name: Electric Ball
-    damage: '100'
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM31
-  pioId: smp-SM31
-  enumId: TAPU_KOKO_SM31
-  name: Tapu Koko
-  number: SM31
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 0
-  moves:
-  - cost: [C, C]
-    name: Flying Flip
-    text: This attack does 20 damage to each of your opponent's Pokémon. (Don't apply
-      Weakness and Resistance for Benched Pokémon.)
-  - cost: [L, L, C]
-    name: Electric Ball
-    damage: '100'
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-  copyOf: 426-SM30
-  copyType: Reprint
-- id: 426-SM32
-  pioId: smp-SM32
-  enumId: TAPU_BULU_GX_SM32
-  name: Tapu Bulu-GX
-  number: SM32
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 180
-  retreatCost: 3
-  moves:
-  - cost: [G]
-    name: Horn Attack
-    damage: '30'
-  - cost: [G, G, C]
-    name: Nature’s Judgment
-    damage: 120+
-    text: You may discard all Energy from this Pokémon. If you do, this attack does
-      60 more damage.
-  - cost: [G, G, C]
-    name: Tapu Wilderness GX
-    damage: '150'
-    text: Heal all damage from this Pokémon. (You can't use more than 1 GX attack
-      in a game.)
-  rarity: Rare Promo
-- id: 426-SM33
-  pioId: smp-SM33
-  enumId: TAPU_KOKO_GX_SM33
-  name: Tapu Koko-GX
-  number: SM33
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 170
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Aero Trail
-    text: When you play this Pokémon from your hand onto your Bench during your turn,
-      you may move any number of [L] Energy from your other Pokémon to this Pokémon.
-      If you do, switch this Pokémon with your Active Pokémon.
-  moves:
-  - cost: [L, L, C]
-    name: Sky-High Claws
-    damage: '130'
-  - cost: [L, L, C]
-    name: Tapu Thunder GX
-    damage: 50x
-    text: This attack does 50 damage times the amount of Energy attached to all of
-      your opponent's Pokémon. (You can’t use more than 1 GX attack in a game.)
-  rarity: Rare Promo
-- id: 426-SM34
-  pioId: smp-SM34
-  enumId: BEWEAR_GX_SM34
-  name: Bewear-GX
-  number: SM34
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Stufful
-  hp: 210
-  retreatCost: 3
-  moves:
-  - cost: [C, C, C]
-    name: Bear Hug
-    damage: '80'
-    text: The Defending Pokémon can't retreat during your opponent's next turn.
-  - cost: [C, C, C, C]
-    name: Double Impact
-    damage: 100x
-    text: Flip 2 coins. This attack does 100 damage for each heads.
-  - cost: [C, C, C, C]
-    name: Big Throw GX
-    text: Discard your opponent's Active Pokémon and all cards attached to it. (You
-      can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM35
-  pioId: smp-SM35
-  enumId: ESPEON_GX_SM35
-  name: Espeon-GX
-  number: SM35
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Eevee
-  hp: 200
-  retreatCost: 1
-  moves:
-  - cost: [P]
-    name: Psybeam
-    damage: '30'
-    text: Your opponent's Active Pokémon is now Confused.
-  - cost: [P, C, C]
-    name: Psychic
-    damage: 60+
-    text: This attack does 30 more damage times the amount of Energy attached to your
-      opponent's Active Pokémon.
-  - cost: [P, C, C]
-    name: Divide GX
-    text: Put 10 damage counters on your opponent's Pokémon in any way you like. (You
-      can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM36
-  pioId: smp-SM36
-  enumId: UMBREON_GX_SM36
-  name: Umbreon-GX
-  number: SM36
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Eevee
-  hp: 200
-  retreatCost: 2
-  moves:
-  - cost: [D]
-    name: Strafe
-    damage: '30'
-    text: You may switch this Pokémon with 1 of your Benched Pokémon.
-  - cost: [D, C, C]
-    name: Shadow Bullet
-    damage: '90'
-    text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
-      apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [D, C]
-    name: Dark Call GX
-    text: Discard 2 Energy from your opponent's Pokémon. (You can't use more than
-      1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM37
-  pioId: smp-SM37
-  enumId: DECIDUEYE_GX_SM37
-  name: Decidueye-GX
-  number: SM37
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Dartrix
-  hp: 240
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Feather Arrow
-    text: Once during your turn (before your attack), you may put 2 damage counters
-      on 1 of your opponent's Pokémon.
-  moves:
-  - cost: [G, C, C]
-    name: Razor Leaf
-    damage: '90'
-  - cost: [G]
-    name: Hollow Hunt GX
-    text: Put 3 cards from your discard pile into your hand. (You can’t use more than
-      1 GX attack in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM38
-  pioId: smp-SM38
-  enumId: INCINEROAR_GX_SM38
-  name: Incineroar-GX
-  number: SM38
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Torracat
-  hp: 250
-  retreatCost: 3
-  moves:
-  - cost: [R]
-    name: Hustling Strike
-    damage: 10+
-    text: This attack does 20 more damage for each of your Benched [R] Pokémon.
-  - cost: [R, R, C]
-    name: Tiger Swing
-    damage: 80+
-    text: Flip 2 coins. This attack does 50 more damage for each heads.
-  - cost: [R, R, C]
-    name: Burning Slam GX
-    damage: '200'
-    text: Your opponent's Active Pokémon is now Burned. (You can't use more than 1
-      GX attack in a game.)
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM39
-  pioId: smp-SM39
-  enumId: PRIMARINA_GX_SM39
-  name: Primarina-GX
-  number: SM39
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Brionne
-  hp: 250
-  retreatCost: 2
-  moves:
-  - cost: [C, C]
-    name: Bubble Beat
-    damage: 10+
-    text: This attack does 20 more damage times the amount of [W] Energy attached
-      to your Pokémon.
-  - cost: [W, W, W, C]
-    name: Roaring Seas
-    damage: '120'
-    text: Discard an Energy from your opponent's Active Pokémon.
-  - cost: [C, C]
-    name: Grand Echo GX
-    text: Heal all damage from all of your Pokémon. (You can't use more than 1 GX
-      attack in a game.)
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM40
-  pioId: smp-SM40
-  enumId: JANGMO_O_SM40
-  name: Jangmo-o
-  number: SM40
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 2
-  moves:
-  - cost: [F]
-    name: Iron Defense
-    text: Flip a coin. If heads, prevent all damage done to this Pokémon by attacks
-      during your opponent's next turn.
-  - cost: [L, C]
-    name: Tackle
-    damage: '20'
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM41
-  pioId: smp-SM41
-  enumId: KOMALA_SM41
-  name: Komala
-  number: SM41
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 80
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Comatose
-    text: As long as this Pokémon is your Active Pokémon, whenever you attach an Energy
-      from your hand to it, it is now Asleep.
-  moves:
-  - cost: [C, C, C]
-    name: Hypno Roll
-    damage: '100'
-    text: This attack can be used if this Pokémon is Asleep. If it is not Asleep,
-      this attack does nothing.
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM42
-  pioId: smp-SM42
-  enumId: COSMOG_SM42
-  name: Cosmog
-  number: SM42
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [C]
-    name: Dust Gathering
-    text: Draw a card.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM43
-  pioId: smp-SM43
-  enumId: ALOLAN_MEOWTH_SM43
-  name: Alolan Meowth
-  number: SM43
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: []
-    name: Scratch
-    damage: '10'
-  - cost: [D, D]
-    name: Fake Out
-    damage: '20'
-    text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM44
-  pioId: smp-SM44
-  enumId: TOGEDEMARU_SM44
-  name: Togedemaru
-  number: SM44
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 1
-  moves:
-  - cost: [L]
-    name: Nuzzle
-    text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  - cost: [C, C, C]
-    name: Rollout
-    damage: '50'
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM45
-  pioId: smp-SM45
-  enumId: TAPU_LELE_SM45
-  name: Tapu Lele
-  number: SM45
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 1
-  moves:
-  - cost: [P]
-    name: Psywave
-    damage: 20x
-    text: This attack does 20 damage times the amount of Energy attached to your opponent's
-      Active Pokémon.
-  - cost: [P, C]
-    name: Magical Swap
-    text: Move any number of damage counters on your opponent's Pokémon to their other
-      Pokémon in any way you like.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM46
-  pioId: smp-SM46
-  enumId: SEVIPER_SM46
-  name: Seviper
-  number: SM46
-  types: [P]
+  rarity: Common
+  artist: sui
+- id: 426-SV20
+  pioId: sma-SV20
+  enumId: SUDOWOODO_SV20
+  name: Sudowoodo
+  nationalPokedexNumber: 185
+  number: SV20
+  types: [F]
   superType: POKEMON
   subTypes: [BASIC]
   hp: 100
   retreatCost: 2
   abilities:
   - type: Ability
-    name: More Poison
-    text: Put 1 more damage counter on your opponent's Poisoned Pokémon between turns.
+    name: Roadblock
+    text: Your opponent can't have more than 4 Benched Pokémon. If they have 5 or
+      more Benched Pokémon, they discard Benched Pokémon until they have 4 Pokémon
+      on the Bench. If more than one effect changes the number of Benched Pokémon
+      allowed, use the smaller number.
   moves:
-  - cost: [P, C, C]
-    name: Venomous Fang
-    damage: '30'
-    text: Your opponent's Active Pokémon is now Poisoned.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM47
-  pioId: smp-SM47
-  enumId: CRABOMINABLE_SM47
-  name: Crabominable
-  number: SM47
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Crabrawler
-  hp: 140
-  retreatCost: 4
-  moves:
-  - cost: [F]
-    name: Gutsy Hammer
-    damage: '80'
-    text: This Pokémon does 10 damage to itself for each damage counter on it.
-  - cost: [F, F, F]
-    name: Double Stomp
-    damage: 80+
-    text: Flip 2 coins. This attack does 40 more damage for each heads.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM48
-  pioId: smp-SM48
-  enumId: ZYGARDE_SM48
-  name: Zygarde
-  number: SM48
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 150
-  retreatCost: 4
-  moves:
-  - cost: [C, C, C]
-    name: Land Crush
-    damage: '80'
-  - cost: [D, Y, C, C]
-    name: Core Enforcer
-    damage: '150'
-    text: Discard a [D] Energy and a [Y] Energy from this Pokémon.
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM49
-  pioId: smp-SM49
-  enumId: BEWEAR_SM49
-  name: Bewear
-  number: SM49
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Stufful
-  hp: 120
-  retreatCost: 2
-  moves:
-  - cost: [C, C]
-    name: Mix-Up
-    text: Flip a coin. If heads, discard the top 3 cards of your opponent's deck.
-  - cost: [C, C, C]
-    name: Tantrum
-    damage: '120'
-    text: This Pokémon is now Confused.
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM50
-  pioId: smp-SM50
-  enumId: TAPU_KOKO_GX_SM50
-  name: Tapu Koko-GX
-  number: SM50
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 170
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Aero Trail
-    text: When you play this Pokémon from your hand onto your Bench during your turn,
-      you may move any number of [L] Energy from your other Pokémon to this Pokémon.
-      If you do, switch this Pokémon with your Active Pokémon.
-  moves:
-  - cost: [L, L, C]
-    name: Sky-High Claws
-    damage: '130'
-  - cost: [L, L, C]
-    name: Tapu Thunder GX
-    damage: 50x
-    text: This attack does 50 damage times the amount of Energy attached to all of
-      your opponent's Pokémon. (You can’t use more than 1 GX attack in a game.)
-  rarity: Rare Promo
-  copyOf: 426-SM33
-  copyType: Reprint
-- id: 426-SM51
-  pioId: smp-SM51
-  enumId: ALOLAN_MEOWTH_SM51
-  name: Alolan Meowth
-  number: SM51
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: []
-    name: Nasty Plot
-    text: Flip a coin. If heads, search your deck for a card and put it into your
-      hand. Then, shuffle your deck.
-  - cost: [D]
-    name: Scratch
-    damage: '10'
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM52
-  pioId: smp-SM52
-  enumId: GOLISOPOD_SM52
-  name: Golisopod
-  number: SM52
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Wimpod
-  hp: 130
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Armor
-    text: This Pokémon takes 30 less damage from attacks (after applying Weakness
-      and Resistance).
-  moves:
-  - cost: [G, C, C]
-    name: Resolute Claws
-    damage: 80+
-    text: If your opponent's Active Pokémon is a Pokémon-GX or a Pokémon-EX, this
-      attack does 70 more damage (before applying Weakness and Resistance).
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM53
-  pioId: smp-SM53
-  enumId: DHELMISE_SM53
-  name: Dhelmise
-  number: SM53
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Steelworker
-    text: Your [M] Pokémon's attacks do 10 more damage to your opponent's Active Pokémon
-      (before applying Weakness and Resistance).
-  moves:
-  - cost: [P, C, C]
-    name: Anchor Shot
-    damage: '70'
-    text: The Defending Pokémon can't retreat during your opponent's next turn.
-  weaknesses:
-  - type: D
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM54
-  pioId: smp-SM54
-  enumId: LUCARIO_SM54
-  name: Lucario
-  number: SM54
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Riolu
-  hp: 120
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Stance
-    text: When you play this Pokémon from your hand to evolve 1 of your Pokémon during
-      your turn, you may prevent all effects of your opponent’s attacks, including
-      damage, done to this Pokémon until the end of your opponent’s next turn.
-  moves:
-  - cost: [F, F, F]
-    name: Submarine Blow
-    damage: '120'
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM55
-  pioId: smp-SM55
-  enumId: DECIDUEYE_SM55
-  name: Decidueye
-  number: SM55
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Dartrix
-  hp: 140
-  retreatCost: 1
-  moves:
-  - cost: [G]
-    name: Leaf Blade
-    damage: 30+
-    text: Flip a coin. If heads, this attack does 30 more damage.
-  - cost: [G, C, C]
-    name: Brave Bird
-    damage: '120'
-    text: This Pokémon does 20 damage to itself.
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM56
-  pioId: smp-SM56
-  enumId: TSAREENA_GX_SM56
-  name: Tsareena-GX
-  number: SM56
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Steenee
-  hp: 230
-  retreatCost: 2
-  moves:
-  - cost: [G]
-    name: Side Eye
-    text: Switch 1 of your opponent's Benched Pokémon with their Active Pokémon. The
-      new Active Pokémon is now Confused.
-  - cost: [G, C, C]
-    name: Jumping Side Kick
-    damage: 90+
-    text: If your opponent's Active Pokémon is Confused, this attack does 90 more
-      damage.
-  - cost: [G, G, C]
-    name: Queen's Command GX
-    text: Your opponent discards 4 cards from their hand. (You can't use more than
-      1 GX attack in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM57
-  pioId: smp-SM57
-  enumId: HO_OH_GX_SM57
-  name: Ho-Oh-GX
-  number: SM57
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 190
-  retreatCost: 2
-  moves:
-  - cost: [R, C, C]
-    name: Sacred Fire
-    text: This attack does 50 damage to 1 of your opponent's Pokémon. (Don't apply
-      Weakness and Resistance for Benched Pokémon.)
-  - cost: [R, R, R, C]
-    name: Phoenix Burn
-    damage: '180'
-    text: This Pokémon can't use Phoenix Burn during your next turn.
-  - cost: [R, C, C]
-    name: Eternal Flame GX
-    text: Put 3 in any combination of [R] Pokémon-GX or [R] Pokémon-EX from your discard
-      pile onto your Bench. (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM58
-  pioId: smp-SM58
-  enumId: NECROZMA_GX_SM58
-  name: Necrozma-GX
-  number: SM58
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 180
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Light’s End
-    text: Prevent all damage done to this Pokémon by attacks from [C] Pokémon.
-  moves:
-  - cost: [C, C, C]
-    name: Prismatic Burst
-    damage: 10+
-    text: Discard all [P] Energy from this Pokémon. This attack does 60 more damage
-      for each card you discarded in this way.
-  - cost: [C, C, C]
-    name: Black Ray GX
-    text: This attack does 100 damage to each of your opponent's Pokémon-GX and Pokémon-EX.
-      This damage isn't affected by Weakness or Resistance. (You can’t use more than
-      1 GX attack in a game.)
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM59
-  pioId: smp-SM59
-  enumId: MARSHADOW_GX_SM59
-  name: Marshadow-GX
-  number: SM59
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 150
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Shadow Hunt
-    text: This Pokémon can use the attacks of any Basic Pokémon in your discard pile.
-      (You still need the necessary Energy to use each attack.)
-  moves:
-  - cost: [F, F, C]
-    name: Beatdown
-    damage: '120'
-  - cost: [F]
-    name: Peerless Hundred Blows GX
-    damage: 50x
-    text: This attack does 50 damage times the amount of basic Energy attached to
-      this Pokémon. (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM60
-  pioId: smp-SM60
-  enumId: CHARIZARD_GX_SM60
-  name: Charizard-GX
-  number: SM60
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Charmeleon
-  hp: 250
-  retreatCost: 2
-  moves:
-  - cost: [C, C, C]
-    name: Wing Attack
-    damage: '70'
-  - cost: [R, R, R, C, C]
-    name: Crimson Storm
-    damage: '300'
-    text: Discard 3 [R] Energy from this Pokémon.
-  - cost: [R, C, C]
-    name: Raging Out GX
-    text: Discard the top 10 cards of your opponent's deck. (You can't use more than
-      1 GX attack in a game.)
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM61
-  pioId: smp-SM61
-  enumId: TAPU_BULU_SM61
-  name: Tapu Bulu
-  number: SM61
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 2
-  moves:
-  - cost: [G, C]
-    name: Horn Leech
-    damage: '30'
-    text: Heal 30 damage from this Pokémon.
-  - cost: [G, C, C]
-    name: Calm Strike
-    damage: 60+
-    text: If you have used your GX attack, this attack does 60 more damage.
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM62
-  pioId: smp-SM62
-  enumId: GOLISOPOD_GX_SM62
-  name: Golisopod-GX
-  number: SM62
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Wimpod
-  hp: 210
-  retreatCost: 3
-  moves:
-  - cost: [G]
-    name: First Impression
-    damage: 30+
-    text: If this Pokémon was on the Bench and became your Active Pokémon this turn,
-      this attack does 90 more damage.
-  - cost: [G, C, C]
-    name: Armor Press
-    damage: '100'
-    text: During your opponent's next turn, this Pokémon takes 20 less damage from
-      attacks (after applying Weakness and Resistance).
-  - cost: [G, C, C]
-    name: Crossing Cut GX
-    damage: '150'
-    text: Switch this Pokémon with 1 of your Benched Pokémon. (You can’t use more
-      than 1 GX attack in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM63
-  pioId: smp-SM63
-  enumId: SALAZZLE_GX_SM63
-  name: Salazzle-GX
-  number: SM63
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Salandit
-  hp: 200
-  retreatCost: 2
-  moves:
-  - cost: [R, R]
-    name: Diabolical Claws
-    damage: 50x
-    text: This attack does 50 damage for each Prize card you have taken.
-  - cost: [R, R]
-    name: Heat Blast
-    damage: '110'
-  - cost: [R, R]
-    name: Queen’s Haze GX
-    text: Discard all Energy from your opponent's Active Pokémon. (You can't use more
-      than 1 GX attack in a game.)
-  weaknesses:
-  - type: W
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM64
-  pioId: smp-SM64
-  enumId: SILVALLY_SM64
-  name: Silvally
-  number: SM64
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: TypeNull
-  hp: 130
-  retreatCost: 1
-  moves:
-  - cost: [C]
-    name: Gear Scan
-    text: Search your deck for an Item card, reveal it, and put it into your hand.
-      Then, shuffle your deck.
-  - cost: [C, C, C]
-    name: X-Scissor
-    damage: 90+
-    text: Flip a coin. If heads, this attack does 30 more damage.
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM65
-  pioId: smp-SM65
-  enumId: ALOLAN_RAICHU_SM65
-  name: Alolan Raichu
-  number: SM65
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pikachu
-  hp: 110
-  retreatCost: 1
-  moves:
-  - cost: [L]
-    name: Quick Attack
-    damage: 10+
-    text: Flip a coin. If heads, this attack does 30 more damage.
-  - cost: [L, C, C]
-    name: Electric Surfer
-    damage: '70'
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM66
-  pioId: smp-SM66
-  enumId: PHEROMOSA_GX_SM66
-  name: Pheromosa-GX
-  number: SM66
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 170
-  retreatCost: 1
-  moves:
-  - cost: [G]
-    name: Fast Raid
-    damage: '30'
-    text: If you go first, you can use this attack on your first turn.
-  - cost: [G, G]
-    name: Cruel Spike
-    damage: '60'
-    text: Your opponent's Active Pokémon is now Confused.
-  - cost: [G, G]
-    name: Beauty GX
-    damage: 50x
-    text: This attack does 50 damage for each Prize card your opponent has taken.
-      (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM67
-  pioId: smp-SM67
-  enumId: CELESTEELA_GX_SM67
-  name: Celesteela-GX
-  number: SM67
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 200
-  retreatCost: 4
-  moves:
-  - cost: [M, C, C]
-    name: Rocket Fall
-    damage: 30+
-    text: This attack does 30 more damage for each [C] in your opponent's Active Pokémon's
-      Retreat Cost.
-  - cost: [M, C, C, C]
-    name: Moon Press
-    damage: '130'
-  - cost: [M, C, C, C]
-    name: Blaster GX
-    damage: '180'
-    text: Turn all of your Prize cards face up. (Those Prize cards remain face up
-      for the rest of the game.) (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM68
-  pioId: smp-SM68
-  enumId: XURKITREE_GX_SM68
-  name: Xurkitree-GX
-  number: SM68
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 180
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Flashing Head
-    text: Prevent all damage done to this Pokémon by attacks from your opponent's
-      Pokémon that have any Special Energy attached to them.
-  moves:
-  - cost: [L, L, C]
-    name: Rumbling Wires
-    damage: '100'
-    text: Discard the top card of your opponent's deck.
-  - cost: [L]
-    name: Lighting GX
-    text: Your opponent reveals their hand. Add a card you find there to their Prize
-      cards face down. (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM69
-  pioId: smp-SM69
-  enumId: BUZZWOLE_GX_SM69
-  name: Buzzwole-GX
-  number: SM69
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 190
-  retreatCost: 2
-  moves:
-  - cost: [F]
-    name: Jet Punch
-    damage: '30'
-    text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
-      apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [F, F, F]
-    name: Knuckle Impact
-    damage: '160'
-    text: This Pokémon can't attack during your next turn.
-  - cost: [F, F, F]
-    name: Absorption GX
-    damage: 40x
-    text: This attack does 40 damage for each of your remaining Prize cards. (You
-      can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM70
-  pioId: smp-SM70
-  enumId: SHINING_HO_OH_SM70
-  name: Shining Ho-Oh
-  number: SM70
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Golden Wing
-    text: If this Pokémon is your Active Pokémon and is Knocked Out by damage from
-      an opponent's attack, move up to 2 basic Energy cards from this Pokémon to your
-      Benched Pokémon in any way you like.
-  moves:
-  - cost: [R, C, C, C]
-    name: Fire Blast
-    damage: '110'
-    text: Discard an Energy from this Pokémon.
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM71
-  pioId: smp-SM71
-  enumId: KOMMO_O_GX_SM71
-  name: Kommo-o-GX
-  number: SM71
-  types: [N]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Hakamoo
-  hp: 240
-  retreatCost: 2
-  moves:
-  - cost: [C]
-    name: Adamantine Press
-    damage: '30'
-    text: During your opponent's next turn, this Pokémon takes 30 less damage from
-      attacks (after applying Weakness and Resistance).
-  - cost: [F, L, C, C]
-    name: Shred
-    damage: '130'
-    text: This attack's damage isn't affected by any effects on your opponent's Active
-      Pokémon.
-  - cost: [F, L, C, C]
-    name: Ultra Uppercut GX
-    damage: '240'
-    text: (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: Y
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM72
-  pioId: smp-SM72
-  enumId: ALOLAN_RAICHU_SM72
-  name: Alolan Raichu
-  number: SM72
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pikachu
-  hp: 110
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Surge Surfer
-    text: If there is any Stadium card in play, this Pokémon has no Retreat Cost.
-  moves:
-  - cost: [C, C, C]
-    name: Psychic
-    damage: 70+
-    text: This attack does 20 more damage times the amount of Energy attached to your
-      opponent's Active Pokémon.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM73
-  pioId: smp-SM73
-  enumId: SALAZZLE_SM73
-  name: Salazzle
-  number: SM73
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Salandit
-  hp: 110
-  retreatCost: 1
-  moves:
-  - cost: [P]
-    name: Nasty Plot
-    text: Search your deck for up to 2 cards and put them into your hand. Then, shuffle
-      your deck.
-  - cost: [P]
-    name: Severe Poison
-    text: Your opponent's Active Pokémon is now Poisoned. Put 4 damage counters instead
-      of 1 on that Pokémon between turns.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM74
-  pioId: smp-SM74
-  enumId: REGIROCK_SM74
-  name: Regirock
-  number: SM74
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 3
-  abilities:
-  - type: Ability
-    name: Rock Peak Growl
-    text: Your Registeel's attacks do 10 more damage to your opponent's Active Pokémon
-      (before applying Weakness and Resistance).
-  moves:
-  - cost: [F, F, C]
-    name: Tough Swing
-    damage: '110'
-    text: This attack's damage isn't affected by Resistance.
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM75
-  pioId: smp-SM75
-  enumId: REGISTEEL_SM75
-  name: Registeel
-  number: SM75
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 3
-  moves:
-  - cost: [M]
-    name: Turbo Arm
-    damage: '30'
-    text: Attach a basic Energy card from your discard pile to 1 of your Benched Pokémon.
-  - cost: [M, M, C]
-    name: Iron Hand
-    damage: '90'
-    text: If Regice is on your Bench, heal 30 damage from this Pokémon.
-  weaknesses:
-  - type: R
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM76
-  pioId: smp-SM76
-  enumId: PIKACHU_SM76
-  name: Pikachu
-  number: SM76
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 1
-  moves:
-  - cost: [L]
-    name: Thunder Wave
-    text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  - cost: [L, C, C]
-    name: Electro Ball
-    damage: '50'
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM77
-  pioId: smp-SM77
-  enumId: MEWTWO_SM77
-  name: Mewtwo
-  number: SM77
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Pressure
-    text: As long as this Pokémon is your Active Pokémon, any damage done by attacks
-      from your opponent's Active Pokémon is reduced by 20 (before applying Weakness
-      and Resistance).
-  moves:
-  - cost: [P, P, P]
-    name: Super Psy Bolt
-    damage: '100'
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM78
-  pioId: smp-SM78
-  enumId: CHAMPIONS_FESTIVAL_SM78
-  name: Champions Festival
-  number: SM78
-  superType: TRAINER
-  subTypes: [STADIUM]
-  rarity: Rare Promo
-  text: ['Once during each player''s turn, if that player has 6 Pokémon in play, he
-      or she may heal 10 damage from each of his or her Pokémon.']
-  copyOf: 426-SM148
-  copyType: Reprint
-- id: 426-SM79
-  pioId: smp-SM79
-  enumId: SHINING_CELEBI_SM79
-  name: Shining Celebi
-  number: SM79
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Time Recall
-    text: Each of your evolved Pokémon can use any attack from its previous Evolutions.
-      (You still need the necessary Energy to use each attack.)
-  moves:
-  - cost: [G, C]
-    name: Leaf Step
-    damage: '30'
-  weaknesses:
-  - type: R
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM80
-  pioId: smp-SM80
-  enumId: HO_OH_GX_SM80
-  name: Ho-Oh-GX
-  number: SM80
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
-  hp: 190
-  retreatCost: 2
-  moves:
-  - cost: [R, C, C]
-    name: Sacred Fire
-    text: This attack does 50 damage to 1 of your opponent's Pokémon. (Don't apply
-      Weakness and Resistance for Benched Pokémon.)
-  - cost: [R, R, R, C]
-    name: Phoenix Burn
-    damage: '180'
-    text: This Pokémon can't use Phoenix Burn during your next turn.
-  - cost: [R, C, C]
-    name: Eternal Flame GX
-    text: Put 3 in any combination of [R] Pokémon-GX or [R] Pokémon-EX from your discard
-      pile onto your Bench. (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-  copyOf: 426-SM57
-  copyType: Reprint
-- id: 426-SM81
-  pioId: smp-SM81
-  enumId: PIKACHU_SM81
-  name: Pikachu
-  number: SM81
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 1
-  moves:
-  - cost: [L]
-    name: Thunder Wave
-    text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  - cost: [L, C, C]
-    name: Electro Ball
-    damage: '50'
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-  copyOf: 426-SM76
-  copyType: Reprint
-- id: 426-SM82
-  pioId: smp-SM82
-  enumId: SHINING_LUGIA_SM82
-  name: Shining Lugia
-  number: SM82
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 130
-  retreatCost: 2
-  moves:
-  - cost: [C, C, C]
-    name: Argent Wing
-    damage: 60+
-    text: If your opponent's Active Pokémon has an Ability, this attack does 60 more
-      damage.
-  - cost: [C, C, C, C]
-    name: Aero Force
-    damage: '130'
-    text: Discard an Energy from this Pokémon.
-  weaknesses:
-  - type: L
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM83
-  pioId: smp-SM83
-  enumId: ZORUA_SM83
-  name: Zorua
-  number: SM83
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [D]
-    name: Stampede
-    damage: '10'
-  - cost: [C, C]
-    name: Ram
-    damage: '20'
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM84
-  pioId: smp-SM84
-  enumId: ZOROARK_GX_SM84
-  name: Zoroark-GX
-  number: SM84
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Zorua
-  hp: 210
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Trade
-    text: Once during your turn (before your attack), you may discard a card from
-      your hand. If you do, draw 2 cards.
-  moves:
-  - cost: [C, C]
-    name: Riotous Beating
-    damage: 20x
-    text: This attack does 20 damage for each of your Pokémon in play.
-  - cost: [D, D]
-    name: Trickster GX
-    text: Choose 1 of your opponent's Pokémon's attacks and use it as this attack.
-      (You can’t use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM85
-  pioId: smp-SM85
-  enumId: MARSHADOW_SM85
-  name: Marshadow
-  number: SM85
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Let Loose
-    text: When you play this Pokémon from your hand onto your Bench during your turn,
-      you may have each player shuffle their hand into their deck and draw 4 cards.
-  moves:
-  - cost: [P, C]
-    name: Shadow Punch
-    damage: '30'
-    text: This attack's damage isn't affected by Resistance.
-  weaknesses:
-  - type: D
-    value: x2
-  resistances:
-  - type: F
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM86
-  pioId: smp-SM86
-  enumId: PIKACHU_SM86
-  name: Pikachu
-  number: SM86
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
-  moves:
-  - cost: [C]
-    name: Tail Whap
-    damage: '10'
-  - cost: [L, C]
-    name: Spark
-    damage: '20'
-    text: This attack does 10 damage to 1 of your opponent's Benched Pokémon. (Don't
-      apply Weakness and Resistance for Benched Pokémon.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM87
-  pioId: smp-SM87
-  enumId: LATIAS_SM87
-  name: Latias
-  number: SM87
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 100
-  retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Flight Support
-    text: Your Latios in play have no Retreat Cost.
-  moves:
-  - cost: [P]
-    name: Misty Gale
-    damage: '30'
-    text: Heal 30 damage from each of your Benched Pokémon.
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM88
-  pioId: smp-SM88
-  enumId: LATIOS_SM88
-  name: Latios
-  number: SM88
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 110
-  retreatCost: 1
-  moves:
-  - cost: [C, C]
-    name: Break Through
-    damage: '30'
-    text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
-      apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [P, C, C]
-    name: Lagoon Flight
-    damage: '70'
-  weaknesses:
-  - type: P
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM89
-  pioId: smp-SM89
-  enumId: ZOROARK_SM89
-  name: Zoroark
-  number: SM89
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Zorua
-  hp: 120
-  retreatCost: 2
-  moves:
-  - cost: [C, C]
-    name: Rip Claw
-    damage: '30'
-    text: Flip a coin. If heads, discard an Energy from your opponent's Active Pokémon.
-  - cost: [D, D, C]
-    name: Doom Crush
-    damage: '120'
-    text: Discard a [D] Energy from this Pokémon.
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: P
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM90
-  pioId: smp-SM90
-  enumId: RAICHU_GX_SM90
-  name: Raichu-GX
-  number: SM90
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Pikachu
-  hp: 210
-  retreatCost: 1
-  moves:
-  - cost: [C, C]
-    name: Powerful Spark
-    damage: 20+
-    text: This attack does 20 more damage times the amount of [L] Energy attached
-      to your Pokémon.
-  - cost: [L, L, C]
-    name: Thunder
-    damage: '160'
-    text: This Pokémon does 30 damage to itself.
-  - cost: [L, L, C]
-    name: Voltail GX
-    damage: '120'
-    text: Your opponent's Active Pokémon is now Paralyzed. (You can't use more than
-      1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  resistances:
-  - type: M
-    value: '-20'
-  rarity: Rare Promo
-- id: 426-SM91
-  pioId: smp-SM91
-  enumId: SILVALLY_GX_SM91
-  name: Silvally-GX
-  number: SM91
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: TypeNull
-  hp: 210
-  retreatCost: 2
-  abilities:
-  - type: Ability
-    name: Gyro Unit
-    text: Your Basic Pokémon in play have no Retreat Cost.
-  moves:
-  - cost: [C, C, C]
-    name: Turbo Drive
-    damage: '120'
-    text: Attach a basic Energy card from your discard pile to 1 of your Benched Pokémon.
-  - cost: [C, C, C]
-    name: Rebel GX
-    damage: 50x
-    text: This attack does 50 damage for each of your opponent's Benched Pokémon.
-      (You can't use more than 1 GX attack in a game.)
-  weaknesses:
-  - type: F
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM92
-  pioId: smp-SM92
-  enumId: TAPU_FINI_SM92
-  name: Tapu Fini
-  number: SM92
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 120
-  retreatCost: 2
-  moves:
-  - cost: [W, C]
-    name: Water Pulse
-    damage: '30'
-    text: Your opponent's Active Pokémon is now Asleep.
-  - cost: [W, C, C]
-    name: Shining Currents
-    damage: 60+
-    text: If any of your [W] Pokémon were healed during this turn, this attack does
-      60 more damage.
-  weaknesses:
-  - type: G
-    value: x2
-  rarity: Rare Promo
-- id: 426-SM93
-  pioId: smp-SM93
-  enumId: MARSHADOW_SM93
-  name: Marshadow
-  number: SM93
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 70
-  retreatCost: 2
-  moves:
-  - cost: [P]
-    name: Shadowy Echoes
-    text: Put a Basic Pokémon from each player’s discard pile onto its owner’s Bench.
-  - cost: [C, C]
-    name: Surprise Attack
+  - cost: [F, C]
+    name: Rock Throw
     damage: '40'
-    text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: G
+  - type: W
     value: x2
-  rarity: Rare Promo
-- id: 426-SM94
-  pioId: smp-SM94
-  enumId: WASH_ROTOM_SM94
-  name: Wash Rotom
-  number: SM94
-  types: [W]
+  rarity: Common
+  artist: Kyoko Umemoto
+- id: 426-SV21
+  pioId: sma-SV21
+  enumId: RIOLU_SV21
+  name: Riolu
+  nationalPokedexNumber: 447
+  number: SV21
+  types: [F]
   superType: POKEMON
   subTypes: [BASIC]
-  hp: 90
+  evolvesTo: [Lucario]
+  hp: 70
   retreatCost: 1
-  abilities:
-  - type: Ability
-    name: Roto Motor
-    text: If you have 9 or more Pokémon Tool cards in your discard pile, ignore all
-      Energy in the attack cost of each of this Pokémon’s attacks.
   moves:
-  - cost: [W, C, C]
-    name: Wash Arrow
-    text: This attack does 50 damage to 1 of your opponent's Benched Pokémon. (Don't
-      apply Weakness and Resistance for Benched Pokémon.)
+  - cost: [C]
+    name: Detect
+    text: Flip a coin. If heads, prevent all effects of attacks, including damage,
+      done to this Pokémon during your opponent's next turn.
+  - cost: [F]
+    name: Jab
+    damage: '10'
   weaknesses:
-  - type: G
+  - type: P
     value: x2
-  rarity: Rare Promo
-- id: 426-SM95
-  pioId: smp-SM95
-  enumId: LUCARIO_SM95
+  rarity: Common
+  artist: Misa Tsutsui
+- id: 426-SV22
+  pioId: sma-SV22
+  enumId: LUCARIO_SV22
   name: Lucario
-  number: SM95
+  nationalPokedexNumber: 448
+  number: SV22
   types: [F]
   superType: POKEMON
   subTypes: [EVOLUTION, STAGE1]
@@ -5225,99 +395,2159 @@ cards:
   weaknesses:
   - type: P
     value: x2
-  rarity: Rare Promo
-- id: 426-SM96
-  pioId: smp-SM96
-  enumId: HEATRAN_SM96
-  name: Heatran
-  number: SM96
-  types: [M]
+  rarity: Common
+  artist: Kouki Saitou
+- id: 426-SV23
+  pioId: sma-SV23
+  enumId: ROCKRUFF_SV23
+  name: Rockruff
+  nationalPokedexNumber: 744
+  number: SV23
+  types: [F]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Lycanroc]
+  hp: 70
+  retreatCost: 1
+  moves:
+  - cost: [F, C]
+    name: Surprise Attack
+    damage: '50'
+    text: Flip a coin. If tails, this attack does nothing.
+  weaknesses:
+  - type: G
+    value: x2
+  rarity: Common
+  artist: Masakazu Fukuda
+- id: 426-SV24
+  pioId: sma-SV24
+  enumId: BUZZWOLE_SV24
+  name: Buzzwole
+  nationalPokedexNumber: 794
+  number: SV24
+  types: [F]
   superType: POKEMON
   subTypes: [BASIC]
   hp: 130
-  retreatCost: 3
+  retreatCost: 2
   moves:
-  - cost: [M, C]
-    name: Guard Press
-    damage: '30'
-    text: During your opponent's next turn, this Pokémon takes 30 less damage from
-      attacks (after applying Weakness and Resistance).
-  - cost: [M, M, C]
-    name: Boiling Impact
-    damage: '130'
-    text: Discard 2 Energy from this Pokémon.
+  - cost: [F]
+    name: Sledgehammer
+    damage: 30+
+    text: If your opponent has exactly 4 Prize cards remaining, this attack does 90
+      more damage.
+  - cost: [F, F, C]
+    name: Swing Around
+    damage: 80+
+    text: Flip 2 coins. This attack does 20 more damage for each heads.
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Common
+  artist: Shin Nagasawa
+- id: 426-SV25
+  pioId: sma-SV25
+  enumId: ZORUA_SV25
+  name: Zorua
+  nationalPokedexNumber: 570
+  number: SV25
+  types: [D]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Zoroark]
+  hp: 60
+  retreatCost: 1
+  moves:
+  - cost: [D]
+    name: Stampede
+    damage: '10'
+  - cost: [C, C]
+    name: Ram
+    damage: '20'
+  weaknesses:
+  - type: F
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  artist: Saya Tsuruta
+- id: 426-SV26
+  pioId: sma-SV26
+  enumId: GUZZLORD_SV26
+  name: Guzzlord
+  nationalPokedexNumber: 799
+  number: SV26
+  types: [D]
+  superType: POKEMON
+  subTypes: [BASIC]
+  hp: 160
+  retreatCost: 4
+  moves:
+  - cost: [D, D, D, D]
+    name: Lord's Valley
+    damage: '160'
+    text: If you have exactly 2, 4, or 6 Prize cards remaining, discard the top 10
+      cards of your deck.
+  weaknesses:
+  - type: F
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  artist: Masakazu Fukuda
+- id: 426-SV27
+  pioId: sma-SV27
+  enumId: MAGNEMITE_SV27
+  name: Magnemite
+  nationalPokedexNumber: 81
+  number: SV27
+  types: [M]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Magneton]
+  hp: 60
+  retreatCost: 1
+  moves:
+  - cost: [C]
+    name: Searching Magnet
+    text: Search your deck for up to 3 [M] Energy cards, reveal them, and put them
+      into your hand. Then, shuffle your deck.
+  - cost: [M]
+    name: Tackle
+    damage: '10'
   weaknesses:
   - type: R
     value: x2
   resistances:
   - type: P
     value: '-20'
-  rarity: Rare Promo
-- id: 426-SM97
-  pioId: smp-SM97
-  enumId: GUMSHOOS_SM97
-  name: Gumshoos
-  number: SM97
-  types: [C]
+  rarity: Common
+  artist: SATOSHI NAKAI
+- id: 426-SV28
+  pioId: sma-SV28
+  enumId: MAGNETON_SV28
+  name: Magneton
+  nationalPokedexNumber: 82
+  number: SV28
+  types: [M]
   superType: POKEMON
   subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Yungoos
-  hp: 110
+  evolvesFrom: Magnemite
+  evolvesTo: [Magnezone]
+  hp: 90
   retreatCost: 2
   moves:
-  - cost: [C, C]
-    name: Identify
-    damage: 20+
-    text: Your opponent reveals their hand. If you find a Pokémon there, this attack
-      does 80 more damage.
-  - cost: [C, C, C]
-    name: Whap Down
-    damage: '70'
+  - cost: [M]
+    name: Ram
+    damage: '20'
+  - cost: [M, M, C]
+    name: Zap Cannon
+    damage: '80'
+    text: This Pokémon can't use Zap Cannon during your next turn.
   weaknesses:
-  - type: F
+  - type: R
     value: x2
-  rarity: Rare Promo
-- id: 426-SM98
-  pioId: smp-SM98
-  enumId: PIKACHU_SM98
-  name: Pikachu
-  number: SM98
-  types: [L]
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  artist: Kyoko Umemoto
+- id: 426-SV29
+  pioId: sma-SV29
+  enumId: MAGNEZONE_SV29
+  name: Magnezone
+  nationalPokedexNumber: 462
+  number: SV29
+  types: [M]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE2]
+  evolvesFrom: Magneton
+  hp: 150
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Magnetic Circuit
+    text: As often as you like during your turn (before your attack), you may attach
+      a [M] Energy card from your hand to 1 of your Pokémon.
+  moves:
+  - cost: [M, M, M, C]
+    name: Zap Cannon
+    damage: '130'
+    text: This Pokémon can't use Zap Cannon during your next turn.
+  weaknesses:
+  - type: R
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  artist: Misa Tsutsui
+- id: 426-SV3
+  pioId: sma-SV3
+  enumId: DARTRIX_SV3
+  name: Dartrix
+  nationalPokedexNumber: 723
+  number: SV3
+  types: [G]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE1]
+  evolvesFrom: Rowlet
+  evolvesTo: [Decidueye]
+  hp: 80
+  retreatCost: 1
+  moves:
+  - cost: [C]
+    name: Sharp Blade Quill
+    text: This attack does 20 damage to 1 of your opponent's Pokémon. (Don't apply
+      Weakness and Resistance for Benched Pokémon.)
+  - cost: [G, C, C]
+    name: Leaf Blade
+    damage: 50+
+    text: Flip a coin. If heads, this attack does 20 more damage.
+  weaknesses:
+  - type: R
+    value: x2
+  rarity: Common
+  artist: Shigenori Negishi
+- id: 426-SV30
+  pioId: sma-SV30
+  enumId: BELDUM_SV30
+  name: Beldum
+  nationalPokedexNumber: 374
+  number: SV30
+  types: [M]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Metang]
+  hp: 60
+  retreatCost: 1
+  moves:
+  - cost: [M]
+    name: Core Beam
+    damage: '20'
+    text: Discard a [M] Energy from this Pokémon.
+  weaknesses:
+  - type: R
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  artist: Mizue
+- id: 426-SV31
+  pioId: sma-SV31
+  enumId: METANG_SV31
+  name: Metang
+  nationalPokedexNumber: 375
+  number: SV31
+  types: [M]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE1]
+  evolvesFrom: Beldum
+  evolvesTo: [Metagross]
+  hp: 90
+  retreatCost: 3
+  moves:
+  - cost: [C]
+    name: Ram
+    damage: '20'
+  - cost: [M, M, C]
+    name: Core Beam
+    damage: '80'
+    text: Discard a [M] Energy from this Pokémon.
+  weaknesses:
+  - type: R
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  artist: Saya Tsuruta
+- id: 426-SV32
+  pioId: sma-SV32
+  enumId: CELESTEELA_SV32
+  name: Celesteela
+  nationalPokedexNumber: 797
+  number: SV32
+  types: [M]
+  superType: POKEMON
+  subTypes: [BASIC]
+  hp: 140
+  retreatCost: 4
+  moves:
+  - cost: [M, C, C, C, C]
+    name: Moon Raker
+    damage: '160'
+    text: If the total of both players' remaining Prize cards is exactly 6, this attack
+      can be used for Metal.
+  weaknesses:
+  - type: L
+    value: x2
+  resistances:
+  - type: F
+    value: '-20'
+  rarity: Common
+  artist: Kouki Saitou
+- id: 426-SV33
+  pioId: sma-SV33
+  enumId: KARTANA_SV33
+  name: Kartana
+  nationalPokedexNumber: 798
+  number: SV33
+  types: [M]
   superType: POKEMON
   subTypes: [BASIC]
   hp: 60
   retreatCost: 1
   moves:
-  - cost: [C]
-    name: Tail Whap
+  - cost: [M, M]
+    name: Divine Paper
+    damage: 40+
+    text: If your opponent has exactly 6 Prize cards remaining, this attack does 90
+      more damage.
+  weaknesses:
+  - type: R
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  artist: Anesaki Dynamic
+- id: 426-SV34
+  pioId: sma-SV34
+  enumId: RALTS_SV34
+  name: Ralts
+  nationalPokedexNumber: 280
+  number: SV34
+  types: [Y]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Kirlia]
+  hp: 60
+  retreatCost: 1
+  moves:
+  - cost: [Y]
+    name: Draining Kiss
     damage: '10'
-  - cost: [L, C]
-    name: Thunder Shock
+    text: Heal 10 damage from this Pokémon.
+  weaknesses:
+  - type: M
+    value: x2
+  resistances:
+  - type: D
+    value: '-20'
+  rarity: Common
+  artist: Kyoko Umemoto
+- id: 426-SV35
+  pioId: sma-SV35
+  enumId: KIRLIA_SV35
+  name: Kirlia
+  nationalPokedexNumber: 281
+  number: SV35
+  types: [Y]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE1]
+  evolvesFrom: Ralts
+  evolvesTo: [Gardevoir, Gallade]
+  hp: 80
+  retreatCost: 1
+  moves:
+  - cost: [C]
+    name: Smack
     damage: '20'
-    text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
+  - cost: [Y, C]
+    name: Magical Shot
+    damage: '30'
+  weaknesses:
+  - type: M
+    value: x2
+  resistances:
+  - type: D
+    value: '-20'
+  rarity: Common
+  artist: Sumiyoshi Kizuki
+- id: 426-SV36
+  pioId: sma-SV36
+  enumId: DIANCIE_SV36
+  name: Diancie
+  nationalPokedexNumber: 719
+  number: SV36
+  types: [Y]
+  superType: POKEMON
+  subTypes: [BASIC]
+  hp: 90
+  retreatCost: 1
+  moves:
+  - cost: [Y]
+    name: Sparkling Wish
+    text: Search your deck for a card that evolves from 1 of your Pokémon and put
+      it onto that Pokémon to evolve it. Then, shuffle your deck.
+  - cost: [Y, C]
+    name: Diamond Storm
+    damage: '30'
+    text: Heal 30 damage from each of your [Y] Pokémon.
+  weaknesses:
+  - type: M
+    value: x2
+  resistances:
+  - type: D
+    value: '-20'
+  rarity: Common
+  artist: Akira Komayama
+- id: 426-SV37
+  pioId: sma-SV37
+  enumId: ALTARIA_SV37
+  name: Altaria
+  nationalPokedexNumber: 334
+  number: SV37
+  types: [N]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE1]
+  evolvesFrom: Swablu
+  hp: 80
+  retreatCost: 1
+  abilities:
+  - type: Ability
+    name: Fight Song
+    text: Your [N] Pokémon's attacks do 20 more damage to your opponent's Active Pokémon
+      (before applying Weakness and Resistance).
+  moves:
+  - cost: [C, C]
+    name: Pierce
+    damage: '20'
+  weaknesses:
+  - type: Y
+    value: x2
+  rarity: Common
+  artist: kirisAki
+- id: 426-SV38
+  pioId: sma-SV38
+  enumId: GIBLE_SV38
+  name: Gible
+  nationalPokedexNumber: 443
+  number: SV38
+  types: [N]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Gabite]
+  hp: 50
+  retreatCost: 1
+  moves:
+  - cost: [F]
+    name: Ascension
+    text: Search your deck for a card that evolves from this Pokémon and put it onto
+      this Pokémon to evolve it. Then, shuffle your deck.
+  weaknesses:
+  - type: Y
+    value: x2
+  rarity: Common
+  artist: Saya Tsuruta
+- id: 426-SV39
+  pioId: sma-SV39
+  enumId: GABITE_SV39
+  name: Gabite
+  nationalPokedexNumber: 444
+  number: SV39
+  types: [N]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE1]
+  evolvesFrom: Gible
+  evolvesTo: [Garchomp]
+  hp: 80
+  retreatCost: 1
+  moves:
+  - cost: [F]
+    name: Ascension
+    text: Search your deck for a card that evolves from this Pokémon and put it onto
+      this Pokémon to evolve it. Then, shuffle your deck.
+  - cost: [C, C]
+    name: Slash
+    damage: '40'
+  weaknesses:
+  - type: Y
+    value: x2
+  rarity: Common
+  artist: Masakazu Fukuda
+- id: 426-SV4
+  pioId: sma-SV4
+  enumId: WIMPOD_SV4
+  name: Wimpod
+  nationalPokedexNumber: 767
+  number: SV4
+  types: [G]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Golisopod]
+  hp: 70
+  retreatCost: 3
+  abilities:
+  - type: Ability
+    name: Wimp Out
+    text: During your first turn, this Pokémon has no Retreat Cost.
+  moves:
+  - cost: [G, C, C]
+    name: Gnaw
+    damage: '30'
+  weaknesses:
+  - type: R
+    value: x2
+  rarity: Common
+  artist: SATOSHI NAKAI
+- id: 426-SV40
+  pioId: sma-SV40
+  enumId: GARCHOMP_SV40
+  name: Garchomp
+  nationalPokedexNumber: 445
+  number: SV40
+  types: [N]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE2]
+  evolvesFrom: Gabite
+  hp: 150
+  moves:
+  - cost: [C, C]
+    name: Quick Dive
+    text: This attack does 50 damage to 1 of your opponent's Pokémon. (Don't apply
+      Weakness and Resistance for Benched Pokémon.)
+  - cost: [F, C, C]
+    name: Royal Blades
+    damage: 100+
+    text: If you played Cynthia from your hand during this turn, this attack does
+      100 more damage.
+  weaknesses:
+  - type: Y
+    value: x2
+  rarity: Common
+  artist: Shin Nagasawa
+- id: 426-SV41
+  pioId: sma-SV41
+  enumId: EEVEE_SV41
+  name: Eevee
+  nationalPokedexNumber: 133
+  number: SV41
+  types: [C]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Vaporeon, Jolteon, Flareon, Sylveon, Espeon, Umbreon, Leafeon, Glaceon]
+  hp: 60
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Energy Evolution
+    text: When you attach a basic Energy card from your hand to this Pokémon during
+      your turn, you may search your deck for a card that evolves from this Pokémon
+      that is the same type as that Energy card and put it onto this Pokémon to evolve
+      it. Then, shuffle your deck.
+  moves:
+  - cost: [C]
+    name: Quick Draw
+    text: Flip a coin. If heads, draw a card.
+  weaknesses:
+  - type: F
+    value: x2
+  rarity: Common
+  artist: kirisAki
+- id: 426-SV42
+  pioId: sma-SV42
+  enumId: SWABLU_SV42
+  name: Swablu
+  nationalPokedexNumber: 333
+  number: SV42
+  types: [C]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Altaria]
+  hp: 50
+  retreatCost: 1
+  moves:
+  - cost: [C]
+    name: Collect
+    text: Draw a card.
+  - cost: [C, C]
+    name: Peck
+    damage: '20'
+  weaknesses:
+  - type: L
+    value: x2
+  resistances:
+  - type: F
+    value: '-20'
+  rarity: Common
+  artist: Shigenori Negishi
+- id: 426-SV43
+  pioId: sma-SV43
+  enumId: NOIBAT_SV43
+  name: Noibat
+  nationalPokedexNumber: 714
+  number: SV43
+  types: [C]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Noivern]
+  hp: 50
+  retreatCost: 1
+  moves:
+  - cost: [C]
+    name: Agility
+    damage: '10'
+    text: Flip a coin. If heads, prevent all effects of attacks, including damage,
+      done to this Pokémon during your opponent's next turn.
+  weaknesses:
+  - type: L
+    value: x2
+  resistances:
+  - type: F
+    value: '-20'
+  rarity: Common
+  artist: Mizue
+- id: 426-SV44
+  pioId: sma-SV44
+  enumId: ORANGURU_SV44
+  name: Oranguru
+  nationalPokedexNumber: 765
+  number: SV44
+  types: [C]
+  superType: POKEMON
+  subTypes: [BASIC]
+  hp: 120
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Instruct
+    text: Once during your turn (before your attack), you may draw cards until you
+      have 3 cards in your hand.
+  moves:
+  - cost: [C, C, C]
+    name: Psychic
+    damage: 60+
+    text: This attack does 20 more damage times the amount of Energy attached to your
+      opponent's Active Pokémon.
+  weaknesses:
+  - type: F
+    value: x2
+  rarity: Common
+  artist: Akira Komayama
+- id: 426-SV45
+  pioId: sma-SV45
+  enumId: TYPE_NULL_SV45
+  name: 'Type: Null'
+  number: SV45
+  types: [C]
+  superType: POKEMON
+  subTypes: [BASIC]
+  hp: 110
+  retreatCost: 2
+  moves:
+  - cost: [C, C]
+    name: Armor Press
+    damage: '30'
+    text: During your opponent's next turn, this Pokémon takes 30 less damage from
+      attacks (after applying Weakness and Resistance).
+  - cost: [C, C, C]
+    name: Slashing Claw
+    damage: '70'
+  weaknesses:
+  - type: F
+    value: x2
+  rarity: Common
+  artist: Shin Nagasawa
+- id: 426-SV46
+  pioId: sma-SV46
+  enumId: LEAFEON_GX_SV46
+  name: Leafeon-GX
+  nationalPokedexNumber: 470
+  number: SV46
+  types: [G]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Eevee
+  hp: 200
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Breath of the Leaves
+    text: If this Pokémon is your Active Pokémon, once during your turn (before your
+      attack), you may heal 50 damage from 1 of your Pokémon that has any Energy attached
+      to it.
+  moves:
+  - cost: [G, C, C]
+    name: Solar Beam
+    damage: '110'
+  - cost: [G]
+    name: Grand Bloom-GX
+    text: For each of your Benched Basic Pokémon, search your deck for a card that
+      evolves from that Pokémon and put it onto that Pokémon to evolve it. Then, shuffle
+      your deck. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: R
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV47
+  pioId: sma-SV47
+  enumId: DECIDUEYE_GX_SV47
+  name: Decidueye-GX
+  nationalPokedexNumber: 724
+  number: SV47
+  types: [G]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Dartrix
+  hp: 240
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Feather Arrow
+    text: Once during your turn (before your attack), you may put 2 damage counters
+      on 1 of your opponent's Pokémon.
+  moves:
+  - cost: [G, C, C]
+    name: Razor Leaf
+    damage: '90'
+  - cost: [G]
+    name: Hollow Hunt-GX
+    text: Put 3 cards from your discard pile into your hand. (You can't use more than
+      1 GX attack in a game.)
+  weaknesses:
+  - type: R
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV48
+  pioId: sma-SV48
+  enumId: GOLISOPOD_GX_SV48
+  name: Golisopod-GX
+  nationalPokedexNumber: 768
+  number: SV48
+  types: [G]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Wimpod
+  hp: 210
+  retreatCost: 3
+  moves:
+  - cost: [G]
+    name: First Impression
+    damage: 30+
+    text: If this Pokémon was on the Bench and became your Active Pokémon this turn,
+      this attack does 90 more damage.
+  - cost: [G, C, C]
+    name: Armor Press
+    damage: '100'
+    text: During your opponent's next turn, this Pokémon takes 20 less damage from
+      attacks (after applying Weakness and Resistance).
+  - cost: [G, C, C]
+    name: Crossing Cut-GX
+    damage: '150'
+    text: Switch this Pokémon with 1 of your Benched Pokémon. (You can't use more
+      than 1 GX attack in a game.)
+  weaknesses:
+  - type: R
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV49
+  pioId: sma-SV49
+  enumId: CHARIZARD_GX_SV49
+  name: Charizard-GX
+  nationalPokedexNumber: 6
+  number: SV49
+  types: [R]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Charmeleon
+  hp: 250
+  retreatCost: 2
+  moves:
+  - cost: [C, C, C]
+    name: Wing Attack
+    damage: '70'
+  - cost: [R, R, R, C, C]
+    name: Crimson Storm
+    damage: '300'
+    text: Discard 3 [R] Energy from this Pokémon.
+  - cost: [R, C, C]
+    name: Raging Out-GX
+    text: Discard the top 10 cards of your opponent's deck. (You can't use more than
+      1 GX attack in a game.)
+  weaknesses:
+  - type: W
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV5
+  pioId: sma-SV5
+  enumId: PHEROMOSA_SV5
+  name: Pheromosa
+  nationalPokedexNumber: 795
+  number: SV5
+  types: [G]
+  superType: POKEMON
+  subTypes: [BASIC]
+  hp: 110
+  moves:
+  - cost: [C]
+    name: High Jump Kick
+    damage: '20'
+  - cost: [G, G, C]
+    name: White Ray
+    damage: 90+
+    text: If you have only 1 Prize card remaining, this attack does 90 more damage.
+  weaknesses:
+  - type: R
+    value: x2
+  rarity: Common
+  artist: Mizue
+- id: 426-SV50
+  pioId: sma-SV50
+  enumId: HO_OH_GX_SV50
+  name: Ho-Oh-GX
+  nationalPokedexNumber: 250
+  number: SV50
+  types: [R]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 190
+  retreatCost: 2
+  moves:
+  - cost: [R, C, C]
+    name: Sacred Fire
+    text: This attack does 50 damage to 1 of your opponent's Pokémon. (Don't apply
+      Weakness and Resistance for Benched Pokémon.)
+  - cost: [R, R, R, C]
+    name: Phoenix Burn
+    damage: '180'
+    text: This Pokémon can't use Phoenix Burn during your next turn.
+  - cost: [R, C, C]
+    name: Eternal Flame-GX
+    text: Put 3 in any combination of [R] Pokémon-GX or [R] Pokémon-EX from your discard
+      pile onto your Bench. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: L
+    value: x2
+  resistances:
+  - type: F
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV51
+  pioId: sma-SV51
+  enumId: RESHIRAM_GX_SV51
+  name: Reshiram-GX
+  nationalPokedexNumber: 643
+  number: SV51
+  types: [R]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 180
+  retreatCost: 2
+  moves:
+  - cost: [C]
+    name: Flame Charge
+    text: Search your deck for up to 2 [R] Energy cards and attach them to this Pokémon.
+      Then, shuffle your deck.
+  - cost: [R, R, R, C]
+    name: Scorching Column
+    damage: '110'
+    text: Your opponent's Active Pokémon is now Burned.
+  - cost: [R, R, R, C]
+    name: Vermilion-GX
+    damage: '180'
+    text: You may attach up to 5 [R] Energy cards from your hand to your Pokémon in
+      any way you like. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: W
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: PLANETA Igarashi
+- id: 426-SV52
+  pioId: sma-SV52
+  enumId: TURTONATOR_GX_SV52
+  name: Turtonator-GX
+  nationalPokedexNumber: 776
+  number: SV52
+  types: [R]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 190
+  retreatCost: 3
+  moves:
+  - cost: [C, C]
+    name: Shell Trap
+    damage: '20'
+    text: During your opponent's next turn, if this Pokémon is damaged by an attack
+      (even if this Pokémon is Knocked Out), put 8 damage counters on the Attacking
+      Pokémon.
+  - cost: [R, R, C]
+    name: Bright Flame
+    damage: '160'
+    text: Discard 2 [R] Energy from this Pokémon.
+  - cost: [R]
+    name: Nitro Tank-GX
+    text: Attach 5 [R] Energy cards from your discard pile to your Pokémon in any
+      way you like. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: W
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV53
+  pioId: sma-SV53
+  enumId: ALOLAN_NINETALES_GX_SV53
+  name: Alolan Ninetales-GX
+  nationalPokedexNumber: 38
+  number: SV53
+  types: [W]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Alolan Vulpix
+  hp: 210
+  retreatCost: 1
+  moves:
+  - cost: [C, C]
+    name: Ice Blade
+    text: This attack does 50 damage to 1 of your opponent's Pokémon. (Don't apply
+      Weakness and Resistance for Benched Pokémon.)
+  - cost: [W, W, C]
+    name: Blizzard Edge
+    damage: '160'
+    text: Discard 2 Energy from this Pokémon.
+  - cost: [C, C]
+    name: Ice Path-GX
+    text: Move all damage counters from this Pokémon to your opponent's Active Pokémon.
+      (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: M
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV54
+  pioId: sma-SV54
+  enumId: ARTICUNO_GX_SV54
+  name: Articuno-GX
+  nationalPokedexNumber: 144
+  number: SV54
+  types: [W]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 170
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Legendary Ascent
+    text: When you play this Pokémon from your hand onto your Bench during your turn,
+      you may switch it with your Active Pokémon. If you do, move any number of [W]
+      Energy from your other Pokémon to this Pokémon.
+  moves:
+  - cost: [W, W, C]
+    name: Ice Wing
+    damage: '130'
+  - cost: [W]
+    name: Cold Crush-GX
+    text: Discard all Energy from both Active Pokémon. (You can't use more than 1
+      GX attack in a game.)
+  weaknesses:
+  - type: M
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV55
+  pioId: sma-SV55
+  enumId: GLACEON_GX_SV55
+  name: Glaceon-GX
+  nationalPokedexNumber: 471
+  number: SV55
+  types: [W]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Eevee
+  hp: 200
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Freezing Gaze
+    text: As long as this Pokémon is your Active Pokémon, your opponent's Pokémon-GX
+      and Pokémon-EX in play, in their hand, and in their discard pile have no Abilities,
+      except for Freezing Gaze.
+  moves:
+  - cost: [W, C, C]
+    name: Frost Bullet
+    damage: '90'
+    text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
+      apply Weakness and Resistance for Benched Pokémon.)
+  - cost: [W, C, C]
+    name: Polar Spear-GX
+    damage: 50x
+    text: This attack does 50 damage for each damage counter on your opponent's Active
+      Pokémon. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: M
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV56
+  pioId: sma-SV56
+  enumId: GRENINJA_GX_SV56
+  name: Greninja-GX
+  nationalPokedexNumber: 658
+  number: SV56
+  types: [W]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Frogadier
+  hp: 230
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Shuriken Flurry
+    text: When you play this Pokémon from your hand to evolve 1 of your Pokémon during
+      your turn, you may put 3 damage counters on 1 of your opponent's Pokémon.
+  moves:
+  - cost: [W, C, C]
+    name: Haze Slash
+    damage: '110'
+    text: You may shuffle this Pokémon and all cards attached to it into your deck.
+  - cost: [W, C, C]
+    name: Shadowy Hunter-GX
+    text: This attack does 130 damage to 1 of your opponent's Benched Pokémon. (Don't
+      apply Weakness and Resistance for Benched Pokémon.) (You can't use more than
+      1 GX attack in a game.)
+  weaknesses:
+  - type: G
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV57
+  pioId: sma-SV57
+  enumId: ELECTRODE_GX_SV57
+  name: Electrode-GX
+  nationalPokedexNumber: 101
+  number: SV57
+  types: [L]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Voltorb
+  hp: 190
+  retreatCost: 1
+  abilities:
+  - type: Ability
+    name: Extra Energy Bomb
+    text: Once during your turn (before your attack), you may attach 5 Energy cards
+      from your discard pile to your Pokémon, except Pokémon-GX or Pokémon-EX, in
+      any way you like. If you do, this Pokémon is Knocked Out.
+  moves:
+  - cost: [L, C]
+    name: Electro Ball
+    damage: '50'
+  - cost: [L, C]
+    name: Crush and Burn-GX
+    damage: 30+
+    text: Discard any amount of Energy from your Pokémon. This attack does 50 more
+      damage for each card you discarded in this way. (You can't use more than 1 GX
+      attack in a game.)
   weaknesses:
   - type: F
     value: x2
   resistances:
   - type: M
     value: '-20'
-  rarity: Rare Promo
-- id: 426-SM99
-  pioId: smp-SM99
-  enumId: MIMIKYU_SM99
-  name: Mimikyu
-  number: SM99
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV58
+  pioId: sma-SV58
+  enumId: XURKITREE_GX_SV58
+  name: Xurkitree-GX
+  nationalPokedexNumber: 796
+  number: SV58
+  types: [L]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 180
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Flashing Head
+    text: Prevent all damage done to this Pokémon by attacks from your opponent's
+      Pokémon that have any Special Energy attached to them.
+  moves:
+  - cost: [L, L, C]
+    name: Rumbling Wires
+    damage: '100'
+    text: Discard the top card of your opponent's deck.
+  - cost: [L]
+    name: Lighting-GX
+    text: Your opponent reveals their hand. Add a card you find there to their Prize
+      cards face down. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: F
+    value: x2
+  resistances:
+  - type: M
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV59
+  pioId: sma-SV59
+  enumId: MEWTWO_GX_SV59
+  name: Mewtwo-GX
+  nationalPokedexNumber: 150
+  number: SV59
   types: [P]
   superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 190
+  retreatCost: 2
+  moves:
+  - cost: [P]
+    name: Full Burst
+    damage: 30x
+    text: This attack does 30 damage times the amount of Energy attached to this Pokémon.
+  - cost: [P, C]
+    name: Super Absorption
+    damage: '60'
+    text: Heal 30 damage from this Pokémon.
+  - cost: [P, P, P]
+    name: Psystrike-GX
+    damage: '200'
+    text: This attack's damage isn't affected by any effects on your opponent's Active
+      Pokémon. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV6
+  pioId: sma-SV6
+  enumId: CHARMANDER_SV6
+  name: Charmander
+  nationalPokedexNumber: 4
+  number: SV6
+  types: [R]
+  superType: POKEMON
   subTypes: [BASIC]
+  evolvesTo: [Charmeleon]
+  hp: 70
+  retreatCost: 2
+  moves:
+  - cost: [R, C]
+    name: Fire Fang
+    damage: '20'
+    text: Your opponent's Active Pokémon is now Burned.
+  weaknesses:
+  - type: W
+    value: x2
+  rarity: Common
+  artist: kirisAki
+- id: 426-SV60
+  pioId: sma-SV60
+  enumId: ESPEON_GX_SV60
+  name: Espeon-GX
+  nationalPokedexNumber: 196
+  number: SV60
+  types: [P]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Eevee
+  hp: 200
+  retreatCost: 1
+  moves:
+  - cost: [P]
+    name: Psybeam
+    damage: '30'
+    text: Your opponent's Active Pokémon is now Confused.
+  - cost: [P, C, C]
+    name: Psychic
+    damage: 60+
+    text: This attack does 30 more damage times the amount of Energy attached to your
+      opponent's Active Pokémon.
+  - cost: [P, C, C]
+    name: Divide-GX
+    text: Put 10 damage counters on your opponent's Pokémon in any way you like. (You
+      can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV61
+  pioId: sma-SV61
+  enumId: BANETTE_GX_SV61
+  name: Banette-GX
+  nationalPokedexNumber: 354
+  number: SV61
+  types: [P]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Shuppet
+  hp: 190
+  retreatCost: 1
+  abilities:
+  - type: Ability
+    name: Shady Move
+    text: Once during your turn (before your attack), if this Pokémon is your Active
+      Pokémon, you may move 1 damage counter from 1 Pokémon to another Pokémon.
+  moves:
+  - cost: [P]
+    name: Shadow Chant
+    damage: 30+
+    text: This attack does 10 more damage for each Supporter card in your discard
+      pile. You can't add more than 100 damage in this way.
+  - cost: [P]
+    name: Tomb Hunt-GX
+    text: Put 3 cards from your discard pile into your hand. (You can't use more than
+      1 GX attack in a game.)
+  weaknesses:
+  - type: D
+    value: x2
+  resistances:
+  - type: F
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV62
+  pioId: sma-SV62
+  enumId: NIHILEGO_GX_SV62
+  name: Nihilego-GX
+  nationalPokedexNumber: 793
+  number: SV62
+  types: [P]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 180
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Empty Light
+    text: When you play this Pokémon from your hand onto your Bench during your turn,
+      you may leave both Active Pokémon Confused and Poisoned.
+  moves:
+  - cost: [P, P, P]
+    name: Lock Up
+    damage: '120'
+    text: The Defending Pokémon can't retreat during your opponent's next turn.
+  - cost: [P, P, P]
+    name: Symbiont-GX
+    text: Add the top 2 cards of your opponent's deck to their Prize cards. (You can't
+      use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV63
+  pioId: sma-SV63
+  enumId: NAGANADEL_GX_SV63
+  name: Naganadel-GX
+  nationalPokedexNumber: 804
+  number: SV63
+  types: [P]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Poipole
+  hp: 210
+  retreatCost: 1
+  moves:
+  - cost: [C]
+    name: Beast Raid
+    damage: 20x
+    text: This attack does 20 damage for each of your Ultra Beasts in play.
+  - cost: [P, C, C]
+    name: Jet Needle
+    damage: '110'
+    text: This attack's damage isn't affected by Weakness or Resistance.
+  - cost: [C, C, C]
+    name: Stinger-GX
+    text: Both players shuffle their Prize cards into their decks. Then, each player
+      puts the top 3 cards of their deck face down as their Prize cards. (You can't
+      use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV64
+  pioId: sma-SV64
+  enumId: LUCARIO_GX_SV64
+  name: Lucario-GX
+  nationalPokedexNumber: 448
+  number: SV64
+  types: [F]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Riolu
+  hp: 210
+  retreatCost: 2
+  moves:
+  - cost: [F]
+    name: Aura Strike
+    damage: 30+
+    text: If this Pokémon evolved from Riolu during this turn, this attack does 90
+      more damage.
+  - cost: [F, F, C]
+    name: Cyclone Kick
+    damage: '130'
+  - cost: [C, C]
+    name: Cantankerous Beatdown-GX
+    damage: 30x
+    text: This attack does 30 damage for each damage counter on this Pokémon. (You
+      can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV65
+  pioId: sma-SV65
+  enumId: ZYGARDE_GX_SV65
+  name: Zygarde-GX
+  nationalPokedexNumber: 718
+  number: SV65
+  types: [F]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 200
+  retreatCost: 3
+  moves:
+  - cost: [C, C]
+    name: Cell Connector
+    damage: '50'
+    text: Attach 2 [F] Energy cards from your discard pile to this Pokémon.
+  - cost: [F, F, C, C]
+    name: Land's Wrath
+    damage: '130'
+  - cost: [F, F, C, C]
+    name: Verdict-GX
+    damage: '150'
+    text: Prevent all damage done to this Pokémon by attacks from Pokémon-GX and Pokémon-EX
+      during your opponent's next turn. (You can't use more than 1 GX attack in a
+      game.)
+  weaknesses:
+  - type: G
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV66
+  pioId: sma-SV66
+  enumId: LYCANROC_GX_SV66
+  name: Lycanroc-GX
+  nationalPokedexNumber: 745
+  number: SV66
+  types: [F]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Rockruff
+  hp: 200
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Bloodthirsty Eyes
+    text: When you play this Pokémon from your hand to evolve 1 of your Pokémon during
+      your turn, you may switch 1 of your opponent's Benched Pokémon with their Active
+      Pokémon.
+  moves:
+  - cost: [F, C, C]
+    name: Claw Slash
+    damage: '110'
+  - cost: [F, C]
+    name: Dangerous Rogue-GX
+    damage: 50x
+    text: This attack does 50 damage for each of your opponent's Benched Pokémon.
+      (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: G
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV67
+  pioId: sma-SV67
+  enumId: LYCANROC_GX_SV67
+  name: Lycanroc-GX
+  nationalPokedexNumber: 745
+  number: SV67
+  types: [F]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Rockruff
+  hp: 200
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Twilight Eyes
+    text: When you play this Pokémon from your hand to evolve 1 of your Pokémon during
+      your turn, you may discard an Energy attached to your opponent's Active Pokémon.
+  moves:
+  - cost: [F, C, C]
+    name: Accelerock
+    damage: '120'
+  - cost: [F]
+    name: Splintered Shards-GX
+    damage: 30x
+    text: This attack does 30 damage for each Energy card in your opponent's discard
+      pile. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: G
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV68
+  pioId: sma-SV68
+  enumId: BUZZWOLE_GX_SV68
+  name: Buzzwole-GX
+  nationalPokedexNumber: 794
+  number: SV68
+  types: [F]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 190
+  retreatCost: 2
+  moves:
+  - cost: [F]
+    name: Jet Punch
+    damage: '30'
+    text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
+      apply Weakness and Resistance for Benched Pokémon.)
+  - cost: [F, F, F]
+    name: Knuckle Impact
+    damage: '160'
+    text: This Pokémon can't attack during your next turn.
+  - cost: [F, F, F]
+    name: Absorption-GX
+    damage: 40x
+    text: This attack does 40 damage for each of your remaining Prize cards. (You
+      can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV69
+  pioId: sma-SV69
+  enumId: UMBREON_GX_SV69
+  name: Umbreon-GX
+  nationalPokedexNumber: 197
+  number: SV69
+  types: [D]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Eevee
+  hp: 200
+  retreatCost: 2
+  moves:
+  - cost: [D]
+    name: Strafe
+    damage: '30'
+    text: You may switch this Pokémon with 1 of your Benched Pokémon.
+  - cost: [D, C, C]
+    name: Shadow Bullet
+    damage: '90'
+    text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
+      apply Weakness and Resistance for Benched Pokémon.)
+  - cost: [D, C]
+    name: Dark Call-GX
+    text: Discard 2 Energy from your opponent's Pokémon. (You can't use more than
+      1 GX attack in a game.)
+  weaknesses:
+  - type: F
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV7
+  pioId: sma-SV7
+  enumId: CHARMELEON_SV7
+  name: Charmeleon
+  nationalPokedexNumber: 5
+  number: SV7
+  types: [R]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE1]
+  evolvesFrom: Charmander
+  evolvesTo: [Charizard]
+  hp: 80
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Burning Fighter
+    text: When you play this Pokémon from your hand to evolve 1 of your Pokémon during
+      your turn, you may discard the top 5 cards of your deck. If any of those cards
+      are [R] Energy cards, attach them to this Pokémon.
+  moves:
+  - cost: [R, R, C]
+    name: Flamethrower
+    damage: '80'
+    text: Discard an Energy from this Pokémon.
+  weaknesses:
+  - type: W
+    value: x2
+  rarity: Common
+  artist: nagimiso
+- id: 426-SV70
+  pioId: sma-SV70
+  enumId: DARKRAI_GX_SV70
+  name: Darkrai-GX
+  nationalPokedexNumber: 491
+  number: SV70
+  types: [D]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 180
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Restoration
+    text: Once during your turn (before your attack), if this Pokémon is in your discard
+      pile, you may put it onto your Bench. Then, attach a [D] Energy card from your
+      discard pile to this Pokémon.
+  moves:
+  - cost: [D, D, C]
+    name: Dark Cleave
+    damage: '130'
+    text: This attack's damage isn't affected by Resistance.
+  - cost: [D, D, C]
+    name: Dead End-GX
+    text: If your opponent's Active Pokémon is affected by a Special Condition, that
+      Pokémon is Knocked Out. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: F
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV71
+  pioId: sma-SV71
+  enumId: GUZZLORD_GX_SV71
+  name: Guzzlord-GX
+  nationalPokedexNumber: 799
+  number: SV71
+  types: [D]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 210
+  retreatCost: 4
+  moves:
+  - cost: [D]
+    name: Eat Sloppily
+    text: Discard the top 5 cards of your deck. If any of those cards are Energy cards,
+      attach them to this Pokémon.
+  - cost: [D, D, D, C, C]
+    name: Tyrannical Hole
+    damage: '180'
+  - cost: [D, D, D, D, D]
+    name: Glutton-GX
+    damage: '100'
+    text: If your opponent's Pokémon is Knocked Out by damage from this attack, take
+      2 more Prize cards. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: F
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV72
+  pioId: sma-SV72
+  enumId: SCIZOR_GX_SV72
+  name: Scizor-GX
+  nationalPokedexNumber: 212
+  number: SV72
+  types: [M]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Scyther
+  hp: 210
+  retreatCost: 1
+  abilities:
+  - type: Ability
+    name: Danger Perception
+    text: If this Pokémon's remaining HP is 100 or less, its attacks do 80 more damage
+      to your opponent's Active Pokémon (before applying Weakness and Resistance).
+  moves:
+  - cost: [M, C]
+    name: Steel Wing
+    damage: '80'
+    text: During your opponent's next turn, this Pokémon takes 30 less damage from
+      attacks (after applying Weakness and Resistance).
+  - cost: [C, C, C]
+    name: Cross-Cut-GX
+    damage: 100+
+    text: If your opponent's Active Pokémon is an Evolution Pokémon, this attack does
+      100 more damage. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: R
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV73
+  pioId: sma-SV73
+  enumId: KARTANA_GX_SV73
+  name: Kartana-GX
+  nationalPokedexNumber: 798
+  number: SV73
+  types: [M]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 170
+  retreatCost: 1
+  abilities:
+  - type: Ability
+    name: Slice Off
+    text: When you play this Pokémon from your hand onto your Bench during your turn,
+      you may discard a Special Energy from 1 of your opponent's Pokémon.
+  moves:
+  - cost: [M, C, C]
+    name: Gale Blade
+    damage: '70'
+    text: You may shuffle this Pokémon and all cards attached to it into your deck.
+  - cost: [M]
+    name: Blade-GX
+    text: Take a Prize card. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: R
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV74
+  pioId: sma-SV74
+  enumId: STAKATAKA_GX_SV74
+  name: Stakataka-GX
+  nationalPokedexNumber: 805
+  number: SV74
+  types: [M]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 180
+  retreatCost: 3
+  abilities:
+  - type: Ability
+    name: Ultra Wall
+    text: Your Ultra Beasts take 10 less damage from your opponent's attacks (after
+      applying Weakness and Resistance).
+  moves:
+  - cost: [M, M, C]
+    name: Gigaton Stomp
+    damage: '120'
+  - cost: [M, M, C]
+    name: Assembly-GX
+    damage: 50+
+    text: This attack does 50 more damage for each Prize card you have taken. (You
+      can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: R
+    value: x2
+  resistances:
+  - type: P
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV75
+  pioId: sma-SV75
+  enumId: GARDEVOIR_GX_SV75
+  name: Gardevoir-GX
+  nationalPokedexNumber: 282
+  number: SV75
+  types: [Y]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Kirlia
+  hp: 230
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Secret Spring
+    text: Once during your turn (before your attack), you may attach a [Y] Energy
+      card from your hand to 1 of your Pokémon.
+  moves:
+  - cost: [Y]
+    name: Infinite Force
+    damage: 30x
+    text: This attack does 30 damage times the amount of Energy attached to both Active
+      Pokémon.
+  - cost: [Y]
+    name: Twilight-GX
+    text: Shuffle 10 cards from your discard pile into your deck. (You can't use more
+      than 1 GX attack in a game.)
+  weaknesses:
+  - type: M
+    value: x2
+  resistances:
+  - type: D
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV76
+  pioId: sma-SV76
+  enumId: SYLVEON_GX_SV76
+  name: Sylveon-GX
+  nationalPokedexNumber: 700
+  number: SV76
+  types: [Y]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Eevee
+  hp: 200
+  retreatCost: 2
+  moves:
+  - cost: [Y]
+    name: Magical Ribbon
+    text: Search your deck for up to 3 cards and put them into your hand. Then, shuffle
+      your deck.
+  - cost: [Y, C, C]
+    name: Fairy Wind
+    damage: '110'
+  - cost: [Y, C, C]
+    name: Plea-GX
+    text: Put 2 of your opponent's Benched Pokémon and all cards attached to them
+      into your opponent's hand. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: M
+    value: x2
+  resistances:
+  - type: D
+    value: '-20'
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV77
+  pioId: sma-SV77
+  enumId: ALTARIA_GX_SV77
+  name: Altaria-GX
+  nationalPokedexNumber: 334
+  number: SV77
+  types: [N]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Swablu
+  hp: 200
+  retreatCost: 1
+  moves:
+  - cost: [Y, C]
+    name: Bright Tone
+    damage: '50'
+    text: During your opponent's next turn, prevent all damage done to this Pokémon
+      by attacks from Pokémon-GX and Pokémon-EX.
+  - cost: [W, Y, C]
+    name: Sonic Edge
+    damage: '110'
+    text: This attack's damage isn't affected by any effects on your opponent's Active
+      Pokémon.
+  - cost: [Y, C]
+    name: Euphoria-GX
+    text: Your opponent's Active Pokémon is now Asleep. Heal all damage from all of
+      your Pokémon. (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: Y
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV78
+  pioId: sma-SV78
+  enumId: NOIVERN_GX_SV78
+  name: Noivern-GX
+  nationalPokedexNumber: 715
+  number: SV78
+  types: [N]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: Noibat
+  hp: 200
+  moves:
+  - cost: [D, C]
+    name: Distort
+    damage: '50'
+    text: Your opponent can't play any Item cards from their hand during their next
+      turn.
+  - cost: [P, D, C]
+    name: Sonic Volume
+    damage: '120'
+    text: Your opponent can't play any Special Energy cards from their hand during
+      their next turn.
+  - cost: [P, D, C]
+    name: Boomburst-GX
+    text: This attack does 50 damage to each of your opponent's Pokémon. (Don't apply
+      Weakness and Resistance for Benched Pokémon.) (You can't use more than 1 GX
+      attack in a game.)
+  weaknesses:
+  - type: Y
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV79
+  pioId: sma-SV79
+  enumId: SILVALLY_GX_SV79
+  name: Silvally-GX
+  nationalPokedexNumber: 773
+  number: SV79
+  types: [C]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  evolvesFrom: 'Type: Null'
+  hp: 210
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Gyro Unit
+    text: Your Basic Pokémon in play have no Retreat Cost.
+  moves:
+  - cost: [C, C, C]
+    name: Turbo Drive
+    damage: '120'
+    text: Attach a basic Energy card from your discard pile to 1 of your Benched Pokémon.
+  - cost: [C, C, C]
+    name: Rebel-GX
+    damage: 50x
+    text: This attack does 50 damage for each of your opponent's Benched Pokémon.
+      (You can't use more than 1 GX attack in a game.)
+  weaknesses:
+  - type: F
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV8
+  pioId: sma-SV8
+  enumId: ALOLAN_VULPIX_SV8
+  name: Alolan Vulpix
+  nationalPokedexNumber: 37
+  number: SV8
+  types: [W]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Ninetales]
+  hp: 60
+  retreatCost: 1
+  moves:
+  - cost: []
+    name: Beacon
+    text: Search your deck for up to 2 Pokémon, reveal them, and put them into your
+      hand. Then, shuffle your deck.
+  - cost: [C, C]
+    name: Icy Snow
+    damage: '20'
+  weaknesses:
+  - type: M
+    value: x2
+  rarity: Common
+  artist: Kouki Saitou
+- id: 426-SV80
+  pioId: sma-SV80
+  enumId: DRAMPA_GX_SV80
+  name: Drampa-GX
+  nationalPokedexNumber: 780
+  number: SV80
+  types: [C]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 180
+  retreatCost: 2
+  moves:
+  - cost: [C]
+    name: Righteous Edge
+    damage: '20'
+    text: Discard a Special Energy from your opponent's Active Pokémon.
+  - cost: [C, C, C]
+    name: Berserk
+    damage: 80+
+    text: If your Benched Pokémon have any damage counters on them, this attack does
+      70 more damage.
+  - cost: [C]
+    name: Big Wheel-GX
+    text: Shuffle your hand into your deck. Then, draw 10 cards. (You can't use more
+      than 1 GX attack in a game.)
+  weaknesses:
+  - type: F
+    value: x2
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV81
+  pioId: sma-SV81
+  enumId: AETHER_FOUNDATION_EMPLOYEE_SV81
+  name: Aether Foundation Employee
+  number: SV81
+  superType: TRAINER
+  subTypes: [SUPPORTER]
+  rarity: Common
+  text: [Put 3 Pokémon that have "Alolan" in their names from your discard pile into
+      your hand.]
+  artist: take
+- id: 426-SV82
+  pioId: sma-SV82
+  enumId: CYNTHIA_SV82
+  name: Cynthia
+  number: SV82
+  superType: TRAINER
+  subTypes: [SUPPORTER]
+  rarity: Common
+  text: ['Shuffle your hand into your deck. Then, draw 6 cards.']
+  artist: Yusuke Ohmura
+- id: 426-SV83
+  pioId: sma-SV83
+  enumId: FISHERMAN_SV83
+  name: Fisherman
+  number: SV83
+  superType: TRAINER
+  subTypes: [SUPPORTER]
+  rarity: Common
+  text: [Put 4 basic Energy cards from your discard pile into your hand.]
+  artist: Masakazu Fukuda
+- id: 426-SV84
+  pioId: sma-SV84
+  enumId: GUZMA_SV84
+  name: Guzma
+  number: SV84
+  superType: TRAINER
+  subTypes: [SUPPORTER]
+  rarity: Common
+  text: ['Switch 1 of your opponent''s Benched Pokémon with their Active Pokémon.
+      If you do, switch your Active Pokémon with 1 of your Benched Pokémon.']
+  artist: Hitoshi Ariga
+- id: 426-SV85
+  pioId: sma-SV85
+  enumId: HIKER_SV85
+  name: Hiker
+  number: SV85
+  superType: TRAINER
+  subTypes: [SUPPORTER]
+  rarity: Common
+  text: ['Look at the top 5 cards of either player''s deck and choose 1 of them. That
+      player shuffles the other cards back into their deck. Then, put the card you
+      chose on top of that deck.']
+  artist: Naoki Saito
+- id: 426-SV86
+  pioId: sma-SV86
+  enumId: LADY_SV86
+  name: Lady
+  number: SV86
+  superType: TRAINER
+  subTypes: [SUPPORTER]
+  rarity: Common
+  text: ['Search your deck for up to 4 basic Energy cards, reveal them, and put them
+      into your hand. Then, shuffle your deck.']
+  artist: Kanako Eo
+- id: 426-SV87
+  pioId: sma-SV87
+  enumId: AETHER_PARADISE_CONSERVATION_AREA_SV87
+  name: Aether Paradise Conservation Area
+  number: SV87
+  superType: TRAINER
+  subTypes: [STADIUM]
+  rarity: Common
+  text: ['Basic [G] Pokémon and Basic [L] Pokémon (both yours and your opponent''s)
+      take 30 less damage from the opponent''s attacks (after applying Weakness and
+      Resistance).']
+  artist: 5ban Graphics
+- id: 426-SV88
+  pioId: sma-SV88
+  enumId: BROOKLET_HILL_SV88
+  name: Brooklet Hill
+  number: SV88
+  superType: TRAINER
+  subTypes: [STADIUM]
+  rarity: Common
+  text: ['Once during each player''s turn, that player may search their deck for a
+      Basic [W] Pokémon or Basic [F] Pokémon, put it onto their Bench, and shuffle
+      their deck.']
+  artist: 5ban Graphics
+- id: 426-SV89
+  pioId: sma-SV89
+  enumId: MT_CORONET_SV89
+  name: Mt. Coronet
+  number: SV89
+  superType: TRAINER
+  subTypes: [STADIUM]
+  rarity: Common
+  text: ['Once during each player''s turn, that player may put 2 [M] Energy cards
+      from their discard pile into their hand.']
+  artist: 5ban Graphics
+- id: 426-SV9
+  pioId: sma-SV9
+  enumId: WOOPER_SV9
+  name: Wooper
+  nationalPokedexNumber: 194
+  number: SV9
+  types: [W]
+  superType: POKEMON
+  subTypes: [BASIC]
+  evolvesTo: [Quagsire]
   hp: 70
   retreatCost: 1
   moves:
   - cost: [C]
-    name: Filch
-    text: Draw 2 cards.
-  - cost: [P, C]
-    name: Copycat
-    text: If your opponent's Pokémon used an attack that isn't a GX attack during
-      their last turn, use it as this attack.
-  rarity: Rare Promo
+    name: Ram
+    damage: '10'
+  - cost: [W, C]
+    name: Rain Splash
+    damage: '20'
+  weaknesses:
+  - type: G
+    value: x2
+  rarity: Common
+  artist: Misa Tsutsui
+- id: 426-SV90
+  pioId: sma-SV90
+  enumId: SHRINE_OF_PUNISHMENT_SV90
+  name: Shrine of Punishment
+  number: SV90
+  superType: TRAINER
+  subTypes: [STADIUM]
+  rarity: Common
+  text: ['Between turns, put 1 damage counter on each Pokémon-GX and Pokémon-EX (both
+      yours and your opponent''s).']
+  artist: 5ban Graphics
+- id: 426-SV91
+  pioId: sma-SV91
+  enumId: TAPU_BULU_GX_SV91
+  name: Tapu Bulu-GX
+  number: SV91
+  types: [G]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 180
+  retreatCost: 3
+  moves:
+  - cost: [G]
+    name: Horn Attack
+    damage: '30'
+  - cost: [G, G, C]
+    name: Nature's Judgment
+    damage: 120+
+    text: You may discard all Energy from this Pokémon. If you do, this attack does
+      60 more damage.
+  - cost: [G, G, C]
+    name: Tapu Wilderness-GX
+    damage: '150'
+    text: Heal all damage from this Pokémon. (You can't use more than 1 GX attack
+      in a game.)
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV92
+  pioId: sma-SV92
+  enumId: TAPU_FINI_GX_SV92
+  name: Tapu Fini-GX
+  number: SV92
+  types: [W]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 170
+  retreatCost: 1
+  moves:
+  - cost: [C]
+    name: Aqua Ring
+    damage: '20'
+    text: You may switch this Pokémon with 1 of your Benched Pokémon.
+  - cost: [W, W, C]
+    name: Hydro Shot
+    text: Discard 2 [W] Energy from this Pokémon. This attack does 120 damage to 1
+      of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched
+      Pokémon.)
+  - cost: [W]
+    name: Tapu Storm-GX
+    text: Shuffle your opponent's Active Pokémon and all cards attached to it into
+      their deck. If your opponent has no Benched Pokémon, this attack does nothing.
+      (You can't use more than 1 GX attack in a game.)
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV93
+  pioId: sma-SV93
+  enumId: TAPU_KOKO_GX_SV93
+  name: Tapu Koko-GX
+  number: SV93
+  types: [L]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 170
+  retreatCost: 2
+  abilities:
+  - type: Ability
+    name: Aero Trail
+    text: When you play this Pokémon from your hand onto your Bench during your turn,
+      you may move any number of [L] Energy from your other Pokémon to this Pokémon.
+      If you do, switch this Pokémon with your Active Pokémon.
+  moves:
+  - cost: [L, L, C]
+    name: Sky-High Claws
+    damage: '130'
+  - cost: [L, L, C]
+    name: Tapu Thunder-GX
+    damage: 50x
+    text: This attack does 50 damage times the amount of Energy attached to all of
+      your opponent's Pokémon. (You can't use more than 1 GX attack in a game.)
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
+- id: 426-SV94
+  pioId: sma-SV94
+  enumId: TAPU_LELE_GX_SV94
+  name: Tapu Lele-GX
+  number: SV94
+  types: [P]
+  superType: POKEMON
+  subTypes: [BASIC, POKEMON_GX]
+  hp: 170
+  retreatCost: 1
+  abilities:
+  - type: Ability
+    name: Wonder Tag
+    text: When you play this Pokémon from your hand onto your Bench during your turn,
+      you may search your deck for a Supporter card, reveal it, and put it into your
+      hand. Then, shuffle your deck.
+  moves:
+  - cost: [C, C]
+    name: Energy Drive
+    damage: 20x
+    text: This attack does 20 damage times the amount of Energy attached to both Active
+      Pokémon. This damage isn't affected by Weakness or Resistance.
+  - cost: [P]
+    name: Tapu Cure-GX
+    text: Heal all damage from 2 of your Benched Pokémon. (You can't use more than
+      1 GX attack in a game.)
+  rarity: Common
+  text: ['When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards.']
+  artist: 5ban Graphics
