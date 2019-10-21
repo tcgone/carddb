@@ -4,7 +4,6 @@ import org.apache.commons.lang3.text.WordUtils;
 
 import java.io.Serializable;
 import java.util.Comparator;
-import java.util.Locale;
 
 /**
  * Experimental
@@ -40,7 +39,7 @@ public enum CardType {
 	TAG_TEAM(93),
 	ULTRA_BEAST(94),
 	PRISM_STAR(95),
-	POKEMON_GX(96),
+	POKEMON_GX(96, "Pokémon-GX"),
 	POKEMON_PRIME(97),
 	POKEMON_STAR(98),
 	POKEMON_EX(99, "Pokémon-EX"), //UPPERCASE
@@ -55,41 +54,40 @@ public enum CardType {
 	TEAM_PLASMA(108),
 	ACE_SPEC(109),
 	HAS_ANCIENT_TRAIT(110),
-	
+
 	NOT_IMPLEMENTED(201),
 
 	;
 
-	private String label;
-	private int priority;
+	private final int priority;
+	private final String label;
 
 	CardType(int priority) {
-		this.priority = priority;
+		this(priority, null);
 	}
-	
+
 	CardType(int priority, String label) {
 		this.priority = priority;
-		this.label = label;
+		if (label != null) {
+			this.label = label;
+		} else {
+			this.label = WordUtils.capitalizeFully(name().replace("_", " ")).replace("Pokemon", "Pokémon");
+		}
 	}
 
 	public int getPriority() {
 		return priority;
 	}
 
-	@Override
-	public String toString() {
-		if(label!=null) return label;
-		else return WordUtils.capitalizeFully(this.name().toLowerCase(Locale.ENGLISH), "_".toCharArray()).replaceAll("_", " ");
+	public String getLabel() {
+		return label;
 	}
-	
-	public static class CardTypeComparator implements Comparator<CardType>, Serializable {
 
+	public static class CardTypeComparator implements Comparator<CardType>, Serializable {
 		@Override
 		public int compare(CardType o1, CardType o2) {
-			Integer i1 = o1.getPriority(), i2 = o2.getPriority();
-			return i1.compareTo(i2);
+			return Integer.compare(o1.priority, o2.priority);
 		}
-
 	}
 
 }

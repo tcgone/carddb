@@ -14,21 +14,21 @@ import java.util.Locale;
  */
 public enum Color {
 
-	COLORLESS("C"),
-	FIRE("R"),
 	GRASS("G"),
+	FIRE("R"),
 	WATER("W"),
 	LIGHTNING("L"),
-	FIGHTING("F"),
 	PSYCHIC("P"),
+	FIGHTING("F"),
 	DARKNESS("D"),
 	METAL("M"),
 	FAIRY("Y"),
+	DRAGON("N"),
+	COLORLESS("C"),
 
-	RAINBOW(),
-	MAGMA(),
-	AQUA(),
-	DRAGON();
+	RAINBOW,
+	MAGMA,
+	AQUA;
 
 	private String notation;
 
@@ -50,7 +50,7 @@ public enum Color {
 	}
 
 	@JsonCreator
-	public static Color from(String notation){
+	public static Color of(String notation){
 		if(notation == null) return null;
  		notation = notation.toUpperCase(Locale.ENGLISH);
 		for (Color type : values()) {
@@ -59,13 +59,9 @@ public enum Color {
 		}
 		return null;
 	}
-	
-	public static List<Color> valuesForBasicEnergy(){
-		return Arrays.asList(COLORLESS, FIRE, GRASS, WATER, LIGHTNING, FIGHTING, PSYCHIC, DARKNESS, METAL, FAIRY);
-	}
 
 	public static List<Color> valuesForPokemon(){
-		return Arrays.asList(COLORLESS, FIRE, GRASS, WATER, LIGHTNING, FIGHTING, PSYCHIC, DARKNESS, METAL, FAIRY, DRAGON);
+		return Arrays.asList(GRASS, FIRE, WATER, LIGHTNING, PSYCHIC, FIGHTING, DARKNESS, METAL, FAIRY, DRAGON, COLORLESS);
 	}
 
 }

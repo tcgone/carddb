@@ -16,12 +16,14 @@ limitations under the License.
 package net.tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import net.tcgone.carddb.model.experimental.Rarity;
 import net.tcgone.carddb.model.experimental.Variant;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Objects;
 
@@ -69,7 +71,9 @@ public class Card {
 	 */
 	public String imageUrlHiRes;
 	/**
-	 * Array of types: ["R"]
+	 * Array of types (i.e. colors): ["R"]
+	 * Logically it makes more sense to name this field 'colors', but precisely speaking, it's used as 'type' everywhere else.
+	 * https://bulbapedia.bulbagarden.net/wiki/Type_(TCG)
 	 */
 	public List<String> types;
 	/**
@@ -148,8 +152,8 @@ public class Card {
 	/**
 	 * Rare Holo
 	 */
-	@NotBlank
-	public String rarity;
+	@NotNull
+	public Rarity rarity;
 	/**
 	 * Epic
 	 */

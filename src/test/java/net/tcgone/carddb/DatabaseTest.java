@@ -23,6 +23,7 @@ import com.google.common.collect.ImmutableSet;
 import net.tcgone.carddb.model.Card;
 import net.tcgone.carddb.model.Format;
 import net.tcgone.carddb.model.SetFile;
+import net.tcgone.carddb.model.experimental.Rarity;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,10 +35,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
@@ -64,6 +62,7 @@ public class DatabaseTest {
 			validateSetFile(setFile);
 			log.info("Validated {}", setFile.set.name);
 		}
+		log.info("allRarities: {}", allRarities);
 	}
 
 	private void validateAndAssert(String context, Object o){
@@ -105,11 +104,13 @@ public class DatabaseTest {
 			.put("Trainer", ImmutableSet.of("Basic", "Supporter", "Stadium", "Item", "Pokémon Tool", "Technical Machine", "Flare", "Ace Spec", "Fossil"))
 			.put("Energy", ImmutableSet.of("Basic", "Special")).build();
 
+	private Set<Rarity> allRarities = new HashSet<>();
 	private void validateCard(Card card, SetFile setFile){
 		if(card == null){
 			throw new IllegalArgumentException("card null in: "+setFile.filename);
 			// TODO
 		}
+		allRarities.add(card.rarity);
 		// check super type
 //        card.superType = WordUtils.capitalizeFully(card.superType);
 //        if(card.superType.equals("Pokemon")){
