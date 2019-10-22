@@ -242,7 +242,7 @@ public class Card {
 	/**
 	 * Legal format seoNames (generated at runtime)
 	 */
-	public List<String> formats;
+	public transient List<String> formats;
 
 	/**
 	 * Contains derived full plain format text
@@ -255,6 +255,7 @@ public class Card {
 	public String seoTitle;
 
 	// public String stage;
+
 
 	public String toString() {
 		return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
