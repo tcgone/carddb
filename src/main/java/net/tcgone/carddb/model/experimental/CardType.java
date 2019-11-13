@@ -1,6 +1,6 @@
 package net.tcgone.carddb.model.experimental;
 
-import org.apache.commons.lang3.text.WordUtils;
+import org.apache.commons.text.WordUtils;
 
 import java.io.Serializable;
 import java.util.Comparator;
@@ -88,6 +88,10 @@ public enum CardType {
 		public int compare(CardType o1, CardType o2) {
 			return Integer.compare(o1.priority, o2.priority);
 		}
+	}
+
+	public boolean isSuperType() {
+		return this == POKEMON || this == TRAINER || this == ENERGY;
 	}
 
 }
