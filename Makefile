@@ -1,3 +1,5 @@
+default: release
+
 ######################### DEFINITIONS ############################
 
 NAME=carddb
@@ -42,7 +44,7 @@ version-next: git-check
 	git commit -m"[release] prepare for $(NAME)-${NEXT_VERSION_SNP}"
 
 git-tag-release: git-check
-	git tag "$(NAME)-${RELEASE_VERSION_NSNP}"
+	git tag "${RELEASE_VERSION_NSNP}"
 
 git-check:
 ifeq ($(GIT_TREE_STATE),dirty)
@@ -53,3 +55,4 @@ deploy:
 	mvn deploy
 
 release: git-check version-release git-tag-release package deploy version-next
+
