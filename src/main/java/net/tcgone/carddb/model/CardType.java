@@ -1,4 +1,4 @@
-package net.tcgone.carddb.model.experimental;
+package net.tcgone.carddb.model;
 
 import org.apache.commons.text.WordUtils;
 
@@ -25,6 +25,8 @@ public enum CardType {
 	RESTORED(4),
 	BASIC(7),
 	BABY(8),
+	LEGEND(9),
+
 	BASIC_ENERGY(18),
 	SPECIAL_ENERGY(19),
 	ITEM(23),
@@ -35,7 +37,6 @@ public enum CardType {
 	FLARE(28),
 	ROCKETS_SECRET_MACHINE(29),
 
-	LEGEND(92),
 	TAG_TEAM(93),
 	ULTRA_BEAST(94),
 	PRISM_STAR(95),

@@ -23,7 +23,7 @@ import com.google.common.collect.ImmutableSet;
 import net.tcgone.carddb.model.Card;
 import net.tcgone.carddb.model.Format;
 import net.tcgone.carddb.model.SetFile;
-import net.tcgone.carddb.model.experimental.Rarity;
+import net.tcgone.carddb.model.Rarity;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

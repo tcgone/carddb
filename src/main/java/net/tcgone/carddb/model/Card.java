@@ -16,7 +16,6 @@ limitations under the License.
 package net.tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import net.tcgone.carddb.model.experimental.Rarity;
 import net.tcgone.carddb.model.experimental.Variant;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -80,15 +79,11 @@ public class Card {
 	 * Either Pokémon, Trainer or Energy
 	 */
 	@NotBlank
-	public String superType;
+	public CardType superType;
 	/**
 	 * Stage 2
 	 */
-	public List<String> subTypes;
-	/**
-	 * Has additional types like OWNERS_POKEMON, TEAM_PLASMA, etc. []
-	 */
-	public List<String> cardFlags;
+	public List<CardType> subTypes;
 	/**
 	 * Charmeleon
 	 */
@@ -157,7 +152,7 @@ public class Card {
 	/**
 	 * Epic
 	 */
-	public String careerClass;
+	public CareerRarity careerRarity;
 	/**
 	 * Trainer/Energy text/Pokemon ruling text. Each entry is a line.
 	 */
