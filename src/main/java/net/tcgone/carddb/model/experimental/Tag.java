@@ -9,5 +9,9 @@ public enum Tag {
     QUICKPLAY,
     ENABLED,
     DISABLED,
-    THEME
+    THEME,
+    DRAFT,
+    PUBLIC,
+    PRIVATE,
+    TOURNAMENT
 }
