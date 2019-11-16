@@ -24,35 +24,35 @@ import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 public class Set {
-    @NotBlank
-    public String id;
-    @NotBlank
-    public String name;
-    public String pioId;
-    public String seoName;
-    @NotBlank
-    public String enumId;
-    @NotBlank
-    public String abbr;
-    // respective to all sets
-    public Integer order;
-    public List<String> categories;
-    public Integer officialCount;
-    public String imageUrl;
-    public String symbolUrl;
+  @NotBlank
+  public String id;
+  @NotBlank
+  public String name;
+  public String pioId;
+  public String seoName;
+  @NotBlank
+  public String enumId;
+  @NotBlank
+  public String abbr;
+  // respective to all sets
+  public Integer order;
+  public List<String> categories;
+  public Integer officialCount;
+  public String imageUrl;
+  public String symbolUrl;
 
-    /**
-     * all cards of this set, populated at runtime
-     */
-    @JsonIgnore
-    public transient List<Card> _cards;
-    /**
-     * all formats that this set is allowed in, including partial sets, populated at runtime
-     */
-    @JsonIgnore
-    public transient List<Format> _formats;
-    
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
+  /**
+   * all cards of this set, populated at runtime
+   */
+  @JsonIgnore
+  public transient List<Card> _cards;
+  /**
+   * all formats that this set is allowed in, including partial sets, populated at runtime
+   */
+  @JsonIgnore
+  public transient List<Format> _formats;
+
+  public String toString() {
+    return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
+  }
 }

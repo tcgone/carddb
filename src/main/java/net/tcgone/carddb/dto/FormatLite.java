@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FormatLite {
-	private String id;
-	private String name;
-	private String description;
+  private String id;
+  private String name;
+  private String description;
 }

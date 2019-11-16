@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CardLite {
-	private String id;
-	private String name;
-	private String imageUrl;
-	private Integer quantity; //for inventory & deck
+  private String id;
+  private String name;
+  private String imageUrl;
+  private Integer quantity; //for inventory & deck
 }

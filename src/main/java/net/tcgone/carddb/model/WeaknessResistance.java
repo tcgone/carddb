@@ -28,26 +28,26 @@ import java.util.Objects;
  */
 @Valid
 public class WeaknessResistance {
-	@NotBlank
-	public String type;
-	@NotBlank
-	public String value;
+  @NotBlank
+  public String type;
+  @NotBlank
+  public String value;
 
-	public String toString() {
-		return ReflectionToStringBuilder.toString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
-	}
+  public String toString() {
+    return ReflectionToStringBuilder.toString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+  }
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		WeaknessResistance that = (WeaknessResistance) o;
-		return Objects.equals(type, that.type) &&
-				Objects.equals(value, that.value);
-	}
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    WeaknessResistance that = (WeaknessResistance) o;
+    return Objects.equals(type, that.type) &&
+      Objects.equals(value, that.value);
+  }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(type, value);
-	}
+  @Override
+  public int hashCode() {
+    return Objects.hash(type, value);
+  }
 }

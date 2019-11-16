@@ -32,7 +32,7 @@ public class Deck {
   private List<Tag> tags = new ArrayList<>(); // theme, public, private, draft, career, list
   private List<Type> types = new ArrayList<>(); // fire, grass, psychic
   private List<String> validFormats = new ArrayList<>(); // all valid formats that this can be played in
-//  private List<String> tiers; // tournament, tier1, tier2, tier3, experimental, other, fun
+  //  private List<String> tiers; // tournament, tier1, tier2, tier3, experimental, other, fun
 //  private List<String> variants; // unholy paladin, haymaker
   private Date lastUpdated;
   private int timesUsed;

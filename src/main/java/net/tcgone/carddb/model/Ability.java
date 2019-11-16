@@ -22,29 +22,29 @@ import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 public class Ability {
-	@NotBlank
-	public String type;
-	@NotBlank
-	public String name;
-	@NotBlank
-	public String text;
+  @NotBlank
+  public String type;
+  @NotBlank
+  public String name;
+  @NotBlank
+  public String text;
 
-	public String toString() {
-		return ReflectionToStringBuilder.toString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
-	}
+  public String toString() {
+    return ReflectionToStringBuilder.toString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+  }
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		Ability ability = (Ability) o;
-		return Objects.equals(type, ability.type) &&
-				Objects.equals(name, ability.name) &&
-				Objects.equals(text, ability.text);
-	}
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Ability ability = (Ability) o;
+    return Objects.equals(type, ability.type) &&
+      Objects.equals(name, ability.name) &&
+      Objects.equals(text, ability.text);
+  }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(type, name, text);
-	}
+  @Override
+  public int hashCode() {
+    return Objects.hash(type, name, text);
+  }
 }

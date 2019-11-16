@@ -7,13 +7,13 @@ package net.tcgone.carddb.model.experimental;
  * @since 09.09.2019
  */
 public enum Stage {
-    BASIC,
-    STAGE1,
-    STAGE2,
-    MEGA,
-    LEVELUP,
-    BREAK,
-    BABY,
-    LEGEND,
-    RESTORED
+  BASIC,
+  STAGE1,
+  STAGE2,
+  MEGA,
+  LEVELUP,
+  BREAK,
+  BABY,
+  LEGEND,
+  RESTORED
 }

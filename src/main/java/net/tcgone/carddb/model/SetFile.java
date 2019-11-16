@@ -23,15 +23,15 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class SetFile {
-    public String filename;
-    @NotNull
-    @Valid
-    public Set set;
-    @Valid
-    public List<Card> cards;
+  public String filename;
+  @NotNull
+  @Valid
+  public Set set;
+  @Valid
+  public List<Card> cards;
 
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
+  public String toString() {
+    return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
+  }
 
 }

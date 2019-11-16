@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SetLite {
-	private String id;
-	private String name;
-	private String abbr;
+  private String id;
+  private String name;
+  private String abbr;
 }

@@ -77,18 +77,20 @@ public class Importer {
     String message = violations.stream()
       .map(cv -> String.format("%s %s %s", context, cv.getPropertyPath().toString(), cv.getMessage()))
       .collect(Collectors.joining(","));
-    if(!violations.isEmpty()) {
+    if (!violations.isEmpty()) {
       throw new ImportException(message);
     }
   }
 
   protected void validateCard(String context, Card card) throws ImportException {
-    if(!card.superType.isSuperType()) {
+    if (!card.superType.isSuperType()) {
       throw new ImportException(String.format("Illegal superType %s in %s", card.superType, context));
     }
-    if(card.superType==CardType.POKEMON) {
-      if(card.hp==null && !card.subTypes.contains(CardType.LEGEND)) throw new ImportException(String.format("Missing HP in %s", context));
-      if(card.retreatCost==null && !card.subTypes.contains(CardType.LEGEND)) throw new ImportException(String.format("Missing retreatCost in %s", context));
+    if (card.superType == CardType.POKEMON) {
+      if (card.hp == null && !card.subTypes.contains(CardType.LEGEND))
+        throw new ImportException(String.format("Missing HP in %s", context));
+      if (card.retreatCost == null && !card.subTypes.contains(CardType.LEGEND))
+        throw new ImportException(String.format("Missing retreatCost in %s", context));
     }
     // TODO
     // check sub types
@@ -195,7 +197,7 @@ public class Importer {
       }
 
       for (Card card : set._cards) {
-        validateCard(setFile.filename+"/"+card.id, card);
+        validateCard(setFile.filename + "/" + card.id, card);
         card.set = set;
         card.fullName = String.format("%s (%s %s)", card.name, card.set.abbr.toUpperCase(Locale.ENGLISH), card.number);
         String paddedNumber;
@@ -266,33 +268,33 @@ public class Importer {
     Multiset<String> pokemonNames = HashMultiset.create();
 
     for (Card card : allCards) {
-      if(StringUtils.isNotEmpty(card.evolvesFrom)) {
+      if (StringUtils.isNotEmpty(card.evolvesFrom)) {
         addToChain(card.evolvesFrom, card.name);
       }
-      if(card.superType== CardType.POKEMON||card.subTypes.contains(CardType.FOSSIL)){
+      if (card.superType == CardType.POKEMON || card.subTypes.contains(CardType.FOSSIL)) {
         pokemonNames.add(card.name);
       }
     }
 
     List<String> errors = new ArrayList<>();
     for (Card card : allCards) {
-      if(StringUtils.isNotEmpty(card.evolvesFrom)) {
-        if(!pokemonNames.contains(card.evolvesFrom)) {
+      if (StringUtils.isNotEmpty(card.evolvesFrom)) {
+        if (!pokemonNames.contains(card.evolvesFrom)) {
           errors.add(String.format("Cannot find card %s referenced via evolvesFrom in %s %s", card.evolvesFrom, card.id, card.set.name));
         }
       }
     }
 
     for (Map.Entry<String, Collection<String>> entry : chains.asMap().entrySet()) {
-      if(entry.getValue().size()>=2){
+      if (entry.getValue().size() >= 2) {
         String msg = String.format("Multi mappings have been found. %s:%s", entry.getKey(), entry.getValue());
         log.warn(msg);
-        if(!entry.getValue().toString().contains("Fossil")){
+        if (!entry.getValue().toString().contains("Fossil")) {
           errors.add(msg);
         }
       }
     }
-    if(!errors.isEmpty())
+    if (!errors.isEmpty())
       throw new ImportException(String.join("\n", errors));
   }
 

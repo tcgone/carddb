@@ -12,9 +12,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SearchResults {
-	private List<CardLite> data;
-	private Integer totalPages;
-	private Integer totalElements;
-	private Long responseTimeMillis;
-	private String errorMessage;
+  private List<CardLite> data;
+  private Integer totalPages;
+  private Integer totalElements;
+  private Long responseTimeMillis;
+  private String errorMessage;
 }
