@@ -2,7 +2,7 @@ package net.tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import net.tcgone.carddb.model.experimental.Color;
+import net.tcgone.carddb.model.experimental.Type;
 import net.tcgone.carddb.model.experimental.Tag;
 
 import javax.validation.constraints.NotBlank;
@@ -33,7 +33,7 @@ public class Deck {
     private Map<String, Integer> contents; // contents with new id
     private Date lastUpdated;
     private List<Tag> tags = new ArrayList<>(); // theme, public, private, draft, career, list
-    private List<Color> colors = new ArrayList<>(); // fire, grass, psychic
+    private List<Type> types = new ArrayList<>(); // fire, grass, psychic
     private List<String> tiers; // tournament, tier1, tier2, tier3, experimental, other, fun
     private List<String> variants; // unholy paladin, haymaker
     private List<String> formats = new ArrayList<>(); // all valid formats that this can be played in

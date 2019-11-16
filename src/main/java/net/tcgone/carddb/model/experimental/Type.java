@@ -12,7 +12,7 @@ import java.util.Locale;
  *
  * @author axpendix@hotmail.com
  */
-public enum Color {
+public enum Type {
 
 	GRASS("G"),
 	FIRE("R"),
@@ -32,11 +32,11 @@ public enum Color {
 
 	private String notation;
 
-	Color(String notation) {
+	Type(String notation) {
 		this.notation = notation;
 	}
 
-	Color() {
+	Type() {
 		this.notation = name();
 	}
 
@@ -50,17 +50,17 @@ public enum Color {
 	}
 
 	@JsonCreator
-	public static Color of(String notation){
+	public static Type of(String notation){
 		if(notation == null) return null;
  		notation = notation.toUpperCase(Locale.ENGLISH);
-		for (Color type : values()) {
+		for (Type type : values()) {
 			if(notation.equals(type.notation) || notation.equals(type.name()))
 				return type;
 		}
 		return null;
 	}
 
-	public static List<Color> valuesForPokemon(){
+	public static List<Type> valuesForPokemon(){
 		return Arrays.asList(GRASS, FIRE, WATER, LIGHTNING, PSYCHIC, FIGHTING, DARKNESS, METAL, FAIRY, DRAGON, COLORLESS);
 	}
 
