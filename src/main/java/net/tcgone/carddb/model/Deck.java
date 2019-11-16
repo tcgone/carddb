@@ -2,11 +2,11 @@ package net.tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import net.tcgone.carddb.model.experimental.Type;
 import net.tcgone.carddb.model.experimental.Tag;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,9 +22,11 @@ public class Deck {
     private String oldId; // old internal mongo id, stored for legacy decks
     private String seoName; // generated seo name except id
     @NotBlank
+    @Size(max = 50)
     private String name;
     @NotBlank
     private String format; // main format
+    @Size(max = 4096)
     private String description;
     private String creatorId;
     @JsonIgnore
@@ -43,8 +45,10 @@ public class Deck {
 
     public int size(){
         int count = 0;
-        for (Integer value : contents.values()) {
+        if(contents != null) {
+          for (Integer value : contents.values()) {
             count += value;
+          }
         }
         return count;
     }

@@ -27,7 +27,7 @@ import java.util.Objects;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Move {
 	@NotNull
-	public List<String> cost;
+	public List<Type> cost;
 	@NotBlank
 	public String name;
 	public String damage;

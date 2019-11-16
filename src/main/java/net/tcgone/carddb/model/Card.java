@@ -74,7 +74,7 @@ public class Card {
 	 * Logically it makes more sense to name this field 'colors', but precisely speaking, it's used as 'type' everywhere else.
 	 * https://bulbapedia.bulbagarden.net/wiki/Type_(TCG)
 	 */
-	public List<String> types;
+	public List<Type> types;
 	/**
 	 * Either Pokémon, Trainer or Energy
 	 */
@@ -160,7 +160,7 @@ public class Card {
 	/**
 	 * Energy types
 	 */
-	public List<List<String>> energy;
+	public List<List<Type>> energy;
 	/**
 	 * Mitsuhiro Arita
 	 */
