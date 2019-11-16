@@ -78,7 +78,7 @@ public class Card {
 	/**
 	 * Either Pokémon, Trainer or Energy
 	 */
-	@NotBlank
+	@NotNull
 	public CardType superType;
 	/**
 	 * Stage 2
@@ -141,7 +141,7 @@ public class Card {
 	 */
 	public String fullName;
 	/**
-	 * 
+	 *
 	 */
 	public String seoName;
 	/**
@@ -233,7 +233,7 @@ public class Card {
 	 * Sort order (respective to its set)
 	 */
 	public Integer order;
-	
+
 	/**
 	 * Legal format seoNames (generated at runtime)
 	 */
