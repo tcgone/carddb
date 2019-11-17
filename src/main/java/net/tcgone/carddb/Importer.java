@@ -199,6 +199,9 @@ public class Importer {
       for (Card card : set._cards) {
         validateCard(setFile.filename + "/" + card.id, card);
         card.set = set;
+        if(set.notImplemented && !card.subTypes.contains(CardType.NOT_IMPLEMENTED)) {
+          card.subTypes.add(CardType.NOT_IMPLEMENTED);
+        }
         card.fullName = String.format("%s (%s %s)", card.name, card.set.abbr.toUpperCase(Locale.ENGLISH), card.number);
         String paddedNumber;
         try {

@@ -40,7 +40,10 @@ public class Set {
   public Integer officialCount;
   public String imageUrl;
   public String symbolUrl;
-
+  /**
+   * If the entire set is not implemented yet, put this flag up
+   */
+  public boolean notImplemented;
   /**
    * all cards of this set, populated at runtime
    */
