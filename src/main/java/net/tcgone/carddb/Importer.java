@@ -146,7 +146,8 @@ public class Importer {
 
       Set set = setFile.set;
       set.order = 1000 - Integer.parseInt(set.id);
-      set.seoName = set.name.toLowerCase(Locale.ENGLISH).replaceAll("\\W+", "-");
+      if(set.seoName == null)
+        set.seoName = set.name.toLowerCase(Locale.ENGLISH).replaceAll("\\W+", "-");
       set._formats = new ArrayList<>();
       set._cards = ImmutableList.copyOf(setFile.cards);
 
