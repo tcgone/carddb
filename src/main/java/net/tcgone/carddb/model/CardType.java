@@ -56,6 +56,7 @@ public enum CardType {
   TEAM_PLASMA(108, "Team Plasma", "team-plasma", "plasma"),
   ACE_SPEC(109, "ACE Spec", "ace-spec"),
   HAS_ANCIENT_TRAIT(110, "Has Ancient Trait", "has-ancient-trait"),
+  G_SPEC(111, "G-SPEC", "g-spec"),
 
   NOT_IMPLEMENTED(201, "Not Implemented", "not-implemented"),
 
