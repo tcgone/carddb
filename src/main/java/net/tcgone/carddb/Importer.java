@@ -73,12 +73,23 @@ public class Importer {
   }
 
   private void validateAndAssert(String context, Object o) throws ImportException {
+    List<String> errors = new ArrayList<>();
     java.util.Set<ConstraintViolation<Object>> violations = validator.validate(o);
-    String message = violations.stream()
-      .map(cv -> String.format("%s %s %s", context, cv.getPropertyPath().toString(), cv.getMessage()))
-      .collect(Collectors.joining(","));
-    if (!violations.isEmpty()) {
-      throw new ImportException(message);
+    for (ConstraintViolation<Object> cv : violations) {
+      errors.add(String.format("%s %s %s", context, cv.getPropertyPath().toString(), cv.getMessage()));
+    }
+    if(o instanceof SetFile) { // then validate each card individually
+      SetFile setFile = (SetFile) o;
+      for (Card card : setFile.cards) {
+        try {
+          validateCard(setFile.filename + "/" + card.id, card);
+        } catch (ImportException e) {
+          errors.add(e.getMessage());
+        }
+      }
+    }
+    if (!errors.isEmpty()) {
+      throw new ImportException(errors);
     }
   }
 
@@ -91,6 +102,11 @@ public class Importer {
         throw new ImportException(String.format("Missing HP in %s", context));
       if (card.retreatCost == null && !card.subTypes.contains(CardType.LEGEND))
         throw new ImportException(String.format("Missing retreatCost in %s", context));
+      if (card.subTypes.contains(CardType.STAGE1) || card.subTypes.contains(CardType.STAGE2)) {
+        if(StringUtils.isEmpty(card.evolvesFrom)) {
+          throw new ImportException(String.format("Missing evolvesFrom in %s", context));
+        }
+      }
     }
     // TODO
     // check sub types
@@ -198,7 +214,6 @@ public class Importer {
       }
 
       for (Card card : set._cards) {
-        validateCard(setFile.filename + "/" + card.id, card);
         card.set = set;
         if(set.notImplemented && !card.subTypes.contains(CardType.NOT_IMPLEMENTED)) {
           card.subTypes.add(CardType.NOT_IMPLEMENTED);
