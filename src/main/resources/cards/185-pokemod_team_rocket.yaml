@@ -1,11 +1,12 @@
 set:
-  id: '115'
-  name: Team Rocket
-  enumId: TEAM_ROCKET
-  abbr: TR
+  id: '185'
+  name: Pokémod Team Rocket
+  enumId: POKEMOD_TEAM_ROCKET
+  abbr: MODTR
+  officialCount: 82
 cards:
-- id: 115-1
-  pioId: base5-1
+- id: 185-1
+  pioId: pkmod5-1
   enumId: DARK_ALAKAZAM_1
   name: Dark Alakazam
   nationalPokedexNumber: 65
@@ -14,15 +15,15 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
   evolvesFrom: Kadabra
-  hp: 60
+  hp: 80
   retreatCost: 3
   moves:
-  - cost: [P, P, C]
+  - cost: [P, P]
     name: Teleport Blast
     damage: '30'
     text: You may switch Dark Alakazam with 1 of your Benched Pokémon (Do the damage
       before switching the Pokémon).
-  - cost: [P, P, P]
+  - cost: [P, P]
     name: Mind Shock
     damage: '40'
     text: Don't apply Weakness and Resistance for this attack. (Any other effects
@@ -32,8 +33,8 @@ cards:
     value: x2
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 115-2
-  pioId: base5-2
+- id: 185-2
+  pioId: pkmod5-2
   enumId: DARK_ARBOK_2
   name: Dark Arbok
   nationalPokedexNumber: 24
@@ -45,15 +46,15 @@ cards:
   hp: 60
   retreatCost: 2
   moves:
-  - cost: [G, G]
+  - cost: [G]
     name: Stare
-    damage: '10'
-    text: Choose 1 of your opponent's Pokémon. This attack does 10 damage to that
+    damage: '20'
+    text: Choose 1 of your opponent's Pokémon. This attack does 20 damage to that
       Pokémon. Don't apply Weakness and Resistance for this attack. (Any other effects
       that would happen after applying Weakness and Resistance still happen.) If that
       Pokémon has a Pokémon Power, that power stops working until the end of your
       opponent's next turn.
-  - cost: [G, G, G]
+  - cost: [G, G, C]
     name: Poison Vapor
     damage: '20'
     text: The Defending Pokémon is now Poisoned. This attack does 10 damage to each
@@ -64,8 +65,8 @@ cards:
     value: x2
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 115-3
-  pioId: base5-3
+- id: 185-3
+  pioId: pkmod5-3
   enumId: DARK_BLASTOISE_3
   name: Dark Blastoise
   nationalPokedexNumber: 9
@@ -74,13 +75,13 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
   evolvesFrom: Wartortle
-  hp: 70
+  hp: 80
   retreatCost: 2
   moves:
   - cost: [W, W]
     name: Hydrocannon
-    damage: '30+'
-    text: Does 30 damage plus 20 more damage for each [W] Energy attached to Dark Blastoise
+    damage: 30+
+    text: Does 30 damage plus 20 more damage for each W Energy attached to Dark Blastoise
       but not used to pay for this attack. You can't add more than 40 damage in this
       way.
   - cost: [W, C, C]
@@ -94,8 +95,8 @@ cards:
     value: x2
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 115-4
-  pioId: base5-4
+- id: 185-4
+  pioId: pkmod5-4
   enumId: DARK_CHARIZARD_4
   name: Dark Charizard
   nationalPokedexNumber: 6
@@ -112,7 +113,7 @@ cards:
     damage: '10'
   - cost: [R, R]
     name: Continuous Fireball
-    damage: '50x'
+    damage: 50x
     text: Flip a number of coins equal to the number of Energy cards attached to Dark
       Charizard. This attack does 50 damage times the number of heads. Discard a number
       of Energy cards attached to Dark Charizard equal to the number of heads.
@@ -124,8 +125,8 @@ cards:
     value: '-30'
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 115-5
-  pioId: base5-5
+- id: 185-5
+  pioId: pkmod5-5
   enumId: DARK_DRAGONITE_5
   name: Dark Dragonite
   nationalPokedexNumber: 149
@@ -134,7 +135,7 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
   evolvesFrom: Dark Dragonair
-  hp: 70
+  hp: 80
   retreatCost: 2
   abilities:
   - type: Pokémon Power
@@ -144,15 +145,14 @@ cards:
   moves:
   - cost: [C, C, C, C]
     name: Giant Tail
-    damage: '70'
     text: Flip a coin. If tails, this attack does nothing.
   resistances:
   - type: F
     value: '-30'
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 115-6
-  pioId: base5-6
+- id: 185-6
+  pioId: pkmod5-6
   enumId: DARK_DUGTRIO_6
   name: Dark Dugtrio
   nationalPokedexNumber: 51
@@ -161,7 +161,7 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Diglett
-  hp: 50
+  hp: 60
   retreatCost: 2
   abilities:
   - type: Pokémon Power
@@ -171,9 +171,9 @@ cards:
       and Resistance.) This power stops working while Dark Dugtrio is Asleep, Confused,
       or Paralyzed.
   moves:
-  - cost: [F, F]
+  - cost: [C, C]
     name: Knock Down
-    damage: '20+'
+    damage: 20+
     text: Your opponent flips a coin. If tails, this attack does 20 damage plus 20
       more damage; if heads, this attack does 20 damage.
   weaknesses:
@@ -184,8 +184,8 @@ cards:
     value: '-30'
   rarity: Rare Holo
   artist: Kagemaru Himeno
-- id: 115-7
-  pioId: base5-7
+- id: 185-7
+  pioId: pkmod5-7
   enumId: DARK_GOLBAT_7
   name: Dark Golbat
   nationalPokedexNumber: 42
@@ -217,8 +217,8 @@ cards:
     value: '-30'
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 115-8
-  pioId: base5-8
+- id: 185-8
+  pioId: pkmod5-8
   enumId: DARK_GYARADOS_8
   name: Dark Gyarados
   nationalPokedexNumber: 130
@@ -237,20 +237,20 @@ cards:
       that Knocked Out Dark Gyarados. Apply Weakness and Resistance. This power doesn't
       work if Dark Gyarados is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [W, W, W]
+  - cost: [W, W, C]
     name: Ice Beam
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: G
+  - type: L
     value: x2
   resistances:
   - type: F
     value: '-30'
   rarity: Rare Holo
   artist: Kagemaru Himeno
-- id: 115-9
-  pioId: base5-9
+- id: 185-9
+  pioId: pkmod5-9
   enumId: DARK_HYPNO_9
   name: Dark Hypno
   nationalPokedexNumber: 97
@@ -265,9 +265,9 @@ cards:
   - cost: [P]
     name: Psypunch
     damage: '20'
-  - cost: [P, P, C]
+  - cost: [P, C, C]
     name: Bench Manipulation
-    damage: '20x'
+    damage: 20x
     text: Your opponent flips a number of coins equal to the number of Pokémon on
       his or her Bench. This attack does 20 damage times the number of tails. Don't
       apply Weakness and Resistance for this attack. (Any other effects that would
@@ -277,8 +277,8 @@ cards:
     value: x2
   rarity: Rare Holo
   artist: Kagemaru Himeno
-- id: 115-10
-  pioId: base5-10
+- id: 185-10
+  pioId: pkmod5-10
   enumId: DARK_MACHAMP_10
   name: Dark Machamp
   nationalPokedexNumber: 68
@@ -287,10 +287,10 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
   evolvesFrom: Machoke
-  hp: 70
+  hp: 80
   retreatCost: 3
   moves:
-  - cost: [F, F]
+  - cost: [F, C]
     name: Mega Punch
     damage: '30'
   - cost: [F, F, F, C]
@@ -303,8 +303,8 @@ cards:
     value: x2
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 115-11
-  pioId: base5-11
+- id: 185-11
+  pioId: pkmod5-11
   enumId: DARK_MAGNETON_11
   name: Dark Magneton
   nationalPokedexNumber: 82
@@ -317,7 +317,7 @@ cards:
   hp: 60
   retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [C]
     name: Sonicboom
     damage: '20'
     text: Don't apply Weakness and Resistance for this attack. (Any other effects
@@ -333,8 +333,8 @@ cards:
     value: x2
   rarity: Rare Holo
   artist: Miki Tanaka
-- id: 115-12
-  pioId: base5-12
+- id: 185-12
+  pioId: pkmod5-12
   enumId: DARK_SLOWBRO_12
   name: Dark Slowbro
   nationalPokedexNumber: 80
@@ -351,17 +351,16 @@ cards:
     text: When you play Dark Slowbro from your hand, choose up to 3 Basic Pokémon
       and/or Evolution cards from your discard pile and put them into your hand.
   moves:
-  - cost: [P, P]
+  - cost: [P, C]
     name: Fickle Attack
-    damage: '40'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
   - type: P
     value: x2
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 115-13
-  pioId: base5-13
+- id: 185-13
+  pioId: pkmod5-13
   enumId: DARK_VILEPLUME_13
   name: Dark Vileplume
   nationalPokedexNumber: 45
@@ -375,12 +374,11 @@ cards:
   abilities:
   - type: Pokémon Power
     name: Hay Fever
-    text: No Trainer cards can be played. This power stops working while Dark Vileplume
-      is Asleep, Confused, or Paralyzed.
+    text: No Trainer cards can be played (except Supporter cards). This power stops working if Dark Vilplume has any Trainer cards attached to it, or while Dark Vileplume is Asleep, Confused, or Paralyzed.
   moves:
   - cost: [G, G, G]
     name: Petal Whirlwind
-    damage: '30x'
+    damage: 30x
     text: Flip 3 coins. This attack does 30 damage times the number of heads. If you
       get 2 or more heads, Dark Vileplume is now Confused (after dealing damage).
   weaknesses:
@@ -388,8 +386,8 @@ cards:
     value: x2
   rarity: Rare Holo
   artist: Kagemaru Himeno
-- id: 115-14
-  pioId: base5-14
+- id: 185-14
+  pioId: pkmod5-14
   enumId: DARK_WEEZING_14
   name: Dark Weezing
   nationalPokedexNumber: 110
@@ -403,12 +401,12 @@ cards:
   moves:
   - cost: [G, C]
     name: Mass Explosion
-    damage: '20x'
+    damage: 20x
     text: Does 20 damage times the total number of Koffings, Weezings, and Dark Weezings
       in play (Apply Weakness and Resistance.). Then, this attack does 20 damage to
       each Koffing, Weezing, and Dark Weezing (even your own). Don't apply Weakness
       and Resistance.
-  - cost: [G, G, G]
+  - cost: [G, G, C]
     name: Stun Gas
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned; if tails,
@@ -418,8 +416,8 @@ cards:
     value: x2
   rarity: Rare Holo
   artist: Shin-ichi Yoshida
-- id: 115-15
-  pioId: base5-15
+- id: 185-15
+  pioId: pkmod5-15
   enumId: HERE_COMES_TEAM_ROCKET_15
   name: Here Comes Team Rocket!
   number: '15'
@@ -429,8 +427,8 @@ cards:
   text: [Each player plays with his or her Prize cards face up for the rest of the
       game.]
   artist: Ken Sugimori
-- id: 115-16
-  pioId: base5-16
+- id: 185-16
+  pioId: pkmod5-16
   enumId: ROCKETS_SNEAK_ATTACK_16
   name: Rocket's Sneak Attack
   number: '16'
@@ -438,10 +436,10 @@ cards:
   subTypes: []
   rarity: Rare Holo
   text: ['Look at your opponent''s hand. If he or she has any Trainer cards, choose
-      1 of them. Your opponent shuffles that card into his or her deck.']
+      1 of them (excluding Supporter cards). Your opponent shuffles that card into his or her deck.']
   artist: Ken Sugimori
-- id: 115-17
-  pioId: base5-17
+- id: 185-17
+  pioId: pkmod5-17
   enumId: RAINBOW_ENERGY_17
   name: Rainbow Energy
   number: '17'
@@ -456,9 +454,9 @@ cards:
   energy:
   - [C]
   artist: Takumi Akabane
-- id: 115-18
-  pioId: base5-18
-  enumId: DARK_ALAKAZAM
+- id: 185-18
+  pioId: pkmod5-18
+  enumId: DARK_ALAKAZAM_18
   name: Dark Alakazam
   nationalPokedexNumber: 65
   number: '18'
@@ -466,15 +464,15 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
   evolvesFrom: Kadabra
-  hp: 60
+  hp: 80
   retreatCost: 3
   moves:
-  - cost: [P, P, C]
+  - cost: [P, P]
     name: Teleport Blast
     damage: '30'
     text: You may switch Dark Alakazam with 1 of your Benched Pokémon (Do the damage
       before switching the Pokémon).
-  - cost: [P, P, P]
+  - cost: [P, P]
     name: Mind Shock
     damage: '40'
     text: Don't apply Weakness and Resistance for this attack. (Any other effects
@@ -484,9 +482,9 @@ cards:
     value: x2
   rarity: Rare
   artist: Ken Sugimori
-- id: 115-19
-  pioId: base5-19
-  enumId: DARK_ARBOK
+- id: 185-19
+  pioId: pkmod5-19
+  enumId: DARK_ARBOK_19
   name: Dark Arbok
   nationalPokedexNumber: 24
   number: '19'
@@ -497,15 +495,15 @@ cards:
   hp: 60
   retreatCost: 2
   moves:
-  - cost: [G, G]
+  - cost: [G]
     name: Stare
-    damage: '10'
-    text: Choose 1 of your opponent's Pokémon. This attack does 10 damage to that
+    damage: '20'
+    text: Choose 1 of your opponent's Pokémon. This attack does 20 damage to that
       Pokémon. Don't apply Weakness and Resistance for this attack. (Any other effects
       that would happen after applying Weakness and Resistance still happen.) If that
       Pokémon has a Pokémon Power, that power stops working until the end of your
       opponent's next turn.
-  - cost: [G, G, G]
+  - cost: [G, G, C]
     name: Poison Vapor
     damage: '20'
     text: The Defending Pokémon is now Poisoned. This attack does 10 damage to each
@@ -516,9 +514,9 @@ cards:
     value: x2
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 115-20
-  pioId: base5-20
-  enumId: DARK_BLASTOISE
+- id: 185-20
+  pioId: pkmod5-20
+  enumId: DARK_BLASTOISE_20
   name: Dark Blastoise
   nationalPokedexNumber: 9
   number: '20'
@@ -526,13 +524,13 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
   evolvesFrom: Wartortle
-  hp: 70
+  hp: 80
   retreatCost: 2
   moves:
   - cost: [W, W]
     name: Hydrocannon
-    damage: '30+'
-    text: Does 30 damage plus 20 more damage for each [W] Energy attached to Dark Blastoise
+    damage: 30+
+    text: Does 30 damage plus 20 more damage for each W Energy attached to Dark Blastoise
       but not used to pay for this attack. You can't add more than 40 damage in this
       way.
   - cost: [W, C, C]
@@ -546,9 +544,9 @@ cards:
     value: x2
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 115-21
-  pioId: base5-21
-  enumId: DARK_CHARIZARD
+- id: 185-21
+  pioId: pkmod5-21
+  enumId: DARK_CHARIZARD_21
   name: Dark Charizard
   nationalPokedexNumber: 6
   number: '21'
@@ -564,7 +562,7 @@ cards:
     damage: '10'
   - cost: [R, R]
     name: Continuous Fireball
-    damage: '50x'
+    damage: 50x
     text: Flip a number of coins equal to the number of Energy cards attached to Dark
       Charizard. This attack does 50 damage times the number of heads. Discard a number
       of Energy cards attached to Dark Charizard equal to the number of heads.
@@ -576,9 +574,9 @@ cards:
     value: '-30'
   rarity: Rare
   artist: Ken Sugimori
-- id: 115-22
-  pioId: base5-22
-  enumId: DARK_DRAGONITE
+- id: 185-22
+  pioId: pkmod5-22
+  enumId: DARK_DRAGONITE_22
   name: Dark Dragonite
   nationalPokedexNumber: 149
   number: '22'
@@ -586,7 +584,7 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
   evolvesFrom: Dark Dragonair
-  hp: 70
+  hp: 80
   retreatCost: 2
   abilities:
   - type: Pokémon Power
@@ -596,16 +594,15 @@ cards:
   moves:
   - cost: [C, C, C, C]
     name: Giant Tail
-    damage: '70'
     text: Flip a coin. If tails, this attack does nothing.
   resistances:
   - type: F
     value: '-30'
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 115-23
-  pioId: base5-23
-  enumId: DARK_DUGTRIO
+- id: 185-23
+  pioId: pkmod5-23
+  enumId: DARK_DUGTRIO_23
   name: Dark Dugtrio
   nationalPokedexNumber: 51
   number: '23'
@@ -613,7 +610,7 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Diglett
-  hp: 50
+  hp: 60
   retreatCost: 2
   abilities:
   - type: Pokémon Power
@@ -623,9 +620,9 @@ cards:
       and Resistance.) This power stops working while Dark Dugtrio is Asleep, Confused,
       or Paralyzed.
   moves:
-  - cost: [F, F]
+  - cost: [C, C]
     name: Knock Down
-    damage: '20+'
+    damage: 20+
     text: Your opponent flips a coin. If tails, this attack does 20 damage plus 20
       more damage; if heads, this attack does 20 damage.
   weaknesses:
@@ -636,9 +633,9 @@ cards:
     value: '-30'
   rarity: Rare
   artist: Kagemaru Himeno
-- id: 115-24
-  pioId: base5-24
-  enumId: DARK_GOLBAT
+- id: 185-24
+  pioId: pkmod5-24
+  enumId: DARK_GOLBAT_24
   name: Dark Golbat
   nationalPokedexNumber: 42
   number: '24'
@@ -658,6 +655,7 @@ cards:
   moves:
   - cost: [G, G]
     name: Flitter
+    damage: '20'
     text: Choose 1 of your opponent's Pokémon. This attack does 20 damage to that
       Pokémon. Don't apply Weakness and Resistance for this attack. (Any other effects
       that would happen after applying Weakness and Resistance still happen.)
@@ -669,9 +667,9 @@ cards:
     value: '-30'
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 115-25
-  pioId: base5-25
-  enumId: DARK_GYARADOS
+- id: 185-25
+  pioId: pkmod5-25
+  enumId: DARK_GYARADOS_25
   name: Dark Gyarados
   nationalPokedexNumber: 130
   number: '25'
@@ -679,7 +677,7 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Magikarp
-  hp: 70
+  hp: 80
   retreatCost: 2
   abilities:
   - type: Pokémon Power
@@ -689,21 +687,21 @@ cards:
       that Knocked Out Dark Gyarados. Apply Weakness and Resistance. This power doesn't
       work if Dark Gyarados is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [W, W, W]
+  - cost: [W, W, C]
     name: Ice Beam
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: G
+  - type: L
     value: x2
   resistances:
   - type: F
     value: '-30'
   rarity: Rare
   artist: Kagemaru Himeno
-- id: 115-26
-  pioId: base5-26
-  enumId: DARK_HYPNO
+- id: 185-26
+  pioId: pkmod5-26
+  enumId: DARK_HYPNO_26
   name: Dark Hypno
   nationalPokedexNumber: 97
   number: '26'
@@ -717,9 +715,9 @@ cards:
   - cost: [P]
     name: Psypunch
     damage: '20'
-  - cost: [P, P, C]
+  - cost: [P, C, C]
     name: Bench Manipulation
-    damage: '20x'
+    damage: 20x
     text: Your opponent flips a number of coins equal to the number of Pokémon on
       his or her Bench. This attack does 20 damage times the number of tails. Don't
       apply Weakness and Resistance for this attack. (Any other effects that would
@@ -729,9 +727,9 @@ cards:
     value: x2
   rarity: Rare
   artist: Kagemaru Himeno
-- id: 115-27
-  pioId: base5-27
-  enumId: DARK_MACHAMP
+- id: 185-27
+  pioId: pkmod5-27
+  enumId: DARK_MACHAMP_27
   name: Dark Machamp
   nationalPokedexNumber: 68
   number: '27'
@@ -739,10 +737,10 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
   evolvesFrom: Machoke
-  hp: 70
+  hp: 80
   retreatCost: 3
   moves:
-  - cost: [F, F]
+  - cost: [F, C]
     name: Mega Punch
     damage: '30'
   - cost: [F, F, F, C]
@@ -755,9 +753,9 @@ cards:
     value: x2
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 115-28
-  pioId: base5-28
-  enumId: DARK_MAGNETON
+- id: 185-28
+  pioId: pkmod5-28
+  enumId: DARK_MAGNETON_28
   name: Dark Magneton
   nationalPokedexNumber: 82
   number: '28'
@@ -769,7 +767,7 @@ cards:
   hp: 60
   retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [C]
     name: Sonicboom
     damage: '20'
     text: Don't apply Weakness and Resistance for this attack. (Any other effects
@@ -785,9 +783,9 @@ cards:
     value: x2
   rarity: Rare
   artist: Miki Tanaka
-- id: 115-29
-  pioId: base5-29
-  enumId: DARK_SLOWBRO
+- id: 185-29
+  pioId: pkmod5-29
+  enumId: DARK_SLOWBRO_29
   name: Dark Slowbro
   nationalPokedexNumber: 80
   number: '29'
@@ -803,18 +801,17 @@ cards:
     text: When you play Dark Slowbro from your hand, choose up to 3 Basic Pokémon
       and/or Evolution cards from your discard pile and put them into your hand.
   moves:
-  - cost: [P, P]
+  - cost: [P, C]
     name: Fickle Attack
-    damage: '40'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
   - type: P
     value: x2
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 115-30
-  pioId: base5-30
-  enumId: DARK_VILEPLUME
+- id: 185-30
+  pioId: pkmod5-30
+  enumId: DARK_VILEPLUME_30
   name: Dark Vileplume
   nationalPokedexNumber: 45
   number: '30'
@@ -827,12 +824,11 @@ cards:
   abilities:
   - type: Pokémon Power
     name: Hay Fever
-    text: No Trainer cards can be played. This power stops working while Dark Vileplume
-      is Asleep, Confused, or Paralyzed.
+    text: No Trainer cards can be played (except Supporter cards). This power stops working if Dark Vilplume has any Trainer cards attached to it, or while Dark Vileplume is Asleep, Confused, or Paralyzed.
   moves:
   - cost: [G, G, G]
     name: Petal Whirlwind
-    damage: '30x'
+    damage: 30x
     text: Flip 3 coins. This attack does 30 damage times the number of heads. If you
       get 2 or more heads, Dark Vileplume is now Confused (after dealing damage).
   weaknesses:
@@ -840,9 +836,9 @@ cards:
     value: x2
   rarity: Rare
   artist: Kagemaru Himeno
-- id: 115-31
-  pioId: base5-31
-  enumId: DARK_WEEZING
+- id: 185-31
+  pioId: pkmod5-31
+  enumId: DARK_WEEZING_31
   name: Dark Weezing
   nationalPokedexNumber: 110
   number: '31'
@@ -855,7 +851,7 @@ cards:
   moves:
   - cost: [G, C]
     name: Mass Explosion
-    damage: '20x'
+    damage: 20x
     text: Does 20 damage times the total number of Koffings, Weezings, and Dark Weezings
       in play (Apply Weakness and Resistance.). Then, this attack does 20 damage to
       each Koffing, Weezing, and Dark Weezing (even your own). Don't apply Weakness
@@ -870,9 +866,9 @@ cards:
     value: x2
   rarity: Rare
   artist: Shin-ichi Yoshida
-- id: 115-32
-  pioId: base5-32
-  enumId: DARK_CHARMELEON
+- id: 185-32
+  pioId: pkmod5-32
+  enumId: DARK_CHARMELEON_32
   name: Dark Charmeleon
   nationalPokedexNumber: 5
   number: '32'
@@ -881,14 +877,15 @@ cards:
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Charmander
   evolvesTo: [Charizard]
-  hp: 50
+  hp: 60
   retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [R]
     name: Tail Slap
     damage: '20'
   - cost: [R, R, R]
     name: Fireball
+    damage: '70'
     text: Use this attack only if there are any Energy cards attached to Dark Charmeleon.
       Flip a coin. If heads, discard 1 of those Energy cards. If tails, this attack
       does nothing (not even damage).
@@ -897,9 +894,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 115-33
-  pioId: base5-33
-  enumId: DARK_DRAGONAIR
+- id: 185-33
+  pioId: pkmod5-33
+  enumId: DARK_DRAGONAIR_33
   name: Dark Dragonair
   nationalPokedexNumber: 148
   number: '33'
@@ -920,7 +917,7 @@ cards:
   moves:
   - cost: [C, C, C]
     name: Tail Strike
-    damage: '20+'
+    damage: 20+
     text: Flip a coin. If heads, this attack does 20 damage plus 20 more damage; if
       tails, this attack does 20 damage.
   resistances:
@@ -928,9 +925,9 @@ cards:
     value: '-30'
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 115-34
-  pioId: base5-34
-  enumId: DARK_ELECTRODE
+- id: 185-34
+  pioId: pkmod5-34
+  enumId: DARK_ELECTRODE_34
   name: Dark Electrode
   nationalPokedexNumber: 101
   number: '34'
@@ -939,12 +936,12 @@ cards:
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Voltorb
   hp: 60
-  retreatCost: 1
+  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [L]
     name: Rolling Tackle
-    damage: '10'
-  - cost: [L, L]
+    damage: '20'
+  - cost: [L, C]
     name: Energy Bomb
     damage: '30'
     text: Take all Energy cards attached to Dark Electrode and attach them to your
@@ -955,9 +952,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 115-35
-  pioId: base5-35
-  enumId: DARK_FLAREON
+- id: 185-35
+  pioId: pkmod5-35
+  enumId: DARK_FLAREON_35
   name: Dark Flareon
   nationalPokedexNumber: 136
   number: '35'
@@ -965,16 +962,16 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Eevee
-  hp: 50
+  hp: 60
   retreatCost: 1
   moves:
   - cost: [C]
     name: Rage
-    damage: '10+'
+    damage: 10+
     text: Does 10 damage plus 10 more damage for each damage counter on Dark Flareon.
   - cost: [R, R]
     name: Playing with Fire
-    damage: '30+'
+    damage: 30+
     text: Use this attack only if there are any Energy cards attached to Dark Flareon.
       Flip a coin. If heads, discard 1 of those Energy cards and this attack does
       30 damage plus 20 more damage. If tails, this attack does 30 damage.
@@ -983,9 +980,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 115-36
-  pioId: base5-36
-  enumId: DARK_GLOOM
+- id: 185-36
+  pioId: pkmod5-36
+  enumId: DARK_GLOOM_36
   name: Dark Gloom
   nationalPokedexNumber: 44
   number: '36'
@@ -1012,9 +1009,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 115-37
-  pioId: base5-37
-  enumId: DARK_GOLDUCK
+- id: 185-37
+  pioId: pkmod5-37
+  enumId: DARK_GOLDUCK_37
   name: Dark Golduck
   nationalPokedexNumber: 55
   number: '37'
@@ -1037,9 +1034,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 115-38
-  pioId: base5-38
-  enumId: DARK_JOLTEON
+- id: 185-38
+  pioId: pkmod5-38
+  enumId: DARK_JOLTEON_38
   name: Dark Jolteon
   nationalPokedexNumber: 135
   number: '38'
@@ -1047,7 +1044,7 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Eevee
-  hp: 50
+  hp: 60
   retreatCost: 1
   moves:
   - cost: [L]
@@ -1055,7 +1052,7 @@ cards:
     damage: '20'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
-  - cost: [L, L, C]
+  - cost: [L, C, C]
     name: Thunder Attack
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails,
@@ -1065,9 +1062,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 115-39
-  pioId: base5-39
-  enumId: DARK_KADABRA
+- id: 185-39
+  pioId: pkmod5-39
+  enumId: DARK_KADABRA_39
   name: Dark Kadabra
   nationalPokedexNumber: 64
   number: '39'
@@ -1076,7 +1073,7 @@ cards:
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Abra
   evolvesTo: [Alakazam]
-  hp: 50
+  hp: 60
   retreatCost: 2
   abilities:
   - type: Pokémon Power
@@ -1095,9 +1092,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 115-40
-  pioId: base5-40
-  enumId: DARK_MACHOKE
+- id: 185-40
+  pioId: pkmod5-40
+  enumId: DARK_MACHOKE_40
   name: Dark Machoke
   nationalPokedexNumber: 67
   number: '40'
@@ -1109,13 +1106,13 @@ cards:
   hp: 60
   retreatCost: 2
   moves:
-  - cost: [F, F, C]
+  - cost: [F, C, C]
     name: Drag Off
     damage: '20'
     text: Before doing damage, choose 1 of your opponent's Benched Pokémon and switch
       it with the Defending Pokémon. Do the damage to the new Defending Pokémon. This
       attack can't be used if your opponent has no Benched Pokémon.
-  - cost: [F, F, C]
+  - cost: [F, C, C]
     name: Knock Back
     damage: '30'
     text: If your opponent has any Benched Pokémon, he or she chooses 1 of them and
@@ -1126,9 +1123,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 115-41
-  pioId: base5-41
-  enumId: DARK_MUK
+- id: 185-41
+  pioId: pkmod5-41
+  enumId: DARK_MUK_41
   name: Dark Muk
   nationalPokedexNumber: 89
   number: '41'
@@ -1154,9 +1151,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 115-42
-  pioId: base5-42
-  enumId: DARK_PERSIAN
+- id: 185-42
+  pioId: pkmod5-42
+  enumId: DARK_PERSIAN_42
   name: Dark Persian
   nationalPokedexNumber: 53
   number: '42'
@@ -1174,6 +1171,7 @@ cards:
       no Benched Pokémon.
   - cost: [C, C]
     name: Poison Claws
+    damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
   - type: F
@@ -1183,9 +1181,9 @@ cards:
     value: '-30'
   rarity: Uncommon
   artist: Shin-ichi Yoshida
-- id: 115-43
-  pioId: base5-43
-  enumId: DARK_PRIMEAPE
+- id: 185-43
+  pioId: pkmod5-43
+  enumId: DARK_PRIMEAPE_43
   name: Dark Primeape
   nationalPokedexNumber: 57
   number: '43'
@@ -1210,9 +1208,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 115-44
-  pioId: base5-44
-  enumId: DARK_RAPIDASH
+- id: 185-44
+  pioId: pkmod5-44
+  enumId: DARK_RAPIDASH_44
   name: Dark Rapidash
   nationalPokedexNumber: 78
   number: '44'
@@ -1223,10 +1221,10 @@ cards:
   hp: 60
   retreatCost: 0
   moves:
-  - cost: [C, C]
+  - cost: [R]
     name: Rear Kick
     damage: '20'
-  - cost: [R, R]
+  - cost: [R, C]
     name: Flame Pillar
     damage: '30'
     text: You may discard 1 Energy card attached to Dark Rapidash when you use this
@@ -1238,9 +1236,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 115-45
-  pioId: base5-45
-  enumId: DARK_VAPOREON
+- id: 185-45
+  pioId: pkmod5-45
+  enumId: DARK_VAPOREON_45
   name: Dark Vaporeon
   nationalPokedexNumber: 134
   number: '45'
@@ -1251,7 +1249,7 @@ cards:
   hp: 60
   retreatCost: 1
   moves:
-  - cost: [C, C, C]
+  - cost: [W, C]
     name: Bite
     damage: '30'
   - cost: [W, W, C]
@@ -1264,9 +1262,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 115-46
-  pioId: base5-46
-  enumId: DARK_WARTORTLE
+- id: 185-46
+  pioId: pkmod5-46
+  enumId: DARK_WARTORTLE_46
   name: Dark Wartortle
   nationalPokedexNumber: 8
   number: '46'
@@ -1280,8 +1278,8 @@ cards:
   moves:
   - cost: [W]
     name: Doubleslap
-    damage: '10x'
-    text: Flip 2 coins. This attack does 10 damage times the number of heads.
+    damage: 20x
+    text: Flip 2 coins. This attack does 20 damage times the number of heads.
   - cost: [W, C]
     name: Mirror Shell
     text: If an attack does damage to Dark Wartortle during your opponent's next turn
@@ -1292,9 +1290,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 115-47
-  pioId: base5-47
-  enumId: MAGIKARP
+- id: 185-47
+  pioId: pkmod5-47
+  enumId: MAGIKARP_47
   name: Magikarp
   nationalPokedexNumber: 129
   number: '47'
@@ -1308,7 +1306,7 @@ cards:
   - cost: [C]
     name: Flop
     damage: '10'
-  - cost: [W, W, W]
+  - cost: [W]
     name: Rapid Evolution
     text: Search your deck for an Evolution card named Gyarados or Dark Gyarados and
       put it on Magikarp. (This counts as evolving Magikarp.) Shuffle your deck afterward.
@@ -1317,9 +1315,9 @@ cards:
     value: x2
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 115-48
-  pioId: base5-48
-  enumId: PORYGON
+- id: 185-48
+  pioId: pkmod5-48
+  enumId: PORYGON_48
   name: Porygon
   nationalPokedexNumber: 137
   number: '48'
@@ -1338,17 +1336,14 @@ cards:
     name: Psybeam
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
-  weaknesses:
-  - type: F
-    value: x2
   resistances:
   - type: P
     value: '-30'
   rarity: Uncommon
   artist: Keiji Kinebuchi
-- id: 115-49
-  pioId: base5-49
-  enumId: ABRA
+- id: 185-49
+  pioId: pkmod5-49
+  enumId: ABRA_49
   name: Abra
   nationalPokedexNumber: 63
   number: '49'
@@ -1371,9 +1366,9 @@ cards:
     value: x2
   rarity: Common
   artist: Sumiyoshi Kizuki
-- id: 115-50
-  pioId: base5-50
-  enumId: CHARMANDER
+- id: 185-50
+  pioId: pkmod5-50
+  enumId: CHARMANDER_50
   name: Charmander
   nationalPokedexNumber: 4
   number: '50'
@@ -1398,9 +1393,9 @@ cards:
     value: x2
   rarity: Common
   artist: Kagemaru Himeno
-- id: 115-51
-  pioId: base5-51
-  enumId: DARK_RATICATE
+- id: 185-51
+  pioId: pkmod5-51
+  enumId: DARK_RATICATE_51
   name: Dark Raticate
   nationalPokedexNumber: 20
   number: '51'
@@ -1425,9 +1420,9 @@ cards:
     value: '-30'
   rarity: Common
   artist: Shin-ichi Yoshida
-- id: 115-52
-  pioId: base5-52
-  enumId: DIGLETT
+- id: 185-52
+  pioId: pkmod5-52
+  enumId: DIGLETT_52
   name: Diglett
   nationalPokedexNumber: 50
   number: '52'
@@ -1455,9 +1450,9 @@ cards:
     value: '-30'
   rarity: Common
   artist: Sumiyoshi Kizuki
-- id: 115-53
-  pioId: base5-53
-  enumId: DRATINI
+- id: 185-53
+  pioId: pkmod5-53
+  enumId: DRATINI_53
   name: Dratini
   nationalPokedexNumber: 147
   number: '53'
@@ -1477,9 +1472,9 @@ cards:
     value: '-30'
   rarity: Common
   artist: Kagemaru Himeno
-- id: 115-54
-  pioId: base5-54
-  enumId: DROWZEE
+- id: 185-54
+  pioId: pkmod5-54
+  enumId: DROWZEE_54
   name: Drowzee
   nationalPokedexNumber: 96
   number: '54'
@@ -1506,9 +1501,9 @@ cards:
     value: x2
   rarity: Common
   artist: Kagemaru Himeno
-- id: 115-55
-  pioId: base5-55
-  enumId: EEVEE
+- id: 185-55
+  pioId: pkmod5-55
+  enumId: EEVEE_55
   name: Eevee
   nationalPokedexNumber: 133
   number: '55'
@@ -1535,9 +1530,9 @@ cards:
     value: '-30'
   rarity: Common
   artist: Atsuko Nishida
-- id: 115-56
-  pioId: base5-56
-  enumId: EKANS
+- id: 185-56
+  pioId: pkmod5-56
+  enumId: EKANS_56
   name: Ekans
   nationalPokedexNumber: 23
   number: '56'
@@ -1551,17 +1546,18 @@ cards:
   - cost: [C]
     name: Bite
     damage: '10'
-  - cost: [G, G]
+  - cost: [G, C]
     name: Poison Sting
+    damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
   - type: P
     value: x2
   rarity: Common
   artist: Ken Sugimori
-- id: 115-57
-  pioId: base5-57
-  enumId: GRIMER
+- id: 185-57
+  pioId: pkmod5-57
+  enumId: GRIMER_57
   name: Grimer
   nationalPokedexNumber: 88
   number: '57'
@@ -1569,15 +1565,15 @@ cards:
   superType: POKEMON
   subTypes: [BASIC]
   evolvesTo: [Muk]
-  hp: 40
+  hp: 50
   retreatCost: 1
   moves:
   - cost: [G]
     name: Poison Gas
-    text: The Defending Pokémon is now Asleep.
+    text: The Defending Pokémon is now Poisoned.
   - cost: [G, G]
     name: Sticky Hands
-    damage: '10+'
+    damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 20 more damage and
       the Defending Pokémon is now Paralyzed; if tails, this attack does 10 damage.
   weaknesses:
@@ -1585,9 +1581,9 @@ cards:
     value: x2
   rarity: Common
   artist: Kagemaru Himeno
-- id: 115-58
-  pioId: base5-58
-  enumId: KOFFING
+- id: 185-58
+  pioId: pkmod5-58
+  enumId: KOFFING_58
   name: Koffing
   nationalPokedexNumber: 109
   number: '58'
@@ -1609,9 +1605,9 @@ cards:
     value: x2
   rarity: Common
   artist: Sumiyoshi Kizuki
-- id: 115-59
-  pioId: base5-59
-  enumId: MACHOP
+- id: 185-59
+  pioId: pkmod5-59
+  enumId: MACHOP_59
   name: Machop
   nationalPokedexNumber: 66
   number: '59'
@@ -1633,9 +1629,9 @@ cards:
     value: x2
   rarity: Common
   artist: Ken Sugimori
-- id: 115-60
-  pioId: base5-60
-  enumId: MAGNEMITE
+- id: 185-60
+  pioId: pkmod5-60
+  enumId: MAGNEMITE_60
   name: Magnemite
   nationalPokedexNumber: 81
   number: '60'
@@ -1646,12 +1642,12 @@ cards:
   hp: 40
   retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [L]
     name: Tackle
     damage: '20'
   - cost: [L, C]
     name: Magnetism
-    damage: '10+'
+    damage: 10+
     text: Does 10 damage plus 10 more damage for each Magnemite, Magneton, and Dark
       Magneton on your Bench.
   weaknesses:
@@ -1659,9 +1655,9 @@ cards:
     value: x2
   rarity: Common
   artist: Miki Tanaka
-- id: 115-61
-  pioId: base5-61
-  enumId: MANKEY
+- id: 185-61
+  pioId: pkmod5-61
+  enumId: MANKEY_61
   name: Mankey
   nationalPokedexNumber: 56
   number: '61'
@@ -1677,7 +1673,7 @@ cards:
     text: Shuffle your opponent's deck.
   - cost: [F, C]
     name: Anger
-    damage: '20+'
+    damage: 20+
     text: Flip a coin. If heads, this attack does 20 damage plus 20 more damage; if
       tails, this attack does 20 damage.
   weaknesses:
@@ -1685,9 +1681,9 @@ cards:
     value: x2
   rarity: Common
   artist: Sumiyoshi Kizuki
-- id: 115-62
-  pioId: base5-62
-  enumId: MEOWTH
+- id: 185-62
+  pioId: pkmod5-62
+  enumId: MEOWTH_62
   name: Meowth
   nationalPokedexNumber: 52
   number: '62'
@@ -1712,9 +1708,9 @@ cards:
     value: '-30'
   rarity: Common
   artist: Atsuko Nishida
-- id: 115-63
-  pioId: base5-63
-  enumId: ODDISH
+- id: 185-63
+  pioId: pkmod5-63
+  enumId: ODDISH_63
   name: Oddish
   nationalPokedexNumber: 43
   number: '63'
@@ -1730,16 +1726,15 @@ cards:
     text: The Defending Pokémon is now Asleep.
   - cost: [G]
     name: Poisonpowder
-    damage: '10'
     text: The Defending Pokémon is now Poisoned.
   weaknesses:
   - type: R
     value: x2
   rarity: Common
   artist: Kagemaru Himeno
-- id: 115-64
-  pioId: base5-64
-  enumId: PONYTA
+- id: 185-64
+  pioId: pkmod5-64
+  enumId: PONYTA_64
   name: Ponyta
   nationalPokedexNumber: 77
   number: '64'
@@ -1759,9 +1754,9 @@ cards:
     value: x2
   rarity: Common
   artist: Atsuko Nishida
-- id: 115-65
-  pioId: base5-65
-  enumId: PSYDUCK
+- id: 185-65
+  pioId: pkmod5-65
+  enumId: PSYDUCK_65
   name: Psyduck
   nationalPokedexNumber: 54
   number: '65'
@@ -1777,7 +1772,7 @@ cards:
     text: Draw a card.
   - cost: [W, C]
     name: Water Gun
-    damage: '20+'
+    damage: 20+
     text: Does 20 damage plus 10 more damage for each Energy attached to Psyduck but
       not used to pay for this attack. You can't add more than 20 damage in this way.
   weaknesses:
@@ -1785,9 +1780,9 @@ cards:
     value: x2
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 115-66
-  pioId: base5-66
-  enumId: RATTATA
+- id: 185-66
+  pioId: pkmod5-66
+  enumId: RATTATA_66
   name: Rattata
   nationalPokedexNumber: 19
   number: '66'
@@ -1806,7 +1801,7 @@ cards:
   moves:
   - cost: [C]
     name: Quick Attack
-    damage: '10+'
+    damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 10 more damage; if
       tails, this attack does 10 damage.
   weaknesses:
@@ -1817,9 +1812,9 @@ cards:
     value: '-30'
   rarity: Common
   artist: Atsuko Nishida
-- id: 115-67
-  pioId: base5-67
-  enumId: SLOWPOKE
+- id: 185-67
+  pioId: pkmod5-67
+  enumId: SLOWPOKE_67
   name: Slowpoke
   nationalPokedexNumber: 79
   number: '67'
@@ -1842,9 +1837,9 @@ cards:
     value: x2
   rarity: Common
   artist: Sumiyoshi Kizuki
-- id: 115-68
-  pioId: base5-68
-  enumId: SQUIRTLE
+- id: 185-68
+  pioId: pkmod5-68
+  enumId: SQUIRTLE_68
   name: Squirtle
   nationalPokedexNumber: 7
   number: '68'
@@ -1863,9 +1858,9 @@ cards:
     value: x2
   rarity: Common
   artist: Atsuko Nishida
-- id: 115-69
-  pioId: base5-69
-  enumId: VOLTORB
+- id: 185-69
+  pioId: pkmod5-69
+  enumId: VOLTORB_69
   name: Voltorb
   nationalPokedexNumber: 100
   number: '69'
@@ -1884,9 +1879,9 @@ cards:
     value: x2
   rarity: Common
   artist: Ken Sugimori
-- id: 115-70
-  pioId: base5-70
-  enumId: ZUBAT
+- id: 185-70
+  pioId: pkmod5-70
+  enumId: ZUBAT_70
   name: Zubat
   nationalPokedexNumber: 41
   number: '70'
@@ -1911,9 +1906,9 @@ cards:
     value: '-30'
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 115-71
-  pioId: base5-71
-  enumId: HERE_COMES_TEAM_ROCKET
+- id: 185-71
+  pioId: pkmod5-71
+  enumId: HERE_COMES_TEAM_ROCKET_71
   name: Here Comes Team Rocket!
   number: '71'
   superType: TRAINER
@@ -1922,20 +1917,20 @@ cards:
   text: [Each player plays with his or her Prize cards face up for the rest of the
       game.]
   artist: Ken Sugimori
-- id: 115-72
-  pioId: base5-72
-  enumId: ROCKETS_SNEAK_ATTACK
+- id: 185-72
+  pioId: pkmod5-72
+  enumId: ROCKETS_SNEAK_ATTACK_72
   name: Rocket's Sneak Attack
   number: '72'
   superType: TRAINER
   subTypes: []
   rarity: Rare
   text: ['Look at your opponent''s hand. If he or she has any Trainer cards, choose
-      1 of them. Your opponent shuffles that card into his or her deck.']
+      1 of them (excluding Supporter cards). Your opponent shuffles that card into his or her deck.']
   artist: Ken Sugimori
-- id: 115-73
-  pioId: base5-73
-  enumId: THE_BOSSS_WAY
+- id: 185-73
+  pioId: pkmod5-73
+  enumId: THE_BOSSS_WAY_73
   name: The Boss's Way
   number: '73'
   superType: TRAINER
@@ -1944,9 +1939,9 @@ cards:
   text: [Search your deck for an Evolution card with Dark in its name. Show it to
       your opponent and put it into your hand. Shuffle your deck afterward.]
   artist: Ken Sugimori
-- id: 115-74
-  pioId: base5-74
-  enumId: CHALLENGE
+- id: 185-74
+  pioId: pkmod5-74
+  enumId: CHALLENGE_74
   name: Challenge!
   number: '74'
   superType: TRAINER
@@ -1954,14 +1949,14 @@ cards:
   rarity: Uncommon
   text: ['Ask your opponent if he or she accepts your challenge. If your opponent
       declines (or if both Benches are full), draw 2 cards. If your opponent accepts,
-      each of you searches your decks for any number of Basic Pokémon cards and puts
+      each of you searches your decks for any number of Basic Pokémon cards (excluding Pokémon-ex) and puts
       them face down onto your Benches. (A player can''t do this if his or her Bench
       is full.) When you both have finished, shuffle your decks and turn those cards
       face up.']
   artist: Kagemaru Himeno
-- id: 115-75
-  pioId: base5-75
-  enumId: DIGGER
+- id: 185-75
+  pioId: pkmod5-75
+  enumId: DIGGER_75
   name: Digger
   number: '75'
   superType: TRAINER
@@ -1972,9 +1967,9 @@ cards:
       Active Pokémon. If heads, you flip a coin. Keep doing this until a player gets
       tails.']
   artist: Sumiyoshi Kizuki
-- id: 115-76
-  pioId: base5-76
-  enumId: IMPOSTER_OAKS_REVENGE
+- id: 185-76
+  pioId: pkmod5-76
+  enumId: IMPOSTER_OAKS_REVENGE_76
   name: Imposter Oak's Revenge
   number: '76'
   superType: TRAINER
@@ -1983,9 +1978,9 @@ cards:
   text: ['Discard a card from your hand in order to play this card. Your opponent
       shuffles his or her hand into his or her deck, then draws 4 cards.']
   artist: Ken Sugimori
-- id: 115-77
-  pioId: base5-77
-  enumId: NIGHTLY_GARBAGE_RUN
+- id: 185-77
+  pioId: pkmod5-77
+  enumId: NIGHTLY_GARBAGE_RUN_77
   name: Nightly Garbage Run
   number: '77'
   superType: TRAINER
@@ -1995,19 +1990,19 @@ cards:
       cards from your discard pile. Show them to your opponent and shuffle them into
       your deck.']
   artist: Sumiyoshi Kizuki
-- id: 115-78
-  pioId: base5-78
-  enumId: GOOP_GAS_ATTACK
+- id: 185-78
+  pioId: pkmod5-78
+  enumId: GOOP_GAS_ATTACK_78
   name: Goop Gas Attack
   number: '78'
   superType: TRAINER
   subTypes: []
   rarity: Common
-  text: [All Pokémon Powers stop working until the end of your opponent's next turn.]
+  text: [All Poké-Powers and Poké-Bodies stop working until the end of your opponent's next turn.]
   artist: Sumiyoshi Kizuki
-- id: 115-79
-  pioId: base5-79
-  enumId: SLEEP
+- id: 185-79
+  pioId: pkmod5-79
+  enumId: SLEEP_79
   name: Sleep!
   number: '79'
   superType: TRAINER
@@ -2015,9 +2010,9 @@ cards:
   rarity: Common
   text: ['Flip a coin. If heads, the Defending Pokémon is now Asleep.']
   artist: Sumiyoshi Kizuki
-- id: 115-80
-  pioId: base5-80
-  enumId: RAINBOW_ENERGY
+- id: 185-80
+  pioId: pkmod5-80
+  enumId: RAINBOW_ENERGY_80
   name: Rainbow Energy
   number: '80'
   superType: ENERGY
@@ -2031,37 +2026,37 @@ cards:
   energy:
   - [C]
   artist: Takumi Akabane
-- id: 115-81
-  pioId: base5-81
-  enumId: FULL_HEAL_ENERGY
+- id: 185-81
+  pioId: pkmod5-81
+  enumId: FULL_HEAL_ENERGY_81
   name: Full Heal Energy
   number: '81'
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Uncommon
   text: ['If you play this card from your hand, the Pokémon you attach it to is no
-      longer Asleep, Confused, Paralyzed, or Poisoned. Full Heal Energy Provides energy.
+      longer Asleep, Confused, Paralyzed, or Poisoned. Full Heal Energy provides [C] Energy.
       (Doesn''t count as a basic Energy card.)']
   energy:
   - [C]
   artist: Keiji Kinebuchi
-- id: 115-82
-  pioId: base5-82
-  enumId: POTION_ENERGY
+- id: 185-82
+  pioId: pkmod5-82
+  enumId: POTION_ENERGY_82
   name: Potion Energy
   number: '82'
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Uncommon
   text: ['If you play this card from your hand, remove 1 damage counter from the Pokémon
-      you attach it to, if it has any. Potion Energy provides energy. (Doesn''t count
+      you attach it to, if it has any. Potion Energy provides [C] Energy. (Doesn''t count
       as a basic Energy card.)']
   energy:
   - [C]
   artist: Keiji Kinebuchi
-- id: 115-83
-  pioId: base5-83
-  enumId: DARK_RAICHU
+- id: 185-83
+  pioId: pkmod5-83
+  enumId: DARK_RAICHU_83
   name: Dark Raichu
   nationalPokedexNumber: 26
   number: '83'
@@ -2082,5 +2077,474 @@ cards:
   weaknesses:
   - type: F
     value: x2
-  rarity: Rare Holo
+  rarity: Rare
   artist: Mitsuhiro Arita
+- id: 185-84
+  pioId: pkmod5-84
+  enumId: BOOST_ENERGY_84
+  name: Boost Energy
+  number: '84'
+  superType: ENERGY
+  subTypes: [SPECIAL_ENERGY]
+  rarity: Rare
+  text: ['Boost Energy provides [C] Energy. While in play, if you have more Prize cards left than your opponent, Boost Energy provides [C, C, C]. If the Pokémon Boost Energy is attached to has a Pokémon Power, or has any other Special Energy cards attached to it (at any time), discard Boost Energy. If the Pokémon Boost Energy is attached to is a Pokémon-ex, discard Boost Energy']
+  energy:
+  - [C]
+  artist: Unknown
+- id: 185-85
+  pioId: pkmod5-85
+  enumId: SCRAMBLE_ENERGY_85
+  name: Scramble Energy
+  number: '85'
+  superType: ENERGY
+  subTypes: [SPECIAL_ENERGY]
+  rarity: Rare
+  text: ['Scramble Energy can only be attached to an Evolved Pokémon. Scramble Energy provides [C] Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides on 3 at a time in any combination. If the Pokémon Scramble Energy is attached to isn''t an Evolved Pokémon, discard Scramble Energy. If the Pokémon Scramble Energy is attached to is a Pokémon-ex, discard Scramble Energy.']
+  energy:
+  - [C]
+  artist: Unknown
+- id: 185-86
+  pioId: pkmod5-86
+  enumId: ROCKETS_ENERGY_FF_86
+  name: Rocket's Energy FF
+  number: '86'
+  superType: ENERGY
+  subTypes: [SPECIAL_ENERGY]
+  rarity: Rare
+  text: ['Rocket''s Energy FF provides [C] Energy. If the Pokémon that Rocket''s Energy FF is attached to also has a basic R energy card attached to it, that Pokémon has no Weakness. If the Pokémon that Rocket''s Energy FF is attached to also has a basic [F] Energy card attached to it, damage done to that Pokémon''s attacks isn''t affected by Resistance. If the Pokémon Rocket''s Energy FF is attached to is a Pokémon-ex, Discard Rocket''s Energy FF.']
+  energy:
+  - [C]
+  artist: Unknown
+- id: 185-87
+  pioId: pkmod5-87
+  enumId: ROCKETS_ENERGY_GL_87
+  name: Rocket's Energy GL
+  number: '87'
+  superType: ENERGY
+  subTypes: [SPECIAL_ENERGY]
+  rarity: Rare
+  text: ['Rocket''s Energy GL provides [C] Energy. If the Pokémon that Rocket''s Energy GL is attached to also has a basic G energy card attached to it, that Pokémon can''t be affected by an Special Conditions. If the Pokémon that Rocket''s Energy GL is attached to also has a basic [L] Energy card attached to it, damage done to that Pokémon''s maximum HP is increased by 10. If the Pokémon Rocket''s Energy GL is attached to is a Pokémon-ex, Discard Rocket''s Energy GL.']
+  energy:
+  - [C]
+  artist: Unknown
+- id: 185-88
+  pioId: pkmod5-88
+  enumId: ROCKETS_ENERGY_WP_88
+  name: Rocket's Energy WP
+  number: '88'
+  superType: ENERGY
+  subTypes: [SPECIAL_ENERGY]
+  rarity: Rare
+  text: ['Rocket''s Energy WP provides [C] Energy. If the Pokémon that Rocket''s Energy WP is attached to also has a basic W energy card attached to it, prevent all effects, excluding damage, done to that Pokémon by your opponent''s Pokémon. If the Pokémon that Rocket''s Energy WP is attached to also has a basic [P] Energy card attached to it, that Pokémon''s retreat cost is 0. If the Pokémon Rocket''s Energy WP is attached to is a Pokémon-ex, Discard Rocket''s Energy WP.']
+  energy:
+  - [C]
+  artist: Unknown
+- id: 185-89
+  pioId: pkmod5-89
+  enumId: ROCKET_BALL_89
+  name: Rocket Ball
+  number: '89'
+  superType: TRAINER
+  subTypes: []
+  rarity: Uncommon
+  text: ['Flip 2 coins. For each heads, search your deck for a Pokémon with Dark in its name. Show it to your opponent, and put it into your hand. Shuffle your deck afterward.']
+  artist: Unknown
+- id: 185-90
+  pioId: pkmod5-90
+  enumId: POKEMON_RETRIEVER_90
+  name: Pokémon Retriever
+  number: '90'
+  superType: TRAINER
+  subTypes: []
+  rarity: Rare
+  text: ['Flip 2 coins. If you get a heads, search your discard pile for basic Pokémon and Evolution cards. You may either show up to 2 Basic Pokémon and/ or Evolution cards to your opponent and put them into your hand, or show a combination of up to 4 Basic Pokémon and/ or Evolution cards to your opponent and shuffle them into your deck.']
+  artist: Unknown
+- id: 185-91
+  pioId: pkmod5-91
+  enumId: POW!_HAND_EXTENSION_91
+  name: Pow! Hand Extension
+  number: '91'
+  superType: TRAINER
+  subTypes: []
+  rarity: Rare
+  text: ['You may only use this card if you have more Prize cards left than your opponent. If you do, you may choose 1 Energy card attached to the defending Pokémon and move it to another of your opponent''s Pokémon (if your opponent has no Benched Pokémon, discard that Energy card.) Or, you may have your opponent choose 1 of their Benched Pokémon for you to switch with the defending Pokémon.']
+  artist: Unknown
+- id: 185-92
+  pioId: pkmod5-92
+  enumId: SURPRISE!_TIME_MACHINE_92
+  name: Surprise! Time Machine
+  number: '92'
+  superType: TRAINER
+  subTypes: []
+  rarity: Rare
+  text: ['Choose 1 of your Evolved Pokémon, remove the highest Stage Evolution card from it, and shuffle it into your deck (this counts as devolving that Pokémon). If that Pokémon remains in play, search your deck for an Evolution card that evolves from that Pokémon and put it onto that Pokémon (this counts as evolving that Pokémon). Shuffle your deck afterward.']
+  artist: Unknown
+- id: 185-93
+  pioId: pkmod5-93
+  enumId: SWOOP!_TELEPORTER_93
+  name: Swoop! Teleporter
+  number: '93'
+  superType: TRAINER
+  subTypes: []
+  rarity: Rare
+  text: ['Search your deck for a Basic Pokémon (excluding Pokémon-ex) and switch it with 1 of your Basic Pokémon in play (excluding Pokémon-ex). (Any cards attached to that Pokémon, damage counters, Special Conditions, and effects on it are now on the new Pokémon.) Place the first Basic Pokémon in your discard pile. Shuffle your deck afterward.']
+  artist: Unknown
+- id: 185-94
+  pioId: pkmod5-94
+  enumId: ROCKETS_DUNGEON_94
+  name: Rocket's Dungeon
+  number: '94'
+  superType: TRAINER
+  subTypes: [STADIUM]
+  rarity: Uncommon
+  text: ['Each Pokémon in play with Dark in its name can use the attack on this card instead of its own.']
+  moves:
+  - cost: [C,C]
+    name: Feint Attack
+    damage: '20'
+    text: Does 20 damage to 1 of your opponent's Pokémon. This attack's damage isn't affected by Weakness, Resistance, Pokémon Powers or any other effects on that Pokémon.
+  artist: Unknown
+- id: 185-95
+  pioId: pkmod5-95
+  enumId: ROCKETS_HIDEOUT_95
+  name: Rocket's Hideout
+  number: '95'
+  superType: TRAINER
+  subTypes: [STADIUM]
+  rarity: Uncommon
+  text: ['Each Pokémon in play with Dark in its name gets +10 HP.']
+  artist: Unknown
+- id: 185-96
+  pioId: pkmod5-96
+  enumId: ROCKET'S_ACE_IN_THE_HOLE_96
+  name: Rocket's Ace in the Hole
+  number: '96'
+  superType: TRAINER
+  subTypes: [SUPPORTER]
+  rarity: Rare
+  text: ['You can play this card only when it is the last card in your hand. Put a Dark Pokémon card or basic Energy card from your discard pile into your hand. Then, draw 5 cards.']
+  artist: Ken Sugimori
+- id: 185-97
+  pioId: pkmod5-97
+  enumId: ENERGY_CHARGE_97
+  name: Energy Charge
+  number: '97'
+  superType: TRAINER
+  subTypes: [G_SPEC]
+  rarity: Secret
+  text: ['Choose up to 3 Energy cards from your discard pile, show them to your opponent, and shuffle them into your deck.']
+  artist: Ken Sugimori
+- id: 185-98
+  pioId: pkmod5-98
+  enumId: IMPOSTER_OAK'S_MADNESS_98
+  name: Imposter Oak's Madness
+  number: '98'
+  superType: TRAINER
+  subTypes: [G_SPEC]
+  rarity: Secret
+  text: ['Attach Imposter Oak''s Madness to your Active Pokémon. When you play this card, discard all Trainer cards attached to your opponent''s Pokémon. As long as this card is attached to your Active Pokémon, your opponent can''t attach any Trainer cards to his or her Pokémon.']
+  artist: Ken Sugimori
+- id: 185-97
+  pioId: pkmod5-97
+  enumId: ENERGY_CHARGE_97
+  name: Energy Charge
+  number: '97'
+  superType: TRAINER
+  subTypes: [G_SPEC]
+  rarity: Secret
+  text: ['Choose up to 3 Energy cards from your discard pile, show them to your opponent, and shuffle them into your deck.']
+  artist: Ken Sugimori
+- id: 185-99
+  pioId: pkmod5-99
+  enumId: CELEBI_99
+  name: Grimer
+  nationalPokedexNumber: 251
+  number: '99'
+  types: [C]
+  superType: POKEMON
+  subTypes: [G_SPEC, BASIC]
+  hp: 30
+  retreatCost: 0
+  abilities:
+  - type: Pokémon Power
+    name: Time Travel
+    text: Whenever an attack does anything to Celebi, flip a coin. If heads, prevent all effects of that attack, including damage done
+        to Celebi. This power stops working if Celebi is Asleep, Confused, Paralyzed or Poisoned.]
+  moves:
+  - cost: [C]
+    name: Celestial Prophecy
+    text: Shuffle your hand into your deck, then draw 7 cards.
+  rarity: Secret
+  artist: Ken Sugimori
+- id: 185-100
+  pioId: pkmod5-100
+  enumId: MIRACLE_ENERGY_100
+  name: Miracle Energy
+  number: '100'
+  superType: ENERGY
+  subTypes: [G_SPEC, SPECIAL_ENERGY]
+  rarity: Secret
+  text: ['Attach Miracle Energy to 1 of your Stage 2 Pokémon. While in play, Miracle Energy counts as every type of basic Energy but only provides 2 at a time in any combination. (Doesn''t count as a basic Energy card when not in play.) When Miracle Energy is attached to 1 of your Stage 2 Pokémon, it cannot be discarded by your opponent''s attacks or Trainer cards. If the Pokémon Miracle Energy is attached to isn''t a Stage 2 Pokémon, discard Miracle Energy.']
+  energy:
+  - [C, C]
+  artist: Unknown
+- id: 185-101
+  pioId: pkmod5-101
+  enumId: DARK_CHARIZARD_101
+  name: Dark Charizard
+  nationalPokedexNumber: 6
+  number: '101'
+  types: [R]
+  superType: POKEMON
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
+  evolvesFrom: Charmeleon
+  hp: 80
+  retreatCost: 3
+  moves:
+  - cost: [C]
+    name: Nail Flick
+    damage: '10'
+  - cost: [R, R]
+    name: Continuous Fireball
+    damage: 50x
+    text: Flip a number of coins equal to the number of Energy cards attached to Dark
+      Charizard. This attack does 50 damage times the number of heads. Discard a number
+      of Energy cards attached to Dark Charizard equal to the number of heads.
+  weaknesses:
+  - type: W
+    value: x2
+  resistances:
+  - type: F
+    value: '-30'
+  rarity: Secret
+  artist: Ken Sugimori
+- id: 185-102
+  pioId: pkmod5-102
+  enumId: DARK_DRAGONITE_102
+  name: Dark Dragonite
+  nationalPokedexNumber: 149
+  number: '102'
+  types: [C]
+  superType: POKEMON
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
+  evolvesFrom: Dark Dragonair
+  hp: 80
+  retreatCost: 2
+  abilities:
+  - type: Pokémon Power
+    name: Summon Minions
+    text: When you play Dark Dragonite from your hand, search your deck for up to
+      2 Basic Pokémon and put them onto your Bench. Shuffle your deck afterward.
+  moves:
+  - cost: [C, C, C, C]
+    name: Giant Tail
+    text: Flip a coin. If tails, this attack does nothing.
+  resistances:
+  - type: F
+    value: '-30'
+  rarity: Secret
+  artist: Mitsuhiro Arita
+- id: 185-103
+  pioId: pkmod5-103
+  enumId: ROCKET'S_ARTICUNO_EX_103
+  name: Rocket's Articuno ex
+  nationalPokedexNumber: 144
+  number: '103'
+  types: [D]
+  superType: POKEMON
+  subTypes: [EX, BASIC]
+  hp: 90
+  retreatCost: 1
+  abilities:
+  - type: Poké-Body
+    name: Darkness Veil
+    text: As long as Rocket's Articuno ex has and [D] Energy attached to it, prevent all effects, except damage, by an opponent's attack   
+          done to Rocket's Articuno ex.
+  moves:
+  - cost: [C]
+    name: Freeze Solid
+    damage: '10'
+    text: Search your Discard pile for a [W] Energy card and attach it to Rocket's Articuno ex.
+  - cost: [W, C, C]
+    name: Ice Wing
+    damage: '50'
+  weaknesses:
+  - type: M
+    value: x2
+  rarity: Ultra Rare
+  artist: Ryo Ueda
+- id: 185-104
+  pioId: pkmod5-104
+  enumId: ROCKET'S_MOLTRES_EX_104
+  name: Rocket's Moltres ex
+  nationalPokedexNumber: 146
+  number: '104'
+  types: [D]
+  superType: POKEMON
+  subTypes: [EX, BASIC]
+  hp: 90
+  retreatCost: 2
+  abilities:
+  - type: Poké-Body
+    name: Dark Lift
+    text: If Rocket's Moltres ex has and [D] Energy attached to it, the Retreat Cost for Rocket's Moltres ex is 0.
+  moves:
+  - cost: [R, C]
+    name: Fire Dance
+    damage: '30'
+    text: Search your Discard pile for a [R] Energy card and attach it to 1 of your Pokémon.
+  - cost: [R, C, C]
+    name: Combustion
+    damage: '50'
+  weaknesses:
+  - type: W
+    value: x2
+  rarity: Ultra Rare
+  artist: Ryo Ueda
+- id: 185-105
+  pioId: pkmod5-105
+  enumId: ROCKET'S_ZAPDOS_EX_105
+  name: Rocket's Zapdos ex
+  nationalPokedexNumber: 145
+  number: '105'
+  types: [D]
+  superType: POKEMON
+  subTypes: [EX, BASIC]
+  hp: 90
+  retreatCost: 2
+  abilities:
+  - type: Poké-Body
+    name: Darkness Guard
+    text: As long as Rocket's Zapdos ex has and [D] Energy attached to it, damage done to Rocket's Zapdos ex by an opponent's attack 
+          is reduced by 10 (after applying Weakness and Resistance).
+  moves:
+  - cost: [C]
+    name: Plasma
+    damage: '10'
+    text: Search your Discard pile for a [L] Energy card and attach it to Rocket's Zapdos ex.
+  - cost: [L, L, C]
+    name: Raging Thunder
+    damage: '60'
+    text: This attack does 30 damage to 1 of your Pokémon.
+  weaknesses:
+  - type: L
+    value: x2
+  rarity: Ultra Rare
+  artist: Ryo Ueda
+- id: 185-106
+  pioId: pkmod5-106
+  enumId: ROCKET'S_MEWTWO_EX_106
+  name: Rocket's Mewtwo ex
+  nationalPokedexNumber: 150
+  number: '106'
+  types: [D]
+  superType: POKEMON
+  subTypes: [EX, BASIC]
+  hp: 90
+  retreatCost: 2
+  moves:
+  - cost: [P]
+    name: Darkness Switch
+    text: Discard an Energy card attached to Rocket's Mewtwo ex, and then move 2 damage counters on Rocket's Mewtwo ex onto the
+          Defending Pokémon. (If an effect of this attack is prevented, this attack does nothing.)
+  - cost: [P, C, C]
+    name: Hypnoblast
+    damage: '40'
+    text: Flip a coin, If heads, the Defending Pokémon is now Asleep.
+  - cost: [P, C, C, C]
+    name: Psyburn
+    damage: '60'
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Ultra Rare
+  artist: Ryo Ueda
+- id: 185-107
+  pioId: pkmod5-107
+  enumId: ROCKET'S_HITMONCHAN_EX_107
+  name: Rocket's Hitmonchan ex
+  nationalPokedexNumber: 107
+  number: '107'
+  types: [D]
+  superType: POKEMON
+  subTypes: [EX, BASIC]
+  hp: 90
+  retreatCost: 1
+  abilities:
+  - type: Poké-Body
+    name: Strikes Back
+    text: If Rocket's Hitmonchan ex is your Active Pokémon and is damaged by an opponent's attack (even if Rocket's Hitmonchan ex is Knocked Out), put 1 damage counter on the Attacking Pokémon.
+  moves:
+  - cost: [F]
+    name: Mach Punch
+    damage: '10'
+    text: Does 10 damage to 2 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
+  - cost: [F, C, C]
+    name: Magnum Punch
+    damage: '50'
+  weaknesses:
+  - type: P
+    value: x2
+  rarity: Ultra Rare
+  artist: Ryo Ueda 
+- id: 185-108
+  pioId: pkmod5-108
+  enumId: ROCKET'S_SCYTHER_EX_108
+  name: Rocket's Scyther ex
+  nationalPokedexNumber: 123
+  number: '108'
+  types: [D]
+  superType: POKEMON
+  subTypes: [EX, BASIC]
+  hp: 80
+  retreatCost: 1
+  abilities:
+  - type: Poké-Body
+    name: Dual Armor
+    text: As long as Rocket's Scyther ex has any [G] Energy attached to it, Rocket's Scyther ex is both [G] and [D] type.
+  moves:
+  - cost: [C]
+    name: Bounce
+    damage: '10'
+    text: After your attack, you may switch Rocket's Scyther ex with 1 of your Benched Pokémon.
+  - cost: [C, C, C]
+    name: Slashing Strike
+    damage: '40'
+    text: Rocket's Scyther ex can't use Slashing Strike during your next turn.
+  resistances:
+  - type: F
+    value: '-30'
+  weaknesses:
+  - type: R
+    value: x2
+  rarity: Ultra Rare
+  artist: Ryo Ueda
+- id: 185-109
+  pioId: pkmod5-109
+  enumId: ROCKET'S_SNORLAX_EX_109
+  name: Rocket's Snorlax ex
+  nationalPokedexNumber: 143
+  number: '109'
+  types: [D]
+  superType: POKEMON
+  subTypes: [EX, BASIC]
+  hp: 90
+  retreatCost: 3
+  abilities:
+  - type: Poké-Body
+    name: Dark Healer
+    text: As long as Rocket's Snorlax ex has any [D] Energy attached to it, remove 1 damage counter from Rocket's Snorlax ex between turns.
+  moves:
+  - cost: [C, C]
+    name: Poison Claws
+    damage: '20'
+    text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
+  - cost: [C, C, C, C]
+    name: Collapse
+    damage: '50'
+    text: Rocket's Snorlax ex is now Asleep.
+  weaknesses:
+  - type: F
+    value: x2
+  rarity: Ultra Rare
+  artist: Ryo Ueda
