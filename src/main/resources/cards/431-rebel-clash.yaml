@@ -100,9 +100,31 @@ cards:
   rarity: Rare Holo
 - id: 431-5
   pioId: swsh2-5
-  enumId: HERACROSS_5
-  name: Heracross
+  enumId: SHUCKLE_5
+  name: Shuckle
   number: '5'
+  types: [G]
+  superType: POKEMON
+  subTypes: [BASIC]
+  hp: 80
+  retreatCost: 1
+  moves: 
+  - cost: [C]
+    name: Gather Berries
+    text: Shuffle 5 basic Energy cards from your discard pile into your deck.
+  - cost: [G, C, C]
+    name: Bind
+    damage: '50'
+    text: Flip a coin. If heads, your opponent’s Active Pokemon is now Paralyzed.
+  weaknesses: 
+  - type: R
+    value: x2
+  rarity: Rare Holo
+- id: 431-6
+  pioId: swsh2-6
+  enumId: HERACROSS_6
+  name: Heracross
+  number: '6'
   types: [G]
   superType: POKEMON
   subTypes: [BASIC]
@@ -117,28 +139,6 @@ cards:
     name: Strong Horn
     damage: '110'
     text: 
-  weaknesses: 
-  - type: R
-    value: x2
-  rarity: Rare Holo
-- id: 431-6
-  pioId: swsh2-6
-  enumId: SHUCKLE_6
-  name: Shuckle
-  number: '6'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  hp: 80
-  retreatCost: 1
-  moves: 
-  - cost: [C]
-    name: Gather Berries
-    text: Shuffle 5 basic Energy cards from your discard pile into your deck.
-  - cost: [G, C, C]
-    name: Bind
-    damage: '50'
-    text: Flip a coin. If heads, your opponent’s Active Pokemon is now Paralyzed.
   weaknesses: 
   - type: R
     value: x2
@@ -1213,24 +1213,24 @@ cards:
   rarity: Rare Holo
 - id: 431-55
   pioId: swsh2-55
-  enumId: PIKACHU_55
-  name: Pikachu
+  enumId: EISCUE_V_55
+  name: Eiscue V
   number: '55'
-  types: [L]
+  types: [W]
   superType: POKEMON
-  subTypes: [BASIC]
-  hp: 60
-  retreatCost: 1
+  subTypes: [POKEMON_V, BASIC]
+  hp: 210
+  retreatCost: 2
+  abilities: 
+  - type: Ability
+    name: Cold Absorption
+    text: Whenever you attach a [W] Energy card from your hand to this Pokémon during your turn, heal 30 damage from it.
   moves: 
-  - cost: [C]
-    name: Tail Whip
-    text: Flip a coin. If heads, the Defending Pokemon can’t attack during your opponent’s next turn.
-  - cost: [L, C, C]
-    name: Pika Volt
-    damage: '50'
-    text: 
+  - cost: [W, W, C]
+    name: Blizzard
+    text: This attack also does 10 damage to each of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses: 
-  - type: F
+  - type: M
     value: x2
   rarity: Rare Holo
 - id: 431-56
@@ -1840,8 +1840,8 @@ cards:
   rarity: Rare Holo
 - id: 431-83
   pioId: swsh2-83
-  enumId: HATTENA_83
-  name: Hattena
+  enumId: HATENNA_83
+  name: Hatenna
   number: '83'
   types: [P]
   superType: POKEMON
@@ -1871,7 +1871,7 @@ cards:
   types: [P]
   superType: POKEMON
   subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Hattena
+  evolvesFrom: Hatenna
   hp: 80
   retreatCost: 1
   moves: 
@@ -3529,31 +3529,31 @@ cards:
   text: ['Attach a Pokemon Tool to 1 of your Pokemon that doesn’t already have a Pokemon Tool attached to it. If the [R] Pokemon this card is attached to is your Active Pokemon and is damaged by an opponent’s attack, the Attacking Pokemon is now Burned. You may play as many Item cards as you like during your turn (before your attack).']
 - id: 431-156
   pioId: swsh2-156
-  enumId: CURSED_SHOVEL_156
-  name: Cursed Shovel
+  enumId: CAPACIOUS_BUCKET_156
+  name: Capacious Bucket
   number: '156'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL]
-  rarity: Rare Holo
-  text: ['Attach a Pokemon Tool to 1 of your Pokemon that doesn’t already have a Pokemon Tool attached to it. If the Pokemon this Tool is attached to is Knocked Out by damage from an opponent’s attack, discard the top 2 cards of your opponent’s deck. You may play as many Item cards as you like during your turn (before your attack).']
-- id: 431-157
-  pioId: swsh2-157
-  enumId: DAN_157
-  name: Dan
-  number: '157'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
-  rarity: Rare Holo
-  text: ['Draw 2 cards. Play Rock-Paper-Scissors with your opponent. If you win, draw 2 more cards. You may play only 1 Supporter card during your turn (before your attack).']
-- id: 431-158
-  pioId: swsh2-158
-  enumId: FULL_BUCKET_158
-  name: Full Bucket
-  number: '158'
   superType: TRAINER
   subTypes: [ITEM]
   rarity: Rare Holo
   text: ['Search your deck for 2 [W] Energy, reveal them, and put them into your hand. Then, shuffle your deck. You may play as many Item cards as you like during your turn (before your attack).']
+- id: 431-157
+  pioId: swsh2-157
+  enumId: CURSED_SHOVEL_157
+  name: Cursed Shovel
+  number: '157'
+  superType: TRAINER
+  subTypes: [ITEM, POKEMON_TOOL]
+  rarity: Rare Holo
+  text: ['Attach a Pokemon Tool to 1 of your Pokemon that doesn’t already have a Pokemon Tool attached to it. If the Pokemon this Tool is attached to is Knocked Out by damage from an opponent’s attack, discard the top 2 cards of your opponent’s deck. You may play as many Item cards as you like during your turn (before your attack).']
+- id: 431-158
+  pioId: swsh2-158
+  enumId: DAN_158
+  name: Dan
+  number: '158'
+  superType: TRAINER
+  subTypes: [SUPPORTER]
+  rarity: Rare Holo
+  text: ['Draw 2 cards. Play Rock-Paper-Scissors with your opponent. If you win, draw 2 more cards. You may play only 1 Supporter card during your turn (before your attack).']
 - id: 431-159
   pioId: swsh2-159
   enumId: FULL_HEAL_159
