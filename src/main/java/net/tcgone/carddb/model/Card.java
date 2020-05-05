@@ -23,15 +23,20 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Card {
+
+  public static final String ID_PATTERN = "^[\\w-]+$";
+  public static final String ID_RANGE_PATTERN = "^([\\w-]+)\\.\\.([\\w-]+)$";
   /**
    * Experimental id: 101-4
    */
   @NotBlank
+  @Pattern(regexp = ID_PATTERN)
   public String id;
   /**
    * Pio id: base1-4
