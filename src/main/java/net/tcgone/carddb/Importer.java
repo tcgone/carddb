@@ -33,7 +33,11 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import java.io.IOException;
 import java.util.*;
+import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author axpendix@hotmail.com
@@ -171,48 +175,6 @@ public class Importer {
       seoNameToSet.put(set.seoName, set);
       enumIdToSet.put(set.enumId, set);
 
-      for (Format format : allFormats) {
-        /*
-        relation of sets vs formats:
-        if a set is specified inside format.sets, then it is displayed as part of that format.
-        note that this is just a display. the actual card list of a format can be different than this.
-        example: promo sets may not be mentioned inside sets clause, but included in the "includes" field.
-        includes: if one card from a set is specified in includes field, it is assumed everything else in the same set is excluded.
-        excludes: if one card from a set is specified in excludes field, it is assumed everything else in the same set is included.
-        this means it is a violation to both specify includes and excludes for the same set.
-         */
-        boolean inclSet = false;
-        boolean exclSet = false;
-        boolean direSet = false;
-        if (format.sets.contains(set.id)) {
-          set._formats.add(format);
-          format._sets.add(set);
-          direSet = true;
-        }
-        for (Card card : set._cards) {
-          if (format.includes.contains(card.id)) {
-            inclSet = true;
-          }
-          if (format.excludes.contains(card.id)) {
-            exclSet = true;
-          }
-        }
-        if (inclSet && exclSet) {
-          throw new ImportException(String.format("includes and excludes cannot be specified for cards from the set %s for format %s", set.name, format.name));
-        }
-        for (Card card : set._cards) {
-          if (card.formats == null)
-            card.formats = new ArrayList<>();
-          if (inclSet && format.includes.contains(card.id)) {
-            card.formats.add(format.seoName);
-            format._cards.add(card);
-          } else if (!inclSet && direSet && !format.excludes.contains(card.id)) {
-            card.formats.add(format.seoName);
-            format._cards.add(card);
-          }
-        }
-      }
-
       for (Card card : set._cards) {
         card.set = set;
         if(set.notImplemented && !card.subTypes.contains(CardType.NOT_IMPLEMENTED)) {
@@ -275,6 +237,87 @@ public class Importer {
         cardInfoStringToCard.put(card.enumId + ":" + set.enumId, card);
         allCards.add(card);
 
+      }
+
+    }
+
+    Pattern idRangePattern = Pattern.compile(Card.ID_RANGE_PATTERN);
+    // expand all ranges
+    for (Format format : allFormats) {
+      Function<Stream<String>, Stream<String>> expandRanges =
+        (stream) -> stream.flatMap(s -> {
+          Matcher matcher = idRangePattern.matcher(s);
+          if(matcher.find()){
+            String startId = matcher.group(1);
+            String endId = matcher.group(2);
+            log.info("Range detected: {}, start={}, end={}", s, startId, endId);
+            Card startCard = idToCard.get(startId);
+            if(startCard == null) {
+              throw new IllegalStateException("Cannot find card " + startId);
+            }
+            int startIndex = startCard.set._cards.indexOf(startCard);
+            List<String> accumulator = new ArrayList<>();
+            while (startIndex < startCard.set._cards.size()) {
+              Card card = startCard.set._cards.get(startIndex);
+              accumulator.add(card.id);
+              if(card.id.equals(endId)) {
+                break;
+              }
+              startIndex++;
+            }
+            log.info("Expanded range {} to {}", s, accumulator);
+            return accumulator.stream();
+          } else {
+            // single id, leave it
+            return Stream.of(s);
+          }
+        });
+      format.includes = expandRanges.apply(format.includes.stream()).collect(Collectors.toList());
+      format.excludes = expandRanges.apply(format.excludes.stream()).collect(Collectors.toList());
+    }
+
+    for (SetFile setFile : setFiles) {
+      Set set = setFile.set;
+      for (Format format : allFormats) {
+        /*
+        relation of sets vs formats:
+        if a set is specified inside format.sets, then it is displayed as part of that format.
+        note that this is just a display. the actual card list of a format can be different than this.
+        example: promo sets may not be mentioned inside sets clause, but included in the "includes" field.
+        includes: if one card from a set is specified in includes field, it is assumed everything else in the same set is excluded.
+        excludes: if one card from a set is specified in excludes field, it is assumed everything else in the same set is included.
+        this means it is a violation to both specify includes and excludes for the same set.
+         */
+        boolean inclSet = false;
+        boolean exclSet = false;
+        boolean direSet = false;
+        if (format.sets.contains(set.id)) {
+          set._formats.add(format);
+          format._sets.add(set);
+          direSet = true;
+        }
+        for (Card card : set._cards) {
+          if (format.includes.contains(card.id)) {
+            inclSet = true;
+          }
+          if (format.excludes.contains(card.id)) {
+            exclSet = true;
+          }
+        }
+        if (inclSet && exclSet) {
+          throw new ImportException(String.format("includes and excludes cannot be specified for cards from the set %s for format %s", set.name, format.name));
+        }
+        for (Card card : set._cards) {
+          if (card.formats == null)
+            card.formats = new ArrayList<>();
+          if (inclSet && format.includes.contains(card.id)) {
+            card.formats.add(format.seoName);
+            format._cards.add(card);
+          } else if (!inclSet && direSet && !format.excludes.contains(card.id)) {
+            card.formats.add(format.seoName);
+            format._cards.add(card);
+          }
+        }
       }
 
     }
