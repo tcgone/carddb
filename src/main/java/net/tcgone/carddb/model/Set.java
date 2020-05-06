@@ -21,10 +21,14 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.List;
+
+import static net.tcgone.carddb.model.Card.ID_PATTERN;
 
 public class Set {
   @NotBlank
+  @Pattern(regexp = ID_PATTERN)
   public String id;
   @NotBlank
   public String name;
