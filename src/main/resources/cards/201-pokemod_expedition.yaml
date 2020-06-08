@@ -3661,7 +3661,7 @@ cards:
   text: ['Flip 2 coins. For each heads, search your deck for a Basic Pokémon card
       other than a Baby Pokémon card, show it to your opponent, and put it into your
       hand. Shuffle your deck afterward.']
-  artist: 'Big "Mama" Tagawa'
+  artist: '"Big Mama" Tagawa'
 - id: 201-141
   pioId: pkmod13-141
   enumId: ENERGY_RESTORE_141
@@ -3860,9 +3860,8 @@ cards:
   rarity: Rare
   text: ['Damage done to the Pokémon Metal Energy is attached to is reduced
       by 10 (after applying Weakness and Resistance). Ignore this effect if
-      the Pokémon Metal Energy is attached to isn''t [M].
-
-      Metal Energy provides [M] Energy. (Doesn''t count as a basic Energy card.)']
+      the Pokémon Metal Energy is attached to isn''t [M].' 'Metal Energy 
+      provides [M] Energy. (Doesn''t count as a basic Energy card.)']
   energy:
   - [M]
   artist: Milky Isobe
@@ -4032,7 +4031,7 @@ cards:
   number: '174'
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
-  rarity: Rare
+  rarity: Rare Holo
   text: ['Damage done to the Pokémon Metal Energy is attached to is reduced
       by 10 (after applying Weakness and Resistance). Ignore this effect if
       the Pokémon Metal Energy is attached to isn''t [M].
@@ -4048,7 +4047,7 @@ cards:
   number: '175'
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
-  rarity: Rare
+  rarity: Rare Holo
   text: ['If the Pokémon Darkness Energy is attached to does damage with an attack (after
       applying Weakness and Resistance), the attack does 10 more damage. At the end
       of every turn, put 1 damage counter on the Pokémon Darkness Energy is attached to,
@@ -4059,33 +4058,34 @@ cards:
   artist: Milky Isobe
 - id: 201-176
   pioId: pkmod13-176
-  enumId: CHANSEY_EX_176
-  name: Chansey ex
-  nationalPokedexNumber: 113
+  enumId: TYRANITAR_176
+  name: Tyranitar
+  nationalPokedexNumber: 248
   number: '176'
-  types: [C]
+  types: [D]
   superType: POKEMON
-  subTypes: [BASIC, EX]
-  hp: 120
-  retreatCost: 3
+  subTypes: [EVOLUTION, STAGE2]
+  evolvesFrom: Pupitar
+  hp: 100
+  retreatCost: 4
+  abilities:
+  - type: Poké-Power
+    name: Dark Trance
+    text: As often as you like during your turn (before your attack), you may move a [D]
+      Energy attached to 1 of your Pokémon to another of your Pokémon.
   moves:
-  - cost: [C, C]
-    name: Healing Egg
-    text: Remove 2 damage counters (1 if there is only 1) from each of your Pokemon.
-      Remove no damage counters from Chansey ex.
-  - cost: [C, C, C]
-    name: Double-edge
-    damage: 80
-    text: Chansey ex does 60 damage to itself.
+  - cost: [D, D, D, D]
+    name: Dark Mountain
+    damage: 90
+    text: Discard 2 [D] Energy attached to Tyranitar to use this attack.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
-  rarity: Rare
-  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
-  artist: Ryo Ueda
+  rarity: Rare Holo
+  artist: Tomokazu Komiya
 - id: 201-177
   pioId: pkmod13-177
   enumId: ELECTABUZZ_EX_176
@@ -4276,6 +4276,35 @@ cards:
     value: 'x2'
   resistances:
   - type: F
+    value: '-30'
+  rarity: Rare
+  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  artist: Ryo Ueda
+- id: 201-184
+  pioId: pkmod13-184
+  enumId: CHANSEY_EX_184
+  name: Chansey ex
+  nationalPokedexNumber: 113
+  number: '184'
+  types: [C]
+  superType: POKEMON
+  subTypes: [BASIC, EX]
+  hp: 120
+  retreatCost: 3
+  moves:
+  - cost: [C, C]
+    name: Healing Egg
+    text: Remove 2 damage counters (1 if there is only 1) from each of your Pokemon.
+      Remove no damage counters from Chansey ex.
+  - cost: [C, C, C]
+    name: Double-edge
+    damage: 80
+    text: Chansey ex does 60 damage to itself.
+  weaknesses:
+  - type: F
+    value: 'x2'
+  resistances:
+  - type: P
     value: '-30'
   rarity: Rare
   text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
