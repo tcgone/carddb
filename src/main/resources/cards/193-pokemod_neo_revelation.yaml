@@ -3,7 +3,6 @@ set:
   name: Pokémod Neo Revelation
   enumId: POKEMOD_NEO_REVELATION
   abbr: MODN3
-  officialCount: 64
 cards:
 - id: 193-1
   pioId: pkmod11-1
@@ -46,10 +45,10 @@ cards:
   hp: 120
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Softboiled
     text: When you play Blissey from your hand, you may flip a coin. If heads, remove
-      8 damage counters from Blissey. If tails, remove 4 damage counters from Blissey.
+      4 damage counters from Blissey. If tails, remove 2 damage counters from Blissey.
       Either way, if Blissey has fewer damage counters than that, remove all of them.
   moves:
   - cost: [C, C, C, C]
@@ -76,7 +75,7 @@ cards:
   hp: 50
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Time Travel
     text: If an opponent's attack would Knock Out Celebi, flip a coin. If heads, Celebi
       isn't Knocked Out and you shuffle it and all cards attached to it into your
@@ -160,7 +159,7 @@ cards:
   hp: 80
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Howl
     text: When you play Entei from your hand, you may discard the top 5 cards of your
       deck. (if you have fewer cards in your deck than that, discard all of them.)
@@ -232,6 +231,9 @@ cards:
     damage: 30+
     text: Flip a number of coins equal to the number of [D] Energy attached to Houndoom.
       This attack does 30 damage plus 10 more damage for each heads.
+  weaknesses:
+  - type: F
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -281,7 +283,7 @@ cards:
   hp: 80
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Electromagnetic Power
     text: As often as you like during your turn (before your attack), you may take
       1 Energy card attached to 1 of your Magnemites, Magnetons, or Dark Magnetons
@@ -321,6 +323,9 @@ cards:
     name: Perish Song
     text: If the Defending Pokémon is Asleep and was attacked with Night Eyes during
       your last turn, it is Knocked Out.
+  weaknesses:
+  - type: D
+    value: x2
   resistances:
   - type: F
     value: '-30'
@@ -340,7 +345,7 @@ cards:
   hp: 70
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Energy Converter
     text: Once during your turn (before your attack), you may choose 1 basic Energy
       card attached to 1 of your Pokémon and choose an Energy type. Treat that Energy
@@ -370,19 +375,19 @@ cards:
   types: [L]
   superType: POKEMON
   subTypes: [BASIC]
-  hp: 80
+  hp: 70
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Lightning Burst
     text: Whenever you attach a [L] Energy card from your hand to Raikou, if your
       opponent has any Benched Pokémon, he or she chooses 1 of them and switches it
       with the Defending Pokémon. This power stops working while Raikou is Asleep,
       Confused, or Paralyzed.
   moves:
-  - cost: [L, L, L]
+  - cost: [L, C, C]
     name: Lightning Tackle
-    damage: '50'
+    damage: '40'
     text: Flip a coin. If tails, Raikou does 20 damage to itself.
   weaknesses:
   - type: F
@@ -401,12 +406,12 @@ cards:
   hp: 70
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Crystal Body
     text: Prevent all effects of your opponent's attacks, other than damage, done
       to Suicune. This power stops working while Suicune is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [W, W, W]
+  - cost: [W, C, C]
     name: Aurora Wave
     damage: '30'
     text: Flip 2 coins. If both are heads, the Defending Pokémon is now Paralyzed.
@@ -429,7 +434,7 @@ cards:
   hp: 60
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Prehistoric Memory
     text: Whenever an Evolved Pokémon attacks (even if it's your opponent's), it can
       use any attack from its Basic Pokémon card or any Evolution card attached to
@@ -487,7 +492,7 @@ cards:
   hp: 60
   retreatCost: 0
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Legendary Body
     text: As long as Entei is your Active Pokémon, Entei and Energy cards attached
       to it aren't affected by effects from Trainer cards other than Stadium cards.
@@ -544,7 +549,6 @@ cards:
   moves:
   - cost: [C]
     name: Genetic Memory
-    damage: '10'
     text: Use any attack from Kingdra's Basic Pokémon card or Evolution card. (Kingdra
       doesn't have to pay for that attack's Energy cost.)
   - cost: [W, W, C, C]
@@ -553,6 +557,9 @@ cards:
     text: Flip 2 coins. For each heads, choose 1 Energy card attached to the Defending
       Pokémon, if any, and discard it. If both are tails, this attack does nothing
       (not even damage).
+  weaknesses:
+  - type: L
+    value: x2
   rarity: Rare
   artist: Mitsuhiro Arita
 - id: 193-20
@@ -619,7 +626,7 @@ cards:
   hp: 60
   retreatCost: 0
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Legendary Body
     text: As long as Raikou is your Active Pokémon, Raikou and Energy cards attached
       to it aren't affected by effects from Trainer cards other than Stadium cards.
@@ -687,6 +694,9 @@ cards:
     name: Quick Attack
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 20 more damage.
+  weaknesses:
+  - type: F
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -732,7 +742,7 @@ cards:
   hp: 60
   retreatCost: 3
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Mimic
     text: As long as Sudowoodo is your Active Pokémon, it copies all of the Defending
       Pokémon's attacks, including their costs. This power can't be used if Sudowoodo
@@ -759,7 +769,7 @@ cards:
   hp: 60
   retreatCost: 0
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Legendary Body
     text: As long as Suicune is your Active Pokémon, Suicune and Energy cards attached
       to it aren't affected by effects from Trainer cards other than Stadium cards.
@@ -888,7 +898,7 @@ cards:
     text: Flip a coin. If heads, this attack does 20 damage plus 20 more damage and
       the Defending Pokémon is now Confused. If tails, this attack does 20 damage.
   weaknesses:
-  - type: P
+  - type: M
     value: x2
   rarity: Uncommon
   artist: Tomokazu Komiya
@@ -905,7 +915,7 @@ cards:
   hp: 80
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Submerge
     text: Once during your turn (before your attack), you may change Lanturn's type
       to [W] until the end of your turn. This power can't be used if Lanturn is Asleep,
@@ -934,7 +944,7 @@ cards:
   hp: 80
   retreatCost: 3
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Magma Pool
     text: If Magcargo is your Active Pokémon and moves to the Bench, remove 1 [R]
       Energy card attached to Magcargo, if any, and attach it to the new Active Pokémon.
@@ -968,7 +978,7 @@ cards:
     name: Constrict
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [W, W, W]
+  - cost: [W, W, W, W]
     name: Octazooka
     damage: '40'
     text: Flip a coin. If heads, whenever the Defending Pokémon attacks, your opponent
@@ -992,10 +1002,10 @@ cards:
   hp: 60
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Allergic Pollen
     text: As long as Parasect is in play, cards in any player's discard piles are
-      not affected by attacks or Pokémon Powers. This power stops working if Parasect
+      not affected by attacks or Poké-Powers. This power stops working if Parasect
       becomes Asleep, Confused, or Paralyzed.
   moves:
   - cost: [G, G]
@@ -1025,7 +1035,7 @@ cards:
     name: Nap
     text: Remove 3 damage counters from Piloswine. If it has fewer damage counters
       than that, remove all of them.
-  - cost: [F, F, C, C]
+  - cost: [F, F, F, C]
     name: High-Speed Charge
     damage: '80'
     text: Piloswine does 30 damage to itself. Piloswine can't use this attack during
@@ -1107,7 +1117,7 @@ cards:
   hp: 50
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Bear
     text: Once during your turn (before your attack), you may move 1 damage counter
       from 1 of your Pokémon with Unown in its name to Unown B. This power can't be
@@ -1134,7 +1144,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Yield
     text: Once during your turn (before your attack), you may flip a coin. If heads,
       search your deck for a [P] Energy card and attach it to 1 of your Pokémon with
@@ -1287,7 +1297,7 @@ cards:
   superType: POKEMON
   subTypes: [BASIC]
   evolvesTo: [Honchkrow]
-  hp: 40
+  hp: 60
   retreatCost: 0
   moves:
   - cost: [C]
@@ -1300,6 +1310,9 @@ cards:
     damage: 10+
     text: Flip a number of coins equal to the number of Murkrows on your Bench. This
       attack does 10 damage plus 10 more damage for each heads.
+  weaknesses:
+  - type: L
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -1419,7 +1432,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Hard Shell
     text: Whenever an attack (including your own) does 40 or less damage to Shuckle
       (after applying Weakness and Resistance), reduce that damage to 10. (Any other
@@ -1432,7 +1445,7 @@ cards:
       20 Poison damage instead of 10 after each player's turn (even if it was already
       Poisoned).
   weaknesses:
-  - type: G
+  - type: W
     value: x2
   rarity: Common
   artist: Yuka Morii
@@ -1606,9 +1619,9 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Keep
-    text: Your opponent's attacks, Pokémon Powers, and Trainer cards can't discard
+    text: Your opponent's attacks, Poké-Powers, and Trainer cards can't discard
       Energy cards from your Pokémon with Unown in their names. (Any other effects
       still happen.)
   moves:
@@ -1661,17 +1674,14 @@ cards:
   artist: Keiji Kinebuchi
 - id: 193-61
   pioId: pkmod11-61
-  enumId: HEALING_FIELD_61
-  name: Healing Field
+  enumId: HIGH_PRESSURE_SYSTE,_61
+  name: High Pressure System
   number: '61'
   superType: TRAINER
   subTypes: [STADIUM]
-  rarity: Uncommon
-  text: [This card stays in play when you play it. Discard this card if another Stadium
-      card comes into play., 'Once during each player''s turn, he or she may flip
-      a coin. If heads, that player removes 2 damage counters from his or her Active
-      Pokémon (1 if it only has 1).']
-  artist: Keiji Kinebuchi
+  rarity: Rare
+  text: ['Each player pays [C] less to retreat his or her [R] and [W] Pokémon.']
+  artist: Ken Sugimori
 - id: 193-62
   pioId: pkmod11-62
   enumId: POKEMON_BREEDER_FIELDS_62
@@ -1686,28 +1696,25 @@ cards:
   artist: Ken Sugimori
 - id: 193-63
   pioId: pkmod11-63
-  enumId: ROCKET_S_HIDEOUT_63
-  name: Rocket's Hideout
+  enumId: HEAVY_PRESSURE_SYSTEM_63
+  name: Heavy Pressure System
   number: '63'
   superType: TRAINER
   subTypes: [STADIUM]
-  rarity: Uncommon
-  text: [This card stays in play when you play it. Discard this card if another Stadium
-      card comes into play., Each Pokémon in play with Dark in its name (even your
-      opponent's) gets +20 HP.]
-  artist: Keiji Kinebuchi
+  rarity: Rare
+  text: ['Any damage done by attacks from [P] Pokémon and [F] Pokémon (both yours and
+      your opponent's) is not affected by Resistance.']
+  artist: Ken Sugimori
 - id: 193-64
   pioId: pkmod11-64
-  enumId: OLD_ROD_64
-  name: Old Rod
+  enumId: LOW_PRESSURE_SYSTEM_64
+  name: Low Pressure System
   number: '64'
   superType: TRAINER
-  subTypes: []
-  rarity: Common
-  text: ['Flip 2 coins. If both are heads, put a Baby Pokémon, Basic Pokémon, or Evolution
-      card from your discard pile into your hand. If both are tails, put a Trainer
-      card from your discard pile into your hand.']
-  artist: Keiji Kinebuchi
+  subTypes: [STADIUM]
+  rarity: Rare
+  text: ['Each [G] and [L] Pokémon in play (both yours and your opponent's) gets +10 HP.']
+  artist: Ken Sugimori
 - id: 193-65
   pioId: pkmod11-65
   enumId: SHINING_GYARADOS_65
@@ -1734,7 +1741,7 @@ cards:
       If heads, choose 1 Energy card attached to each of your opponent's Pokémon that
       has any Energy cards attached to it and discard those Energy cards.
   weaknesses:
-  - type: G
+  - type: L
     value: x2
   resistances:
   - type: F
@@ -1766,3 +1773,127 @@ cards:
     value: x2
   rarity: Shining
   artist: Ken Sugimori
+- id: 193-67
+  pioId: pkmod11-67
+  enumId: CELEBI_EX_67
+  name: Celebi ex
+  nationalPokedexNumber: 251
+  number: '67'
+  types: [G]
+  superType: POKEMON
+  subTypes: [BASIC, EX]
+  hp: 70
+  retreatCost: 1
+  moves:
+  - cost: [G]
+    name: Spiral Leaf
+    text: Flip a coin. If heads, put 1 damage counter on each of your opponent's Pokémon.
+      If tails, remove 1 damage counter from each of your Pokémon.
+  - cost: [G, C]
+    name: Time Trap
+    damage: '30'
+    text: Flip a coin. If heads, look at the top 4 cards of your opponent's deck, and put
+      them back on top of your opponent's deck in any order. If tails, look at the top 4
+      cards of your deck, and put them back on top of your deck in any order.
+  weaknesses:
+  - type: R
+    value: x2
+  rarity: Rare Holo
+  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  artist: Ryo Ueda
+- id: 193-68
+  pioId: pkmod11-68
+  enumId: HO_OH_EX_68
+  name: Ho-Oh ex
+  nationalPokedexNumber: 250
+  number: '68'
+  types: [R]
+  superType: POKEMON
+  subTypes: [BASIC, EX]
+  hp: 100
+  retreatCost: 2
+  abilities:
+  - type: Poké-Power
+    name: Golden Wing
+    text: If Ho-Oh ex would be Knocked Out by damage from an opponent's attack, you may move
+      up to 2 Energy attached to Ho-Oh ex to your Pokémon in any way you like.
+  moves:
+  - cost: [C, C, C]
+    name: Rainbow Burn
+    damage: '30+'
+    text: Does 30 damage plus 10 more damage for each type of basic Energy card attached to
+      Ho-Oh ex.
+  weaknesses:
+  - type: W
+    value: x2
+  rarity: Rare Holo
+  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  artist: Mitsuhiro Arita
+- id: 193-69
+  pioId: pkmod11-69
+  enumId: LUGIA_EX_69
+  name: Lugia ex
+  nationalPokedexNumber: 249
+  number: '69'
+  types: [C]
+  superType: POKEMON
+  subTypes: [BASIC, EX]
+  hp: 100
+  retreatCost: 1
+  abilities:
+  - type: Poké-Body
+    name: Silver Sparkle
+    text: If Lugia ex is your Active Pokémon and is damaged by an opponent's attack (even if
+      Lugia ex is Knocked Out), flip a coin. If heads, choose an Energy card attached to the
+      Attacking Pokémon and return it to your opponent's hand.
+  moves:
+  - cost: [R, W, L]
+    name: Elemental Blast
+    damage: '200'
+    text: Discard a [R] Energy, [W] Energy, and [L] Energy attached to Lugia ex.
+  weaknesses:
+  - type: P
+    value: x2
+  resistances:
+  - type: F
+    value: '-30'
+  rarity: Rare Holo
+  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  artist: Hikaru Koike
+- id: 193-70
+  pioId: pkmod11-70
+  enumId: SCIZOR_EX
+  name: Scizor ex
+  nationalPokedexNumber: 212
+  number: '70'
+  types: [C]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE1, EX]
+  evolvesFrom: [Scyther, Scyther ex]
+  hp: 100
+  retreatCost: 1
+  abilities:
+  - type: Poké-Body
+    name: Danger Perception
+    text: As long as Scizor ex's remaining HP is 40 or less, Scizor ex does 10 more damage to
+      the Defending Pokémon (before applying Weakness and Resistance).
+  moves:
+  - cost: [M, C]
+    name: Steel Wing
+    damage: '20'
+    text: During your opponent's next turn, any damage done to Scizor ex by attacks is reduced
+      by 10 (after applying Weakness and Resistance).
+  - cost: [M, C, C]
+    name: Cross-Cut
+    damage: '40+'
+    text: If the Defending Pokémon is an Evolved Pokémon, this attack does 40 damage plus 10
+      more damage.
+  weaknesses:
+  - type: R
+    value: x2
+  resistances:
+  - type: G
+    value: '-30'
+  rarity: Rare Holo
+  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  artist: Mitsuhiro Arita
