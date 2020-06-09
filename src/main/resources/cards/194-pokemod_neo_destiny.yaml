@@ -3,7 +3,6 @@ set:
   name: Pokémod Neo Destiny
   enumId: POKEMOD_NEO_DESTINY
   abbr: MODN4
-  officialCount: 105
 cards:
 - id: 194-1
   pioId: pkmod12-1
@@ -18,7 +17,7 @@ cards:
   hp: 70
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Conductivity
     text: Whenever your opponent attaches an Energy card from his or her hand to a
       Pokémon, this power does 10 damage to that Pokémon. (Don't apply Weakness and
@@ -48,7 +47,7 @@ cards:
   hp: 70
   retreatCost: 0
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Surprise Bite
     text: When you play Dark Crobat from your hand, you may choose 1 of your opponent's
       Pokémon. This power does 20 damage to that Pokémon. (Don't apply Weakness and
@@ -134,11 +133,11 @@ cards:
   types: [W]
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
-  evolvesFrom: Croconaw
+  evolvesFrom: Dark Croconaw
   hp: 80
   retreatCost: 3
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Scare
     text: As long as Dark Feraligatr is your Active Pokémon, all of your opponent's
       Baby Pokémon Powers stop working and your opponent's Baby Pokémon can't attack.
@@ -163,23 +162,26 @@ cards:
   types: [P]
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
-  evolvesFrom: Haunter
+  evolvesFrom: Dark Haunter
   hp: 70
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Deep Sleep
     text: As long as any Dark Gengar are in play, a player flips 2 coins for each
       of his or her Pokémon that is Asleep at the end of each turn. If either of them
       is tails, that Pokémon is still Asleep. This power stops working if Dark Gengar
       is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [P, P, P]
+  - cost: [P, C, C]
     name: Pull In
     damage: '30'
     text: If your opponent has any Benched Pokémon, you may choose 1 of them and switch
       it with the Defending Pokémon (before doing damage or other effects of this
       attack). Either way, the Defending Pokémon is now Asleep.
+  weaknesses:
+  - type: D
+    value: x2
   resistances:
   - type: F
     value: '-30'
@@ -229,7 +231,7 @@ cards:
   hp: 60
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Spatial Distortion
     text: Once during your turn (before your attack), you may flip a coin. If heads,
       choose a Stadium card from your discard pile and put it into play. (If there's
@@ -287,7 +289,7 @@ cards:
   types: [R]
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
-  evolvesFrom: Quilava
+  evolvesFrom: Dark Quilava
   hp: 80
   retreatCost: 1
   moves:
@@ -296,10 +298,10 @@ cards:
     damage: '20'
   - cost: [R]
     name: Rushing Flames
-    damage: 40x
+    damage: 30x
     text: You may discard any number of [R] Energy cards attached to your Pokémon.
       Flip a coin for each [R] Energy card discarded in this way. This attack does
-      40 damage times the number of heads.
+      30 damage times the number of heads.
   weaknesses:
   - type: W
     value: x2
@@ -331,7 +333,7 @@ cards:
       of 50 and choose 1 of those Benched Pokémon. This attack does 30 damage to that
       Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: G
+  - type: W
     value: x2
   resistances:
   - type: L
@@ -351,7 +353,7 @@ cards:
   hp: 100
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Drive Off
     text: As long as Light Arcanine is your Active Pokémon, once during your turn
       (before your attack), if your opponent has any Benched Pokémon, he or she chooses
@@ -406,11 +408,11 @@ cards:
   types: [C]
   superType: POKEMON
   subTypes: [EVOLUTION, LIGHT_POKEMON, STAGE2]
-  evolvesFrom: Dragonair
+  evolvesFrom: Light Dragonair
   hp: 100
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Miraculous Wind
     text: As long as Light Dragonite is your Active Pokémon, each Special Energy card
       provides [C] Energy instead of its usual type and its other effects stop working.
@@ -440,7 +442,7 @@ cards:
   hp: 60
   retreatCost: 0
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Gift
     text: When you play Light Togetic from your hand, your opponent may search his
       or her deck for a Pokémon Tool card, show that card to you, and put it into
@@ -456,22 +458,6 @@ cards:
     value: '-30'
   rarity: Rare Holo
   artist: Naoyo Kimura
-- id: 194-16
-  pioId: pkmod12-16
-  enumId: MIRACLE_ENERGY_16
-  name: Miracle Energy
-  number: '16'
-  superType: ENERGY
-  subTypes: [SPECIAL_ENERGY]
-  rarity: Rare Holo
-  text: [You can't have more than 1 Miracle Energy card in your deck., 'Attach Miracle
-      Energy to one of your Shining or Light Pokémon. At the end of your turn, discard
-      Miracle Energy. While in play, Miracle Energy counts as every type of Energy
-      but provides only 2 Energy at a time.']
-  energy:
-  - [R, D, F, G, W, Y, L, M, P]
-  - [R, D, F, G, W, Y, L, M, P]
-  artist: Milky Isobe
 - id: 194-17
   pioId: pkmod12-17
   enumId: DARK_ARIADOS_17
@@ -495,7 +481,7 @@ cards:
     damage: '30'
     text: The Defending Pokémon is now Poisoned. Flip a coin. If heads, the Defending
       Pokémon can't retreat until the end of your opponent's next turn and if the
-      effect of an attack, Pokémon Power, or Trainer card would change that player's
+      effect of an attack, Poké-Power, or Trainer card would change that player's
       Active Pokémon, that part of the effect does nothing.
   weaknesses:
   - type: R
@@ -515,7 +501,7 @@ cards:
   hp: 60
   retreatCost: 3
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Hot Plate
     text: As long as Dark Magcargo is your Active Pokémon, whenever a player puts
       a Baby Pokémon or Basic Pokémon onto his or her Bench from his or her hand,
@@ -543,7 +529,7 @@ cards:
   types: [W]
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
-  evolvesFrom: Omanyte
+  evolvesFrom: Dark Omanyte
   hp: 70
   retreatCost: 2
   moves:
@@ -561,6 +547,9 @@ cards:
   weaknesses:
   - type: G
     value: x2
+  resistances:
+  - type: R
+    value: '-30'
   rarity: Rare
   artist: Tomokazu Komiya
 - id: 194-20
@@ -576,7 +565,7 @@ cards:
   hp: 60
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Cunning
     text: Once during your turn (before your attack), you may flip a coin. If heads,
       look at the top card of your opponent's deck. Then, you may have your opponent
@@ -699,7 +688,7 @@ cards:
       long as that Pokémon is your Active Pokémon, it can't become Asleep, Confused,
       Paralyzed, or Poisoned. (All other effects of attacks, Pokémon Powers, and Trainer
       cards still happen.)
-  - cost: [G, C, C]
+  - cost: [G, G, G]
     name: Comet Punch
     damage: 20x
     text: Flip 4 coins. This attack does 20 damage times the number of heads.
@@ -720,11 +709,11 @@ cards:
   types: [F]
   superType: POKEMON
   subTypes: [EVOLUTION, LIGHT_POKEMON, STAGE2]
-  evolvesFrom: Machoke
+  evolvesFrom: Light Machoke
   hp: 100
   retreatCost: 2
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Tag Team
     text: When you play Light Machamp from your hand, if it is on your Bench, remove
       3 damage counters from your Active Pokémon. If it has fewer damage counters
@@ -754,7 +743,7 @@ cards:
   hp: 90
   retreatCost: 3
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Fluffy Wool
     text: During your opponent's turn, if Light Piloswine is your Active Pokémon and
       is damaged by your opponent's attack (even if it's Knocked Out), flip a coin.
@@ -766,7 +755,7 @@ cards:
     damage: '30'
     text: If there is a Stadium card in play, you may discard it.
   weaknesses:
-  - type: G
+  - type: M
     value: x2
   resistances:
   - type: L
@@ -785,7 +774,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Give
     text: Once during your turn (before your attack), if you have Unown G, Unown I,
       Unown V, and Unown E on your Bench, you may flip a coin. If heads, search your
@@ -812,7 +801,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Help
     text: Once during your turn (before your attack), if you have Unown H, Unown E,
       Unown L, and Unown P on your Bench, you may shuffle your hand into your deck,
@@ -838,7 +827,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Want
     text: Once during your turn (before your attack), if you have Unown W, Unown A,
       Unown N, and Unown T on your Bench, you may flip a coin. If heads, put a Trainer
@@ -864,7 +853,7 @@ cards:
   hp: 50
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: XXXXX
     text: Whenever 1 of your Pokémon with Unown in its name uses its Hidden Power
       attack, flip a coin until you get tails. That attack does 10 more damage for
@@ -983,7 +972,7 @@ cards:
   - cost: [L, C]
     name: Stun Wave
     damage: '30'
-    text: If the Defending Pokémon has a Pokémon Power, that power stops working until
+    text: If the Defending Pokémon has a Poké-Power, that power stops working until
       the end of your next turn.
   weaknesses:
   - type: F
@@ -1028,7 +1017,7 @@ cards:
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Gastly
   evolvesTo: [Gengar]
-  hp: 50
+  hp: 60
   retreatCost: 0
   moves:
   - cost: [P]
@@ -1036,11 +1025,14 @@ cards:
     text: Put a Baby Pokémon or Basic Pokémon card from your opponent's discard pile
       onto his or her Bench. Put 1 damage counter on that Pokémon. (You can't use
       this attack if your Bench is full.)
-  - cost: [P, P]
+  - cost: [P, C]
     name: Surround
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Asleep. If tails, the
       Defending Pokémon can't retreat during your opponent's next turn.
+  weaknesses:
+  - type: D
+    value: x2
   resistances:
   - type: F
     value: '-30'
@@ -1068,6 +1060,9 @@ cards:
   weaknesses:
   - type: G
     value: x2
+  resistances:
+  - type: R
+    value: '-30'
   rarity: Uncommon
   artist: Tomokazu Komiya
 - id: 194-38
@@ -1096,7 +1091,7 @@ cards:
       Evolution card named Dark Tyranitar and put it on Dark Pupitar. (This counts
       as evolving Dark Pupitar.) Shuffle your deck afterward.
   weaknesses:
-  - type: G
+  - type: W
     value: x2
   resistances:
   - type: L
@@ -1232,6 +1227,9 @@ cards:
     name: Lunge
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing.
+  weaknesses:
+  - type: F
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -1276,19 +1274,19 @@ cards:
   hp: 80
   retreatCost: 2
   moves:
-  - cost: [W, W]
+  - cost: [W, C]
     name: Freezing Breath
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails,
       the Defending Pokémon is now Asleep.
-  - cost: [W, W, W]
+  - cost: [W, C, C]
     name: Ice Pillar
     damage: '40'
     text: Until the end of your opponent's next turn, as long as Light Dewgong is
       your Active Pokémon, prevent all damage done by attacks to your Benched Pokémon.
       (Any other effects of attacks still happen.)
   weaknesses:
-  - type: L
+  - type: M
     value: x2
   rarity: Uncommon
   artist: Masako Yamashita
@@ -1422,7 +1420,7 @@ cards:
     name: Guiding Flame
     text: Put a Baby Pokémon or a Basic Pokémon card from your discard pile onto your
       Bench. (You can't use this attack if your Bench is full.)
-  - cost: [R, R, R]
+  - cost: [R, R, C]
     name: Fire Blast
     damage: '50'
     text: Discard a [R] Energy card attached to Light Ninetales in order to use this
@@ -1618,7 +1616,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Chase
     text: As long as Unown C is your Active Pokémon, whenever your opponent's Active
       Pokémon tries to retreat, flip a coin. If heads, put 1 damage counter on that
@@ -1644,7 +1642,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Perform
     text: If an attack damaged Unown P during your opponent's last turn and Unown
       P was your Active Pokémon, Unown P's Hidden Power attack does that much more
@@ -1670,7 +1668,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Quicken
     text: Once during your turn (before your attack), you may flip a coin. If heads,
       prevent all effects of attacks, including damage, done to any of your Pokémon
@@ -1698,7 +1696,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Body
     name: Zoom
     text: As long as Unown Z is Benched, you pay no Energy cost to retreat a Pokémon
       with Unown in its name.
@@ -1832,6 +1830,9 @@ cards:
     name: Nightmare
     damage: '10'
     text: The Defending Pokémon is now Asleep.
+  weaknesses:
+  - type: D
+    value: x2
   resistances:
   - type: F
     value: '-30'
@@ -1896,7 +1897,7 @@ cards:
   superType: POKEMON
   subTypes: [BASIC]
   evolvesTo: [Arcanine]
-  hp: 50
+  hp: 60
   retreatCost: 1
   moves:
   - cost: [C, C]
@@ -1949,11 +1950,11 @@ cards:
     name: Leer
     text: Flip a coin. If heads, the Defending Pokémon can't attack during your opponent's
       next turn. (Benching or evolving either Pokémon ends this effect.)
-  - cost: [F, C]
+  - cost: [C, C]
     name: Rock Throw
     damage: '20'
   weaknesses:
-  - type: G
+  - type: W
     value: x2
   resistances:
   - type: L
@@ -2008,6 +2009,9 @@ cards:
   weaknesses:
   - type: R
     value: x2
+  resistances:
+  - type: W
+    value: '-30'
   rarity: Common
   artist: Toshinao Aoki
 - id: 194-73
@@ -2265,6 +2269,9 @@ cards:
   weaknesses:
   - type: R
     value: x2
+  resistances:
+  - type: W
+    value: '-30'
   rarity: Common
   artist: Etsuya Hattori
 - id: 194-84
@@ -2285,7 +2292,7 @@ cards:
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: G
+  - type: M
     value: x2
   resistances:
   - type: L
@@ -2328,7 +2335,7 @@ cards:
   hp: 50
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Laugh
     text: Once during your turn (before your attack), you may flip a coin. If heads,
       each player shuffles his or her deck. This power can be used even if Unown L
@@ -2354,7 +2361,7 @@ cards:
   hp: 50
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Search
     text: Once during your turn (before your attack), you may look at 1 of your Prize
       cards. Return that Prize card face down. This power can be used even if Unown
@@ -2380,7 +2387,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Tell
     text: Once during your turn (before your attack), you may flip a coin. If heads,
       look at your opponent's hand and show your hand to your opponent. This power
@@ -2406,7 +2413,7 @@ cards:
   hp: 40
   retreatCost: 1
   abilities:
-  - type: Pokémon Power
+  - type: Poké-Power
     name: Vanish
     text: When you play Unown V from your hand, you may flip a coin. If heads, return
       1 of your Pokémon with Unown in its name (other than Unown V) to your hand.
@@ -2475,9 +2482,7 @@ cards:
   superType: TRAINER
   subTypes: [STADIUM]
   rarity: Rare
-  text: [This card stays in play when you play it. Discard this card if another Stadium
-      card comes into play., 'Each player pays [C] more to retreat a Baby Pokémon
-      or Basic Pokémon.']
+  text: ['Each player pays [C] more to retreat a Baby Pokémon or Basic Pokémon.']
   artist: Tomokazu Komiya
 - id: 194-93
   pioId: pkmod12-93
@@ -2493,32 +2498,6 @@ cards:
       to your Active Pokémon and attach it to the Pokémon with EXP.ALL attached to
       it. If you do, discard EXP.ALL.']
   artist: Keiji Kinebuchi
-- id: 194-94
-  pioId: pkmod12-94
-  enumId: IMPOSTOR_PROFESSOR_OAK_S_INVENTION_94
-  name: Impostor Professor Oak's Invention
-  number: '94'
-  superType: TRAINER
-  subTypes: []
-  rarity: Rare
-  text: ['Look at your opponent''s Prize cards. You may have your opponent shuffle
-      them into his or her deck. If you do, your opponent takes that many cards from
-      the top of his or her deck and sets them aside as his or her new Prize cards
-      (without looking at them).']
-  artist: Ken Sugimori
-- id: 194-95
-  pioId: pkmod12-95
-  enumId: RADIO_TOWER_95
-  name: Radio Tower
-  number: '95'
-  superType: TRAINER
-  subTypes: [STADIUM]
-  rarity: Rare
-  text: [This card stays in play when you play it. Discard this card if another Stadium
-      card comes into play., 'Once during each player''s turn (before attacking),
-      that player may look at the top 2 cards of his or her deck and put them back
-      in the same order.']
-  artist: ''
 - id: 194-96
   pioId: pkmod12-96
   enumId: THOUGHT_WAVE_MACHINE_96
@@ -2534,31 +2513,25 @@ cards:
   artist: Sumiyoshi Kizuki
 - id: 194-97
   pioId: pkmod12-97
-  enumId: COUNTERATTACK_CLAWS_97
-  name: Counterattack Claws
+  enumId: VERMILLION_CITY_97
+  name: Vermillion City
   number: '97'
   superType: TRAINER
-  subTypes: [POKEMON_TOOL]
-  rarity: Uncommon
-  text: [Attach Counterattack Claws to 1 of your Pokémon that doesn't have a Pokémon
-      Tool attached to it., 'During your opponent''s turn, if the Pokémon Counterattack
-      Claws is attached to is your Active Pokémon and an opponent''s attack damages
-      it (even if it is Knocked Out), flip a coin. If heads, put 2 damage counters
-      on the Defending Pokémon. Then, discard Counterattack Claws.']
-  artist: Keiji Kinebuchi
+  subTypes: [STADIUM]
+  rarity: Rare
+  text: ['The Retreat Cost of each Basic Pokémon in play is [C] less.']
+  artist: Ken Sugimori
 - id: 194-98
   pioId: pkmod12-98
-  enumId: ENERGY_AMPLIFIER_98
-  name: Energy Amplifier
+  enumId: KURT_98
+  name: Kurt
   number: '98'
   superType: TRAINER
-  subTypes: []
-  rarity: Uncommon
-  text: ['Choose an Energy card in your hand, show it to your opponent, and shuffle
-      it into your deck. Then flip a coin. If heads, search your deck for up to 3
-      basic Energy cards. Show them to your opponent, and put them into your hand.
-      Shuffle your deck afterward.']
-  artist: ''
+  subTypes: [SUPPORTER]
+  rarity: Rare
+  text: ['Search your deck for 2 Evolution cards with 90HP or more, show them to your opponent,
+      and put them into your hand. Shuffle your deck afterward.']
+  artist: Ken Sugimori
 - id: 194-99
   pioId: pkmod12-99
   enumId: ENERGY_STADIUM_99
@@ -2574,75 +2547,78 @@ cards:
   artist: Hideki Kazama
 - id: 194-100
   pioId: pkmod12-100
-  enumId: LUCKY_STADIUM_100
-  name: Lucky Stadium
+  enumId: DEFENDER_100
+  name: Defender
   number: '100'
   superType: TRAINER
-  subTypes: [STADIUM]
+  subTypes: []
   rarity: Uncommon
-  text: ['Once during each player''s turn (before attacking), that player may flip
-      a coin. If heads, that player draws a card.']
-  artist: Imakuni?
+  text: ['Attach Defender to 1 of your Pokémon (exluding [M] Pokémon). At the end of your opponent''s
+      next turn, discard Defender. Damage done to that Pokémon by attacks is reduced by 20 (after
+      applying Weakness and Resistance).']
+  artist: Ken Sugimori
 - id: 194-101
   pioId: pkmod12-101
-  enumId: MAGNIFIER_101
-  name: Magnifier
+  enumId: PLUSPOWER_101
+  name: PlusPower
   number: '101'
   superType: TRAINER
   subTypes: []
   rarity: Uncommon
-  text: ['Attach Magnifier to 1 of your Pokémon. At the end of your turn, discard
-      Magnifier. If the Pokémon Magnifier is attached to attacks, don''t apply Resistance
-      for that attack.']
-  artist: Keiji Kinebuchi
+  text: ['Attach PlusPower to your Active Pokémon (excluding [D] Pokémon). At the end of your turn,
+      discard PlusPower. If this Pokémon''s attack does damage to the Defending Pokémon (after applying
+      Weakness and Resistance), the attack does 10 more damage to the Defending Pokémon.']
+  artist: Ken Sugimori
 - id: 194-102
   pioId: pkmod12-102
-  enumId: POKEMON_PERSONALITY_TEST_102
-  name: Pokémon Personality Test
+  enumId: ULTRA_BALL_102
+  name: Ultra Ball
   number: '102'
   superType: TRAINER
   subTypes: []
   rarity: Uncommon
-  text: ['Put an Evolution card from your hand face down in front of you. Your opponent
-      guesses whether it is a Pokémon card with Light in its name, a Pokémon card
-      with Dark in its name, or neither one. Flip the card over. If your opponent
-      guessed right, he or she draws 3 cards. If your opponent guessed wrong, you
-      draw 3 cards. Either way, return the card to your hand.']
-  artist: Tomokazu Komiya
+  text: ['Discard 2 cards from your hand. (if you can''t discard 2 cards, you can''t play this card.)
+      Search your deck for a Pokémon, show it to your opponent, and put it into your hand. Shuffle
+      your deck afterward.']
+  artist: Ken Sugimori
 - id: 194-103
   pioId: pkmod12-103
-  enumId: TEAM_ROCKET_S_EVIL_DEEDS_103
-  name: Team Rocket's Evil Deeds
+  enumId: POKEMON_CATCHER_103
+  name: Pokémon Catcher
   number: '103'
   superType: TRAINER
   subTypes: []
-  rarity: Uncommon
-  text: ['Look at your opponent''s hand and choose a card there. Your opponent shuffles
-      that card into his or her deck. Then, your opponent may draw up to 2 cards.']
+  rarity: Rare
+  text: ['Flip a coin. If heads, choose 1 of your opponent''s Benched Pokémon and switch it with his or
+      her Active Pokémon.']
   artist: Ken Sugimori
-- id: 194-104
-  pioId: pkmod12-104
-  enumId: HEAL_POWDER_104
-  name: Heal Powder
-  number: '104'
-  superType: TRAINER
-  subTypes: []
-  rarity: Common
-  text: ['Flip a coin. If heads, your Active Pokémon is no longer Asleep, Confused,
-      Paralyzed, or Poisoned and remove 2 damage counters from it. If your Active
-      Pokémon has fewer damage counters than that, remove all of them.']
-  artist: ''
 - id: 194-105
   pioId: pkmod12-105
-  enumId: MAIL_FROM_BILL_105
-  name: Mail from Bill
+  enumId: DARK_AMPHAROS_105
+  name: Dark Ampharos
+  nationalPokedexNumber: 181
   number: '105'
-  superType: TRAINER
-  subTypes: []
-  rarity: Common
-  text: [You can't play this card if you have 5 or more cards in your hand (including
-      this one). Draw cards until you have exactly 4 cards in your hand.]
-  artist: Ken Sugimori
+  types: [L]
+  superType: POKEMON
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
+  evolvesFrom: Dark Flaaffy
+  hp: 70
+  retreatCost: 2
+  abilities:
+  - type: Poké-Power
+    name: Dark Impulse
+    text: Once during your turn (before your attack), you may discard a Supporter card from your hand and
+      use the effect of that card as the effect of this Power. You can't use more than 1 Dark Impulse Poké-Power
+      each turn. This power can't be used if Dark Ampharos is Asleep, Confused, or Paralyzed.
+  moves:
+  - cost: [C, C, C]
+    name: Ram
+    damage: '30'
+  weaknesses:
+  - type: F
+    value: x2
+  rarity: Rare Holo
+  artist: Kagemaru Himeno
 - id: 194-106
   pioId: pkmod12-106
   enumId: SHINING_CELEBI_106
@@ -2855,9 +2831,169 @@ cards:
       each heads, discard a [R] Energy card attached to Shining Tyranitar or this
       attack does nothing. Then, for each heads, choose an Energy card attached to
       the Defending Pokémon and discard it. If it has fewer Energy cards than that,
-      remove all of them.
+      discard all of them.
+  weaknesses:
+  - type: F
+    value: x2
   resistances:
   - type: P
     value: '-30'
   rarity: Shining
   artist: Ken Sugimori
+- id: 194-114
+  pioId: pkmod12-114
+  enumId: ROCKET_S_ENTEI_EX_114
+  name: Rocket's Entei ex
+  nationalPokedexNumber: 244
+  number: '114'
+  types: [D]
+  superType: POKEMON
+  subTypes: [BASIC, EX, OWNERS_POKEMON]
+  hp: 90
+  retreatCost: 1
+  abilities:
+  - type: Poké-Body
+    name: Dark Condition
+    text: As long as Rocket's Entei ex has any [D] Energy attached to it, Entei ex has
+      no Weakness.
+  moves:
+  - cost: [C]
+    name: Energy Link
+    damage: '10'
+    text: Search your discard pile for an Energy card and attach it to Rocket's
+      Entei ex.
+  - cost: [R, R, C]
+    name: Volcanic Ash
+    text: Discard 2 Energy attached to Rocket's Entei ex and then choose 1 of your opponent's
+      Pokémon. This attack does 60 damage to that Pokémon. (Don't apply Weakness and Resistance
+      for Benched Pokémon.)
+  weaknesses:
+  - type: W
+    value: x2
+  rarity: Rare Holo
+  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  artist: Ryo Ueda
+- id: 194-115
+  pioId: pkmod12-115
+  enumId: ROCKET_S_SUICUNE_EX_115
+  name: Rocket's Entei ex
+  nationalPokedexNumber: 245
+  number: '115'
+  types: [D]
+  superType: POKEMON
+  subTypes: [BASIC, EX, OWNERS_POKEMON]
+  hp: 90
+  retreatCost: 1
+  abilities:
+  - type: Poké-Body
+    name: Dark and Clear
+    text: As long as Rocket's Suicune ex has any [D] Energy attached to it, Rocket's Suicune ex
+      can't be affected by any Special Conditions.
+  moves:
+  - cost: [C]
+    name: Icy Wind
+    damage: '10'
+    text: The Defending Pokémon is now Asleep.
+  - cost: [W, W, C]
+    name: Hyper Slash
+    damage: '50+'
+    text: If the Defending Pokémon is a Stage 2 Evolved Pokémon, this attack does 50 damage plus
+      10 more damage.
+  weaknesses:
+  - type: L
+    value: x2
+  rarity: Rare Holo
+  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  artist: Ryo Ueda
+- id: 194-116
+  pioId: pkmod12-116
+  enumId: ROCKET_S_RAIKOU_EX_116
+  name: Rocket's Raikou ex
+  nationalPokedexNumber: 243
+  number: '116'
+  types: [D]
+  superType: POKEMON
+  subTypes: [BASIC, EX, OWNERS_POKEMON]
+  hp: 90
+  retreatCost: 2
+  abilities:
+  - type: Poké-Power
+    name: Lightning Burst
+    text: Whenever you attach [D] Energy card frm your hand to Rocket's Raikou ex, you may choose
+      1 of the Defending Pokémon and switch it with 1 of your opponent's Benched Pokémon. Your opponent
+      chooses the Benched Pokémon to switch. This power can't be used if Rocket's Raikou ex is affected
+      by a Special Condition.
+  moves:
+  - cost: [L, C, C]
+    name: Thunderous Blow
+    damage: '30+'
+    text: Does 30 damage plus 10 more damage for each [L] Energy attached to Rocket's Raikou ex.
+  weaknesses:
+  - type: F
+    value: x2
+  rarity: Rare Holo
+  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  artist: Ryo Ueda
+- id: 194-117
+  pioId: pkmod12-117
+  enumId: ROCKET_S_SNEASEL_EX_117
+  name: Rocket's Sneasel ex
+  nationalPokedexNumber: 215
+  number: '117'
+  types: [D]
+  superType: POKEMON
+  subTypes: [BASIC, EX, OWNERS_POKEMON]
+  hp: 80
+  retreatCost: 1
+  moves:
+  - cost: [D]
+    name: Drag Off
+    damage: '10'
+    text: Before doing damage, you may switch 1 of your opponent's Benched Pokémon with the Defending Pokémon.
+      If you do, this attack does 10 damage to the new Defending Pokémon. Your opponent chooses the Defending
+      Pokémon to switch.
+  - cost: [D, D, C]
+    name: Dark Ring
+    damage: '10+'
+    text: Does 10 damage plus 10 more damage for each of your [D] Pokémon in play.
+  weaknesses:
+  - type: F
+    value: x2
+  resistances:
+  - type: P
+    value: '-30'
+  rarity: Rare Holo
+  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  artist: Ryo Ueda
+- id: 194-118
+  pioId: pkmod12-118
+  enumId: ROCKET_S_SCIZOR_EX_118
+  name: Rocket's Scizor ex
+  nationalPokedexNumber: 212
+  number: '118'
+  types: [D]
+  superType: POKEMON
+  subTypes: [EVOLUTION, STAGE1, EX, OWNERS_POKEMON]
+  evolvesFrom: Rocket's Scyther ex
+  hp: 100
+  retreatCost: 2
+  abilities:
+  - type: Poké-Body
+    name: Dual Armor
+    text: As long as Rocket's Scizor ex has any [M] Energy attached to it, Rocket's Scizor ex is both [D] and
+      [M] type.
+  moves:
+  - cost: [C, C, C]
+    name: Rotating Claws
+    damage: '40'
+    text: You may discard an Energy card attached to Rocket's Scizor ex. If you do, search your discard pile
+      for an Energy card (excluding the one you discarded) and attach it to Rocket's Scizor ex.
+  weaknesses:
+  - type: R
+    value: x2
+  resistances:
+  - type: G
+    value: '-30'
+  rarity: Rare Holo
+  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  artist: Hikaru Koike
