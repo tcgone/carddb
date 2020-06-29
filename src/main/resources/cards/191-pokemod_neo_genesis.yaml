@@ -298,7 +298,7 @@ cards:
   hp: 100
   retreatCost: 3
   abilities:
-  - type: Poké-Power
+  - type: Poky-Body
     name: Wild Growth
     text: As long as Meganium is in play each [G] Energy card attached to your [G]
       Pokémon instead provides [G][G]. This power stops working while Meganium is
@@ -331,7 +331,7 @@ cards:
   moves:
   - cost: [C]
     name: Zzzap
-    text: Does 20 damage to each Pokémon in play that has a Poké-Power. Don't apply
+    text: Does 20 damage to each Pokémon in play that has a Poké-Power or Poké-Body. Don't apply
       Weakness and Resistance.
   rarity: Rare Holo
   text: ['If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
@@ -380,10 +380,10 @@ cards:
   hp: 80
   retreatCost: 3
   abilities:
-  - type: Poké-Power
+  - type: Poké-Body
     name: Mind Games
     text: As long as Slowking is your Active Pokémon, whenever your opponent plays a Trainer card (excluding Supporter or G-SPEC), he or she flips a coin. If heads,
-      that card does nothing. Put the Trainer card played on top of its owner's deck. This power can't
+      that card does nothing. Shuffle the Trainer card played into its owner's deck. This power can't
       be used if Slowking is affected by a Special Condition.
   moves:
   - cost: [P, P, P]
@@ -629,7 +629,7 @@ cards:
   - cost: [C]
     name: Sputter
     damage: '10'
-    text: All Poké-Powers stop working until the end of your next turn.
+    text: All Poké-Powers and Poké-Bodies stop working until the end of your next turn.
   rarity: Rare
   text: ['If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
       your opponent flips a coin (before doing anything else required in order to
@@ -2675,19 +2675,19 @@ cards:
   subTypes: [SPECIAL_ENERGY]
   rarity: Rare
   text: ['This card provides [C] Energy.
-    While this card attached to a Pokémon, it provides [W], [G], and {R] Energy but provides only 1 Energy at a time.']
+    While this card attached to a Pokémon, it provides [W], [G], and [R] Energy but provides only 1 Energy at a time.']
   energy:
   - [C]
 - id: 191-119
   pioId: pkmod9-119
   enumId: BLEND_ENERGY_FLP_119
   name: Blend Energy FLP
-  number: '118'
+  number: '119'
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Rare
   text: ['This card provides [C] Energy.
-    While this card attached to a Pokémon, it provides [F], [L], and {P] Energy but provides only 1 Energy at a time.']
+    While this card attached to a Pokémon, it provides [F], [L], and [P] Energy but provides only 1 Energy at a time.']
   energy:
   - [C]
 - id: 191-120
@@ -2848,7 +2848,7 @@ cards:
   name: Feraligatr ex
   evolvesFrom: Croconaw
   nationalPokedexNumber: 160
-  number: '123'
+  number: '125'
   types: [M]
   superType: POKEMON
   subTypes: [EVOLUTION, EX, STAGE2]
