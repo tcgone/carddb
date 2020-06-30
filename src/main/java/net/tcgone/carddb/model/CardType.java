@@ -36,7 +36,7 @@ public enum CardType {
   POKEMON_TOOL(26, "Pokémon Tool", "tool"),
   TECHNICAL_MACHINE(27, "Technical Machine", "technical-machine", "tm"),
   FLARE(28, "Team Flare Hyper Gear", "flare"),
-  ROCKETS_SECRET_MACHINE(29, "Secret Machine", "secret-machine"),
+  ROCKETS_SECRET_MACHINE(29, "Rocket's Secret Machine", "secret-machine", "rocket"),
 
   TAG_TEAM(93, "TAG TEAM", "tag-team"),
   ULTRA_BEAST(94, "Ultra Beast", "ultra-beast"),
