@@ -35,7 +35,7 @@ public enum CardType {
   STADIUM(25, "Stadium", "stadium"),
   POKEMON_TOOL(26, "Pokémon Tool", "tool"),
   TECHNICAL_MACHINE(27, "Technical Machine", "technical-machine", "tm"),
-  FLARE(28, "FLARE", "flare"),
+  FLARE(28, "Team Flare Hyper Gear", "flare"),
   ROCKETS_SECRET_MACHINE(29, "Secret Machine", "secret-machine"),
 
   TAG_TEAM(93, "TAG TEAM", "tag-team"),
