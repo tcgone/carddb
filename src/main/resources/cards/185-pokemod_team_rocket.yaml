@@ -168,8 +168,8 @@ cards:
     name: Sinkhole
     text: Whenever your opponent's Active Pokémon retreats, your opponent flips a
       coin. If tails, this power does 20 damage to that Pokémon. (Don't apply Weakness
-      and Resistance.) This power stops working while Dark Dugtrio is Asleep, Confused,
-      or Paralyzed.
+      and Resistance.) This power stops working while Dark Dugtrio is affected by a
+      Special Condition.
   moves:
   - cost: [C, C]
     name: Knock Down
@@ -617,8 +617,8 @@ cards:
     name: Sinkhole
     text: Whenever your opponent's Active Pokémon retreats, your opponent flips a
       coin. If tails, this power does 20 damage to that Pokémon. (Don't apply Weakness
-      and Resistance.) This power stops working while Dark Dugtrio is Asleep, Confused,
-      or Paralyzed.
+      and Resistance.) This power stops working while Dark Dugtrio is affected by a
+      Special Condition.
   moves:
   - cost: [C, C]
     name: Knock Down
@@ -912,8 +912,8 @@ cards:
     name: Evolutionary Light
     text: Once during your turn (before your attack), you may search your deck for
       an Evolution card. Show it to your opponent and put it into your hand. Shuffle
-      your deck afterward. This power can't be used if Dark Dragonair is Asleep, Confused,
-      or Paralyzed.
+      your deck afterward. This power can't be used if Dark Dragonair is affected by a
+      Special Condition.
   moves:
   - cost: [C, C, C]
     name: Tail Strike
@@ -1140,7 +1140,7 @@ cards:
     name: Sticky Goo
     text: As long as Dark Muk is your Active Pokémon, your opponent pays 2 more to
       retreat his or her Active Pokémon. This power stops working while Dark Muk is
-      Asleep, Confused, or Paralyzed.
+      affected by a Special Condition.
   moves:
   - cost: [G, G]
     name: Sludge Punch
@@ -1489,8 +1489,8 @@ cards:
     name: Long-Distance Hypnosis
     text: Distance Hypnosis - Once during your turn (before your attack), you may
       flip a coin. If heads, the Defending Pokémon is now Asleep; if tails, your Active
-      Pokémon is now Asleep. The power can't be used if Drowzee is Asleep, Confused,
-      or Paralyzed.
+      Pokémon is now Asleep. The power can't be used if Drowzee is affected by a
+      Special Condition.
   moves:
   - cost: [P, C]
     name: Nightmare
@@ -1796,8 +1796,8 @@ cards:
   - type: Poké-Power
     name: Trickery
     text: Once during your turn (before your attack), you may switch 1 of your Prizes
-      with the top card of your deck. This power can't be used if Rattata is Asleep,
-      Confused, or Paralyzed.
+      with the top card of your deck. This power can't be used if Rattata is affected by a
+      Special Condition.
   moves:
   - cost: [C]
     name: Quick Attack
@@ -2035,7 +2035,7 @@ cards:
   subTypes: [SPECIAL_ENERGY]
   rarity: Uncommon
   text: ['If you play this card from your hand, the Pokémon you attach it to is no
-      longer Asleep, Confused, Paralyzed, or Poisoned. Full Heal Energy provides [C] Energy.
+      longer affected by a Special Condition. Full Heal Energy provides [C] Energy.
       (Doesn''t count as a basic Energy card.)']
   energy:
   - [C]
@@ -2087,7 +2087,7 @@ cards:
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Rare
-  text: ['Boost Energy provides [C] Energy. While in play, if you have more Prize cards left than your opponent, Boost Energy provides [C, C, C]. If the Pokémon Boost Energy is attached to has a Poké-Power, or has any other Special Energy cards attached to it (at any time), discard Boost Energy. If the Pokémon Boost Energy is attached to is a Pokémon-ex, discard Boost Energy']
+  text: ['Boost Energy provides [C] Energy. While in play, if you have more Prize cards left than your opponent, Boost Energy provides [C, C, C]. If the Pokémon Boost Energy is attached to has a Poké-Power, or has any other Special Energy cards attached to it (at any time), discard Boost Energy. If the Pokémon Boost Energy is attached to is a Pokémon-ex, discard Boost Energy.']
   energy:
   - [C]
   artist: Unknown
@@ -2212,7 +2212,7 @@ cards:
   superType: TRAINER
   subTypes: [STADIUM]
   rarity: Uncommon
-  text: ['Each Pokémon in play with Dark in its name gets +10 HP.']
+  text: ['Each Pokémon in play with Dark or Rocket''s in its name gets +10 HP.']
   artist: Unknown
 - id: 185-96
   pioId: pkmod5-96
@@ -2242,7 +2242,9 @@ cards:
   superType: TRAINER
   subTypes: [G_SPEC]
   rarity: Secret
-  text: ['Attach Imposter Oak''s Madness to your Active Pokémon. When you play this card, discard all Trainer cards attached to your opponent''s Pokémon. As long as this card is attached to your Active Pokémon, your opponent can''t attach any Trainer cards to his or her Pokémon.']
+  text: ['Attach Imposter Oak''s Madness to your Active Pokémon. Once attached, this card can''t be discarded by your opponent''s
+    Trainer cards. When you play this card, discard all Trainer cards attached to your opponent''s Pokémon. As long as this card is
+    attached to your Active Pokémon, discard any Trainer cards your opponent attaches to his or her Pokémon.']
   artist: Ken Sugimori
 - id: 185-99
   pioId: pkmod5-99
@@ -2259,7 +2261,7 @@ cards:
   - type: Poké-Body
     name: Time Travel
     text: Whenever an attack does anything to Celebi, flip a coin. If heads, prevent all effects of that attack, including damage done
-        to Celebi. This power stops working if Celebi is Asleep, Confused, Paralyzed or Poisoned.]
+        to Celebi. This power works even if Celebi is affected by a Special Condition.
   moves:
   - cost: [C]
     name: Celestial Prophecy
@@ -2274,11 +2276,10 @@ cards:
   superType: ENERGY
   subTypes: [G_SPEC, SPECIAL_ENERGY]
   rarity: Secret
-  text: ['Attach Miracle Energy to 1 of your Stage 2 Pokémon. While in play, Miracle Energy counts as every
-    type of basic Energy but only provides 2 at a time in any combination. (Doesn''t count as a basic Energy
-    card when not when not in play.) When Miracle Energy is attached to 1 of your Stage 2 Pokémon it cannot
-    be discarded by your opponent''s attacks or Trainer cards. If the Pokémon Miracle Energy is attached to
-    isn''t a Stage 2 Pokémon, discard Miracle Energy.']
+  text: ['Miracle Energy can only be attached to a Stage 2 Pokémon. While in play, Miracle Energy counts
+    as every type of Energy but only provides 2 at a time in any combination. (Doesn''t count as a basic
+    Energy card when not in play.) Miracle Energy can''t be discarded by your opponent''s Trainer cards.
+    If the Pokémon Miracle Energy is attached to isn''t a Stage 2 Pokémon, discard Miracle Energy.']
   energy:
   - [C, C]
   artist: Unknown
