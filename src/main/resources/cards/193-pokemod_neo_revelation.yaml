@@ -1663,15 +1663,16 @@ cards:
   artist: Yukiko Baba
 - id: 193-60
   pioId: pkmod11-60
-  enumId: BALLOON_BERRY_60
-  name: Balloon Berry
+  enumId: VIRIDIAN_FOREST_60
+  name: Viridian Forest
   number: '60'
   superType: TRAINER
-  subTypes: [POKEMON_TOOL]
-  rarity: Uncommon
-  text: ['When the Pokémon Balloon Berry is attached to retreats, discard Balloon
-      Berry instead of discarding Energy cards.']
-  artist: Keiji Kinebuchi
+  subTypes: [STADIUM]
+  rarity: Rare
+  text: ['Once during each player''s turn, that player may discard a card from their hand. 
+      If they do, that player searches their deck for a basic Energy card, shows it to 
+      their opponent, and puts it into their hand. Then, that player shuffles their deck.']
+  artist: Ken Sugimori
 - id: 193-61
   pioId: pkmod11-61
   enumId: HIGH_PRESSURE_SYSTEM_61
@@ -1869,24 +1870,25 @@ cards:
   types: [C]
   superType: POKEMON
   subTypes: [EVOLUTION, STAGE1, EX]
-  evolvesFrom: Scyther
+  evolvesFrom: Scyther 
+  evolvesFrom: Scyther ex
   hp: 100
   retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Danger Perception
-    text: As long as Scizor ex's remaining HP is 40 or less, Scizor ex does 10 more damage to
+    text: As long as Scizor ex's remaining HP is 50 or less, Scizor ex does 10 more damage to
       the Defending Pokémon (before applying Weakness and Resistance).
   moves:
   - cost: [M, C]
     name: Steel Wing
-    damage: '20'
+    damage: '30'
     text: During your opponent's next turn, any damage done to Scizor ex by attacks is reduced
       by 10 (after applying Weakness and Resistance).
-  - cost: [M, C, C]
+  - cost: [M, M, C]
     name: Cross-Cut
-    damage: '40+'
-    text: If the Defending Pokémon is an Evolved Pokémon, this attack does 40 damage plus 10
+    damage: '50+'
+    text: If the Defending Pokémon is an Evolved Pokémon, this attack does 40 damage plus 20
       more damage.
   weaknesses:
   - type: R
