@@ -1969,8 +1969,8 @@ cards:
   rarity: Uncommon
   text: ['This card stays in play when you play it. Discard this card if another Stadium
       card comes into play. If another card with the same name is in play, you can''t
-      play this card.', 'Each player''s [C] Evolved Pokémon, Darkness Evolved Pokémon,
-      and Metal Evolved Pokémon can''t use any Poké-Powers or Poké-Bodies.']
+      play this card.', 'Each player''s [C] Evolved Pokémon, [D] Evolved Pokémon,
+      and [M] Evolved Pokémon can''t use any Poké-Powers or Poké-Bodies.']
   artist: Midori Harada
 - id: 226-72
   pioId: ex16-72
@@ -2066,7 +2066,7 @@ cards:
   rarity: Uncommon
   text: ['This card stays in play when you play it. Discard this card if another Stadium
       card comes into play. If another card with the same name is in play, you can''t
-      play this card.', 'Each player pays [C] [C] less to retreat his or her [P] Pokémon.']
+      play this card.', 'Each player pays [C][C] less to retreat his or her [P] Pokémon.']
   artist: Ryo Ueda
 - id: 226-80
   pioId: ex16-80
@@ -2175,11 +2175,11 @@ cards:
   name: Darkness Energy
   number: '87'
   superType: ENERGY
-  subTypes: []
+  subTypes: [SPECIAL_ENERGY]
   rarity: Rare
   text: ['If the Pokémon [D] Energy is attached to attacks, the attack does 10 more
       damage to the Active Pokémon (before applying Weakness and Resistance). Ignore
-      this effect unless the Attacking Pokémon is Darkness or has Dark in its name.
+      this effect unless the Attacking Pokémon is [D] or has Dark in its name.
       [D] Energy provides [D] Energy. (Doesn''t count as a basic Energy card.)']
   artist: Milky Isobe
 - id: 226-88
@@ -2188,7 +2188,7 @@ cards:
   name: Metal Energy
   number: '88'
   superType: ENERGY
-  subTypes: []
+  subTypes: [SPECIAL_ENERGY]
   rarity: Rare
   text: ['Damage done by attacks to the Pokémon that [M] Energy is attached to is
       reduced by 10 (after applying Weakness and Resistance). Ignore this effect if
@@ -2201,7 +2201,7 @@ cards:
   name: Multi Energy
   number: '89'
   superType: ENERGY
-  subTypes: []
+  subTypes: [SPECIAL_ENERGY]
   rarity: Rare
   text: ['Attach Multi Energy to 1 of your Pokémon. While in play, Multi Energy provides
       every type of Energy but provides only 1 Energy at a time. (Has no effect other
@@ -2214,7 +2214,7 @@ cards:
   name: Cyclone Energy
   number: '90'
   superType: ENERGY
-  subTypes: []
+  subTypes: [SPECIAL_ENERGY]
   rarity: Uncommon
   text: ['Cyclone Energy provides [C] Energy. When you attach this card from your
       hand to your Active Pokémon, switch 1 of the Defending Pokémon with 1 of your
@@ -2226,7 +2226,7 @@ cards:
   name: Warp Energy
   number: '91'
   superType: ENERGY
-  subTypes: []
+  subTypes: [SPECIAL_ENERGY]
   rarity: Uncommon
   text: ['Warp Energy provides [C] Energy. When you attach this card from your hand
       to your Active Pokémon, switch that Pokémon with 1 of your Benched Pokémon.']
@@ -2279,7 +2279,7 @@ cards:
   - type: Poké-Power
     name: Type Shift
     text: Once during your turn (before your attack), you may use this power. Claydol
-      ex's type is Fighting until the end of your turn.
+      ex's type is [F] until the end of your turn.
   moves:
   - cost: [C, C]
     name: Psychic Boom
@@ -2360,6 +2360,8 @@ cards:
       Pokémon.)
   weaknesses:
   - type: R
+    value: x2
+  - type: F
     value: x2
   resistances:
   - type: G
