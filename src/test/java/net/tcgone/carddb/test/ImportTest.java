@@ -15,17 +15,38 @@ limitations under the License.
 */
 package net.tcgone.carddb.test;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 import net.tcgone.carddb.Importer;
+import net.tcgone.carddb.model.Card;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Collection;
+import java.util.Map;
 
 /**
  * @author axpendix@hotmail.com
  */
 public class ImportTest {
 
-  @Test
+  private Importer importer;
+  @Before
   public void testImport() throws Exception {
-    Importer importer = new Importer();
+    importer = new Importer();
     importer.init();
+  }
+  @Test
+  public void printNonIntegerNumberedCards() {
+    Multimap<String, String> mmap = ArrayListMultimap.create();
+    for (Card card : importer.getAllCards()) {
+      if(!NumberUtils.isDigits(card.number)){
+        mmap.put(card.set.enumId, card.enumId);
+      }
+    }
+    for (Map.Entry<String, Collection<String>> entry : mmap.asMap().entrySet()) {
+      System.out.println(entry.getKey() + ":" + entry.getValue());
+    }
   }
 }

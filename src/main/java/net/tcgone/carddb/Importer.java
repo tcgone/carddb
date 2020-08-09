@@ -181,22 +181,9 @@ public class Importer {
           card.subTypes.add(CardType.NOT_IMPLEMENTED);
         }
         card.fullName = String.format("%s (%s %s)", card.name, card.set.abbr.toUpperCase(Locale.ENGLISH), card.number);
-        String paddedNumber;
-        try {
-//          Matcher numberExtractionMatcher = numberExtractionPattern.matcher(card.number);
-//          if(numberExtractionMatcher.find()){
-//            paddedNumber = String.format("%03d",Integer.parseInt(numberExtractionMatcher.group(1)));
-//          } else {
-//            paddedNumber = card.number;
-//          }
-          paddedNumber = String.format("%03d", Integer.parseInt(card.number));
-        } catch (NumberFormatException e) {
-          // this should not happen with the above matcher, if enabled
-          // and yes we have to reorganize scans for all non-numbered cards
-          paddedNumber = card.number;
-        }
-        card.imageUrl = String.format("https://tcgone.net/scans/m/%s/%s.jpg", card.set.enumId.toLowerCase(Locale.ENGLISH), paddedNumber);
-        card.imageUrlHiRes = String.format("https://tcgone.net/scans/l/%s/%s.jpg", card.set.enumId.toLowerCase(Locale.ENGLISH), paddedNumber);
+        // upgraded to uniform scan url scheme @ 09.08.2020
+        card.imageUrl = String.format("https://tcgone.net/scans/m/%s/%s.jpg", card.set.enumId.toLowerCase(Locale.ENGLISH), card.number);
+        card.imageUrlHiRes = String.format("https://tcgone.net/scans/l/%s/%s.jpg", card.set.enumId.toLowerCase(Locale.ENGLISH), card.number);
 //                card.seoName = card.name.toLowerCase(Locale.ENGLISH).replaceAll("\\W","-");
 //                card.seoName = String.format("%s-%s--%s", card.name.toLowerCase(Locale.ENGLISH).replaceAll("\\W+","-"), setFile.set.seoName, card.id);
         card.seoName = String.format("%s-%s-%s", card.name.replace("é", "e").replaceAll("\\W+", "-"), set.abbr, card.number).toLowerCase(Locale.ENGLISH);
@@ -369,5 +356,7 @@ public class Importer {
     }
   }
 
-
+  public List<Card> getAllCards() {
+    return allCards;
+  }
 }
