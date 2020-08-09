@@ -25,13 +25,16 @@
 		<tag>HEAD</tag>
 	</scm>
 
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub axpendix Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/axpendix/carddb</url>
-		</repository>
-	</distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>myMavenRepo</id>
+            <url>${myMavenRepoWriteUrl}</url>
+        </repository>
+        <snapshotRepository>
+            <id>myMavenRepo</id>
+            <url>${myMavenRepoWriteUrl}</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
