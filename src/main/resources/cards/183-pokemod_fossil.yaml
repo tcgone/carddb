@@ -21,7 +21,7 @@ cards:
   abilities:
   - type: Poké-Body
     name: Prehistoric Power
-    text: As long as this Pokémon has a Pokémon Tool card attached to it, no more evolution 
+    text: As long as this Pokémon has a Pokémon Tool card attached to it, no more Evolution 
       cards can be played.  This power stops working while Aerodactyl is affected by a Special Condition.
   moves:
   - cost: [C, C, C]
@@ -437,7 +437,7 @@ cards:
   abilities:
   - type: Poké-Body
     name: Prehistoric Power
-    text: As long as this Pokémon has a Pokémon Tool card attached to it, no more evolution 
+    text: As long as this Pokémon has a Pokémon Tool card attached to it, no more Evolution 
       cards can be played.  This power stops working while Aerodactyl is affected by a Special Condition.
   moves:
   - cost: [C, C, C]
@@ -1710,7 +1710,7 @@ cards:
   superType: TRAINER
   subTypes: [STADIUM]
   rarity: Rare
-  text: ['Once during each player''s turn, he or she may flip a coin. If heads, put 1 damage counter on each of their opponent''s Benched Pokémon. If tails, put 1 damage counter on each of their own Benched Pokémon. (This can''t be done if either player has less than 3 Benched Pokémon in play.']
+  text: ['Once during each player''s turn, he or she may flip a coin. If heads, put 1 damage counter on each of their opponent''s Benched Pokémon. If tails, put 1 damage counter on each of their own Benched Pokémon. (This cannot be done if either player has less than 3 Benched Pokémon in play.']
   artist: Ken Sugimori
 - id: 183-70
   pioId: pkmod3-70
@@ -1792,28 +1792,26 @@ cards:
   artist: Unknown
 - id: 183-77
   pioId: pkmod3-77
-  enumId: PSYDUCK_77
-  name: Psyduck
-  nationalPokedexNumber: 54
+  enumId: DITTO_77
+  name: Ditto
+  nationalPokedexNumber: 132
   number: '77'
-  types: [W]
+  types: [C]
   superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Golduck]
-  hp: 50
+  subTypes: [G_SPEC]
+  hp: 40
   retreatCost: 1
-  moves:
-  - cost: [P]
-    name: Headache
-    text: Flip a coin. If heads, your opponent can't play Trainer cards (except Supporter cards) during his or her next turn.
-  - cost: [W]
-    name: Fury Swipes
-    damage: '10x'
-    text: Flip 3 coins. This attack does 10 damage times the number of heads.
+  abilities:
+  - type: Poké-Body
+    name: Dittobolic
+    text: The number of Benched Pokémon you and your opponent can have is now 4. If either player has 5 Benched Pokémon, he or she chooses 1 of their Benched Pokémon and shuffles it and all cards attached to it back into their deck. 
+  - type: Poké-Power
+    name: Almighty Evolution
+    text: Once during your turn, if Ditto is 1 of your Benched Pokémon, you may put a Stage 1 card from your hand onto this Pokémon to evolve it. You can''t use this power during your first turn or the turn this Pokémon was put into play.
   weaknesses:
-  - type: L
+  - type: F
     value: 'x2'
-  rarity: Rare
+  rarity: Secret
   artist: Kagemaru Himeno
 - id: 183-78
   pioId: pkmod3-78
@@ -1884,14 +1882,14 @@ cards:
   types: [C]
   superType: POKEMON
   subTypes: [BASIC]
-  hp: 90
+  hp: 60
   retreatCost: 2
   abilities:
   - type: Poké-Power
     name: Phoenix Rise
-    text: Once during your turn (before your attack), if this Pokémon is in your discard pile, you may flip a coin. If heads, put this Pokémon onto your Bench. Then, you may flip 3 more coins. For each of those coins that are heads, attach a different type of basic Energy card from your discard pile to this Pokémon.
+    text: Once during your turn (before your attack), if this Pokémon is in your discard pile, you may flip a coin. If heads, put this Pokémon onto your Bench. Then, you may flip 2 more coins. For each of those coins that are heads, attach a different type of basic Energy card from your discard pile to this Pokémon.
   moves:
-  - cost: [C, C, C, C, C]
+  - cost: [C, C, C, C]
     name: Sacred Fire
     damage: '30+'
     text: This attack does 30 damage plus 10 more damage for each type of basic Energy card, if any, attached to Ho-oh.
@@ -1912,7 +1910,7 @@ cards:
   types: [C]
   superType: POKEMON
   subTypes: [BASIC]
-  hp: 90
+  hp: 70
   retreatCost: 2
   moves:
   - cost: [C, C]
