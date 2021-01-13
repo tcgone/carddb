@@ -1,0 +1,39 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache Maven
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+
+    # for deployment, cache step must come BEFORE setup-java else settings.xml gets rewritten by cache
+
+    - name: Setup Java
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+        server-id: tcgone-deploy
+        server-username: MAVEN_USERNAME
+        server-password: MAVEN_PASSWORD
+
+    - name: Deploy Project
+      run: mvn --batch-mode deploy
+      env:
+        MAVEN_USERNAME: myMavenRepo
+        MAVEN_PASSWORD: ${{ secrets.REPO_PASSWORD }}
+
+
