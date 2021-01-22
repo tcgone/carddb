@@ -36,4 +36,14 @@ jobs:
         MAVEN_USERNAME: myMavenRepo
         MAVEN_PASSWORD: ${{ secrets.REPO_PASSWORD }}
 
+    - uses: octokit/request-action@v2.x
+      id: trigger_front
+      with:
+        route: POST /repos/{owner}/{repo}/actions/workflows/{workflow}/dispatches
+        owner: tcgone
+        repo: front
+        workflow: deploy.yml
+        ref: master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
