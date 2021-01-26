@@ -645,7 +645,7 @@ cards:
   superType: POKEMON
   subTypes: [BASIC]
   evolvesTo: [Honchkrow]
-  hp: 60
+  hp: 50
   retreatCost: 0
   moves:
   - cost: [C]
@@ -658,9 +658,6 @@ cards:
     text: Choose 1 of your opponent's Pokémon. This attack does 20 damage to that
       Pokémon. This attack's damage isn't affected by Weakness, Resistance, Pokémon
       Powers, or any other effects on the Defending Pokémon.
-  weaknesses:
-  - type: L
-    value: 'x2' 
   resistances:
   - type: P
     value: '-30'
@@ -677,7 +674,7 @@ cards:
   subTypes: [BASIC]
   evolvesTo: [Weavile]
   hp: 60
-  retreatCost: 1
+  retreatCost: 0
   moves:
   - cost: [C]
     name: Fury Swipes
@@ -688,9 +685,6 @@ cards:
     damage: '10x'
     text: Flip a coin for each of your Pokémon in play (including this one). This
       attack does 10 damage times the number of heads.
-  weaknesses:
-  - type: F
-    value: 'x2'
   resistances:
   - type: P
     value: '-30'
@@ -2365,28 +2359,6 @@ cards:
       discard pile. If you have fewer than 4 basic Energy cards there, take all of
       them.']
   artist: Keiji Kinebuchi
-- id: 191-90
-  pioId: pkmod9-90
-  enumId: DARK_PATCH_90
-  name: Dark Patch
-  number: '90'
-  superType: TRAINER
-  subTypes: []
-  rarity: Rare
-  text: ['If it''s your first turn, you can''t play this card. Attach a basic [D] Energy from your discard pile to 1 
-      of your Benched [D] Pokémon.']
-  artist: 5ban Graphics
-- id: 191-91
-  pioId: pkmod9-91
-  enumId: METAL_PATCH_91
-  name: Metal Patch
-  number: '91'
-  superType: TRAINER
-  subTypes: []
-  rarity: Rare
-  text: ['If it''s your first turn, you can''t play this card. Attach a basic [M] Energy from your discard pile to 1 
-      of your Benched [M] Pokémon.']
-  artist: Toyste Beach
 - id: 191-92
   pioId: pkmod9-92
   enumId: YOUNGSTER_JOEY_92
@@ -2395,7 +2367,7 @@ cards:
   superType: TRAINER
   subTypes: [SUPPORTER]
   rarity: Rare
-  text: ['Search your deck for a Pokémon, show it to your opponent and put it into your hand. Shuffle your deck afterward.']
+  text: ['If it''s your first turn, you can''t play this card. Attach a basic Energy card from your hand to 1 of your Benched Pokémon (excluding [C] Pokémon).']
   artist: Ken Sugimori
 - id: 191-93
   pioId: pkmod9-93
@@ -2670,26 +2642,26 @@ cards:
   - [W]
 - id: 191-118
   pioId: pkmod9-118
-  enumId: BLEND_ENERGY_WGR_118
-  name: Blend Energy WGR
+  enumId: BLEND_ENERGY_GRPD_118
+  name: Blend Energy GRPD
   number: '118'
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Rare
   text: ['This card provides [C] Energy.
-    While this card attached to a Pokémon, it provides [W], [G], and [R] Energy but provides only 1 Energy at a time.']
+    When this card attached to a Pokémon, it provides [G], [R], [P] and [D] Energy but provides only 1 Energy at a time.']
   energy:
   - [C]
 - id: 191-119
   pioId: pkmod9-119
-  enumId: BLEND_ENERGY_FLP_119
-  name: Blend Energy FLP
+  enumId: BLEND_ENERGY_WLFM_119
+  name: Blend Energy WLFM
   number: '119'
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Rare
   text: ['This card provides [C] Energy.
-    While this card attached to a Pokémon, it provides [F], [L], and [P] Energy but provides only 1 Energy at a time.']
+    When this card attached to a Pokémon, it provides [W], [L], [F] and [M] Energy but provides only 1 Energy at a time.']
   energy:
   - [C]
 - id: 191-120

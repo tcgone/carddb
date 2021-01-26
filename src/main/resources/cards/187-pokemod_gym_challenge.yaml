@@ -253,7 +253,7 @@ cards:
   superType: POKEMON
   subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE2]
   evolvesFrom: Koga's Kakuna
-  hp: 90
+  hp: 80
   retreatCost: 0
   moves:
   - cost: [G, G]
@@ -374,7 +374,8 @@ cards:
     name: Rebellion
     text: Whenever Misty's Gyarados attacks, flip 2 coins. If both of them are tails,
       that attack does nothing. Instead, shuffle Misty's Gyarados and all cards attached
-      to it into your deck. (This power works even if Misty's Gyarados is Confused.)
+      to it into your deck. This power isn't affected by Trainer cards and works even if
+      Misty''s Gyarados is affected by a Special Condition.
   moves:
   - cost: [W, W, W, W]
     name: Tidal Wave
@@ -439,6 +440,9 @@ cards:
     damage: '70'
     text: Rocket's Zapdos does damage to itself equal to 10 times the number of [L]
       Energy cards attached to it.
+  resistances:
+  - type: F
+    value: '-30'
   rarity: Rare Holo
   artist: Shin-ichi Yoshida
 - id: 187-16
@@ -3134,17 +3138,7 @@ cards:
   superType: TRAINER
   subTypes: [POKEMON_TOOL]
   rarity: Uncommon
-  text: ['The Retreat Cost of the Pokémon this card is attached to is reduced by [C][C].']
-  artist: Ken Sugimori
-- id: 187-138
-  pioId: pkmod7-138
-  enumId: PROTECTIVE_ORB_138
-  name: Protective Orb
-  number: '138'
-  superType: TRAINER
-  subTypes: [POKEMON_TOOL]
-  rarity: Uncommon
-  text: ['As long as Protective Orb is attached to an Evolved Pokémon (excluding Pokémon-ex), that Pokémon has no Weakness.']
+  text: ['The Retreat Cost of the Pokémon this card is attached to is reduced by [C].']
   artist: Ken Sugimori
 - id: 187-139
   pioId: pkmod7-139
@@ -3154,8 +3148,7 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Rare
-  text: ['Turn all of your Prize cards face up. (Those Prize cards remain face up for the rest of the 
-      game.) Your turn is now over.']
+  text: ['If you have 5 or more Prize cards left, you can''t play this card. Choose up to 3 of your remaining Prize cards and turn them face up. (Those Prize cards remain face up for the rest of the game.) Your turn is now over.']
   artist: Ken Sugimori
 - id: 187-140
   pioId: pkmod7-140
@@ -3165,8 +3158,7 @@ cards:
   superType: TRAINER
   subTypes: [SUPPORTER]
   rarity: Rare
-  text: ['Move as many Energy cards attached to 1 of your Pokémon as you like to another of your 
-      Pokémon.']
+  text: ['Move 1 Energy card (excluding G-SPEC Energy cards) from 1 of your Pokémon to another of your Pokémon. Then, put 1 damage counter on that Pokémon for each Energy provided by that Energy card.']
   artist: Ken Sugimori
 - id: 187-141
   pioId: pkmod7-141
@@ -3177,8 +3169,8 @@ cards:
   subTypes: [SUPPORTER]
   rarity: Rare
   text: ['If it''s your first turn, you can''t play this card. Draw 2 cards. During this turn, your 
-      Pokémon''s attacks do 10 more damage to your opponent''s Active Pokémon (before applying Weakness 
-      and Resistance).']
+      Pokémon''s attacks do 10 more damage to your opponent''s Active Pokémon (after applying Weakness 
+      and Resistance). After your attack, put 1 damage counter on your Active Pokémon.']
   artist: Ken Sugimori
 - id: 187-142
   pioId: pkmod7-142
@@ -3188,8 +3180,7 @@ cards:
   superType: TRAINER
   subTypes: [SUPPORTER]
   rarity: Rare Holo
-  text: ['Choose 1 of your Pokémon in play (excluding Pokémon-ex). Return that Pokémon and all cards 
-      attached to it to your hand.']
+  text: ['Choose 1 of your Pokémon in play (excluding Pokémon-ex) and return its Basic Pokémon card to your hand. (Discard all cards attached to that Pokémon.']
   artist: Ken Sugimori
 - id: 187-143
   pioId: pkmod7-143
@@ -3210,8 +3201,7 @@ cards:
   superType: TRAINER
   subTypes: [SUPPORTER]
   rarity: Rare Holo
-  text: ['Draw cards until you have 6 cards in your hand. If it''s your first turn, draw cards until 
-      you have 8 cards in your hand.']
+  text: ['Draw cards until you have 6 cards in your hand.']
   artist: Ken Sugimori
 - id: 187-145
   pioId: pkmod7-145
@@ -3226,26 +3216,23 @@ cards:
   artist: Ken Sugimori
 - id: 187-146
   pioId: pkmod7-146
-  enumId: ROCKET'S_COUNTER_ATTACK_146
-  name: Rocket's Counter Attack
+  enumId: PROTECTIVE_ORB_146
+  name: Protective Orb
   number: '146'
   superType: TRAINER
   subTypes: [G_SPEC]
   rarity: Secret
-  text: ['You may use this card only if you have more Prize cards left than your opponent. Search your 
-      deck for any 2 cards and put them into your hand. Shuffle your deck afterward.']
+  text: ['As long as Protective Orb is attached to an Evolved Pokémon, that Pokémon has no Weakness.']
   artist: Ken Sugimori
 - id: 187-147
   pioId: pkmod7-147
-  enumId: BLACK_BELT_147
-  name: Black Belt
+  enumId: Gold_POTION_147
+  name: Gold Potion
   number: '147'
   superType: TRAINER
   subTypes: [G_SPEC]
   rarity: Secret
-  text: ['You may use this card only if you have more Prize cards left than your opponent. During this 
-      turn, each of your Active Pokémon''s attacks does 40 more damage to your opponent''s Active 
-      Pokémon (before applying Weakness and Resistance).']
+  text: ['Remove up to 6 damage counters from 1 of your Pokémon.']
   artist: Ken Sugimori
 - id: 187-148
   pioId: pkmod7-148
@@ -3262,7 +3249,7 @@ cards:
   - cost: [C, C, C, C]
     name: Snipe
     damage: '50'
-    text: Choose 1 of your opponent's Pokémon, this attack does 50 damage to that Pokémon.
+    text: Choose 1 of your opponent's Pokémon, this attack does 60 damage to that Pokémon.
   artist: Ken Sugimori
 - id: 187-149
   pioId: pkmod7-149
@@ -3286,6 +3273,9 @@ cards:
     damage: '70'
     text: Rocket's Zapdos does damage to itself equal to 10 times the number of [L]
       Energy cards attached to it.
+  resistances:
+  - type: F
+    value: '-30'
   rarity: Secret
   artist: Shin-ichi Yoshida
 - id: 187-150
