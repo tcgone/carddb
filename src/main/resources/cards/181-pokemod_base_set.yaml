@@ -111,13 +111,13 @@ cards:
   - type: Poké-Power
     name: Energy Burn
     text: As often as you like during your turn (before your attack), you may turn
-      all Basic Energy attached to Charizard into [R] Energy for the rest of the turn.
+      all Energy attached to Charizard into [R] Energy for the rest of the turn.
       This power can't be used if Charizard is affected by a Special Condition.
   moves:
   - cost: [R, R, R, R]
     name: Fire Spin
     damage: '100'
-    text: Discard 2 [R] Energy attached to Charizard in order to use this attack.
+    text: Discard 2 Energy cards attached to Charizard in order to use this attack.
   weaknesses:
   - type: W
     value: 'x2'
@@ -447,7 +447,10 @@ cards:
   - cost: [L, L, L, L]
     name: Thunderbolt
     damage: '100'
-    text: Discard 3 [L] Energy cards attached to Zapdos in order to use this attack.
+    text: Discard all Energy cards attached to Zapdos in order to use this attack.
+  resistances:
+  - type: F
+    value: '-30'  
   rarity: Rare Holo
   artist: Ken Sugimori
 - id: 181-17
@@ -460,7 +463,7 @@ cards:
   superType: POKEMON
   subTypes: [EVOLUTION, STAGE2]
   evolvesFrom: Kakuna
-  hp: 90
+  hp: 80
   retreatCost: 0
   moves:
   - cost: [C, C, C]
@@ -663,9 +666,9 @@ cards:
   hp: 80
   retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [C, C, C]
     name: Slash
-    damage: '20'
+    damage: '30'
   - cost: [R, R, C]
     name: Flamethrower
     damage: '50'
@@ -1344,7 +1347,7 @@ cards:
   superType: POKEMON
   subTypes: [BASIC]
   evolvesTo: [Weezing]
-  hp: 50
+  hp: 40
   retreatCost: 1
   moves:
   - cost: [G]
@@ -1866,10 +1869,10 @@ cards:
   name: Lass
   number: '75'
   superType: TRAINER
-  subTypes: [SUPPORTER]
+  subTypes: []
   rarity: Rare
-  text: ['You and your opponent show each other your hands, then shuffle all the
-      Trainer cards from your hands into your decks.']
+  text: ['If you have 5 or more Prize cards left, you can''t play this card. You and your opponent show each other your hands, then shuffle all the
+      Trainer cards from your hands into your decks. If any number of Lass are already in your discard pile, you can''t play this card.']
   artist: Ken Sugimori
 - id: 181-76
   pioId: pkmod1-76
@@ -1905,16 +1908,6 @@ cards:
   rarity: Rare
   text: [Choose 1 of your own Pokémon in play and return its Basic Pokémon card to
       your hand. (Discard all cards attached to that card.)]
-  artist: Keiji Kinebuchi
-- id: 181-79
-  pioId: pkmod1-79
-  enumId: SUPER_ENERGY_REMOVAL_79
-  name: Super Energy Removal
-  number: '79'
-  superType: TRAINER
-  subTypes: []
-  rarity: Rare
-  text: [Discard 1 Special Energy attached to 1 of your opponent's Pokémon.]
   artist: Keiji Kinebuchi
 - id: 181-80
   pioId: pkmod1-80
@@ -1957,7 +1950,7 @@ cards:
   subTypes: []
   rarity: Uncommon
   text: [Shuffle 2 of the other cards from your hand into your deck in order to draw
-      2 cards.]
+      a card.]
   artist: Keiji Kinebuchi
 - id: 181-84
   pioId: pkmod1-84
@@ -2057,7 +2050,7 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Common
-  text: [Discard 1 Energy card attached to your opponent's Active Pokémon.]
+  text: [Choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it.]
   artist: Keiji Kinebuchi
 - id: 181-93
   pioId: pkmod1-93
@@ -2215,8 +2208,8 @@ cards:
   artist: Keiji Kinebuchi
 - id: 181-107
   pioId: pkmod1-107
-  enumId: CRUSHING_HAMMER_107
-  name: Crushing Hammer
+  enumId: SUPER_ENERGY_REMOVAL_107
+  name: Super Energy Removal
   number: '107'
   superType: TRAINER
   subTypes: [G_SPEC]
@@ -2224,7 +2217,7 @@ cards:
   text: ['Discard 1 Energy card attached to 1 of your Pokémon in order to choose
     1 of your opponent''s Pokémon and up to 2 Energy cards attached to it. Discard
     those Energy cards.']
-  artist: 5ban Graphics
+  artist: Keiji Kinebuchi
 - id: 181-108
   pioId: pkmod1-108
   enumId: DOWSING_MACHINE_108
@@ -2244,7 +2237,7 @@ cards:
   superType: TRAINER
   subTypes: [G_SPEC]
   rarity: Secret
-  text: ['Remove up to 6 damage counters from 1 of your Pokémon.']
+  text: ['Remove up to 3 damage counters and all Special Conditions from your Active Pokémon.']
   artist: 5ban Graphics
 - id: 181-110
   pioId: pkmod1-110
@@ -2254,8 +2247,7 @@ cards:
   superType: TRAINER
   subTypes: [G_SPEC]
   rarity: Secret
-  text: ['Search your deck for a card and put it into your hand. Shuffle your
-    deck afterward.']
+  text: ['Search your deck for a Trainer card or Energy card and put it into your hand. Shuffle your deck afterward.']
   artist: Ryo Ueda
 - id: 181-111
   pioId: pkmod1-111
@@ -2304,13 +2296,13 @@ cards:
   - type: Poké-Power
     name: Energy Burn
     text: As often as you like during your turn (before your attack), you may turn
-      all Basic Energy attached to Charizard into [R] Energy for the rest of the turn.
+      all Energy attached to Charizard into [R] Energy for the rest of the turn.
       This power can't be used if Charizard is affected by a Special Condition.
   moves:
   - cost: [R, R, R, R]
     name: Fire Spin
     damage: '100'
-    text: Discard 2 [R] Energy attached to Charizard in order to use this attack.
+    text: Discard 2 Energy cards attached to Charizard in order to use this attack.
   weaknesses:
   - type: W
     value: 'x2'
@@ -2406,7 +2398,7 @@ cards:
   superType: POKEMON
   subTypes: [BASIC]
   evolvesTo: [Weezing]
-  hp: 50
+  hp: 40
   retreatCost: 1
   moves:
   - cost: [G]

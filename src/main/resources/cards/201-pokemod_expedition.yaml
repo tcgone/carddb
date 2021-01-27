@@ -429,7 +429,7 @@ cards:
     name: Bubble
     damage: 10
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [W, W, C, C, C]
+  - cost: [W, W, C]
     name: Giant Claw
     damage: 70
     text: Flip a coin. If tails, this attack does nothing.
@@ -457,7 +457,7 @@ cards:
       deck and rearrange them as you like. This power can''t be used if Machamp is affected by
       a Special Condition.
   moves:
-  - cost: [F, F, F, C, C]
+  - cost: [F, F, C, C]
     name: Iron Fist
     damage: 50+
     text: Count the number of Pokémon you have in play with damage counters on them. Flip a coin.
@@ -803,8 +803,7 @@ cards:
   abilities:
   - type: Poké-Body
     name: Dark Aura
-    text: All Energy attached to Tyranitar is [D] Energy instead of its usual type
-      (excluding [C] Energy).
+    text: All Energy attached to Tyranitar is [D] Energy instead of its usual type.
   moves:
   - cost: [D, D, D, D]
     name: Stamp
@@ -835,8 +834,8 @@ cards:
   abilities:
   - type: Poké-Power
     name: Harvest Bounty
-    text: Once during your turn (before your attack), if you attach an Energy card
-      to your Active Pokémon as part of your turn, you may attach an additional Energy
+    text: Once during your turn (before your attack), if you attach [G] Energy
+      to your Active [G] Pokémon (excluding Pokémon-ex) as part of your turn, you may attach an additional Energy
       card to that Pokémon at the same time. This power can't be used if Venusaur
       is affected by a Special Condition.
   moves:
@@ -868,7 +867,7 @@ cards:
       the Defending Pokémon is now Poisoned. This power can't be used if Vileplume
       is affected by a Special Condition.
   moves:
-  - cost: [G, G, G]
+  - cost: [G, C, C]
     name: Petal Dance
     damage: 30x
     text: Flip 3 coins. This attack does 30 damage times the number of heads. Vileplume
@@ -1006,7 +1005,7 @@ cards:
     name: Bubble
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [W, W, W]
+  - cost: [W, C, C]
     name: Double Cannon
     damage: 40x
     text: Flip 2 coins. This attack does 40 damage times the number of heads.
@@ -1409,7 +1408,7 @@ cards:
     name: Bubble
     damage: 10
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [W, W, C, C, C]
+  - cost: [W, W, C]
     name: Giant Claw
     damage: 70
     text: Flip a coin. If tails, this attack does nothing.
@@ -1437,7 +1436,7 @@ cards:
       deck and rearrange them as you like. This power can''t be used if Machamp is affected by
       a Special Condition.
   moves:
-  - cost: [F, F, F, C, C]
+  - cost: [F, F, C, C]
     name: Iron Fist
     damage: 50+
     text: Count the number of Pokémon you have in play with damage counters on them. Flip a coin.
@@ -1838,8 +1837,7 @@ cards:
   abilities:
   - type: Poké-Body
     name: Dark Aura
-    text: All Energy attached to Tyranitar is [D] Energy instead of its usual type
-      (excluding [C] Energy).
+    text: All Energy attached to Tyranitar is [D] Energy instead of its usual type.
   moves:
   - cost: [D, D, D, D]
     name: Stamp
@@ -1897,8 +1895,8 @@ cards:
   abilities:
   - type: Poké-Power
     name: Harvest Bounty
-    text: Once during your turn (before your attack), if you attach an Energy card
-      to your Active Pokémon as part of your turn, you may attach an additional Energy
+    text: Once during your turn (before your attack), if you attach [G] Energy
+      to your Active [G] Pokémon (excluding Pokémon-ex) as part of your turn, you may attach an additional Energy
       card to that Pokémon at the same time. This power can't be used if Venusaur
       is affected by a Special Condition.
   moves:
@@ -1930,7 +1928,7 @@ cards:
       the Defending Pokémon is now Poisoned. This power can't be used if Vileplume
       is affected by a Special Condition.
   moves:
-  - cost: [G, G, G]
+  - cost: [G, C, C]
     name: Petal Dance
     damage: 30x
     text: Flip 3 coins. This attack does 30 damage times the number of heads. Vileplume
@@ -2036,7 +2034,7 @@ cards:
   subTypes: [EVOLUTION, STAGE1]
   evolvesFrom: Charmander
   evolvesTo: [Charizard]
-  hp: 80
+  hp: 70
   retreatCost: 1
   moves:
   - cost: [C, C]
@@ -3673,15 +3671,13 @@ cards:
   artist: '"Big Mama" Tagawa'
 - id: 201-140
   pioId: pkmod13-140
-  enumId: KARATE_BELT_140
-  name: Karate Belt
+  enumId: RESCUE_SCARF_140
+  name: Rescue Scarf
   number: '140'
   superType: TRAINER
   subTypes: [POKEMON_TOOL]
   rarity: Rare
-  text: ['If you have more Prize cards left than your opponent, the attacks of the 
-      Stage 1 or 2 [F] Pokémon this card is attached to cost [F] less. This card can''t be attached to a Pokémon 
-      with Light, Dark or an Owner in it''s name.']
+  text: ['If the Pokémon this card is attached to is Knocked Out by damage from an attack, put that Pokémon into your hand. (Discard all cards attached to that Pokémon.']
   artist: Ken Sugimori
 - id: 201-141
   pioId: pkmod13-141
@@ -3734,10 +3730,7 @@ cards:
   superType: TRAINER
   subTypes: [STADIUM]
   rarity: Rare
-  text: ['The attacks of Stage 1 or 2 [F] Pokémon that have any basic [F] Energy attached to them 
-      (both yours and your opponent''s) do 10 more damage to the opponent''s Active Pokémon (after 
-      applying Weakness and Resistance). If the attacking player has more Prize cards remaining 
-      than their opponent, those attacks do 20 more damage instead.']
+  text: ['During each players turn, if he or she has more Prize cards left than their opponent, the attacks of their Stage 2 [F] Pokémon that have any basic [F] Energy attached to them do 10 more damage to their opponent''s Active Pokémon (after applying Weakness and Resistance).']
   artist: Keiji Kinebuchi
 - id: 201-146
   pioId: pkmod13-146
@@ -4015,17 +4008,6 @@ cards:
     and your opponent''s) now only provide 1 [C] Energy. This isn''t
     affected by Poké-Powers or Poké-Bodies.']
   artist: Keiji Kinebuchi
-- id: 201-171
-  pioId: pkmod13-171
-  enumId: DARK_PATCH_171
-  name: Dark Patch
-  number: '171'
-  superType: TRAINER
-  subTypes: []
-  rarity: Rare
-  text: ['If it''s your first turn, you can’t play this card. Attach a basic [D] Energy from your
-       discard pile to 1 of your Benched [D] Pokémon.']
-  artist: Keiji Kinebuchi
 - id: 201-172
   pioId: pkmod13-172
   enumId: LIGHTNING_STORM_172
@@ -4035,17 +4017,6 @@ cards:
   subTypes: [STADIUM]
   rarity: Rare
   text: ['All Poké-Bodies of Evolved Pokémon in play are Disabled.']
-  artist: Keiji Kinebuchi
-- id: 201-173
-  pioId: pkmod13-173
-  enumId: METAL_PATCH_173
-  name: Metal Patch
-  number: '173'
-  superType: TRAINER
-  subTypes: []
-  rarity: Rare
-  text: ['If it''s your first turn, you can’t play this card. Attach a basic [M] Energy from your 
-      discard pile to 1 of your Benched [M] Pokémon.']
   artist: Keiji Kinebuchi
 - id: 201-174
   pioId: pkmod13-174

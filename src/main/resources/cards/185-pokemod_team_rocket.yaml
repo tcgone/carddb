@@ -23,7 +23,7 @@ cards:
     damage: '30'
     text: You may switch Dark Alakazam with 1 of your Benched Pokémon (Do the damage
       before switching the Pokémon).
-  - cost: [P, P]
+  - cost: [P, P, P]
     name: Mind Shock
     damage: '40'
     text: Don't apply Weakness and Resistance for this attack. (Any other effects
@@ -46,7 +46,7 @@ cards:
   hp: 60
   retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [G, C]
     name: Stare
     damage: '20'
     text: Choose 1 of your opponent's Pokémon. This attack does 20 damage to that
@@ -171,7 +171,7 @@ cards:
       and Resistance.) This power stops working while Dark Dugtrio is affected by a
       Special Condition.
   moves:
-  - cost: [C, C]
+  - cost: [F, C]
     name: Knock Down
     damage: 20+
     text: Your opponent flips a coin. If tails, this attack does 20 damage plus 20
@@ -374,7 +374,7 @@ cards:
   abilities:
   - type: Poké-Body
     name: Hay Fever
-    text: No Trainer cards can be played (except Supporter cards). This power stops working if Dark Vilplume has any Trainer cards attached to it, or while Dark Vileplume is affected by a Special Condition.
+    text: No Trainer cards can be played (except G-SPEC cards). This power stops working if Dark Vilplume has any Trainer cards attached to it, or while Dark Vileplume is affected by a Special Condition.
   moves:
   - cost: [G, G, G]
     name: Petal Whirlwind
@@ -472,7 +472,7 @@ cards:
     damage: '30'
     text: You may switch Dark Alakazam with 1 of your Benched Pokémon (Do the damage
       before switching the Pokémon).
-  - cost: [P, P]
+  - cost: [P, P, P]
     name: Mind Shock
     damage: '40'
     text: Don't apply Weakness and Resistance for this attack. (Any other effects
@@ -495,7 +495,7 @@ cards:
   hp: 60
   retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [G, C]
     name: Stare
     damage: '20'
     text: Choose 1 of your opponent's Pokémon. This attack does 20 damage to that
@@ -620,7 +620,7 @@ cards:
       and Resistance.) This power stops working while Dark Dugtrio is affected by a
       Special Condition.
   moves:
-  - cost: [C, C]
+  - cost: [F, C]
     name: Knock Down
     damage: 20+
     text: Your opponent flips a coin. If tails, this attack does 20 damage plus 20
@@ -677,7 +677,7 @@ cards:
   superType: POKEMON
   subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Magikarp
-  hp: 80
+  hp: 70
   retreatCost: 2
   abilities:
   - type: Poké-Body
@@ -824,7 +824,7 @@ cards:
   abilities:
   - type: Poké-Body
     name: Hay Fever
-    text: No Trainer cards can be played (except Supporter cards). This power stops working if Dark Vilplume has any Trainer cards attached to it, or while Dark Vileplume is affected by a Special Condition.
+    text: No Trainer cards can be played (except G-SPEC cards). This power stops working if Dark Vilplume has any Trainer cards attached to it, or while Dark Vileplume is affected by a Special Condition.
   moves:
   - cost: [G, G, G]
     name: Petal Whirlwind
@@ -2135,7 +2135,7 @@ cards:
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Rare
-  text: ['Rocket''s Energy WP provides [C] Energy. If the Pokémon that Rocket''s Energy WP is attached to also has a basic [W] Energy card attached to it, prevent all effects, excluding damage, done to that Pokémon by your opponent''s Pokémon. If the Pokémon that Rocket''s Energy WP is attached to also has a basic [P] Energy card attached to it, that Pokémon''s Retreat Cost is 0. If the Pokémon Rocket''s Energy WP is attached to is a Pokémon-ex, discard Rocket''s Energy WP.']
+  text: ['Rocket''s Energy WP provides [C] Energy. If the Pokémon that Rocket''s Energy WP is attached to also has a basic [W] Energy card attached to it, prevent all effects, excluding damage, done to that Pokémon by your opponent''s Pokémon. If the Pokémon that Rocket''s Energy WP is attached to also has a basic [P] Energy card attached to it, that Pokémon''s Retreat Cost is reduced by [C]. If the Pokémon Rocket''s Energy WP is attached to is a Pokémon-ex, discard Rocket''s Energy WP.']
   energy:
   - [C]
   artist: Unknown
@@ -2232,19 +2232,17 @@ cards:
   superType: TRAINER
   subTypes: [G_SPEC]
   rarity: Secret
-  text: ['Choose up to 3 Energy cards from your discard pile, show them to your opponent, and shuffle them into your deck.']
+  text: ['If you have 6 prize cards left, you can''t play this card. Attach 1 Energy card from your discard pile to 1 of your Benched Pokémon.']
   artist: Ken Sugimori
 - id: 185-98
   pioId: pkmod5-98
-  enumId: IMPOSTER_OAKS_MADNESS_98
-  name: Imposter Oak's Madness
+  enumId: ROCKETS_ADMIN_98
+  name: Rocket's Admin
   number: '98'
   superType: TRAINER
   subTypes: [G_SPEC]
   rarity: Secret
-  text: ['Attach Imposter Oak''s Madness to your Active Pokémon. Once attached, this card can''t be discarded by your opponent''s
-    Trainer cards. When you play this card, discard all Trainer cards attached to your opponent''s Pokémon. As long as this card is
-    attached to your Active Pokémon, discard any Trainer cards your opponent attaches to his or her Pokémon.']
+  text: ['Each player shuffles his or her hand into his or her deck. Then, each player draws a card for each of his or her remaining Prize cards.']
   artist: Ken Sugimori
 - id: 185-99
   pioId: pkmod5-99
@@ -2278,7 +2276,7 @@ cards:
   rarity: Secret
   text: ['Miracle Energy can only be attached to a Stage 2 Pokémon. While in play, Miracle Energy counts
     as every type of Energy but only provides 2 at a time in any combination. (Doesn''t count as a basic
-    Energy card when not in play.) Miracle Energy can''t be discarded by your opponent''s Trainer cards.
+    Energy card when not in play.) Miracle Energy can''t be discarded by your opponent''s attacks.
     If the Pokémon Miracle Energy is attached to isn''t a Stage 2 Pokémon, discard Miracle Energy.']
   energy:
   - [C, C]

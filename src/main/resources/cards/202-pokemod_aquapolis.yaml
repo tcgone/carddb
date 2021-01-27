@@ -49,7 +49,7 @@ cards:
     name: Extreme Speed
     text: You pay [C] less to retreat Arcanine for each Energy attached to it.
   moves:
-  - cost: [R, C, C]
+  - cost: [C, C, C]
     name: Fire Blow
     damage: 30+
     text: You may discard any number of [R] Energy cards attached to Arcanine when
@@ -110,7 +110,7 @@ cards:
       you may flip a coin. If heads, return Azumarill and all cards attached to it
       to your hand.
   moves:
-  - cost: [W, W, C]
+  - cost: [W, C, C]
     name: Aqua Sonic
     damage: '40'
     text: Don't apply Resistance.
@@ -286,7 +286,7 @@ cards:
   moves:
   - cost: [R, C, C]
     name: Burning Fang
-    damage: '30'
+    damage: '40'
     text: You may flip a coin. If heads, discard a [R] Energy card attached to Entei
       and the Defending Pokémon is now Burned.
   weaknesses:
@@ -310,10 +310,10 @@ cards:
   - type: Poké-Power
     name: Energy Return
     text: You may just once during your turn (before your attack), choose an Energy
-      card attached to 1 of your Pokémon and return it to your hand. This power can't
+      card attached to 1 of your [P] Pokémon and return it to your hand. This power can't
       be used if Espeon is affected by a Special Condition.
   moves:
-  - cost: [P, P, C, C]
+  - cost: [P, C, C]
     name: Damage Blast
     damage: 30+
     text: Flip a number of coins equal to the number of damage counters on the Defending
@@ -333,8 +333,8 @@ cards:
   superType: POKEMON
   subTypes: [EVOLUTION, STAGE1]
   evolvesFrom: Exeggcute
-  hp: 80
-  retreatCost: 1
+  hp: 60
+  retreatCost: 3
   moves:
   - cost: [C]
     name: Super Eggsplosion
@@ -363,8 +363,8 @@ cards:
   superType: POKEMON
   subTypes: [EVOLUTION, STAGE1]
   evolvesFrom: Exeggcute
-  hp: 80
-  retreatCost: 1
+  hp: 60
+  retreatCost: 3
   moves:
   - cost: [C]
     name: Big Eggsplosion
@@ -488,7 +488,7 @@ cards:
       an opponent's attack and it already has at least 1 damage counter on it, flip
       a coin. If heads, prevent all effects of that attack (including damage).
   moves:
-  - cost: [G, C, C]
+  - cost: [G]
     name: Cotton Punch
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
@@ -598,7 +598,7 @@ cards:
   - type: Poké-Power
     name: Ion Coating
     text: You may use this power once during each of your turns (before your attack).
-      All [W] Energy attached to your Active Pokémon becomes [L] Energy for the rest
+      All [L] Energy attached to your Active Pokémon becomes [W] Energy for the rest
       of the turn. (This effect ends if your Active Pokémon retreats or is returned
       to your hand.) This power can't be used if Lanturn is affected by a Special
       Condition.
@@ -665,9 +665,8 @@ cards:
   abilities:
   - type: Poké-Body
     name: Toxic Gas
-    text: As long as this Pokémon has any Energy cards attached to it, ignore all
-      Poké-Powers and Poké-Bodies other than Toxic Gases. This power can''t be used
-      if Muk is affected by a Special Condition.
+    text: Ignore all Poké-Powers and Poké-Bodies other than Toxic Gases. This power can''t   
+          used if Muk is affected by a Special Condition.
   moves:
   - cost: [G, G, C]
     name: Sludge
@@ -760,7 +759,7 @@ cards:
   moves:
   - cost: [W, C, C]
     name: Smokescreen
-    damage: '20'
+    damage: '30'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
   weaknesses:
@@ -937,7 +936,7 @@ cards:
     name: Heavy Metal
     damage: 30+
     text: Flip a number of coins equal to the amount of [M] Energy attached to Scizor.
-      This attack does 30 damage plus 10 more damage for each heads.
+      This attack does 30 damage plus 20 more damage for each heads.
   weaknesses:
   - type: R
     value: x2
@@ -1081,7 +1080,7 @@ cards:
   - cost: [W, C, C]
     name: Hypno Wave
     damage: 30+
-    text: Flip a coin. If heads, this attack does 30 damage plus 10 more damage. If
+    text: Flip a coin. If heads, this attack does 30 damage plus 20 more damage. If
       tails, this attack does 30 damage and the Defending Pokémon is now Asleep.
   weaknesses:
   - type: L
@@ -1295,11 +1294,14 @@ cards:
     name: Plasma
     damage: '10'
     text: If there are any [L] Energy cards in your discard pile, flip a coin. If
-      heads, attach 2 of them to Zapdos.
+      heads, attach 1 of them to Zapdos.
   - cost: [L, L, C, C]
     name: Lightning Storm
     damage: '60'
-    text: Flip a coin. If tails, put 4 damage counters on Zapdos.
+    text: Flip a coin. If tails, put 2 damage counters on Zapdos.
+  resistances:
+  - type: F
+    value: '-30'
   rarity: Rare
   artist: Hajime Kusajima
 - id: 202-45
@@ -1649,6 +1651,9 @@ cards:
   weaknesses:
   - type: R
     value: x2
+  resistances:
+  - type: F
+    value: '-30'
   rarity: Uncommon
   artist: Hisao Nakamura
 - id: 202-58
@@ -1695,7 +1700,7 @@ cards:
     name: Flail
     damage: 10x
     text: This attack does 10 damage times the number of damage counters on Seaking.
-  - cost: [W, W, C]
+  - cost: [W, C, C]
     name: Undulate
     damage: '30'
     text: Flip a coin. If heads, during your opponent's next turn, prevent all effects
@@ -2780,10 +2785,10 @@ cards:
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails,
       this attack does nothing.
-  - cost: [C, C, C]
+  - cost: [G, G, C]
     name: Super Slice
     damage: '90'
-    text: Flip 3 coins. If either of them is tails, this attack does nothing.
+    text: Flip 2 coins. If either of them is tails, this attack does nothing.
   weaknesses:
   - type: R
     value: x2
@@ -2907,7 +2912,7 @@ cards:
     damage: '10'
   - cost: [G, C]
     name: Swift
-    damage: '30'
+    damage: '20'
     text: This attack's damage isn't affected by Weakness, Resistance, Poké-Powers,
       Poké-Bodies, or any other effects on the Defending Pokémon.
   weaknesses:
@@ -3022,9 +3027,6 @@ cards:
     name: Claw
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing.
-  weaknesses:
-  - type: F
-    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -3413,7 +3415,7 @@ cards:
   subTypes: [STADIUM]
   rarity: Uncommon
   text: ['Once during each player''s turn, he or she may flip a coin. If heads, that
-      player''s Active Pokémon (exluding Pokémon-ex) is no longer affected by any Special
+      player''s Active Pokémon is no longer affected by any Special
       Conditions.']
   artist: Keiji Kinebuchi
 - id: 202-135
@@ -3769,13 +3771,12 @@ cards:
   superType: POKEMON
   subTypes: [EVOLUTION, STAGE2]
   evolvesFrom: Kabuto
-  hp: 90
+  hp: 80
   retreatCost: 3
   abilities:
   - type: Poké-Body
-    name: Fossilized Memories
-    text: As long as this Pokémon is your Active Pokémon and has a Pokémon
-        Tool attached to it, no Supporter cards can be played.
+    name: Ancient Shell
+    text: As long as you have Omanyte or Omastar in play, damage done to Kabutops by attacks is reduced by 20 (after applying Weakness and Resistance).
   moves:
   - cost: [F, F, C, C]
     name: Rock Tomb
@@ -3805,7 +3806,7 @@ cards:
   abilities:
   - type: Poké-Body
     name: Dark Cloak
-    text: Each of your [D] Pokémon that has any [D] Energy attached to it
+    text: Each of your [D] Pokémon that has any Special [D] Energy attached to it
       has no Retreat Cost.
   moves:
   - cost: [D, D, C]
@@ -3813,9 +3814,6 @@ cards:
     damage: '30'
     text: This attack does 10 damage to 1 of your opponent's Benched
       Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  weaknesses:
-  - type: F
-    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -3866,7 +3864,7 @@ cards:
     name: Extreme Speed
     text: You pay [C] less to retreat Arcanine for each Energy attached to it.
   moves:
-  - cost: [R, C, C]
+  - cost: [C, C, C]
     name: Fire Blow
     damage: 30+
     text: You may discard any number of [R] Energy cards attached to Arcanine when
@@ -3927,7 +3925,7 @@ cards:
       you may flip a coin. If heads, return Azumarill and all cards attached to it
       to your hand.
   moves:
-  - cost: [W, W, C]
+  - cost: [W, C, C]
     name: Aqua Sonic
     damage: '40'
     text: Don't apply Resistance.
@@ -4050,7 +4048,7 @@ cards:
   moves:
   - cost: [R, C, C]
     name: Burning Fang
-    damage: '30'
+    damage: '40'
     text: You may flip a coin. If heads, discard a [R] Energy card attached to Entei
       and the Defending Pokémon is now Burned.
   weaknesses:
@@ -4074,10 +4072,10 @@ cards:
   - type: Poké-Power
     name: Energy Return
     text: You may just once during your turn (before your attack), choose an Energy
-      card attached to 1 of your Pokémon and return it to your hand. This power can't
+      card attached to 1 of your [P] Pokémon and return it to your hand. This power can't
       be used if Espeon is affected by a Special Condition.
   moves:
-  - cost: [P, P, C, C]
+  - cost: [P, C, C]
     name: Damage Blast
     damage: 30+
     text: Flip a number of coins equal to the number of damage counters on the Defending
@@ -4097,8 +4095,8 @@ cards:
   superType: POKEMON
   subTypes: [EVOLUTION, STAGE1]
   evolvesFrom: Exeggcute
-  hp: 80
-  retreatCost: 1
+  hp: 60
+  retreatCost: 3
   moves:
   - cost: [C]
     name: Super Eggsplosion
@@ -4196,7 +4194,7 @@ cards:
       an opponent's attack and it already has at least 1 damage counter on it, flip
       a coin. If heads, prevent all effects of that attack (including damage).
   moves:
-  - cost: [G, C, C]
+  - cost: [G]
     name: Cotton Punch
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
@@ -4253,7 +4251,7 @@ cards:
   - type: Poké-Power
     name: Ion Coating
     text: You may use this power once during each of your turns (before your attack).
-      All [W] Energy attached to your Active Pokémon becomes [L] Energy for the rest
+      All [L] Energy attached to your Active Pokémon becomes [W] Energy for the rest
       of the turn. (This effect ends if your Active Pokémon retreats or is returned
       to your hand.) This power can't be used if Lanturn is affected by a Special
       Condition.
@@ -4320,9 +4318,8 @@ cards:
   abilities:
   - type: Poké-Body
     name: Toxic Gas
-    text: As long as this Pokémon has any Energy cards attached to it, ignore all
-      Poké-Powers and Poké-Bodies other than Toxic Gases. This power can''t be used
-      if Muk is affected by a Special Condition.
+    text: Ignore all Poké-Powers and Poké-Bodies other than Toxic Gases. This power can''t   
+          used if Muk is affected by a Special Condition.
   moves:
   - cost: [G, G, C]
     name: Sludge
@@ -4415,7 +4412,7 @@ cards:
   moves:
   - cost: [W, C, C]
     name: Smokescreen
-    damage: '20'
+    damage: '30'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
   weaknesses:
@@ -4449,7 +4446,7 @@ cards:
     name: Heavy Metal
     damage: 30+
     text: Flip a number of coins equal to the amount of [M] Energy attached to Scizor.
-      This attack does 30 damage plus 10 more damage for each heads.
+      This attack does 30 damage plus 20 more damage for each heads.
   weaknesses:
   - type: R
     value: x2
@@ -4778,11 +4775,14 @@ cards:
     name: Plasma
     damage: '10'
     text: If there are any [L] Energy cards in your discard pile, flip a coin. If
-      heads, attach 2 of them to Zapdos.
+      heads, attach 1 of them to Zapdos.
   - cost: [L, L, C, C]
     name: Lightning Storm
     damage: '60'
-    text: Flip a coin. If tails, put 4 damage counters on Zapdos.
+    text: Flip a coin. If tails, put 2 damage counters on Zapdos.
+  resistances:
+  - type: F
+    value: '-30'
   rarity: Rare Holo
   artist: Hajime Kusajima
 - id: 202-190
