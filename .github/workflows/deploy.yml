@@ -36,14 +36,19 @@ jobs:
         MAVEN_USERNAME: myMavenRepo
         MAVEN_PASSWORD: ${{ secrets.REPO_PASSWORD }}
 
-    - uses: octokit/request-action@v2.x
-      id: trigger_front
-      with:
-        route: POST /repos/{owner}/{repo}/actions/workflows/{workflow}/dispatches
-        owner: tcgone
-        repo: front
-        workflow: deploy.yml
-        ref: master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+# disabled for token security reasons
+# for now, front deployments should be done manually via triggering deploy.yml workflow
+# this can be re-enabled after creating a constrained token via a github app
+# https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions
+#
+#    - uses: octokit/request-action@v2.x
+#      id: trigger_front
+#      with:
+#        route: POST /repos/{owner}/{repo}/actions/workflows/{workflow}/dispatches
+#        owner: tcgone
+#        repo: front
+#        workflow: deploy.yml
+#        ref: master
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
