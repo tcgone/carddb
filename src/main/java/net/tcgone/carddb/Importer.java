@@ -56,12 +56,10 @@ public class Importer {
   protected Map<String, Card> cardInfoStringToCard;
 
   protected List<Format> allFormats;
-  protected Map<String, Format> enumIdToFormat;
-  protected Map<String, Format> seoNameToFormat;
+  protected Map<String, Format> idToFormat;
 
   protected List<Set> allSets;
-  protected Map<String, Set> enumIdToSet;
-  protected Map<String, Set> seoNameToSet;
+  protected Map<String, Set> idToSet;
 
   protected Multimap<String, String> chains;
 
@@ -70,9 +68,9 @@ public class Importer {
 
   public void init() throws Exception {
 
-    processFormats();
     processCards();
     processEvolutionChains();
+    processFormats();
 
   }
 
@@ -118,25 +116,6 @@ public class Importer {
   }
 
 
-  protected void processFormats() throws IOException, ImportException {
-    enumIdToFormat = new THashMap<>();
-    seoNameToFormat = new THashMap<>();
-    allFormats = mapper.readValue(resourceResolver.getResource("classpath:/formats.yaml").getInputStream(), new TypeReference<List<Format>>() {
-    });
-    for (Format format : allFormats) { //validate
-      validateAndAssert(format.enumId, format);
-    }
-    allFormats = allFormats.stream(
-    ).filter(f -> f.flags == null || !f.flags.contains("disabled")
-    ).peek(f -> {
-        f._sets = new ArrayList<>();
-        f._cards = new ArrayList<>();
-        seoNameToFormat.put(f.seoName, f);
-        enumIdToFormat.put(f.enumId, f);
-      }
-    ).collect(Collectors.toList());
-  }
-
   protected void processCards() throws IOException, ImportException {
     // read set files
     Resource[] resources = resourceResolver.getResources("classpath:/cards/*.yaml");
@@ -155,8 +134,7 @@ public class Importer {
     cardInfoStringToCard = new THashMap<>();
 
     allSets = new ArrayList<>();
-    enumIdToSet = new THashMap<>();
-    seoNameToSet = new THashMap<>();
+    idToSet = new THashMap<>();
 
     for (SetFile setFile : setFiles) {
       int order = 1;
@@ -168,14 +146,14 @@ public class Importer {
       set.order = 1000 - Integer.parseInt(set.id);
       if(set.seoName == null)
         set.seoName = set.name.toLowerCase(Locale.ENGLISH).replaceAll("\\W+", "-");
-      set._formats = new ArrayList<>();
-      set._cards = ImmutableList.copyOf(setFile.cards);
+      set.cards = ImmutableList.copyOf(setFile.cards);
 
       allSets.add(set);
-      seoNameToSet.put(set.seoName, set);
-      enumIdToSet.put(set.enumId, set);
+      idToSet.put(set.id, set);
+      idToSet.put(set.enumId, set);
+      idToSet.put(set.seoName, set);
 
-      for (Card card : set._cards) {
+      for (Card card : set.cards) {
         card.set = set;
         if(set.notImplemented && !card.subTypes.contains(CardType.NOT_IMPLEMENTED)) {
           card.subTypes.add(CardType.NOT_IMPLEMENTED);
@@ -228,9 +206,29 @@ public class Importer {
 
     }
 
+    log.info("Imported all cards");
+  }
+
+
+  protected void processFormats() throws IOException, ImportException {
+
+    List<Format> formatsFromFile = mapper.readValue(resourceResolver.getResource("classpath:/formats.yaml").getInputStream(), new TypeReference<List<Format>>() {});
     Pattern idRangePattern = Pattern.compile(Card.ID_RANGE_PATTERN);
-    // expand all ranges
-    for (Format format : allFormats) {
+
+    for (Format format : formatsFromFile) { //validate
+      validateAndAssert(format.seoName, format);
+    }
+
+    allFormats = new ArrayList<>();
+    idToFormat = new THashMap<>();
+
+    for (Format format : formatsFromFile) {
+      if (format.flags != null && format.flags.contains("disabled")) {
+        continue;
+      }
+
+      // expand all ranges
+
       Function<Stream<String>, Stream<String>> expandRanges =
         (stream) -> stream.flatMap(s -> {
           Matcher matcher = idRangePattern.matcher(s);
@@ -242,10 +240,10 @@ public class Importer {
             if(startCard == null) {
               throw new IllegalStateException("Cannot find card " + startId);
             }
-            int startIndex = startCard.set._cards.indexOf(startCard);
+            int startIndex = startCard.set.cards.indexOf(startCard);
             List<String> accumulator = new ArrayList<>();
-            while (startIndex < startCard.set._cards.size()) {
-              Card card = startCard.set._cards.get(startIndex);
+            while (startIndex < startCard.set.cards.size()) {
+              Card card = startCard.set.cards.get(startIndex);
               accumulator.add(card.id);
               if(card.id.equals(endId)) {
                 break;
@@ -261,56 +259,65 @@ public class Importer {
         });
       format.includes = expandRanges.apply(format.includes.stream()).collect(Collectors.toList());
       format.excludes = expandRanges.apply(format.excludes.stream()).collect(Collectors.toList());
-    }
 
-    for (SetFile setFile : setFiles) {
-      Set set = setFile.set;
-      for (Format format : allFormats) {
-        /*
-        relation of sets vs formats:
-        if a set is specified inside format.sets, then it is displayed as part of that format.
-        note that this is just a display. the actual card list of a format can be different than this.
-        example: promo sets may not be mentioned inside sets clause, but included in the "includes" field.
-        includes: if one card from a set is specified in includes field, it is assumed everything else in the same set is excluded.
-        excludes: if one card from a set is specified in excludes field, it is assumed everything else in the same set is included.
-        this means it is a violation to both specify includes and excludes for the same set.
-         */
-        boolean inclSet = false;
-        boolean exclSet = false;
-        boolean direSet = false;
-        if (format.sets.contains(set.id)) {
-          set._formats.add(format);
-          format._sets.add(set);
-          direSet = true;
+      // find all cards of each format
+
+      String id = format.seoName;
+      LinkedHashSet<Set> sets = new LinkedHashSet<>();
+      LinkedHashSet<Set> inclusionSets = new LinkedHashSet<>();
+      LinkedHashSet<Card> cards = new LinkedHashSet<>();
+
+
+      for (String setId : format.sets) {
+        Set set = idToSet.get(setId);
+        if(set == null) {
+          throw new ImportException(String.format("set '%s' defined in format '%s' cannot be found", setId, id));
         }
-        for (Card card : set._cards) {
-          if (format.includes.contains(card.id)) {
-            inclSet = true;
-          }
-          if (format.excludes.contains(card.id)) {
-            exclSet = true;
-          }
+        sets.add(set);
+      }
+
+      for (String include : format.includes) {
+        Card card = idToCard.get(include);
+        if(card == null) {
+          throw new ImportException(String.format("include '%s' defined in format '%s' cannot be found", include, id));
         }
-        if (inclSet && exclSet) {
-          throw new ImportException(String.format("includes and excludes cannot be specified for cards from the set %s for format %s", set.name, format.name));
-        }
-        for (Card card : set._cards) {
-          if (card.formats == null)
-            card.formats = new ArrayList<>();
-          if (inclSet && format.includes.contains(card.id)) {
-            card.formats.add(format.seoName);
-            format._cards.add(card);
-          } else if (!inclSet && direSet && !format.excludes.contains(card.id)) {
-            card.formats.add(format.seoName);
-            format._cards.add(card);
-          }
+        inclusionSets.add(card.set);
+        cards.add(card);
+      }
+
+      for (Set set : sets) {
+        if (!inclusionSets.contains(set)) {
+          cards.addAll(set.cards);
         }
       }
 
-    }
-    log.info("Imported all cards");
-  }
+      for (String exclude : format.excludes) {
+        Card card = idToCard.get(exclude);
+        if(card == null) {
+          throw new ImportException(String.format("exclude '%s' defined in format '%s' cannot be found", exclude, id));
+        }
+        if (inclusionSets.contains(card.set)) {
+          throw new ImportException(String.format("includes and excludes cannot be specified for cards from the set %s for format %s", card.set.name, id));
+        }
+        if (!cards.remove(card)) {
+          throw new ImportException(String.format("exclude '%s' defined in format '%s' was not included at all", exclude, id));
+        }
+      }
 
+      // add format to each valid card
+
+      for (Card card : cards) {
+        if (card.formats == null)
+          card.formats = new ArrayList<>();
+
+        card.formats.add(id);
+      }
+
+      idToFormat.put(id, format);
+      idToFormat.put(format.enumId, format);
+      allFormats.add(format);
+    }
+  }
 
   protected void processEvolutionChains() throws ImportException {
     chains = HashMultimap.create();

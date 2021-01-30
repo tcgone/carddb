@@ -27,21 +27,39 @@ import java.util.List;
 import static net.tcgone.carddb.model.Card.ID_PATTERN;
 
 public class Set {
+  /**
+   * New, three digit id. This is immutable.
+   */
   @NotBlank
   @Pattern(regexp = ID_PATTERN)
   public String id;
+  /**
+   * Full Set Name (e.g. Base Set)
+   */
   @NotBlank
   public String name;
-  public String pioId;
+  /**
+   * url compatible id (e.g. base-set)
+   */
   public String seoName;
+  /**
+   * Enum id (core id) is used by game engine and card implementations
+   */
   @NotBlank
   public String enumId;
+  /**
+   * Abbreviation. i.e. ptcgo code
+   */
   @NotBlank
   public String abbr;
+  public String pioId;
+
   // respective to all sets
   public Integer order;
   public List<String> categories;
-  public Integer officialCount;
+  private String series;
+  private Integer officialCount;
+  private String releaseDate;
   public String imageUrl;
   public String symbolUrl;
   /**
@@ -51,13 +69,11 @@ public class Set {
   /**
    * all cards of this set, populated at runtime
    */
-  @JsonIgnore
-  public transient List<Card> _cards;
+  public List<Card> cards;
   /**
    * all formats that this set is allowed in, including partial sets, populated at runtime
    */
-  @JsonIgnore
-  public transient List<Format> _formats;
+  public List<Format> formats;
 
   public String toString() {
     return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
