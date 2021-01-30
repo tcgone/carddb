@@ -1,0 +1,64 @@
+package tcgone.carddb.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
+
+/**
+ * Experimental
+ *
+ * @author axpendix@hotmail.com
+ */
+public enum Type {
+
+  GRASS("G"),
+  FIRE("R"),
+  WATER("W"),
+  LIGHTNING("L"),
+  PSYCHIC("P"),
+  FIGHTING("F"),
+  DARKNESS("D"),
+  METAL("M"),
+  FAIRY("Y"),
+  DRAGON("N"),
+  COLORLESS("C"),
+
+  RAINBOW("RAINBOW"),
+  MAGMA("MAGMA"),
+  AQUA("AQUA");
+
+  private final String notation;
+  private final String label;
+
+  Type(String notation) {
+    this.notation = notation;
+    this.label = StringUtils.capitalize(notation.toLowerCase(Locale.ENGLISH));
+  }
+
+  @JsonValue
+  public String getNotation() {
+    return notation;
+  }
+
+  public String getEnclosedNotation() {
+    return "[" + notation + "]";
+  }
+
+  @JsonCreator
+  public static Type of(String input) {
+    for (Type value : values()) {
+      if (value.notation.equalsIgnoreCase(input) || value.name().equalsIgnoreCase(input) || value.label.equalsIgnoreCase(input))
+        return value;
+    }
+    throw new IllegalArgumentException("Type for '" + input + "' was not found.");
+  }
+
+  public static List<Type> valuesForPokemon() {
+    return Arrays.asList(GRASS, FIRE, WATER, LIGHTNING, PSYCHIC, FIGHTING, DARKNESS, METAL, FAIRY, DRAGON, COLORLESS);
+  }
+
+}
