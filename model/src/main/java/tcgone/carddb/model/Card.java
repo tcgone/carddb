@@ -59,9 +59,15 @@ public class Card {
    */
   public CardType superType;
   /**
-   * Stage 2
+   * [EVOLUTION, STAGE2]
    */
   public List<CardType> subTypes;
+  /**
+   * Evolution stage of the Pokemon. i.e. STAGE2.
+   * Is null for non-pokemon cards.
+   * This is automatically calculated and validated from the subTypes property on YAML. Do not fill this property on the input YAML files.
+   */
+  public CardType stage;
   /**
    * Charmeleon
    */

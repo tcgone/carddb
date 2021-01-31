@@ -96,4 +96,10 @@ public enum CardType {
     return this == POKEMON || this == TRAINER || this == ENERGY;
   }
 
+  /**
+   * @return list of legal evolution stage types. A pokemon card can have only one stage property.
+   */
+  public static List<CardType> allStages() {
+    return Arrays.asList(BABY, BASIC, STAGE1, STAGE2, RESTORED, MEGA_POKEMON, LVL_X, BREAK, LEGEND, VMAX);
+  }
 }

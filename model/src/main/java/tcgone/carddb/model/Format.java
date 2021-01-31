@@ -31,7 +31,7 @@ public class Format {
    */
   public List<String> excludes;
   public String ruleSet;
-  public int order;
+  public Integer order;
   public List<String> flags;
 //  private List<String> availableGameTypes;
 //  private String playUrl;//can be per game type
