@@ -260,10 +260,10 @@ public class ImplTmplGenerator {
 				throw new IllegalStateException("Impl null:"+card.name+","+card.number);
 			}
 
-			if(card.copyOf != null){
+			if(card.variantOf != null){
 				//search for reprints in same set
 				for(List2Item list2Item : list2){
-					if(list2Item.getId().equals(card.copyOf)){
+					if(list2Item.getId().equals(card.variantOf)){
 						impl = String.format("copy (%s, this)", list2Item.name);
 						System.out.println("REPRINT_SAME "+ list2Item.name);
 						break;
