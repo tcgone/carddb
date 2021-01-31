@@ -1,6 +1,7 @@
-package tcgone.carddb.model;
+package tcgone.carddb.model.experimental;
 
 import lombok.Data;
+import tcgone.carddb.model.Type;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

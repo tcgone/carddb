@@ -44,8 +44,8 @@ public class ImportTest {
         mmap.computeIfAbsent(card.set.enumId, k -> new ArrayList<>()).add(card.enumId);
       }
     }
-    for (Map.Entry<String, Collection<String>> entry : mmap.entrySet()) {
-      System.out.println(entry.getKey() + ":" + entry.getValue());
-    }
+//    for (Map.Entry<String, Collection<String>> entry : mmap.entrySet()) {
+//      System.out.println(entry.getKey() + ":" + entry.getValue());
+//    }
   }
 }

@@ -1,19 +1,11 @@
 package tcgone.carddb.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import java.util.List;
 
 public class Format {
-  @NotBlank
   public String name;
-  @NotBlank
   public String seoName;
-  @NotBlank
   public String enumId;
-  @NotBlank
   public String description;
   public String imageUrl;
   /**
@@ -23,8 +15,6 @@ public class Format {
    * note that this is just a display. the actual card list of a format can be different than this.
    * example: promo sets may not be mentioned inside sets clause, but included in the "includes" field.
    */
-  @Size(min = 1)
-  @JsonProperty("sets")
   public List<String> sets;
   /**
    * list of {@link Card#id}s that were specifically included in this format
@@ -40,7 +30,6 @@ public class Format {
    * it is a violation to both specify includes and excludes for the same set.
    */
   public List<String> excludes;
-  @NotBlank
   public String ruleSet;
   public int order;
   public List<String> flags;
