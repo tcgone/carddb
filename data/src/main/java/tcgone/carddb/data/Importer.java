@@ -148,6 +148,30 @@ public class Importer {
               if (isBlank(wr.value) || wr.type == null)
                 violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id+"/resistances", "value or type missing"));
             }
+
+          // stage handling
+          CardType stage = null;
+          for (CardType cardType : CardType.allStages()) {
+            if (card.subTypes.contains(cardType)) {
+              if (stage != null) {
+                if ((stage == CardType.BASIC && cardType == CardType.BABY) || stage == CardType.BABY && cardType == CardType.BASIC) {
+                  stage = CardType.BABY; // this is fine
+                } else {
+                  violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id+"/subTypes", String.format("cannot have both: %s, %s", stage, cardType)));
+                }
+              } else {
+                stage = cardType;
+              }
+            }
+          }
+          if (stage == null) {
+            violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id+"/subTypes", String.format("must have one: %s", CardType.allStages())));
+          }
+          if (stage == CardType.BABY && !card.subTypes.contains(CardType.BASIC)) {
+            card.subTypes.add(CardType.BASIC);
+          }
+          card.stage = stage;
+
         }
         // TODO
         // check sub types
@@ -184,10 +208,19 @@ public class Importer {
     allSets = new ArrayList<>();
     idToSet = new THashMap<>();
 
+    boolean validationFailed = false;
+    StringBuilder validationMessages = new StringBuilder();
+
     for (SetFile setFile : setFiles) {
       int order = 1;
 
-      validate(setFile); //validate
+      try {
+        validate(setFile);
+      } catch (ImportException e) {
+        validationFailed = true;
+        validationMessages.append(e.getMessage());
+        continue;
+      }
       log.info("Validated {}", setFile.set.name);
 
       Set set = setFile.set;
@@ -254,6 +287,9 @@ public class Importer {
 
     }
 
+    if (validationFailed) {
+      throw new ImportException("Validation failed: " + validationMessages.toString());
+    }
     log.info("Imported all cards");
   }
 
