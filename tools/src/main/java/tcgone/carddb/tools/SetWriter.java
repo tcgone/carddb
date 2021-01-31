@@ -24,6 +24,7 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.introspector.Property;
 import org.yaml.snakeyaml.nodes.*;
 import org.yaml.snakeyaml.representer.Representer;
+import tcgone.carddb.model.experimental.VariantType;
 
 import javax.annotation.PostConstruct;
 import java.io.*;
@@ -200,14 +201,14 @@ public class SetWriter {
                     Card oc = map.get(ec);
                     if (c.rarity == Rarity.ULTRA_RARE) {
                         // most likely full art
-                        c.copyType = "Full Art";
+                        c.variantType = VariantType.FULL_ART;
                     } else if (c.rarity == Rarity.SECRET) {
                         // most likely secret art
-                        c.copyType = "Secret Art";
+                        c.variantType = VariantType.SECRET_ART;
                     } else {
-                        c.copyType = "Reprint";
+                        c.variantType = VariantType.REPRINT;
                     }
-                    c.copyOf = oc.id;
+                    c.variantOf = oc.id;
                 } else {
                     map.put(ec, c);
                 }
