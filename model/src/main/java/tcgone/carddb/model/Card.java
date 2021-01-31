@@ -1,29 +1,10 @@
-/*
-Copyright 2018 axpendix@hotmail.com
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-		http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import tcgone.carddb.model.experimental.Variant;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import tcgone.carddb.model.experimental.Variant;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import java.util.List;
 import java.util.Objects;
 
@@ -33,20 +14,16 @@ public class Card {
   public static final String ID_PATTERN = "^[\\w-]+$";
   public static final String ID_RANGE_PATTERN = "^([\\w-]+)\\.\\.([\\w-]+)$";
   /**
-   * Experimental id: 101-4
+   * id: 101-4
    */
-  @NotBlank
-  @Pattern(regexp = ID_PATTERN)
   public String id;
   /**
    * Pio id: base1-4
    */
-  @NotBlank
   public String pioId;
   /**
    * Our id: CHARIZARD_4:BASE_SET
    */
-  @NotBlank
   public String enumId;
   /**
    *
@@ -55,7 +32,6 @@ public class Card {
   /**
    * Card name: Charizard
    */
-  @NotBlank
   public String name;
   /**
    * 4
@@ -64,7 +40,6 @@ public class Card {
   /**
    * 4
    */
-  @NotBlank
   public String number;
   /**
    * Img url: https://tcgone.net/scans/m/base_set/004.jpg
@@ -82,7 +57,6 @@ public class Card {
   /**
    * Either Pokémon, Trainer or Energy
    */
-  @NotNull
   public CardType superType;
   /**
    * Stage 2
@@ -109,23 +83,19 @@ public class Card {
    * attack), you may turn all Energy attached to Charizard into [R] for the rest of the turn. This power can't be used
    * if Charizard is Asleep, Confused, or Paralyzed." } ]
    */
-  @Valid
   public List<Ability> abilities;
   /**
    * [ { "cost": ["R","R","R","R"], "name": "Fire Spin", "text": "Discard 2 Energy cards attached to Charizard in order
    * to use this attack.", "damage": "100", "convertedEnergyCost": 4 } ]
    */
-  @Valid
   public List<Move> moves;
   /**
    * [ { "type": "W", "value": "×2" } ]
    */
-  @Valid
   public List<WeaknessResistance> weaknesses;
   /**
    * [ { "type": "F", "value": "-30" } ]
    */
-  @Valid
   public List<WeaknessResistance> resistances;
   /**
    * Charizard (BS 4)
@@ -138,7 +108,6 @@ public class Card {
   /**
    * Rare Holo
    */
-  @NotNull
   public Rarity rarity;
   /**
    * Epic

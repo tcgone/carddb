@@ -28,7 +28,6 @@ public enum CareerRarity {
     for (CareerRarity value : values()) {
       if (value.label.equalsIgnoreCase(label)) return value;
     }
-//		return null;
     throw new IllegalArgumentException("CareerRarity for '" + label + "' was not found.");
   }
 

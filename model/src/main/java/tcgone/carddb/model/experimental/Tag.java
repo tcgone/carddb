@@ -1,4 +1,4 @@
-package tcgone.carddb.model;
+package tcgone.carddb.model.experimental;
 
 /**
  * @author axpendix@hotmail.com

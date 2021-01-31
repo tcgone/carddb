@@ -27,9 +27,6 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import tcgone.carddb.model.Set;
 import tcgone.carddb.model.*;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
 import java.io.IOException;
 import java.util.*;
 import java.util.function.Function;
@@ -37,6 +34,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static org.apache.commons.lang3.StringUtils.isBlank;
 
 /**
  * @author axpendix@hotmail.com
@@ -46,7 +45,6 @@ public class Importer {
 
   protected ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
   protected PathMatchingResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver(this.getClass().getClassLoader());
-  protected Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 
   protected List<Card> allCards;
   protected Map<String, Card> idToCard;
@@ -73,45 +71,96 @@ public class Importer {
 
   }
 
-  private void validateAndAssert(String context, Object o) throws ImportException {
-    List<String> errors = new ArrayList<>();
-    java.util.Set<ConstraintViolation<Object>> violations = validator.validate(o);
-    for (ConstraintViolation<Object> cv : violations) {
-      errors.add(String.format("%s %s %s", context, cv.getPropertyPath().toString(), cv.getMessage()));
-    }
-    if(o instanceof SetFile) { // then validate each card individually
-      SetFile setFile = (SetFile) o;
-      for (Card card : setFile.cards) {
-        try {
-          validateCard(setFile.filename + "/" + card.id, card);
-        } catch (ImportException e) {
-          errors.add(e.getMessage());
-        }
-      }
-    }
-    if (!errors.isEmpty()) {
-      throw new ImportException(errors);
-    }
-  }
+  private void validate(SetFile setFile) throws ImportException {
+    List<ConstraintViolation> violations = new ArrayList<>();
 
-  protected void validateCard(String context, Card card) throws ImportException {
-    if (!card.superType.isSuperType()) {
-      throw new ImportException(String.format("Illegal superType %s in %s", card.superType, context));
-    }
-    if (card.superType == CardType.POKEMON) {
-      if (card.hp == null && !card.subTypes.contains(CardType.LEGEND))
-        throw new ImportException(String.format("Missing HP in %s", context));
-      if (card.retreatCost == null && !card.subTypes.contains(CardType.LEGEND))
-        throw new ImportException(String.format("Missing retreatCost in %s", context));
-      if (card.subTypes.contains(CardType.STAGE1) || card.subTypes.contains(CardType.STAGE2)) {
-        if(StringUtils.isEmpty(card.evolvesFrom)) {
-          throw new ImportException(String.format("Missing evolvesFrom in %s", context));
+    try {
+      if (setFile.set == null) {
+        violations.add(new ConstraintViolation("cards/"+setFile.filename, "set definition missing"));
+        return;
+      }
+
+      if (isBlank(setFile.set.id) || !setFile.set.id.matches("^[0-9]{3}$"))
+        violations.add(new ConstraintViolation("cards/"+setFile.filename, "set.id missing or not acceptable, set ids must consist of three digits"));
+      if (isBlank(setFile.set.name))
+        violations.add(new ConstraintViolation("cards/"+setFile.filename, "set.name missing"));
+      if (isBlank(setFile.set.enumId))
+        violations.add(new ConstraintViolation("cards/"+setFile.filename, "set.enumId missing"));
+      if (isBlank(setFile.set.abbr))
+        violations.add(new ConstraintViolation("cards/"+setFile.filename, "set.abbr missing"));
+
+      if (setFile.cards == null || setFile.cards.isEmpty()) {
+        violations.add(new ConstraintViolation("cards/"+setFile.filename, "cards missing"));
+        return;
+      }
+
+      String cardIdRegex = "^" + setFile.set.id + "-[\\w]+$";
+      Pattern cardIdPattern = Pattern.compile(cardIdRegex);
+
+      for (Card card : setFile.cards) {
+        if (isBlank(card.id)) {
+          violations.add(new ConstraintViolation("cards/"+setFile.filename+"/card/?", "id missing"));
+          continue;
         }
+
+        if (!cardIdPattern.matcher(card.id).matches())
+          violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id, "id does not match pattern="+cardIdRegex));
+        if (isBlank(card.name))
+          violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id, "name missing"));
+        if (isBlank(card.number))
+          violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id, "number missing"));
+        if (isBlank(card.enumId))
+          violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id, "enumId missing"));
+        if (card.superType == null || !card.superType.isSuperType())
+          violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id, "superType missing or illegal"));
+        if (card.rarity == null)
+          violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id, "rarity missing"));
+
+        if (card.superType == CardType.POKEMON) {
+          if (card.hp == null && !card.subTypes.contains(CardType.LEGEND))
+            violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id, "hp missing"));
+          if (card.retreatCost == null && !card.subTypes.contains(CardType.LEGEND))
+            violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id, "retreatCost missing"));
+          if (card.subTypes.contains(CardType.STAGE1) || card.subTypes.contains(CardType.STAGE2)) {
+            if(StringUtils.isEmpty(card.evolvesFrom)) {
+              violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id, "evolvesFrom missing"));
+            }
+          }
+          if (card.abilities != null)
+            for (Ability ability : card.abilities) {
+              if (isBlank(ability.name) || isBlank(ability.type) || isBlank(ability.text))
+                violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id+"/abilities", "name, type or text missing"));
+            }
+          if (card.moves != null)
+            for (Move move : card.moves) {
+              if (isBlank(move.name))
+                violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id+"/moves", "name missing"));
+              if (move.cost == null)
+                violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id+"/moves", "cost missing"));
+            }
+          if (card.weaknesses != null)
+            for (WeaknessResistance wr : card.weaknesses) {
+              if (isBlank(wr.value) || wr.type == null)
+                violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id+"/weaknesses", "value or type missing"));
+            }
+          if (card.resistances != null)
+            for (WeaknessResistance wr : card.resistances) {
+              if (isBlank(wr.value) || wr.type == null)
+                violations.add(new ConstraintViolation("cards/"+setFile.filename+"/"+card.id+"/resistances", "value or type missing"));
+            }
+        }
+        // TODO
+        // check sub types
+        // check empty/null fields, number, ordering, etc, attacks, abilities
+      }
+
+    } finally {
+      if (!violations.isEmpty()) {
+        throw new ImportException(violations.stream().map(ConstraintViolation::toString).collect(Collectors.toList()));
       }
     }
-    // TODO
-    // check sub types
-    // check empty/null fields, number, ordering, etc, attacks, abilities
+
+
   }
 
 
@@ -138,7 +187,7 @@ public class Importer {
     for (SetFile setFile : setFiles) {
       int order = 1;
 
-      validateAndAssert(setFile.filename, setFile); //validate
+      validate(setFile); //validate
       log.info("Validated {}", setFile.set.name);
 
       Set set = setFile.set;
@@ -211,23 +260,37 @@ public class Importer {
 
   protected void processFormats() throws IOException, ImportException {
 
+    allFormats = new ArrayList<>();
+    idToFormat = new THashMap<>();
+
     List<Format> formatsFromFile = mapper.readValue(resourceResolver.getResource("classpath:/formats.yaml").getInputStream(), new TypeReference<List<Format>>() {});
     Pattern idRangePattern = Pattern.compile(Card.ID_RANGE_PATTERN);
 
-    for (Format format : formatsFromFile) { //validate
-      validateAndAssert(format.seoName, format);
-    }
-
-    allFormats = new ArrayList<>();
-    idToFormat = new THashMap<>();
+    List<ConstraintViolation> violations = new ArrayList<>();
 
     for (Format format : formatsFromFile) {
       if (format.flags != null && format.flags.contains("disabled")) {
         continue;
       }
 
-      // expand all ranges
+      if(isBlank(format.enumId)) {
+        violations.add(new ConstraintViolation("format/?", "enumId is missing"));
+        continue;
+      }
+      if(isBlank(format.seoName)) {
+        violations.add(new ConstraintViolation("format/"+ format.enumId, "seoName is missing"));
+        continue;
+      }
+      if(isBlank(format.name))
+        violations.add(new ConstraintViolation("format/"+ format.enumId, "name is missing"));
+      if(isBlank(format.description))
+        violations.add(new ConstraintViolation("format/"+ format.enumId, "description is missing"));
+      if(format.sets == null || format.sets.isEmpty())
+        violations.add(new ConstraintViolation("format/"+ format.enumId, "sets missing"));
+      if(isBlank(format.ruleSet))
+        violations.add(new ConstraintViolation("format/"+ format.enumId, "ruleSet is missing"));
 
+      // expand all ranges
       Function<Stream<String>, Stream<String>> expandRanges =
         (stream) -> stream.flatMap(s -> {
           Matcher matcher = idRangePattern.matcher(s);
@@ -256,8 +319,8 @@ public class Importer {
             return Stream.of(s);
           }
         });
-      format.includes = expandRanges.apply(format.includes.stream()).collect(Collectors.toList());
-      format.excludes = expandRanges.apply(format.excludes.stream()).collect(Collectors.toList());
+      format.includes = format.includes != null ? expandRanges.apply(format.includes.stream()).collect(Collectors.toList()) : new ArrayList<>();
+      format.excludes = format.excludes != null ? expandRanges.apply(format.excludes.stream()).collect(Collectors.toList()) : new ArrayList<>();
 
       // find all cards of each format
 
@@ -270,7 +333,8 @@ public class Importer {
       for (String setId : format.sets) {
         Set set = idToSet.get(setId);
         if(set == null) {
-          throw new ImportException(String.format("set '%s' defined in format '%s' cannot be found", setId, id));
+          violations.add(new ConstraintViolation("format/"+ format.enumId, "set cannot be found "+setId));
+          continue;
         }
         sets.add(set);
       }
@@ -278,7 +342,8 @@ public class Importer {
       for (String include : format.includes) {
         Card card = idToCard.get(include);
         if(card == null) {
-          throw new ImportException(String.format("include '%s' defined in format '%s' cannot be found", include, id));
+          violations.add(new ConstraintViolation("format/"+ format.enumId, "include cannot be found "+include));
+          continue;
         }
         inclusionSets.add(card.set);
         cards.add(card);
@@ -293,13 +358,15 @@ public class Importer {
       for (String exclude : format.excludes) {
         Card card = idToCard.get(exclude);
         if(card == null) {
-          throw new ImportException(String.format("exclude '%s' defined in format '%s' cannot be found", exclude, id));
+          violations.add(new ConstraintViolation("format/"+ format.enumId, "exclude cannot be found "+exclude));
+          continue;
         }
         if (inclusionSets.contains(card.set)) {
-          throw new ImportException(String.format("includes and excludes cannot be specified for cards from the set %s for format %s", card.set.name, id));
+          violations.add(new ConstraintViolation("format/"+ format.enumId, "includes and excludes cannot be specified for cards from the set "+card.set.name));
+          continue;
         }
         if (!cards.remove(card)) {
-          throw new ImportException(String.format("exclude '%s' defined in format '%s' was not included at all", exclude, id));
+          violations.add(new ConstraintViolation("format/"+ format.enumId, "exclude was not included at all "+exclude));
         }
       }
 
@@ -316,6 +383,11 @@ public class Importer {
       idToFormat.put(format.enumId, format);
       allFormats.add(format);
     }
+
+    if (!violations.isEmpty()) {
+      throw new ImportException(violations.stream().map(ConstraintViolation::toString).collect(Collectors.toList()));
+    }
+
   }
 
   protected void processEvolutionChains() throws ImportException {
