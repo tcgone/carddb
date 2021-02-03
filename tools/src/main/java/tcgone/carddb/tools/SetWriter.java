@@ -24,6 +24,7 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.introspector.Property;
 import org.yaml.snakeyaml.nodes.*;
 import org.yaml.snakeyaml.representer.Representer;
+import tcgone.carddb.model.Set;
 import tcgone.carddb.model.experimental.VariantType;
 
 import javax.annotation.PostConstruct;
@@ -131,9 +132,9 @@ public class SetWriter {
 
     }
 
-    private void write(SetFile setFile, String filename) throws IOException {
+    private void write(Set set) throws IOException {
         //        objectMapper.writeValue(new File(filename),setFile);
-        for (Card card : setFile.cards) {
+        for (Card card : set.cards) {
             card.set = null;
             card.merged = null;
             if (card.moves != null) {
@@ -150,35 +151,35 @@ public class SetWriter {
                 }
             }
         }
-        String dump = yaml.dumpAs(setFile, Tag.MAP, null);
+        String dump = yaml.dumpAs(set, Tag.MAP, null);
         BufferedWriter out = new BufferedWriter
-            (new OutputStreamWriter(new FileOutputStream(filename), StandardCharsets.UTF_8));
+            (new OutputStreamWriter(new FileOutputStream(set.filename), StandardCharsets.UTF_8));
         out.write(dump);
         out.close();
     }
 
-    public void writeAll(Collection<SetFile> setFiles) throws IOException {
-        new File("output").mkdirs();
-        for (SetFile setFile : setFiles) {
-            String filename = String.format("output/%s-%s.yaml", setFile.set.id, setFile.set.enumId.toLowerCase(Locale.ENGLISH));
-            this.write(setFile, filename);
-        }
+    public void writeAll(Collection<Set> sets) throws IOException {
+      new File("output").mkdirs();
+      for (Set set : sets) {
+        set.filename = String.format("output/%s-%s.yaml", set.id, set.enumId.toLowerCase(Locale.ENGLISH));
+        this.write(set);
+      }
     }
 
-    public Map<String, SetFile> prepareSetFiles(List<Card> cards) {
-        Map<String, SetFile> setFileMap = new HashMap<>();
+    public Collection<Set> prepareSetFiles(List<Card> cards) {
+        Map<String, Set> expansionMap = new HashMap<>();
         for (Card card : cards) {
             String key = card.set.enumId;
-            if (!setFileMap.containsKey(key)) {
-                SetFile setFile = new SetFile();
-                setFile.set = card.set;
-                setFile.cards = new ArrayList<>();
-                setFileMap.put(key, setFile);
+            if (!expansionMap.containsKey(key)) {
+                Set set = new Set();
+                card.set.copyStaticPropertiesTo(set);
+                set.cards = new ArrayList<>();
+                expansionMap.put(key, set);
             }
-            setFileMap.get(key).cards.add(card);
+            expansionMap.get(key).cards.add(card);
         }
-        for (SetFile setFile : setFileMap.values()) {
-            setFile.cards.sort((o1, o2) -> {
+        for (Set set : expansionMap.values()) {
+            set.cards.sort((o1, o2) -> {
                 try {
                     Integer n1 = Integer.parseInt(o1.number);
                     Integer n2 = Integer.parseInt(o2.number);
@@ -188,12 +189,12 @@ public class SetWriter {
                 }
             });
         }
-        return setFileMap;
+        return expansionMap.values();
     }
 
-    public void prepareReprints(Collection<SetFile> setFiles) {
+    public void prepareReprints(Collection<Set> setFiles) {
         Map<EqualityCard, Card> map = new HashMap<>();
-        for (SetFile setFile : setFiles) {
+        for (Set setFile : setFiles) {
             for (Card c : setFile.cards) {
 //                int hash = Objects.hash(c.name, c.types, c.superType, c.subTypes, c.evolvesFrom, c.hp, c.retreatCost, c.abilities, c.moves, c.weaknesses, c.resistances, c.text, c.energy);
                 EqualityCard ec = new EqualityCard(c);
