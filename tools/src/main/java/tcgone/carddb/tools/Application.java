@@ -18,6 +18,7 @@ package tcgone.carddb.tools;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import tcgone.carddb.model.Card;
+import tcgone.carddb.model.Set;
 import tcgone.carddb.model.SetFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -27,10 +28,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @author axpendix@hotmail.com
@@ -101,19 +99,19 @@ public class Application implements ApplicationRunner {
 				}
 			}
 		}
-		Map<String, SetFile> setFileMap = setWriter.prepareSetFiles(allCards);
-		setWriter.prepareReprints(setFileMap.values());
+		Collection<Set> sets = setWriter.prepareSetFiles(allCards);
+		setWriter.prepareReprints(sets);
 //		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
 		if(downloadScans){
 			scanDownloader.downloadAll(allCards);
 			log.info("Scans have been saved into ./scans folder");
 		}
 		if(exportYaml){
-			setWriter.writeAll(setFileMap.values());
+			setWriter.writeAll(sets);
 			log.info("YAMLs have been written to ./output folder");
 		}
 		if(exportImplTmpl){
-			implTmplGenerator.writeAll(setFileMap.values());
+			implTmplGenerator.writeAll(sets);
 			log.info("Impl Tmpls have been written to ./impl folder");
 		}
 	}

@@ -6,6 +6,7 @@ import org.apache.commons.lang3.text.WordUtils;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.springframework.stereotype.Component;
+import tcgone.carddb.model.Set;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -18,13 +19,13 @@ import java.util.*;
 @Component
 public class ImplTmplGenerator {
 
-	public void writeAll(Collection<SetFile> setFiles) throws Exception {
+	public void writeAll(Collection<Set> setFiles) throws Exception {
 		new File("impl").mkdirs();
-		for (SetFile setFile : setFiles) {
+		for (Set setFile : setFiles) {
 			write(setFile);
 		}
 	}
-	private void write(SetFile setFile) throws Exception {
+	private void write(Set setFile) throws Exception {
 		/*
 		 * set.vm requires:
 		 * classname foldername collection
@@ -35,7 +36,7 @@ public class ImplTmplGenerator {
 		Map<String, Object> modelmap = new HashMap<>();
 		List<List1Item> list1 = new ArrayList<>();
 		List<List2Item> list2 = new ArrayList<>();
-		String EXPNNAME=setFile.set.enumId;
+		String EXPNNAME=setFile.enumId;
 		modelmap.put("classname", WordUtils.capitalizeFully(EXPNNAME.replaceAll("_"," ")).replaceAll(" ",""));
 		modelmap.put("foldername", EXPNNAME.toLowerCase(Locale.ENGLISH));
 		modelmap.put("collection", EXPNNAME);

@@ -1,5 +1,7 @@
 package tcgone.carddb.model.experimental;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import org.apache.commons.lang3.text.WordUtils;
 
 public enum VariantType {
@@ -16,12 +18,26 @@ public enum VariantType {
   CRYSTAL,
   PROMO;
 
+  private final String label;
+
+  VariantType() {
+    this.label = WordUtils.capitalizeFully(name().replace("_"," "));
+  }
+
+  @JsonValue
+  public String getLabel() {
+    return label;
+  }
+
+  @JsonCreator
   public static VariantType of(String input){
     for (VariantType value : values()) {
-      if(value.name().equals(input) || WordUtils.capitalizeFully(value.name().replace("_"," ")).equals(input))
+      if(value.name().equals(input) || value.label.equals(input))
         return value;
     }
     throw new IllegalStateException("No VariantType for "+input);
   }
+
+
 
 }
