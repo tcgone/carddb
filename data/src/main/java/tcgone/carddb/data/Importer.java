@@ -19,6 +19,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import gnu.trove.map.hash.THashMap;
+import gnu.trove.set.hash.THashSet;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +27,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import tcgone.carddb.model.Set;
 import tcgone.carddb.model.*;
+import tcgone.carddb.model.Variant;
+import tcgone.carddb.model.VariantType;
 
 import java.io.IOException;
 import java.util.*;
@@ -36,6 +39,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 /**
  * @author axpendix@hotmail.com
@@ -51,6 +55,7 @@ public class Importer {
   protected Map<String, Card> seoNameToCard;
   protected Map<String, Card> pioIdToCard;
   protected Map<String, Card> cardInfoStringToCard;
+  protected Map<String, Collection<Card>> variantsMap;
 
   protected List<Format> allFormats;
   protected Map<String, Format> idToFormat;
@@ -71,115 +76,104 @@ public class Importer {
 
   }
 
-  private void validate(Set set) throws ImportException {
-    List<ConstraintViolation> violations = new ArrayList<>();
+  private void validate(Set set, List<ConstraintViolation> violations) {
 
-    try {
+    if (isBlank(set.id) || !set.id.matches("^[0-9]{3}$"))
+      violations.add(new ConstraintViolation("cards/"+set.filename, "set.id missing or not acceptable, set ids must consist of three digits"));
+    if (isBlank(set.name))
+      violations.add(new ConstraintViolation("cards/"+set.filename, "set.name missing"));
+    if (isBlank(set.enumId))
+      violations.add(new ConstraintViolation("cards/"+set.filename, "set.enumId missing"));
+    if (isBlank(set.abbr))
+      violations.add(new ConstraintViolation("cards/"+set.filename, "set.abbr missing"));
 
-      if (isBlank(set.id) || !set.id.matches("^[0-9]{3}$"))
-        violations.add(new ConstraintViolation("cards/"+set.filename, "set.id missing or not acceptable, set ids must consist of three digits"));
-      if (isBlank(set.name))
-        violations.add(new ConstraintViolation("cards/"+set.filename, "set.name missing"));
-      if (isBlank(set.enumId))
-        violations.add(new ConstraintViolation("cards/"+set.filename, "set.enumId missing"));
-      if (isBlank(set.abbr))
-        violations.add(new ConstraintViolation("cards/"+set.filename, "set.abbr missing"));
-
-      if (set.cards == null || set.cards.isEmpty()) {
-        violations.add(new ConstraintViolation("cards/"+set.filename, "cards missing"));
-        return;
-      }
-
-      String cardIdRegex = "^" + set.id + "-[\\w]+$";
-      Pattern cardIdPattern = Pattern.compile(cardIdRegex);
-
-      for (Card card : set.cards) {
-        if (isBlank(card.id)) {
-          violations.add(new ConstraintViolation("cards/"+set.filename+"/card/?", "id missing"));
-          continue;
-        }
-
-        if (!cardIdPattern.matcher(card.id).matches())
-          violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "id does not match pattern="+cardIdRegex));
-        if (isBlank(card.name))
-          violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "name missing"));
-        if (isBlank(card.number))
-          violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "number missing"));
-        if (isBlank(card.enumId))
-          violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "enumId missing"));
-        if (card.superType == null || !card.superType.isSuperType())
-          violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "superType missing or illegal"));
-        if (card.rarity == null)
-          violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "rarity missing"));
-
-        if (card.superType == CardType.POKEMON) {
-          if (card.hp == null && !card.subTypes.contains(CardType.LEGEND))
-            violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "hp missing"));
-          if (card.retreatCost == null && !card.subTypes.contains(CardType.LEGEND))
-            violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "retreatCost missing"));
-          if (card.subTypes.contains(CardType.STAGE1) || card.subTypes.contains(CardType.STAGE2)) {
-            if(StringUtils.isEmpty(card.evolvesFrom)) {
-              violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "evolvesFrom missing"));
-            }
-          }
-          if (card.abilities != null)
-            for (Ability ability : card.abilities) {
-              if (isBlank(ability.name) || isBlank(ability.type) || isBlank(ability.text))
-                violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/abilities", "name, type or text missing"));
-            }
-          if (card.moves != null)
-            for (Move move : card.moves) {
-              if (isBlank(move.name))
-                violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/moves", "name missing"));
-              if (move.cost == null)
-                violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/moves", "cost missing"));
-            }
-          if (card.weaknesses != null)
-            for (WeaknessResistance wr : card.weaknesses) {
-              if (isBlank(wr.value) || wr.type == null)
-                violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/weaknesses", "value or type missing"));
-            }
-          if (card.resistances != null)
-            for (WeaknessResistance wr : card.resistances) {
-              if (isBlank(wr.value) || wr.type == null)
-                violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/resistances", "value or type missing"));
-            }
-
-          // stage handling
-          CardType stage = null;
-          for (CardType cardType : CardType.allStages()) {
-            if (card.subTypes.contains(cardType)) {
-              if (stage != null) {
-                if ((stage == CardType.BASIC && cardType == CardType.BABY) || stage == CardType.BABY && cardType == CardType.BASIC) {
-                  stage = CardType.BABY; // this is fine
-                } else {
-                  violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/subTypes", String.format("cannot have both: %s, %s", stage, cardType)));
-                }
-              } else {
-                stage = cardType;
-              }
-            }
-          }
-          if (stage == null) {
-            violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/subTypes", String.format("must have one: %s", CardType.allStages())));
-          }
-          if (stage == CardType.BABY && !card.subTypes.contains(CardType.BASIC)) {
-            card.subTypes.add(CardType.BASIC);
-          }
-          card.stage = stage;
-
-        }
-        // TODO
-        // check sub types
-        // check empty/null fields, number, ordering, etc, attacks, abilities
-      }
-
-    } finally {
-      if (!violations.isEmpty()) {
-        throw new ImportException(violations.stream().map(ConstraintViolation::toString).collect(Collectors.toList()));
-      }
+    if (set.cards == null || set.cards.isEmpty()) {
+      violations.add(new ConstraintViolation("cards/"+set.filename, "cards missing"));
+      return;
     }
 
+    String cardIdRegex = "^" + set.id + "-[\\w]+$";
+    Pattern cardIdPattern = Pattern.compile(cardIdRegex);
+
+    for (Card card : set.cards) {
+      if (isBlank(card.id)) {
+        violations.add(new ConstraintViolation("cards/"+set.filename+"/card/?", "id missing"));
+        continue;
+      }
+      if (!cardIdPattern.matcher(card.id).matches())
+        violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "id does not match pattern="+cardIdRegex));
+      if (isBlank(card.name))
+        violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "name missing"));
+      if (isBlank(card.number))
+        violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "number missing"));
+      if (isBlank(card.enumId))
+        violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "enumId missing"));
+      if (card.superType == null || !card.superType.isSuperType())
+        violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "superType missing or illegal"));
+      if (card.rarity == null)
+        violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "rarity missing"));
+
+      if (card.superType == CardType.POKEMON) {
+        if (card.hp == null && !card.subTypes.contains(CardType.LEGEND))
+          violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "hp missing"));
+        if (card.retreatCost == null && !card.subTypes.contains(CardType.LEGEND))
+          violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "retreatCost missing"));
+        if (card.subTypes.contains(CardType.STAGE1) || card.subTypes.contains(CardType.STAGE2)) {
+          if(StringUtils.isEmpty(card.evolvesFrom)) {
+            violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id, "evolvesFrom missing"));
+          }
+        }
+        if (card.abilities != null)
+          for (Ability ability : card.abilities) {
+            if (isBlank(ability.name) || isBlank(ability.type) || isBlank(ability.text))
+              violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/abilities", "name, type or text missing"));
+          }
+        if (card.moves != null)
+          for (Move move : card.moves) {
+            if (isBlank(move.name))
+              violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/moves", "name missing"));
+            if (move.cost == null)
+              violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/moves", "cost missing"));
+          }
+        if (card.weaknesses != null)
+          for (WeaknessResistance wr : card.weaknesses) {
+            if (isBlank(wr.value) || wr.type == null)
+              violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/weaknesses", "value or type missing"));
+          }
+        if (card.resistances != null)
+          for (WeaknessResistance wr : card.resistances) {
+            if (isBlank(wr.value) || wr.type == null)
+              violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/resistances", "value or type missing"));
+          }
+
+        // stage handling
+        CardType stage = null;
+        for (CardType cardType : CardType.allStages()) {
+          if (card.subTypes.contains(cardType)) {
+            if (stage != null) {
+              if ((stage == CardType.BASIC && cardType == CardType.BABY) || stage == CardType.BABY && cardType == CardType.BASIC) {
+                stage = CardType.BABY; // this is fine
+              } else {
+                violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/subTypes", String.format("cannot have both: %s, %s", stage, cardType)));
+              }
+            } else {
+              stage = cardType;
+            }
+          }
+        }
+        if (stage == null) {
+          violations.add(new ConstraintViolation("cards/"+set.filename+"/"+card.id+"/subTypes", String.format("must have one: %s", CardType.allStages())));
+        }
+        if (stage == CardType.BABY && !card.subTypes.contains(CardType.BASIC)) {
+          card.subTypes.add(CardType.BASIC);
+        }
+        card.stage = stage;
+
+      }
+      // TODO
+      // check sub types
+      // check empty/null fields, number, ordering, etc, attacks, abilities
+    }
 
   }
 
@@ -210,29 +204,175 @@ public class Importer {
     pioIdToCard = new THashMap<>();
     seoNameToCard = new THashMap<>();
     cardInfoStringToCard = new THashMap<>();
+    variantsMap = new THashMap<>();
 
     allSets = new ArrayList<>();
     idToSet = new THashMap<>();
 
-    boolean validationFailed = false;
-    StringBuilder validationMessages = new StringBuilder();
+    List<ConstraintViolation> violations = new ArrayList<>();
+
+    for (Set set : sets) {
+      for (Card card : set.cards) {
+        if (isBlank(card.id)) {
+          violations.add(new ConstraintViolation("cards/"+set.filename+"/card/?", "id missing"));
+          continue;
+        }
+        if (isNotBlank(card.copyOf)) {
+          violations.add(new ConstraintViolation("cards/"+set.filename+"/card/"+card.id, "copyOf field must be blank!"));
+          continue;
+        }
+        idToCard.put(card.id, card);
+      }
+    }
+    assertNoViolation(violations);
+
+    variant_outer:
+    for (Card card : idToCard.values()) {
+      if (card.variantOf == null) {
+        card.variantOf = card.id;
+      }
+      if (!card.variantOf.equals(card.id)) {
+        THashSet<String> cycleDetector = new THashSet<>();
+        Card current = card;
+        cycleDetector.add(current.id);
+        while (true) {
+          if (current.variantType == VariantType.REPRINT_NEW_TEXT && card.copyOf == null) {
+            card.copyOf = current.id;
+          }
+          if (current.id.equals(current.variantOf) || current.variantOf == null) {
+            if (current.variantType == VariantType.REPRINT_NEW_TEXT) {
+              violations.add(new ConstraintViolation("card/"+current.id, "variantType REPRINT_NEW_TEXT must always point to a different variant! "));
+              continue variant_outer;
+            }
+            card.variantOf = current.id;
+            if (card.copyOf == null) {
+              card.copyOf = current.id;
+            }
+            break;
+          }
+          current = idToCard.get(current.variantOf);
+          if (current == null) {
+            violations.add(new ConstraintViolation("card/"+card.id, "variantOf does not point to a valid card"));
+            continue variant_outer;
+          }
+          if (cycleDetector.contains(current.id)) {
+            violations.add(new ConstraintViolation("card/"+card.id, "variantIds must not have cycles! "+cycleDetector));
+            continue variant_outer;
+          }
+          cycleDetector.add(current.id);
+        }
+      }
+      if (card.variantType == null) {
+        card.variantType = !card.variantOf.equals(card.id) ? VariantType.REPRINT : VariantType.REGULAR;
+      }
+      variantsMap.computeIfAbsent(card.variantOf, s -> new THashSet<>()).add(card);
+    }
+
+    for (Card card : idToCard.values()) {
+      if (card.id.equals(card.copyOf)) {
+        card.copyOf = null;
+      }
+      if (card.copyOf != null) {
+        Card base = idToCard.get(card.copyOf);
+
+        if (card.name != null && !Objects.equals(base.name, card.name)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different name in copied card! "+base.name+", "+card.name));
+        } else {
+          card.name = base.name;
+        }
+        if (card.retreatCost != null && !Objects.equals(base.retreatCost, card.retreatCost)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different retreatCost in copied card! "+base.retreatCost+", "+card.retreatCost));
+        } else {
+          card.retreatCost = base.retreatCost;
+        }
+        if (card.types != null && !Objects.equals(base.types, card.types)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different types in copied card! "+base.types+", "+card.types));
+        } else {
+          card.types = base.types;
+        }
+        if (card.subTypes != null && !Objects.equals(base.subTypes, card.subTypes)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different subTypes in copied card! "+base.subTypes+", "+card.subTypes));
+        } else {
+          card.subTypes = base.subTypes;
+        }
+        if (card.superType != null && !Objects.equals(base.superType, card.superType)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different superType in copied card! "+base.superType+", "+card.superType));
+        } else {
+          card.superType = base.superType;
+        }
+        if (card.weaknesses != null && !Objects.equals(base.weaknesses, card.weaknesses)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different weaknesses in copied card! "+base.weaknesses+", "+card.weaknesses));
+        } else {
+          card.weaknesses = base.weaknesses;
+        }
+        if (card.resistances != null && !Objects.equals(base.resistances, card.resistances)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different resistances in copied card! "+base.resistances+", "+card.resistances));
+        } else {
+          card.resistances = base.resistances;
+        }
+        if (card.moves != null && !Objects.equals(base.moves, card.moves)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different moves in copied card! "+base.moves+", "+card.moves));
+        } else {
+          card.moves = base.moves;
+        }
+        if (card.abilities != null && !Objects.equals(base.abilities, card.abilities)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different abilities in copied card! "+base.abilities+", "+card.abilities));
+        } else {
+          card.abilities = base.abilities;
+        }
+        if (card.hp != null && !Objects.equals(base.hp, card.hp)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different hp in copied card! "+base.hp+", "+card.hp));
+        } else {
+          card.hp = base.hp;
+        }
+        if (card.evolvesTo != null && !Objects.equals(base.evolvesTo, card.evolvesTo)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different evolvesTo in copied card! "+base.evolvesTo+", "+card.evolvesTo));
+        } else {
+          card.evolvesTo = base.evolvesTo;
+        }
+        if (card.evolvesFrom != null && !Objects.equals(base.evolvesFrom, card.evolvesFrom)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different evolvesFrom in copied card! "+base.evolvesFrom+", "+card.evolvesFrom));
+        } else {
+          card.evolvesFrom = base.evolvesFrom;
+        }
+        if (card.stage != null && !Objects.equals(base.stage, card.stage)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different stage in copied card! "+base.stage+", "+card.stage));
+        } else {
+          card.stage = base.stage;
+        }
+        if (card.text != null && !Objects.equals(base.text, card.text)) {
+//          violations.add(new ConstraintViolation("card/"+card.id, "different text in copied card! "+base.text+", "+card.text));
+          // text changes between variants are fine
+        } else {
+          card.text = base.text;
+        }
+        if (card.energy != null && !Objects.equals(base.energy, card.energy)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different energy in copied card! "+base.energy+", "+card.energy));
+        } else {
+          card.energy = base.energy;
+        }
+        if (card.nationalPokedexNumber != null && !Objects.equals(base.nationalPokedexNumber, card.nationalPokedexNumber)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different nationalPokedexNumber in copied card! "+base.nationalPokedexNumber+", "+card.nationalPokedexNumber));
+        } else {
+          card.nationalPokedexNumber = base.nationalPokedexNumber;
+        }
+      }
+    }
+
+    assertNoViolation(violations);
 
     for (Set set : sets) {
       int order = 1;
 
-      try {
-        validate(set);
-      } catch (ImportException e) {
-        validationFailed = true;
-        validationMessages.append(e.getMessage());
+      validate(set, violations);
+      if (!violations.isEmpty())
         continue;
-      }
-      log.info("Validated {}", set.name);
+
+      log.info("Processed {}", set.name);
 
       set.order = 1000 - Integer.parseInt(set.id);
       if(set.seoName == null)
         set.seoName = set.name.toLowerCase(Locale.ENGLISH).replaceAll("\\W+", "-");
-      set.cards = new ArrayList<>(set.cards);
 
       allSets.add(set);
       idToSet.put(set.id, set);
@@ -282,20 +422,44 @@ public class Importer {
         card.fullText = ftxb.toString();
 
 
-        idToCard.put(card.id, card);
         pioIdToCard.put(card.pioId, card);
         seoNameToCard.put(card.seoName, card);
         cardInfoStringToCard.put(card.enumId + ":" + set.enumId, card);
         allCards.add(card);
 
+      } // end set
+
+    } // end sets
+
+    assertNoViolation(violations);
+
+    for (Collection<Card> cards : variantsMap.values()) {
+      List<Variant> variants = new ArrayList<>();
+//      String name = null;
+//      String variantId = null;
+      for (Card card : cards) {
+//        name=card.name;
+//        variantId=card.variantOf;
+        Variant variant=new Variant();
+        variant.id=card.id;
+        variant.type=card.variantType;
+        variants.add(variant);
       }
-
+//      if (variants.size() > 1) {
+//        System.out.println(variantId+","+name+","+variants);
+//      }
+      for (Card card : cards) {
+        card.variants = variants; // make it immutable?
+      }
     }
 
-    if (validationFailed) {
-      throw new ImportException("Validation failed: " + validationMessages.toString());
-    }
     log.info("Imported all cards");
+  }
+
+  private void assertNoViolation(List<ConstraintViolation> violations) throws ImportException {
+    if (!violations.isEmpty()) {
+      throw new ImportException("Validation failed: \n" + violations.stream().map(ConstraintViolation::toString).collect(Collectors.joining("\n")));
+    }
   }
 
 
