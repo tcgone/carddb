@@ -1,11 +1,10 @@
-package tcgone.carddb.data;
+package tcgone.carddb.tools;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import tcgone.carddb.model.Set;
-import tcgone.carddb.model.SetFile;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,34 +36,28 @@ public class Upgrader {
   ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
   PathMatchingResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver(getClass().getClassLoader());
   SetWriter setWriter = new SetWriter();
+
   public Upgrader() throws Exception {
-    upgradeE1E2();
+//    upgradeE1E2();
   }
 
-  /**
-   * @return whether an upgrade has been done
-   * @throws IOException when there is an issue while upgrading it
-   */
-  boolean upgradeE1E2() throws IOException {
-    // read set files
-    Resource[] resources = resourceResolver.getResources("classpath:/cards/*.yaml");
-    boolean flag=false;
-    List<Set> sets=new ArrayList<>();
-    for (Resource resource : resources) {
-      flag=true;
-      SetFile s1 = mapper.readValue(resource.getInputStream(), SetFile.class);
-      s1.set.filename=resource.getFilename();
-      s1.set.cards=s1.cards;
-      s1.set.schema="E2";//EXPANSIONS2
-      sets.add(s1.set);
-    }
-    //SAVENOW
-    if (sets.size()>0) {
-      setWriter.writeAll(sets,"output");
-      System.out.println("EXPORTED "+sets.size()+" SETS");
-    }
-    return flag;
-  }
+//  void upgradeE1E2() throws IOException {
+//    // read set files
+//    Resource[] resources = resourceResolver.getResources("classpath:/cards/*.yaml");
+//    List<Set> sets=new ArrayList<>();
+//    for (Resource resource : resources) {
+//      SetFile s1 = mapper.readValue(resource.getInputStream(), SetFile.class);
+//      s1.set.filename=resource.getFilename();
+//      s1.set.cards=s1.cards;
+//      s1.set.schema="E2";//EXPANSIONS2
+//      sets.add(s1.set);
+//    }
+//    //SAVENOW
+//    if (sets.size()>0) {
+//      setWriter.writeAll(sets,"output");
+//      System.out.println("EXPORTED "+sets.size()+" SETS");
+//    }
+//  }
 
 
   public static void main(String[] args) throws Exception {

@@ -19,7 +19,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import tcgone.carddb.model.Card;
 import tcgone.carddb.model.Set;
-import tcgone.carddb.model.SetFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -91,11 +90,11 @@ public class Application implements ApplicationRunner {
 					File pop = fileStack.pop();
 					if(!pop.getName().endsWith("yaml")) continue;
 					log.info("Reading {}", pop.getName());
-					SetFile setFile = mapper.readValue(new FileInputStream(pop), SetFile.class);
-					for (Card card : setFile.cards) {
-						card.set = setFile.set; // temporary
+					Set set = mapper.readValue(new FileInputStream(pop), Set.class);
+					for (Card card : set.cards) {
+						card.set = set; // temporary
 					}
-					allCards.addAll(setFile.cards);
+					allCards.addAll(set.cards);
 				}
 			}
 		}
@@ -107,7 +106,7 @@ public class Application implements ApplicationRunner {
 			log.info("Scans have been saved into ./scans folder");
 		}
 		if(exportYaml){
-			setWriter.writeAll(sets);
+			setWriter.writeAll(sets, "output");
 			log.info("YAMLs have been written to ./output folder");
 		}
 		if(exportImplTmpl){

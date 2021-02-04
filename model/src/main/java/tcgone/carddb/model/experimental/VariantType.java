@@ -14,8 +14,6 @@ public enum VariantType {
   ALTERNATE_ART,
   FULL_ART,
   SECRET_ART,
-  SHINING,
-  CRYSTAL,
   PROMO;
 
   private final String label;
