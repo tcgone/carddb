@@ -16,40 +16,21 @@ limitations under the License.
 package tcgone.carddb.data;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.fasterxml.jackson.dataformat.yaml.util.NodeStyleResolver;
 import com.fasterxml.jackson.dataformat.yaml.util.StringQuotingChecker;
-import gnu.trove.set.hash.THashSet;
-import org.yaml.snakeyaml.DumperOptions;
-import org.yaml.snakeyaml.Yaml;
-import org.yaml.snakeyaml.error.YAMLException;
-import org.yaml.snakeyaml.introspector.*;
-import org.yaml.snakeyaml.nodes.*;
-import org.yaml.snakeyaml.representer.Representer;
-import org.yaml.snakeyaml.util.PlatformFeatureDetector;
 import tcgone.carddb.model.Set;
 import tcgone.carddb.model.*;
 import tcgone.carddb.model.experimental.VariantType;
 
-import java.beans.FeatureDescriptor;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
 import java.io.*;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 import static com.fasterxml.jackson.dataformat.yaml.YAMLGenerator.Feature.*;
-import static org.yaml.snakeyaml.introspector.BeanAccess.DEFAULT;
-import static org.yaml.snakeyaml.introspector.BeanAccess.FIELD;
 
 
 /**
@@ -57,177 +38,6 @@ import static org.yaml.snakeyaml.introspector.BeanAccess.FIELD;
  */
 public class SetWriter {
   private final YAMLMapper mapper;
-  //  public static class CustomPropertyUtils extends PropertyUtils {
-//
-//    private final Map<Class<?>, Map<String, Property>> propertiesCache = new HashMap<Class<?>, Map<String, Property>>();
-//    private final Map<Class<?>, java.util.Set<Property>> readableProperties = new HashMap<Class<?>, java.util.Set<Property>>();
-//    private BeanAccess beanAccess = DEFAULT;
-//    private boolean allowReadOnlyProperties = false;
-//    private boolean skipMissingProperties = false;
-//
-//    private PlatformFeatureDetector platformFeatureDetector;
-//
-//    public CustomPropertyUtils() {
-//      this(new PlatformFeatureDetector());
-//    }
-//
-//    CustomPropertyUtils(PlatformFeatureDetector platformFeatureDetector) {
-//      this.platformFeatureDetector = platformFeatureDetector;
-//
-//      /*
-//       * Android lacks much of java.beans (including the Introspector class, used here), because java.beans classes tend to rely on java.awt, which isn't
-//       * supported in the Android SDK. That means we have to fall back on FIELD access only when SnakeYAML is running on the Android Runtime.
-//       */
-//      if (platformFeatureDetector.isRunningOnAndroid()) {
-//        beanAccess = FIELD;
-//      }
-//    }
-//
-//    protected Map<String, Property> getPropertiesMap(Class<?> type, BeanAccess bAccess) {
-//      if (propertiesCache.containsKey(type)) {
-//        return propertiesCache.get(type);
-//      }
-//
-//      Map<String, Property> properties = new LinkedHashMap<String, Property>();
-//      boolean inaccessableFieldsExist = false;
-//      switch (bAccess) {
-//        case FIELD:
-//          for (Class<?> c = type; c != null; c = c.getSuperclass()) {
-//            for (Field field : c.getDeclaredFields()) {
-//              int modifiers = field.getModifiers();
-//              if (!Modifier.isStatic(modifiers) && !Modifier.isTransient(modifiers)
-//                && !properties.containsKey(field.getName())) {
-//                properties.put(field.getName(), new FieldProperty(field));
-//              }
-//            }
-//          }
-//          break;
-//        default:
-//          // add JavaBean properties
-//          try {
-//            for (PropertyDescriptor property : Introspector.getBeanInfo(type)
-//              .getPropertyDescriptors()) {
-//              Method readMethod = property.getReadMethod();
-//              if ((readMethod == null || !readMethod.getName().equals("getClass"))
-//                && !isTransient(property)) {
-//                properties.put(property.getName(), new MethodProperty(property));
-//              }
-//            }
-//          } catch (IntrospectionException e) {
-//            throw new YAMLException(e);
-//          }
-//
-//          // add public fields
-//          for (Class<?> c = type; c != null; c = c.getSuperclass()) {
-//            for (Field field : c.getDeclaredFields()) {
-//              int modifiers = field.getModifiers();
-//              if (!Modifier.isStatic(modifiers) && !Modifier.isTransient(modifiers)) {
-//                if (Modifier.isPublic(modifiers)) {
-//                  properties.put(field.getName(), new FieldProperty(field));
-//                } else {
-//                  inaccessableFieldsExist = true;
-//                }
-//              }
-//            }
-//          }
-//          break;
-//      }
-//      if (properties.isEmpty() && inaccessableFieldsExist) {
-//        throw new YAMLException("No JavaBean properties found in " + type.getName());
-//      }
-//      System.out.println(properties);
-//      propertiesCache.put(type, properties);
-//      return properties;
-//    }
-//
-//    private static final String TRANSIENT = "transient";
-//
-//    private boolean isTransient(FeatureDescriptor fd) {
-//      return Boolean.TRUE.equals(fd.getValue(TRANSIENT));
-//    }
-//
-//    public java.util.Set<Property> getProperties(Class<? extends Object> type) {
-//      return getProperties(type, beanAccess);
-//    }
-//
-//    public java.util.Set<Property> getProperties(Class<? extends Object> type, BeanAccess bAccess) {
-//      if (readableProperties.containsKey(type)) {
-//        return readableProperties.get(type);
-//      }
-//      java.util.Set<Property> properties = createPropertySet(type, bAccess);
-//      readableProperties.put(type, properties);
-//      return properties;
-//    }
-//
-//    protected java.util.Set<Property> createPropertySet(Class<? extends Object> type, BeanAccess bAccess) {
-//      java.util.Set<Property> properties = new LinkedHashSet<>();
-//      Collection<Property> props = getPropertiesMap(type, bAccess).values();
-//      for (Property property : props) {
-//        if (property.isReadable() && (allowReadOnlyProperties || property.isWritable())) {
-//          properties.add(property);
-//        }
-//      }
-//      return properties;
-//    }
-//
-//    public Property getProperty(Class<? extends Object> type, String name) {
-//      return getProperty(type, name, beanAccess);
-//    }
-//
-//    public Property getProperty(Class<? extends Object> type, String name, BeanAccess bAccess) {
-//      Map<String, Property> properties = getPropertiesMap(type, bAccess);
-//      Property property = properties.get(name);
-//      if (property == null && skipMissingProperties) {
-//        property = new MissingProperty(name);
-//      }
-//      if (property == null) {
-//        throw new YAMLException(
-//          "Unable to find property '" + name + "' on class: " + type.getName());
-//      }
-//      return property;
-//    }
-//
-//    public void setBeanAccess(BeanAccess beanAccess) {
-//      if (platformFeatureDetector.isRunningOnAndroid() && beanAccess != FIELD) {
-//        throw new IllegalArgumentException(
-//          "JVM is Android - only BeanAccess.FIELD is available");
-//      }
-//
-//      if (this.beanAccess != beanAccess) {
-//        this.beanAccess = beanAccess;
-//        propertiesCache.clear();
-//        readableProperties.clear();
-//      }
-//    }
-//
-//    public void setAllowReadOnlyProperties(boolean allowReadOnlyProperties) {
-//      if (this.allowReadOnlyProperties != allowReadOnlyProperties) {
-//        this.allowReadOnlyProperties = allowReadOnlyProperties;
-//        readableProperties.clear();
-//      }
-//    }
-//
-//    public boolean isAllowReadOnlyProperties() {
-//      return allowReadOnlyProperties;
-//    }
-//
-//    /**
-//     * Skip properties that are missing during deserialization of YAML to a Java
-//     * object. The default is false.
-//     *
-//     * @param skipMissingProperties true if missing properties should be skipped, false otherwise.
-//     */
-//    public void setSkipMissingProperties(boolean skipMissingProperties) {
-//      if (this.skipMissingProperties != skipMissingProperties) {
-//        this.skipMissingProperties = skipMissingProperties;
-//        readableProperties.clear();
-//      }
-//    }
-//
-//    public boolean isSkipMissingProperties() {
-//      return skipMissingProperties;
-//    }
-//  }
 
   public static class EqualityCard extends Card {
 
@@ -273,110 +83,12 @@ public class SetWriter {
     }
   }
 
-//  private Yaml yaml;
-//  private ObjectMapper objectMapper;
-
   SetWriter() {
-//    DumperOptions options = new DumperOptions();
-//    options.setAllowUnicode(true);
-//    options.setDefaultScalarStyle(DumperOptions.ScalarStyle.PLAIN);
-//    options.setDefaultFlowStyle(DumperOptions.FlowStyle.AUTO);
-//
-//    CustomPropertyUtils customPropertyUtils = new CustomPropertyUtils();
-//    Representer customRepresenter = new Representer() {
-//      @Override
-//      protected NodeTuple representJavaBeanProperty(Object javaBean, Property property, Object propertyValue, Tag customTag) {
-//        // if value of property is null, ignore it.
-//        if (propertyValue == null) {
-//          return null;
-//        } else {
-//          return super.representJavaBeanProperty(javaBean, property, propertyValue, customTag);
-//        }
-//      }
-//
-//      protected MappingNode representJavaBean(java.util.Set<Property> properties, Object javaBean) {
-//        List<NodeTuple> value = new ArrayList<NodeTuple>(properties.size());
-//        Tag tag;
-//        Tag customTag = classTags.get(javaBean.getClass());
-//        tag = customTag != null ? customTag : new Tag(javaBean.getClass());
-//        // flow style will be chosen by BaseRepresenter
-//        MappingNode node = new MappingNode(tag, value, DumperOptions.FlowStyle.AUTO);
-//        representedObjects.put(javaBean, node);
-//        DumperOptions.FlowStyle bestStyle = DumperOptions.FlowStyle.BLOCK;
-//        for (Property property : properties) {
-//          Object memberValue = property.get(javaBean);
-//          Tag customPropertyTag = memberValue == null ? null
-//            : classTags.get(memberValue.getClass());
-//          NodeTuple tuple = representJavaBeanProperty(javaBean, property, memberValue,
-//            customPropertyTag);
-//          if (tuple == null) {
-//            continue;
-//          }
-//          if (!((ScalarNode) tuple.getKeyNode()).isPlain()) {
-//            bestStyle = DumperOptions.FlowStyle.BLOCK;
-//          }
-//          Node nodeValue = tuple.getValueNode();
-//          if (!(nodeValue instanceof ScalarNode && ((ScalarNode) nodeValue).isPlain())) {
-//            bestStyle = DumperOptions.FlowStyle.BLOCK;
-//          }
-//          if ("abilities".equals(((ScalarNode) tuple.getKeyNode()).getValue())) {
-//            bestStyle = DumperOptions.FlowStyle.BLOCK;
-//          }
-//          value.add(tuple);
-//        }
-//        if (defaultFlowStyle != DumperOptions.FlowStyle.AUTO) {
-//          node.setFlowStyle(defaultFlowStyle);
-//        } else {
-//          node.setFlowStyle(bestStyle);
-//        }
-//        return node;
-//      }
-//
-//      @Override
-//      protected Node representMapping(Tag tag, Map<?, ?> mapping, DumperOptions.FlowStyle flowStyle) {
-//        List<NodeTuple> value = new ArrayList<NodeTuple>(mapping.size());
-//        MappingNode node = new MappingNode(tag, value, flowStyle);
-//        representedObjects.put(objectToRepresent, node);
-//        DumperOptions.FlowStyle bestStyle = DumperOptions.FlowStyle.FLOW;
-//        for (Map.Entry<?, ?> entry : mapping.entrySet()) {
-//          Node nodeKey = representData(entry.getKey());
-//          Node nodeValue = representData(entry.getValue());
-//          if (!(nodeKey instanceof ScalarNode && ((ScalarNode) nodeKey).isPlain())) {
-//            bestStyle = DumperOptions.FlowStyle.BLOCK;
-//          }
-//          if (!(nodeValue instanceof ScalarNode && ((ScalarNode) nodeValue).isPlain())) {
-//            bestStyle = DumperOptions.FlowStyle.BLOCK;
-//          }
-//          value.add(new NodeTuple(nodeKey, nodeValue));
-//        }
-//        if (flowStyle == DumperOptions.FlowStyle.AUTO) {
-//          if (defaultFlowStyle != DumperOptions.FlowStyle.AUTO) {
-//            node.setFlowStyle(defaultFlowStyle);
-//          } else {
-//            node.setFlowStyle(bestStyle);
-//          }
-//        }
-//        return node;
-//      }
-//    };
-//    customRepresenter.setPropertyUtils(customPropertyUtils);
-//    yaml = new Yaml(customRepresenter, options);
-
 
     mapper = YAMLMapper.builder(
       YAMLFactory.builder()
-        .nodeStyleResolver(s -> ("cost".equals(s)||"types".equals(s)||"subTypes".equals(s)||"evolvesTo".equals(s)) ? NodeStyleResolver.NodeStyle.FLOW : null)
+        .nodeStyleResolver(s -> ("cost".equals(s)||"types".equals(s)||"subTypes".equals(s)||"evolvesTo".equals(s)||"energy".equals(s)) ? NodeStyleResolver.NodeStyle.FLOW : null)
         .stringQuotingChecker(new StringQuotingChecker.Default() {
-//          THashSet<String> a=new THashSet<>();
-//          {
-//            a.add("id");
-//            a.add("number");
-//          }
-//          @Override
-//          public boolean needToQuoteName(String s) {
-//            return a.contains(s);
-//          }
-
           @Override
           public boolean needToQuoteValue(String s) {
             // https://yaml.org/spec/1.1/#plain%20style/syntax
@@ -391,7 +103,7 @@ public class SetWriter {
       )
       .enable(ALWAYS_QUOTE_NUMBERS_AS_STRINGS)
       .enable(MINIMIZE_QUOTES)
-//      .enable(LITERAL_BLOCK_STYLE)
+      .enable(USE_SINGLE_QUOTES)
       .disable(WRITE_DOC_START_MARKER)
       .nodeFactory(new SortingNodeFactory())
       .build();
