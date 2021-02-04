@@ -1,9 +1,9 @@
-set:
-  id: '201'
-  name: Pokémod Expedition
-  enumId: POKEMOD_EXPEDITION
-  abbr: MODEXP
-cards:  
+schema: E2
+id: '201'
+name: Pokémod Expedition
+enumId: POKEMOD_EXPEDITION
+abbr: MODEXP
+cards:
 - id: 201-1
   pioId: pkmod13-1
   enumId: ALAKAZAM_1
@@ -19,20 +19,21 @@ cards:
   abilities:
   - type: Poké-Power
     name: Psymimic
-    text: Once during your turn, instead of Alakazam''s normal attack, you may choose 1 of
-      your opponent''s Pokémon''s attacks. Alakazam copies that attack including its Energy
-      costs and anything else required in order to use that attack, such as discarding
-      Energy cards. (No matter what type that Pokémon is, Alakazam''s type is still [P].
-      This power can''t be used if Alakazam is affected by a Special Condition.
+    text: Once during your turn, instead of Alakazam''s normal attack, you may choose
+      1 of your opponent''s Pokémon''s attacks. Alakazam copies that attack including
+      its Energy costs and anything else required in order to use that attack, such
+      as discarding Energy cards. (No matter what type that Pokémon is, Alakazam''s
+      type is still [P]. This power can''t be used if Alakazam is affected by a Special
+      Condition.
   moves:
   - cost: [P, C, C, C]
     name: Syncroblast
-    damage: 80
+    damage: '80'
     text: If Alakazam and the Defending Pokémon don''t have the same number of Energy
       cards attached to them, this attack''s base damage is 20 instead of 80.
   weaknesses:
   - type: P
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Hajime Kusajima
 - id: 201-2
@@ -50,18 +51,19 @@ cards:
   abilities:
   - type: Poké-Power
     name: Energy Connect
-    text: As often as you like during your turn (before your attack), you may take a
-      basic Energy card attached to 1 of your Benched Pokémon and attach it to your Active
-      Pokémon. This power can''t be used if Ampharos is affected by a Special Condition.
+    text: As often as you like during your turn (before your attack), you may take
+      a basic Energy card attached to 1 of your Benched Pokémon and attach it to your
+      Active Pokémon. This power can''t be used if Ampharos is affected by a Special
+      Condition.
   moves:
   - cost: [L, L, C, C]
     name: Lightning Strike
-    damage: 40
-    text: You may discard all [L] Energy cards attached to Ampharos. If you do, this attack''s
-      base damage is 80 instead of 40.
+    damage: '40'
+    text: You may discard all [L] Energy cards attached to Ampharos. If you do, this
+      attack''s base damage is 80 instead of 40.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Atsuko Nishida
 - id: 201-3
@@ -83,10 +85,11 @@ cards:
   - cost: [G, C]
     name: Poison Reaction
     damage: 20+
-    text: If the Defending Pokémon is Poisoned, this attack does 20 damage, plus 20 more damage.
+    text: If the Defending Pokémon is Poisoned, this attack does 20 damage, plus 20
+      more damage.
   weaknesses:
   - type: P
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Kyoko Umemoto
 - id: 201-4
@@ -104,20 +107,21 @@ cards:
   abilities:
   - type: Poké-Power
     name: Jet Stream
-    text: Once during your turn (before your attack), if Blastoise is your Active Pokémon,
-      you may flip a coin. If heads, discard an Energy card attached to Blastoise, if any.
-      Then, if there are Energy cards attached to the Defending Pokémon, choose 1 of them
-      and discard it. This power can''t be used if Blastoise is affected by a Special
-      Condition.
+    text: Once during your turn (before your attack), if Blastoise is your Active
+      Pokémon, you may flip a coin. If heads, discard an Energy card attached to Blastoise,
+      if any. Then, if there are Energy cards attached to the Defending Pokémon, choose
+      1 of them and discard it. This power can''t be used if Blastoise is affected
+      by a Special Condition.
   moves:
   - cost: [W, W, C]
     name: Energy Cannon
     damage: 40+
-    text: Does 40 damage plus 10 more damage for each Energy attached to Blastoise but not
-      used to pay for this attack''s Energy cost. You can''t add more than 20 damage in this way.
+    text: Does 40 damage plus 10 more damage for each Energy attached to Blastoise
+      but not used to pay for this attack''s Energy cost. You can''t add more than
+      20 damage in this way.
   weaknesses:
   - type: L
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Kimiya Masago
 - id: 201-5
@@ -136,16 +140,16 @@ cards:
   - type: Poké-Power
     name: Miraculous Powder
     text: Once during your turn (before your attack), you may remove all Special Conditions
-      from your Active Pokémon. This power can''t be used if Butterfree is affected by a
-      Special Condition.
+      from your Active Pokémon. This power can''t be used if Butterfree is affected
+      by a Special Condition.
   moves:
   - cost: [G, C, C]
     name: Spiral Drain
-    damage: 40
+    damage: '40'
     text: Flip a coin. If heads, remove 2 damage counters from Butterfree.
   weaknesses:
   - type: R
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Sumiyoshi Kizuki
 - id: 201-6
@@ -169,12 +173,12 @@ cards:
   moves:
   - cost: [R, R, R, R]
     name: Scorching Whirlwind
-    damage: 120
+    damage: '120'
     text: Flip 2 coins. If 1 of them is tails, discard 2 Energy cards attached to
       Charizard. If both are tails, discard all Energy cards attached to Charizard.
   weaknesses:
   - type: W
-    value: 'x2'
+    value: x2
   resistances:
   - type: F
     value: '-30'
@@ -206,7 +210,7 @@ cards:
     text: Flip 2 coins. This attack does 20 damage times the number of heads.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -227,7 +231,7 @@ cards:
   moves:
   - cost: [C]
     name: Lick
-    damage: 10
+    damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   - cost: [W, W, C, C]
     name: Auto Fire
@@ -235,7 +239,7 @@ cards:
     text: Flip 4 coins. This attack does 20 damage times the number of heads.
   weaknesses:
   - type: M
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Kagemaru Himeno
 - id: 201-9
@@ -280,15 +284,15 @@ cards:
   moves:
   - cost: [F]
     name: Mud Slap
-    damage: 20
+    damage: '20'
   - cost: [F, F, C]
     name: Magnitude
-    damage: 40
-    text: Does 10 damage to each Benched Pokémon (yours and your opponent''s).
-      (Don''t apply Weakness and Resistance for Benched Pokémon.)
+    damage: '40'
+    text: Does 10 damage to each Benched Pokémon (yours and your opponent''s). (Don''t
+      apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
   - type: G
-    value: 'x2'
+    value: x2
   resistances:
   - type: L
     value: '-30'
@@ -309,15 +313,15 @@ cards:
   moves:
   - cost: [C, C]
     name: Clutch
-    damage: 20
+    damage: '20'
     text: The Defending Pokémon can''t retreat during your opponent''s next turn.
   - cost: [C, C, C]
     name: Supersonic Flight
-    damage: 50
+    damage: '50'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
   - type: L
-    value: 'x2'
+    value: x2
   resistances:
   - type: F
     value: '-30'
@@ -338,19 +342,20 @@ cards:
   abilities:
   - type: Poké-Power
     name: Major Tsunami
-    text: Once during your turn (before your attack), if Feraligatr is your Active Pokémon, your
-      opponent switches his or her Active Pokémon with 1 of his or her Benched Pokémon. Either way,
-      if you have any Benched Pokémon, switch Feraligatr with 1 of them. This power can''t be used
-      if Feraligatr is affected by a Special Condition.
+    text: Once during your turn (before your attack), if Feraligatr is your Active
+      Pokémon, your opponent switches his or her Active Pokémon with 1 of his or her
+      Benched Pokémon. Either way, if you have any Benched Pokémon, switch Feraligatr
+      with 1 of them. This power can''t be used if Feraligatr is affected by a Special
+      Condition.
   moves:
   - cost: [W, W, C, C]
     name: Rending Jaws
-    damage: 70
-    text: If there are no damage counters on the Defending Pokémon, this attack''s base damage
-      is 40 instead of 70.
+    damage: '70'
+    text: If there are no damage counters on the Defending Pokémon, this attack''s
+      base damage is 40 instead of 70.
   weaknesses:
   - type: L
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Mitsuhiro Arita
 - id: 201-13
@@ -368,18 +373,18 @@ cards:
   abilities:
   - type: Poké-Power
     name: Chaos Move
-    text: Once during your turn (before your attack), if your opponent has 3 or fewer Prizes, you
-      may move 1 damage counter from 1 Pokémon (yours or your opponent''s) to another (even if it
-      would Knock Out the other Pokémon). This power can''t be used if Gengar is affected by
-      a Special Condition.
+    text: Once during your turn (before your attack), if your opponent has 3 or fewer
+      Prizes, you may move 1 damage counter from 1 Pokémon (yours or your opponent''s)
+      to another (even if it would Knock Out the other Pokémon). This power can''t
+      be used if Gengar is affected by a Special Condition.
   moves:
   - cost: [P, P, C]
     name: Hide in Shadows
-    damage: 40
+    damage: '40'
     text: Switch Gengar with 1 of your Benched Pokémon, if any.
   weaknesses:
   - type: D
-    value: 'x2'
+    value: x2
   resistances:
   - type: F
     value: '-30'
@@ -400,16 +405,16 @@ cards:
   abilities:
   - type: Poké-Body
     name: Rock Body
-    text: All damage done by attacks to Golem is reduced by 10 (after applying Weakness and
-      Resistance).
+    text: All damage done by attacks to Golem is reduced by 10 (after applying Weakness
+      and Resistance).
   moves:
   - cost: [F, F, F, C]
     name: Rock Tumble
-    damage: 60
+    damage: '60'
     text: Don't apply Resistance.
   weaknesses:
   - type: W
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Aya Kusube
 - id: 201-15
@@ -427,15 +432,15 @@ cards:
   moves:
   - cost: [W]
     name: Bubble
-    damage: 10
+    damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   - cost: [W, W, C]
     name: Giant Claw
-    damage: 70
+    damage: '70'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
   - type: L
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Shin-ichi Yoshida
 - id: 201-16
@@ -453,18 +458,19 @@ cards:
   abilities:
   - type: Poké-Power
     name: Terraforming
-    text: Once during your turn (before your attack), you may look at the top 4 cards of your
-      deck and rearrange them as you like. This power can''t be used if Machamp is affected by
-      a Special Condition.
+    text: Once during your turn (before your attack), you may look at the top 4 cards
+      of your deck and rearrange them as you like. This power can''t be used if Machamp
+      is affected by a Special Condition.
   moves:
   - cost: [F, F, C, C]
     name: Iron Fist
     damage: 50+
-    text: Count the number of Pokémon you have in play with damage counters on them. Flip a coin.
-      If heads, this attack does 50 damage plus 10 more damage for each of those Pokémon.
+    text: Count the number of Pokémon you have in play with damage counters on them.
+      Flip a coin. If heads, this attack does 50 damage plus 10 more damage for each
+      of those Pokémon.
   weaknesses:
   - type: P
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Shin-ichi Yoshida
 - id: 201-17
@@ -485,9 +491,10 @@ cards:
     text: Flip a coin. If heads, put a basic Energy card from your discard pile into
       your hand.
   rarity: Rare Holo
-  text: ['If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
-      your opponent flips a coin (before doing anything else required in order to
-      use that attack). If tails, your opponent''s turn ends without an attack.']
+  text:
+  - If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
+    your opponent flips a coin (before doing anything else required in order to use
+    that attack). If tails, your opponent's turn ends without an attack.
   artist: Mitsuhiro Arita
 - id: 201-18
   pioId: pkmod13-18
@@ -514,7 +521,7 @@ cards:
     text: The Defending Pokémon is now Poisoned.
   weaknesses:
   - type: R
-    value: 'x2'
+    value: x2
   resistances:
   - type: W
     value: '-30'
@@ -610,9 +617,10 @@ cards:
     text: Take a basic Energy card attached to 1 of your Pokémon and attach it to
       another of your Pokémon.
   rarity: Rare Holo
-  text: ['If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
-      your opponent flips a coin (before doing anything else required in order to
-      use that attack). If tails, your opponent''s turn ends without an attack.']
+  text:
+  - If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
+    your opponent flips a coin (before doing anything else required in order to use
+    that attack). If tails, your opponent's turn ends without an attack.
   artist: Atsuko Nishida
 - id: 201-23
   pioId: pkmod13-23
@@ -630,8 +638,8 @@ cards:
   - type: Poké-Power
     name: Beating Wings
     text: Once during your turn (before your attack), if Pidgeot is your Active Pokémon,
-      you may shuffle 1 of your Baby Pokémon and all cards attached to it into your deck.
-      This power can't be used if Pidgeot is affected by a Special Condition.
+      you may shuffle 1 of your Baby Pokémon and all cards attached to it into your
+      deck. This power can't be used if Pidgeot is affected by a Special Condition.
   moves:
   - cost: [C, C, C]
     name: Sharp Beak
@@ -813,7 +821,7 @@ cards:
       Weakness and Resistance for Benched Pokémon.)
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -834,10 +842,10 @@ cards:
   abilities:
   - type: Poké-Power
     name: Harvest Bounty
-    text: Once during your turn (before your attack), if you attach [G] Energy
-      to your Active [G] Pokémon (excluding Pokémon-ex) as part of your turn, you may attach an additional Energy
-      card to that Pokémon at the same time. This power can't be used if Venusaur
-      is affected by a Special Condition.
+    text: Once during your turn (before your attack), if you attach [G] Energy to
+      your Active [G] Pokémon (excluding Pokémon-ex) as part of your turn, you may
+      attach an additional Energy card to that Pokémon at the same time. This power
+      can't be used if Venusaur is affected by a Special Condition.
   moves:
   - cost: [G, G, C, C]
     name: Body Slam
@@ -845,7 +853,7 @@ cards:
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
   - type: R
-    value: 'x2'
+    value: x2
   rarity: Rare Holo
   artist: Shin-ichi Yoshida
 - id: 201-31
@@ -918,20 +926,21 @@ cards:
   abilities:
   - type: Poké-Power
     name: Psymimic
-    text: Once during your turn, instead of Alakazam''s normal attack, you may choose 1 of
-      your opponent''s Pokémon''s attacks. Alakazam copies that attack including its Energy
-      costs and anything else required in order to use that attack, such as discarding
-      Energy cards. (No matter what type that Pokémon is, Alakazam''s type is still [P].
-      This power can''t be used if Alakazam is affected by a Special Condition.
+    text: Once during your turn, instead of Alakazam''s normal attack, you may choose
+      1 of your opponent''s Pokémon''s attacks. Alakazam copies that attack including
+      its Energy costs and anything else required in order to use that attack, such
+      as discarding Energy cards. (No matter what type that Pokémon is, Alakazam''s
+      type is still [P]. This power can''t be used if Alakazam is affected by a Special
+      Condition.
   moves:
   - cost: [P, C, C, C]
     name: Syncroblast
-    damage: 80
+    damage: '80'
     text: If Alakazam and the Defending Pokémon don''t have the same number of Energy
       cards attached to them, this attack''s base damage is 20 instead of 80.
   weaknesses:
   - type: P
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Hajime Kusajima
 - id: 201-34
@@ -949,18 +958,19 @@ cards:
   abilities:
   - type: Poké-Power
     name: Energy Connect
-    text: As often as you like during your turn (before your attack), you may take a
-      basic Energy card attached to 1 of your Benched Pokémon and attach it to your Active
-      Pokémon. This power can''t be used if Ampharos is affected by a Special Condition.
+    text: As often as you like during your turn (before your attack), you may take
+      a basic Energy card attached to 1 of your Benched Pokémon and attach it to your
+      Active Pokémon. This power can''t be used if Ampharos is affected by a Special
+      Condition.
   moves:
   - cost: [L, L, C, C]
     name: Lightning Strike
-    damage: 40
-    text: You may discard all [L] Energy cards attached to Ampharos. If you do, this attack''s
-      base damage is 80 instead of 40.
+    damage: '40'
+    text: You may discard all [L] Energy cards attached to Ampharos. If you do, this
+      attack''s base damage is 80 instead of 40.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Atsuko Nishida
 - id: 201-35
@@ -982,10 +992,11 @@ cards:
   - cost: [G, C]
     name: Poison Reaction
     damage: 20+
-    text: If the Defending Pokémon is Poisoned, this attack does 20 damage, plus 20 more damage.
+    text: If the Defending Pokémon is Poisoned, this attack does 20 damage, plus 20
+      more damage.
   weaknesses:
   - type: P
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Kyoko Umemoto
 - id: 201-36
@@ -1029,20 +1040,21 @@ cards:
   abilities:
   - type: Poké-Power
     name: Jet Stream
-    text: Once during your turn (before your attack), if Blastoise is your Active Pokémon,
-      you may flip a coin. If heads, discard an Energy card attached to Blastoise, if any.
-      Then, if there are Energy cards attached to the Defending Pokémon, choose 1 of them
-      and discard it. This power can''t be used if Blastoise is affected by a Special
-      Condition.
+    text: Once during your turn (before your attack), if Blastoise is your Active
+      Pokémon, you may flip a coin. If heads, discard an Energy card attached to Blastoise,
+      if any. Then, if there are Energy cards attached to the Defending Pokémon, choose
+      1 of them and discard it. This power can''t be used if Blastoise is affected
+      by a Special Condition.
   moves:
   - cost: [W, W, C]
     name: Energy Cannon
     damage: 40+
-    text: Does 40 damage plus 10 more damage for each Energy attached to Blastoise but not
-      used to pay for this attack''s Energy cost. You can''t add more than 20 damage in this way.
+    text: Does 40 damage plus 10 more damage for each Energy attached to Blastoise
+      but not used to pay for this attack''s Energy cost. You can''t add more than
+      20 damage in this way.
   weaknesses:
   - type: L
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Kimiya Masago
 - id: 201-38
@@ -1061,16 +1073,16 @@ cards:
   - type: Poké-Power
     name: Miraculous Powder
     text: Once during your turn (before your attack), you may remove all Special Conditions
-      from your Active Pokémon. This power can''t be used if Butterfree is affected by a
-      Special Condition.
+      from your Active Pokémon. This power can''t be used if Butterfree is affected
+      by a Special Condition.
   moves:
   - cost: [G, C, C]
     name: Spiral Drain
-    damage: 40
+    damage: '40'
     text: Flip a coin. If heads, remove 2 damage counters from Butterfree.
   weaknesses:
   - type: R
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Sumiyoshi Kizuki
 - id: 201-39
@@ -1123,12 +1135,12 @@ cards:
   moves:
   - cost: [R, R, R, R]
     name: Scorching Whirlwind
-    damage: 120
+    damage: '120'
     text: Flip 2 coins. If 1 of them is tails, discard 2 Energy cards attached to
       Charizard. If both are tails, discard all Energy cards attached to Charizard.
   weaknesses:
   - type: W
-    value: 'x2'
+    value: x2
   resistances:
   - type: F
     value: '-30'
@@ -1160,7 +1172,7 @@ cards:
     text: Flip 2 coins. This attack does 20 damage times the number of heads.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -1181,7 +1193,7 @@ cards:
   moves:
   - cost: [C]
     name: Lick
-    damage: 10
+    damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   - cost: [W, W, C, C]
     name: Auto Fire
@@ -1189,7 +1201,7 @@ cards:
     text: Flip 4 coins. This attack does 20 damage times the number of heads.
   weaknesses:
   - type: M
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Kagemaru Himeno
 - id: 201-43
@@ -1234,15 +1246,15 @@ cards:
   moves:
   - cost: [F]
     name: Mud Slap
-    damage: 20
+    damage: '20'
   - cost: [F, F, C]
     name: Magnitude
-    damage: 40
-    text: Does 10 damage to each Benched Pokémon (yours and your opponent''s).
-      (Don''t apply Weakness and Resistance for Benched Pokémon.)
+    damage: '40'
+    text: Does 10 damage to each Benched Pokémon (yours and your opponent''s). (Don''t
+      apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
   - type: G
-    value: 'x2'
+    value: x2
   resistances:
   - type: L
     value: '-30'
@@ -1263,15 +1275,15 @@ cards:
   moves:
   - cost: [C, C]
     name: Clutch
-    damage: 20
+    damage: '20'
     text: The Defending Pokémon can''t retreat during your opponent''s next turn.
   - cost: [C, C, C]
     name: Supersonic Flight
-    damage: 50
+    damage: '50'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
   - type: L
-    value: 'x2'
+    value: x2
   resistances:
   - type: F
     value: '-30'
@@ -1317,19 +1329,20 @@ cards:
   abilities:
   - type: Poké-Power
     name: Major Tsunami
-    text: Once during your turn (before your attack), if Feraligatr is your Active Pokémon, your
-      opponent switches his or her Active Pokémon with 1 of his or her Benched Pokémon. Either way,
-      if you have any Benched Pokémon, switch Feraligatr with 1 of them. This power can''t be used
-      if Feraligatr is affected by a Special Condition.
+    text: Once during your turn (before your attack), if Feraligatr is your Active
+      Pokémon, your opponent switches his or her Active Pokémon with 1 of his or her
+      Benched Pokémon. Either way, if you have any Benched Pokémon, switch Feraligatr
+      with 1 of them. This power can''t be used if Feraligatr is affected by a Special
+      Condition.
   moves:
   - cost: [W, W, C, C]
     name: Rending Jaws
-    damage: 70
-    text: If there are no damage counters on the Defending Pokémon, this attack''s base damage
-      is 40 instead of 70.
+    damage: '70'
+    text: If there are no damage counters on the Defending Pokémon, this attack''s
+      base damage is 40 instead of 70.
   weaknesses:
   - type: L
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Mitsuhiro Arita
 - id: 201-48
@@ -1347,18 +1360,18 @@ cards:
   abilities:
   - type: Poké-Power
     name: Chaos Move
-    text: Once during your turn (before your attack), if your opponent has 3 or fewer Prizes, you
-      may move 1 damage counter from 1 Pokémon (yours or your opponent''s) to another (even if it
-      would Knock Out the other Pokémon). This power can''t be used if Gengar is affected by
-      a Special Condition.
+    text: Once during your turn (before your attack), if your opponent has 3 or fewer
+      Prizes, you may move 1 damage counter from 1 Pokémon (yours or your opponent''s)
+      to another (even if it would Knock Out the other Pokémon). This power can''t
+      be used if Gengar is affected by a Special Condition.
   moves:
   - cost: [P, P, C]
     name: Hide in Shadows
-    damage: 40
+    damage: '40'
     text: Switch Gengar with 1 of your Benched Pokémon, if any.
   weaknesses:
   - type: D
-    value: 'x2'
+    value: x2
   resistances:
   - type: F
     value: '-30'
@@ -1379,16 +1392,16 @@ cards:
   abilities:
   - type: Poké-Body
     name: Rock Body
-    text: All damage done by attacks to Golem is reduced by 10 (after applying Weakness and
-      Resistance).
+    text: All damage done by attacks to Golem is reduced by 10 (after applying Weakness
+      and Resistance).
   moves:
   - cost: [F, F, F, C]
     name: Rock Tumble
-    damage: 60
+    damage: '60'
     text: Don't apply Resistance.
   weaknesses:
   - type: W
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Aya Kusube
 - id: 201-50
@@ -1406,15 +1419,15 @@ cards:
   moves:
   - cost: [W]
     name: Bubble
-    damage: 10
+    damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   - cost: [W, W, C]
     name: Giant Claw
-    damage: 70
+    damage: '70'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
   - type: L
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Shin-ichi Yoshida
 - id: 201-51
@@ -1432,18 +1445,19 @@ cards:
   abilities:
   - type: Poké-Power
     name: Terraforming
-    text: Once during your turn (before your attack), you may look at the top 4 cards of your
-      deck and rearrange them as you like. This power can''t be used if Machamp is affected by
-      a Special Condition.
+    text: Once during your turn (before your attack), you may look at the top 4 cards
+      of your deck and rearrange them as you like. This power can''t be used if Machamp
+      is affected by a Special Condition.
   moves:
   - cost: [F, F, C, C]
     name: Iron Fist
     damage: 50+
-    text: Count the number of Pokémon you have in play with damage counters on them. Flip a coin.
-      If heads, this attack does 50 damage plus 10 more damage for each of those Pokémon.
+    text: Count the number of Pokémon you have in play with damage counters on them.
+      Flip a coin. If heads, this attack does 50 damage plus 10 more damage for each
+      of those Pokémon.
   weaknesses:
   - type: P
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Shin-ichi Yoshida
 - id: 201-52
@@ -1464,9 +1478,10 @@ cards:
     text: Flip a coin. If heads, put a basic Energy card from your discard pile into
       your hand.
   rarity: Rare
-  text: ['If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
-      your opponent flips a coin (before doing anything else required in order to
-      use that attack). If tails, your opponent''s turn ends without an attack.']
+  text:
+  - If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
+    your opponent flips a coin (before doing anything else required in order to use
+    that attack). If tails, your opponent's turn ends without an attack.
   artist: Mitsuhiro Arita
 - id: 201-53
   pioId: pkmod13-53
@@ -1521,7 +1536,7 @@ cards:
     text: The Defending Pokémon is now Poisoned.
   weaknesses:
   - type: R
-    value: 'x2'
+    value: x2
   resistances:
   - type: W
     value: '-30'
@@ -1617,9 +1632,10 @@ cards:
     text: Take a basic Energy card attached to 1 of your Pokémon and attach it to
       another of your Pokémon.
   rarity: Rare
-  text: ['If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
-      your opponent flips a coin (before doing anything else required in order to
-      use that attack). If tails, your opponent''s turn ends without an attack.']
+  text:
+  - If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
+    your opponent flips a coin (before doing anything else required in order to use
+    that attack). If tails, your opponent's turn ends without an attack.
   artist: Atsuko Nishida
 - id: 201-59
   pioId: pkmod13-59
@@ -1637,8 +1653,8 @@ cards:
   - type: Poké-Power
     name: Beating Wings
     text: Once during your turn (before your attack), if Pidgeot is your Active Pokémon,
-      you may shuffle 1 of your Baby Pokémon and all cards attached to it into your deck.
-      This power can't be used if Pidgeot is affected by a Special Condition.
+      you may shuffle 1 of your Baby Pokémon and all cards attached to it into your
+      deck. This power can't be used if Pidgeot is affected by a Special Condition.
   moves:
   - cost: [C, C, C]
     name: Sharp Beak
@@ -1847,7 +1863,7 @@ cards:
       Weakness and Resistance for Benched Pokémon.)
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -1895,10 +1911,10 @@ cards:
   abilities:
   - type: Poké-Power
     name: Harvest Bounty
-    text: Once during your turn (before your attack), if you attach [G] Energy
-      to your Active [G] Pokémon (excluding Pokémon-ex) as part of your turn, you may attach an additional Energy
-      card to that Pokémon at the same time. This power can't be used if Venusaur
-      is affected by a Special Condition.
+    text: Once during your turn (before your attack), if you attach [G] Energy to
+      your Active [G] Pokémon (excluding Pokémon-ex) as part of your turn, you may
+      attach an additional Energy card to that Pokémon at the same time. This power
+      can't be used if Venusaur is affected by a Special Condition.
   moves:
   - cost: [G, G, C, C]
     name: Body Slam
@@ -1906,7 +1922,7 @@ cards:
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
   - type: R
-    value: 'x2'
+    value: x2
   rarity: Rare
   artist: Shin-ichi Yoshida
 - id: 201-69
@@ -1986,7 +2002,7 @@ cards:
     damage: '30'
   weaknesses:
   - type: R
-    value: 'x2'
+    value: x2
   resistances:
   - type: W
     value: '-30'
@@ -2017,7 +2033,7 @@ cards:
       of damage to itself.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -2073,7 +2089,7 @@ cards:
     text: Croconaw does 10 damage to itself.
   weaknesses:
   - type: L
-    value: 'x2'
+    value: x2
   rarity: Uncommon
   artist: Kagemaru Himeno
 - id: 201-75
@@ -2775,7 +2791,7 @@ cards:
     damage: '10'
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -3255,7 +3271,7 @@ cards:
     text: Flip a coin. If heads, draw a card.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -3426,7 +3442,7 @@ cards:
     text: Flip a coin. If heads, this attack does 10 damage plus 20 more damage.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -3546,17 +3562,17 @@ cards:
   abilities:
   - type: Poké-Body
     name: Strength
-    text: All damage done to this Pokémon by attacks is reduced by 10 (after
-      applying Weakness and Resistance).
+    text: All damage done to this Pokémon by attacks is reduced by 10 (after applying
+      Weakness and Resistance).
   moves:
   - cost: [C, C, C]
     name: Horn Hazard
-    damage: '30+'
-    text: If the defending Pokémon is a Pokémon-ex, this attack does 30 damage
-      plus 30 more damage.
+    damage: 30+
+    text: If the defending Pokémon is a Pokémon-ex, this attack does 30 damage plus
+      30 more damage.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
@@ -3643,8 +3659,9 @@ cards:
   superType: TRAINER
   subTypes: [SUPPORTER]
   rarity: Uncommon
-  text: ['If you have any cards in your hand, shuffle 2 of them into your deck, then
-      draw 4 cards.']
+  text:
+  - If you have any cards in your hand, shuffle 2 of them into your deck, then draw
+    4 cards.
   artist: Ken Sugimori
 - id: 201-138
   pioId: pkmod13-138
@@ -3654,8 +3671,9 @@ cards:
   superType: TRAINER
   subTypes: [SUPPORTER]
   rarity: Uncommon
-  text: ['Shuffle your hand into your deck. Then, count the number of cards in your
-      opponent''s hand and draw that many cards.']
+  text:
+  - Shuffle your hand into your deck. Then, count the number of cards in your opponent's
+    hand and draw that many cards.
   artist: Ken Sugimori
 - id: 201-139
   pioId: pkmod13-139
@@ -3665,9 +3683,10 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Uncommon
-  text: ['Flip 2 coins. For each heads, search your deck for a Basic Pokémon card
-      other than a Baby Pokémon card, show it to your opponent, and put it into your
-      hand. Shuffle your deck afterward.']
+  text:
+  - Flip 2 coins. For each heads, search your deck for a Basic Pokémon card other
+    than a Baby Pokémon card, show it to your opponent, and put it into your hand.
+    Shuffle your deck afterward.
   artist: '"Big Mama" Tagawa'
 - id: 201-140
   pioId: pkmod13-140
@@ -3677,7 +3696,9 @@ cards:
   superType: TRAINER
   subTypes: [POKEMON_TOOL]
   rarity: Rare
-  text: ['If the Pokémon this card is attached to is Knocked Out by damage from an attack, put that Pokémon into your hand. (Discard all cards attached to that Pokémon.']
+  text:
+  - If the Pokémon this card is attached to is Knocked Out by damage from an attack,
+    put that Pokémon into your hand. (Discard all cards attached to that Pokémon.
   artist: Ken Sugimori
 - id: 201-141
   pioId: pkmod13-141
@@ -3687,9 +3708,10 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Uncommon
-  text: ['Flip 3 coins. For each heads, put a Basic Energy card from your discard
-      pile into your hand. If you don''t have that many basic Energy cards in your
-      discard pile, put all of them into your hand.']
+  text:
+  - Flip 3 coins. For each heads, put a Basic Energy card from your discard pile into
+    your hand. If you don't have that many basic Energy cards in your discard pile,
+    put all of them into your hand.
   artist: Hideyuki Nakajima
 - id: 201-142
   pioId: pkmod13-142
@@ -3699,7 +3721,8 @@ cards:
   superType: TRAINER
   subTypes: [SUPPORTER]
   rarity: Uncommon
-  text: ['Flip a coin until you get tails. For each heads, draw 2 cards.']
+  text:
+  - Flip a coin until you get tails. For each heads, draw 2 cards.
   artist: Ken Sugimori
 - id: 201-143
   pioId: pkmod13-143
@@ -3709,8 +3732,9 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Rare
-  text: [Discard 2 of the other cards from your hand in order to search your deck
-      for any card and put it into your hand. Shuffle your deck afterward.]
+  text:
+  - Discard 2 of the other cards from your hand in order to search your deck for any
+    card and put it into your hand. Shuffle your deck afterward.
   artist: Keiji Kinebuchi
 - id: 201-144
   pioId: pkmod13-144
@@ -3720,7 +3744,9 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Uncommon
-  text: [All Poké-Powers and Poké-Bodies stop working until the end of your opponent's next turn.]
+  text:
+  - All Poké-Powers and Poké-Bodies stop working until the end of your opponent's
+    next turn.
   artist: Sumiyoshi Kizuki
 - id: 201-145
   pioId: pkmod13-145
@@ -3730,7 +3756,11 @@ cards:
   superType: TRAINER
   subTypes: [STADIUM]
   rarity: Rare
-  text: ['During each players turn, if he or she has more Prize cards left than their opponent, the attacks of their Stage 2 [F] Pokémon that have any basic [F] Energy attached to them do 10 more damage to their opponent''s Active Pokémon (after applying Weakness and Resistance).']
+  text:
+  - During each players turn, if he or she has more Prize cards left than their opponent,
+    the attacks of their Stage 2 [F] Pokémon that have any basic [F] Energy attached
+    to them do 10 more damage to their opponent's Active Pokémon (after applying Weakness
+    and Resistance).
   artist: Keiji Kinebuchi
 - id: 201-146
   pioId: pkmod13-146
@@ -3740,8 +3770,9 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Rare
-  text: [Choose 1 of your opponent's Benched Pokémon and switch it with his or her
-      Active Pokémon.]
+  text:
+  - Choose 1 of your opponent's Benched Pokémon and switch it with his or her Active
+    Pokémon.
   artist: Keiji Kinebuchi
 - id: 201-148
   pioId: pkmod13-148
@@ -3751,8 +3782,9 @@ cards:
   superType: TRAINER
   subTypes: [SUPPORTER]
   rarity: Uncommon
-  text: ['Search your deck for an Evolution card, show it to your opponent, and put
-      it into your hand. Shuffle your deck afterward.']
+  text:
+  - Search your deck for an Evolution card, show it to your opponent, and put it into
+    your hand. Shuffle your deck afterward.
   artist: Ken Sugimori
 - id: 201-149
   pioId: pkmod13-149
@@ -3762,7 +3794,8 @@ cards:
   superType: TRAINER
   subTypes: [SUPPORTER]
   rarity: Uncommon
-  text: ['Shuffle your hand into your deck, then draw 5 cards.']
+  text:
+  - Shuffle your hand into your deck, then draw 5 cards.
   artist: Ken Sugimori
 - id: 201-150
   pioId: pkmod13-150
@@ -3772,8 +3805,9 @@ cards:
   superType: TRAINER
   subTypes: [STADIUM]
   rarity: Rare
-  text: ['Each Basic Pokémon in play, and in each player''s discard pile have
-    their Poké-Powers disabled.']
+  text:
+  - Each Basic Pokémon in play, and in each player's discard pile have their Poké-Powers
+    disabled.
   artist: Keiji Kinebuchi
 - id: 201-151
   pioId: pkmod13-151
@@ -3783,8 +3817,9 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Uncommon
-  text: ['Flip a coin. If heads, return 1 of your Pokémon and all cards attached to
-      it to your hand.']
+  text:
+  - Flip a coin. If heads, return 1 of your Pokémon and all cards attached to it to
+    your hand.
   artist: Keiji Kinebuchi
 - id: 201-152
   pioId: pkmod13-152
@@ -3794,9 +3829,10 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Uncommon
-  text: ['Your opponent switches the Defending Pokémon with 1 of his or her Benched
-      Pokémon, if any; then you switch your Active Pokémon with 1 of your Benched
-      Pokémon, if any.']
+  text:
+  - Your opponent switches the Defending Pokémon with 1 of his or her Benched Pokémon,
+    if any; then you switch your Active Pokémon with 1 of your Benched Pokémon, if
+    any.
   artist: Keiji Kinebuchi
 - id: 201-153
   pioId: pkmod13-153
@@ -3806,8 +3842,9 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Common
-  text: ['Search your deck for a basic Energy card, show it to your opponent, and
-      put it into your hand. Shuffle your deck afterward.']
+  text:
+  - Search your deck for a basic Energy card, show it to your opponent, and put it
+    into your hand. Shuffle your deck afterward.
   artist: Kai Ishikawa
 - id: 201-154
   pioId: pkmod13-154
@@ -3817,7 +3854,8 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Common
-  text: [Remove all Special Conditions from your Active Pokémon.]
+  text:
+  - Remove all Special Conditions from your Active Pokémon.
   artist: Keiji Kinebuchi
 - id: 201-155
   pioId: pkmod13-155
@@ -3827,8 +3865,9 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Rare
-  text: ['Flip a coin. If heads, choose 1 of your opponent''s Benched Pokémon and
-    switch it with his or her Active Pokémon.']
+  text:
+  - Flip a coin. If heads, choose 1 of your opponent's Benched Pokémon and switch
+    it with his or her Active Pokémon.
   artist: Keiji Kinebuchi
 - id: 201-156
   pioId: pkmod13-156
@@ -3838,7 +3877,8 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Common
-  text: [Remove 2 damage counters from 1 of your Pokémon (1 if it has only 1).]
+  text:
+  - Remove 2 damage counters from 1 of your Pokémon (1 if it has only 1).
   artist: Keiji Kinebuchi
 - id: 201-157
   pioId: pkmod13-157
@@ -3848,7 +3888,8 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Common
-  text: [Switch your Active Pokémon with 1 of your Benched Pokémon.]
+  text:
+  - Switch your Active Pokémon with 1 of your Benched Pokémon.
   artist: Keiji Kinebuchi
 - id: 201-158
   pioId: pkmod13-158
@@ -3858,13 +3899,13 @@ cards:
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Rare
-  text: ['If the Pokémon Darkness Energy is attached to does damage with an attack (after
-      applying Weakness and Resistance), the attack does 10 more damage. At the end
-      of every turn, put 1 damage counter on the Pokémon Darkness Energy is attached to,
-      unless it''s [D]. Darkness Energy provides [D] Energy. (Doesn''t count as a
-      basic Energy card.)']
-  energy:
-  - [D]
+  text:
+  - If the Pokémon Darkness Energy is attached to does damage with an attack (after
+    applying Weakness and Resistance), the attack does 10 more damage. At the end
+    of every turn, put 1 damage counter on the Pokémon Darkness Energy is attached
+    to, unless it's [D]. Darkness Energy provides [D] Energy. (Doesn't count as a
+    basic Energy card.)
+  energy: [[D]]
   artist: Milky Isobe
 - id: 201-159
   pioId: pkmod13-159
@@ -3874,12 +3915,12 @@ cards:
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Rare
-  text: ['Damage done to the Pokémon Metal Energy is attached to is reduced
-      by 10 (after applying Weakness and Resistance). Ignore this effect if
-      the Pokémon Metal Energy is attached to isn''t [M].', 'Metal Energy 
-      provides [M] Energy. (Doesn''t count as a basic Energy card.)']
-  energy:
-  - [M]
+  text:
+  - Damage done to the Pokémon Metal Energy is attached to is reduced by 10 (after
+    applying Weakness and Resistance). Ignore this effect if the Pokémon Metal Energy
+    is attached to isn't [M].
+  - Metal Energy provides [M] Energy. (Doesn't count as a basic Energy card.)
+  energy: [[M]]
   artist: Milky Isobe
 - id: 201-160
   pioId: pkmod13-160
@@ -3889,8 +3930,7 @@ cards:
   superType: ENERGY
   subTypes: [BASIC_ENERGY]
   rarity: Common
-  energy:
-  - [F]
+  energy: [[F]]
   artist: Keiji Kinebuchi
 - id: 201-161
   pioId: pkmod13-161
@@ -3900,8 +3940,7 @@ cards:
   superType: ENERGY
   subTypes: [BASIC_ENERGY]
   rarity: Common
-  energy:
-  - [R]
+  energy: [[R]]
   artist: Keiji Kinebuchi
 - id: 201-162
   pioId: pkmod13-162
@@ -3911,8 +3950,7 @@ cards:
   superType: ENERGY
   subTypes: [BASIC_ENERGY]
   rarity: Common
-  energy:
-  - [G]
+  energy: [[G]]
   artist: Keiji Kinebuchi
 - id: 201-163
   pioId: pkmod13-163
@@ -3922,8 +3960,7 @@ cards:
   superType: ENERGY
   subTypes: [BASIC_ENERGY]
   rarity: Common
-  energy:
-  - [L]
+  energy: [[L]]
   artist: Keiji Kinebuchi
 - id: 201-164
   pioId: pkmod13-164
@@ -3933,8 +3970,7 @@ cards:
   superType: ENERGY
   subTypes: [BASIC_ENERGY]
   rarity: Common
-  energy:
-  - [P]
+  energy: [[P]]
   artist: Keiji Kinebuchi
 - id: 201-165
   pioId: pkmod13-165
@@ -3944,8 +3980,7 @@ cards:
   superType: ENERGY
   subTypes: [BASIC_ENERGY]
   rarity: Common
-  energy:
-  - [W]
+  energy: [[W]]
   artist: Keiji Kinebuchi
 - id: 201-166
   pioId: pkmod13-166
@@ -3955,9 +3990,10 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Rare
-  text: ['Look at the top 7 cards of your deck. Choose a Supporter card you find
-    there, show it to your opponent, and put it into your hand. Shuffle the
-    other cards back into your deck.']
+  text:
+  - Look at the top 7 cards of your deck. Choose a Supporter card you find there,
+    show it to your opponent, and put it into your hand. Shuffle the other cards back
+    into your deck.
   artist: Keiji Kinebuchi
 - id: 201-167
   pioId: pkmod13-167
@@ -3967,9 +4003,10 @@ cards:
   superType: TRAINER
   subTypes: [SUPPORTER]
   rarity: Rare
-  text: ['Discard 1 card from your hand in order to play this card. Search your
-    deck for up to 3 Basic Pokémon with 50HP or less, show them to your opponent, and
-    put them into your hand. Shuffle your deck afterward.']
+  text:
+  - Discard 1 card from your hand in order to play this card. Search your deck for
+    up to 3 Basic Pokémon with 50HP or less, show them to your opponent, and put them
+    into your hand. Shuffle your deck afterward.
   artist: Keiji Kinebuchi
 - id: 201-168
   pioId: pkmod13-168
@@ -3979,11 +4016,12 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Rare
-  text: ['You may choose to Discard 1 card from your hand in order to search
-    your discard pile for a Supporter card. Show it to your opponent and put
-    it into your hand. Or, you may choose to Discard 2 cards from your hand
-    in order to search your discard pile for a Trainer card (excluding
-    Supporter cards). Show it to your opponent and put it into your hand.']
+  text:
+  - You may choose to Discard 1 card from your hand in order to search your discard
+    pile for a Supporter card. Show it to your opponent and put it into your hand.
+    Or, you may choose to Discard 2 cards from your hand in order to search your discard
+    pile for a Trainer card (excluding Supporter cards). Show it to your opponent
+    and put it into your hand.
   artist: Keiji Kinebuchi
 - id: 201-169
   pioId: pkmod13-169
@@ -3993,8 +4031,9 @@ cards:
   superType: TRAINER
   subTypes: [STADIUM]
   rarity: Rare
-  text: ['Each Player''s [C] Evolved Pokémon, [D] Evolved Pokémon, and
-    [M] Evolved Pokémon can''t use any Poké-Powers or Poké-Bodies.']
+  text:
+  - Each Player's [C] Evolved Pokémon, [D] Evolved Pokémon, and [M] Evolved Pokémon
+    can't use any Poké-Powers or Poké-Bodies.
   artist: Keiji Kinebuchi
 - id: 201-170
   pioId: pkmod13-170
@@ -4004,9 +4043,9 @@ cards:
   superType: TRAINER
   subTypes: [STADIUM]
   rarity: Rare
-  text: ['Each Special Energy that provides 2 or more Energy (both yours
-    and your opponent''s) now only provide 1 [C] Energy. This isn''t
-    affected by Poké-Powers or Poké-Bodies.']
+  text:
+  - Each Special Energy that provides 2 or more Energy (both yours and your opponent's)
+    now only provide 1 [C] Energy. This isn't affected by Poké-Powers or Poké-Bodies.
   artist: Keiji Kinebuchi
 - id: 201-172
   pioId: pkmod13-172
@@ -4016,7 +4055,8 @@ cards:
   superType: TRAINER
   subTypes: [STADIUM]
   rarity: Rare
-  text: ['All Poké-Bodies of Evolved Pokémon in play are Disabled.']
+  text:
+  - All Poké-Bodies of Evolved Pokémon in play are Disabled.
   artist: Keiji Kinebuchi
 - id: 201-174
   pioId: pkmod13-174
@@ -4026,12 +4066,12 @@ cards:
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Rare Holo
-  text: ['Damage done to the Pokémon Metal Energy is attached to is reduced
-      by 10 (after applying Weakness and Resistance). Ignore this effect if
-      the Pokémon Metal Energy is attached to isn''t [M].', 'Metal Energy 
-      provides [M] Energy. (Doesn''t count as a basic Energy card.)']
-  energy:
-  - [M]
+  text:
+  - Damage done to the Pokémon Metal Energy is attached to is reduced by 10 (after
+    applying Weakness and Resistance). Ignore this effect if the Pokémon Metal Energy
+    is attached to isn't [M].
+  - Metal Energy provides [M] Energy. (Doesn't count as a basic Energy card.)
+  energy: [[M]]
   artist: Milky Isobe
 - id: 201-175
   pioId: pkmod13-175
@@ -4041,13 +4081,13 @@ cards:
   superType: ENERGY
   subTypes: [SPECIAL_ENERGY]
   rarity: Rare Holo
-  text: ['If the Pokémon Darkness Energy is attached to does damage with an attack (after
-      applying Weakness and Resistance), the attack does 10 more damage. At the end
-      of every turn, put 1 damage counter on the Pokémon Darkness Energy is attached to,
-      unless it''s [D]. Darkness Energy provides [D] Energy. (Doesn''t count as a
-      basic Energy card.)']
-  energy:
-  - [D]
+  text:
+  - If the Pokémon Darkness Energy is attached to does damage with an attack (after
+    applying Weakness and Resistance), the attack does 10 more damage. At the end
+    of every turn, put 1 damage counter on the Pokémon Darkness Energy is attached
+    to, unless it's [D]. Darkness Energy provides [D] Energy. (Doesn't count as a
+    basic Energy card.)
+  energy: [[D]]
   artist: Milky Isobe
 - id: 201-176
   pioId: pkmod13-176
@@ -4064,12 +4104,12 @@ cards:
   abilities:
   - type: Poké-Power
     name: Dark Trance
-    text: As often as you like during your turn (before your attack), you may move a [D]
-      Energy attached to 1 of your Pokémon to another of your Pokémon.
+    text: As often as you like during your turn (before your attack), you may move
+      a [D] Energy attached to 1 of your Pokémon to another of your Pokémon.
   moves:
   - cost: [D, D, D, D]
     name: Dark Mountain
-    damage: 90
+    damage: '90'
     text: Discard 2 [D] Energy attached to Tyranitar to use this attack.
   weaknesses:
   - type: F
@@ -4093,21 +4133,22 @@ cards:
   moves:
   - cost: [L]
     name: Thundershock
-    damage: 20
+    damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   - cost: [L, C]
     name: Thunderpunch
     damage: 40+
-    text: Flip a coin. If heads, this attack does 40 damage plus 10 more damage.
-      If tails, Electabuzz ex does 10 damage to itself.
+    text: Flip a coin. If heads, this attack does 40 damage plus 10 more damage. If
+      tails, Electabuzz ex does 10 damage to itself.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: M
     value: '-30'
   rarity: Rare
-  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  text:
+  - When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Hikaru Koike
 - id: 201-178
   pioId: pkmod13-178
@@ -4127,13 +4168,14 @@ cards:
     text: Flip a coin. If heads, this attack does 20 more damage plus 10 more damage.
   - cost: [F, F, C]
     name: Sky Uppercut
-    damage: 50
+    damage: '50'
     text: This attack's damage is not affected by Resistance.
   weaknesses:
   - type: P
-    value: 'x2'
+    value: x2
   rarity: Rare
-  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  text:
+  - When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Hiromichi Sugiyama
 - id: 201-179
   pioId: pkmod13-179
@@ -4155,13 +4197,14 @@ cards:
       40 damage in this way.
   - cost: [W, W, C]
     name: Confuse Ray
-    damage: 30
+    damage: '30'
     text: The Defending Pokémon is now Confused.
   weaknesses:
   - type: L
-    value: 'x2'
+    value: x2
   rarity: Rare
-  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  text:
+  - When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Hikaru Koike
 - id: 201-180
   pioId: pkmod13-180
@@ -4177,18 +4220,19 @@ cards:
   moves:
   - cost: [R]
     name: Smokescreen
-    damage: 20
-    text: If the Defending Pokémon tries to attack during your opponent''s next
-      turn, your opponent flips a coin. If tails, that attack does nothing.
+    damage: '20'
+    text: If the Defending Pokémon tries to attack during your opponent''s next turn,
+      your opponent flips a coin. If tails, that attack does nothing.
   - cost: [R, R, C]
     name: Super Singe
-    damage: 40
+    damage: '40'
     text: The Defending Pokémon is now Burned.
   weaknesses:
   - type: W
-    value: 'x2'
+    value: x2
   rarity: Rare
-  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  text:
+  - When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Hikaru Koike
 - id: 201-181
   pioId: pkmod13-181
@@ -4207,12 +4251,13 @@ cards:
     text: Attach up to 2 Energy cards from your discard pile to Mewtwo ex.
   - cost: [P, P, C]
     name: Psyburn
-    damage: 60
+    damage: '60'
   weaknesses:
   - type: P
-    value: 'x2'
+    value: x2
   rarity: Rare
-  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  text:
+  - When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Katsura Tabata
 - id: 201-182
   pioId: pkmod13-182
@@ -4237,12 +4282,13 @@ cards:
       attack does 20 damage times the number of heads.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
   rarity: Rare
-  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  text:
+  - When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Ryo Ueda
 - id: 201-183
   pioId: pkmod13-183
@@ -4258,20 +4304,21 @@ cards:
   moves:
   - cost: [G]
     name: Agility
-    damage: 20
-    text: Flip a coin. If heads, prevent all effects of an attack, including damage, done
-      to Scyther ex during your opponent''s next turn.
+    damage: '20'
+    text: Flip a coin. If heads, prevent all effects of an attack, including damage,
+      done to Scyther ex during your opponent''s next turn.
   - cost: [C, C, C]
     name: Slash
-    damage: 40
+    damage: '40'
   weaknesses:
   - type: R
-    value: 'x2'
+    value: x2
   resistances:
   - type: F
     value: '-30'
   rarity: Rare
-  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  text:
+  - When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Ryo Ueda
 - id: 201-184
   pioId: pkmod13-184
@@ -4291,16 +4338,17 @@ cards:
       Remove no damage counters from Chansey ex.
   - cost: [C, C, C]
     name: Double-edge
-    damage: 80
+    damage: '80'
     text: Chansey ex does 60 damage to itself.
   weaknesses:
   - type: F
-    value: 'x2'
+    value: x2
   resistances:
   - type: P
     value: '-30'
   rarity: Rare
-  text: ['When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.']
+  text:
+  - When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Ryo Ueda
 - id: 201-185
   pioId: pkmod13-185
@@ -4310,9 +4358,10 @@ cards:
   superType: TRAINER
   subTypes: []
   rarity: Rare
-  text: ['Flip a coin. If heads, you may look at the top 2 cards of your opponent''s deck and choose whether 
-      or not they  shuffle their deck. If tails, look at the top 2 cards of your deck and choose whether or 
-      not you want to shuffle your deck.']
+  text:
+  - Flip a coin. If heads, you may look at the top 2 cards of your opponent's deck
+    and choose whether or not they  shuffle their deck. If tails, look at the top
+    2 cards of your deck and choose whether or not you want to shuffle your deck.
   artist: Keiji Kinebuchi
 - id: 201-186
   pioId: pkmod13-186
@@ -4322,8 +4371,10 @@ cards:
   superType: TRAINER
   subTypes: [STADIUM]
   rarity: Rare
-  text: ['Once during each player’s turn, if he or she plays the Pokémon Master Key Trainer card, they may use 
-      the rule on this card instead. Search your deck for a Trainer card and put it into your hand. Shuffle your deck afterward.']
+  text:
+  - Once during each player’s turn, if he or she plays the Pokémon Master Key Trainer
+    card, they may use the rule on this card instead. Search your deck for a Trainer
+    card and put it into your hand. Shuffle your deck afterward.
   artist: Keiji Kinebuchi
 - id: 201-187
   pioId: pkmod13-187
@@ -4341,10 +4392,9 @@ cards:
   - cost: [G]
     name: Fear of Evolution
     damage: '10'
-    text: Switch this Pokémon with 1 of your Benched Pokémon.
-        Then, search your deck for a card that evolves from this Pokémon
-        (excluding Pokémon with Dark or an owner in its name) and put it onto
-        this Pokémon. Shuffle your deck afterward.
+    text: Switch this Pokémon with 1 of your Benched Pokémon. Then, search your deck
+      for a card that evolves from this Pokémon (excluding Pokémon with Dark or an
+      owner in its name) and put it onto this Pokémon. Shuffle your deck afterward.
   resistances:
   - type: P
     value: '-30'
@@ -4367,9 +4417,8 @@ cards:
   - cost: [G, L]
     name: Twister
     damage: '20'
-    text: Flip 2 coins. For each heads, discard an Energy
-        attached to your opponent's Active Pokémon. If both are
-        tails, this attack does nothing.
+    text: Flip 2 coins. For each heads, discard an Energy attached to your opponent's
+      Active Pokémon. If both are tails, this attack does nothing.
   resistances:
   - type: P
     value: '-30'
@@ -4390,16 +4439,15 @@ cards:
   abilities:
   - type: Poké-Power
     name: Bust In
-    text: When you play this card from your hand to evolve 1 of
-        your Pokémon, you may move any 2 of the basic Energy
-        cards attached to your other Pokemon to this Pokémon.
-        If you do, switch this Pokémon with your Active Pokémon.
+    text: When you play this card from your hand to evolve 1 of your Pokémon, you
+      may move any 2 of the basic Energy cards attached to your other Pokemon to this
+      Pokémon. If you do, switch this Pokémon with your Active Pokémon.
   moves:
   - cost: [G, G, L, L]
     name: Charged Beam
     damage: 40+
-    text: You may discard all basic [G] or [L] Energy attached to this Pokémon.
-        If you do, this attack does 40 damage plus 40 more damage.
+    text: You may discard all basic [G] or [L] Energy attached to this Pokémon. If
+      you do, this attack does 40 damage plus 40 more damage.
   resistances:
   - type: F
     value: '-30'
