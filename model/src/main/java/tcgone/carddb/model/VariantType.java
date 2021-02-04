@@ -1,4 +1,4 @@
-package tcgone.carddb.model.experimental;
+package tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;

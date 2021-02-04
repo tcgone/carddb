@@ -19,7 +19,7 @@ public class ConstraintViolation {
 
   @Override
   public String toString() {
-    return "ConstraintViolation{" +
+    return "Violation{" +
       "context='" + context + '\'' +
       ", message='" + message + '\'' +
       '}';

@@ -24,7 +24,7 @@ import com.fasterxml.jackson.dataformat.yaml.util.NodeStyleResolver;
 import com.fasterxml.jackson.dataformat.yaml.util.StringQuotingChecker;
 import tcgone.carddb.model.Set;
 import tcgone.carddb.model.*;
-import tcgone.carddb.model.experimental.VariantType;
+import tcgone.carddb.model.VariantType;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
