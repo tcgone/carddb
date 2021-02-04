@@ -15,229 +15,214 @@ limitations under the License.
 */
 package tcgone.carddb.tools;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.yaml.snakeyaml.nodes.Tag;
-import tcgone.carddb.model.*;
-import org.springframework.stereotype.Component;
-import org.yaml.snakeyaml.DumperOptions;
-import org.yaml.snakeyaml.Yaml;
-import org.yaml.snakeyaml.introspector.Property;
-import org.yaml.snakeyaml.nodes.*;
-import org.yaml.snakeyaml.representer.Representer;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
+import com.fasterxml.jackson.dataformat.yaml.util.NodeStyleResolver;
+import com.fasterxml.jackson.dataformat.yaml.util.StringQuotingChecker;
 import tcgone.carddb.model.Set;
+import tcgone.carddb.model.*;
 import tcgone.carddb.model.experimental.VariantType;
 
-import javax.annotation.PostConstruct;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
+import static com.fasterxml.jackson.dataformat.yaml.YAMLGenerator.Feature.*;
+
+
 /**
  * @author axpendix@hotmail.com
  */
-@Component
 public class SetWriter {
+  private final YAMLMapper mapper;
 
-    private Yaml yaml;
-    private ObjectMapper objectMapper;
+  public static class EqualityCard extends Card {
 
-    @PostConstruct
-    private void init() {
-        DumperOptions options = new DumperOptions();
-        options.setAllowUnicode(true);
-        options.setDefaultScalarStyle(DumperOptions.ScalarStyle.PLAIN);
-        options.setDefaultFlowStyle(DumperOptions.FlowStyle.AUTO);
-
-        CustomPropertyUtils customPropertyUtils = new CustomPropertyUtils();
-        Representer customRepresenter = new Representer() {
-            @Override
-            protected NodeTuple representJavaBeanProperty(Object javaBean, Property property, Object propertyValue, Tag customTag) {
-                // if value of property is null, ignore it.
-                if (propertyValue == null) {
-                    return null;
-                } else {
-                    return super.representJavaBeanProperty(javaBean, property, propertyValue, customTag);
-                }
-            }
-
-            protected MappingNode representJavaBean(java.util.Set<Property> properties, Object javaBean) {
-                List<NodeTuple> value = new ArrayList<NodeTuple>(properties.size());
-                Tag tag;
-                Tag customTag = classTags.get(javaBean.getClass());
-                tag = customTag != null ? customTag : new Tag(javaBean.getClass());
-                // flow style will be chosen by BaseRepresenter
-                MappingNode node = new MappingNode(tag, value, DumperOptions.FlowStyle.AUTO);
-                representedObjects.put(javaBean, node);
-                DumperOptions.FlowStyle bestStyle = DumperOptions.FlowStyle.BLOCK;
-                for (Property property : properties) {
-                    Object memberValue = property.get(javaBean);
-                    Tag customPropertyTag = memberValue == null ? null
-                        : classTags.get(memberValue.getClass());
-                    NodeTuple tuple = representJavaBeanProperty(javaBean, property, memberValue,
-                        customPropertyTag);
-                    if (tuple == null) {
-                        continue;
-                    }
-                    if (!((ScalarNode) tuple.getKeyNode()).isPlain()) {
-                        bestStyle = DumperOptions.FlowStyle.BLOCK;
-                    }
-                    Node nodeValue = tuple.getValueNode();
-                    if (!(nodeValue instanceof ScalarNode && ((ScalarNode) nodeValue).isPlain())) {
-                        bestStyle = DumperOptions.FlowStyle.BLOCK;
-                    }
-                    if ("abilities".equals(((ScalarNode) tuple.getKeyNode()).getValue())) {
-                        bestStyle = DumperOptions.FlowStyle.BLOCK;
-                    }
-                    value.add(tuple);
-                }
-                if (defaultFlowStyle != DumperOptions.FlowStyle.AUTO) {
-                    node.setFlowStyle(defaultFlowStyle);
-                } else {
-                    node.setFlowStyle(bestStyle);
-                }
-                return node;
-            }
-
-            @Override
-            protected Node representMapping(Tag tag, Map<?, ?> mapping, DumperOptions.FlowStyle flowStyle) {
-                List<NodeTuple> value = new ArrayList<NodeTuple>(mapping.size());
-                MappingNode node = new MappingNode(tag, value, flowStyle);
-                representedObjects.put(objectToRepresent, node);
-                DumperOptions.FlowStyle bestStyle = DumperOptions.FlowStyle.FLOW;
-                for (Map.Entry<?, ?> entry : mapping.entrySet()) {
-                    Node nodeKey = representData(entry.getKey());
-                    Node nodeValue = representData(entry.getValue());
-                    if (!(nodeKey instanceof ScalarNode && ((ScalarNode) nodeKey).isPlain())) {
-                        bestStyle = DumperOptions.FlowStyle.BLOCK;
-                    }
-                    if (!(nodeValue instanceof ScalarNode && ((ScalarNode) nodeValue).isPlain())) {
-                        bestStyle = DumperOptions.FlowStyle.BLOCK;
-                    }
-                    value.add(new NodeTuple(nodeKey, nodeValue));
-                }
-                if (flowStyle == DumperOptions.FlowStyle.AUTO) {
-                    if (defaultFlowStyle != DumperOptions.FlowStyle.AUTO) {
-                        node.setFlowStyle(defaultFlowStyle);
-                    } else {
-                        node.setFlowStyle(bestStyle);
-                    }
-                }
-                return node;
-            }
-        };
-        customRepresenter.setPropertyUtils(customPropertyUtils);
-        yaml = new Yaml(customRepresenter, options);
-
-//        objectMapper = new ObjectMapper(new YAMLFactory().enable(YAMLGenerator.Feature.MINIMIZE_QUOTES));
-
+    public EqualityCard(Card card) {
+      this.name = card.name;
+      this.types = card.types;
+      this.superType = card.superType;
+      this.subTypes = card.subTypes;
+      this.evolvesFrom = card.evolvesFrom;
+      this.hp = card.hp;
+      this.retreatCost = card.retreatCost;
+      this.abilities = card.abilities;
+      this.moves = card.moves;
+      this.weaknesses = card.weaknesses;
+      this.resistances = card.resistances;
+      this.text = card.text;
+      this.energy = card.energy;
     }
 
-    private void write(Set set) throws IOException {
-        //        objectMapper.writeValue(new File(filename),setFile);
-        for (Card card : set.cards) {
-            card.set = null;
-            card.merged = null;
-            if (card.moves != null) {
-                for (Move move : card.moves) {
-                    if (move.damage != null && move.damage.isEmpty()) {
-                        move.damage = null;
-                    }
-                    if (move.text != null && move.text.isEmpty()) {
-                        move.text = null;
-                    }
-                    if (move.cost != null && move.cost.size() == 1 && move.cost.get(0) == null) {
-                        move.cost = new ArrayList<>();
-                    }
-                }
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      EqualityCard card = (EqualityCard) o;
+      return Objects.equals(name, card.name) &&
+        Objects.equals(types, card.types) &&
+        Objects.equals(superType, card.superType) &&
+        Objects.equals(subTypes, card.subTypes) &&
+        Objects.equals(evolvesFrom, card.evolvesFrom) &&
+        Objects.equals(hp, card.hp) &&
+        Objects.equals(retreatCost, card.retreatCost) &&
+        Objects.equals(abilities, card.abilities) &&
+        Objects.equals(moves, card.moves) &&
+        Objects.equals(weaknesses, card.weaknesses) &&
+        Objects.equals(resistances, card.resistances) &&
+        Objects.equals(text, card.text) &&
+        Objects.equals(energy, card.energy);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(name, types, superType, subTypes, evolvesFrom, hp, retreatCost, abilities, moves, weaknesses, resistances, text, energy);
+    }
+  }
+
+  SetWriter() {
+
+    mapper = YAMLMapper.builder(
+      YAMLFactory.builder()
+        .nodeStyleResolver(s -> ("cost".equals(s)||"types".equals(s)||"subTypes".equals(s)||"evolvesTo".equals(s)||"energy".equals(s)) ? NodeStyleResolver.NodeStyle.FLOW : null)
+        .stringQuotingChecker(new StringQuotingChecker.Default() {
+          @Override
+          public boolean needToQuoteValue(String s) {
+            // https://yaml.org/spec/1.1/#plain%20style/syntax
+            if (s != null && !s.contains(": ") && !s.contains(" #") && !s.contains("\t")
+              && !s.startsWith("- ") && !s.startsWith("? ") && !s.startsWith(":"))
+              return false;
+            else
+              return super.needToQuoteValue(s);
+          }
+        })
+        .build()
+    )
+      .enable(ALWAYS_QUOTE_NUMBERS_AS_STRINGS)
+      .enable(MINIMIZE_QUOTES)
+      .enable(USE_SINGLE_QUOTES)
+      .disable(WRITE_DOC_START_MARKER)
+      .nodeFactory(new SetWriter.SortingNodeFactory())
+      .build();
+//    objectMapper = new ObjectMapper(new YAMLFactory()
+//      .enable(YAMLGenerator.Feature.MINIMIZE_QUOTES)
+//    );
+
+
+  }
+  static class SortingNodeFactory extends JsonNodeFactory {
+    @Override
+    public ObjectNode objectNode() {
+      return new ObjectNode(this, new TreeMap<String, JsonNode>());
+    }
+  }
+  public void writeAll(Collection<Set> sets,String outputDirectory) throws IOException {
+    new File(outputDirectory).mkdirs();
+    for (Set set : sets) {
+      set.filename = String.format(outputDirectory+File.separator+"%s-%s.yaml", set.id, set.enumId.toLowerCase(Locale.ENGLISH));
+      for (Card card : set.cards) {
+        card.set = null;
+        card.merged = null;
+        card.formats = null;
+        if (card.moves != null) {
+          for (Move move : card.moves) {
+            if (move.damage != null && move.damage.isEmpty()) {
+              move.damage = null;
             }
+            if (move.text != null && move.text.isEmpty()) {
+              move.text = null;
+            }
+            //          if (move.cost != null && move.cost.size() == 1 && move.cost.get(0) == null) {
+            //            move.cost = new ArrayList<>();
+            //          }
+          }
         }
-        String dump = yaml.dumpAs(set, Tag.MAP, null);
-        BufferedWriter out = new BufferedWriter
-            (new OutputStreamWriter(new FileOutputStream(set.filename), StandardCharsets.UTF_8));
-        out.write(dump);
-        out.close();
+      }
+      BufferedWriter out = new BufferedWriter
+        (new OutputStreamWriter(new FileOutputStream(set.filename), StandardCharsets.UTF_8));
+      set.filename=null;
+      mapper.writeValue(out,set);
+//      String dump = yaml.dumpAs(set, Tag.MAP, null);
+//      out.write(dump);
+      out.close();
     }
+  }
 
-    public void writeAll(Collection<Set> sets) throws IOException {
-      new File("output").mkdirs();
-      for (Set set : sets) {
-        set.filename = String.format("output/%s-%s.yaml", set.id, set.enumId.toLowerCase(Locale.ENGLISH));
-        this.write(set);
+  public Collection<Set> prepareSetFiles(List<Card> cards) {
+    Map<String, Set> expansionMap = new HashMap<>();
+    for (Card card : cards) {
+      String key = card.set.enumId;
+      if (!expansionMap.containsKey(key)) {
+        Set set = new Set();
+        card.set.copyStaticPropertiesTo(set);
+        set.cards = new ArrayList<>();
+        expansionMap.put(key, set);
+      }
+      expansionMap.get(key).cards.add(card);
+    }
+    for (Set set : expansionMap.values()) {
+      set.cards.sort((o1, o2) -> {
+        try {
+          Integer n1 = Integer.parseInt(o1.number);
+          Integer n2 = Integer.parseInt(o2.number);
+          return n1.compareTo(n2);
+        } catch (NumberFormatException e) {
+          return o1.number.compareTo(o2.number);
+        }
+      });
+    }
+    return expansionMap.values();
+  }
+
+  public void prepareReprints(Collection<Set> setFiles) {
+    Map<EqualityCard, Card> map = new HashMap<>();
+    for (Set setFile : setFiles) {
+      for (Card c : setFile.cards) {
+//                int hash = Objects.hash(c.name, c.types, c.superType, c.subTypes, c.evolvesFrom, c.hp, c.retreatCost, c.abilities, c.moves, c.weaknesses, c.resistances, c.text, c.energy);
+        EqualityCard ec = new EqualityCard(c);
+        if (map.containsKey(ec)) {
+          Card oc = map.get(ec);
+          if (c.rarity == Rarity.ULTRA_RARE) {
+            // most likely full art
+            c.variantType = VariantType.FULL_ART;
+          } else if (c.rarity == Rarity.SECRET) {
+            // most likely secret art
+            c.variantType = VariantType.SECRET_ART;
+          } else {
+            c.variantType = VariantType.REPRINT;
+          }
+          c.variantOf = oc.id;
+        } else {
+          map.put(ec, c);
+        }
       }
     }
+  }
 
-    public Collection<Set> prepareSetFiles(List<Card> cards) {
-        Map<String, Set> expansionMap = new HashMap<>();
-        for (Card card : cards) {
-            String key = card.set.enumId;
-            if (!expansionMap.containsKey(key)) {
-                Set set = new Set();
-                card.set.copyStaticPropertiesTo(set);
-                set.cards = new ArrayList<>();
-                expansionMap.put(key, set);
-            }
-            expansionMap.get(key).cards.add(card);
-        }
-        for (Set set : expansionMap.values()) {
-            set.cards.sort((o1, o2) -> {
-                try {
-                    Integer n1 = Integer.parseInt(o1.number);
-                    Integer n2 = Integer.parseInt(o2.number);
-                    return n1.compareTo(n2);
-                } catch (NumberFormatException e) {
-                    return o1.number.compareTo(o2.number);
+  public void fixGymSeriesEvolvesFromIssue(Collection<Set> sets) {
+    List<String> owners = Arrays.asList("Blaine's", "Brock's", "Misty's", "Lt. Surge's", "Sabrina's", "Erika's", "Koga's", "Giovanni's");
+    for (Set set : sets) {
+      if(set.name.contains("Gym ")){
+        for (Card card : set.cards) {
+          if(card.subTypes.contains(CardType.EVOLUTION)){
+            for (String owner : owners) {
+              if(card.name.startsWith(owner)){
+                if(card.evolvesFrom == null){
+                  System.out.println("NoEvolvesFrom:"+card.name);
                 }
-            });
-        }
-        return expansionMap.values();
-    }
-
-    public void prepareReprints(Collection<Set> setFiles) {
-        Map<EqualityCard, Card> map = new HashMap<>();
-        for (Set setFile : setFiles) {
-            for (Card c : setFile.cards) {
-//                int hash = Objects.hash(c.name, c.types, c.superType, c.subTypes, c.evolvesFrom, c.hp, c.retreatCost, c.abilities, c.moves, c.weaknesses, c.resistances, c.text, c.energy);
-                EqualityCard ec = new EqualityCard(c);
-                if (map.containsKey(ec)) {
-                    Card oc = map.get(ec);
-                    if (c.rarity == Rarity.ULTRA_RARE) {
-                        // most likely full art
-                        c.variantType = VariantType.FULL_ART;
-                    } else if (c.rarity == Rarity.SECRET) {
-                        // most likely secret art
-                        c.variantType = VariantType.SECRET_ART;
-                    } else {
-                        c.variantType = VariantType.REPRINT;
-                    }
-                    c.variantOf = oc.id;
-                } else {
-                    map.put(ec, c);
+                if(!card.evolvesFrom.startsWith(owner)){
+                  System.out.println(card.name);
+                  card.evolvesFrom = owner + " " + card.evolvesFrom;
+                  break;
                 }
+              }
             }
+          }
         }
+      }
     }
-
-    public void fixGymSeriesEvolvesFromIssue(Collection<SetFile> setFiles) {
-        List<String> owners = Arrays.asList("Blaine's", "Brock's", "Misty's", "Lt. Surge's", "Sabrina's", "Erika's", "Koga's", "Giovanni's");
-        for (SetFile setFile : setFiles) {
-            if(setFile.set.name.contains("Gym ")){
-                for (Card card : setFile.cards) {
-                    if(card.subTypes.contains(CardType.EVOLUTION)){
-                        for (String owner : owners) {
-                            if(card.name.startsWith(owner)){
-                                if(card.evolvesFrom == null){
-                                    System.out.println("NoEvolvesFrom:"+card.name);
-                                }
-                                if(!card.evolvesFrom.startsWith(owner)){
-                                    System.out.println(card.name);
-                                    card.evolvesFrom = owner + " " + card.evolvesFrom;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+  }
 }

@@ -113,12 +113,12 @@ public class PioReader {
 		if(pc.text!=null)c.text=pc.text.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList());
 		c.rarity= Rarity.of(pc.rarity);
 		if(!setMap.containsKey(pc.setCode)){
-			CoreCollection cc = CoreCollection.findByPioCode(pc.setCode).orElseThrow(() -> new IllegalArgumentException(pc.setCode + " pioCode can't be recognized (probably it's a new set). Please update CoreCollection enum and rerun."));
+		  log.warn("PLEASE FILL IN id, abbr, enumId FIELDS in {}", pc.set);
 			tcgone.carddb.model.Set set = new tcgone.carddb.model.Set();
-			set.name=cc.getName();
-			set.id= String.valueOf(cc.getId());
-			set.abbr=cc.getShortName();
-			set.enumId=cc.name();
+			set.name=pc.set;
+			set.id="FILL_THIS";
+			set.abbr="FILL_THIS";
+			set.enumId="FILL_THIS";
 			set.pioId=pc.setCode;
 			setMap.put(pc.setCode, set);
 		}
