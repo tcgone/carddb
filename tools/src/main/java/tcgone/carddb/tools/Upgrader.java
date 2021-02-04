@@ -2,13 +2,7 @@ package tcgone.carddb.tools;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import tcgone.carddb.model.Set;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -33,9 +27,9 @@ import java.util.List;
 
 public class Upgrader {
 
-  ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-  PathMatchingResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver(getClass().getClassLoader());
-  SetWriter setWriter = new SetWriter();
+  private final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+  private final PathMatchingResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver(getClass().getClassLoader());
+  private final SetWriter setWriter = new SetWriter();
 
   public Upgrader() throws Exception {
 //    upgradeE1E2();

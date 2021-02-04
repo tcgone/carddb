@@ -27,31 +27,31 @@ import java.util.List;
  * @author axpendix@hotmail.com
  */
 public class PioCard {
-    public String id;
-    public String name;
-    public String imageUrl;//optional
-    public String imageUrlHiRes;//optional
-    public String subtype;
-    public String supertype;
-    public String level;
-    public String evolvesFrom;
-    public List<String> evolvesTo;//optional
-    public String hp; // trainers have 'None'
-    public List<String> retreatCost;
-    public Integer convertedRetreatCost;
-    public String number;
-    public String artist;//optional
-    public String rarity;
-    public String series;
-    public String set;
-    public String setCode;
-    public List<Type> types;
-    public List<Move> attacks;
-    public Ability ability;
-    public Ability ancientTrait;
-    public List<WeaknessResistance> weaknesses;
-    public List<WeaknessResistance> resistances;
-    public Integer nationalPokedexNumber;//optional
-    public List<String> text; // for trainers, sp. energy
+  public String id;
+  public String name;
+  public String imageUrl;//optional
+  public String imageUrlHiRes;//optional
+  public String subtype;
+  public String supertype;
+  public String level;
+  public String evolvesFrom;
+  public List<String> evolvesTo;//optional
+  public String hp; // trainers have 'None'
+  public List<String> retreatCost;
+  public Integer convertedRetreatCost;
+  public String number;
+  public String artist;//optional
+  public String rarity;
+  public String series;
+  public String set;
+  public String setCode;
+  public List<Type> types;
+  public List<Move> attacks;
+  public Ability ability;
+  public Ability ancientTrait;
+  public List<WeaknessResistance> weaknesses;
+  public List<WeaknessResistance> resistances;
+  public Integer nationalPokedexNumber;//optional
+  public List<String> text; // for trainers, sp. energy
 
 }
