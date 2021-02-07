@@ -32,11 +32,11 @@ public class ClassificationsExportTest {
     void export(String setEnumId) {
 //      System.out.println(setEnumId);
       allCards.stream()
-        .filter(card -> card.set.enumId.equals(setEnumId))
+        .filter(card -> card.expansion.enumId.equals(setEnumId))
         .map(card -> {
           List<String> list = new ArrayList<>();
           list.add(card.name);
-          list.add(card.set.name);
+          list.add(card.expansion.name);
           list.add(card.number);
           list.add(card.rarity.toString());
           list.add(""); // class

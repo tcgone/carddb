@@ -22,7 +22,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import tcgone.carddb.model.Card;
-import tcgone.carddb.model.Set;
+import tcgone.carddb.model.Expansion;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -87,27 +87,27 @@ public class Application implements ApplicationRunner {
           File pop = fileStack.pop();
           if(!pop.getName().endsWith("yaml")) continue;
           log.info("Reading {}", pop.getName());
-          Set set = mapper.readValue(new FileInputStream(pop), Set.class);
-          for (Card card : set.cards) {
-            card.set = set; // temporary
+          Expansion expansion = mapper.readValue(new FileInputStream(pop), Expansion.class);
+          for (Card card : expansion.cards) {
+            card.expansion = expansion; // temporary
           }
-          allCards.addAll(set.cards);
+          allCards.addAll(expansion.cards);
         }
       }
     }
-    Collection<Set> sets = setWriter.prepareSetFiles(allCards);
-    setWriter.prepareReprints(sets);
+    Collection<Expansion> expansions = setWriter.prepareSetFiles(allCards);
+    setWriter.prepareReprints(expansions);
 //		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
     if(downloadScans){
       scanDownloader.downloadAll(allCards);
       log.info("Scans have been saved into ./scans folder");
     }
     if(exportYaml){
-      setWriter.writeAll(sets, "output");
+      setWriter.writeAll(expansions, "output");
       log.info("YAMLs have been written to ./output folder");
     }
     if(exportImplTmpl){
-      implTmplGenerator.writeAll(sets);
+      implTmplGenerator.writeAll(expansions);
       log.info("Impl Tmpls have been written to ./impl folder");
     }
   }

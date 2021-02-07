@@ -27,7 +27,7 @@ public class Card {
   /**
    *
    */
-  public Set set;
+  public Expansion expansion;
   /**
    * Card name: Charizard
    */
@@ -172,7 +172,7 @@ public class Card {
    */
   public Boolean merged;
   /**
-   * Sort order (respective to its set)
+   * Sort order (respective to its expansion)
    */
   public Integer order;
   /**

@@ -9,9 +9,9 @@ public class Format {
   public String description;
   public String imageUrl;
   /**
-   * list of {@link Set#id}s
+   * list of {@link Expansion#id}s
    *
-   * if a set is specified inside format.sets, then it is displayed as part of that format.
+   * if a expansion is specified inside format.sets, then it is displayed as part of that format.
    * note that this is just a display. the actual card list of a format can be different than this.
    * example: promo sets may not be mentioned inside sets clause, but included in the "includes" field.
    */
@@ -19,15 +19,15 @@ public class Format {
   /**
    * list of {@link Card#id}s that were specifically included in this format
    *
-   * if one card from a set is specified in includes field, it is assumed everything else in the same set is excluded.
-   * it is a violation to both specify includes and excludes for the same set.
+   * if one card from a expansion is specified in includes field, it is assumed everything else in the same expansion is excluded.
+   * it is a violation to both specify includes and excludes for the same expansion.
    */
   public List<String> includes;
   /**
    * list of {@link Card#id}s that were excluded from this format
    *
-   * if one card from a set is specified in excludes field, it is assumed everything else in the same set is included.
-   * it is a violation to both specify includes and excludes for the same set.
+   * if one card from a expansion is specified in excludes field, it is assumed everything else in the same expansion is included.
+   * it is a violation to both specify includes and excludes for the same expansion.
    */
   public List<String> excludes;
   public String ruleSet;

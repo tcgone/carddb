@@ -28,7 +28,6 @@ import java.util.*;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static org.apache.commons.lang3.StringUtils.*;
 import static tcgone.carddb.model.CardType.*;
 
 /**
@@ -99,7 +98,7 @@ public class PioReader {
   }
 
   private Set<String> stage1Db = new HashSet<>();
-  private Map<String, tcgone.carddb.model.Set> setMap = new HashMap<>();
+  private Map<String, Expansion> setMap = new HashMap<>();
 
   private Card prepareCard(PioCard pc) {
     Card c = new Card();
@@ -111,20 +110,20 @@ public class PioReader {
     c.rarity= Rarity.of(pc.rarity);
     if(!setMap.containsKey(pc.setCode)){
       log.warn("PLEASE FILL IN id, abbr, enumId FIELDS in {}", pc.set);
-      tcgone.carddb.model.Set set = new tcgone.carddb.model.Set();
-      set.name=pc.set;
-      set.id="FILL_THIS";
-      set.abbr="FILL_THIS";
-      set.enumId="FILL_THIS";
-      set.pioId=pc.setCode;
-      setMap.put(pc.setCode, set);
+      Expansion expansion = new Expansion();
+      expansion.name=pc.set;
+      expansion.id="FILL_THIS";
+      expansion.abbr="FILL_THIS";
+      expansion.enumId="FILL_THIS";
+      expansion.pioId=pc.setCode;
+      setMap.put(pc.setCode, expansion);
     }
-    tcgone.carddb.model.Set set = setMap.get(pc.setCode);
-    c.set=set;
+    Expansion expansion = setMap.get(pc.setCode);
+    c.expansion = expansion;
     c.enumId=String.format("%s_%s", pc.name
       .replace("–","-").replace("’","'").toUpperCase(Locale.ENGLISH)
       .replaceAll("[ \\p{Punct}]", "_").replaceAll("_+","_").replace("É", "E"), pc.number);
-    c.id=String.format("%s-%s", set.id, pc.number);
+    c.id=String.format("%s-%s", expansion.id, pc.number);
     c.subTypes=new ArrayList<>();
 
     switch (pc.supertype){

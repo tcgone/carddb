@@ -36,15 +36,15 @@ public class Upgrader {
   }
 
 //  void upgradeE1E2() throws IOException {
-//    // read set files
+//    // read expansion files
 //    Resource[] resources = resourceResolver.getResources("classpath:/cards/*.yaml");
-//    List<Set> sets=new ArrayList<>();
+//    List<Expansion> sets=new ArrayList<>();
 //    for (Resource resource : resources) {
 //      SetFile s1 = mapper.readValue(resource.getInputStream(), SetFile.class);
-//      s1.set.filename=resource.getFilename();
-//      s1.set.cards=s1.cards;
-//      s1.set.schema="E2";//EXPANSIONS2
-//      sets.add(s1.set);
+//      s1.expansion.filename=resource.getFilename();
+//      s1.expansion.cards=s1.cards;
+//      s1.expansion.schema="E2";//EXPANSIONS2
+//      sets.add(s1.expansion);
 //    }
 //    //SAVENOW
 //    if (sets.size()>0) {

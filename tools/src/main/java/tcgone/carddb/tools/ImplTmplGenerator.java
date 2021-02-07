@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
-import tcgone.carddb.model.Set;
+import tcgone.carddb.model.Expansion;
 import tcgone.carddb.model.*;
 
 import java.io.File;
@@ -17,15 +17,15 @@ import java.util.*;
  */
 public class ImplTmplGenerator {
 
-  public void writeAll(Collection<Set> setFiles) throws Exception {
+  public void writeAll(Collection<Expansion> expansionFiles) throws Exception {
     new File("impl").mkdirs();
-    for (Set setFile : setFiles) {
-      write(setFile);
+    for (Expansion expansionFile : expansionFiles) {
+      write(expansionFile);
     }
   }
-  private void write(Set setFile) throws Exception {
+  private void write(Expansion expansionFile) throws Exception {
     /*
-     * set.vm requires:
+     * expansion.vm requires:
      * classname foldername collection
      * list1: name (enum const name), fullname, cardtype (enum const)
      * rarity (enum const), cln (collection line no)
@@ -34,7 +34,7 @@ public class ImplTmplGenerator {
     Map<String, Object> modelmap = new HashMap<>();
     List<List1Item> list1 = new ArrayList<>();
     List<List2Item> list2 = new ArrayList<>();
-    String EXPNNAME=setFile.enumId;
+    String EXPNNAME= expansionFile.enumId;
     modelmap.put("classname", WordUtils.capitalizeFully(EXPNNAME.replaceAll("_"," ")).replaceAll(" ",""));
     modelmap.put("foldername", EXPNNAME.toLowerCase(Locale.ENGLISH));
     modelmap.put("collection", EXPNNAME);
@@ -43,7 +43,7 @@ public class ImplTmplGenerator {
 
     // the magic happens here
     block_card:
-    for(Card card:setFile.cards){
+    for(Card card: expansionFile.cards){
       List<String> cardTypeSet = new ArrayList<>();
       String rarity = null;
       String rc = String.valueOf(card.retreatCost);
@@ -260,7 +260,7 @@ public class ImplTmplGenerator {
       }
 
       if(card.variantOf != null){
-        //search for reprints in same set
+        //search for reprints in same expansion
         for(List2Item list2Item : list2){
           if(list2Item.getId().equals(card.variantOf)){
             impl = String.format("copy (%s, this)", list2Item.name);

@@ -22,10 +22,10 @@ public class ScanDownloader {
   public void downloadAll(List<Card> cards) {
     for (Card card : cards) {
       try {
-        new File(String.format("scans/%s", card.set.id)).mkdirs();
-        String urlString = String.format("https://images.pokemontcg.io/%s/%s_hires.png", card.set.pioId, card.number);
+        new File(String.format("scans/%s", card.expansion.id)).mkdirs();
+        String urlString = String.format("https://images.pokemontcg.io/%s/%s_hires.png", card.expansion.pioId, card.number);
         log.info("Downloading {}", urlString);
-        String filename = String.format("scans/%s/%s.png", card.set.id, card.number);
+        String filename = String.format("scans/%s/%s.png", card.expansion.id, card.number);
         URL url = new URL(urlString);
         ReadableByteChannel readableByteChannel = Channels.newChannel(url.openStream());
         FileOutputStream fileOutputStream = new FileOutputStream(filename);

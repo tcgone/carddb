@@ -7,8 +7,8 @@ import org.apache.commons.lang3.text.WordUtils;
 public enum VariantType {
 
   REGULAR,//(assumed for those which does not specify this field but override is possible)
-  REPRINT,//(reprints in later sets without a rule altering text change),default if there is no variantType with a variantId.
-  REPRINT_NEW_TEXT,//(reprints in later sets with any altering ruling, text or type change)
+  REPRINT,//(reprints in later expansions without a rule altering text change),default if there is no variantType with a variantId.
+  REPRINT_NEW_TEXT,//(reprints in later expansions with any altering ruling, text or type change)
   HOLO,//(regular holo)
   REVERSE,//(reverse holo)
   ALTERNATE_ART,
