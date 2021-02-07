@@ -22,7 +22,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.fasterxml.jackson.dataformat.yaml.util.NodeStyleResolver;
 import com.fasterxml.jackson.dataformat.yaml.util.StringQuotingChecker;
-import tcgone.carddb.model.Set;
+import tcgone.carddb.model.Expansion;
 import tcgone.carddb.model.*;
 import tcgone.carddb.model.VariantType;
 
@@ -119,12 +119,12 @@ public class SetWriter {
       return new ObjectNode(this, new TreeMap<String, JsonNode>());
     }
   }
-  public void writeAll(Collection<Set> sets,String outputDirectory) throws IOException {
+  public void writeAll(Collection<Expansion> expansions, String outputDirectory) throws IOException {
     new File(outputDirectory).mkdirs();
-    for (Set set : sets) {
-      set.filename = String.format(outputDirectory+File.separator+"%s-%s.yaml", set.id, set.enumId.toLowerCase(Locale.ENGLISH));
-      for (Card card : set.cards) {
-        card.set = null;
+    for (Expansion expansion : expansions) {
+      expansion.filename = String.format(outputDirectory+File.separator+"%s-%s.yaml", expansion.id, expansion.enumId.toLowerCase(Locale.ENGLISH));
+      for (Card card : expansion.cards) {
+        card.expansion = null;
         card.merged = null;
         card.formats = null;
         if (card.moves != null) {
@@ -142,29 +142,29 @@ public class SetWriter {
         }
       }
       BufferedWriter out = new BufferedWriter
-        (new OutputStreamWriter(new FileOutputStream(set.filename), StandardCharsets.UTF_8));
-      set.filename=null;
-      mapper.writeValue(out,set);
-//      String dump = yaml.dumpAs(set, Tag.MAP, null);
+        (new OutputStreamWriter(new FileOutputStream(expansion.filename), StandardCharsets.UTF_8));
+      expansion.filename=null;
+      mapper.writeValue(out, expansion);
+//      String dump = yaml.dumpAs(expansion, Tag.MAP, null);
 //      out.write(dump);
       out.close();
     }
   }
 
-  public Collection<Set> prepareSetFiles(List<Card> cards) {
-    Map<String, Set> expansionMap = new HashMap<>();
+  public Collection<Expansion> prepareSetFiles(List<Card> cards) {
+    Map<String, Expansion> expansionMap = new HashMap<>();
     for (Card card : cards) {
-      String key = card.set.enumId;
+      String key = card.expansion.enumId;
       if (!expansionMap.containsKey(key)) {
-        Set set = new Set();
-        card.set.copyStaticPropertiesTo(set);
-        set.cards = new ArrayList<>();
-        expansionMap.put(key, set);
+        Expansion expansion = new Expansion();
+        card.expansion.copyStaticPropertiesTo(expansion);
+        expansion.cards = new ArrayList<>();
+        expansionMap.put(key, expansion);
       }
       expansionMap.get(key).cards.add(card);
     }
-    for (Set set : expansionMap.values()) {
-      set.cards.sort((o1, o2) -> {
+    for (Expansion expansion : expansionMap.values()) {
+      expansion.cards.sort((o1, o2) -> {
         try {
           Integer n1 = Integer.parseInt(o1.number);
           Integer n2 = Integer.parseInt(o2.number);
@@ -177,10 +177,10 @@ public class SetWriter {
     return expansionMap.values();
   }
 
-  public void prepareReprints(Collection<Set> setFiles) {
+  public void prepareReprints(Collection<Expansion> expansionFiles) {
     Map<EqualityCard, Card> map = new HashMap<>();
-    for (Set setFile : setFiles) {
-      for (Card c : setFile.cards) {
+    for (Expansion expansionFile : expansionFiles) {
+      for (Card c : expansionFile.cards) {
 //                int hash = Objects.hash(c.name, c.types, c.superType, c.subTypes, c.evolvesFrom, c.hp, c.retreatCost, c.abilities, c.moves, c.weaknesses, c.resistances, c.text, c.energy);
         EqualityCard ec = new EqualityCard(c);
         if (map.containsKey(ec)) {
@@ -202,11 +202,11 @@ public class SetWriter {
     }
   }
 
-  public void fixGymSeriesEvolvesFromIssue(Collection<Set> sets) {
+  public void fixGymSeriesEvolvesFromIssue(Collection<Expansion> expansions) {
     List<String> owners = Arrays.asList("Blaine's", "Brock's", "Misty's", "Lt. Surge's", "Sabrina's", "Erika's", "Koga's", "Giovanni's");
-    for (Set set : sets) {
-      if(set.name.contains("Gym ")){
-        for (Card card : set.cards) {
+    for (Expansion expansion : expansions) {
+      if(expansion.name.contains("Gym ")){
+        for (Card card : expansion.cards) {
           if(card.subTypes.contains(CardType.EVOLUTION)){
             for (String owner : owners) {
               if(card.name.startsWith(owner)){

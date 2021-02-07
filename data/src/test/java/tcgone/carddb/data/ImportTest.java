@@ -41,7 +41,7 @@ public class ImportTest {
     Map<String, Collection<String>> mmap = new HashMap<>();
     for (Card card : importer.getAllCards()) {
       if(!NumberUtils.isDigits(card.number)){
-        mmap.computeIfAbsent(card.set.enumId, k -> new ArrayList<>()).add(card.enumId);
+        mmap.computeIfAbsent(card.expansion.enumId, k -> new ArrayList<>()).add(card.enumId);
       }
     }
 //    for (Map.Entry<String, Collection<String>> entry : mmap.entrySet()) {

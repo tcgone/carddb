@@ -7,7 +7,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Set {
+public class Expansion {
   /**
    * Schema and version
    */
@@ -17,11 +17,11 @@ public class Set {
    */
   public String id;
   /**
-   * Full Set Name (e.g. Base Set)
+   * Full Expansion Name (e.g. Base Expansion)
    */
   public String name;
   /**
-   * url compatible id (e.g. base-set)
+   * url compatible id (e.g. base-expansion)
    */
   public String seoName;
   /**
@@ -43,20 +43,20 @@ public class Set {
   public String imageUrl;
   public String symbolUrl;
   /**
-   * If the entire set is not implemented yet, put this flag up
+   * If the entire expansion is not implemented yet, put this flag up
    */
   public Boolean notImplemented;
   /**
-   * all cards of this set, populated at runtime
+   * all cards of this expansion, populated at runtime
    */
   public List<Card> cards;
   /**
-   * all formats that this set is allowed in, including partial sets, populated at runtime
+   * all formats that this expansion is allowed in, including partial expansions, populated at runtime
    */
   public List<Format> formats;
   public String filename;
 
-  public void copyStaticPropertiesTo(Set other){
+  public void copyStaticPropertiesTo(Expansion other){
     other.id = this.id;
     other.abbr=this.abbr;
     other.officialCount=this.officialCount;
