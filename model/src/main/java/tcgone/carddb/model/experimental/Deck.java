@@ -3,9 +3,6 @@ package tcgone.carddb.model.experimental;
 import lombok.Data;
 import tcgone.carddb.model.Type;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,17 +17,17 @@ public class Deck {
   private String id; // external id, generated randomly
   private String legacyId; // old internal mongo id, stored for legacy decks
   private String seoName; // generated seo name except id
-  @NotBlank
-  @Size(max = 50)
+//  @NotBlank
+//  @Size(max = 50)
   private String name;
-  @NotBlank
+//  @NotBlank
   private String format; // main format
-  @Size(max = 4096)
+//  @Size(max = 4096)
   private String description;
   private String creatorId;
-  @NotNull
+//  @NotNull
   private Map<String, Integer> contents; // contents with new id
-  private List<Tag> tags = new ArrayList<>(); // theme, public, private, draft, career, list
+  private List<DeckTag> tags = new ArrayList<>(); // theme, public, private, draft, career, list
   private List<Type> types = new ArrayList<>(); // fire, grass, psychic
   private List<String> validFormats = new ArrayList<>(); // all valid formats that this can be played in
   //  private List<String> tiers; // tournament, tier1, tier2, tier3, experimental, other, fun
