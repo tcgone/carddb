@@ -9,47 +9,46 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Card {
-
-  public static final String ID_PATTERN = "^[\\w-]+$";
-  public static final String ID_RANGE_PATTERN = "^([\\w-]+)\\.\\.([\\w-]+)$";
   /**
-   * id: 101-4
+   * id. e.g. 101-4
    */
   public String id;
   /**
-   * Pio id: base1-4
+   * Pio id. e.g. base1-4
    */
   public String pioId;
   /**
-   * Our id: CHARIZARD_4:BASE_SET
+   * Engine id. e.g. CHARIZARD_4
    */
   public String enumId;
   /**
-   *
+   * (DERIVED FIELD, DO NOT FILL)
    */
   public Expansion expansion;
   /**
-   * Card name: Charizard
+   * Name of the card. e.g. Charizard
    */
   public String name;
   /**
-   * 4
+   * e.g. 4
    */
   public Integer nationalPokedexNumber;
   /**
-   * 4
+   * e.g. 4
    */
   public String number;
   /**
-   * Img url: https://tcgone.net/scans/m/base_set/004.jpg
+   * Medium image url: https://tcgone.net/scans/m/base_set/4.jpg
    */
   public String imageUrl;
   /**
-   * Img url: https://tcgone.net/scans/l/base_set/004.jpg
+   * Large image url: https://tcgone.net/scans/l/base_set/4.jpg
    */
   public String imageUrlHiRes;
   /**
-   * Array of types (i.e. colors): ["R"] Logically it makes more sense to name this field 'colors', but precisely
+   * Array of types (i.e. colors). e.g. ["R"]
+   *
+   * Logically it makes more sense to name this field 'colors', but precisely
    * speaking, it's used as 'type' everywhere else. https://bulbapedia.bulbagarden.net/wiki/Type_(TCG)
    */
   public List<Type> types;
@@ -58,14 +57,14 @@ public class Card {
    */
   public CardType superType;
   /**
-   * [EVOLUTION, STAGE2]
+   * e.g. [EVOLUTION, STAGE2]
    */
   public List<CardType> subTypes;
   /**
    * (DERIVED FIELD, DO NOT FILL)
    * Evolution stage of the Pokemon. i.e. STAGE2.
    * Is null for non-pokemon cards.
-   * This is automatically calculated and validated from the subTypes property on YAML. Do not fill this property on the input YAML files.
+   * Is automatically calculated and validated from {@link #subTypes} property.
    */
   public CardType stage;
   /**
@@ -104,11 +103,11 @@ public class Card {
    */
   public List<WeaknessResistance> resistances;
   /**
-   * Charizard (BS 4)
+   * (DERIVED FIELD, DO NOT FILL) e.g. Charizard (BS 4)
    */
   public String fullName;
   /**
-   *
+   * (DERIVED FIELD, DO NOT FILL)
    */
   public String seoName;
   /**
@@ -124,31 +123,31 @@ public class Card {
    */
   public List<String> text;
   /**
-   * Energy types
+   * (Energy only) Energy types
    */
   public List<List<Type>> energy;
   /**
-   * Mitsuhiro Arita
+   * e.g. Mitsuhiro Arita
    */
   public String artist;
   /**
-   * Spits fire that is hot enough to melt boulders. Known to unintentionally cause forest fires.
+   * e.g. Spits fire that is hot enough to melt boulders. Known to unintentionally cause forest fires.
    */
   public String flavorText;
   /**
-   * (null)
+   * (Unused ATM) List of erratas that apply to this card. It includes engine-level erratas.
    */
-  public String implNotes;
-  /**
-   * {@code pokemonPower { def set = [] as Set def eff1, eff2 onActivate { if(eff1) eff1.unregister() if(eff2)
-   * eff2.unregister() eff1 = delayed { before BETWEEN_TURNS, { set.clear() } } eff2 = getter GET_ENERGY_TYPES, {
-   * holder-> if(set.contains(holder.effect.card)) { int count = holder.object.size() holder.object =
-   * [(1..count).collect{[FIRE] as Set}] } } } actionA { assert !(self.specialConditions) : "$self is affected by a
-   * special condition" def newSet = [] as Set newSet.addAll(self.cards.filterByType(ENERGY)) if(newSet != set){
-   * powerUsed() set.clear() set.addAll(newSet) } else { wcu "Nothing to burn more" } } } move { onAttack { damage 100
-   * discardSelfEnergy(C) // one energy card discardSelfEnergy(C) // one energy card } }}
-   */
-  public String script;
+  public List<String> erratas;
+//  /**
+//   * {@code pokemonPower { def set = [] as Set def eff1, eff2 onActivate { if(eff1) eff1.unregister() if(eff2)
+//   * eff2.unregister() eff1 = delayed { before BETWEEN_TURNS, { set.clear() } } eff2 = getter GET_ENERGY_TYPES, {
+//   * holder-> if(set.contains(holder.effect.card)) { int count = holder.object.size() holder.object =
+//   * [(1..count).collect{[FIRE] as Set}] } } } actionA { assert !(self.specialConditions) : "$self is affected by a
+//   * special condition" def newSet = [] as Set newSet.addAll(self.cards.filterByType(ENERGY)) if(newSet != set){
+//   * powerUsed() set.clear() set.addAll(newSet) } else { wcu "Nothing to burn more" } } } move { onAttack { damage 100
+//   * discardSelfEnergy(C) // one energy card discardSelfEnergy(C) // one energy card } }}
+//   */
+//  public String script;
 
   /**
    * Id of the main variant. You may leave it empty to assume a variant on its own by its {@link #id}. Example: 101-12
@@ -159,6 +158,10 @@ public class Card {
    */
   public VariantType variantType;
   /**
+   * True when the variant has any altering ruling, text or type change.
+   */
+  public Boolean variantIsDifferent;
+  /**
    * (DERIVED FIELD, DO NOT FILL) list of variants.
    */
   public List<Variant> variants;
@@ -166,6 +169,7 @@ public class Card {
    * (DERIVED FIELD, DO NOT FILL) effective card implementation copy target.
    */
   public String copyOf;
+
   /**
    * true when this has been merged with pio, so the definition is finalized. merged cards won't be attempted to be
    * merged again, so the process can be restarted when failed.
