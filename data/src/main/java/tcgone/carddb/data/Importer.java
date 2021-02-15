@@ -46,6 +46,8 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
  */
 public class Importer {
   protected static final Logger log = LoggerFactory.getLogger(Importer.class);
+  public static final String ID_PATTERN = "^[\\w-]+$";
+  public static final String ID_RANGE_PATTERN = "^([\\w-]+)\\.\\.([\\w-]+)$";
 
   protected ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
   protected PathMatchingResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver(this.getClass().getClassLoader());
@@ -236,12 +238,12 @@ public class Importer {
         Card current = card;
         cycleDetector.add(current.id);
         while (true) {
-          if (current.variantType == VariantType.REPRINT_NEW_TEXT && card.copyOf == null) {
+          if (Boolean.TRUE.equals(current.variantIsDifferent) && card.copyOf == null) {
             card.copyOf = current.id;
           }
           if (current.id.equals(current.variantOf) || current.variantOf == null) {
-            if (current.variantType == VariantType.REPRINT_NEW_TEXT) {
-              violations.add(new ConstraintViolation("card/"+current.id, "variantType REPRINT_NEW_TEXT must always point to a different variant! "));
+            if (Boolean.TRUE.equals(current.variantIsDifferent)) {
+              violations.add(new ConstraintViolation("card/"+current.id, "when variantIsDifferent is TRUE, variantOf must always point to a different variant! "));
               continue variant_outer;
             }
             card.variantOf = current.id;
@@ -356,6 +358,11 @@ public class Importer {
         } else {
           card.nationalPokedexNumber = base.nationalPokedexNumber;
         }
+        if (card.erratas != null && !Objects.equals(base.erratas, card.erratas)) {
+          violations.add(new ConstraintViolation("card/"+card.id, "different erratas in copied card! "+base.erratas+", "+card.erratas));
+        } else {
+          card.erratas = base.erratas;
+        }
       }
     }
 
@@ -435,14 +442,11 @@ public class Importer {
 
     for (Collection<Card> cards : variantsMap.values()) {
       List<Variant> variants = new ArrayList<>();
-//      String name = null;
-//      String variantId = null;
       for (Card card : cards) {
-//        name=card.name;
-//        variantId=card.variantOf;
-        Variant variant=new Variant();
-        variant.id=card.id;
-        variant.type=card.variantType;
+        Variant variant = new Variant();
+        variant.id = card.id;
+        variant.type = card.variantType;
+        variant.copyId = card.copyOf != null ? card.copyOf : card.id;
         variants.add(variant);
       }
 //      if (variants.size() > 1) {
@@ -469,7 +473,7 @@ public class Importer {
     idToFormat = new THashMap<>();
 
     List<Format> formatsFromFile = mapper.readValue(resourceResolver.getResource("classpath:/formats.yaml").getInputStream(), new TypeReference<List<Format>>() {});
-    Pattern idRangePattern = Pattern.compile(Card.ID_RANGE_PATTERN);
+    Pattern idRangePattern = Pattern.compile(ID_RANGE_PATTERN);
 
     List<ConstraintViolation> violations = new ArrayList<>();
 
