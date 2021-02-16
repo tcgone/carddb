@@ -494,7 +494,7 @@ public class Importer {
         violations.add(new ConstraintViolation("format/"+ format.enumId, "name is missing"));
       if(isBlank(format.description))
         violations.add(new ConstraintViolation("format/"+ format.enumId, "description is missing"));
-      if(format.sets == null || format.sets.isEmpty())
+      if(format.expansions == null || format.expansions.isEmpty())
         violations.add(new ConstraintViolation("format/"+ format.enumId, "expansions missing"));
       if(isBlank(format.ruleSet))
         violations.add(new ConstraintViolation("format/"+ format.enumId, "ruleSet is missing"));
@@ -539,7 +539,7 @@ public class Importer {
       LinkedHashSet<Card> cards = new LinkedHashSet<>();
 
 
-      for (String setId : format.sets) {
+      for (String setId : format.expansions) {
         Expansion expansion = idToExpansion.get(setId);
         if(expansion == null) {
           violations.add(new ConstraintViolation("format/"+ format.enumId, "expansion cannot be found "+setId));
