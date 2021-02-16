@@ -2,48 +2,47 @@ package tcgone.carddb.model.dto;
 
 import java.util.Objects;
 
-public class CardLite {
+public class ExpansionLite {
   private final String id;
+  private final String code;
   private final String name;
-  private final String imageUrl;
 
-  public CardLite(String id, String name, String imageUrl) {
+  public ExpansionLite(String id, String code, String name) {
     this.id = id;
+    this.code = code;
     this.name = name;
-    this.imageUrl = imageUrl;
   }
 
   public String getId() {
     return id;
   }
 
-  public String getName() {
-    return name;
+  public String getCode() {
+    return code;
   }
 
-  public String getImageUrl() {
-    return imageUrl;
+  public String getName() {
+    return name;
   }
 
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
-    CardLite cardLite = (CardLite) o;
-    return Objects.equals(id, cardLite.id) &&
-      Objects.equals(name, cardLite.name) &&
-      Objects.equals(imageUrl, cardLite.imageUrl);
+    ExpansionLite that = (ExpansionLite) o;
+    return Objects.equals(id, that.id) && Objects.equals(code, that.code) && Objects.equals(name, that.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, imageUrl);
+    return Objects.hash(id, code, name);
   }
 
   @Override
   public String toString() {
-    return "CardLite{" +
+    return "ExpansionLite{" +
       "id='" + id + '\'' +
+      ", code='" + code + '\'' +
       ", name='" + name + '\'' +
       '}';
   }
