@@ -1,20 +1,78 @@
 package tcgone.carddb.model.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.List;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class SearchResults {
   private List<CardLite> data;
   private Integer totalPages;
   private Integer totalElements;
   private Long responseTimeMillis;
   private String errorMessage;
+
+  public SearchResults() {
+  }
+
+  public SearchResults(List<CardLite> data, Integer totalPages, Integer totalElements, Long responseTimeMillis, String errorMessage) {
+    this.data = data;
+    this.totalPages = totalPages;
+    this.totalElements = totalElements;
+    this.responseTimeMillis = responseTimeMillis;
+    this.errorMessage = errorMessage;
+  }
+
+  public List<CardLite> getData() {
+    return data;
+  }
+
+  public SearchResults setData(List<CardLite> data) {
+    this.data = data;
+    return this;
+  }
+
+  public Integer getTotalPages() {
+    return totalPages;
+  }
+
+  public SearchResults setTotalPages(Integer totalPages) {
+    this.totalPages = totalPages;
+    return this;
+  }
+
+  public Integer getTotalElements() {
+    return totalElements;
+  }
+
+  public SearchResults setTotalElements(Integer totalElements) {
+    this.totalElements = totalElements;
+    return this;
+  }
+
+  public Long getResponseTimeMillis() {
+    return responseTimeMillis;
+  }
+
+  public SearchResults setResponseTimeMillis(Long responseTimeMillis) {
+    this.responseTimeMillis = responseTimeMillis;
+    return this;
+  }
+
+  public String getErrorMessage() {
+    return errorMessage;
+  }
+
+  public SearchResults setErrorMessage(String errorMessage) {
+    this.errorMessage = errorMessage;
+    return this;
+  }
+
+  @Override
+  public String toString() {
+    return "SearchResults{" +
+      "data=" + data +
+      ", totalPages=" + totalPages +
+      ", totalElements=" + totalElements +
+      ", responseTimeMillis=" + responseTimeMillis +
+      ", errorMessage='" + errorMessage + '\'' +
+      '}';
+  }
 }
