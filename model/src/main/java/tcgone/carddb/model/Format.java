@@ -15,7 +15,7 @@ public class Format {
    * note that this is just a display. the actual card list of a format can be different than this.
    * example: promo sets may not be mentioned inside sets clause, but included in the "includes" field.
    */
-  public List<String> sets;
+  public List<String> expansions;
   /**
    * list of {@link Card#id}s that were specifically included in this format
    *
