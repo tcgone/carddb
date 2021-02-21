@@ -6,10 +6,10 @@ This module has some toolset to add/update cards to TCG ONE card database and ca
 
 - Reading from [pokemontcg.io](https://github.com/PokemonTCG/pokemon-tcg-data/tree/master/json/cards) or [Kirby's format (preferred)]((https://github.com/kirbyUK/ptcgo-data/tree/master/en_US))
 - Downloading scans
-- Generating [TCG ONE Card Database YAML files](https://github.com/axpendix/carddb/tree/master/data/src/main/resources/cards)
+- Generating [TCG ONE Card Database YAML files](https://github.com/tcgone/carddb/tree/master/data/src/main/resources/cards)
 - Generating [TCG ONE Engine Implementation Groovy Files](https://github.com/axpendix/tcgone-engine-contrib/tree/master/src/tcgwars/logic/impl)
-- Reading from [TCG ONE Card Database YAML files](https://github.com/axpendix/carddb/tree/master/data/src/main/resources/cards)
-- Processing card scans in batch before uploading to [Scans Server](https://forum.tcgone.net/t/6697) via [scans.pl](https://github.com/axpendix/carddb/blob/master/tools/scripts/scans.pl)
+- Reading from [TCG ONE Card Database YAML files](https://github.com/tcgone/carddb/tree/master/data/src/main/resources/cards)
+- Processing card scans in batch before uploading to [Scans Server](https://forum.tcgone.net/t/6697) via [scans.pl](https://github.com/tcgone/carddb/blob/master/tools/scripts/scans.pl)
 
 ## Instructions
 
