@@ -2,9 +2,9 @@
 
 The mighty new card database of TCG ONE.
 
-Models can be inspected [here](https://github.com/tcgone/carddb/tree/master/src/main/java/net/tcgone/carddb/model)
+Models can be inspected [here](https://github.com/tcgone/carddb/tree/master/model/src/main/java/tcgone/carddb/model)
 
-Card data is defined in YAML files and placed in [`src/main/resources/cards`](https://github.com/tcgone/carddb/tree/master/src/main/resources).
+Card data is defined in YAML files and placed in [`data/src/main/resources/cards`](https://github.com/tcgone/carddb/tree/master/data/src/main/resources).
 
 Data in this repository powers the card, set and format data on https://tcgone.net/cards.
 
