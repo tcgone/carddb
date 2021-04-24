@@ -58,6 +58,8 @@ public enum CardType {
   G_SPEC(111, "G-SPEC", "g-spec"),
   POKEMON_V(112, "Pokémon V", "pokemon-v"),
   VMAX(113, "Pokémon VMAX", "vmax"),
+  RAPID_STRIKE(114, "Rapid Strike", "rapid-strike"),
+  SINGLE_STRIKE(115, "Single Strike", "single-strike"),
 
   NOT_IMPLEMENTED(201, "Not Implemented", "not-implemented"),
 
