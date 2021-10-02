@@ -65,7 +65,10 @@ public class PioReader {
         .replace("rare promo","Promo")
         .replace("legend","Ultra Rare")
         .replace("rareholovmax", "Rare Holo")
-        .replace("rareholov","Rare Holo");
+        .replace("rareholov","Rare Holo")
+        .replace("rare holo vmax", "Rare Holo")
+        .replace("rare holo v", "Rare Holo")
+        .replace("rare rainbow", "Ultra Rare");
 
       pc.rarity= WordUtils.capitalizeFully(pc.rarity);
 
@@ -142,6 +145,9 @@ public class PioReader {
           a.damage=sanitizeCross(a.damage);
           a.text=replaceTypesWithShortForms(a.text);
         }).collect(Collectors.toList());
+        if(pc.abilities != null) {
+          pc.ability = pc.abilities.get(0);
+        }
         if(pc.ability!=null){
           if(c.abilities==null)c.abilities=new ArrayList<>();
           Ability a=new Ability();
@@ -175,112 +181,124 @@ public class PioReader {
         }
         break;
     }
-    switch (pc.subtype){
-      case "LEGEND":
-        c.subTypes.add(LEGEND);
-        break;
-      case "Basic":
-        c.subTypes.add(BASIC);
-        if(pc.name.contains("-GX")){
-          c.subTypes.add(POKEMON_GX);
-          if(pc.name.contains(" & ")){
-            c.subTypes.add(TAG_TEAM);
-          }
-        }
-        if(pc.name.contains("-EX")){
-          c.subTypes.add(POKEMON_EX);
-        }
-        if (pc.name.endsWith("V")) {
-          c.subTypes.add(POKEMON_V);
-        }
-        break;
-      case "Stage 1":
-        c.subTypes.add(EVOLUTION);
-        c.subTypes.add(STAGE1);
-        if(pc.name.contains("-GX")){
-          c.subTypes.add(POKEMON_GX);
-          if(pc.name.contains(" & ")){
-            c.subTypes.add(TAG_TEAM);
-          }
-        }
-        if(pc.name.contains("-EX")){
-          c.subTypes.add(POKEMON_EX);
-        }
-        stage1Db.add(pc.name);
-        break;
-      case "Stage 2":
-        c.subTypes.add(EVOLUTION);
-        c.subTypes.add(STAGE2);
-        if(pc.name.contains("-GX")){
-          c.subTypes.add(POKEMON_GX);
-          if(pc.name.contains(" & ")){
-            c.subTypes.add(TAG_TEAM);
-          }
-        }
-        if(pc.name.contains("-EX")){
-          c.subTypes.add(POKEMON_EX);
-        }
-        break;
-      case "GX":
-        c.subTypes.add(BASIC);
-        c.subTypes.add(POKEMON_GX);
-        if(pc.name.contains(" & ")){
-          c.subTypes.add(TAG_TEAM);
-        }
-        break;
-      case "EX":
-        c.subTypes.add(pc.name.endsWith(" ex") ? EX : POKEMON_EX);
-        if(StringUtils.isNotBlank(pc.evolvesFrom)){
-          c.subTypes.add(stage1Db.contains(pc.evolvesFrom)
-            ? STAGE2 : STAGE1);
-          c.subTypes.add(EVOLUTION);
-        } else {
+    if (pc.subtypes == null) {
+      pc.subtypes = new ArrayList<>();
+      pc.subtypes.add(pc.subtype);
+    }
+    for (String subtype : pc.subtypes) {
+      if (subtype == null) break;
+      switch (subtype) {
+        case "LEGEND":
+          c.subTypes.add(LEGEND);
+          break;
+        case "Basic":
           c.subTypes.add(BASIC);
-        }
-        break;
-      case "VMAX":
-        c.subTypes.add(VMAX);
-        c.subTypes.add(EVOLUTION);
-        break;
-      case "MEGA":
-        c.subTypes.add(EVOLUTION);
-        c.subTypes.add(MEGA_POKEMON);
-        c.subTypes.add(POKEMON_EX);
-        break;
-      case "BREAK":
-        c.subTypes.add(EVOLUTION);
-        c.subTypes.add(BREAK);
-        break;
-      case "Level Up":
-        c.subTypes.add(EVOLUTION);
-        c.subTypes.add(LVL_X);
-        break;
-      case "Restored":
-        c.subTypes.add(RESTORED);
-        break;
-      case "Stadium":
-        c.subTypes.add(STADIUM);
-        break;
-      case "Item":
-        c.subTypes.add(ITEM);
-        break;
-      case "Pokémon Tool":
-        c.subTypes.add(POKEMON_TOOL);
+          if (pc.name.contains("-GX")) {
+            c.subTypes.add(POKEMON_GX);
+            if (pc.name.contains(" & ")) {
+              c.subTypes.add(TAG_TEAM);
+            }
+          }
+          if (pc.name.contains("-EX")) {
+            c.subTypes.add(POKEMON_EX);
+          }
+          if (pc.name.endsWith("V")) {
+            c.subTypes.add(POKEMON_V);
+          }
+          break;
+        case "Stage 1":
+          c.subTypes.add(EVOLUTION);
+          c.subTypes.add(STAGE1);
+          if (pc.name.contains("-GX")) {
+            c.subTypes.add(POKEMON_GX);
+            if (pc.name.contains(" & ")) {
+              c.subTypes.add(TAG_TEAM);
+            }
+          }
+          if (pc.name.contains("-EX")) {
+            c.subTypes.add(POKEMON_EX);
+          }
+          stage1Db.add(pc.name);
+          break;
+        case "Stage 2":
+          c.subTypes.add(EVOLUTION);
+          c.subTypes.add(STAGE2);
+          if (pc.name.contains("-GX")) {
+            c.subTypes.add(POKEMON_GX);
+            if (pc.name.contains(" & ")) {
+              c.subTypes.add(TAG_TEAM);
+            }
+          }
+          if (pc.name.contains("-EX")) {
+            c.subTypes.add(POKEMON_EX);
+          }
+          break;
+        case "GX":
+          c.subTypes.add(BASIC);
+          c.subTypes.add(POKEMON_GX);
+          if (pc.name.contains(" & ")) {
+            c.subTypes.add(TAG_TEAM);
+          }
+          break;
+        case "EX":
+          c.subTypes.add(pc.name.endsWith(" ex") ? EX : POKEMON_EX);
+          if (StringUtils.isNotBlank(pc.evolvesFrom)) {
+            c.subTypes.add(stage1Db.contains(pc.evolvesFrom)
+              ? STAGE2 : STAGE1);
+            c.subTypes.add(EVOLUTION);
+          } else {
+            c.subTypes.add(BASIC);
+          }
+          break;
+        case "VMAX":
+          c.subTypes.add(VMAX);
+          c.subTypes.add(EVOLUTION);
+          break;
+        case "MEGA":
+          c.subTypes.add(EVOLUTION);
+          c.subTypes.add(MEGA_POKEMON);
+          c.subTypes.add(POKEMON_EX);
+          break;
+        case "BREAK":
+          c.subTypes.add(EVOLUTION);
+          c.subTypes.add(BREAK);
+          break;
+        case "Level Up":
+          c.subTypes.add(EVOLUTION);
+          c.subTypes.add(LVL_X);
+          break;
+        case "Restored":
+          c.subTypes.add(RESTORED);
+          break;
+        case "Stadium":
+          c.subTypes.add(STADIUM);
+          break;
+        case "Item":
+          c.subTypes.add(ITEM);
+          break;
+        case "Pokémon Tool":
+          c.subTypes.add(POKEMON_TOOL);
 //				if(modernSeries.contains(pc.series)){
-        c.subTypes.add(ITEM);
+          c.subTypes.add(ITEM);
 //				}
-        break;
-      case "Rocket's Secret Machine":
-        c.subTypes.add(ROCKETS_SECRET_MACHINE);
-        break;
-      case "Technical Machine":
-        c.subTypes.add(TECHNICAL_MACHINE);
-        break;
-      case "Supporter":
-        c.subTypes.add(SUPPORTER);
-        break;
-      case "": // basic trainer
-        break;
+          break;
+        case "Rocket's Secret Machine":
+          c.subTypes.add(ROCKETS_SECRET_MACHINE);
+          break;
+        case "Technical Machine":
+          c.subTypes.add(TECHNICAL_MACHINE);
+          break;
+        case "Supporter":
+          c.subTypes.add(SUPPORTER);
+          break;
+        case "Single Strike":
+          c.subTypes.add(SINGLE_STRIKE);
+          break;
+        case "Rapid Strike":
+          c.subTypes.add(RAPID_STRIKE);
+        case "": // basic trainer
+          break;
+      }
     }
     Collections.sort(c.subTypes);
     return c;
