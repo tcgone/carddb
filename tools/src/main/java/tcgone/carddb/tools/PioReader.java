@@ -192,6 +192,7 @@ public class PioReader {
           c.subTypes.add(LEGEND);
           break;
         case "Basic":
+          if (pc.supertype.equals("Energy")) break;
           c.subTypes.add(BASIC);
           if (pc.name.contains("-GX")) {
             c.subTypes.add(POKEMON_GX);
