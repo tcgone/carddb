@@ -135,6 +135,7 @@ public class PioReader {
     c.number=pc.number;
     c.artist=pc.artist;
     if(pc.text!=null)c.text=pc.text.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList());
+    else if(pc.rules!=null)c.text=pc.rules.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList());
     c.rarity= Rarity.of(pc.rarity);
     if(!setMap.containsKey(pc.id.replace('-'+pc.number, ""))){
       log.warn("PLEASE FILL IN id, abbr, enumId FIELDS in {}", pc.id.replace('-'+pc.number, ""));
@@ -203,6 +204,7 @@ public class PioReader {
           c.subTypes.add(SPECIAL_ENERGY);
         } else {
           c.subTypes.add(BASIC_ENERGY);
+          c.energy = new ArrayList<>(Collections.singletonList(sanitizeType(Collections.singletonList(c.name.split(" ")[0]))));
         }
         break;
     }
