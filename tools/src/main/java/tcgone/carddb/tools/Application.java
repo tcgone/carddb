@@ -52,6 +52,7 @@ public class Application implements ApplicationRunner {
   public void run(ApplicationArguments args) throws Exception {
     List<String> pios = args.getOptionValues("pio");
     List<String> yamls = args.getOptionValues("yaml");
+    List<String> pioExpansions = args.getOptionValues("pio-expansions");
     if((pios==null||pios.isEmpty())&&(yamls==null||yamls.isEmpty())){
       printUsage();
       return;
@@ -66,27 +67,14 @@ public class Application implements ApplicationRunner {
     List<Card> allCards=new ArrayList<>();
     if(pios!=null){
       ArrayList<String> expansionIds = new ArrayList<>();
-      StringBuilder expansionFileBuilder = new StringBuilder();
-      for (String part : pios.get(0).split("/")) {
-        if (part.equals("en")) {
-          expansionFileBuilder.append("en.json");
-          break;
-        }
-        else if (part.equals("cards")) {
-          expansionFileBuilder.append("sets").append(File.separator);
-        }
-        else {
-          expansionFileBuilder.append(part).append(File.separator);
-        }
-      }
 
       for (String filename : pios) {
         expansionIds.add(Paths.get(filename).getFileName().toString().split("\\.")[0]);
       }
 
-      if (new File(expansionFileBuilder.toString()).isFile()) {
-        log.info("Reading {}", expansionFileBuilder);
-        pioReader.loadExpansions(new FileInputStream(expansionFileBuilder.toString()), expansionIds);
+      for (String filename : pioExpansions) {
+        log.info("Reading {}", filename);
+        pioReader.loadExpansions(new FileInputStream(filename), expansionIds);
       }
 
       for (String filename : pios) {
