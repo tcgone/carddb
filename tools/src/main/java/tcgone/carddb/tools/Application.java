@@ -72,9 +72,11 @@ public class Application implements ApplicationRunner {
         expansionIds.add(Paths.get(filename).getFileName().toString().split("\\.")[0]);
       }
 
-      for (String filename : pioExpansions) {
-        log.info("Reading {}", filename);
-        pioReader.loadExpansions(new FileInputStream(filename), expansionIds);
+      if (pioExpansions != null) {
+        for (String filename : pioExpansions) {
+          log.info("Reading {}", filename);
+          pioReader.loadExpansions(new FileInputStream(filename), expansionIds);
+        }
       }
 
       for (String filename : pios) {
