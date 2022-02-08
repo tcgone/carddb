@@ -95,7 +95,7 @@ public class ImplTmplGenerator {
         predecessor=card.evolvesFrom;
         if(card.weaknesses!=null){
           for (WeaknessResistance wr : card.weaknesses) {
-            weakness.append(String.format("weakness %s%s\n\t\t\t\t", wr.type, !wr.value.equalsIgnoreCase("x2")?", '"+wr.value+"'":""));
+            weakness.append(String.format("weakness %s%s\n\t\t\t\t", wr.type.getNotation(), !wr.value.equalsIgnoreCase("x2")?", '"+wr.value+"'":""));
           }
         }
         if(card.resistances!=null){
@@ -103,7 +103,7 @@ public class ImplTmplGenerator {
             String typ = "";
             if("-20".equals(wr.value)) typ=", MINUS20";
             if("-30".equals(wr.value)) typ=", MINUS30";
-            resistance.append(String.format("resistance %s\n\t\t\t\t", wr.type+typ));
+            resistance.append(String.format("resistance %s\n\t\t\t\t", wr.type.getNotation()+typ));
           }
         }
         if(card.abilities!=null) {
@@ -253,7 +253,7 @@ public class ImplTmplGenerator {
           "\t\t\t}", cardtext);
       }
       else if (cardTypeSet.contains("BASIC_ENERGY")) {
-        impl =  String.format("basicEnergy (this, %s)", card.energy.get(0).get(0));
+        impl =  String.format("basicEnergy (this, %s)", card.energy.get(0).get(0).getNotation());
       }
       if(impl == null){
         throw new IllegalStateException("Impl null:"+card.name+","+card.number);

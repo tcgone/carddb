@@ -16,23 +16,22 @@ limitations under the License.
 package tcgone.carddb.data;
 
 import org.apache.commons.lang3.math.NumberUtils;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import tcgone.carddb.model.Card;
+import tcgone.carddb.model.Expansion;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author axpendix@hotmail.com
  */
 public class ImportTest {
 
-  private Importer importer;
-  @Before
-  public void testImport() throws Exception {
+  private static Importer importer;
+  @BeforeClass
+  public static void testImport() throws Exception {
     importer = new Importer();
     importer.init();
   }
@@ -47,5 +46,32 @@ public class ImportTest {
 //    for (Map.Entry<String, Collection<String>> entry : mmap.entrySet()) {
 //      System.out.println(entry.getKey() + ":" + entry.getValue());
 //    }
+  }
+  @Test
+  public void outputSomeHoloCards() {
+    // print AQP and SKR holo rares to be added to career pack card pool
+    for (Expansion expansion : importer.allExpansions) {
+      if (expansion.abbr.equals("AQP") || expansion.abbr.equals("SKR")){
+        for (Card c : expansion.cards) {
+          if (c.number.startsWith("H")) {
+            String holoOf = "";
+            List<Card> eqCards = new ArrayList<>();
+            for (Card c1 : expansion.cards) {
+              if (c1 != c && c1.name.equals(c.name)) {
+                eqCards.add(c1);
+              }
+            }
+            if(eqCards.size() == 1) {
+              holoOf=eqCards.get(0).number;
+            } else if(eqCards.size()>1){
+              holoOf=eqCards.stream().map(card -> card.number).collect(Collectors.joining("///"));
+            }
+            System.out.println(String.join(",",c.name, c.expansion.name, c.number,
+              c.rarity.toString(), "Holo", "",
+              "", holoOf));
+          }
+        }
+      }
+    }
   }
 }
