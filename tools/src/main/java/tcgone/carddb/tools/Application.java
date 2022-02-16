@@ -26,10 +26,8 @@ import tcgone.carddb.model.Expansion;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Stack;
+import java.nio.file.Paths;
+import java.util.*;
 
 /**
  * @author axpendix@hotmail.com
@@ -54,6 +52,7 @@ public class Application implements ApplicationRunner {
   public void run(ApplicationArguments args) throws Exception {
     List<String> pios = args.getOptionValues("pio");
     List<String> yamls = args.getOptionValues("yaml");
+    List<String> pioExpansions = args.getOptionValues("pio-expansions");
     if((pios==null||pios.isEmpty())&&(yamls==null||yamls.isEmpty())){
       printUsage();
       return;
@@ -67,6 +66,19 @@ public class Application implements ApplicationRunner {
     }
     List<Card> allCards=new ArrayList<>();
     if(pios!=null){
+      ArrayList<String> expansionIds = new ArrayList<>();
+
+      for (String filename : pios) {
+        expansionIds.add(Paths.get(filename).getFileName().toString().split("\\.")[0]);
+      }
+
+      if (pioExpansions != null) {
+        for (String filename : pioExpansions) {
+          log.info("Reading {}", filename);
+          pioReader.loadExpansions(new FileInputStream(filename), expansionIds);
+        }
+      }
+
       for (String filename : pios) {
         log.info("Reading {}", filename);
         allCards.addAll(pioReader.load(new FileInputStream(filename)));
