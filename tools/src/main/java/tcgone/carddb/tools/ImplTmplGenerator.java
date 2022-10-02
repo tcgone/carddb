@@ -186,7 +186,7 @@ public class ImplTmplGenerator {
             "\t\t\t}",
           hp, typesCombined, rc, weakness.toString(), resistance.toString(), abilities.toString(), moves.toString());
       }
-      else if (cardTypeSet.contains("EVOLUTION") || cardTypeSet.contains("VMAX")) {
+      else if (cardTypeSet.contains("EVOLUTION") || cardTypeSet.contains("VMAX") || cardTypeSet.contains("VSTAR")) {
         impl =  String.format("evolution (this, from:\"%s\", hp:%s, type:%s, retreatCost:%s) {\n" +
             "\t\t\t\t%s%s%s%s\n" +
             "\t\t\t}",

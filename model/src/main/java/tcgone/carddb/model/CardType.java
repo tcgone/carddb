@@ -60,6 +60,8 @@ public enum CardType {
   VMAX(113, "Pokémon VMAX", "vmax"),
   RAPID_STRIKE(114, "Rapid Strike", "rapid-strike"),
   SINGLE_STRIKE(115, "Single Strike", "single-strike"),
+  VSTAR(116, "VSTAR", "vstar"),
+  V_UNION(117, "V-UNION", "v-union"),
 
   NOT_IMPLEMENTED(201, "Not Implemented", "not-implemented"),
 

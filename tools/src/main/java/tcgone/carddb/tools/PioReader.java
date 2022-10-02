@@ -66,11 +66,16 @@ public class PioReader {
         .replace("legend","Ultra Rare")
         .replace("rareholovmax", "Rare Holo")
         .replace("rareholov","Rare Holo")
+        .replace("rare holo vstar", "Rare Holo")
         .replace("rare holo vmax", "Rare Holo")
         .replace("rare holo v", "Rare Holo")
         .replace("rare rainbow", "Ultra Rare")
         .replace("amazing rare", "Rare Holo")
-        .replace("rare shiny", "Rare Holo");
+        .replace("radiant rare", "Rare")
+        .replace("rare shiny", "Rare Holo")
+        .replace("classic collection", "Ultra Rare")
+        .replace("vm", "Rare Holo")
+        .replace("v", "Rare Holo");
 
       pc.rarity= WordUtils.capitalizeFully(pc.rarity);
 
@@ -134,6 +139,7 @@ public class PioReader {
     c.pioId=pc.id;
     c.number=pc.number;
     c.artist=pc.artist;
+    c.regulationMark=pc.regulationMark;
     if(pc.text!=null)c.text=pc.text.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList());
     else if(pc.rules!=null)c.text=pc.rules.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList());
     c.rarity= Rarity.of(pc.rarity);
@@ -282,6 +288,11 @@ public class PioReader {
           c.subTypes.add(VMAX);
           c.subTypes.add(EVOLUTION);
           break;
+        case "VSTAR":
+          c.subTypes.add(VSTAR);
+          c.subTypes.add(EVOLUTION);
+        case "V-UNION":
+          c.subTypes.add(V_UNION);
         case "MEGA":
           c.subTypes.add(EVOLUTION);
           c.subTypes.add(MEGA_POKEMON);
@@ -292,6 +303,7 @@ public class PioReader {
           c.subTypes.add(BREAK);
           break;
         case "Level Up":
+        case "Level-Up":
           c.subTypes.add(EVOLUTION);
           c.subTypes.add(LVL_X);
           break;

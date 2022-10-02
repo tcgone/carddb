@@ -135,6 +135,10 @@ public class Card {
    */
   public String flavorText;
   /**
+   * e.g. D
+   */
+  public String regulationMark;
+  /**
    * (Unused ATM) List of erratas that apply to this card. It includes engine-level erratas.
    */
   public List<String> erratas;
