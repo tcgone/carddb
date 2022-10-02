@@ -1,6 +1,7 @@
 package tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonValue;
 import org.apache.commons.lang3.StringUtils;
 
@@ -49,7 +50,9 @@ public enum Type {
   }
 
   @JsonCreator
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   public static Type of(String input) {
+    if (input.equals("[-]")) return null; // PIO uses [-] for costless moves instead of an empty list
     for (Type value : values()) {
       if (value.notation.equalsIgnoreCase(input) || value.name().equalsIgnoreCase(input) || value.label.equalsIgnoreCase(input))
         return value;

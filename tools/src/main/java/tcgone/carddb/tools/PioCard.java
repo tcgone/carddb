@@ -60,5 +60,6 @@ public class PioCard {
   public List<WeaknessResistance> resistances;
   public Integer nationalPokedexNumber;//optional
   public List<String> text; // for trainers, sp. energy
+  public String regulationMark; // Modern method of determining Standard format legality
 
 }
