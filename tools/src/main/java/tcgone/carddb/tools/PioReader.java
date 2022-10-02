@@ -334,6 +334,9 @@ public class PioReader {
         case "Single Strike":
           c.subTypes.add(SINGLE_STRIKE);
           break;
+        case "Fusion Strike":
+          c.subTypes.add(FUSION_STRIKE);
+          break;          
         case "Rapid Strike":
           c.subTypes.add(RAPID_STRIKE);
         case "": // basic trainer
