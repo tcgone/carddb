@@ -77,8 +77,12 @@ public class CardDeserializer extends StdDeserializer<Card> {
       }
     } else {
       List<String> subTypes = new ArrayList<>();
-      for (JsonNode node : jsonNode.findValue("subtypes")) {
-        subTypes.add(node.asText());
+      if (jsonNode.has("subtypes")) { // Pokemon.io
+        for (JsonNode node : jsonNode.findValue("subtypes")) {
+          subTypes.add(node.asText());
+        }
+      } else if (jsonNode.has("subtype")) { // Kirby
+        subTypes.add(jsonNode.findValue("subtype").asText());
       }
       card.subTypes = setSubTypes(card.name, card.superType, subTypes);
     }
