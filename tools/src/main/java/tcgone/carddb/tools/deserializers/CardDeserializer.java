@@ -126,12 +126,11 @@ public class CardDeserializer extends StdDeserializer<Card> {
       }
 
       if (jsonNode.has("evolvesFrom")) {
-        List<String> evolvesFrom = new ArrayList<>();
-        for (JsonNode node : jsonNode.findValue("evolvesFrom")) {
-          evolvesFrom.add(node.asText());
-        }
-        if (!evolvesFrom.isEmpty()) {
-          card.evolvesFrom = evolvesFrom.get(0);
+        JsonNode node = jsonNode.findValue("evolvesFrom");
+        if (node.isArray()) {
+          card.evolvesFrom = node.get(0).asText();
+        } else {
+          card.evolvesFrom = node.asText();
         }
       }
 
