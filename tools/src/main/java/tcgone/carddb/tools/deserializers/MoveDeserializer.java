@@ -30,7 +30,10 @@ public class MoveDeserializer extends StdDeserializer<Move> {
       result.text = DeserializerUtils.replaceTypesWithShortForms(jsonNode.get("text").asText());
     }
     if (jsonNode.has("damage")) {
-      result.damage = DeserializerUtils.sanitizeCross(jsonNode.get("damage").asText());
+      String damage = jsonNode.findValue("damage").asText();
+      if (!damage.isEmpty()) {
+        result.damage = DeserializerUtils.sanitizeCross(jsonNode.get("damage").asText());
+      }
     }
     if (jsonNode.has("cost")) {
       result.cost = new ArrayList<>();
