@@ -35,7 +35,7 @@ public class MoveDeserializer extends StdDeserializer<Move> {
     if (jsonNode.has("cost")) {
       result.cost = new ArrayList<>();
       for (JsonNode node : jsonNode.findValue("cost")) {
-        if (node.asText().equals("-")) continue;
+        if (node.asText().equals("[-]")) continue;
         result.cost.add(Type.of(node.asText()));
       }
     }

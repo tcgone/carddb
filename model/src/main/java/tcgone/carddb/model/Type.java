@@ -52,7 +52,6 @@ public enum Type {
   @JsonCreator
   @JsonInclude(JsonInclude.Include.NON_NULL)
   public static Type of(String input) {
-    if (input.equals("[-]")) return null; // PIO uses [-] for costless moves instead of an empty list
     for (Type value : values()) {
       if (value.notation.equalsIgnoreCase(input) || value.name().equalsIgnoreCase(input) || value.label.equalsIgnoreCase(input))
         return value;
