@@ -50,8 +50,12 @@ public class RarityDeserializer extends StdDeserializer<Rarity> {
       .replace("rare rainbow", "Ultra Rare")
       .replace("amazing rare", "Rare Holo")
       .replace("radiant rare", "Rare")
+      .replace("rare shiny gx", "Rare Holo")
       .replace("rare shiny", "Rare Holo")
       .replace("classic collection", "Ultra Rare")
+      .replace("rare shining", "Rare Holo")
+      .replace("rare holo star", "Rare Holo")
+      .replace("rare prism star", "Rare Holo")
       .replace("vm", "Rare Holo")
       .replace("v", "Rare Holo");
   }
