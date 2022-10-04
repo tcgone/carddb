@@ -165,6 +165,7 @@ public class CardDeserializer extends StdDeserializer<Card> {
 
         case "LEGEND":
           subtypes.add(CardType.LEGEND);
+          subtypes.add(CardType.BASIC); // TODO: Shouldn't be BASIC
           break;
 
         case "Basic":
@@ -186,6 +187,18 @@ public class CardDeserializer extends StdDeserializer<Card> {
           subtypes.add(CardType.EVOLUTION);
           break;
 
+        case "Baby":
+          subtypes.add(CardType.BABY);
+          break;
+
+        case "Star":
+          subtypes.add(CardType.POKEMON_STAR);
+          break;
+
+        case "SP":
+          subtypes.add(CardType.POKEMON_SP);
+          break;
+
         case "EX":
           subtypes.add(
             name.endsWith(" ex") ? CardType.EX :
@@ -196,6 +209,10 @@ public class CardDeserializer extends StdDeserializer<Card> {
         case "Level-Up":
           subtypes.add(CardType.EVOLUTION);
           subtypes.add(CardType.LVL_X);
+          break;
+
+        case "Prime":
+          subtypes.add(CardType.POKEMON_PRIME);
           break;
 
         case "Restored":
@@ -221,6 +238,15 @@ public class CardDeserializer extends StdDeserializer<Card> {
           subtypes.add(CardType.TAG_TEAM);
           break;
 
+        case "Prism Star":
+          subtypes.add(CardType.PRISM_STAR);
+          break;
+
+        case "V":
+          subtypes.add(CardType.POKEMON_V);
+          subtypes.add(CardType.BASIC);
+          break;
+
         case "VMAX":
           subtypes.add(CardType.VMAX);
           subtypes.add(CardType.POKEMON_V);
@@ -235,6 +261,7 @@ public class CardDeserializer extends StdDeserializer<Card> {
 
         case "V-UNION":
           subtypes.add(CardType.V_UNION);
+          subtypes.add(CardType.BASIC); // TODO: Shouldn't be BASIC
           break;
 
         case "Single Strike":
@@ -247,6 +274,10 @@ public class CardDeserializer extends StdDeserializer<Card> {
 
         case "Fusion Strike":
           subtypes.add(CardType.FUSION_STRIKE);
+          break;
+
+        case "Radiant":
+          subtypes.add(CardType.RADIANT);
           break;
 
         case "Item":
@@ -273,6 +304,9 @@ public class CardDeserializer extends StdDeserializer<Card> {
         case "Rocket's Secret Machine":
           subtypes.add(CardType.ROCKETS_SECRET_MACHINE);
           break;
+
+        default:
+          log.warn(String.format("Subtype %s not handled", subtype));
       }
     }
 
