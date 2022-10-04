@@ -113,7 +113,12 @@ public class CardDeserializer extends StdDeserializer<Card> {
       });
 
       Optional<Ability> ancientTrait = DeserializerUtils.parseNestedObject(jsonParser, jsonNode, "ancientTrait", Ability.class);
-      ancientTrait.ifPresent(a -> card.abilities.add(a));
+      ancientTrait.ifPresent(a -> {
+        if (card.abilities == null) {
+          card.abilities = new ArrayList<>();
+        }
+        card.abilities.add(a);
+      });
 
       Optional<List<Type>> types = DeserializerUtils.parseNestedObject(jsonParser, jsonNode, "types", new TypeReference<List<Type>>(){});
       types.ifPresent(t -> card.types = t);
