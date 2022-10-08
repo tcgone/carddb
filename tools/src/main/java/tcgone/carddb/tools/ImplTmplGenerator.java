@@ -180,7 +180,7 @@ public class ImplTmplGenerator {
             "\t\t\t}",
           "'SUCCESSOR(S)'", hp, typesCombined, rc, weakness.toString(), resistance.toString(), abilities.toString(), moves.toString());
       }
-      else if (cardTypeSet.contains("BASIC") || cardTypeSet.contains("RESTORED")) {
+      else if (cardTypeSet.contains("BASIC") || cardTypeSet.contains("RESTORED") || cardTypeSet.contains("LEGEND") || cardTypeSet.contains("V-UNION")) {
         impl =  String.format("basic (this, hp:%s, type:%s, retreatCost:%s) {\n" +
             "\t\t\t\t%s%s%s%s\n" +
             "\t\t\t}",

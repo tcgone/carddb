@@ -165,7 +165,6 @@ public class CardDeserializer extends StdDeserializer<Card> {
 
         case "LEGEND":
           subtypes.add(CardType.LEGEND);
-          subtypes.add(CardType.BASIC); // TODO: Shouldn't be BASIC
           break;
 
         case "Basic":
@@ -261,7 +260,6 @@ public class CardDeserializer extends StdDeserializer<Card> {
 
         case "V-UNION":
           subtypes.add(CardType.V_UNION);
-          subtypes.add(CardType.BASIC); // TODO: Shouldn't be BASIC
           break;
 
         case "Single Strike":
