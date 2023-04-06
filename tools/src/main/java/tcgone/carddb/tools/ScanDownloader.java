@@ -9,6 +9,7 @@ import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Downloads card images from pokemontcg.io
@@ -22,10 +23,11 @@ public class ScanDownloader {
   public void downloadAll(List<Card> cards) {
     for (Card card : cards) {
       try {
-        new File(String.format("scans/%s", card.expansion.id)).mkdirs();
+        String cardDir = card.expansion.enumId.toLowerCase(Locale.ENGLISH);
+        new File(String.format("scans/%s", cardDir)).mkdirs();
         String urlString = String.format("https://images.pokemontcg.io/%s/%s_hires.png", card.expansion.pioId, card.number);
         log.info("Downloading {}", urlString);
-        String filename = String.format("scans/%s/%s.png", card.expansion.id, card.number);
+        String filename = String.format("scans/%s/%s.png", cardDir, card.number);
         URL url = new URL(urlString);
         ReadableByteChannel readableByteChannel = Channels.newChannel(url.openStream());
         FileOutputStream fileOutputStream = new FileOutputStream(filename);

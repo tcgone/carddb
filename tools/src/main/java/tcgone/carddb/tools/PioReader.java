@@ -66,9 +66,16 @@ public class PioReader {
         .replace("legend","Ultra Rare")
         .replace("rareholovmax", "Rare Holo")
         .replace("rareholov","Rare Holo")
+        .replace("rare holo vstar", "Rare Holo")
         .replace("rare holo vmax", "Rare Holo")
         .replace("rare holo v", "Rare Holo")
-        .replace("rare rainbow", "Ultra Rare");
+        .replace("rare rainbow", "Ultra Rare")
+        .replace("amazing rare", "Rare Holo")
+        .replace("radiant rare", "Rare")
+        .replace("rare shiny", "Rare Holo")
+        .replace("classic collection", "Ultra Rare")
+        .replace("vm", "Rare Holo")
+        .replace("v", "Rare Holo");
 
       pc.rarity= WordUtils.capitalizeFully(pc.rarity);
 
@@ -100,8 +107,31 @@ public class PioReader {
     return cards;
   }
 
-  private Set<String> stage1Db = new HashSet<>();
   private Map<String, Expansion> setMap = new HashMap<>();
+
+  public void loadExpansions(InputStream inputStream, List<String> expansionIds) throws IOException {
+    ObjectMapper mapper = new ObjectMapper().enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+    List<PioSet> list = mapper.readValue(inputStream, new TypeReference<List<PioSet>>(){});
+
+    for (String expansionId : expansionIds) {
+      if (!setMap.containsKey(expansionId)) {
+        Expansion expansion = new Expansion();
+        for (PioSet ps : list) {
+          if (!Objects.equals(ps.id, expansionId)) continue;
+          expansion.name = ps.name;
+          expansion.id = "FILL_THIS";
+          expansion.abbr = ps.ptcgoCode;
+          expansion.enumId = ps.name.replace("–", "-").replace("’", "'").toUpperCase(Locale.ENGLISH)
+            .replaceAll("[ \\p{Punct}]", "_").replaceAll("_+", "_").replace("É", "E");
+          expansion.pioId = ps.id;
+        }
+        log.warn("PLEASE FILL IN id FIELD in {}", expansion.name);
+        setMap.put(expansion.pioId, expansion);
+      }
+    }
+  }
+
+  private Set<String> stage1Db = new HashSet<>();
 
   private Card prepareCard(PioCard pc) {
     Card c = new Card();
@@ -109,20 +139,21 @@ public class PioReader {
     c.pioId=pc.id;
     c.number=pc.number;
     c.artist=pc.artist;
+    c.regulationMark=pc.regulationMark;
     if(pc.text!=null)c.text=pc.text.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList());
     else if(pc.rules!=null)c.text=pc.rules.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList());
     c.rarity= Rarity.of(pc.rarity);
-    if(!setMap.containsKey(pc.setCode)){
-      log.warn("PLEASE FILL IN id, abbr, enumId FIELDS in {}", pc.set);
+    if(!setMap.containsKey(pc.id.replace('-'+pc.number, ""))){
+      log.warn("PLEASE FILL IN id, abbr, enumId FIELDS in {}", pc.id.replace('-'+pc.number, ""));
       Expansion expansion = new Expansion();
-      expansion.name=pc.set;
+      expansion.name=pc.id.replace('-'+pc.number, "");
       expansion.id="FILL_THIS";
       expansion.abbr="FILL_THIS";
       expansion.enumId="FILL_THIS";
-      expansion.pioId=pc.setCode;
-      setMap.put(pc.setCode, expansion);
+      expansion.pioId = pc.id.replace('-'+pc.number, "");
+      setMap.put(expansion.pioId, expansion);
     }
-    Expansion expansion = setMap.get(pc.setCode);
+    Expansion expansion = setMap.get(pc.id.replace('-'+pc.number, ""));
     c.expansion = expansion;
     c.enumId=String.format("%s_%s", pc.name
       .replace("–","-").replace("’","'").toUpperCase(Locale.ENGLISH)
@@ -257,6 +288,11 @@ public class PioReader {
           c.subTypes.add(VMAX);
           c.subTypes.add(EVOLUTION);
           break;
+        case "VSTAR":
+          c.subTypes.add(VSTAR);
+          c.subTypes.add(EVOLUTION);
+        case "V-UNION":
+          c.subTypes.add(V_UNION);
         case "MEGA":
           c.subTypes.add(EVOLUTION);
           c.subTypes.add(MEGA_POKEMON);
@@ -267,6 +303,7 @@ public class PioReader {
           c.subTypes.add(BREAK);
           break;
         case "Level Up":
+        case "Level-Up":
           c.subTypes.add(EVOLUTION);
           c.subTypes.add(LVL_X);
           break;
