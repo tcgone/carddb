@@ -8,14 +8,15 @@ import org.apache.commons.lang3.text.WordUtils;
  * @author axpendix@hotmail.com
  */
 public enum Rarity {
-  SHINING,
-  SECRET,
-  PROMO,
-  ULTRA_RARE,
-  RARE_HOLO,
-  RARE,
+  COMMON,
   UNCOMMON,
-  COMMON;
+  RARE,
+  RARE_HOLO,
+  ULTRA_RARE,
+  PROMO,
+  SECRET,
+  SHINING,
+  ;
 
   private final String label;
 

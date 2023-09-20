@@ -56,7 +56,7 @@ public class Importer {
   protected Map<String, Card> idToCard;
   protected Map<String, Card> seoNameToCard;
   protected Map<String, Card> pioIdToCard;
-  protected Map<String, Card> cardInfoStringToCard;
+  protected Map<String, Card> cardEnumIdToCard;
   protected Map<String, Collection<Card>> variantsMap;
 
   protected List<Format> allFormats;
@@ -205,7 +205,7 @@ public class Importer {
     idToCard = new THashMap<>();
     pioIdToCard = new THashMap<>();
     seoNameToCard = new THashMap<>();
-    cardInfoStringToCard = new THashMap<>();
+    cardEnumIdToCard = new THashMap<>();
     variantsMap = new THashMap<>();
 
     allExpansions = new ArrayList<>();
@@ -431,7 +431,7 @@ public class Importer {
 
         pioIdToCard.put(card.pioId, card);
         seoNameToCard.put(card.seoName, card);
-        cardInfoStringToCard.put(card.enumId + ":" + expansion.enumId, card);
+        cardEnumIdToCard.put(card.enumId + ":" + expansion.enumId, card);
         allCards.add(card);
 
       } // end expansion
