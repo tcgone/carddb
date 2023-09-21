@@ -375,7 +375,7 @@ public class Importer {
       if (!violations.isEmpty())
         continue;
 
-      log.info("Processed {}", expansion.name);
+      log.debug("Processed {}", expansion.name);
 
       expansion.order = 1000 - Integer.parseInt(expansion.id);
       if(expansion.seoName == null)
@@ -457,7 +457,7 @@ public class Importer {
       }
     }
 
-    log.info("Imported all cards");
+    log.info("Imported {} cards", allCards.size());
   }
 
   private void assertNoViolation(List<ConstraintViolation> violations) throws ImportException {
@@ -506,7 +506,7 @@ public class Importer {
           if(matcher.find()){
             String startId = matcher.group(1);
             String endId = matcher.group(2);
-            log.info("Range detected: {}, start={}, end={}", s, startId, endId);
+            log.debug("Range detected: {}, start={}, end={}", s, startId, endId);
             Card startCard = idToCard.get(startId);
             if(startCard == null) {
               throw new IllegalStateException("Cannot find card " + startId);
@@ -521,7 +521,7 @@ public class Importer {
               }
               startIndex++;
             }
-            log.info("Expanded range {} to {}", s, accumulator);
+            log.debug("Expanded range {} to {}", s, accumulator);
             return accumulator.stream();
           } else {
             // single id, leave it
