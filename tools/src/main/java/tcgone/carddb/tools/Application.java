@@ -24,8 +24,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import tcgone.carddb.model.Card;
 import tcgone.carddb.model.Expansion;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
 import java.nio.file.Paths;
 import java.util.*;
 
@@ -51,8 +50,8 @@ public class Application implements ApplicationRunner {
   @Override
   public void run(ApplicationArguments args) throws Exception {
     List<String> pios = args.getOptionValues("pio");
-    List<String> yamls = args.getOptionValues("yaml");
     List<String> pioExpansions = args.getOptionValues("pio-expansions");
+    List<String> yamls = args.getOptionValues("yaml");
     if((pios==null||pios.isEmpty())&&(yamls==null||yamls.isEmpty())){
       printUsage();
       return;
@@ -65,7 +64,27 @@ public class Application implements ApplicationRunner {
       return;
     }
     List<Card> allCards=new ArrayList<>();
-    if(pios!=null){
+    readPios(pios, pioExpansions, allCards);
+    readYamls(yamls, allCards);
+    Collection<Expansion> expansions = setWriter.prepareSetFiles(allCards);
+    setWriter.prepareReprints(expansions);
+//		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
+    if(downloadScans){
+      scanDownloader.downloadAll(allCards);
+      log.info("Scans have been saved into ./scans folder");
+    }
+    if(exportYaml){
+      setWriter.writeAll(expansions, "output");
+      log.info("YAMLs have been written to ./output folder");
+    }
+    if(exportImplTmpl){
+      implTmplGenerator.writeAll(expansions);
+      log.info("Impl Tmpls have been written to ./impl folder");
+    }
+  }
+
+  private void readPios(List<String> pios, List<String> pioExpansions, List<Card> allCards) throws IOException {
+    if(pios !=null){
       ArrayList<String> expansionIds = new ArrayList<>();
 
       for (String filename : pios) {
@@ -84,7 +103,10 @@ public class Application implements ApplicationRunner {
         allCards.addAll(pioReader.load(new FileInputStream(filename)));
       }
     }
-    if(yamls!=null){
+  }
+
+  private void readYamls(List<String> yamls, List<Card> allCards) throws IOException {
+    if(yamls !=null){
       for (String filename : yamls) {
         Stack<File> fileStack = new Stack<>();
         File file = new File(filename);
@@ -96,32 +118,22 @@ public class Application implements ApplicationRunner {
           fileStack.push(file);
         }
         while (!fileStack.isEmpty()){
-          File pop = fileStack.pop();
-          if(!pop.getName().endsWith("yaml")) continue;
-          log.info("Reading {}", pop.getName());
-          Expansion expansion = mapper.readValue(new FileInputStream(pop), Expansion.class);
-          for (Card card : expansion.cards) {
-            card.expansion = expansion; // temporary
-          }
+          File currentFile = fileStack.pop();
+          if(!currentFile.getName().endsWith("yaml")) continue;
+          log.info("Reading {}", currentFile.getName());
+          Expansion expansion = readExpansion(currentFile);
           allCards.addAll(expansion.cards);
         }
       }
     }
-    Collection<Expansion> expansions = setWriter.prepareSetFiles(allCards);
-    setWriter.prepareReprints(expansions);
-//		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
-    if(downloadScans){
-      scanDownloader.downloadAll(allCards);
-      log.info("Scans have been saved into ./scans folder");
+  }
+
+  private Expansion readExpansion(File pop) throws IOException {
+    Expansion expansion = mapper.readValue(new FileInputStream(pop), Expansion.class);
+    for (Card card : expansion.cards) {
+      card.expansion = expansion; // temporary
     }
-    if(exportYaml){
-      setWriter.writeAll(expansions, "output");
-      log.info("YAMLs have been written to ./output folder");
-    }
-    if(exportImplTmpl){
-      implTmplGenerator.writeAll(expansions);
-      log.info("Impl Tmpls have been written to ./impl folder");
-    }
+    return expansion;
   }
 
   private void printUsage() {
