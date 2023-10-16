@@ -99,7 +99,7 @@ cards:
   number: '4'
   types: [W]
   superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
   evolvesFrom: Wartortle
   hp: 70
   retreatCost: 2
@@ -129,7 +129,7 @@ cards:
   number: '5'
   types: [C]
   superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE2]
   evolvesFrom: Dark Dragonair
   hp: 70
   retreatCost: 2
@@ -142,6 +142,7 @@ cards:
   - cost: [C, C, C, C]
     name: Giant Tail
     text: Flip a coin. If tails, this attack does nothing.
+    damage: '70'
   resistances:
   - type: F
     value: '-30'
@@ -155,7 +156,7 @@ cards:
   number: '6'
   types: [C]
   superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Meowth
   hp: 60
   retreatCost: 0
@@ -184,7 +185,7 @@ cards:
   number: '7'
   types: [L]
   superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Pikachu
   hp: 70
   retreatCost: 1
@@ -209,7 +210,7 @@ cards:
   number: '8'
   types: [P]
   superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Slowpoke
   hp: 60
   retreatCost: 2
@@ -222,6 +223,7 @@ cards:
   - cost: [P, P]
     name: Fickle Attack
     text: Flip a coin. If tails, this attack does nothing.
+    damage: '40'
   weaknesses:
   - type: P
     value: x2
@@ -235,7 +237,7 @@ cards:
   number: '9'
   types: [W]
   superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Eevee
   hp: 60
   retreatCost: 1
@@ -351,7 +353,6 @@ cards:
   moves:
   - cost: [F, F]
     name: Stretch Kick
-    damage: '20'
     text: If your opponent has any Benched Pokémon, choose 1 of them and this attack
       does 20 damage to it. (Don't apply Weakness and Resistance for Benched Pokémon.)
   - cost: [F, F, F]
@@ -438,6 +439,7 @@ cards:
   - cost: [G, G, G]
     name: Sludge
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
+    damage: '30'
   weaknesses:
   - type: P
     value: x2
@@ -818,6 +820,7 @@ cards:
   - cost: [R, R, R, R]
     name: Dive Bomb
     text: Flip a coin. If tails, this attack does nothing.
+    damage: '80'
   resistances:
   - type: F
     value: '-30'
@@ -1029,7 +1032,7 @@ cards:
   number: '38'
   types: [C]
   superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Dratini
   evolvesTo: [Dragonite]
   hp: 60
@@ -1060,7 +1063,7 @@ cards:
   number: '39'
   types: [W]
   superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
+  subTypes: [DARK_POKEMON, EVOLUTION, STAGE1]
   evolvesFrom: Squirtle
   evolvesTo: [Blastoise]
   hp: 60
@@ -2228,6 +2231,7 @@ cards:
   - cost: [G]
     name: Horn Hazard
     text: Flip a coin. If tails, this attack does nothing.
+    damage: '30'
   weaknesses:
   - type: P
     value: x2
@@ -2731,7 +2735,7 @@ cards:
   subTypes: []
   rarity: Uncommon
   text:
-  - Trade 1 of other cards in your hand for up to 2 basic Energy cards from your discard
+  - Trade 1 of the other cards in your hand for up to 2 basic Energy cards from your discard
     pile.
   artist: Keiji Kinebuchi
 - id: 133-108
@@ -2740,7 +2744,7 @@ cards:
   name: Bill
   number: '108'
   superType: TRAINER
-  subTypes: [ITEM]
+  subTypes: []
   rarity: Common
   text:
   - Draw 2 cards.
@@ -2752,7 +2756,7 @@ cards:
   name: Mysterious Fossil
   number: '109'
   superType: TRAINER
-  subTypes: []
+  subTypes: [FOSSIL]
   rarity: Common
   text:
   - Play Mysterious Fossil as if it were a Basic Pokémon. While in play, Mysterious
@@ -2760,8 +2764,7 @@ cards:
     no attacks, can't retreat, and can't be Asleep, Confused, Paralyzed, or Poisoned.
     If Mysterious Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon.
     (Discard it anyway.) At any time during your turn before your attack, you may
-    discard Mysterious Fossil from play. (Major text change in Legend Maker. Requires
-    reference.)
+    discard Mysterious Fossil from play.
   artist: Keiji Kinebuchi
 - id: 133-110
   pioId: base6-110

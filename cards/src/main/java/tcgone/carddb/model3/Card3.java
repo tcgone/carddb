@@ -8,6 +8,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import tcgone.carddb.model.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
@@ -124,9 +125,10 @@ public class Card3 {
   }
 
   /**
-   * may be useful to detect reprints during variant handling
+   * useful to detect reprints during variant handling
    */
   public String generateDiscriminatorFullText() {
-    return String.format("name=%s, cardTypes=%s, hp=%d, evolvesFrom=%s, types=%s, abilities=%s, moves=%s, weakness=%s, resistance=%s, retreatCost=%d, text=%s, energy=%s", name, cardTypes, hp, evolvesFrom, types, abilities, moves, weaknesses, resistances, retreatCost, text, energy);
+//    return String.format("name=%s, cardTypes=%s, hp=%d, evolvesFrom=%s, types=%s, abilities=%s, moves=%s, weakness=%s, resistance=%s, retreatCost=%d, text=%s, energy=%s", name, cardTypes, hp, evolvesFrom, types, abilities, moves, weaknesses, resistances, retreatCost, text, energy);
+    return String.format("name=%s, cardTypes=%s, hp=%d, evolvesFrom=%s, types=%s, abilities=%s, moves=%s, weakness=%s, resistance=%s, retreatCost=%d, text=%s, energy=%s", name, cardTypes, hp, evolvesFrom, types, abilities == null ? null : abilities.stream().map(ability -> String.format("%s: %s", ability.getType(), ability.getName())).collect(Collectors.toList()), moves == null ? null : moves.stream().map(move -> String.format("%s %s %s", move.getCost(), move.getName(), move.getDamage())).collect(Collectors.toList()), weaknesses, resistances, retreatCost, text, energy).toLowerCase();
   }
 }

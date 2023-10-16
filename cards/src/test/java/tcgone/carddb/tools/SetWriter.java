@@ -158,8 +158,8 @@ public class SetWriter {
           card3.setText(String.join("\n", card.getText()));
         }
         card3.setEnergy(card.getEnergy());
-        card3.setEnumId(card.getEnumId());
-//        card3.setEnumId(card.getEnumId()+":"+expansion3.getEnumId());
+//        card3.setEnumId(card.getEnumId());
+        card3.setEnumId(card.getEnumId()+":"+expansion3.getEnumId());
 //        card3.setExpansionEnumId(expansion3.getEnumId());
         card3.setCardTypes(new ArrayList<>());
         card3.getCardTypes().add(card.getSuperType());
@@ -197,7 +197,7 @@ public class SetWriter {
     }
   }
 
-  public Collection<Expansion> prepareSetFiles(List<Card> cards) {
+  public List<Expansion> prepareAndOrderExpansionFiles(List<Card> cards) {
     Map<String, Expansion> expansionMap = new HashMap<>();
     for (Card card : cards) {
       String key = card.getExpansion().getEnumId();
@@ -221,10 +221,15 @@ public class SetWriter {
       };
       expansion.getCards().sort(cardComparator);
     }
-    return expansionMap.values();
+    List<Expansion> orderedList = new ArrayList<>(expansionMap.values());
+    orderedList.sort(Comparator.comparing(Expansion::getId));
+    return orderedList;
   }
 
-  public void prepareReprints(Collection<Expansion> expansionFiles) {
+  /**
+   * @param expansionFiles must be ordered by release date
+   */
+  public void prepareReprints(List<Expansion> expansionFiles) {
     Map<EqualityCard, Card> map = new HashMap<>();
     for (Expansion expansionFile : expansionFiles) {
       for (Card c : expansionFile.getCards()) {
@@ -244,6 +249,32 @@ public class SetWriter {
           c.setVariantOf(oc.getId());
         } else {
           map.put(ec, c);
+        }
+      }
+    }
+  }
+  /**
+   * @param expansionFiles must be ordered by release date
+   */
+  public void prepareReprintsE3(List<ExpansionFile3> expansionFiles) {
+    Map<String, Card3> map = new HashMap<>();
+    for (ExpansionFile3 expansionFile : expansionFiles) {
+      for (Card3 card : expansionFile.getCards()) {
+        String fullText = card.generateDiscriminatorFullText();
+        if (map.containsKey(fullText)) {
+          Card3 original = map.get(fullText);
+          if (card.getRarity() == Rarity.ULTRA_RARE) {
+            // most likely full art
+            card.setVariantType(VariantType.FULL_ART);
+          } else if (card.getRarity() == Rarity.SECRET) {
+            // most likely secret art
+            card.setVariantType(VariantType.SECRET_ART);
+          } else {
+            card.setVariantType(VariantType.REPRINT);
+          }
+          card.setVariantOf(original.getEnumId());
+        } else {
+          map.put(fullText, card);
         }
       }
     }

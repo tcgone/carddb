@@ -3,8 +3,10 @@ package tcgone.carddb.tools;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.apache.commons.cli.*;
+import org.apache.commons.lang3.StringUtils;
 import tcgone.carddb.model.Card;
 import tcgone.carddb.model.Expansion;
+import tcgone.carddb.model3.Card3;
 import tcgone.carddb.model3.ExpansionFile3;
 
 import java.io.File;
@@ -12,6 +14,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * @author axpendix@hotmail.com
@@ -58,15 +61,18 @@ public class Application {
     readPios(pios, pioExpansions, allCards);
     readYamls(yamls, allCards, allExpansions);
     SetWriter setWriter = new SetWriter();
-    Collection<Expansion> expansions = setWriter.prepareSetFiles(allCards);
-    setWriter.prepareReprints(expansions);
-//		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
+    List<Expansion> expansions = setWriter.prepareAndOrderExpansionFiles(allCards);
     if(exportE3){
       List<ExpansionFile3> expansionFile3s = setWriter.convertFromE2ToE3(expansions);
+      expansionFile3s.sort(Comparator.comparing(expansionFile3 -> expansionFile3.getExpansion().getOrderId()));
+      setWriter.prepareReprintsE3(expansionFile3s);
+      doVariantDebugging(expansionFile3s);
       String outputDirectory = "output/e3";
       setWriter.writeAllE3(expansionFile3s, outputDirectory);
       log.info("E3 YAMLs have been written to {} folder. Please copy them under src/main/resources/cards if you want them to take over.", outputDirectory);
     }
+    setWriter.prepareReprints(expansions);
+//		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
     if(downloadScans){
       ScanDownloader scanDownloader = new ScanDownloader();
       scanDownloader.downloadAll(allCards);
@@ -81,6 +87,22 @@ public class Application {
       implTmplGenerator.writeAll(expansions);
       log.info("Implementation Templates (Groovy files) have been written to ./impl folder. Please copy them under contrib repo.");
     }
+  }
+
+  private static void doVariantDebugging(List<ExpansionFile3> all) {
+    cardStreamOfExpansion(all, "LC").filter(c -> StringUtils.isBlank(c.getVariantOf())).forEach(c -> {
+      String adversaryText = c.generateDiscriminatorFullText();
+      log.debug(">>>MISSING VARIANT: {}", adversaryText);
+      cardStreamOfExpansion(all, "BS").filter(c1 -> c1.getName().equals(c.getName())).forEach(c1 -> {
+        String baseText = c1.generateDiscriminatorFullText();
+        log.debug("\t\tpossible variant: {}", baseText);
+        log.debug("\t\tDIFF: {}", StringUtils.difference(baseText, adversaryText));
+      });
+    });
+  }
+
+  private static Stream<Card3> cardStreamOfExpansion(List<ExpansionFile3> all, String expansionShortName) {
+    return all.stream().filter(ef3 -> ef3.getExpansion().getShortName().equals(expansionShortName)).flatMap(ef3 -> ef3.getCards().stream());
   }
 
   private Options prepareOptions() {
