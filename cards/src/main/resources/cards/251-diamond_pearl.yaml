@@ -1,51 +1,46 @@
-schema: E2
-id: '251'
-name: Diamond & Pearl
-enumId: DIAMOND_PEARL
-abbr: DP
+schema: E3
+expansion:
+  orderId: '251'
+  name: Diamond & Pearl
+  enumId: DIAMOND_PEARL
+  shortName: DP
+  isFanMade: false
 cards:
-- id: 251-1
-  pioId: dp1-1
-  enumId: DIALGA_1
+- enumId: DIALGA_1:DIAMOND_PEARL
   name: Dialga
-  nationalPokedexNumber: 483
   number: '1'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [METAL]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [M]
+  - cost: [METAL]
     name: Time Bellow
     damage: '10'
     text: Draw a card.
-  - cost: [M, M, C]
+  - cost: [METAL, METAL, COLORLESS]
     name: Flash Cannon
     damage: '40'
     text: You may return all Energy cards attached to Dialga to your hand. If you
       do, remove the highest Stage Evolution card from the Defending Pokémon and shuffle
       that card into your opponent's deck.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Nakaoka
-- id: 251-2
-  pioId: dp1-2
-  enumId: DUSKNOIR_2
+  pioId: dp1-1
+  nationalPokedexNumber: 483
+- enumId: DUSKNOIR_2:DIAMOND_PEARL
   name: Dusknoir
-  nationalPokedexNumber: 477
   number: '2'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Dusclops
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [PSYCHIC]
+  evolvesFrom: [Dusclops]
   hp: 120
-  retreatCost: 3
   abilities:
   - type: Poké-Power
     name: Dark Palm
@@ -54,31 +49,29 @@ cards:
       attached to it into his or her deck. This power can't be used if Dusknoir is
       affected by a Special Condition.
   moves:
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Hard Feelings
     text: Put 5 damage counters on the Defending Pokémon. Then, count the number of
       Prize cards your opponent has taken and put that many damage counters on the
       Defending Pokémon.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: +30
   resistances:
-  - type: C
+  - type: COLORLESS
     value: '-20'
+  retreatCost: 3
   rarity: Rare Holo
   artist: Takabon
-- id: 251-3
-  pioId: dp1-3
-  enumId: ELECTIVIRE_3
+  pioId: dp1-2
+  nationalPokedexNumber: 477
+- enumId: ELECTIVIRE_3:DIAMOND_PEARL
   name: Electivire
-  nationalPokedexNumber: 466
   number: '3'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Electabuzz
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Electabuzz]
   hp: 100
-  retreatCost: 3
   abilities:
   - type: Poké-Power
     name: Intense Voltage
@@ -87,112 +80,104 @@ cards:
       to Electivire. This power can't be used if Electivire is affected by a Special
       Condition.
   moves:
-  - cost: [L, L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, COLORLESS]
     name: Giga Impact
     damage: '60'
     text: You may discard all  [L] Energy attached to Electivire. If you do, this
       attack's base damage is 120 instead of 60.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 3
   rarity: Rare Holo
   artist: Nakaoka
-- id: 251-4
-  pioId: dp1-4
-  enumId: EMPOLEON_4
+  pioId: dp1-3
+  nationalPokedexNumber: 466
+- enumId: EMPOLEON_4:DIAMOND_PEARL
   name: Empoleon
-  nationalPokedexNumber: 395
   number: '4'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Prinplup
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Prinplup]
   hp: 130
-  retreatCost: 2
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Ice Blade
     text: Choose 1 of your opponent's Pokémon. This attack does 40 damage to that
       Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Aqua Jet
     damage: '70'
     text: Flip a coin. If heads, this attack does 20 damage to 1 of your opponent's
       Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +30
+  retreatCost: 2
   rarity: Rare Holo
   artist: Nakaoka
-- id: 251-5
-  pioId: dp1-5
-  enumId: INFERNAPE_5
+  pioId: dp1-4
+  nationalPokedexNumber: 395
+- enumId: INFERNAPE_5:DIAMOND_PEARL
   name: Infernape
-  nationalPokedexNumber: 392
   number: '5'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Monferno
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIRE]
+  evolvesFrom: [Monferno]
   hp: 100
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Meteor Punch
     damage: 30x
     text: Flip a coin until you get tails. This attack does 30 damage times the number
       of heads.
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Flare Blitz
     damage: '90'
     text: Discard all [R] Energy attached to Infernape.
   weaknesses:
-  - type: W
+  - type: WATER
     value: +30
+  retreatCost: 0
   rarity: Rare Holo
   artist: Nakaoka
-- id: 251-6
-  pioId: dp1-6
-  enumId: LUCARIO_6
+  pioId: dp1-5
+  nationalPokedexNumber: 392
+- enumId: LUCARIO_6:DIAMOND_PEARL
   name: Lucario
-  nationalPokedexNumber: 448
   number: '6'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Riolu
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Riolu]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Feint
     damage: '30'
     text: This attack's damage isn't affected by Resistance.
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Aura Sphere
     damage: '40'
     text: Does 20 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +20
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 251-7
-  pioId: dp1-7
-  enumId: LUXRAY_7
+  pioId: dp1-6
+  nationalPokedexNumber: 448
+- enumId: LUXRAY_7:DIAMOND_PEARL
   name: Luxray
-  nationalPokedexNumber: 405
   number: '7'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Luxio
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [LIGHTNING]
+  evolvesFrom: [Luxio]
   hp: 120
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Sharp Eye
@@ -201,204 +186,190 @@ cards:
       isn't full, choose 1 Basic Pokémon from your opponent's hand, and put it onto
       his or her Bench. Then, switch it with the Defending Pokémon.
   moves:
-  - cost: [L, L, L, L]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, LIGHTNING]
     name: Lightning Star
     damage: '80'
     text: Move all [L] Energy attached to Luxray to 1 of your Benched Pokémon. (Ignore
       this effect if you don't have any Benched Pokémon.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +30
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Mikiko Takeda
-- id: 251-8
-  pioId: dp1-8
-  enumId: MAGNEZONE_8
+  pioId: dp1-7
+  nationalPokedexNumber: 405
+- enumId: MAGNEZONE_8:DIAMOND_PEARL
   name: Magnezone
-  nationalPokedexNumber: 462
   number: '8'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Magneton
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [METAL]
+  evolvesFrom: [Magneton]
   hp: 120
-  retreatCost: 4
   abilities:
   - type: Poké-Body
     name: Magnetize
     text: If you have any [M] Energy attached to your Active Pokémon, the Retreat
       Cost for that Pokémon is 0.
   moves:
-  - cost: [M, C, C]
+  - cost: [METAL, COLORLESS, COLORLESS]
     name: Metal Blast
     damage: 50+
     text: Does 50 damage plus 10 more damage for each [M] Energy attached to Magnezone.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +30
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 4
   rarity: Rare Holo
   artist: Nakaoka
-- id: 251-9
-  pioId: dp1-9
-  enumId: MANAPHY_9
+  pioId: dp1-8
+  nationalPokedexNumber: 462
+- enumId: MANAPHY_9:DIAMOND_PEARL
   name: Manaphy
-  nationalPokedexNumber: 490
   number: '9'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Call for Family
     text: Search your deck for a Basic Pokémon and put it onto your Bench. Shuffle
       your deck afterward.
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Aqua Ring
     damage: '30'
     text: Switch Manaphy with 1 of your Benched Pokémon.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +20
+  retreatCost: 1
   rarity: Rare Holo
   artist: Nakaoka
-- id: 251-10
-  pioId: dp1-10
-  enumId: MISMAGIUS_10
+  pioId: dp1-9
+  nationalPokedexNumber: 490
+- enumId: MISMAGIUS_10:DIAMOND_PEARL
   name: Mismagius
-  nationalPokedexNumber: 429
   number: '10'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Misdreavus
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Misdreavus]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Avenge
     text: Count the number of your Pokémon that have any damage counters on them.
       Put that many damage counters on the Defending Pokémon.
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Psywave
     damage: 30+
     text: Does 30 damage plus 20 more damage for each Energy attached to the Defending
       Pokémon.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: +20
   resistances:
-  - type: C
+  - type: COLORLESS
     value: '-20'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Mikiko Takeda
-- id: 251-11
-  pioId: dp1-11
-  enumId: PALKIA_11
+  pioId: dp1-10
+  nationalPokedexNumber: 429
+- enumId: PALKIA_11:DIAMOND_PEARL
   name: Palkia
-  nationalPokedexNumber: 484
   number: '11'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Spacial Rend
     damage: '10'
     text: Search your deck for a Stadium card, show it to your opponent, and put it
       into your hand. Shuffle your deck afterward. If there is any Stadium card in
       play, discard it.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Transback
     damage: '40'
     text: You may flip a coin. If heads, discard all Energy attached to Palkia and
       put the Defending Pokémon and all cards attached to it on top of your opponent's
       deck. Your opponent shuffles his or her deck afterward.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +20
+  retreatCost: 2
   rarity: Rare Holo
   artist: Nakaoka
-- id: 251-12
-  pioId: dp1-12
-  enumId: RHYPERIOR_12
+  pioId: dp1-11
+  nationalPokedexNumber: 484
+- enumId: RHYPERIOR_12:DIAMOND_PEARL
   name: Rhyperior
-  nationalPokedexNumber: 464
   number: '12'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Rhydon
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Rhydon]
   hp: 140
-  retreatCost: 4
   abilities:
   - type: Poké-Power
     name: Earth Fissure
     text: Once during your turn, when you play Rhyperior from your hand to evolve
       1 of your Pokémon, you may discard the top 3 cards from your opponent's deck.
   moves:
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Rock Wrecker
     damage: '80'
     text: This attack's damage isn't affected by Weakness or Resistance. Rhyperior
       can't attack during your next turn.
   weaknesses:
-  - type: W
+  - type: WATER
     value: +30
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-20'
+  retreatCost: 4
   rarity: Rare Holo
   artist: Nakaoka
-- id: 251-13
-  pioId: dp1-13
-  enumId: ROSERADE_13
+  pioId: dp1-12
+  nationalPokedexNumber: 464
+- enumId: ROSERADE_13:DIAMOND_PEARL
   name: Roserade
-  nationalPokedexNumber: 407
   number: '13'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Roselia
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Roselia]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Poison Sting
     damage: '30'
     text: The Defending Pokémon is now Poisoned.
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Spike Whip
     damage: '50'
     text: If Budew is anywhere under Roserade, choose 1 of your opponent's Benched
       Pokémon. This attack does 30 damage to that Pokémon. (Don't apply Weakness and
       Resistance for Benched Pokémon.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
+  retreatCost: 1
   rarity: Rare Holo
   artist: Nakaoka
-- id: 251-14
-  pioId: dp1-14
-  enumId: SHIFTRY_14
+  pioId: dp1-13
+  nationalPokedexNumber: 407
+- enumId: SHIFTRY_14:DIAMOND_PEARL
   name: Shiftry
-  nationalPokedexNumber: 275
   number: '14'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Nuzleaf
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [DARKNESS]
+  evolvesFrom: [Nuzleaf]
   hp: 120
-  retreatCost: 2
   abilities:
   - type: Poké-Power
     name: Darkness Fan
@@ -407,539 +378,500 @@ cards:
       Evolution card from that Pokémon, and put it back into his or her hand. This
       power can't be used if Shiftry is affected by a Special Condition.
   moves:
-  - cost: [D, D, C]
+  - cost: [DARKNESS, DARKNESS, COLORLESS]
     name: Spirit Dance
     damage: 50+
     text: Flip 2 coins. This attack does 50 damage plus 20 more damage for each heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +30
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Masakazu Fukuda
-- id: 251-15
-  pioId: dp1-15
-  enumId: SKUNTANK_15
+  pioId: dp1-14
+  nationalPokedexNumber: 275
+- enumId: SKUNTANK_15:DIAMOND_PEARL
   name: Skuntank
-  nationalPokedexNumber: 435
   number: '15'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Stunky
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Stunky]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [D, D]
+  - cost: [DARKNESS, DARKNESS]
     name: Frustration
     text: Choose 1 of your opponent's Pokémon that doesn't have any damage counters
       on it. This attack does 30 damage to that Pokémon. (Don't apply Weakness and
       Resistance for Benched Pokémon.)
-  - cost: [D, D, C]
+  - cost: [DARKNESS, DARKNESS, COLORLESS]
     name: Toxic Cloud
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned. Put 2 damage
       counters instead of 1 on the Defending Pokémon between turns.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Hiroaki Ito
-- id: 251-16
-  pioId: dp1-16
-  enumId: STARAPTOR_16
+  pioId: dp1-15
+  nationalPokedexNumber: 435
+- enumId: STARAPTOR_16:DIAMOND_PEARL
   name: Staraptor
-  nationalPokedexNumber: 398
   number: '16'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Staravia
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [COLORLESS]
+  evolvesFrom: [Staravia]
   hp: 100
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Accelerative Dive
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing. If heads, prevent all damage
       done to Staraptor by attacks (both yours and your opponent's) until the end
       of your next turn.
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Brave Heart
     damage: '100'
     text: Flip a coin. If tails, Staraptor does 100 damage to itself.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +30
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 0
   rarity: Rare Holo
   artist: Masahiko Ishii
-- id: 251-17
-  pioId: dp1-17
-  enumId: TORTERRA_17
+  pioId: dp1-16
+  nationalPokedexNumber: 398
+- enumId: TORTERRA_17:DIAMOND_PEARL
   name: Torterra
-  nationalPokedexNumber: 389
   number: '17'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Grotle
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Grotle]
   hp: 140
-  retreatCost: 4
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Body Slam
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [G, G, C, C]
+  - cost: [GRASS, GRASS, COLORLESS, COLORLESS]
     name: Leaf Storm
     damage: '60'
     text: Remove 2 damage counters from each of your [G] Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +30
+  retreatCost: 4
   rarity: Rare Holo
   artist: Masahiko Ishii
-- id: 251-18
-  pioId: dp1-18
-  enumId: AZUMARILL_18
+  pioId: dp1-17
+  nationalPokedexNumber: 389
+- enumId: AZUMARILL_18:DIAMOND_PEARL
   name: Azumarill
-  nationalPokedexNumber: 184
   number: '18'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Marill
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Marill]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Defense Curl
     text: Flip a coin. If heads, prevent all damage done to Azumarill during your
       opponent's next turn.
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Bubble Pump
     damage: 40+
     text: If Azumarill has 3 or more Energy attached to it, this attack does 40 damage
       plus 20 more damage. If Azurill is anywhere under Azumarill, flip a coin. If
       heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +20
+  retreatCost: 2
   rarity: Rare
   artist: Naoyo Kimura
-- id: 251-19
-  pioId: dp1-19
-  enumId: BEAUTIFLY_19
+  pioId: dp1-18
+  nationalPokedexNumber: 184
+- enumId: BEAUTIFLY_19:DIAMOND_PEARL
   name: Beautifly
-  nationalPokedexNumber: 267
   number: '19'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Silcoon
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Silcoon]
   hp: 100
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Whirlwind
     damage: '30'
     text: Your opponent switches the Defending Pokémon with 1 of his or her Benched
       Pokémon.
-  - cost: [G, G, C, C]
+  - cost: [GRASS, GRASS, COLORLESS, COLORLESS]
     name: Giga Drain
     damage: '50'
     text: After your attack, remove from Beautifly the number of damage counters equal
       to the damage you did to the Defending Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Rare
   artist: Atsuko Nishida
-- id: 251-20
-  pioId: dp1-20
-  enumId: BIBAREL_20
+  pioId: dp1-19
+  nationalPokedexNumber: 267
+- enumId: BIBAREL_20:DIAMOND_PEARL
   name: Bibarel
-  nationalPokedexNumber: 400
   number: '20'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Bidoof
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Bidoof]
   hp: 100
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Rest
     text: Remove all Special Conditions and 4 damage counters from Bibarel. Bibarel
       is now Asleep.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Take Down
     damage: '60'
     text: Bibarel does 10 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 251-21
-  pioId: dp1-21
-  enumId: CARNIVINE_21
+  pioId: dp1-20
+  nationalPokedexNumber: 400
+- enumId: CARNIVINE_21:DIAMOND_PEARL
   name: Carnivine
-  nationalPokedexNumber: 455
   number: '21'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Swallow Up
     damage: '30'
     text: Before doing damage, count the remaining HP of the Defending Pokémon and
       Carnivine. If the Defending Pokémon has fewer remaining HP than Carnivine's,
       this attack does 60 damage instead.
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Wring Out
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed and discard
       an Energy card attached to the Defending Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
   resistances:
-  - type: W
+  - type: WATER
     value: '-20'
+  retreatCost: 1
   rarity: Rare
   artist: Kouki Saitou
-- id: 251-22
-  pioId: dp1-22
-  enumId: CLEFABLE_22
+  pioId: dp1-21
+  nationalPokedexNumber: 455
+- enumId: CLEFABLE_22:DIAMOND_PEARL
   name: Clefable
-  nationalPokedexNumber: 36
   number: '22'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Clefairy
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Clefairy]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Double Slap
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Metronome
     text: Choose 1 of the Defending Pokémon's attacks. Metronome copies that attack
       except for its Energy cost. (You must still do anything else in order to use
       that attack.) Clefable performs that attack.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 251-23
-  pioId: dp1-23
-  enumId: DRAPION_23
+  pioId: dp1-22
+  nationalPokedexNumber: 36
+- enumId: DRAPION_23:DIAMOND_PEARL
   name: Drapion
-  nationalPokedexNumber: 452
   number: '23'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Skorupi
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Skorupi]
   hp: 100
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Stomp
     damage: 20+
     text: Flip a coin. If heads, this attack does 20 damage plus 20 more damage.
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Poison Claws
     damage: '50'
     text: The Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +20
+  retreatCost: 3
   rarity: Rare
   artist: Kouki Saitou
-- id: 251-24
-  pioId: dp1-24
-  enumId: DRIFBLIM_24
+  pioId: dp1-23
+  nationalPokedexNumber: 452
+- enumId: DRIFBLIM_24:DIAMOND_PEARL
   name: Drifblim
-  nationalPokedexNumber: 426
   number: '24'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Drifloon
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Drifloon]
   hp: 80
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Wind Wave
     text: Search your discard pile for up to 5 in any combination of Pokémon and Supporter
       cards. Show them to your opponent and shuffle them into your deck.
-  - cost: [P, P, P]
+  - cost: [PSYCHIC, PSYCHIC, PSYCHIC]
     name: Explosive Smoke
     damage: '60'
     text: Does 10 damage to each Benched Pokémon (both yours and your opponent's).
       (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: +20
   resistances:
-  - type: C
+  - type: COLORLESS
     value: '-20'
+  retreatCost: 0
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 251-25
-  pioId: dp1-25
-  enumId: DUSTOX_25
+  pioId: dp1-24
+  nationalPokedexNumber: 426
+- enumId: DUSTOX_25:DIAMOND_PEARL
   name: Dustox
-  nationalPokedexNumber: 269
   number: '25'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Cascoon
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Cascoon]
   hp: 120
-  retreatCost: 2
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Stun Spore
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [G, G, C, C]
+  - cost: [GRASS, GRASS, COLORLESS, COLORLESS]
     name: Toxic Dust
     damage: '50'
     text: The Defending Pokémon is now Poisoned. Put 2 damage counters instead of
       1 on the Defending Pokémon between turns.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +30
+  retreatCost: 2
   rarity: Rare
   artist: Kouki Saitou
-- id: 251-26
-  pioId: dp1-26
-  enumId: FLOATZEL_26
+  pioId: dp1-25
+  nationalPokedexNumber: 269
+- enumId: FLOATZEL_26:DIAMOND_PEARL
   name: Floatzel
-  nationalPokedexNumber: 419
   number: '26'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Buizel
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Buizel]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Screw Tail
     damage: '30'
     text: Flip a coin. If heads, discard an Energy attached to the Defending Pokémon.
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Water Gun
     damage: 40+
     text: Does 40 damage plus 20 more damage for each [W] Energy attached to Floatzel
       but not used to pay for this attack's Energy cost. You can't add more than 40
       damage in this way.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +20
+  retreatCost: 1
   rarity: Rare
   artist: Masahiko Ishii
-- id: 251-27
-  pioId: dp1-27
-  enumId: GENGAR_27
+  pioId: dp1-26
+  nationalPokedexNumber: 419
+- enumId: GENGAR_27:DIAMOND_PEARL
   name: Gengar
-  nationalPokedexNumber: 94
   number: '27'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Haunter
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [PSYCHIC]
+  evolvesFrom: [Haunter]
   hp: 110
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Life Drain
     text: Flip a coin. If heads, put damage counters on the Defending Pokémon until
       it is 10 HP away from being Knocked Out.
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Shadow Dance
     text: Put 4 damage counters on your opponent's Pokémon in any way you like. Then,
       switch Gengar with 1 of your Benched Pokémon.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: +30
   resistances:
-  - type: C
+  - type: COLORLESS
     value: '-20'
+  retreatCost: 1
   rarity: Rare
   artist: Kagemaru Himeno
-- id: 251-28
-  pioId: dp1-28
-  enumId: HERACROSS_28
+  pioId: dp1-27
+  nationalPokedexNumber: 94
+- enumId: HERACROSS_28:DIAMOND_PEARL
   name: Heracross
-  nationalPokedexNumber: 214
   number: '28'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Pitch
     damage: '10'
     text: Your opponent switches the Defending Pokémon with 1 of his or her Benched
       Pokémon.
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Horn Slash
     damage: 30+
     text: Flip a coin. If heads, this attack does 30 damage plus 30 more damage.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 251-29
-  pioId: dp1-29
-  enumId: HIPPOWDON_29
+  pioId: dp1-28
+  nationalPokedexNumber: 214
+- enumId: HIPPOWDON_29:DIAMOND_PEARL
   name: Hippowdon
-  nationalPokedexNumber: 450
   number: '29'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Hippopotas
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Hippopotas]
   hp: 110
-  retreatCost: 3
   moves:
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Vacuum Up
     damage: '40'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
-  - cost: [F, F, C, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS, COLORLESS]
     name: Sand Eject
     damage: '60'
     text: During your next turn, if an attack does damage to the Defending Pokémon
       (after applying Weakness and Resistance), that attack does 40 more damage.
   weaknesses:
-  - type: W
+  - type: WATER
     value: +20
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-20'
+  retreatCost: 3
   rarity: Rare
   artist: Kouki Saitou
-- id: 251-30
-  pioId: dp1-30
-  enumId: LOPUNNY_30
+  pioId: dp1-29
+  nationalPokedexNumber: 450
+- enumId: LOPUNNY_30:DIAMOND_PEARL
   name: Lopunny
-  nationalPokedexNumber: 428
   number: '30'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Buneary
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Buneary]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Healing Wish
     text: Flip a coin until you get tails. Remove a number of damage counters equal
       to the number of heads from 1 of your Pokémon.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Flop
     damage: '30'
     text: Does 20 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.) You may switch Lopunny with 1 of your Benched
       Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
+  retreatCost: 1
   rarity: Rare
   artist: Kagemaru Himeno
-- id: 251-31
-  pioId: dp1-31
-  enumId: MACHAMP_31
+  pioId: dp1-30
+  nationalPokedexNumber: 428
+- enumId: MACHAMP_31:DIAMOND_PEARL
   name: Machamp
-  nationalPokedexNumber: 68
   number: '31'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Machoke
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Machoke]
   hp: 130
-  retreatCost: 3
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Revenge
     damage: 20+
     text: If any of your Pokémon were Knocked Out by damage from an opponent's attack
       during his or her last turn, this attack does 20 damage plus 50 more damage.
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: Dynamic Punch
     damage: 60+
     text: Flip a coin. If heads, this attack does 60 damage plus 30 more damage and
       the Defending Pokémon is now Confused.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +30
+  retreatCost: 3
   rarity: Rare
   artist: Kagemaru Himeno
-- id: 251-32
-  pioId: dp1-32
-  enumId: MEDICHAM_32
+  pioId: dp1-31
+  nationalPokedexNumber: 68
+- enumId: MEDICHAM_32:DIAMOND_PEARL
   name: Medicham
-  nationalPokedexNumber: 308
   number: '32'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Meditite
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Meditite]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Force Palm
     text: Count the number of damage counters on Medicham. Put that many damage counters
       on 1 of your opponent's Pokémon.
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Spinning Kick
     damage: '80'
     text: Medicham does 20 damage to itself.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +20
+  retreatCost: 2
   rarity: Rare
   artist: Kouki Saitou
-- id: 251-33
-  pioId: dp1-33
-  enumId: MUNCHLAX_33
+  pioId: dp1-32
+  nationalPokedexNumber: 308
+- enumId: MUNCHLAX_33:DIAMOND_PEARL
   name: Munchlax
-  nationalPokedexNumber: 446
   number: '33'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Snorlax]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 2
   abilities:
   - type: Poké-Power
     name: Baby Evolution
@@ -947,248 +879,229 @@ cards:
       hand onto Munchlax (this counts as evolving Munchlax) and remove all damage
       counters from Munchlax.
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Heave
     damage: 30x
     text: Discard 2 cards from your hand. (If you can't discard 2 cards, this attack
       does nothing.) Flip 2 coins. This attack does 30 damage times the number of
       heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 251-34
-  pioId: dp1-34
-  enumId: NOCTOWL_34
+  pioId: dp1-33
+  nationalPokedexNumber: 446
+- enumId: NOCTOWL_34:DIAMOND_PEARL
   name: Noctowl
-  nationalPokedexNumber: 164
   number: '34'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Hoothoot
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Hoothoot]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: See Beyond
     text: Choose a card from your hand and put it as a Prize card face up. Then, choose
       1 of your face-down Prize cards without looking and put it into your hand. This
       attack does nothing if all of your Prize cards are face up.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Extrasensory
     damage: 30+
     text: If you have the same number of cards in your hand as your opponent, this
       attack does 30 damage plus 50 more damage.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +20
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Rare
   artist: Atsuko Nishida
-- id: 251-35
-  pioId: dp1-35
-  enumId: PACHIRISU_35
+  pioId: dp1-34
+  nationalPokedexNumber: 164
+- enumId: PACHIRISU_35:DIAMOND_PEARL
   name: Pachirisu
-  nationalPokedexNumber: 417
   number: '35'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Minor Errand-Running
     text: Search your deck for a basic Energy card, show it to your opponent, and
       put it into your hand. Shuffle your deck afterward.
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Thunder Jolt
     damage: '20'
     text: Flip a coin. If tails, Pachirisu does 10 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Rare
   artist: Ken Sugimori
-- id: 251-36
-  pioId: dp1-36
-  enumId: PURUGLY_36
+  pioId: dp1-35
+  nationalPokedexNumber: 417
+- enumId: PURUGLY_36:DIAMOND_PEARL
   name: Purugly
-  nationalPokedexNumber: 432
   number: '36'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Glameow
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Glameow]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: High Hat
     text: Choose 1 card from your opponent's hand without looking and discard it.
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Body Slam
     damage: '50'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
+  retreatCost: 1
   rarity: Rare
   artist: Masakazu Fukuda
-- id: 251-37
-  pioId: dp1-37
-  enumId: SNORLAX_37
+  pioId: dp1-36
+  nationalPokedexNumber: 432
+- enumId: SNORLAX_37:DIAMOND_PEARL
   name: Snorlax
-  nationalPokedexNumber: 143
   number: '37'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 100
-  retreatCost: 4
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Block
     text: The Defending Pokémon can't retreat during your opponent's next turn.
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Ease Up
     damage: 40+
     text: Snorlax is now Asleep. If Snorlax is evolved from Munchlax, this attack
       does 40 damage plus 30 more damage.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
+  retreatCost: 4
   rarity: Rare
   artist: Ken Sugimori
-- id: 251-38
-  pioId: dp1-38
-  enumId: STEELIX_38
+  pioId: dp1-37
+  nationalPokedexNumber: 143
+- enumId: STEELIX_38:DIAMOND_PEARL
   name: Steelix
-  nationalPokedexNumber: 208
   number: '38'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Onix
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [METAL]
+  evolvesFrom: [Onix]
   hp: 110
-  retreatCost: 4
   moves:
-  - cost: [M]
+  - cost: [METAL]
     name: Slam
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
-  - cost: [M, M, C, C]
+  - cost: [METAL, METAL, COLORLESS, COLORLESS]
     name: Metal Slash
     damage: '100'
     text: Steelix can't attack during your next turn.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 4
   rarity: Rare
   artist: Kouki Saitou
-- id: 251-39
-  pioId: dp1-39
-  enumId: VESPIQUEN_39
+  pioId: dp1-38
+  nationalPokedexNumber: 208
+- enumId: VESPIQUEN_39:DIAMOND_PEARL
   name: Vespiquen
-  nationalPokedexNumber: 416
   number: '39'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Combee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Combee]
   hp: 100
-  retreatCost: 3
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Leaf Honey
     text: Discard a [G] Energy attached to Vespiquen and remove all damage counters
       from 1 of your Benched [G] Pokémon.
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Attack Order
     damage: 10x
     text: Does 10 damage times the number of [G] Pokémon in play (both yours and your
       opponent's).
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 3
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 251-40
-  pioId: dp1-40
-  enumId: WEAVILE_40
+  pioId: dp1-39
+  nationalPokedexNumber: 416
+- enumId: WEAVILE_40:DIAMOND_PEARL
   name: Weavile
-  nationalPokedexNumber: 461
   number: '40'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Sneasel
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Sneasel]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Nasty Plot
     text: Search your deck for any 1 card and put it into your hand. Shuffle your
       deck afterward.
-  - cost: [D, D, D]
+  - cost: [DARKNESS, DARKNESS, DARKNESS]
     name: Dark Pulse
     damage: 10x
     text: Does 10 damage times the total amount of [D] Energy attached to all of your
       Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Rare
   artist: Naoyo Kimura
-- id: 251-41
-  pioId: dp1-41
-  enumId: WOBBUFFET_41
+  pioId: dp1-40
+  nationalPokedexNumber: 461
+- enumId: WOBBUFFET_41:DIAMOND_PEARL
   name: Wobbuffet
-  nationalPokedexNumber: 202
   number: '41'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Countercharge
     text: Flip a coin. If heads, move all damage counters from Wobbuffet to the Defending
       Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +20
+  retreatCost: 3
   rarity: Rare
   artist: Kouki Saitou
-- id: 251-42
-  pioId: dp1-42
-  enumId: WYNAUT_42
+  pioId: dp1-41
+  nationalPokedexNumber: 202
+- enumId: WYNAUT_42:DIAMOND_PEARL
   name: Wynaut
-  nationalPokedexNumber: 360
   number: '42'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Wobbuffet]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Baby Evolution
@@ -1201,22 +1114,19 @@ cards:
     text: Choose 1 card from your opponent's hand without looking. Look at the card
       you chose, then have your opponent shuffle that card into his or her deck.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 1
   rarity: Rare
   artist: Masakazu Fukuda
-- id: 251-43
-  pioId: dp1-43
-  enumId: BUDEW_43
+  pioId: dp1-42
+  nationalPokedexNumber: 360
+- enumId: BUDEW_43:DIAMOND_PEARL
   name: Budew
-  nationalPokedexNumber: 406
   number: '43'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Roselia]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Baby Evolution
@@ -1229,140 +1139,126 @@ cards:
     text: Search your deck for a Trainer card, show it to your opponent, and put it
       into your hand. Shuffle your deck afterward.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +10
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 251-44
-  pioId: dp1-44
-  enumId: CASCOON_44
+  pioId: dp1-43
+  nationalPokedexNumber: 406
+- enumId: CASCOON_44:DIAMOND_PEARL
   name: Cascoon
-  nationalPokedexNumber: 268
   number: '44'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Wurmple
-  evolvesTo: [Dustox]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Wurmple]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Harden
     text: During your opponent's next turn, if Cascoon would be damaged by an attack,
       prevent that attack's damage done to Cascoon if that damage is 30 or less.
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Gooey Thread
     damage: '20'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
+  retreatCost: 3
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 251-45
-  pioId: dp1-45
-  enumId: CHERRIM_45
+  pioId: dp1-44
+  nationalPokedexNumber: 268
+- enumId: CHERRIM_45:DIAMOND_PEARL
   name: Cherrim
-  nationalPokedexNumber: 421
   number: '45'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Cherubi
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Cherubi]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Worry Seed
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Magical Leaf
     damage: 20+
     text: Flip a coin. If heads, this attack does 20 damage plus 20 more damage and
       remove 3 damage counters from Cherrim.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
   resistances:
-  - type: W
+  - type: WATER
     value: '-20'
+  retreatCost: 2
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 251-46
-  pioId: dp1-46
-  enumId: DRIFLOON_46
+  pioId: dp1-45
+  nationalPokedexNumber: 421
+- enumId: DRIFLOON_46:DIAMOND_PEARL
   name: Drifloon
-  nationalPokedexNumber: 425
   number: '46'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Drifblim]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Blowing Wind
     text: Flip a coin. If heads, put 1 of your Benched Pokémon and all cards attached
       to on top of your deck. Shuffle your deck afterward.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Ominous Wind
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused and can't retreat
       during your opponent's next turn.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: +10
   resistances:
-  - type: C
+  - type: COLORLESS
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 251-47
-  pioId: dp1-47
-  enumId: DUSCLOPS_47
+  pioId: dp1-46
+  nationalPokedexNumber: 425
+- enumId: DUSCLOPS_47:DIAMOND_PEARL
   name: Dusclops
-  nationalPokedexNumber: 356
   number: '47'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Duskull
-  evolvesTo: [Dusknoir]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Duskull]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Roam
     text: Flip a coin. If heads, put 2 damage counters on each of your opponent's
       Pokémon. If tails, put 2 damage counters on 1 of your Pokémon.
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Gravity Wave
     damage: '30'
     text: Does 10 damage to each of your opponent's Benched Pokémon that doesn't have
       a Retreat Cost. (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: +20
   resistances:
-  - type: C
+  - type: COLORLESS
     value: '-20'
+  retreatCost: 2
   rarity: Uncommon
   artist: Kouki Saitou
-- id: 251-48
-  pioId: dp1-48
-  enumId: ELEKID_48
+  pioId: dp1-47
+  nationalPokedexNumber: 356
+- enumId: ELEKID_48:DIAMOND_PEARL
   name: Elekid
-  nationalPokedexNumber: 239
   number: '48'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Electabuzz]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Baby Evolution
@@ -1375,200 +1271,179 @@ cards:
     text: Search your deck for a [L] Energy card, show it to your opponent, and put
       it into your hand. Shuffle your deck afterward.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 251-49
-  pioId: dp1-49
-  enumId: GROTLE_49
+  pioId: dp1-48
+  nationalPokedexNumber: 239
+- enumId: GROTLE_49:DIAMOND_PEARL
   name: Grotle
-  nationalPokedexNumber: 388
   number: '49'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Turtwig
-  evolvesTo: [Torterra]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Turtwig]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Synthesis
     text: Search your deck for a [G] Energy card and attach it to 1 of your Pokémon.
       Shuffle your deck afterward.
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Cut
     damage: '50'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
   resistances:
-  - type: W
+  - type: WATER
     value: '-20'
+  retreatCost: 3
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 251-50
-  pioId: dp1-50
-  enumId: HAUNTER_50
+  pioId: dp1-49
+  nationalPokedexNumber: 388
+- enumId: HAUNTER_50:DIAMOND_PEARL
   name: Haunter
-  nationalPokedexNumber: 93
   number: '50'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Gastly
-  evolvesTo: [Gengar]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Gastly]
   hp: 70
-  retreatCost: 0
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hypnosis
     text: The Defending Pokémon is now Asleep.
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Dream Eater
     damage: '60'
     text: If the Defending Pokémon is not Asleep, this attack does nothing.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: +20
   resistances:
-  - type: C
+  - type: COLORLESS
     value: '-20'
+  retreatCost: 0
   rarity: Uncommon
   artist: Naoyo Kimura
-- id: 251-51
-  pioId: dp1-51
-  enumId: HIPPOPOTAS_51
+  pioId: dp1-50
+  nationalPokedexNumber: 93
+- enumId: HIPPOPOTAS_51:DIAMOND_PEARL
   name: Hippopotas
-  nationalPokedexNumber: 449
   number: '51'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Hippowdon]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Yawn
     text: The Defending Pokémon is now Asleep.
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Sand Attack
     damage: '10'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
   weaknesses:
-  - type: W
+  - type: WATER
     value: +10
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-20'
+  retreatCost: 2
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 251-52
-  pioId: dp1-52
-  enumId: LUXIO_52
+  pioId: dp1-51
+  nationalPokedexNumber: 449
+- enumId: LUXIO_52:DIAMOND_PEARL
   name: Luxio
-  nationalPokedexNumber: 404
   number: '52'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Shinx
-  evolvesTo: [Luxray]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Shinx]
   hp: 80
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Fasten Claws
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 30 more damage.
-  - cost: [L, L]
+  - cost: [LIGHTNING, LIGHTNING]
     name: Thunder Fang
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 0
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 251-53
-  pioId: dp1-53
-  enumId: MACHOKE_53
+  pioId: dp1-52
+  nationalPokedexNumber: 404
+- enumId: MACHOKE_53:DIAMOND_PEARL
   name: Machoke
-  nationalPokedexNumber: 67
   number: '53'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Machop
-  evolvesTo: [Machamp]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Machop]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Karate Chop
     damage: 40-
     text: Does 40 damage minus 10 damage for each damage counter on Machoke.
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Seismic Toss
     damage: '60'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +20
+  retreatCost: 2
   rarity: Uncommon
   artist: Kouki Saitou
-- id: 251-54
-  pioId: dp1-54
-  enumId: MAGNETON_54
+  pioId: dp1-53
+  nationalPokedexNumber: 67
+- enumId: MAGNETON_54:DIAMOND_PEARL
   name: Magneton
-  nationalPokedexNumber: 82
   number: '54'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Magnemite
-  evolvesTo: [Magnezone]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [METAL]
+  evolvesFrom: [Magnemite]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Tri Attack
     damage: 20x
     text: Flip 3 coins. This attack does 20 damage times the number of heads.
-  - cost: [M, C, C]
+  - cost: [METAL, COLORLESS, COLORLESS]
     name: Magnetic Ray
     damage: '40'
     text: Before doing damage, you may choose 1 of your opponent's Benched Pokémon
       that has any Energy attached to it and switch that Pokémon with 1 of the Defending
       Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Uncommon
   artist: Kouki Saitou
-- id: 251-55
-  pioId: dp1-55
-  enumId: MANTYKE_55
+  pioId: dp1-54
+  nationalPokedexNumber: 82
+- enumId: MANTYKE_55:DIAMOND_PEARL
   name: Mantyke
-  nationalPokedexNumber: 458
   number: '55'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Mantine]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Baby Evolution
@@ -1581,276 +1456,249 @@ cards:
     text: Search your deck for a  grass Basic Pokémon, show it to your opponent, and
       put it into your hand. Shuffle your deck afterward.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +10
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
   artist: Midori Harada
-- id: 251-56
-  pioId: dp1-56
-  enumId: MONFERNO_56
+  pioId: dp1-55
+  nationalPokedexNumber: 458
+- enumId: MONFERNO_56:DIAMOND_PEARL
   name: Monferno
-  nationalPokedexNumber: 391
   number: '56'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Chimchar
-  evolvesTo: [Infernape]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Chimchar]
   hp: 70
-  retreatCost: 0
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Flame Dance
     damage: '30'
     text: Search your discard pile for a [R] Energy card and attach it to Monferno.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Fury Swipes
     damage: 20x
     text: Flip 3 coins. This attack does 20 damage times the number of heads.
   weaknesses:
-  - type: W
+  - type: WATER
     value: +20
+  retreatCost: 0
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 251-57
-  pioId: dp1-57
-  enumId: NUZLEAF_57
+  pioId: dp1-56
+  nationalPokedexNumber: 391
+- enumId: NUZLEAF_57:DIAMOND_PEARL
   name: Nuzleaf
-  nationalPokedexNumber: 274
   number: '57'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Seedot
-  evolvesTo: [Shiftry]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Seedot]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Dirty Trick
     text: Flip a coin. If heads, discard an Energy card attached to 1 of your opponent's
       Pokémon.
-  - cost: [D, D]
+  - cost: [DARKNESS, DARKNESS]
     name: Razor Wind
     damage: '40'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 251-58
-  pioId: dp1-58
-  enumId: PRINPLUP_58
+  pioId: dp1-57
+  nationalPokedexNumber: 274
+- enumId: PRINPLUP_58:DIAMOND_PEARL
   name: Prinplup
-  nationalPokedexNumber: 394
   number: '58'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Piplup
-  evolvesTo: [Empoleon]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Piplup]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Aqua Shower
     text: Does 10 damage to each of your opponent's Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Brine
     text: Choose 1 of your opponent's Pokémon that has any damage counters on it.
       This attack does 40 damage to that Pokémon. (Don't apply Weakness and Resistance
       for Benched Pokémon.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +20
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 251-59
-  pioId: dp1-59
-  enumId: RAPIDASH_59
+  pioId: dp1-58
+  nationalPokedexNumber: 394
+- enumId: RAPIDASH_59:DIAMOND_PEARL
   name: Rapidash
-  nationalPokedexNumber: 78
   number: '59'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Ponyta
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Ponyta]
   hp: 80
-  retreatCost: 0
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Overrun
     damage: '20'
     text: Does 10 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
-  - cost: [R, R, C]
+  - cost: [FIRE, FIRE, COLORLESS]
     name: Blaze Up
     damage: '50'
     text: Flip a coin. If tails, discard a [R] Energy attached to Rapidash and this
       attack does 10 damage to each of your opponent's Benched Pokémon. (Don't apply
       Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: W
+  - type: WATER
     value: +20
+  retreatCost: 0
   rarity: Uncommon
   artist: Naoyo Kimura
-- id: 251-60
-  pioId: dp1-60
-  enumId: RHYDON_60
+  pioId: dp1-59
+  nationalPokedexNumber: 78
+- enumId: RHYDON_60:DIAMOND_PEARL
   name: Rhydon
-  nationalPokedexNumber: 112
   number: '60'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Rhyhorn
-  evolvesTo: [Rhyperior]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Rhyhorn]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Storm Up
     damage: 30+
     text: If there is any Stadium card in play, this attack does 30 damage plus 20
       more damage. Discard that Stadium card.
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Crash Impact
     damage: '60'
     text: Rhydon does 10 damage to itself. Your opponent switches the Defending Pokémon
       with 1 of his or her Benched Pokémon, if any.
   weaknesses:
-  - type: W
+  - type: WATER
     value: +20
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-20'
+  retreatCost: 2
   rarity: Uncommon
   artist: Naoyo Kimura
-- id: 251-61
-  pioId: dp1-61
-  enumId: RIOLU_61
+  pioId: dp1-60
+  nationalPokedexNumber: 112
+- enumId: RIOLU_61:DIAMOND_PEARL
   name: Riolu
-  nationalPokedexNumber: 447
   number: '61'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Lucario]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Wild Kick
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 251-62
-  pioId: dp1-62
-  enumId: SEAKING_62
+  pioId: dp1-61
+  nationalPokedexNumber: 447
+- enumId: SEAKING_62:DIAMOND_PEARL
   name: Seaking
-  nationalPokedexNumber: 119
   number: '62'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Goldeen
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Goldeen]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Flail
     damage: 10x
     text: Does 10 damage times the number of damage counters on Seaking.
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Horn Drill
     damage: '50'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +20
+  retreatCost: 1
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 251-63
-  pioId: dp1-63
-  enumId: SILCOON_63
+  pioId: dp1-62
+  nationalPokedexNumber: 119
+- enumId: SILCOON_63:DIAMOND_PEARL
   name: Silcoon
-  nationalPokedexNumber: 266
   number: '63'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Wurmple
-  evolvesTo: [Beautifly]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Wurmple]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Harden
     text: During your opponent's next turn, if Silcoon would be damaged by an attack,
       prevent that attack's damage done to Silcoon if that damage is 30 or less.
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Entangling String
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon can't attack during your opponent's
       next turn.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
+  retreatCost: 3
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 251-64
-  pioId: dp1-64
-  enumId: STARAVIA_64
+  pioId: dp1-63
+  nationalPokedexNumber: 266
+- enumId: STARAVIA_64:DIAMOND_PEARL
   name: Staravia
-  nationalPokedexNumber: 397
   number: '64'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Starly
-  evolvesTo: [Staraptor]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Starly]
   hp: 70
-  retreatCost: 0
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Whirlwind
     damage: '20'
     text: Your opponent switches the Defending Pokémon with 1 of his or her Benched
       Pokémon.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Clutch
     damage: '20'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +20
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 0
   rarity: Uncommon
   artist: Masakazu Fukuda
-- id: 251-65
-  pioId: dp1-65
-  enumId: UNOWN_A_65
+  pioId: dp1-64
+  nationalPokedexNumber: 397
+- enumId: UNOWN_A_65:DIAMOND_PEARL
   name: Unown A
-  nationalPokedexNumber: 201
   number: '65'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Analyze
@@ -1858,25 +1706,23 @@ cards:
       you may look at the top 2 cards of your deck and put them back on top of your
       deck in any order.
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 1
   rarity: Uncommon
   artist: Nakaoka
-- id: 251-66
-  pioId: dp1-66
-  enumId: UNOWN_B_66
-  name: Unown B
+  pioId: dp1-65
   nationalPokedexNumber: 201
+- enumId: UNOWN_B_66:DIAMOND_PEARL
+  name: Unown B
   number: '66'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Bounce
@@ -1884,25 +1730,23 @@ cards:
       you may flip a coin. If heads, discard all cards attached to any 1 of your Unown
       and shuffle that Pokémon back into your deck.
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 1
   rarity: Uncommon
   artist: Nakaoka
-- id: 251-67
-  pioId: dp1-67
-  enumId: UNOWN_C_67
-  name: Unown C
+  pioId: dp1-66
   nationalPokedexNumber: 201
+- enumId: UNOWN_C_67:DIAMOND_PEARL
+  name: Unown C
   number: '67'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Call
@@ -1910,25 +1754,23 @@ cards:
       you may flip a coin. If heads, search your deck for any 1 Unown and put it onto
       your Bench. Shuffle your deck afterward.
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 1
   rarity: Uncommon
   artist: Nakaoka
-- id: 251-68
-  pioId: dp1-68
-  enumId: UNOWN_D_68
-  name: Unown D
+  pioId: dp1-67
   nationalPokedexNumber: 201
+- enumId: UNOWN_D_68:DIAMOND_PEARL
+  name: Unown D
   number: '68'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Draw
@@ -1936,26 +1778,23 @@ cards:
       you may flip a coin. If heads, each player may draw a card. (You draw your card
       first.)
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 1
   rarity: Uncommon
   artist: Nakaoka
-- id: 251-69
-  pioId: dp1-69
-  enumId: AZURILL_69
+  pioId: dp1-68
+  nationalPokedexNumber: 201
+- enumId: AZURILL_69:DIAMOND_PEARL
   name: Azurill
-  nationalPokedexNumber: 298
   number: '69'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Marill]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Baby Evolution
@@ -1967,48 +1806,42 @@ cards:
     name: Delivery
     text: Put any 1 card from your discard pile into your hand.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-70
-  pioId: dp1-70
-  enumId: BIDOOF_70
+  pioId: dp1-69
+  nationalPokedexNumber: 298
+- enumId: BIDOOF_70:DIAMOND_PEARL
   name: Bidoof
-  nationalPokedexNumber: 399
   number: '70'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Bibarel]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Amnesia
     text: Choose 1 of the Defending Pokémon's attacks. That Pokémon can't use that
       attack during your opponent's next turn.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Scavenge
     text: Search your discard pile for a Trainer card, show it to your opponent, and
       put it into your hand.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-71
-  pioId: dp1-71
-  enumId: BONSLY_71
+  pioId: dp1-70
+  nationalPokedexNumber: 399
+- enumId: BONSLY_71:DIAMOND_PEARL
   name: Bonsly
-  nationalPokedexNumber: 438
   number: '71'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Sudowoodo]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Baby Evolution
@@ -2022,178 +1855,158 @@ cards:
       or her hand during your opponent's next turn, and any damage done to Bonsly
       by attacks is reduced by 30 (after applying Weakness and Resistance).
   weaknesses:
-  - type: G
+  - type: GRASS
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Midori Harada
-- id: 251-72
-  pioId: dp1-72
-  enumId: BUIZEL_72
+  pioId: dp1-71
+  nationalPokedexNumber: 438
+- enumId: BUIZEL_72:DIAMOND_PEARL
   name: Buizel
-  nationalPokedexNumber: 418
   number: '72'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Floatzel]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Splash About
     damage: 10+
     text: If Buizel has less Energy attached to it than the Defending Pokémon, this
       attack does 10 damage plus 10 more damage.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-73
-  pioId: dp1-73
-  enumId: BUNEARY_73
+  pioId: dp1-72
+  nationalPokedexNumber: 418
+- enumId: BUNEARY_73:DIAMOND_PEARL
   name: Buneary
-  nationalPokedexNumber: 427
   number: '73'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Lopunny]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Splash
     damage: '10'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Jump Kick
     damage: '10'
     text: Does 10 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-74
-  pioId: dp1-74
-  enumId: CHATOT_74
+  pioId: dp1-73
+  nationalPokedexNumber: 427
+- enumId: CHATOT_74:DIAMOND_PEARL
   name: Chatot
-  nationalPokedexNumber: 441
   number: '74'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Me First
     text: Draw a card.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Tone-Deaf
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +10
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-75
-  pioId: dp1-75
-  enumId: CHERUBI_75
+  pioId: dp1-74
+  nationalPokedexNumber: 441
+- enumId: CHERUBI_75:DIAMOND_PEARL
   name: Cherubi
-  nationalPokedexNumber: 420
   number: '75'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Cherrim]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Sleep Powder
     text: The Defending Pokémon is now Asleep.
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Leech Seed
     damage: '20'
     text: If this attack does any damage to the Defending Pokémon (after applying
       Weakness and Resistance), remove 1 damage counter from Cherubi.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +10
   resistances:
-  - type: W
+  - type: WATER
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-76
-  pioId: dp1-76
-  enumId: CHIMCHAR_76
+  pioId: dp1-75
+  nationalPokedexNumber: 420
+- enumId: CHIMCHAR_76:DIAMOND_PEARL
   name: Chimchar
-  nationalPokedexNumber: 390
   number: '76'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Monferno]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 50
-  retreatCost: 1
   moves:
   - cost: []
     name: Scratch
     damage: '10'
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Ember
     damage: '30'
     text: Flip a coin. If tails, discard a [R] Energy attached to Chimchar.
   weaknesses:
-  - type: W
+  - type: WATER
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-77
-  pioId: dp1-77
-  enumId: CLEFAIRY_77
+  pioId: dp1-76
+  nationalPokedexNumber: 390
+- enumId: CLEFAIRY_77:DIAMOND_PEARL
   name: Clefairy
-  nationalPokedexNumber: 35
   number: '77'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Clefable]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Sing
     text: The Defending Pokémon is now Asleep.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Moon Impact
     damage: 20+
     text: If Clefairy is evolved from Cleffa, this attack does 20 damage plus 20 more
       damage.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-78
-  pioId: dp1-78
-  enumId: CLEFFA_78
+  pioId: dp1-77
+  nationalPokedexNumber: 35
+- enumId: CLEFFA_78:DIAMOND_PEARL
   name: Cleffa
-  nationalPokedexNumber: 173
   number: '78'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Clefairy]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Baby Evolution
@@ -2205,318 +2018,283 @@ cards:
     name: Eeek
     text: Draw a card.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-79
-  pioId: dp1-79
-  enumId: COMBEE_79
+  pioId: dp1-78
+  nationalPokedexNumber: 173
+- enumId: COMBEE_79:DIAMOND_PEARL
   name: Combee
-  nationalPokedexNumber: 415
   number: '79'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Vespiquen]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Soliciting Nectar
     text: Switch 1 of your opponent's Benched Pokémon with 1 of the Defending Pokémon.
       The new Defending Pokémon is now Asleep.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Gust
     damage: '20'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +10
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-80
-  pioId: dp1-80
-  enumId: DUSKULL_80
+  pioId: dp1-79
+  nationalPokedexNumber: 415
+- enumId: DUSKULL_80:DIAMOND_PEARL
   name: Duskull
-  nationalPokedexNumber: 355
   number: '80'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Dusclops]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Disable
     text: Flip a coin. If heads, choose 1 of the Defending Pokémon's attacks. That
       Pokémon can't use that attack during your opponent's next turn.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Night Shade
     damage: '20'
     text: Does 10 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: +10
   resistances:
-  - type: C
+  - type: COLORLESS
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 251-81
-  pioId: dp1-81
-  enumId: ELECTABUZZ_81
+  pioId: dp1-80
+  nationalPokedexNumber: 355
+- enumId: ELECTABUZZ_81:DIAMOND_PEARL
   name: Electabuzz
-  nationalPokedexNumber: 125
   number: '81'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Electivire]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Thunderpunch
     damage: 30+
     text: Flip a coin. If heads, this attack does 30 damage plus 10 more damage. If
       tails, Electabuzz does 10 damage to itself.
-  - cost: [L, L]
+  - cost: [LIGHTNING, LIGHTNING]
     name: Shock Wave
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If Electabuzz
       is evolved from Elekid, this attack does 20 damage to 1 of your opponent's Benched
       Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 2
   rarity: Common
   artist: Kagemaru Himeno
-- id: 251-82
-  pioId: dp1-82
-  enumId: GASTLY_82
+  pioId: dp1-81
+  nationalPokedexNumber: 125
+- enumId: GASTLY_82:DIAMOND_PEARL
   name: Gastly
-  nationalPokedexNumber: 92
   number: '82'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Haunter]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Pain Payback
     text: Move 1 damage counter from Gastly to 1 of your opponent's Pokémon.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: +10
   resistances:
-  - type: C
+  - type: COLORLESS
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Kouki Saitou
-- id: 251-83
-  pioId: dp1-83
-  enumId: GLAMEOW_83
+  pioId: dp1-82
+  nationalPokedexNumber: 92
+- enumId: GLAMEOW_83:DIAMOND_PEARL
   name: Glameow
-  nationalPokedexNumber: 431
   number: '83'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Purugly]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Charm
     text: During your opponent's next turn, any damage done by attacks from the Defending
       Pokémon is reduced by 20 (before applying Weakness and Resistance).
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Pose
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-84
-  pioId: dp1-84
-  enumId: GOLDEEN_84
+  pioId: dp1-83
+  nationalPokedexNumber: 431
+- enumId: GOLDEEN_84:DIAMOND_PEARL
   name: Goldeen
-  nationalPokedexNumber: 118
   number: '84'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Seaking]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Horn Attack
     damage: '10'
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Take Down
     damage: '30'
     text: Goldeen does 10 damage to itself.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 251-85
-  pioId: dp1-85
-  enumId: HOOTHOOT_85
+  pioId: dp1-84
+  nationalPokedexNumber: 118
+- enumId: HOOTHOOT_85:DIAMOND_PEARL
   name: Hoothoot
-  nationalPokedexNumber: 163
   number: '85'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Noctowl]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Hypnosis
     text: The Defending Pokémon is now Asleep.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Kick Shot
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +10
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Midori Harada
-- id: 251-86
-  pioId: dp1-86
-  enumId: MACHOP_86
+  pioId: dp1-85
+  nationalPokedexNumber: 163
+- enumId: MACHOP_86:DIAMOND_PEARL
   name: Machop
-  nationalPokedexNumber: 66
   number: '86'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Machoke]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Low Kick
     damage: '20'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 2
   rarity: Common
   artist: Atsuko Nishida
-- id: 251-87
-  pioId: dp1-87
-  enumId: MAGNEMITE_87
+  pioId: dp1-86
+  nationalPokedexNumber: 66
+- enumId: MAGNEMITE_87:DIAMOND_PEARL
   name: Magnemite
-  nationalPokedexNumber: 81
   number: '87'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Magneton]
+  cardTypes: [POKEMON, BASIC]
+  types: [METAL]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [M]
+  - cost: [METAL]
     name: Metal Sound
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
-  - cost: [M, C]
+  - cost: [METAL, COLORLESS]
     name: Resonance
     damage: 20+
     text: If the Defending Pokémon is Confused, this attack does 20 damage plus 20
       more damage.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +10
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Kouki Saitou
-- id: 251-88
-  pioId: dp1-88
-  enumId: MARILL_88
+  pioId: dp1-87
+  nationalPokedexNumber: 81
+- enumId: MARILL_88:DIAMOND_PEARL
   name: Marill
-  nationalPokedexNumber: 183
   number: '88'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Azumarill]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Rollout
     damage: 10+
     text: If Marill is evolved from Azurill, this attack does 10 damage plus 20 more
       damage.
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Splashing Turn
     damage: '20'
     text: Switch Marill with 1 of your Benched Pokémon.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 251-89
-  pioId: dp1-89
-  enumId: MEDITITE_89
+  pioId: dp1-88
+  nationalPokedexNumber: 183
+- enumId: MEDITITE_89:DIAMOND_PEARL
   name: Meditite
-  nationalPokedexNumber: 307
   number: '89'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Medicham]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Detect
     text: Flip a coin. If heads, prevent all effects of an attack, including damage,
       done to Meditite during your opponent's next turn.
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Meditate
     damage: 10+
     text: Does 10 damage plus 10 more damage for each damage counter on the Defending
       Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Masakazu Fukuda
-- id: 251-90
-  pioId: dp1-90
-  enumId: MIME_JR__90
+  pioId: dp1-89
+  nationalPokedexNumber: 307
+- enumId: MIME_JR__90:DIAMOND_PEARL
   name: Mime Jr.
-  nationalPokedexNumber: 439
   number: '90'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Baby Evolution
@@ -2524,602 +2302,516 @@ cards:
       hand onto Mime Jr. (this counts as evolving Mime Jr.) and remove all damage
       counters from Mime Jr.
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Mime
     text: Shuffle your hand into your deck. Then, draw a number of cards equal to
       the number of cards in your opponent's hand.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-91
-  pioId: dp1-91
-  enumId: MISDREAVUS_91
+  pioId: dp1-90
+  nationalPokedexNumber: 439
+- enumId: MISDREAVUS_91:DIAMOND_PEARL
   name: Misdreavus
-  nationalPokedexNumber: 200
   number: '91'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Mismagius]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Astonish
     text: Choose 1 card from your opponent's hand without looking. Look at the card
       you chose, then have your opponent shuffle that card into his or her deck.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Confuse Ray
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: +10
   resistances:
-  - type: C
+  - type: COLORLESS
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-92
-  pioId: dp1-92
-  enumId: ONIX_92
+  pioId: dp1-91
+  nationalPokedexNumber: 200
+- enumId: ONIX_92:DIAMOND_PEARL
   name: Onix
-  nationalPokedexNumber: 95
   number: '92'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Steelix]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Tunneling
     text: Choose up to 2 of your opponent's Benched Pokémon. This attack does 10 damage
       to each of them. (Don't apply Weakness and Resistance for Benched Pokémon.)
       Onix can't attack during your next turn.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Headbutt
     damage: '20'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: +20
+  retreatCost: 3
   rarity: Common
   artist: Ken Sugimori
-- id: 251-93
-  pioId: dp1-93
-  enumId: PIPLUP_93
+  pioId: dp1-92
+  nationalPokedexNumber: 95
+- enumId: PIPLUP_93:DIAMOND_PEARL
   name: Piplup
-  nationalPokedexNumber: 393
   number: '93'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Prinplup]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
   - cost: []
     name: Peck
     damage: '10'
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Water Splash
     damage: 20+
     text: Flip a coin. If heads, this attack does 20 damage plus 10 more damage.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-94
-  pioId: dp1-94
-  enumId: PONYTA_94
+  pioId: dp1-93
+  nationalPokedexNumber: 393
+- enumId: PONYTA_94:DIAMOND_PEARL
   name: Ponyta
-  nationalPokedexNumber: 77
   number: '94'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Rapidash]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Tackle
     damage: '10'
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Flame Tail
     damage: '30'
   weaknesses:
-  - type: W
+  - type: WATER
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Kagemaru Himeno
-- id: 251-95
-  pioId: dp1-95
-  enumId: RHYHORN_95
+  pioId: dp1-94
+  nationalPokedexNumber: 77
+- enumId: RHYHORN_95:DIAMOND_PEARL
   name: Rhyhorn
-  nationalPokedexNumber: 111
   number: '95'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Rhydon]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Horn Attack
     damage: '10'
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Take Down
     damage: '30'
     text: Rhyhorn does 10 damage to itself.
   weaknesses:
-  - type: W
+  - type: WATER
     value: +10
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-20'
+  retreatCost: 2
   rarity: Common
   artist: Kagemaru Himeno
-- id: 251-96
-  pioId: dp1-96
-  enumId: ROSELIA_96
+  pioId: dp1-95
+  nationalPokedexNumber: 111
+- enumId: ROSELIA_96:DIAMOND_PEARL
   name: Roselia
-  nationalPokedexNumber: 315
   number: '96'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Roserade]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Toxic Spikes
     text: The Defending Pokémon is now Poisoned. If Roselia is evolved from Budew,
       this attack does 10 damage to the Defending Pokémon.
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Sweet Spike
     damage: '10'
     text: The Defending Pokémon is now Asleep. Remove 2 damage counters from 1 of
       your Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-97
-  pioId: dp1-97
-  enumId: SEEDOT_97
+  pioId: dp1-96
+  nationalPokedexNumber: 315
+- enumId: SEEDOT_97:DIAMOND_PEARL
   name: Seedot
-  nationalPokedexNumber: 273
   number: '97'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Nuzleaf]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Bide
     text: Flip a coin. If heads, during your opponent's next turn, if Seedot would
       be Knocked Out by damage from an attack, Seedot is not Knocked Out and its remaining
       HP becomes 10 instead.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Rollout
     damage: '20'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +10
   resistances:
-  - type: W
+  - type: WATER
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Masakazu Fukuda
-- id: 251-98
-  pioId: dp1-98
-  enumId: SHINX_98
+  pioId: dp1-97
+  nationalPokedexNumber: 273
+- enumId: SHINX_98:DIAMOND_PEARL
   name: Shinx
-  nationalPokedexNumber: 403
   number: '98'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Luxio]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Spark
     damage: '10'
     text: Does 10 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-99
-  pioId: dp1-99
-  enumId: SKORUPI_99
+  pioId: dp1-98
+  nationalPokedexNumber: 403
+- enumId: SKORUPI_99:DIAMOND_PEARL
   name: Skorupi
-  nationalPokedexNumber: 451
   number: '99'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Drapion]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Poison Sting
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Pin Missile
     damage: 10x
     text: Flip 4 coins. This attack does 10 damage time the number of heads.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 2
   rarity: Common
   artist: Kouki Saitou
-- id: 251-100
-  pioId: dp1-100
-  enumId: SNEASEL_100
+  pioId: dp1-99
+  nationalPokedexNumber: 451
+- enumId: SNEASEL_100:DIAMOND_PEARL
   name: Sneasel
-  nationalPokedexNumber: 215
   number: '100'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Weavile]
+  cardTypes: [POKEMON, BASIC]
+  types: [DARKNESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Double Slap
     damage: 10x
     text: Flip 2 coins. This attack does 10 damage times the number of heads.
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Feint Attack
     text: Choose 1 of your opponent's Pokémon. This attack does 20 damage to that
       Pokémon. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers,
       Poké-Bodies, or any other effects on that Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-101
-  pioId: dp1-101
-  enumId: STARLY_101
+  pioId: dp1-100
+  nationalPokedexNumber: 215
+- enumId: STARLY_101:DIAMOND_PEARL
   name: Starly
-  nationalPokedexNumber: 396
   number: '101'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Staravia]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Gust
     damage: '10'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Quick Attack
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 20 more damage.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +10
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-102
-  pioId: dp1-102
-  enumId: STUNKY_102
+  pioId: dp1-101
+  nationalPokedexNumber: 396
+- enumId: STUNKY_102:DIAMOND_PEARL
   name: Stunky
-  nationalPokedexNumber: 434
   number: '102'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Skuntank]
+  cardTypes: [POKEMON, BASIC]
+  types: [DARKNESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Scratch
     damage: '10'
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Severe Gas
     damage: '10'
     text: The Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-103
-  pioId: dp1-103
-  enumId: TURTWIG_103
+  pioId: dp1-102
+  nationalPokedexNumber: 434
+- enumId: TURTWIG_103:DIAMOND_PEARL
   name: Turtwig
-  nationalPokedexNumber: 387
   number: '103'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Grotle]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 2
   moves:
   - cost: []
     name: Tackle
     damage: '10'
-  - cost: [G]
+  - cost: [GRASS]
     name: Razor Leaf
     damage: '20'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +10
   resistances:
-  - type: W
+  - type: WATER
     value: '-20'
+  retreatCost: 2
   rarity: Common
   artist: Ken Sugimori
-- id: 251-104
-  pioId: dp1-104
-  enumId: WURMPLE_104
+  pioId: dp1-103
+  nationalPokedexNumber: 387
+- enumId: WURMPLE_104:DIAMOND_PEARL
   name: Wurmple
-  nationalPokedexNumber: 265
   number: '104'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Silcoon, Cascoon]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Needling Sting
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 10 more damage.
-  - cost: [G]
+  - cost: [GRASS]
     name: String Shot
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 251-105
-  pioId: dp1-105
-  enumId: DOUBLE_FULL_HEAL_105
+  pioId: dp1-104
+  nationalPokedexNumber: 265
+- enumId: DOUBLE_FULL_HEAL_105:DIAMOND_PEARL
   name: Double Full Heal
   number: '105'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Remove all Special Conditions from each of your Active Pokémon.
+  text: Remove all Special Conditions from each of your Active Pokémon.
   artist: Ryo Ueda
-- id: 251-106
-  pioId: dp1-106
-  enumId: ENERGY_RESTORE_106
+  pioId: dp1-105
+  variantOf: DOUBLE_FULL_HEAL_86:SANDSTORM
+  variantType: Reprint
+- enumId: ENERGY_RESTORE_106:DIAMOND_PEARL
   name: Energy Restore
   number: '106'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Flip 3 coins. For each heads, put a basic Energy card from your discard pile into
-    your hand. If you don't have that many basic Energy cards in your discard pile,
-    put all of them into your hand.
+  text: Flip 3 coins. For each heads, put a basic Energy card from your discard pile
+    into your hand. If you don't have that many basic Energy cards in your discard
+    pile, put all of them into your hand.
   artist: Hideyuki Nakajima
-- id: 251-107
-  pioId: dp1-107
-  enumId: ENERGY_SWITCH_107
+  pioId: dp1-106
+- enumId: ENERGY_SWITCH_107:DIAMOND_PEARL
   name: Energy Switch
   number: '107'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Move a basic Energy card attached to 1 of your Pokémon to another of your Pokémon.
-  artist: Ryo Ueda
-  variantOf: 172-120
-  variantType: Reprint
-- id: 251-108
-  pioId: dp1-108
-  enumId: NIGHT_POKEMON_CENTER_108
-  name: Night Pokémon Center
-  number: '108'
-  superType: TRAINER
-  subTypes: [ITEM]
-  rarity: Uncommon
-  text:
-  - Choose 1 of your Pokémon. Flip 2 coins. If both are heads, remove all damage counters
-    from that Pokémon. If both are tails, discard all Energy cards attached to that
+  text: Move a basic Energy card attached to 1 of your Pokémon to another of your
     Pokémon.
   artist: Ryo Ueda
-- id: 251-109
-  pioId: dp1-109
-  enumId: PLUSPOWER_109
+  pioId: dp1-107
+  variantOf: ENERGY_SWITCH_120:AQUAPOLIS
+  variantType: Reprint
+- enumId: NIGHT_POKEMON_CENTER_108:DIAMOND_PEARL
+  name: Night Pokémon Center
+  number: '108'
+  cardTypes: [TRAINER, ITEM]
+  rarity: Uncommon
+  text: Choose 1 of your Pokémon. Flip 2 coins. If both are heads, remove all damage
+    counters from that Pokémon. If both are tails, discard all Energy cards attached
+    to that Pokémon.
+  artist: Ryo Ueda
+  pioId: dp1-108
+- enumId: PLUSPOWER_109:DIAMOND_PEARL
   name: PlusPower
   number: '109'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Attach PlusPower to 1 of your Pokémon. Discard this card at the end of your turn.
-    If the Pokémon PlusPower is attached to attacks, the attack does 10 more damage
-    to the Active Pokémon (before applying Weakness and Resistance).
+  text: Attach PlusPower to 1 of your Pokémon. Discard this card at the end of your
+    turn. If the Pokémon PlusPower is attached to attacks, the attack does 10 more
+    damage to the Active Pokémon (before applying Weakness and Resistance).
   artist: Ryo Ueda
-- id: 251-110
-  pioId: dp1-110
-  enumId: POKE_BALL_110
+  pioId: dp1-109
+- enumId: POKE_BALL_110:DIAMOND_PEARL
   name: Poké Ball
   number: '110'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Flip a coin. If heads, search your deck for a Pokémon, show it to your opponent,
+  text: Flip a coin. If heads, search your deck for a Pokémon, show it to your opponent,
     and put it into your hand. Shuffle your deck afterward.
   artist: Shin-ichi Yoshikawa
+  pioId: dp1-110
   variantOf: 112-64
   variantType: Reprint
-- id: 251-111
-  pioId: dp1-111
-  enumId: POKEDEX_HANDY910IS_111
+- enumId: POKEDEX_HANDY910IS_111:DIAMOND_PEARL
   name: Pokédex HANDY910is
   number: '111'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Look at the top 2 cards of your deck, choose 1 of them, and put it into your hand.
-    Put the other card on the bottom of your deck.
+  text: Look at the top 2 cards of your deck, choose 1 of them, and put it into your
+    hand. Put the other card on the bottom of your deck.
   artist: Ryo Ueda
-- id: 251-112
-  pioId: dp1-112
-  enumId: PROFESSOR_ROWAN_112
+  pioId: dp1-111
+- enumId: PROFESSOR_ROWAN_112:DIAMOND_PEARL
   name: Professor Rowan
   number: '112'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - You can play only one Supporter card each turn. When you play this card, put it
-    next to your Active Pokémon. When your turn ends, discard this card.
-  - Choose 1 card in your hand and shuffle the rest of your cards into your deck.
-    Then, draw 4 cards. (If this is the only card in your hand, you can't play this
-    card.)
+  text: |-
+    You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.
+    Choose 1 card in your hand and shuffle the rest of your cards into your deck. Then, draw 4 cards. (If this is the only card in your hand, you can't play this card.)
   artist: Ken Sugimori
-- id: 251-113
-  pioId: dp1-113
-  enumId: RIVAL_113
+  pioId: dp1-112
+- enumId: RIVAL_113:DIAMOND_PEARL
   name: Rival
   number: '113'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - You can play only one Supporter card each turn. When you play this card, put it
-    next to your Active Pokémon. When your turn ends, discard this card.
-  - Reveal the top 5 cards of your deck. Your opponent chooses 3 of those cards. Put
-    those cards into your hand and put other 2 cards on top of your deck. Shuffle
-    your deck afterward.
+  text: |-
+    You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.
+    Reveal the top 5 cards of your deck. Your opponent chooses 3 of those cards. Put those cards into your hand and put other 2 cards on top of your deck. Shuffle your deck afterward.
   artist: Ken Sugimori
-- id: 251-114
-  pioId: dp1-114
-  enumId: SPEED_STADIUM_114
+  pioId: dp1-113
+- enumId: SPEED_STADIUM_114:DIAMOND_PEARL
   name: Speed Stadium
   number: '114'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - This card stays in play when you play it. Discard this card if another Stadium
-    card comes into play. If another card with the same name is in play, you can't
-    play this card.
-  - Once during each player's turn, the player may flip a coin until he or she gets
-    tails. For each heads, that player draws a card.
+  text: |-
+    This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.
+    Once during each player's turn, the player may flip a coin until he or she gets tails. For each heads, that player draws a card.
   artist: Ryo Ueda
-- id: 251-115
-  pioId: dp1-115
-  enumId: SUPER_SCOOP_UP_115
+  pioId: dp1-114
+- enumId: SUPER_SCOOP_UP_115:DIAMOND_PEARL
   name: Super Scoop Up
   number: '115'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Flip a coin. If heads, return 1 of your Pokémon and all cards attached to it to
-    your hand.
+  text: Flip a coin. If heads, return 1 of your Pokémon and all cards attached to
+    it to your hand.
   artist: Shizurow
-  variantOf: 161-98
+  pioId: dp1-115
+  variantOf: SUPER_SCOOP_UP_98:NEO_GENESIS
   variantType: Reprint
-- id: 251-116
-  pioId: dp1-116
-  enumId: WARP_POINT_116
+- enumId: WARP_POINT_116:DIAMOND_PEARL
   name: Warp Point
   number: '116'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Your opponent switches 1 of his or her Defending Pokémon with 1 of his or her
-    Benched Pokémon, if any. You switch 1 of your Active Pokémon with 1 of your Benched
-    Pokémon, if any.
+  text: Your opponent switches 1 of his or her Defending Pokémon with 1 of his or
+    her Benched Pokémon, if any. You switch 1 of your Active Pokémon with 1 of your
+    Benched Pokémon, if any.
   artist: Keiji Kinebuchi
-- id: 251-117
-  pioId: dp1-117
-  enumId: ENERGY_SEARCH_117
+  pioId: dp1-116
+  variantOf: WARP_POINT_93:UNSEEN_FORCES
+  variantType: Reprint
+- enumId: ENERGY_SEARCH_117:DIAMOND_PEARL
   name: Energy Search
   number: '117'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Common
-  text:
-  - Search your deck for a basic Energy card, show it to your opponent, and put it
-    into your hand. Shuffle your deck afterward.
+  text: Search your deck for a basic Energy card, show it to your opponent, and put
+    it into your hand. Shuffle your deck afterward.
   artist: Kai Ishikawa
-- id: 251-118
-  pioId: dp1-118
-  enumId: POTION_118
+  pioId: dp1-117
+  variantOf: ENERGY_SEARCH_153:EXPEDITION
+  variantType: Reprint
+- enumId: POTION_118:DIAMOND_PEARL
   name: Potion
   number: '118'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Common
-  text:
-  - Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that
-    Pokémon has only 1).
+  text: Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if
+    that Pokémon has only 1).
   artist: Shin-ichi Yoshikawa
-- id: 251-119
-  pioId: dp1-119
-  enumId: SWITCH_119
+  pioId: dp1-118
+  variantOf: POTION_95:UNSEEN_FORCES
+  variantType: Reprint
+- enumId: SWITCH_119:DIAMOND_PEARL
   name: Switch
   number: '119'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Common
-  text:
-  - Switch 1 of your Active Pokémon with 1 of your Benched Pokémon.
+  text: Switch 1 of your Active Pokémon with 1 of your Benched Pokémon.
   artist: Ryo Ueda
-  variantOf: 111-95
+  pioId: dp1-119
+  variantOf: SWITCH_92:POKEMOD_RUBY_SAPPHIRE
   variantType: Reprint
-- id: 251-120
-  pioId: dp1-120
-  enumId: EMPOLEON_120
+- enumId: EMPOLEON_120:DIAMOND_PEARL
   name: Empoleon
-  nationalPokedexNumber: 395
   number: '120'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, LVL_X]
+  cardTypes: [POKEMON, EVOLUTION, LVL_X]
+  types: [WATER]
   hp: 140
-  retreatCost: 2
   abilities:
   - type: Poké-Power
     name: Supreme Command
@@ -3129,30 +2821,27 @@ cards:
       At the end of your opponent's next turn, return those cards to your opponent's
       hand. This power can't be used if Empoleon is affected by a Special Condition.
   moves:
-  - cost: [W, W, W]
+  - cost: [WATER, WATER, WATER]
     name: Hydro Impact
     text: Choose 1 of your opponent's Pokémon. This attack does 80 damage to that
       Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.) Empoleon
       can't attack during your next turn.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: +30
+  retreatCost: 2
   rarity: Rare Holo
-  text:
-  - Put this card onto your Active Empoleon. Empoleon LV. X can use any attack, Poké-Power,
-    or Poké-Body from its previous Level.
+  text: Put this card onto your Active Empoleon. Empoleon LV. X can use any attack,
+    Poké-Power, or Poké-Body from its previous Level.
   artist: Shizurow
-- id: 251-121
-  pioId: dp1-121
-  enumId: INFERNAPE_121
+  pioId: dp1-120
+  nationalPokedexNumber: 395
+- enumId: INFERNAPE_121:DIAMOND_PEARL
   name: Infernape
-  nationalPokedexNumber: 392
   number: '121'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, LVL_X]
+  cardTypes: [POKEMON, EVOLUTION, LVL_X]
+  types: [FIRE]
   hp: 120
-  retreatCost: 0
   abilities:
   - type: Poké-Power
     name: Burning Head
@@ -3160,31 +2849,28 @@ cards:
       of your deck, choose 1 of them, and put it into your hand. Discard the other
       2 cards. This power can't be used if Infernape is affected by a Special Condition.
   moves:
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Flare Up
     damage: '150'
     text: Search your discard pile for 8 [R] Energy cards, show them to your opponent,
       and shuffle them into your deck. (This attack does nothing if you don't have
       8 [R] Energy cards in your discard pile.)
   weaknesses:
-  - type: W
+  - type: WATER
     value: +30
+  retreatCost: 0
   rarity: Rare Holo
-  text:
-  - Put this card onto your Active Infernape. Infernape LV. X can use any attack,
+  text: Put this card onto your Active Infernape. Infernape LV. X can use any attack,
     Poké-Power, or Poké-Body from its previous Level.
   artist: Shizurow
-- id: 251-122
-  pioId: dp1-122
-  enumId: TORTERRA_122
+  pioId: dp1-121
+  nationalPokedexNumber: 392
+- enumId: TORTERRA_122:DIAMOND_PEARL
   name: Torterra
-  nationalPokedexNumber: 389
   number: '122'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, LVL_X]
+  cardTypes: [POKEMON, EVOLUTION, LVL_X]
+  types: [GRASS]
   hp: 160
-  retreatCost: 4
   abilities:
   - type: Poké-Power
     name: Forest Murmurs
@@ -3193,88 +2879,86 @@ cards:
       and switch it with 1 of the Defending Pokémon. This power can't be used if Torterra
       is affected by a Special Condition.
   moves:
-  - cost: [G, G, G, C]
+  - cost: [GRASS, GRASS, GRASS, COLORLESS]
     name: Vigorous Dash
     damage: '100'
     text: Does 30 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.) Torterra does 30 damage to itself.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +30
+  retreatCost: 4
   rarity: Rare Holo
-  text:
-  - Put this card onto your Active Torterra. Torterra LV. X can use any attack, Poké-Power,
-    or Poké-Body from its previous Level.
+  text: Put this card onto your Active Torterra. Torterra LV. X can use any attack,
+    Poké-Power, or Poké-Body from its previous Level.
   artist: Shizurow
-- id: 251-123
-  pioId: dp1-123
-  enumId: GRASS_ENERGY_123
+  pioId: dp1-122
+  nationalPokedexNumber: 389
+- enumId: GRASS_ENERGY_123:DIAMOND_PEARL
   name: Grass Energy
   number: '123'
-  superType: ENERGY
-  subTypes: [BASIC]
+  cardTypes: [ENERGY, BASIC]
   rarity: Common
   artist: ''
-- id: 251-124
-  pioId: dp1-124
-  enumId: FIRE_ENERGY_124
+  pioId: dp1-123
+  variantOf: GRASS_ENERGY_101:EMERALD
+  variantType: Reprint
+- enumId: FIRE_ENERGY_124:DIAMOND_PEARL
   name: Fire Energy
   number: '124'
-  superType: ENERGY
-  subTypes: [BASIC]
+  cardTypes: [ENERGY, BASIC]
   rarity: Common
   artist: ''
-- id: 251-125
-  pioId: dp1-125
-  enumId: WATER_ENERGY_125
+  pioId: dp1-124
+  variantOf: FIRE_ENERGY_102:EMERALD
+  variantType: Reprint
+- enumId: WATER_ENERGY_125:DIAMOND_PEARL
   name: Water Energy
   number: '125'
-  superType: ENERGY
-  subTypes: [BASIC]
+  cardTypes: [ENERGY, BASIC]
   rarity: Common
   artist: ''
-- id: 251-126
-  pioId: dp1-126
-  enumId: LIGHTNING_ENERGY_126
+  pioId: dp1-125
+  variantOf: WATER_ENERGY_103:EMERALD
+  variantType: Reprint
+- enumId: LIGHTNING_ENERGY_126:DIAMOND_PEARL
   name: Lightning Energy
   number: '126'
-  superType: ENERGY
-  subTypes: [BASIC]
+  cardTypes: [ENERGY, BASIC]
   rarity: Common
   artist: ''
-- id: 251-127
-  pioId: dp1-127
-  enumId: PSYCHIC_ENERGY_127
+  pioId: dp1-126
+  variantOf: LIGHTNING_ENERGY_104:EMERALD
+  variantType: Reprint
+- enumId: PSYCHIC_ENERGY_127:DIAMOND_PEARL
   name: Psychic Energy
   number: '127'
-  superType: ENERGY
-  subTypes: [BASIC]
+  cardTypes: [ENERGY, BASIC]
   rarity: Common
   artist: ''
-- id: 251-128
-  pioId: dp1-128
-  enumId: FIGHTING_ENERGY_128
+  pioId: dp1-127
+  variantOf: PSYCHIC_ENERGY_105:EMERALD
+  variantType: Reprint
+- enumId: FIGHTING_ENERGY_128:DIAMOND_PEARL
   name: Fighting Energy
   number: '128'
-  superType: ENERGY
-  subTypes: [BASIC]
+  cardTypes: [ENERGY, BASIC]
   rarity: Common
   artist: ''
-- id: 251-129
-  pioId: dp1-129
-  enumId: DARKNESS_ENERGY_129
+  pioId: dp1-128
+  variantOf: FIGHTING_ENERGY_106:EMERALD
+  variantType: Reprint
+- enumId: DARKNESS_ENERGY_129:DIAMOND_PEARL
   name: Darkness Energy
   number: '129'
-  superType: ENERGY
-  subTypes: [BASIC]
+  cardTypes: [ENERGY, BASIC]
   rarity: Common
   artist: ''
-- id: 251-130
-  pioId: dp1-130
-  enumId: METAL_ENERGY_130
+  pioId: dp1-129
+- enumId: METAL_ENERGY_130:DIAMOND_PEARL
   name: Metal Energy
   number: '130'
-  superType: ENERGY
-  subTypes: [BASIC]
+  cardTypes: [ENERGY, BASIC]
   rarity: Common
   artist: ''
+  pioId: dp1-130

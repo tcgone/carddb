@@ -1,48 +1,43 @@
-schema: E2
-id: '192'
-name: Pokémod Neo Discovery
-enumId: POKEMOD_NEO_DISCOVERY
-abbr: MODN2
-officialCount: 75
+schema: E3
+expansion:
+  orderId: '192'
+  name: Pokémod Neo Discovery
+  enumId: POKEMOD_NEO_DISCOVERY
+  shortName: MODN2
+  officialCount: 75
+  isFanMade: false
 cards:
-- id: 192-1
-  pioId: pkmod10-1
-  enumId: ESPEON_1
+- enumId: ESPEON_1:POKEMOD_NEO_DISCOVERY
   name: Espeon
-  nationalPokedexNumber: 196
   number: '1'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Eevee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Eevee]
   hp: 80
-  retreatCost: 0
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Bite
     damage: '20'
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Psychic
     damage: 30+
     text: Does 30 damage plus 10 more damage for each Energy card attached to the
       Defending Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 0
   rarity: Rare Holo
   artist: Atsuko Nishida
-- id: 192-2
-  pioId: pkmod10-2
-  enumId: FORRETRESS_2
+  pioId: pkmod10-1
+  nationalPokedexNumber: 196
+- enumId: FORRETRESS_2:POKEMOD_NEO_DISCOVERY
   name: Forretress
-  nationalPokedexNumber: 205
   number: '2'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pineco
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [METAL]
+  evolvesFrom: [Pineco]
   hp: 80
-  retreatCost: 3
   abilities:
   - type: Poké-Body
     name: Spikes
@@ -51,7 +46,7 @@ cards:
       Weakness and Resistance.) This power stops working if Forretress is affected
       by a Special Condition.
   moves:
-  - cost: [M, C, C]
+  - cost: [METAL, COLORLESS, COLORLESS]
     name: Rapid Spin
     damage: '30'
     text: If your opponent has any Benched Pokémon, he or she chooses 1 of them and
@@ -59,169 +54,161 @@ cards:
       you switch 1 of them with your Active Pokémon. (Do the damage before switching
       the Pokémon.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: G
+  - type: GRASS
     value: '-30'
+  retreatCost: 3
   rarity: Rare Holo
   artist: CR CG gangs
-- id: 192-3
-  pioId: pkmod10-3
-  enumId: HITMONTOP_3
+  pioId: pkmod10-2
+  nationalPokedexNumber: 205
+- enumId: HITMONTOP_3:POKEMOD_NEO_DISCOVERY
   name: Hitmontop
-  nationalPokedexNumber: 237
   number: '3'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Detect
     text: Flip a coin. If heads, during your opponent's next turn, prevent all effects
       of attacks, including damage, done to Hitmontop.
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: Triple Kick
     damage: 30x
     text: Flip 3 coins. This attack does 30 damage times the number of heads.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Sumiyoshi Kizuki
-- id: 192-4
-  pioId: pkmod10-4
-  enumId: HOUNDOOM_4
+  pioId: pkmod10-3
+  nationalPokedexNumber: 237
+  variantOf: HITMONTOP_3:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: HOUNDOOM_4:POKEMOD_NEO_DISCOVERY
   name: Houndoom
-  nationalPokedexNumber: 229
   number: '4'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Houndour
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Houndour]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Crunch
     damage: '30'
     text: Until the end of your next turn, if an attack damages the Defending Pokémon
       (after applying Weakness and Resistance), that attack does 20 more damage to
       the Defending Pokémon.
-  - cost: [R, R, C]
+  - cost: [FIRE, FIRE, COLORLESS]
     name: Flamethrower
     damage: '50'
     text: Discard 1 [R] Energy card attached to Houndoom or this attack does nothing.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Shin-ichi Yoshida
-- id: 192-5
-  pioId: pkmod10-5
-  enumId: HOUNDOUR_5
+  pioId: pkmod10-4
+  nationalPokedexNumber: 229
+- enumId: HOUNDOUR_5:POKEMOD_NEO_DISCOVERY
   name: Houndour
-  nationalPokedexNumber: 228
   number: '5'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Houndoom]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Smog
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Collect Fire
     damage: '20'
     text: If there are any [R] Energy cards in your discard pile, choose 1 of them
       and attach it to Houndour.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Aya Kusube
-- id: 192-6
-  pioId: pkmod10-6
-  enumId: KABUTOPS_6
+  pioId: pkmod10-5
+  nationalPokedexNumber: 228
+  variantOf: HOUNDOUR_5:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: KABUTOPS_6:POKEMOD_NEO_DISCOVERY
   name: Kabutops
-  nationalPokedexNumber: 141
   number: '6'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Kabuto
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Kabuto]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Slash
     damage: '20'
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Hydrocutter
     damage: 30x
     text: Flip a number of coins equal to the number of Energy cards attached to Kabutops.
       This attack does 30 damage times the number of heads. You can't flip more than
       3 coins in this way.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: R
+  - type: FIRE
     value: '-30'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Kimiya Masago
-- id: 192-7
-  pioId: pkmod10-7
-  enumId: MAGNEMITE_7
+  pioId: pkmod10-6
+  nationalPokedexNumber: 141
+- enumId: MAGNEMITE_7:POKEMOD_NEO_DISCOVERY
   name: Magnemite
-  nationalPokedexNumber: 81
   number: '7'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Magneton]
+  cardTypes: [POKEMON, BASIC]
+  types: [METAL]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Lock-on
     text: During your next turn, treat any tails flipped when using Magnemite's Electric
       Bolt attack on the Defending Pokémon as if they were heads. (Benching or evolving
       either Pokémon ends this effect.)
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Electric Bolt
     damage: '50'
     text: Flip 2 coins. If both are heads, the Defending Pokémon is now Paralyzed.
       If either of them is tails, this attack does nothing (not even damage).
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: G
+  - type: GRASS
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: ''
-- id: 192-8
-  pioId: pkmod10-8
-  enumId: POLITOED_8
+  pioId: pkmod10-7
+  nationalPokedexNumber: 81
+  variantOf: MAGNEMITE_7:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: POLITOED_8:POKEMOD_NEO_DISCOVERY
   name: Politoed
-  nationalPokedexNumber: 186
   number: '8'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Poliwhirl
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Poliwhirl]
   hp: 100
-  retreatCost: 3
   abilities:
   - type: Poké-Body
     name: Frog Song
@@ -231,166 +218,156 @@ cards:
       damage (no matter how many heads you get). This power stops working while Politoed
       is affected by a Special Condition.
   moves:
-  - cost: [W, W, C, C]
+  - cost: [WATER, WATER, COLORLESS, COLORLESS]
     name: Doubleslap
     damage: 40x
     text: Flip 2 coins. This attack does 40 damage times the number of heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Tomokazu Komiya
-- id: 192-9
-  pioId: pkmod10-9
-  enumId: POLIWRATH_9
+  pioId: pkmod10-8
+  nationalPokedexNumber: 186
+- enumId: POLIWRATH_9:POKEMOD_NEO_DISCOVERY
   name: Poliwrath
-  nationalPokedexNumber: 62
   number: '9'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Poliwhirl
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Poliwhirl]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Corkscrew Punch
     damage: '30'
-  - cost: [F, F, C, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS, COLORLESS]
     name: Submission
     damage: '80'
     text: Poliwrath does 30 damage to itself.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Shin-ichi Yoshida
-- id: 192-10
-  pioId: pkmod10-10
-  enumId: SCIZOR_10
+  pioId: pkmod10-9
+  nationalPokedexNumber: 62
+- enumId: SCIZOR_10:POKEMOD_NEO_DISCOVERY
   name: Scizor
-  nationalPokedexNumber: 212
   number: '10'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Scyther
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [METAL]
+  evolvesFrom: [Scyther]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [M]
+  - cost: [METAL]
     name: False Swipe
     text: Does damage equal to half the Defending Pokémon's remaining HP (rounded
       down to the nearest 10).
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Double Claw
     damage: 20x
     text: Flip 2 coins. This attack does 20 damage times the number of heads.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: G
+  - type: GRASS
     value: '-30'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Kimiya Masago
-- id: 192-11
-  pioId: pkmod10-11
-  enumId: SMEARGLE_11
+  pioId: pkmod10-10
+  nationalPokedexNumber: 212
+- enumId: SMEARGLE_11:POKEMOD_NEO_DISCOVERY
   name: Smeargle
-  nationalPokedexNumber: 235
   number: '11'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Sketch
     text: If the Defending Pokémon attacked last turn, and Smeargle was in play during
       that attack, Smeargle copies that attack except for its Energy costs and anything
       else required in order to use that attack.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Hironobu Yoshida
-- id: 192-12
-  pioId: pkmod10-12
-  enumId: TYRANITAR_12
+  pioId: pkmod10-11
+  nationalPokedexNumber: 235
+  variantOf: SMEARGLE_11:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: TYRANITAR_12:POKEMOD_NEO_DISCOVERY
   name: Tyranitar
-  nationalPokedexNumber: 248
   number: '12'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Pupitar
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [DARKNESS]
+  evolvesFrom: [Pupitar]
   hp: 100
-  retreatCost: 3
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Slam
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
-  - cost: [D, D, C, C]
+  - cost: [DARKNESS, DARKNESS, COLORLESS, COLORLESS]
     name: Trample
     damage: '50'
     text: For each Benched Pokémon in play (yours and your opponent's), flip a coin.
       If heads, this attack does 30 damage to that Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 3
   rarity: Rare Holo
   artist: Hironobu Yoshida
-- id: 192-13
-  pioId: pkmod10-13
-  enumId: UMBREON_13
+  pioId: pkmod10-12
+  nationalPokedexNumber: 248
+- enumId: UMBREON_13:POKEMOD_NEO_DISCOVERY
   name: Umbreon
-  nationalPokedexNumber: 197
   number: '13'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Eevee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Eevee]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Bite
     damage: '20'
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Feint Attack
     damage: '30'
     text: Choose 1 of your opponent's Pokémon. This attack does 30 damage to that
       Pokémon. This attack's damage isn't affected by Weakness, Resistance, Pokémon
       Powers, or any other effects on the Defending Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Kimiya Masago
-- id: 192-14
-  pioId: pkmod10-14
-  enumId: UNOWN_A_14
+  pioId: pkmod10-13
+  nationalPokedexNumber: 197
+- enumId: UNOWN_A_14:POKEMOD_NEO_DISCOVERY
   name: Unown A
-  nationalPokedexNumber: 201
   number: '14'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Anger
@@ -398,148 +375,143 @@ cards:
       attack, that attack does 10 more damage for each damage counter on Unown A.
       If you have more than 1 Unown A in play, use only 1 Anger for each attack.
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: CR CG gangs
-- id: 192-15
-  pioId: pkmod10-15
-  enumId: URSARING_15
+  pioId: pkmod10-14
+  nationalPokedexNumber: 201
+- enumId: URSARING_15:POKEMOD_NEO_DISCOVERY
   name: Ursaring
-  nationalPokedexNumber: 217
   number: '15'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Teddiursa
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Teddiursa]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Headpress
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails,
       this attack does nothing (not even damage).
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Double Lariat
     damage: 40x
     text: Flip 2 coins. This attack does 40 damage times the number of heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 3
   rarity: Rare Holo
   artist: Naoyo Kimura
-- id: 192-16
-  pioId: pkmod10-16
-  enumId: WOBBUFFET_16
+  pioId: pkmod10-15
+  nationalPokedexNumber: 217
+  variantOf: URSARING_15:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: WOBBUFFET_16:POKEMOD_NEO_DISCOVERY
   name: Wobbuffet
-  nationalPokedexNumber: 202
   number: '16'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Counter
     text: If an attack damages Wobbuffet during your opponent's next turn (even if
       Wobbuffet is Knocked Out), flip a coin. If heads, Wobbuffet attacks the Defending
       Pokémon for an equal amount of damage.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Hironobu Yoshida
-- id: 192-17
-  pioId: pkmod10-17
-  enumId: YANMA_17
+  pioId: pkmod10-16
+  nationalPokedexNumber: 202
+  variantOf: WOBBUFFET_16:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: YANMA_17:POKEMOD_NEO_DISCOVERY
   name: Yanma
-  nationalPokedexNumber: 193
   number: '17'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Yanmega]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 0
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Shockwave
     text: Flip a coin. If heads, this attack does 10 damage to each of your opponent's
       Pokémon. Don't apply Weakness and Resistance. Then, if your opponent has any
       Benched Pokémon, he or she chooses 1 of them and switches it with the Defending
       Pokémon.
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Swift
     damage: '30'
     text: This attack's damage isn't affected by Weakness, Resistance, Poké-Powers,
       or any other effects on the Defending Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare Holo
   artist: Atsuko Nishida
-- id: 192-18
-  pioId: pkmod10-18
-  enumId: BEEDRILL_18
+  pioId: pkmod10-17
+  nationalPokedexNumber: 193
+- enumId: BEEDRILL_18:POKEMOD_NEO_DISCOVERY
   name: Beedrill
-  nationalPokedexNumber: 15
   number: '18'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Kakuna
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Kakuna]
   hp: 80
-  retreatCost: 0
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Triple Poison
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned. Your opponent
       now puts 3 damage counters on it instead of 1 after each player's turn (even
       if it was already Poisoned).
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Pin Missile
     damage: 20x
     text: Flip 4 coins. This attack does 20 damage times the number of heads.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare
   artist: Aya Kusube
-- id: 192-19
-  pioId: pkmod10-19
-  enumId: BUTTERFREE_19
+  pioId: pkmod10-18
+  nationalPokedexNumber: 15
+  variantOf: BEEDRILL_18:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: BUTTERFREE_19:POKEMOD_NEO_DISCOVERY
   name: Butterfree
-  nationalPokedexNumber: 12
   number: '19'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Metapod
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Metapod]
   hp: 80
-  retreatCost: 0
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Magic Dust
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now either Asleep, Confused,
       Paralyzed, or Poisoned (your choice).
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Hyper Reverse
     damage: 10x
     text: Does 10 damage times the number of Energy attached to the Defending Pokémon.
@@ -547,52 +519,52 @@ cards:
       to the amount of damage done to the Defending Pokémon (after applying Weakness
       and Resistance).
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare
   artist: Atsuko Nishida
-- id: 192-20
-  pioId: pkmod10-20
-  enumId: ESPEON_20
+  pioId: pkmod10-19
+  nationalPokedexNumber: 12
+  variantOf: BUTTERFREE_19:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: ESPEON_20:POKEMOD_NEO_DISCOVERY
   name: Espeon
-  nationalPokedexNumber: 196
   number: '20'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Eevee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Eevee]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Quick Attack
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 20 more damage; if
       tails, this attack does 10 damage.
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Psybeam
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Naoyo Kimura
-- id: 192-21
-  pioId: pkmod10-21
-  enumId: FORRETRESS_21
+  pioId: pkmod10-20
+  nationalPokedexNumber: 196
+  variantOf: ESPEON_20:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: FORRETRESS_21:POKEMOD_NEO_DISCOVERY
   name: Forretress
-  nationalPokedexNumber: 205
   number: '21'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pineco
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [METAL]
+  evolvesFrom: [Pineco]
   hp: 80
-  retreatCost: 3
   abilities:
   - type: Poké-Body
     name: Spikes
@@ -601,7 +573,7 @@ cards:
       Weakness and Resistance.) This power stops working if Forretress is affected
       by a Special Condition.
   moves:
-  - cost: [M, C, C]
+  - cost: [METAL, COLORLESS, COLORLESS]
     name: Rapid Spin
     damage: '30'
     text: If your opponent has any Benched Pokémon, he or she chooses 1 of them and
@@ -609,169 +581,165 @@ cards:
       you switch 1 of them with your Active Pokémon. (Do the damage before switching
       the Pokémon.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: G
+  - type: GRASS
     value: '-30'
+  retreatCost: 3
   rarity: Rare
   artist: CR CG gangs
-- id: 192-22
-  pioId: pkmod10-22
-  enumId: HITMONTOP_22
+  pioId: pkmod10-21
+  nationalPokedexNumber: 205
+  variantOf: FORRETRESS_2:POKEMOD_NEO_DISCOVERY
+  variantType: Reprint
+- enumId: HITMONTOP_22:POKEMOD_NEO_DISCOVERY
   name: Hitmontop
-  nationalPokedexNumber: 237
   number: '22'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Detect
     text: Flip a coin. If heads, during your opponent's next turn, prevent all effects
       of attacks, including damage, done to Hitmontop.
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: Triple Kick
     damage: 30x
     text: Flip 3 coins. This attack does 30 damage times the number of heads.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Sumiyoshi Kizuki
-- id: 192-23
-  pioId: pkmod10-23
-  enumId: HOUNDOOM_23
+  pioId: pkmod10-22
+  nationalPokedexNumber: 237
+  variantOf: HITMONTOP_3:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: HOUNDOOM_23:POKEMOD_NEO_DISCOVERY
   name: Houndoom
-  nationalPokedexNumber: 229
   number: '23'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Houndour
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Houndour]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Crunch
     damage: '30'
     text: Until the end of your next turn, if an attack damages the Defending Pokémon
       (after applying Weakness and Resistance), that attack does 20 more damage to
       the Defending Pokémon.
-  - cost: [R, R, C]
+  - cost: [FIRE, FIRE, COLORLESS]
     name: Flamethrower
     damage: '50'
     text: Discard 1 [R] Energy card attached to Houndoom or this attack does nothing.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare
   artist: Shin-ichi Yoshida
-- id: 192-24
-  pioId: pkmod10-24
-  enumId: HOUNDOUR_24
+  pioId: pkmod10-23
+  nationalPokedexNumber: 229
+  variantOf: HOUNDOOM_4:POKEMOD_NEO_DISCOVERY
+  variantType: Reprint
+- enumId: HOUNDOUR_24:POKEMOD_NEO_DISCOVERY
   name: Houndour
-  nationalPokedexNumber: 228
   number: '24'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Houndoom]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Smog
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Collect Fire
     damage: '20'
     text: If there are any [R] Energy cards in your discard pile, choose 1 of them
       and attach it to Houndour.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Aya Kusube
-- id: 192-25
-  pioId: pkmod10-25
-  enumId: KABUTOPS_25
+  pioId: pkmod10-24
+  nationalPokedexNumber: 228
+  variantOf: HOUNDOUR_5:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: KABUTOPS_25:POKEMOD_NEO_DISCOVERY
   name: Kabutops
-  nationalPokedexNumber: 141
   number: '25'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Kabuto
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Kabuto]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Slash
     damage: '20'
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Hydrocutter
     damage: 30x
     text: Flip a number of coins equal to the number of Energy cards attached to Kabutops.
       This attack does 30 damage times the number of heads. You can't flip more than
       3 coins in this way.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 2
   rarity: Rare
   artist: Kimiya Masago
-- id: 192-26
-  pioId: pkmod10-26
-  enumId: MAGNEMITE_26
+  pioId: pkmod10-25
+  nationalPokedexNumber: 141
+- enumId: MAGNEMITE_26:POKEMOD_NEO_DISCOVERY
   name: Magnemite
-  nationalPokedexNumber: 81
   number: '26'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Magneton]
+  cardTypes: [POKEMON, BASIC]
+  types: [METAL]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Lock-on
     text: During your next turn, treat any tails flipped when using Magnemite's Electric
       Bolt attack on the Defending Pokémon as if they were heads. (Benching or evolving
       either Pokémon ends this effect.)
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Electric Bolt
     damage: '50'
     text: Flip 2 coins. If both are heads, the Defending Pokémon is now Paralyzed.
       If either of them is tails, this attack does nothing (not even damage).
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: G
+  - type: GRASS
     value: '-30'
+  retreatCost: 1
   rarity: Rare
   artist: ''
-- id: 192-27
-  pioId: pkmod10-27
-  enumId: POLITOED_27
+  pioId: pkmod10-26
+  nationalPokedexNumber: 81
+  variantOf: MAGNEMITE_7:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: POLITOED_27:POKEMOD_NEO_DISCOVERY
   name: Politoed
-  nationalPokedexNumber: 186
   number: '27'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Poliwhirl
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Poliwhirl]
   hp: 100
-  retreatCost: 3
   abilities:
   - type: Poké-Body
     name: Frog Song
@@ -781,167 +749,165 @@ cards:
       damage (no matter how many heads you get). This power stops working while Politoed
       is affected by a Special Condition.
   moves:
-  - cost: [W, W, C, C]
+  - cost: [WATER, WATER, COLORLESS, COLORLESS]
     name: Doubleslap
     damage: 40x
     text: Flip 2 coins. This attack does 40 damage times the number of heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Rare
   artist: Tomokazu Komiya
-- id: 192-28
-  pioId: pkmod10-28
-  enumId: POLIWRATH_28
+  pioId: pkmod10-27
+  nationalPokedexNumber: 186
+  variantOf: POLITOED_8:POKEMOD_NEO_DISCOVERY
+  variantType: Reprint
+- enumId: POLIWRATH_28:POKEMOD_NEO_DISCOVERY
   name: Poliwrath
-  nationalPokedexNumber: 62
   number: '28'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Poliwhirl
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Poliwhirl]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Corkscrew Punch
     damage: '30'
-  - cost: [F, F, C, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS, COLORLESS]
     name: Submission
     damage: '80'
     text: Poliwrath does 30 damage to itself.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Shin-ichi Yoshida
-- id: 192-29
-  pioId: pkmod10-29
-  enumId: SCIZOR_29
+  pioId: pkmod10-28
+  nationalPokedexNumber: 62
+  variantOf: POLIWRATH_9:POKEMOD_NEO_DISCOVERY
+  variantType: Reprint
+- enumId: SCIZOR_29:POKEMOD_NEO_DISCOVERY
   name: Scizor
-  nationalPokedexNumber: 212
   number: '29'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Scyther
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [METAL]
+  evolvesFrom: [Scyther]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [M]
+  - cost: [METAL]
     name: False Swipe
     text: Does damage equal to half the Defending Pokémon's remaining HP (rounded
       down to the nearest 10).
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Double Claw
     damage: 20x
     text: Flip 2 coins. This attack does 20 damage times the number of heads.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: G
+  - type: GRASS
     value: '-30'
+  retreatCost: 2
   rarity: Rare
   artist: Kimiya Masago
-- id: 192-30
-  pioId: pkmod10-30
-  enumId: SMEARGLE_30
+  pioId: pkmod10-29
+  nationalPokedexNumber: 212
+  variantOf: SCIZOR_10:POKEMOD_NEO_DISCOVERY
+  variantType: Reprint
+- enumId: SMEARGLE_30:POKEMOD_NEO_DISCOVERY
   name: Smeargle
-  nationalPokedexNumber: 235
   number: '30'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Sketch
     text: If the Defending Pokémon attacked last turn, and Smeargle was in play during
       that attack, Smeargle copies that attack except for its Energy costs and anything
       else required in order to use that attack.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare
   artist: Hironobu Yoshida
-- id: 192-31
-  pioId: pkmod10-31
-  enumId: TYRANITAR_31
+  pioId: pkmod10-30
+  nationalPokedexNumber: 235
+  variantOf: SMEARGLE_11:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: TYRANITAR_31:POKEMOD_NEO_DISCOVERY
   name: Tyranitar
-  nationalPokedexNumber: 248
   number: '31'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Pupitar
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [DARKNESS]
+  evolvesFrom: [Pupitar]
   hp: 100
-  retreatCost: 3
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Slam
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
-  - cost: [D, D, C, C]
+  - cost: [DARKNESS, DARKNESS, COLORLESS, COLORLESS]
     name: Trample
     damage: '50'
     text: For each Benched Pokémon in play (yours and your opponent's), flip a coin.
       If heads, this attack does 30 damage to that Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 3
   rarity: Rare
   artist: Hironobu Yoshida
-- id: 192-32
-  pioId: pkmod10-32
-  enumId: UMBREON_32
+  pioId: pkmod10-31
+  nationalPokedexNumber: 248
+  variantOf: TYRANITAR_12:POKEMOD_NEO_DISCOVERY
+  variantType: Reprint
+- enumId: UMBREON_32:POKEMOD_NEO_DISCOVERY
   name: Umbreon
-  nationalPokedexNumber: 197
   number: '32'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Eevee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Eevee]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Quick Attack
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 20 more damage; if
       tails, this attack does 10 damage.
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Pursuit
     damage: '30'
     text: During your opponent's next turn, if the Defending Pokémon tries to retreat,
       do 10 damage to it. (Don't apply Weakness and Resistance.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare
   artist: Naoyo Kimura
-- id: 192-33
-  pioId: pkmod10-33
-  enumId: UNOWN_A_33
+  pioId: pkmod10-32
+  nationalPokedexNumber: 197
+- enumId: UNOWN_A_33:POKEMOD_NEO_DISCOVERY
   name: Unown A
-  nationalPokedexNumber: 201
   number: '33'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Anger
@@ -949,135 +915,133 @@ cards:
       attack, that attack does 10 more damage for each damage counter on Unown A.
       If you have more than 1 Unown A in play, use only 1 Anger for each attack.
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: CR CG gangs
-- id: 192-34
-  pioId: pkmod10-34
-  enumId: URSARING_34
+  pioId: pkmod10-33
+  nationalPokedexNumber: 201
+  variantOf: UNOWN_A_14:POKEMOD_NEO_DISCOVERY
+  variantType: Reprint
+- enumId: URSARING_34:POKEMOD_NEO_DISCOVERY
   name: Ursaring
-  nationalPokedexNumber: 217
   number: '34'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Teddiursa
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Teddiursa]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Headpress
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails,
       this attack does nothing (not even damage).
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Double Lariat
     damage: 40x
     text: Flip 2 coins. This attack does 40 damage times the number of heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 3
   rarity: Rare
   artist: Naoyo Kimura
-- id: 192-35
-  pioId: pkmod10-35
-  enumId: WOBBUFFET_35
+  pioId: pkmod10-34
+  nationalPokedexNumber: 217
+  variantOf: URSARING_15:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: WOBBUFFET_35:POKEMOD_NEO_DISCOVERY
   name: Wobbuffet
-  nationalPokedexNumber: 202
   number: '35'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Counter
     text: If an attack damages Wobbuffet during your opponent's next turn (even if
       Wobbuffet is Knocked Out), flip a coin. If heads, Wobbuffet attacks the Defending
       Pokémon for an equal amount of damage.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Rare
   artist: Hironobu Yoshida
-- id: 192-36
-  pioId: pkmod10-36
-  enumId: YANMA_36
+  pioId: pkmod10-35
+  nationalPokedexNumber: 202
+  variantOf: WOBBUFFET_16:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: YANMA_36:POKEMOD_NEO_DISCOVERY
   name: Yanma
-  nationalPokedexNumber: 193
   number: '36'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Yanmega]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 0
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Shockwave
     text: Flip a coin. If heads, this attack does 10 damage to each of your opponent's
       Pokémon. Don't apply Weakness and Resistance. Then, if your opponent has any
       Benched Pokémon, he or she chooses 1 of them and switches it with the Defending
       Pokémon.
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Swift
     damage: '30'
     text: This attack's damage isn't affected by Weakness, Resistance, Poké-Powers,
       or any other effects on the Defending Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare
   artist: Atsuko Nishida
-- id: 192-37
-  pioId: pkmod10-37
-  enumId: CORSOLA_37
+  pioId: pkmod10-36
+  nationalPokedexNumber: 193
+  variantOf: YANMA_17:POKEMOD_NEO_DISCOVERY
+  variantType: Reprint
+- enumId: CORSOLA_37:POKEMOD_NEO_DISCOVERY
   name: Corsola
-  nationalPokedexNumber: 222
   number: '37'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Recover
     text: Discard 1 [W] Energy card attached to Corsola or this attack does nothing.
       Remove all damage counters from Corsola.
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Spike Cannon
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Yuka Morii
-- id: 192-38
-  pioId: pkmod10-38
-  enumId: EEVEE_38
+  pioId: pkmod10-37
+  nationalPokedexNumber: 222
+  variantOf: CORSOLA_37:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: EEVEE_38:POKEMOD_NEO_DISCOVERY
   name: Eevee
-  nationalPokedexNumber: 133
   number: '38'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Vaporeon, Jolteon, Flareon, Sylveon, Espeon, Umbreon, Leafeon, Glaceon]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Energy Evolution
@@ -1087,58 +1051,52 @@ cards:
       Eevee. Shuffle your deck afterward. This power can't be used if Eevee is affected
       by a Special Condition.
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Smash Kick
     damage: '10'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Aya Kusube
-- id: 192-39
-  pioId: pkmod10-39
-  enumId: HOUNDOUR_39
+  pioId: pkmod10-38
+  nationalPokedexNumber: 133
+- enumId: HOUNDOUR_39:POKEMOD_NEO_DISCOVERY
   name: Houndour
-  nationalPokedexNumber: 228
   number: '39'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Houndoom]
+  cardTypes: [POKEMON, BASIC]
+  types: [DARKNESS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Bite
     damage: '10'
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Plunder
     damage: '20'
     text: Before doing damage, discard all Trainer cards attached to the Defending
       Pokémon (before they affect the damage).
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Shin-ichi Yoshida
-- id: 192-40
-  pioId: pkmod10-40
-  enumId: IGGLYBUFF_40
+  pioId: pkmod10-39
+  nationalPokedexNumber: 228
+- enumId: IGGLYBUFF_40:POKEMOD_NEO_DISCOVERY
   name: Igglybuff
-  nationalPokedexNumber: 174
   number: '40'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BABY, BASIC]
-  evolvesTo: [Jigglypuff]
+  cardTypes: [POKEMON, BABY, BASIC]
+  types: [COLORLESS]
   hp: 30
-  retreatCost: 0
   abilities:
   - type: Poké-Power
     name: Baby Balloon
@@ -1146,194 +1104,184 @@ cards:
       and attach it to 1 of your Pokémon. If you do, that Pokémon has no Retreat cost.
       When the Pokémon Igglybuff is attached to is Knocked Out, discard Igglybuff.
       This power can't be used if Igglybuff is affected by a Special Condition.
+  retreatCost: 0
   rarity: Uncommon
-  text:
-  - If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
+  text: If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
     your opponent flips a coin (before doing anything else required in order to use
     that attack). If tails, your opponent's turn ends without an attack.
   artist: Miki Tanaka
-- id: 192-41
-  pioId: pkmod10-41
-  enumId: KAKUNA_41
+  pioId: pkmod10-40
+  nationalPokedexNumber: 174
+- enumId: KAKUNA_41:POKEMOD_NEO_DISCOVERY
   name: Kakuna
-  nationalPokedexNumber: 14
   number: '41'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Weedle
-  evolvesTo: [Beedrill]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Weedle]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Secrete Poison
     text: During your opponent's next turn, whenever your opponent's attack damages
       Kakuna (even if Kakuna is Knocked Out), your opponent's Active Pokémon is now
       Poisoned and Kakuna does 10 damage to each of your opponent's Benched Pokémon.
       (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Yukiko Baba
-- id: 192-42
-  pioId: pkmod10-42
-  enumId: METAPOD_42
+  pioId: pkmod10-41
+  nationalPokedexNumber: 14
+  variantOf: KAKUNA_41:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: METAPOD_42:POKEMOD_NEO_DISCOVERY
   name: Metapod
-  nationalPokedexNumber: 11
   number: '42'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Caterpie
-  evolvesTo: [Butterfree]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Caterpie]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Harden
     text: During your opponent's next turn, whenever 20 or less damage is done to
       Metapod (after applying Weakness and Resistance), prevent that damage. (Any
       other effects of attacks still happen.)
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Hatch
     text: Flip a coin. If heads, remove all damage counters from Metapod. Then, search
       your deck for a card that evolves from Metapod and attach that card to Metapod.
       This counts as evolving Metapod. Shuffle your deck afterward.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Sumiyoshi Kizuki
-- id: 192-43
-  pioId: pkmod10-43
-  enumId: OMASTAR_43
+  pioId: pkmod10-42
+  nationalPokedexNumber: 11
+  variantOf: METAPOD_42:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: OMASTAR_43:POKEMOD_NEO_DISCOVERY
   name: Omastar
-  nationalPokedexNumber: 139
   number: '43'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Omanyte
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Omanyte]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Squeeze
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 20 more damage and
       the Defending Pokémon is now Paralyzed. If tails, this attack does 10 damage.
-  - cost: [W, W, W]
+  - cost: [WATER, WATER, WATER]
     name: Spike Barrage
     damage: 20+
     text: Flip a number of coins equal to the number of [W] Energy attached to Omastar.
       This attack does 20 damage plus 20 more damage for each heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: R
+  - type: FIRE
     value: '-30'
+  retreatCost: 2
   rarity: Uncommon
   artist: Shin-ichi Yoshida
-- id: 192-44
-  pioId: pkmod10-44
-  enumId: POLIWHIRL_44
+  pioId: pkmod10-43
+  nationalPokedexNumber: 139
+- enumId: POLIWHIRL_44:POKEMOD_NEO_DISCOVERY
   name: Poliwhirl
-  nationalPokedexNumber: 61
   number: '44'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Poliwag
-  evolvesTo: [Poliwrath, Politoed]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Poliwag]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Belly Drum
     text: Put 3 damage counters on Poliwhirl. If this doesn't Knock Out Poliwhirl,
       search your deck for up to 2 Basic Energy cards and attach them to Poliwhirl.
       Shuffle your deck afterward.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Water Gun
     damage: 30+
     text: Does 30 damage plus 10 more damage for each [W] Energy attached to Poliwhirl
       but not used to pay for this attack's Energy cost. You can't add more than 20
       damage in this way.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 192-45
-  pioId: pkmod10-45
-  enumId: PUPITAR_45
+  pioId: pkmod10-44
+  nationalPokedexNumber: 61
+  variantOf: POLIWHIRL_44:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: PUPITAR_45:POKEMOD_NEO_DISCOVERY
   name: Pupitar
-  nationalPokedexNumber: 247
   number: '45'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Larvitar
-  evolvesTo: [Tyranitar]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Larvitar]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Skull Bash
     damage: '20'
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Dust Devil
     text: Does 10 damage to each non-[F] Pokémon in play. Don't apply Weakness and
       Resistance.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Hironobu Yoshida
-- id: 192-46
-  pioId: pkmod10-46
-  enumId: SCYTHER_46
+  pioId: pkmod10-45
+  nationalPokedexNumber: 247
+  variantOf: PUPITAR_45:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: SCYTHER_46:POKEMOD_NEO_DISCOVERY
   name: Scyther
-  nationalPokedexNumber: 123
   number: '46'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Scizor]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Fury Cutter
     damage: 10+
     text: Flip 4 coins. This attack does 10 damage plus 10 more damage if exactly
       1 is heads, or 20 more damage if exactly 2 are heads, or 40 more damage if exactly
       3 are heads, or 80 more damage if all 4 are heads.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Kimiya Masago
-- id: 192-47
-  pioId: pkmod10-47
-  enumId: UNOWN_D_47
+  pioId: pkmod10-46
+  nationalPokedexNumber: 123
+  variantOf: SCYTHER_46:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: UNOWN_D_47:POKEMOD_NEO_DISCOVERY
   name: Unown D
-  nationalPokedexNumber: 201
   number: '47'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Darkness
@@ -1342,25 +1290,23 @@ cards:
       have more than 1 Unown D in play. (This power works even if Unown D is affected
       by a Special Condition.)
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: CR CG gangs
-- id: 192-48
-  pioId: pkmod10-48
-  enumId: UNOWN_F_48
-  name: Unown F
+  pioId: pkmod10-47
   nationalPokedexNumber: 201
+- enumId: UNOWN_F_48:POKEMOD_NEO_DISCOVERY
+  name: Unown F
   number: '48'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Find
@@ -1369,25 +1315,23 @@ cards:
       Show that card to your opponent, then put it into your hand. Shuffle your deck
       afterward.
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: CR CG gangs
-- id: 192-49
-  pioId: pkmod10-49
-  enumId: UNOWN_M_49
-  name: Unown M
+  pioId: pkmod10-48
   nationalPokedexNumber: 201
+- enumId: UNOWN_M_49:POKEMOD_NEO_DISCOVERY
+  name: Unown M
   number: '49'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Metal
@@ -1396,25 +1340,23 @@ cards:
       have more than 1 Unown M in play. (This power works even if Unown M is affected
       by a Special Condition.)
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: CR CG gangs
-- id: 192-50
-  pioId: pkmod10-50
-  enumId: UNOWN_N_50
-  name: Unown N
+  pioId: pkmod10-49
   nationalPokedexNumber: 201
+- enumId: UNOWN_N_50:POKEMOD_NEO_DISCOVERY
+  name: Unown N
   number: '50'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Normal
@@ -1423,25 +1365,23 @@ cards:
       have more than 1 Unown N in play. (This power works even if Unown N is affected
       by a Special Condition.)
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: CR CG gangs
-- id: 192-51
-  pioId: pkmod10-51
-  enumId: UNOWN_U_51
-  name: Unown U
+  pioId: pkmod10-50
   nationalPokedexNumber: 201
+- enumId: UNOWN_U_51:POKEMOD_NEO_DISCOVERY
+  name: Unown U
   number: '51'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Undo
@@ -1449,125 +1389,120 @@ cards:
       Unown D, and Unown O on your Bench, you may return your Active Pokémon and all
       cards attached to it to your hand.
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: CR CG gangs
-- id: 192-52
-  pioId: pkmod10-52
-  enumId: XATU_52
+  pioId: pkmod10-51
+  nationalPokedexNumber: 201
+- enumId: XATU_52:POKEMOD_NEO_DISCOVERY
   name: Xatu
-  nationalPokedexNumber: 178
   number: '52'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Natu
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Natu]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Energy Cycle
     text: Flip a coin. If heads, choose 1 Energy card attached to the Defending Pokémon
       and 1 of your opponent's Benched Pokémon. Attach that Energy card to that Pokémon.
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Super Psy
     damage: '50'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Sumiyoshi Kizuki
-- id: 192-53
-  pioId: pkmod10-53
-  enumId: CATERPIE_53
+  pioId: pkmod10-52
+  nationalPokedexNumber: 178
+  variantOf: XATU_52:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: CATERPIE_53:POKEMOD_NEO_DISCOVERY
   name: Caterpie
-  nationalPokedexNumber: 10
   number: '53'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Metapod]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Spin Tackle
     damage: '20'
     text: Caterpie does 10 damage to itself.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Yuka Morii
-- id: 192-54
-  pioId: pkmod10-54
-  enumId: DUNSPARCE_54
+  pioId: pkmod10-53
+  nationalPokedexNumber: 10
+  variantOf: CATERPIE_53:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: DUNSPARCE_54:POKEMOD_NEO_DISCOVERY
   name: Dunsparce
-  nationalPokedexNumber: 206
   number: '54'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 30
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Glare
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 0
   rarity: Common
   artist: Yukiko Baba
-- id: 192-55
-  pioId: pkmod10-55
-  enumId: HOPPIP_55
+  pioId: pkmod10-54
+  nationalPokedexNumber: 206
+  variantOf: DUNSPARCE_54:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: HOPPIP_55:POKEMOD_NEO_DISCOVERY
   name: Hoppip
-  nationalPokedexNumber: 187
   number: '55'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Skiploom]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 30
-  retreatCost: 0
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Rolling Tackle
     damage: '20'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Common
   artist: Kagemaru Himeno
-- id: 192-56
-  pioId: pkmod10-56
-  enumId: KABUTO_56
+  pioId: pkmod10-55
+  nationalPokedexNumber: 187
+  variantOf: HOPPIP_55:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: KABUTO_56:POKEMOD_NEO_DISCOVERY
   name: Kabuto
-  nationalPokedexNumber: 140
   number: '56'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Mysterious Fossil
-  evolvesTo: [Kabutops]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Mysterious Fossil]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Revive Friends
@@ -1576,103 +1511,97 @@ cards:
       your deck afterward. Treat the new Kabuto as a Basic Pokémon. This power can't
       be used if Kabuto is affected by a Special Condition (or if your Bench is full).
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Work Together
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 10 more damage for
       each Omanyte, Omastar, Kabuto, and Kabutops on your Bench.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: R
+  - type: FIRE
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Yuka Morii
-- id: 192-57
-  pioId: pkmod10-57
-  enumId: LARVITAR_57
+  pioId: pkmod10-56
+  nationalPokedexNumber: 140
+- enumId: LARVITAR_57:POKEMOD_NEO_DISCOVERY
   name: Larvitar
-  nationalPokedexNumber: 246
   number: '57'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Pupitar]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Bite
     damage: '10'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Hironobu Yoshida
-- id: 192-58
-  pioId: pkmod10-58
-  enumId: MAREEP_58
+  pioId: pkmod10-57
+  nationalPokedexNumber: 246
+  variantOf: LARVITAR_57:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: MAREEP_58:POKEMOD_NEO_DISCOVERY
   name: Mareep
-  nationalPokedexNumber: 179
   number: '58'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Flaaffy]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Thunder Jolt
     damage: '30'
     text: Flip a coin. If tails, Mareep does 10 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 192-59
-  pioId: pkmod10-59
-  enumId: NATU_59
+  pioId: pkmod10-58
+  nationalPokedexNumber: 179
+  variantOf: MAREEP_58:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: NATU_59:POKEMOD_NEO_DISCOVERY
   name: Natu
-  nationalPokedexNumber: 177
   number: '59'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Xatu]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Confuse Ray
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Sumiyoshi Kizuki
-- id: 192-60
-  pioId: pkmod10-60
-  enumId: OMANYTE_60
+  pioId: pkmod10-59
+  nationalPokedexNumber: 177
+  variantOf: NATU_59:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: OMANYTE_60:POKEMOD_NEO_DISCOVERY
   name: Omanyte
-  nationalPokedexNumber: 138
   number: '60'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Mysterious Fossil
-  evolvesTo: [Omastar]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Mysterious Fossil]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Revive Fossil
@@ -1682,32 +1611,29 @@ cards:
       This power can't be used if Omanyte is affected by a Special Condition (or if
       your Bench is full).
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Bind
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: R
+  - type: FIRE
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Yuka Morii
-- id: 192-61
-  pioId: pkmod10-61
-  enumId: PINECO_61
+  pioId: pkmod10-60
+  nationalPokedexNumber: 138
+- enumId: PINECO_61:POKEMOD_NEO_DISCOVERY
   name: Pineco
-  nationalPokedexNumber: 204
   number: '61'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Forretress]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Burst
     damage: '40'
     text: Flip a coin. If heads, Pineco does 40 damage to itself and 10 damage to
@@ -1715,144 +1641,138 @@ cards:
       Benched Pokémon.) Flip a coin. If tails, this attack does nothing (not even
       damage).
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Tomokazu Komiya
-- id: 192-62
-  pioId: pkmod10-62
-  enumId: POLIWAG_62
+  pioId: pkmod10-61
+  nationalPokedexNumber: 204
+  variantOf: PINECO_61:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: POLIWAG_62:POKEMOD_NEO_DISCOVERY
   name: Poliwag
-  nationalPokedexNumber: 60
   number: '62'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Poliwhirl]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Rollout
     damage: '10'
-  - cost: [W]
+  - cost: [WATER]
     name: Hypnosis
     text: The Defending Pokémon is now Asleep.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Aya Kusube
-- id: 192-63
-  pioId: pkmod10-63
-  enumId: SENTRET_63
+  pioId: pkmod10-62
+  nationalPokedexNumber: 60
+  variantOf: POLIWAG_62:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: SENTRET_63:POKEMOD_NEO_DISCOVERY
   name: Sentret
-  nationalPokedexNumber: 161
   number: '63'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Furret]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Scout
     text: Look at your opponent's hand.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Tackle
     damage: '20'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Sumiyoshi Kizuki
-- id: 192-64
-  pioId: pkmod10-64
-  enumId: SPINARAK_64
+  pioId: pkmod10-63
+  nationalPokedexNumber: 161
+  variantOf: SENTRET_63:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: SPINARAK_64:POKEMOD_NEO_DISCOVERY
   name: Spinarak
-  nationalPokedexNumber: 167
   number: '64'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Ariados]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Poison Sting
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Yukiko Baba
-- id: 192-65
-  pioId: pkmod10-65
-  enumId: TEDDIURSA_65
+  pioId: pkmod10-64
+  nationalPokedexNumber: 167
+  variantOf: SPINARAK_64:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: TEDDIURSA_65:POKEMOD_NEO_DISCOVERY
   name: Teddiursa
-  nationalPokedexNumber: 216
   number: '65'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Ursaring]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Scratch
     damage: '10'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Nap Time
     text: Remove all damage counters from Teddiursa. Teddiursa is now Asleep.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Miki Tanaka
-- id: 192-66
-  pioId: pkmod10-66
-  enumId: TYROGUE_66
+  pioId: pkmod10-65
+  nationalPokedexNumber: 216
+  variantOf: TEDDIURSA_65:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: TYROGUE_66:POKEMOD_NEO_DISCOVERY
   name: Tyrogue
-  nationalPokedexNumber: 236
   number: '66'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BABY, BASIC]
-  evolvesTo: [Hitmonlee, Hitmonchan, Hitmontop]
+  cardTypes: [POKEMON, BABY, BASIC]
+  types: [FIGHTING]
   hp: 30
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Smash Punch
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing.
+  retreatCost: 0
   rarity: Common
-  text:
-  - If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
+  text: If this Baby Pokémon is your Active Pokémon and your opponent tries to attack,
     your opponent flips a coin (before doing anything else required in order to use
     that attack). If tails, your opponent's turn ends without an attack.
   artist: Miki Tanaka
-- id: 192-67
-  pioId: pkmod10-67
-  enumId: UNOWN_E_67
+  pioId: pkmod10-66
+  nationalPokedexNumber: 236
+  variantOf: TYROGUE_66:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: UNOWN_E_67:POKEMOD_NEO_DISCOVERY
   name: Unown E
-  nationalPokedexNumber: 201
   number: '67'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Engage
@@ -1860,25 +1780,23 @@ cards:
       hand into his or her deck and then draw 4 cards. Either way, you may shuffle
       your hand into your deck and draw 4 cards.
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: CR CG gangs
-- id: 192-68
-  pioId: pkmod10-68
-  enumId: UNOWN_I_68
-  name: Unown I
+  pioId: pkmod10-67
   nationalPokedexNumber: 201
+- enumId: UNOWN_I_68:POKEMOD_NEO_DISCOVERY
+  name: Unown I
   number: '68'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Increase
@@ -1886,154 +1804,139 @@ cards:
       with Unown in its name and put it onto your Bench. Shuffle your deck afterward.
       You can't use this power if your Bench is full.
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: CR CG gangs
-- id: 192-69
-  pioId: pkmod10-69
-  enumId: UNOWN_O_69
-  name: Unown O
+  pioId: pkmod10-68
   nationalPokedexNumber: 201
+- enumId: UNOWN_O_69:POKEMOD_NEO_DISCOVERY
+  name: Unown O
   number: '69'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Observe
     text: Once during you turn (before your attack), you may look at 5 cards from
       the top of your opponent's deck and put them back in the same order.
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hidden Power
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: CR CG gangs
-- id: 192-70
-  pioId: pkmod10-70
-  enumId: WEEDLE_70
+  pioId: pkmod10-69
+  nationalPokedexNumber: 201
+- enumId: WEEDLE_70:POKEMOD_NEO_DISCOVERY
   name: Weedle
-  nationalPokedexNumber: 13
   number: '70'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Kakuna]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Spike Stab
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned. If tails,
       this attack does nothing (not even damage).
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Miki Tanaka
-- id: 192-71
-  pioId: pkmod10-71
-  enumId: WOOPER_71
+  pioId: pkmod10-70
+  nationalPokedexNumber: 13
+  variantOf: WEEDLE_70:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: WOOPER_71:POKEMOD_NEO_DISCOVERY
   name: Wooper
-  nationalPokedexNumber: 194
   number: '71'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Quagsire]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Slime
     text: If an attack would do damage to Wooper during your opponent's next turn,
       your opponent flips a coin. If tails, prevent all damage to Wooper from that
       attack. (Any other effects of that attack happen.)
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Tail Slap
     damage: '20'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Yukiko Baba
-- id: 192-72
-  pioId: pkmod10-72
-  enumId: BURNED_TOWER_72
+  pioId: pkmod10-71
+  nationalPokedexNumber: 194
+  variantOf: WOOPER_71:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: BURNED_TOWER_72:POKEMOD_NEO_DISCOVERY
   name: Burned Tower
   number: '72'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Rare
-  text:
-  - Once during each player's turn, he or she may flip a coin. If heads, their opponent's
-    Active Pokémon is now Burned. If tails, their own Active Pokémon is now Burned.
+  text: Once during each player's turn, he or she may flip a coin. If heads, their
+    opponent's Active Pokémon is now Burned. If tails, their own Active Pokémon is
+    now Burned.
   artist: Ryo Ueda
-- id: 192-73
-  pioId: pkmod10-73
-  enumId: AMULET_COIN_73
+  pioId: pkmod10-72
+- enumId: AMULET_COIN_73:POKEMOD_NEO_DISCOVERY
   name: Amulet Coin
   number: '73'
-  superType: TRAINER
-  subTypes: [POKEMON_TOOL]
+  cardTypes: [TRAINER, POKEMON_TOOL]
   rarity: Rare
-  text:
-  - If the Pokémon Amulet Coin is attached to is your Active Pokémon at the end of
-    your turn, draw a card.
+  text: If the Pokémon Amulet Coin is attached to is your Active Pokémon at the end
+    of your turn, draw a card.
   artist: Daisuke Ito
-- id: 192-74
-  pioId: pkmod10-74
-  enumId: RUIN_WALL_74
+  pioId: pkmod10-73
+- enumId: RUIN_WALL_74:POKEMOD_NEO_DISCOVERY
   name: Ruin Wall
   number: '74'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Search your deck for a card with Unown in its name and put it onto your Bench.
+  text: Search your deck for a card with Unown in its name and put it onto your Bench.
     Shuffle your deck afterward. (You can't play this card if your Bench is full.)
   artist: '"Big Mama" Tagawa, CR CG gangs'
-- id: 192-75
-  pioId: pkmod10-75
-  enumId: RUINS_OF_ALPH_75
+  pioId: pkmod10-74
+  variantOf: RUIN_WALL_74:NEO_DISCOVERY
+  variantType: Reprint
+- enumId: RUINS_OF_ALPH_75:POKEMOD_NEO_DISCOVERY
   name: Ruins of Alph
   number: '75'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Rare
-  text:
-  - Each player now has 2 extra spaces on his or her Bench for Unown Pokémon. The
-    Unown that occupy the extra spaces on either players Bench do not affect any damage
-    dealt to their opponent's Active Pokémon. If this card is discarded from play,
-    any Unown Pokémon that occupy the extra spaces on either player's Bench are shuffled
-    back into their owner's deck.
+  text: Each player now has 2 extra spaces on his or her Bench for Unown Pokémon.
+    The Unown that occupy the extra spaces on either players Bench do not affect any
+    damage dealt to their opponent's Active Pokémon. If this card is discarded from
+    play, any Unown Pokémon that occupy the extra spaces on either player's Bench
+    are shuffled back into their owner's deck.
   artist: Ryo Ueda
-- id: 192-76
-  pioId: pkmod10-1
-  enumId: ESPEON_EX_76
+  pioId: pkmod10-75
+- enumId: ESPEON_EX_76:POKEMOD_NEO_DISCOVERY
   name: Espeon ex
-  nationalPokedexNumber: 196
   number: '76'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, EX, STAGE1]
-  evolvesFrom: Eevee
+  cardTypes: [POKEMON, EVOLUTION, EX, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Eevee]
   hp: 100
-  retreatCost: 0
   abilities:
   - type: Poké-Power
     name: Devo Flash
@@ -2042,33 +1945,31 @@ cards:
       Pokémon on your opponent's Bench, remove the highest Stage Evolution card from
       that Pokémon, and put it back into his or her hand.
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Snap Tail
     damage: '20'
     text: Choose 1 of your opponent's Pokémon. This attack does 30 damage to that
       Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Psyloop
     damage: 40+
     text: Does 40 damage plus 20 more damage for each Trainer card your opponent has
       in play.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 0
   rarity: Ultra Rare
   artist: Rya Ueda
-- id: 192-77
   pioId: pkmod10-1
-  enumId: UMBREON_EX_77
+  nationalPokedexNumber: 196
+- enumId: UMBREON_EX_77:POKEMOD_NEO_DISCOVERY
   name: Umbreon ex
-  nationalPokedexNumber: 197
   number: '77'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, EX, STAGE1]
-  evolvesFrom: Eevee
+  cardTypes: [POKEMON, EVOLUTION, EX, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Eevee]
   hp: 110
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Darker Ring
@@ -2077,110 +1978,105 @@ cards:
       with 1 of the Defending Pokémon. Your opponent chooses the Defending Pokémon
       to switch.
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Black Cry
     damage: '20'
     text: The Defending Pokémon can't retreat or use any Poké-Powers during your opponent's
       next turn.
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Darkness Fang
     damage: '50'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Ultra Rare
   artist: Rya Ueda
-- id: 192-78
   pioId: pkmod10-1
-  enumId: POLITOED_EX_78
+  nationalPokedexNumber: 197
+- enumId: POLITOED_EX_78:POKEMOD_NEO_DISCOVERY
   name: Politoed ex
-  nationalPokedexNumber: 186
   number: '78'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, EX, STAGE2]
-  evolvesFrom: Poliwhirl
+  cardTypes: [POKEMON, EVOLUTION, EX, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Poliwhirl]
   hp: 150
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Upward Lick
     text: Choose 1 of your opponent's Pokémon. This attack does 20 damage to that
       Pokémon. If that Pokémon is a Stage 2 Evolved Pokémon, this attack does 30 damage
       instead. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Punch and Run
     damage: '40'
     text: Switch Politoed ex with 1 of your Benched Pokémon.
-  - cost: [W, W, C, C]
+  - cost: [WATER, WATER, COLORLESS, COLORLESS]
     name: Swallow Up
     damage: '70'
     text: Before doing damage, count the remaining HP of the Defending Pokémon and
       Politoed ex. If the Defending Pokémon has fewer remaining HP than Politoed ex's,
       this attack does 40 damage instead.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
   artist: Rya Ueda
-- id: 192-79
   pioId: pkmod10-1
-  enumId: TYRANITAR_EX_78
+  nationalPokedexNumber: 186
+- enumId: TYRANITAR_EX_78:POKEMOD_NEO_DISCOVERY
   name: Tyranitar ex
-  nationalPokedexNumber: 248
   number: '79'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, EX, STAGE2]
-  evolvesFrom: Pupitar
+  cardTypes: [POKEMON, EVOLUTION, EX, STAGE2]
+  types: [DARKNESS]
+  evolvesFrom: [Pupitar]
   hp: 140
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Shatter
     text: Discard any Stadium card in play.
-  - cost: [F, D]
+  - cost: [FIGHTING, DARKNESS]
     name: Derail
     damage: '30'
     text: Discard a Special Energy card, if any, attached to the Defending Pokémon.
-  - cost: [F, D, C]
+  - cost: [FIGHTING, DARKNESS, COLORLESS]
     name: Mix-Up
     damage: '50'
     text: Your opponent discards the top card of his or her deck.
-  - cost: [F, D, C, C]
+  - cost: [FIGHTING, DARKNESS, COLORLESS, COLORLESS]
     name: Losing Control
     damage: '70'
     text: Discard the top 3 cards of your deck.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 2
   rarity: Ultra Rare
   artist: Mitsuhiro Arita
-- id: 192-80
-  pioId: pkmod10-80
-  enumId: METAL_ENERGY_80
+  pioId: pkmod10-1
+  nationalPokedexNumber: 248
+- enumId: METAL_ENERGY_80:POKEMOD_NEO_DISCOVERY
   name: Metal Energy
   number: '80'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[M]]
-- id: 192-81
-  pioId: pkmod10-81
-  enumId: DARKNESS_ENERGY_81
+  energy: [[METAL]]
+  pioId: pkmod10-80
+- enumId: DARKNESS_ENERGY_81:POKEMOD_NEO_DISCOVERY
   name: Darkness Energy
   number: '81'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[M]]
+  energy: [[METAL]]
+  pioId: pkmod10-81

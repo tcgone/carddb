@@ -1,21 +1,18 @@
-schema: E2
-id: '287'
-name: POP Series 7
-enumId: POP_SERIES_7
-abbr: POP7
+schema: E3
+expansion:
+  orderId: '287'
+  name: POP Series 7
+  enumId: POP_SERIES_7
+  shortName: POP7
+  isFanMade: false
 cards:
-- id: 287-1
-  pioId: pop7-1
-  enumId: AMPHAROS_1
+- enumId: AMPHAROS_1:POP_SERIES_7
   name: Ampharos
-  nationalPokedexNumber: 181
   number: '1'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Flaaffy
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [LIGHTNING]
+  evolvesFrom: [Flaaffy]
   hp: 130
-  retreatCost: 3
   abilities:
   - type: Poké-Body
     name: Jamming
@@ -23,288 +20,284 @@ cards:
       counter on each of your opponent's Pokémon. You can't use more than 1 Jamming
       Poké-Body each turn.
   moves:
-  - cost: [L, C, C]
+  - cost: [LIGHTNING, COLORLESS, COLORLESS]
     name: Cluster Bolt
     damage: '70'
     text: You may discard all [L] Energy attached to Ampharos. If you do, this attack
       does 20 damage to each of your opponent's Benched Pokémon that has any Energy
       cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +30
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 3
   rarity: Rare
   artist: Kouki Saitou
-- id: 287-2
-  pioId: pop7-2
-  enumId: GALLADE_2
+  pioId: pop7-1
+  nationalPokedexNumber: 181
+  variantOf: AMPHAROS_1:SECRET_WONDERS
+  variantType: Reprint
+- enumId: GALLADE_2:POP_SERIES_7
   name: Gallade
-  nationalPokedexNumber: 475
   number: '2'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Kirlia
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Kirlia]
   hp: 130
-  retreatCost: 2
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Sonic Blade
     text: Put damage counters on the Defending Pokémon until it is 50 HP away from
       being Knocked Out. If you do, your opponent switches the Defending Pokémon with
       1 of his or her Benched Pokémon.
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Psychic Cut
     damage: 60+
     text: You may choose as many of your face-down Prize cards as you like and put
       them face up. If you do, this attack does 60 damage plus 20 more damage for
       each Prize card you chose. (These cards remain face up for the rest of the game.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +30
+  retreatCost: 2
   rarity: Rare
   artist: Daisuke Ito
-- id: 287-3
-  pioId: pop7-3
-  enumId: LATIAS_3
+  pioId: pop7-2
+  nationalPokedexNumber: 475
+  variantOf: GALLADE_6:SECRET_WONDERS
+  variantType: Reprint
+- enumId: LATIAS_3:POP_SERIES_7
   name: Latias
-  nationalPokedexNumber: 380
   number: '3'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Miraculous Light
     damage: '10'
     text: Remove 2 damage counters and all Special Conditions from Latias.
-  - cost: [R, W, C]
+  - cost: [FIRE, WATER, COLORLESS]
     name: Mist Ball
     damage: '80'
     text: Discard a [R] Energy and a [W] Energy attached to Latias.
   weaknesses:
-  - type: C
+  - type: COLORLESS
     value: +20
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Rare
   artist: Daisuke Ito
-- id: 287-4
-  pioId: pop7-4
-  enumId: LATIOS_4
+  pioId: pop7-3
+  nationalPokedexNumber: 380
+  variantOf: LATIAS_22:GREAT_ENCOUNTERS
+  variantType: Reprint
+- enumId: LATIOS_4:POP_SERIES_7
   name: Latios
-  nationalPokedexNumber: 381
   number: '4'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Energy Draw
     damage: '10'
     text: Flip a coin. If heads, search your deck for a basic Energy card and attach
       it to Latios. Shuffle your deck afterward.
-  - cost: [G, L, C, C]
+  - cost: [GRASS, LIGHTNING, COLORLESS, COLORLESS]
     name: Luster Purge
     damage: '120'
     text: Discard 3 Energy attached to Latios.
   weaknesses:
-  - type: C
+  - type: COLORLESS
     value: +20
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 2
   rarity: Rare
   artist: Daisuke Ito
-- id: 287-5
-  pioId: pop7-5
-  enumId: MOTHIM_5
+  pioId: pop7-4
+  nationalPokedexNumber: 381
+  variantOf: LATIOS_23:GREAT_ENCOUNTERS
+  variantType: Reprint
+- enumId: MOTHIM_5:POP_SERIES_7
   name: Mothim
-  nationalPokedexNumber: 414
   number: '5'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Burmy
-  evolvesTo: [Burmy]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Burmy]
   hp: 80
-  retreatCost: 0
   moves:
   - cost: []
     name: Silver Wind
     text: During your next turn, if an attack does damage to the Defending Pokémon
       (after applying Weakness and Resistance), that attack does 40 more damage.
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Raging Scales
     damage: 30+
     text: If Mothim has any damage counters on it, this attack does 30 damage plus
       40 more damage.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 0
   rarity: Rare
   artist: Kazuyuki Kano
-- id: 287-6
-  pioId: pop7-6
-  enumId: DELIBIRD_6
+  pioId: pop7-5
+  nationalPokedexNumber: 414
+  variantOf: MOTHIM_33:SECRET_WONDERS
+  variantType: Reprint
+- enumId: DELIBIRD_6:POP_SERIES_7
   name: Delibird
-  nationalPokedexNumber: 225
   number: '6'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 70
-  retreatCost: 1
   moves:
   - cost: []
     name: Present
     text: Flip a coin. If heads, search your deck for any 1 card and put it into your
       hand. Shuffle your deck afterward.
-  - cost: [W]
+  - cost: [WATER]
     name: Ice Ball
     damage: '20'
   weaknesses:
-  - type: M
+  - type: METAL
     value: +20
+  retreatCost: 1
   rarity: Uncommon
   artist: Masakazu Fukuda
-- id: 287-7
-  pioId: pop7-7
-  enumId: FLAAFFY_7
+  pioId: pop7-6
+  nationalPokedexNumber: 225
+  variantOf: DELIBIRD_36:GREAT_ENCOUNTERS
+  variantType: Reprint
+- enumId: FLAAFFY_7:POP_SERIES_7
   name: Flaaffy
-  nationalPokedexNumber: 180
   number: '7'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Mareep
-  evolvesTo: [Ampharos]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Mareep]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Attract Current
     damage: '10'
     text: Search your deck for a [L] Energy card and attach it to 1 of your Pokémon.
       Shuffle your deck afterward.
-  - cost: [L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, COLORLESS]
     name: Electromagnetic Kick
     damage: '60'
     text: Flip a coin. If tails, Flaaffy does 10 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 287-8
-  pioId: pop7-8
-  enumId: KIRLIA_8
+  pioId: pop7-7
+  nationalPokedexNumber: 180
+  variantOf: FLAAFFY_50:SECRET_WONDERS
+  variantType: Reprint
+- enumId: KIRLIA_8:POP_SERIES_7
   name: Kirlia
-  nationalPokedexNumber: 281
   number: '8'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Ralts
-  evolvesTo: [Gardevoir, Gallade]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Ralts]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Psychic Research
     text: Search your discard pile for a Supporter card and use the effect of that
       card as the effect of this attack. (The Supporter card remains in your discard
       pile.)
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Telekinesis
     text: Choose 1 of your opponent's Pokémon. This attack does 40 damage to that
       Pokémon. This attack's damage isn't affected by Weakness or Resistance.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +20
+  retreatCost: 1
   rarity: Uncommon
   artist: Masakazu Fukuda
-- id: 287-9
-  pioId: pop7-9
-  enumId: STANTLER_9
+  pioId: pop7-8
+  nationalPokedexNumber: 281
+  variantOf: KIRLIA_53:SECRET_WONDERS
+  variantType: Reprint
+- enumId: STANTLER_9:POP_SERIES_7
   name: Stantler
-  nationalPokedexNumber: 234
   number: '9'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 70
-  retreatCost: 1
   moves:
   - cost: []
     name: Lead
     text: Search your deck for a Supporter card, show it to your opponent, and put
       it into your hand. Shuffle your deck afterward.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Frighten Horn
     damage: '20'
     text: If the Defending Pokémon isn't an Evolved Pokémon, that Pokémon is now Confused.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
+  retreatCost: 1
   rarity: Uncommon
   artist: Kouki Saitou
-- id: 287-10
-  pioId: pop7-10
-  enumId: WORMADAM_SANDY_CLOAK_10
+  pioId: pop7-9
+  nationalPokedexNumber: 234
+  variantOf: STANTLER_113:SECRET_WONDERS
+  variantType: Reprint
+- enumId: WORMADAM_SANDY_CLOAK_10:POP_SERIES_7
   name: Wormadam Sandy Cloak
-  nationalPokedexNumber: 413
   number: '10'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Burmy Sandy Cloak
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Burmy Sandy Cloak]
   hp: 80
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Sandy Cloak
     text: Prevent all effects of attacks, excluding damage, done to Wormadam Sandy
       Cloak.
   moves:
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Push Over
     damage: 40+
     text: Does 40 damage plus 10 more damage for each [F] Energy attached to Wormadam
       Sandy Cloak.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +20
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 287-11
-  pioId: pop7-11
-  enumId: BURMY_PLANT_CLOAK_11
+  pioId: pop7-10
+  nationalPokedexNumber: 413
+  variantOf: WORMADAM_SANDY_CLOAK_42:SECRET_WONDERS
+  variantType: Reprint
+- enumId: BURMY_PLANT_CLOAK_11:POP_SERIES_7
   name: Burmy Plant Cloak
-  nationalPokedexNumber: 412
   number: '11'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Wormadam]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Wear Cloak
@@ -312,28 +305,27 @@ cards:
       Active Pokémon, you may search your discard pile for a basic [G] Energy card
       and attach it to Burmy Plant Cloak.
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Plant Cloak Tackle
     damage: 10+
     text: If Burmy Plant Cloak has any [G] Energy attached to it, this attack does
       10 damage plus 10 more damage.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Kouki Saitou
-- id: 287-12
-  pioId: pop7-12
-  enumId: BURMY_SANDY_CLOAK_12
-  name: Burmy Sandy Cloak
+  pioId: pop7-11
   nationalPokedexNumber: 412
+  variantOf: BURMY_PLANT_CLOAK_78:SECRET_WONDERS
+  variantType: Reprint
+- enumId: BURMY_SANDY_CLOAK_12:POP_SERIES_7
+  name: Burmy Sandy Cloak
   number: '12'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Wormadam Sandy Cloak]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Wear Cloak
@@ -341,139 +333,141 @@ cards:
       Active Pokémon, you may search your discard pile for a basic [F] Energy card
       and attach it to Burmy Sandy Cloak.
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Sandy Cloak Tackle
     damage: 10+
     text: If Burmy Sandy Cloak has any [F] Energy attached to it, this attack does
       10 damage plus 10 more damage.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Midori Harada
-- id: 287-13
-  pioId: pop7-13
-  enumId: CORSOLA_13
+  pioId: pop7-12
+  nationalPokedexNumber: 412
+  variantOf: BURMY_SANDY_CLOAK_79:SECRET_WONDERS
+  variantType: Reprint
+- enumId: CORSOLA_13:POP_SERIES_7
   name: Corsola
-  nationalPokedexNumber: 222
   number: '13'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Rally
     text: Search your deck for up to 3 different types of Basic Pokémon and put them
       onto your Bench. Shuffle your deck afterward.
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Hook
     damage: '30'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: +20
+  retreatCost: 1
   rarity: Common
   artist: Midori Harada
-- id: 287-14
-  pioId: pop7-14
-  enumId: MAREEP_14
+  pioId: pop7-13
+  nationalPokedexNumber: 222
+  variantOf: CORSOLA_84:SECRET_WONDERS
+  variantType: Reprint
+- enumId: MAREEP_14:POP_SERIES_7
   name: Mareep
-  nationalPokedexNumber: 179
   number: '14'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Flaaffy]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Thundershock
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Static Shock
     damage: '20'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 287-15
-  pioId: pop7-15
-  enumId: RALTS_15
+  pioId: pop7-14
+  nationalPokedexNumber: 179
+  variantOf: MAREEP_94:SECRET_WONDERS
+  variantType: Reprint
+- enumId: RALTS_15:POP_SERIES_7
   name: Ralts
-  nationalPokedexNumber: 280
   number: '15'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Kirlia]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Smack
     damage: '10'
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Confuse Ray
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Sumiyoshi Kizuki
-- id: 287-16
-  pioId: pop7-16
-  enumId: SENTRET_16
+  pioId: pop7-15
+  nationalPokedexNumber: 280
+  variantOf: RALTS_102:SECRET_WONDERS
+  variantType: Reprint
+- enumId: SENTRET_16:POP_SERIES_7
   name: Sentret
-  nationalPokedexNumber: 161
   number: '16'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Furret]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Grope
     text: Look at the top 2 cards of your deck, choose 1 of them, and put it into
       your hand. Put the other card on the bottom of your deck.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Scratch
     damage: '10'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +10
+  retreatCost: 1
   rarity: Common
   artist: Midori Harada
-- id: 287-17
-  pioId: pop7-17
-  enumId: SPINDA_17
+  pioId: pop7-16
+  nationalPokedexNumber: 161
+  variantOf: SENTRET_104:SECRET_WONDERS
+  variantType: Reprint
+- enumId: SPINDA_17:POP_SERIES_7
   name: Spinda
-  nationalPokedexNumber: 327
   number: '17'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Dish Out
     text: Draw a card from the top and the bottom of your deck.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Synchro Punch
     damage: 10+
     text: If any basic Energy card attached to Spinda is the same type as any Energy
       attached to the Defending Pokémon, this attack does 10 damage plus 30 more damage.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: +20
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
+  pioId: pop7-17
+  nationalPokedexNumber: 327
+  variantOf: SPINDA_111:SECRET_WONDERS
+  variantType: Reprint

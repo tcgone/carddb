@@ -1,32 +1,30 @@
-schema: E2
-id: '423'
-name: Unbroken Bonds
-enumId: UNBROKEN_BONDS
-abbr: UNB
-pioId: sm10
+schema: E3
+expansion:
+  orderId: '423'
+  name: Unbroken Bonds
+  enumId: UNBROKEN_BONDS
+  shortName: UNB
+  pioId: sm10
+  isFanMade: false
 cards:
-- id: 423-1
-  pioId: sm10-1
-  enumId: PHEROMOSA_BUZZWOLE_GX_1
+- enumId: PHEROMOSA_BUZZWOLE_GX_1:UNBROKEN_BONDS
   name: Pheromosa & Buzzwole-GX
   number: '1'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [GRASS]
   hp: 260
-  retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Jet Punch
     damage: '30'
     text: This attack does 30 damage to 1 of your opponent’s Benched Pokémon. (Don’t
       apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Elegant Sole
     damage: '190'
     text: During your next turn, this Pokémon's Elegant Sole attack's base damage
       is 60.
-  - cost: [G]
+  - cost: [GRASS]
     name: Beast Game GX
     damage: '50'
     text: If your opponent's Pokémon is Knocked Out by damage from this attack, take
@@ -34,19 +32,17 @@ cards:
       (in addition to this attack's cost), take 3 more Prize cards instead. (You can’t
       use more than 1 GX attack in a game.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Ultra Rare
-- id: 423-2
-  pioId: sm10-2
-  enumId: CATERPIE_2
+  pioId: sm10-1
+- enumId: CATERPIE_2:UNBROKEN_BONDS
   name: Caterpie
   number: '2'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Pupate
@@ -54,24 +50,22 @@ cards:
       search your deck for a card that evolves from this Pokémon and put it onto this
       Pokémon to evolve it. Then, shuffle your deck.
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Hook
     damage: '10'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-3
-  pioId: sm10-3
-  enumId: METAPOD_3
+  pioId: sm10-2
+- enumId: METAPOD_3:UNBROKEN_BONDS
   name: Metapod
   number: '3'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Caterpie
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Caterpie]
   hp: 70
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Emerge
@@ -79,86 +73,78 @@ cards:
       search your deck for a card that evolves from this Pokémon and put it onto this
       Pokémon to evolve it. Then, shuffle your deck.
   moves:
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Bug Bite
     damage: '30'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 3
   rarity: Uncommon
-- id: 423-4
-  pioId: sm10-4
-  enumId: BUTTERFREE_4
+  pioId: sm10-3
+- enumId: BUTTERFREE_4:UNBROKEN_BONDS
   name: Butterfree
   number: '4'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Metapod
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Metapod]
   hp: 130
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Triple Charge
     text: Search your deck for up to 3 basic Energy cards and attach them to your
       Pokémon in any way you like. Then, shuffle your deck.
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Solar Beam
     damage: '70'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Rare
-- id: 423-5
-  pioId: sm10-5
-  enumId: ODDISH_5
+  pioId: sm10-4
+- enumId: ODDISH_5:UNBROKEN_BONDS
   name: Oddish
   number: '5'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Stun Spore
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Seed Bomb
     damage: '20'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-6
-  pioId: sm10-6
-  enumId: ODDISH_6
+  pioId: sm10-5
+- enumId: ODDISH_6:UNBROKEN_BONDS
   name: Oddish
   number: '6'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Hook
     damage: '10'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-7
-  pioId: sm10-7
-  enumId: GLOOM_7
+  pioId: sm10-6
+- enumId: GLOOM_7:UNBROKEN_BONDS
   name: Gloom
   number: '7'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Oddish
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Oddish]
   hp: 80
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Irresistible Aroma
@@ -166,24 +152,22 @@ cards:
       full, you may flip a coin. If heads, your opponent reveals their hand. Put a
       Basic Pokémon you find there onto their Bench.
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Drool
     damage: '30'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Uncommon
-- id: 423-8
-  pioId: sm10-8
-  enumId: VILEPLUME_8
+  pioId: sm10-7
+- enumId: VILEPLUME_8:UNBROKEN_BONDS
   name: Vileplume
   number: '8'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Gloom
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Gloom]
   hp: 140
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Varied Pollen
@@ -191,284 +175,260 @@ cards:
       choose Asleep, Burned, Confused, or Poisoned. Your opponent's Active Pokémon
       is now affected by that Special Condition.
   moves:
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Giant Bloom
     damage: '90'
     text: Heal 30 damage from this Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
-- id: 423-9
-  pioId: sm10-9
-  enumId: VENONAT_9
+  pioId: sm10-8
+- enumId: VENONAT_9:UNBROKEN_BONDS
   name: Venonat
   number: '9'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Radar Eyes
     text: Look at the top 7 cards of your deck and put 1 of them into your hand. Shuffle
       the other cards back into your deck.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Flop
     damage: '20'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-10
-  pioId: sm10-10
-  enumId: VENONAT_10
+  pioId: sm10-9
+- enumId: VENONAT_10:UNBROKEN_BONDS
   name: Venonat
   number: '10'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Psybeam
     damage: '10'
     text: Your opponent's Active Pokémon is now Confused.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-11
-  pioId: sm10-11
-  enumId: VENOMOTH_11
+  pioId: sm10-10
+- enumId: VENOMOTH_11:UNBROKEN_BONDS
   name: Venomoth
   number: '11'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Venonat
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Venonat]
   hp: 90
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Assassin Flight
     text: You can use this attack only if your opponent's Active Pokémon is affected
       by a Special Condition. This attack does 90 damage to 1 of your opponent's Benched
       Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [G]
+  - cost: [GRASS]
     name: Poison Powder
     damage: '30'
     text: Your opponent's Active Pokémon is now Poisoned.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 0
   rarity: Rare
-- id: 423-12
-  pioId: sm10-12
-  enumId: VENOMOTH_GX_12
+  pioId: sm10-11
+- enumId: VENOMOTH_GX_12:UNBROKEN_BONDS
   name: Venomoth-GX
   number: '12'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Venonat
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Venonat]
   hp: 200
-  retreatCost: 1
   moves:
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Shinobi Mastery
     damage: 110+
     text: If you played Koga's Trap from your hand during this turn, this attack does
       90 more damage. If you played Janine from your hand during this turn, prevent
       all damage done to this Pokémon by attacks from Basic Pokémon during your opponent's
       next turn.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Ten-Card Return GX
     damage: '60'
     text: Shuffle your hand into your deck. Then, draw 10 cards. (You can’t use more
       than 1 GX attack in a game.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Ultra Rare
-- id: 423-13
-  pioId: sm10-13
-  enumId: BELLSPROUT_13
+  pioId: sm10-12
+- enumId: BELLSPROUT_13:UNBROKEN_BONDS
   name: Bellsprout
   number: '13'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Razor Leaf
     damage: '20'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-14
-  pioId: sm10-14
-  enumId: WEEPINBELL_14
+  pioId: sm10-13
+- enumId: WEEPINBELL_14:UNBROKEN_BONDS
   name: Weepinbell
   number: '14'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Bellsprout
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Bellsprout]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Burning Venom
     text: Your opponent's Active Pokémon is now Burned and Poisoned.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Ram
     damage: '30'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Uncommon
-- id: 423-15
-  pioId: sm10-15
-  enumId: VICTREEBEL_15
+  pioId: sm10-14
+- enumId: VICTREEBEL_15:UNBROKEN_BONDS
   name: Victreebel
   number: '15'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Weepinbell
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Weepinbell]
   hp: 140
-  retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Reactive Poison
     damage: 10+
     text: This attack does 60 more damage for each Special Condition affecting your
       opponent's Active Pokémon.
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Gastro Acid
     damage: '90'
     text: The Defending Pokémon has no Abilities until the end of your next turn.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Rare
-- id: 423-16
-  pioId: sm10-16
-  enumId: TANGELA_16
+  pioId: sm10-15
+- enumId: TANGELA_16:UNBROKEN_BONDS
   name: Tangela
   number: '16'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Tangle Drag
     text: Switch 1 of your opponent’s Benched Pokémon with their Active Pokémon.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Gentle Slap
     damage: '30'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-17
-  pioId: sm10-17
-  enumId: TANGROWTH_17
+  pioId: sm10-16
+- enumId: TANGROWTH_17:UNBROKEN_BONDS
   name: Tangrowth
   number: '17'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Tangela
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Tangela]
   hp: 130
-  retreatCost: 3
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Bind Down
     damage: '30'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Chlorowhip
     damage: '90'
     text: If this Pokémon has at least 2 [G] Energy attached to it, heal 60 damage
       from this Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 3
   rarity: Rare
-- id: 423-18
-  pioId: sm10-18
-  enumId: GRUBBIN_18
+  pioId: sm10-17
+- enumId: GRUBBIN_18:UNBROKEN_BONDS
   name: Grubbin
   number: '18'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Electrical Signal
     text: Search your deck for up to 2 [L] Pokémon, reveal them, and put them into
       your hand. Then, shuffle your deck.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Corkscrew Punch
     damage: '30'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-19
-  pioId: sm10-19
-  enumId: KARTANA_19
+  pioId: sm10-18
+- enumId: KARTANA_19:UNBROKEN_BONDS
   name: Kartana
   number: '19'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 70
-  retreatCost: 0
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Big Cut
     damage: 10+
     text: If you have exactly 4 Prize cards remaining, this attack does 120 more damage.
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: False Swipe
     text: Flip a coin. If heads, put damage counters on your opponent's Active Pokémon
       until its remaining HP is 10.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 0
   rarity: Rare Holo
-- id: 423-20
-  pioId: sm10-20
-  enumId: RESHIRAM_CHARIZARD_GX_20
+  pioId: sm10-19
+- enumId: RESHIRAM_CHARIZARD_GX_20:UNBROKEN_BONDS
   name: Reshiram & Charizard-GX
   number: '20'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FIRE]
   hp: 270
-  retreatCost: 3
   moves:
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Outrage
     damage: 30+
     text: This attack does 10 more damage for each damage counter on this Pokémon.
-  - cost: [R, R, R, C]
+  - cost: [FIRE, FIRE, FIRE, COLORLESS]
     name: Flare Strike
     damage: '230'
     text: This Pokémon can't use Flare Strike during your next turn.
-  - cost: [R, R, R]
+  - cost: [FIRE, FIRE, FIRE]
     name: Double Blaze GX
     damage: 200+
     text: If this Pokémon has at least 3 extra [R] Energy attached to it (in addition
@@ -476,197 +436,183 @@ cards:
       damage isn't affected by any effects on your opponent's Active Pokémon. (You
       can't use more than 1 GX attack in a game.)
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-- id: 423-21
-  pioId: sm10-21
-  enumId: GROWLITHE_21
+  pioId: sm10-20
+  variantOf: RESHIRAM_CHARIZARD_GX_SM201:SUN_MOON_PROMOS
+  variantType: Full Art
+- enumId: GROWLITHE_21:UNBROKEN_BONDS
   name: Growlithe
   number: '21'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Live Coal
     damage: '10'
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Combustion
     damage: '30'
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-22
-  pioId: sm10-22
-  enumId: ARCANINE_22
+  pioId: sm10-21
+- enumId: ARCANINE_22:UNBROKEN_BONDS
   name: Arcanine
   number: '22'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Growlithe
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Growlithe]
   hp: 140
-  retreatCost: 4
   moves:
-  - cost: [R, R, R]
+  - cost: [FIRE, FIRE, FIRE]
     name: Grand Flame
     damage: '120'
     text: Attach 2 [R] Energy cards from your discard pile to 1 of your Benched Pokémon.
-  - cost: [R, R, R, R]
+  - cost: [FIRE, FIRE, FIRE, FIRE]
     name: Heat Tackle
     damage: '190'
     text: This Pokémon does 50 damage to itself.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 4
   rarity: Rare Holo
-- id: 423-23
-  pioId: sm10-23
-  enumId: DARUMAKA_23
+  pioId: sm10-22
+- enumId: DARUMAKA_23:UNBROKEN_BONDS
   name: Darumaka
   number: '23'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Flame Charge
     damage: '10'
     text: Search your deck for a [R] Energy card and attach it to this Pokémon. Then,
       shuffle your deck.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Flop
     damage: '20'
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-24
-  pioId: sm10-24
-  enumId: DARMANITAN_24
+  pioId: sm10-23
+- enumId: DARMANITAN_24:UNBROKEN_BONDS
   name: Darmanitan
   number: '24'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Darumaka
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Darumaka]
   hp: 130
-  retreatCost: 3
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Find Wildfire
     text: Search your deck for up to 3 [R] Energy cards, reveal them, and put them
       into your hand. Then, shuffle your deck.
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Flare Blitz
     damage: '110'
     text: Discard all [R] Energy from this Pokémon.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 3
   rarity: Rare
-- id: 423-25
-  pioId: sm10-25
-  enumId: VOLCANION_25
+  pioId: sm10-24
+- enumId: VOLCANION_25:UNBROKEN_BONDS
   name: Volcanion
   number: '25'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 120
-  retreatCost: 2
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Flare Starter
     text: Search your deck for a [R] Energy card and attach it to 1 of your Pokémon.
       If you go second and it's your first turn, instead search for up to 3 [R] Energy
       cards and attach them to your Pokémon in any way you like. Then, shuffle your
       deck.
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: High-Heat Blast
     damage: 50+
     text: If you have at least 4 [R] Energy in play, this attack does 60 more damage.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
-- id: 423-26
-  pioId: sm10-26
-  enumId: LITTEN_26
+  pioId: sm10-25
+  variantOf: VOLCANION_SM179:SUN_MOON_PROMOS
+  variantType: Reprint
+- enumId: LITTEN_26:UNBROKEN_BONDS
   name: Litten
   number: '26'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Singe
     text: Your opponent's Active Pokémon is now Burned.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-27
-  pioId: sm10-27
-  enumId: LITTEN_27
+  pioId: sm10-26
+- enumId: LITTEN_27:UNBROKEN_BONDS
   name: Litten
   number: '27'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Caturday
     text: Draw a card. If you do, this Pokémon is now Asleep.
-  - cost: [R, C, C]
+  - cost: [FIRE, COLORLESS, COLORLESS]
     name: Big Bite
     damage: '60'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-28
-  pioId: sm10-28
-  enumId: TORRACAT_28
+  pioId: sm10-27
+- enumId: TORRACAT_28:UNBROKEN_BONDS
   name: Torracat
   number: '28'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Litten
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Litten]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Fire Fang
     damage: '20'
     text: Your opponent's Active Pokémon is now Burned.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-29
-  pioId: sm10-29
-  enumId: INCINEROAR_29
+  pioId: sm10-28
+- enumId: INCINEROAR_29:UNBROKEN_BONDS
   name: Incineroar
   number: '29'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Torracat
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIRE]
+  evolvesFrom: [Torracat]
   hp: 160
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Strong Cheer
@@ -674,635 +620,579 @@ cards:
       (before applying Weakness and Resistance). You can't apply more than 1 Strong
       Cheer Ability at a time.
   moves:
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Flamethrower
     damage: '90'
     text: Discard an Energy from this Pokémon.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Rare
-- id: 423-30
-  pioId: sm10-30
-  enumId: SALANDIT_30
+  pioId: sm10-29
+- enumId: SALANDIT_30:UNBROKEN_BONDS
   name: Salandit
   number: '30'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Grass Fire
     damage: '10'
     text: Discard a [G] Energy from your opponent's Active Pokémon.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-31
-  pioId: sm10-31
-  enumId: SALAZZLE_31
+  pioId: sm10-30
+- enumId: SALAZZLE_31:UNBROKEN_BONDS
   name: Salazzle
   number: '31'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Salandit
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Salandit]
   hp: 100
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Roast Reveal
     text: Once during your turn (before your attack), you may discard a [R] Energy
       card from your hand. If you do, draw 3 cards.
   moves:
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Combustion
     damage: '60'
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Rare
-- id: 423-32
-  pioId: sm10-32
-  enumId: BLACEPHALON_32
+  pioId: sm10-31
+- enumId: BLACEPHALON_32:UNBROKEN_BONDS
   name: Blacephalon
   number: '32'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 120
-  retreatCost: 2
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Blazer
     damage: 10+
     text: Turn 1 of your face-down Prize cards face up. If it's a [R] Energy card,
       this attack does 50 more damage. (That Prize card remains face up for the rest
       of the game.)
-  - cost: [R, R, R]
+  - cost: [FIRE, FIRE, FIRE]
     name: Fireball Circus
     damage: 50x
     text: Discard any number of [R] Energy cards from your hand. This attack does
       50 damage for each card you discarded in this way.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Rare
-- id: 423-33
-  pioId: sm10-33
-  enumId: SQUIRTLE_33
+  pioId: sm10-32
+- enumId: SQUIRTLE_33:UNBROKEN_BONDS
   name: Squirtle
   number: '33'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Bubble
     damage: '10'
     text: Flip a coin. If heads, your opponent’s Active Pokémon is now Paralyzed.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-34
-  pioId: sm10-34
-  enumId: WARTORTLE_34
+  pioId: sm10-33
+- enumId: WARTORTLE_34:UNBROKEN_BONDS
   name: Wartortle
   number: '34'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Squirtle
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Squirtle]
   hp: 70
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Solid Shell
     text: This Pokémon takes 30 less damage from attacks (after applying Weakness
       and Resistance).
   moves:
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Aqua Slash
     damage: '60'
     text: This Pokémon can’t attack during your next turn.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Uncommon
-- id: 423-35
-  pioId: sm10-35
-  enumId: BLASTOISE_GX_35
+  pioId: sm10-34
+- enumId: BLASTOISE_GX_35:UNBROKEN_BONDS
   name: Blastoise-GX
   number: '35'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Wartortle
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Wartortle]
   hp: 240
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Solid Shell
     text: This Pokémon takes 30 less damage from attacks (after applying Weakness
       and Resistance).
   moves:
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Rocket Splash
     damage: 60x
     text: Shuffle any amount of [W] Energy from your Pokémon into your deck. This
       attack does 60 damage for each card you shuffled into your deck in this way.
-  - cost: [W]
+  - cost: [WATER]
     name: Giant Geyser GX
     text: Attach any number of [W] Energy cards from your hand to your Pokémon in
       any way you like. (You can’t use more than 1 GX attack in a game.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-- id: 423-36
-  pioId: sm10-36
-  enumId: POLIWAG_36
+  pioId: sm10-35
+- enumId: POLIWAG_36:UNBROKEN_BONDS
   name: Poliwag
   number: '36'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Round 'n' Round
     text: You can use this Ability only if you go second. Once during your first turn
       (before your attack), you may leave your opponent's Active Pokémon Confused.
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Watering
     damage: '10'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-37
-  pioId: sm10-37
-  enumId: POLIWAG_37
+  pioId: sm10-36
+- enumId: POLIWAG_37:UNBROKEN_BONDS
   name: Poliwag
   number: '37'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Call for Family
     text: Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle
       your deck.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-38
-  pioId: sm10-38
-  enumId: POLIWHIRL_38
+  pioId: sm10-37
+- enumId: POLIWHIRL_38:UNBROKEN_BONDS
   name: Poliwhirl
   number: '38'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Poliwag
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Poliwag]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Bubble
     damage: '20'
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Knuckle Punch
     damage: '40'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Uncommon
-- id: 423-39
-  pioId: sm10-39
-  enumId: POLIWRATH_39
+  pioId: sm10-38
+- enumId: POLIWRATH_39:UNBROKEN_BONDS
   name: Poliwrath
   number: '39'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Poliwhirl
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Poliwhirl]
   hp: 150
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Knuckle Punch
     damage: '50'
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Swirly Rush
     damage: 90+
     text: If Poliwag and Poliwhirl are on your Bench, this attack does 90 more damage.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Rare
-- id: 423-40
-  pioId: sm10-40
-  enumId: TENTACOOL_40
+  pioId: sm10-39
+- enumId: TENTACOOL_40:UNBROKEN_BONDS
   name: Tentacool
   number: '40'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Bubble Jutsu
     damage: 10+
     text: If you played Janine from your hand during this turn, this attack does 50
       more damage.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-41
-  pioId: sm10-41
-  enumId: TENTACRUEL_41
+  pioId: sm10-40
+- enumId: TENTACRUEL_41:UNBROKEN_BONDS
   name: Tentacruel
   number: '41'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Tentacool
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Tentacool]
   hp: 100
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Wicked Tentacles
     text: Move an Energy from 1 of your opponent's Pokémon to another of their Pokémon.
       If you do, put 3 damage counters on the Pokémon you moved the Energy to.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Wrap
     damage: '60'
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-42
-  pioId: sm10-42
-  enumId: SLOWPOKE_42
+  pioId: sm10-41
+- enumId: SLOWPOKE_42:UNBROKEN_BONDS
   name: Slowpoke
   number: '42'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Growl
     text: During your opponent’s next turn, the Defending Pokémon’s attacks do 20
       less damage (before applying Weakness and Resistance).
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Tail Whap
     damage: '20'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-43
-  pioId: sm10-43
-  enumId: SLOWBRO_43
+  pioId: sm10-42
+- enumId: SLOWBRO_43:UNBROKEN_BONDS
   name: Slowbro
   number: '43'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Slowpoke
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Slowpoke]
   hp: 120
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Yawn
     text: Your opponent's Active Pokémon is now Asleep.
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Three Strikes
     damage: 100x
     text: Flip 3 coins. This attack does 100 damage for each heads. If all of them
       are tails, you lose this game.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
-- id: 423-44
-  pioId: sm10-44
-  enumId: SEEL_44
+  pioId: sm10-43
+- enumId: SEEL_44:UNBROKEN_BONDS
   name: Seel
   number: '44'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Horn Attack
     damage: '30'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-45
-  pioId: sm10-45
-  enumId: DEWGONG_45
+  pioId: sm10-44
+- enumId: DEWGONG_45:UNBROKEN_BONDS
   name: Dewgong
   number: '45'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Seel
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Seel]
   hp: 120
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Tail Whap
     damage: '60'
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Dual Blizzard
     text: Discard 2 Energy from this Pokémon. This attack does 60 damage to 2 of your
       opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
+  retreatCost: 2
   rarity: Rare
-- id: 423-46
-  pioId: sm10-46
-  enumId: KRABBY_46
+  pioId: sm10-45
+- enumId: KRABBY_46:UNBROKEN_BONDS
   name: Krabby
   number: '46'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Stampede
     damage: '10'
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Vice Grip
     damage: '20'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-47
-  pioId: sm10-47
-  enumId: KINGLER_47
+  pioId: sm10-46
+- enumId: KINGLER_47:UNBROKEN_BONDS
   name: Kingler
   number: '47'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Krabby
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Krabby]
   hp: 130
-  retreatCost: 4
   moves:
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Bubble Beam
     damage: '80'
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  - cost: [W, C, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS, COLORLESS]
     name: Massive Rend
     damage: '130'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Rare
-- id: 423-48
-  pioId: sm10-48
-  enumId: GOLDEEN_48
+  pioId: sm10-47
+- enumId: GOLDEEN_48:UNBROKEN_BONDS
   name: Goldeen
   number: '48'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Elegant Swim
     damage: '10'
     text: Flip a coin. If heads, prevent all effects of attacks, including damage,
       done to this Pokémon during your opponent's next turn.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-49
-  pioId: sm10-49
-  enumId: SEAKING_49
+  pioId: sm10-48
+- enumId: SEAKING_49:UNBROKEN_BONDS
   name: Seaking
   number: '49'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Goldeen
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Goldeen]
   hp: 100
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Enhanced Horn
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage for each heads. If this Pokémon
       has a Pokémon Tool card attached to it, flip 6 coins instead.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Rare
-- id: 423-50
-  pioId: sm10-50
-  enumId: KYUREM_50
+  pioId: sm10-49
+- enumId: KYUREM_50:UNBROKEN_BONDS
   name: Kyurem
   number: '50'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 130
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Call Forth Cold
     text: Search your deck for a [W] Energy card and attach it to this Pokémon. Then,
       shuffle your deck.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Hail Prison
     damage: '110'
     text: Discard 2 [W] Energy from this Pokémon. Your opponent's Active Pokémon is
       now Paralyzed.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
-- id: 423-51
-  pioId: sm10-51
-  enumId: FROAKIE_51
+  pioId: sm10-50
+- enumId: FROAKIE_51:UNBROKEN_BONDS
   name: Froakie
   number: '51'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Quick Attack
     damage: 10+
     text: Flip a coin. If heads, this attack does 20 more damage.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-52
-  pioId: sm10-52
-  enumId: FROGADIER_52
+  pioId: sm10-51
+- enumId: FROGADIER_52:UNBROKEN_BONDS
   name: Frogadier
   number: '52'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Froakie
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Froakie]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Afterimage Strike
     damage: '20'
     text: If any damage is done to this Pokémon by attacks during your opponent's
       next turn, flip a coin. If heads, prevent that damage.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-53
-  pioId: sm10-53
-  enumId: PYUKUMUKU_53
+  pioId: sm10-52
+- enumId: PYUKUMUKU_53:UNBROKEN_BONDS
   name: Pyukumuku
   number: '53'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Call for Family
     text: Search your deck for up to 2 Basic Pokémon and put them onto your Bench.
       Then, shuffle your deck.
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Surprise Fist
     damage: 60+
     text: You and your opponent play Rock-Paper-Scissors. If you win, this attack
       does 60 more damage.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-54
-  pioId: sm10-54
-  enumId: PIKACHU_54
+  pioId: sm10-53
+- enumId: PIKACHU_54:UNBROKEN_BONDS
   name: Pikachu
   number: '54'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Pika Ball
     damage: '30'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-55
-  pioId: sm10-55
-  enumId: RAICHU_55
+  pioId: sm10-54
+- enumId: RAICHU_55:UNBROKEN_BONDS
   name: Raichu
   number: '55'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pikachu
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Pikachu]
   hp: 120
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Never Give Up
     text: You can use this attack only if you have at least 3 more Prize cards remaining
       than your opponent. Attach all [L] Energy cards from your discard pile to your
       Pokémon in any way you like.
-  - cost: [L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, COLORLESS]
     name: Head Bolt
     damage: '110'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 2
   rarity: Rare
-- id: 423-56
-  pioId: sm10-56
-  enumId: STUNFISK_56
+  pioId: sm10-55
+- enumId: STUNFISK_56:UNBROKEN_BONDS
   name: Stunfisk
   number: '56'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 110
-  retreatCost: 3
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Raging Thunder
     damage: '30'
     text: This attack does 10 damage to 1 of your Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Electric Trap
     damage: 30x
     text: This attack does 30 damage for each of your Pokémon that has any damage
       counters on it.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 3
   rarity: Rare
-- id: 423-57
-  pioId: sm10-57
-  enumId: DEDENNE_GX_57
+  pioId: sm10-56
+- enumId: DEDENNE_GX_57:UNBROKEN_BONDS
   name: Dedenne-GX
   number: '57'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX]
+  types: [LIGHTNING]
   hp: 160
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Dedechange
@@ -1310,33 +1200,31 @@ cards:
       you may discard your hand and draw 6 cards. You can't use more than 1 Dedechange
       Ability each turn.
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Static Shock
     damage: '50'
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Tingly Return GX
     damage: '50'
     text: Your opponent’s Active Pokémon is now Paralyzed. Put this Pokémon and all
       cards attached to it into your hand. (You can’t use more than 1 GX attack in
       a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Ultra Rare
-- id: 423-58
-  pioId: sm10-58
-  enumId: CHARJABUG_58
+  pioId: sm10-57
+- enumId: CHARJABUG_58:UNBROKEN_BONDS
   name: Charjabug
   number: '58'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Grubbin
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Grubbin]
   hp: 80
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Battery
@@ -1344,87 +1232,83 @@ cards:
       your hand to 1 of your Vikavolt or Vikavolt-GX as a Special Energy card. This
       card provides 2 [L] Energy only while it's attached to a Pokémon.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Pierce
     damage: '60'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 3
   rarity: Uncommon
-- id: 423-59
-  pioId: sm10-59
-  enumId: VIKAVOLT_59
+  pioId: sm10-58
+- enumId: VIKAVOLT_59:UNBROKEN_BONDS
   name: Vikavolt
   number: '59'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Charjabug
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [LIGHTNING]
+  evolvesFrom: [Charjabug]
   hp: 150
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Stealthy Body
     text: If there is any Stadium card in play, this Pokémon has no Weakness.
   moves:
-  - cost: [L, L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, COLORLESS]
     name: Electricannon
     damage: 120+
     text: You may discard all [L] Energy from this Pokémon. If you do, this attack
       does 100 more damage.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 2
   rarity: Rare Holo
-- id: 423-60
-  pioId: sm10-60
-  enumId: ZERAORA_60
+  pioId: sm10-59
+  variantOf: VIKAVOLT_SM208:SUN_MOON_PROMOS
+  variantType: Reprint
+- enumId: ZERAORA_60:UNBROKEN_BONDS
   name: Zeraora
   number: '60'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 120
-  retreatCost: 1
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Crushing Claw
     damage: '20'
     text: Discard a Special Energy from your opponent's Active Pokémon.
-  - cost: [L, C, C]
+  - cost: [LIGHTNING, COLORLESS, COLORLESS]
     name: Discharge
     damage: 50x
     text: Discard all [L] Energy from this Pokémon. This attack does 50 damage for
       each card you discarded in this way.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Rare
-- id: 423-61
-  pioId: sm10-61
-  enumId: MUK_ALOLAN_MUK_GX_61
+  pioId: sm10-60
+- enumId: MUK_ALOLAN_MUK_GX_61:UNBROKEN_BONDS
   name: Muk & Alolan Muk-GX
   number: '61'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [PSYCHIC]
   hp: 270
-  retreatCost: 4
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Severe Poison
     text: Your opponent's Active Pokémon is now Poisoned. Put 8 damage counters instead
       of 1 on that Pokémon between turns.
-  - cost: [P, C, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS, COLORLESS]
     name: Poison Absorption
     damage: '120'
     text: If your opponent's Active Pokémon is Poisoned, heal 100 damage from this
@@ -1436,119 +1320,109 @@ cards:
       put 15 damage counters instead of 1 on that Pokémon between turns. (You can't
       use more than 1 GX attack in a game.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 4
   rarity: Ultra Rare
-- id: 423-62
-  pioId: sm10-62
-  enumId: EKANS_62
+  pioId: sm10-61
+- enumId: EKANS_62:UNBROKEN_BONDS
   name: Ekans
   number: '62'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Glare
     text: Flip a coin. If heads, your opponent’s Active Pokémon is now Paralyzed.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Tail Smack
     damage: '20'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-63
-  pioId: sm10-63
-  enumId: ARBOK_63
+  pioId: sm10-62
+- enumId: ARBOK_63:UNBROKEN_BONDS
   name: Arbok
   number: '63'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Ekans
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Ekans]
   hp: 120
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Wrap
     damage: '30'
     text: Flip a coin. If heads, your opponent’s Active Pokémon is now Paralyzed.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Heavy Choke
     damage: 50+
     text: If this Pokémon used Wrap during your last turn, this attack does 120 more
       damage.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare
-- id: 423-64
-  pioId: sm10-64
-  enumId: ZUBAT_64
+  pioId: sm10-63
+- enumId: ZUBAT_64:UNBROKEN_BONDS
   name: Zubat
   number: '64'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Bite
     damage: '10'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Venoshock
     damage: 20+
     text: If your opponent's Active Pokémon is Poisoned, this attack does 50 more
       damage.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-65
-  pioId: sm10-65
-  enumId: GOLBAT_65
+  pioId: sm10-64
+- enumId: GOLBAT_65:UNBROKEN_BONDS
   name: Golbat
   number: '65'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Zubat
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Zubat]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Bite
     damage: '20'
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Leech Life
     damage: '40'
     text: Heal from this Pokémon the same amount of damage you did to your opponent's
       Active Pokémon.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-66
-  pioId: sm10-66
-  enumId: CROBAT_66
+  pioId: sm10-65
+- enumId: CROBAT_66:UNBROKEN_BONDS
   name: Crobat
   number: '66'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Golbat
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [PSYCHIC]
+  evolvesFrom: [Golbat]
   hp: 130
-  retreatCost: 0
   abilities:
   - type: Ability
     name: Sound Veil
@@ -1556,99 +1430,91 @@ cards:
       your turn, you may prevent all effects of your opponent’s attacks, including
       damage, done to this Pokémon until the end of your opponent’s next turn.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Severe Poison
     damage: '60'
     text: Your opponent’s Active Pokémon is now Poisoned. Put 4 damage counters instead
       of 1 on that Pokémon between turns.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 0
   rarity: Rare Holo
-- id: 423-67
-  pioId: sm10-67
-  enumId: GASTLY_67
+  pioId: sm10-66
+- enumId: GASTLY_67:UNBROKEN_BONDS
   name: Gastly
   number: '67'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Swelling Spite
     text: When this Pokémon is Knocked Out, search your deck for up to 2 Haunter and
       put them onto your Bench. Then, shuffle your deck.
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Will-O-Wisp
     damage: '20'
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-68
-  pioId: sm10-68
-  enumId: GASTLY_68
+  pioId: sm10-67
+- enumId: GASTLY_68:UNBROKEN_BONDS
   name: Gastly
   number: '68'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Smog
     text: Your opponent's Active Pokémon is now Poisoned.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-69
-  pioId: sm10-69
-  enumId: HAUNTER_69
+  pioId: sm10-68
+- enumId: HAUNTER_69:UNBROKEN_BONDS
   name: Haunter
   number: '69'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Gastly
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Gastly]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Sinister Fog
     text: Your opponent's Active Pokémon is now Poisoned. Put 1 damage counter on
       each of your opponent's Benched Pokémon.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-70
-  pioId: sm10-70
-  enumId: GENGAR_70
+  pioId: sm10-69
+- enumId: GENGAR_70:UNBROKEN_BONDS
   name: Gengar
   number: '70'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Haunter
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [PSYCHIC]
+  evolvesFrom: [Haunter]
   hp: 130
-  retreatCost: 0
   abilities:
   - type: Ability
     name: Shadow Pain
@@ -1656,187 +1522,175 @@ cards:
       your turn, you may put 6 damage counters on your opponent's Pokémon-GX and Pokémon-EX
       in any way you like.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Twilight Poison
     damage: '70'
     text: Your opponent's Active Pokémon is now Asleep and Poisoned.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 0
   rarity: Rare
-- id: 423-71
-  pioId: sm10-71
-  enumId: DROWZEE_71
+  pioId: sm10-70
+- enumId: DROWZEE_71:UNBROKEN_BONDS
   name: Drowzee
   number: '71'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hypnosis
     text: Your opponent's Active Pokémon is now Asleep.
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Psypunch
     damage: '30'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-72
-  pioId: sm10-72
-  enumId: HYPNO_72
+  pioId: sm10-71
+- enumId: HYPNO_72:UNBROKEN_BONDS
   name: Hypno
   number: '72'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Drowzee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Drowzee]
   hp: 110
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Hypnotic Pendulum
     text: When your opponent's Active Pokémon is Knocked Out, flip a coin. If heads,
       choose which of your opponent's Benched Pokémon becomes their new Active Pokémon.
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Stir the Brain
     damage: 30+
     text: This attack does 10 more damage for each card in your opponent's hand.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare
-- id: 423-73
-  pioId: sm10-73
-  enumId: KOFFING_73
+  pioId: sm10-72
+- enumId: KOFFING_73:UNBROKEN_BONDS
   name: Koffing
   number: '73'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Foul Odor
     text: Both Active Pokémon are now Confused.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-74
-  pioId: sm10-74
-  enumId: WEEZING_74
+  pioId: sm10-73
+- enumId: WEEZING_74:UNBROKEN_BONDS
   name: Weezing
   number: '74'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Koffing
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Koffing]
   hp: 120
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Detention Gas
     text: As long as this Pokémon is your Active Pokémon, put 1 damage counter on
       each of your opponent's Basic Pokémon between turns.
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Splattering Sludge
     damage: '40'
     text: This attack does 20 damage to each of your opponent's Benched Pokémon that
       has any damage counters on it. (Don't apply Weakness and Resistance for Benched
       Pokémon.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Rare
-- id: 423-75
-  pioId: sm10-75
-  enumId: MEWTWO_75
+  pioId: sm10-74
+- enumId: MEWTWO_75:UNBROKEN_BONDS
   name: Mewtwo
   number: '75'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 120
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Mind Report
     text: When you play this Pokémon from your hand onto your Bench during your turn,
       you may put a Supporter card from your discard pile on top of your deck.
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Psyshock
     damage: '70'
     text: This attack's damage isn't affected by any effects on your opponent's Active
       Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare
-- id: 423-76
-  pioId: sm10-76
-  enumId: MEW_76
+  pioId: sm10-75
+  variantOf: MEWTWO_SM214:SUN_MOON_PROMOS
+  variantType: Reprint
+- enumId: MEW_76:UNBROKEN_BONDS
   name: Mew
   number: '76'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 60
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Bench Barrier
     text: Prevent all damage done to your Benched Pokémon by your opponent's attacks.
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Psypower
     text: Put 3 damage counters on your opponent's Pokémon in any way you like.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
-- id: 423-77
-  pioId: sm10-77
-  enumId: MISDREAVUS_77
+  pioId: sm10-76
+  variantOf: MEW_SM215:SUN_MOON_PROMOS
+  variantType: Reprint
+- enumId: MISDREAVUS_77:UNBROKEN_BONDS
   name: Misdreavus
   number: '77'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Ominous Eyes
     text: Put 1 damage counter on 1 of your opponent's Pokémon.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-78
-  pioId: sm10-78
-  enumId: MISMAGIUS_78
+  pioId: sm10-77
+- enumId: MISMAGIUS_78:UNBROKEN_BONDS
   name: Mismagius
   number: '78'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Misdreavus
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Misdreavus]
   hp: 110
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Mysterious Message
@@ -1844,74 +1698,68 @@ cards:
       have 7 cards in your hand. If you drew any cards in this way, this Pokémon is
       Knocked Out.
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Hypnoblast
     damage: '70'
     text: Your opponent's Active Pokémon is now Asleep.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Rare
-- id: 423-79
-  pioId: sm10-79
-  enumId: ESPURR_79
+  pioId: sm10-78
+- enumId: ESPURR_79:UNBROKEN_BONDS
   name: Espurr
   number: '79'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Caturday
     text: Draw a card. If you do, this Pokémon is now Asleep.
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Ear Kinesis
     text: This attack does 20 damage to 1 of your opponent's Benched Pokémon for each
       damage counter on that Pokémon. (Don't apply Weakness and Resistance for Benched
       Pokémon.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-80
-  pioId: sm10-80
-  enumId: MEOWSTIC_80
+  pioId: sm10-79
+- enumId: MEOWSTIC_80:UNBROKEN_BONDS
   name: Meowstic
   number: '80'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Espurr
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Espurr]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Caturday
     text: Draw 3 cards. If you do, this Pokémon is now Asleep.
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Perplexing Eyes
     damage: '70'
     text: The Defending Pokémon’s Weakness is now [P] until the end of your next turn.
       (The amount of Weakness doesn’t change.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare
-- id: 423-81
-  pioId: sm10-81
-  enumId: MARSHADOW_81
+  pioId: sm10-80
+- enumId: MARSHADOW_81:UNBROKEN_BONDS
   name: Marshadow
   number: '81'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 80
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Resetting Hole
@@ -1919,38 +1767,36 @@ cards:
       you may discard any Stadium card in play. If you do, discard this Pokémon and
       all cards attached to it.
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Red Knuckles
     damage: 10+
     text: If your opponent's Active Pokémon is an Ultra Beast, this attack does 60
       more damage.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Rare Holo
-- id: 423-82
-  pioId: sm10-82
-  enumId: MARSHADOW_MACHAMP_GX_82
+  pioId: sm10-81
+- enumId: MARSHADOW_MACHAMP_GX_82:UNBROKEN_BONDS
   name: Marshadow & Machamp-GX
   number: '82'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FIGHTING]
   hp: 270
-  retreatCost: 3
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Revenge
     damage: 30+
     text: If any of your Pokémon were Knocked Out by damage from an opponent's attack
       during their last turn, this attack does 90 more damage.
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Hundred-Blows Impact
     damage: '160'
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Acme of Heroism GX
     damage: '200'
     text: If this Pokémon has at least 1 extra Energy attached to it (in addition
@@ -1958,561 +1804,513 @@ cards:
       attack during their next turn, it is not Knocked Out, and its remaining HP becomes
       10. (You can't use more than 1 GX attack in a game.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-- id: 423-83
-  pioId: sm10-83
-  enumId: SANDSHREW_83
+  pioId: sm10-82
+- enumId: SANDSHREW_83:UNBROKEN_BONDS
   name: Sandshrew
   number: '83'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Collect
     text: Draw a card.
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Rolling Tackle
     damage: '30'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-84
-  pioId: sm10-84
-  enumId: SANDSLASH_84
+  pioId: sm10-83
+- enumId: SANDSLASH_84:UNBROKEN_BONDS
   name: Sandslash
   number: '84'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Sandshrew
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Sandshrew]
   hp: 110
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Continuous Scratch
     damage: 30x
     text: Flip 4 coins. This attack does 30 damage for each heads.
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Sand Tomb
     damage: '90'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Rare
-- id: 423-85
-  pioId: sm10-85
-  enumId: DIGLETT_85
+  pioId: sm10-84
+- enumId: DIGLETT_85:UNBROKEN_BONDS
   name: Diglett
   number: '85'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Underground Work
     text: If you discard this Pokémon with the effect of Giovanni's Exile, discard
       the top card of your opponent's deck.
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Hook
     damage: '10'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-86
-  pioId: sm10-86
-  enumId: DUGTRIO_86
+  pioId: sm10-85
+- enumId: DUGTRIO_86:UNBROKEN_BONDS
   name: Dugtrio
   number: '86'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Diglett
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Diglett]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Home Ground
     damage: 30+
     text: If you have any Stadium card in play, this attack does 60 more damage.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Rare
-- id: 423-87
-  pioId: sm10-87
-  enumId: GEODUDE_87
+  pioId: sm10-86
+- enumId: GEODUDE_87:UNBROKEN_BONDS
   name: Geodude
   number: '87'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Defense Curl
     text: Flip a coin. If heads, prevent all damage done to this Pokémon by attacks
       during your opponent's next turn.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Rock Throw
     damage: '40'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-88
-  pioId: sm10-88
-  enumId: GRAVELER_88
+  pioId: sm10-87
+- enumId: GRAVELER_88:UNBROKEN_BONDS
   name: Graveler
   number: '88'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Geodude
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Geodude]
   hp: 110
-  retreatCost: 4
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Rolling Rocks
     damage: '50'
-  - cost: [F, C, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS, COLORLESS]
     name: Double-Edge
     damage: '90'
     text: This Pokémon does 30 damage to itself.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Uncommon
-- id: 423-89
-  pioId: sm10-89
-  enumId: GOLEM_89
+  pioId: sm10-88
+- enumId: GOLEM_89:UNBROKEN_BONDS
   name: Golem
   number: '89'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Graveler
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Graveler]
   hp: 180
-  retreatCost: 4
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Steamroller
     damage: '100'
     text: This attack's damage isn't affected by Resistance.
-  - cost: [F, C, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS, COLORLESS]
     name: Heavy Slam
     damage: 180-
     text: This attack does 20 less damage for each [C] in your opponent's Active Pokémon's
       Retreat Cost.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Rare Holo
-- id: 423-90
-  pioId: sm10-90
-  enumId: CUBONE_90
+  pioId: sm10-89
+- enumId: CUBONE_90:UNBROKEN_BONDS
   name: Cubone
   number: '90'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Focus Energy
     text: During your next turn, this Pokémon's Beat attack's base damage is 80.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Beat
     damage: '10'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-91
-  pioId: sm10-91
-  enumId: MAROWAK_91
+  pioId: sm10-90
+- enumId: MAROWAK_91:UNBROKEN_BONDS
   name: Marowak
   number: '91'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Cubone
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Cubone]
   hp: 110
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Bone Rush
     damage: 50x
     text: Flip a coin until you get tails. This attack does 50 damage for each heads.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Assault Boom
     damage: 70+
     text: If your opponent's Active Pokémon has a Pokémon Tool card attached to it,
       this attack does 70 more damage.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Rare
-- id: 423-92
-  pioId: sm10-92
-  enumId: RHYHORN_92
+  pioId: sm10-91
+- enumId: RHYHORN_92:UNBROKEN_BONDS
   name: Rhyhorn
   number: '92'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Push Down
     damage: '20'
     text: Your opponent switches their Active Pokémon with 1 of their Benched Pokémon.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-93
-  pioId: sm10-93
-  enumId: RHYHORN_93
+  pioId: sm10-92
+- enumId: RHYHORN_93:UNBROKEN_BONDS
   name: Rhyhorn
   number: '93'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 90
-  retreatCost: 4
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Horn Attack
     damage: '30'
-  - cost: [F, C, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS, COLORLESS]
     name: Boulder Crush
     damage: '80'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Common
-- id: 423-94
-  pioId: sm10-94
-  enumId: RHYDON_94
+  pioId: sm10-93
+- enumId: RHYDON_94:UNBROKEN_BONDS
   name: Rhydon
   number: '94'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Rhyhorn
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Rhyhorn]
   hp: 110
-  retreatCost: 4
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Dirty Work
     text: Discard the top card of your opponent's deck. If you played Giovanni's Exile
       from your hand during this turn, discard the top 5 cards instead.
-  - cost: [F, C, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS, COLORLESS]
     name: Horn Attack
     damage: '90'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Uncommon
-- id: 423-95
-  pioId: sm10-95
-  enumId: RHYPERIOR_95
+  pioId: sm10-94
+- enumId: RHYPERIOR_95:UNBROKEN_BONDS
   name: Rhyperior
   number: '95'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Rhydon
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Rhydon]
   hp: 170
-  retreatCost: 4
   moves:
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Hefty Cannon
     damage: '90'
     text: If the Defending Pokémon is a Basic Pokémon, it can't attack during your
       opponent's next turn.
-  - cost: [F, C, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS, COLORLESS]
     name: Break Ground
     damage: '160'
     text: This attack does 20 damage to each of your Benched Pokémon. (Don't apply
       Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Rare
-- id: 423-96
-  pioId: sm10-96
-  enumId: WOOPER_96
+  pioId: sm10-95
+- enumId: WOOPER_96:UNBROKEN_BONDS
   name: Wooper
   number: '96'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Mud Bomb
     damage: '30'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-97
-  pioId: sm10-97
-  enumId: QUAGSIRE_97
+  pioId: sm10-96
+- enumId: QUAGSIRE_97:UNBROKEN_BONDS
   name: Quagsire
   number: '97'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Wooper
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Wooper]
   hp: 120
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Water Gun
     damage: '20'
-  - cost: [W, W, W]
+  - cost: [WATER, WATER, WATER]
     name: Surf
     damage: '120'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Rare
-- id: 423-98
-  pioId: sm10-98
-  enumId: GLIGAR_98
+  pioId: sm10-97
+- enumId: GLIGAR_98:UNBROKEN_BONDS
   name: Gligar
   number: '98'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Free Flight
     text: If this Pokémon has no Energy attached to it, this Pokémon has no Retreat
       Cost.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Shinobi Strike
     damage: 30+
     text: If you played Janine from your hand during this turn, this attack does 90
       more damage.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-99
-  pioId: sm10-99
-  enumId: GLISCOR_99
+  pioId: sm10-98
+- enumId: GLISCOR_99:UNBROKEN_BONDS
   name: Gliscor
   number: '99'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Gligar
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Gligar]
   hp: 110
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Collect
     text: Draw 3 cards.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Poison Jab
     damage: '70'
     text: Your opponent's Active Pokémon is now Poisoned.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-100
-  pioId: sm10-100
-  enumId: TYROGUE_100
+  pioId: sm10-99
+- enumId: TYROGUE_100:UNBROKEN_BONDS
   name: Tyrogue
   number: '100'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 0
   abilities:
   - type: Ability
     name: Bratty Kick
     text: Once during your turn (before your attack), you may flip a coin. If heads,
       put 3 damage counters on 1 of your opponent's Pokémon. If you use this Ability,
       your turn ends.
+  retreatCost: 0
   rarity: Uncommon
-- id: 423-101
-  pioId: sm10-101
-  enumId: HITMONTOP_101
+  pioId: sm10-100
+- enumId: HITMONTOP_101:UNBROKEN_BONDS
   name: Hitmontop
   number: '101'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Finishing Combo
     text: You can use this attack only if your Hitmonlee used Special Combo during
       your last turn. This attack does 60 damage to each of your opponent's Pokémon.
       (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Spinning Attack
     damage: '50'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-102
-  pioId: sm10-102
-  enumId: RIOLU_102
+  pioId: sm10-101
+- enumId: RIOLU_102:UNBROKEN_BONDS
   name: Riolu
   number: '102'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Feint
     damage: '10'
     text: This attack's damage isn't affected by Resistance.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-103
-  pioId: sm10-103
-  enumId: LANDORUS_103
+  pioId: sm10-102
+- enumId: LANDORUS_103:UNBROKEN_BONDS
   name: Landorus
   number: '103'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 120
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Linear Attack
     text: This attack does 30 damage to 1 of your opponent's Pokémon. (Don't apply
       Weakness and Resistance for Benched Pokémon.)
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Power Cyclone
     damage: '60'
     text: Move an Energy from this Pokémon to 1 of your Benched Pokémon.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
-- id: 423-104
-  pioId: sm10-104
-  enumId: CRABRAWLER_104
+  pioId: sm10-103
+- enumId: CRABRAWLER_104:UNBROKEN_BONDS
   name: Crabrawler
   number: '104'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Corkscrew Punch
     damage: '20'
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Knuckle Blast
     damage: 30+
     text: If you have more Prize cards remaining than your opponent, this attack does
       60 more damage.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-105
-  pioId: sm10-105
-  enumId: CRABOMINABLE_105
+  pioId: sm10-104
+- enumId: CRABOMINABLE_105:UNBROKEN_BONDS
   name: Crabominable
   number: '105'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Crabrawler
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Crabrawler]
   hp: 140
-  retreatCost: 4
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Fight Alone
     damage: 30+
     text: If you have fewer Pokémon in play than your opponent, this attack does 50
       more damage for each Pokémon fewer you have in play.
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Magnum Punch
     damage: '80'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 4
   rarity: Rare
-- id: 423-106
-  pioId: sm10-106
-  enumId: STAKATAKA_106
+  pioId: sm10-105
+- enumId: STAKATAKA_106:UNBROKEN_BONDS
   name: Stakataka
   number: '106'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 120
-  retreatCost: 4
   abilities:
   - type: Ability
     name: Wall of Stone
     text: If your opponent has 3 or fewer Prize cards remaining, this Pokémon's maximum
       HP is 200.
   moves:
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Top Down
     damage: '110'
     text: Flip a coin until you get tails. For each heads, discard the top card of
       your opponent's deck.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Rare Holo
-- id: 423-107
-  pioId: sm10-107
-  enumId: GRENINJA_ZOROARK_GX_107
+  pioId: sm10-106
+  variantOf: STAKATAKA_SM180:SUN_MOON_PROMOS
+  variantType: Reprint
+- enumId: GRENINJA_ZOROARK_GX_107:UNBROKEN_BONDS
   name: Greninja & Zoroark-GX
   number: '107'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [DARKNESS]
   hp: 250
-  retreatCost: 2
   moves:
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Dark Pulse
     damage: 30+
     text: This attack does 30 more damage times the amount of [D] Energy attached
       to all of your Pokémon.
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Dark Union GX
     text: Put 2 in any combination of [D] Pokémon-GX and [D] Pokémon-EX from your
       discard pile onto your Bench. If this Pokémon has at least 1 extra Energy attached
@@ -2520,99 +2318,91 @@ cards:
       pile to each Pokémon that you put onto your Bench in this way. (You can't use
       more than 1 GX attack in a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Ultra Rare
-- id: 423-108
-  pioId: sm10-108
-  enumId: MURKROW_108
+  pioId: sm10-107
+- enumId: MURKROW_108:UNBROKEN_BONDS
   name: Murkrow
   number: '108'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [DARKNESS]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Astonish
     text: Choose a random card from your opponent's hand. Your opponent reveals that
       card and shuffles it into their deck.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-109
-  pioId: sm10-109
-  enumId: HONCHKROW_GX_109
+  pioId: sm10-108
+- enumId: HONCHKROW_GX_109:UNBROKEN_BONDS
   name: Honchkrow-GX
   number: '109'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Murkrow
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Murkrow]
   hp: 210
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Ruler of the Night
     text: As long as this Pokémon is your Active Pokémon, your opponent can't play
       any Pokémon Tool, Special Energy, or Stadium cards from their hand.
   moves:
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Feather Storm
     damage: '90'
     text: This attack does 30 damage to 2 of your opponent's Benched Pokémon-GX and
       Pokémon-EX. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Unfair GX
     text: Your opponent reveals their hand. Discard 2 cards from it. (You can't use
       more than 1 GX attack in a game.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 2
   rarity: Ultra Rare
-- id: 423-110
-  pioId: sm10-110
-  enumId: CARVANHA_110
+  pioId: sm10-109
+- enumId: CARVANHA_110:UNBROKEN_BONDS
   name: Carvanha
   number: '110'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [DARKNESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Gnaw
     damage: '10'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-111
-  pioId: sm10-111
-  enumId: SHARPEDO_111
+  pioId: sm10-110
+- enumId: SHARPEDO_111:UNBROKEN_BONDS
   name: Sharpedo
   number: '111'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Carvanha
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Carvanha]
   hp: 110
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Greedy Evolution
@@ -2621,239 +2411,221 @@ cards:
       of [D] Energy cards you find there to this Pokémon. Shuffle the other cards
       back into your deck.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Bad Fangs
     damage: 60+
     text: This attack does 20 more damage times the amount of [D] Energy attached
       to this Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Rare
-- id: 423-112
-  pioId: sm10-112
-  enumId: SPIRITOMB_112
+  pioId: sm10-111
+- enumId: SPIRITOMB_112:UNBROKEN_BONDS
   name: Spiritomb
   number: '112'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [DARKNESS]
   hp: 60
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Building Spite
     text: Once during your turn (before your attack), you may put 1 damage counter
       on this Pokémon.
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Anguish Cry
     damage: 10+
     text: This attack does 30 more damage for each damage counter on this Pokémon.
+  retreatCost: 1
   rarity: Rare Holo
-- id: 423-113
-  pioId: sm10-113
-  enumId: SANDILE_113
+  pioId: sm10-112
+- enumId: SANDILE_113:UNBROKEN_BONDS
   name: Sandile
   number: '113'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [DARKNESS]
   hp: 60
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Intimidating Fang
     text: As long as this Pokémon is your Active Pokémon, your opponent's Active Pokémon's
       attacks do 20 less damage (before applying Weakness and Resistance).
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Gnaw
     damage: '10'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Common
-- id: 423-114
-  pioId: sm10-114
-  enumId: SANDILE_114
+  pioId: sm10-113
+- enumId: SANDILE_114:UNBROKEN_BONDS
   name: Sandile
   number: '114'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [DARKNESS]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Grandiose Fangs
     damage: '30'
     text: If your opponent's Pokémon is Knocked Out by damage from this attack, this
       Pokémon's attacks do 120 more damage to your opponent's Active Pokémon during
       your next turn (before applying Weakness and Resistance).
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Common
-- id: 423-115
-  pioId: sm10-115
-  enumId: KROKOROK_115
+  pioId: sm10-114
+- enumId: KROKOROK_115:UNBROKEN_BONDS
   name: Krokorok
   number: '115'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Sandile
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Sandile]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Bite
     damage: '20'
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Corner
     damage: '50'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Uncommon
-- id: 423-116
-  pioId: sm10-116
-  enumId: KROOKODILE_116
+  pioId: sm10-115
+- enumId: KROOKODILE_116:UNBROKEN_BONDS
   name: Krookodile
   number: '116'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Krokorok
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [DARKNESS]
+  evolvesFrom: [Krokorok]
   hp: 150
-  retreatCost: 3
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Chomp Chomp Panic
     damage: 50x
     text: This attack does 50 damage for each [C] in your opponent's Active Pokémon's
       Retreat Cost.
-  - cost: [D, C, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS, COLORLESS]
     name: Crunch
     damage: '100'
     text: Discard an Energy from your opponent's Active Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 3
   rarity: Rare
-- id: 423-117
-  pioId: sm10-117
-  enumId: GRENINJA_117
+  pioId: sm10-116
+- enumId: GRENINJA_117:UNBROKEN_BONDS
   name: Greninja
   number: '117'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Frogadier
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [DARKNESS]
+  evolvesFrom: [Frogadier]
   hp: 130
-  retreatCost: 0
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Bring Down
     text: The Pokémon that has the least HP remaining, except for this Pokémon, is
       Knocked Out. (If multiple Pokémon are tied, choose one.)
-  - cost: [D, D]
+  - cost: [DARKNESS, DARKNESS]
     name: Mist Slash
     damage: '70'
     text: This attack's damage isn't affected by Weakness, Resistance, or any other
       effects on your opponent's Active Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 0
   rarity: Rare Holo
-- id: 423-118
-  pioId: sm10-118
-  enumId: INKAY_118
+  pioId: sm10-117
+- enumId: INKAY_118:UNBROKEN_BONDS
   name: Inkay
   number: '118'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [DARKNESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Perplex
     text: Your opponent's Active Pokémon is now Confused.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-119
-  pioId: sm10-119
-  enumId: MALAMAR_119
+  pioId: sm10-118
+- enumId: MALAMAR_119:UNBROKEN_BONDS
   name: Malamar
   number: '119'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Inkay
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Inkay]
   hp: 100
-  retreatCost: 1
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Hypnotic Reign
     text: Your opponent reveals their hand. You may discard a Pokémon you find there
       and use one of that Pokémon’s non-GX attacks as this attack.
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Dark Pressure
     damage: '80'
     text: Discard the top card of your opponent's deck.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Rare Holo
-- id: 423-120
-  pioId: sm10-120
-  enumId: LUCARIO_MELMETAL_GX_120
+  pioId: sm10-119
+- enumId: LUCARIO_MELMETAL_GX_120:UNBROKEN_BONDS
   name: Lucario & Melmetal-GX
   number: '120'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [METAL]
   hp: 260
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Steel Fist
     damage: '50'
     text: Search your deck for a [M] Energy card and attach it to this Pokémon. Then,
       shuffle your deck.
-  - cost: [M, M, C, C]
+  - cost: [METAL, METAL, COLORLESS, COLORLESS]
     name: Heavy Impact
     damage: '150'
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Full Metal Wall GX
     text: For the rest of this game, your [M] Pokémon take 30 less damage from your
       opponent's attacks (after applying Weakness and Resistance). If this Pokémon
@@ -2861,715 +2633,663 @@ cards:
       discard all Energy from your opponent's Active Pokémon. (You can't use more
       than 1 GX attack in a game.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 3
   rarity: Ultra Rare
-- id: 423-121
-  pioId: sm10-121
-  enumId: ALOLAN_DIGLETT_121
+  pioId: sm10-120
+  variantOf: LUCARIO_MELMETAL_GX_SM192:SUN_MOON_PROMOS
+  variantType: Full Art
+- enumId: ALOLAN_DIGLETT_121:UNBROKEN_BONDS
   name: Alolan Diglett
   number: '121'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [METAL]
   hp: 50
-  retreatCost: 1
   moves:
   - cost: []
     name: Ram
     damage: '10'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-122
-  pioId: sm10-122
-  enumId: ALOLAN_DUGTRIO_122
+  pioId: sm10-121
+- enumId: ALOLAN_DUGTRIO_122:UNBROKEN_BONDS
   name: Alolan Dugtrio
   number: '122'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Alolan Diglett
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [METAL]
+  evolvesFrom: [Alolan Diglett]
   hp: 80
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Hair Wall
     text: Your [M] Pokémon take 10 less damage from your opponent's attacks (after
       applying Weakness and Resistance).
   moves:
-  - cost: [M, C]
+  - cost: [METAL, COLORLESS]
     name: Hammer In
     damage: '40'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Rare
-- id: 423-123
-  pioId: sm10-123
-  enumId: ARON_123
+  pioId: sm10-122
+- enumId: ARON_123:UNBROKEN_BONDS
   name: Aron
   number: '123'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [METAL]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [M]
+  - cost: [METAL]
     name: Rigidify
     text: During your opponent’s next turn, this Pokémon takes 30 less damage from
       attacks (after applying Weakness and Resistance).
-  - cost: [M, C]
+  - cost: [METAL, COLORLESS]
     name: Metal Claw
     damage: '20'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-124
-  pioId: sm10-124
-  enumId: LAIRON_124
+  pioId: sm10-123
+- enumId: LAIRON_124:UNBROKEN_BONDS
   name: Lairon
   number: '124'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Aron
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [METAL]
+  evolvesFrom: [Aron]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [M]
+  - cost: [METAL]
     name: Rigidify
     text: During your opponent’s next turn, this Pokémon takes 30 less damage from
       attacks (after applying Weakness and Resistance).
-  - cost: [M, M, C]
+  - cost: [METAL, METAL, COLORLESS]
     name: Headbutt
     damage: '70'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 3
   rarity: Uncommon
-- id: 423-125
-  pioId: sm10-125
-  enumId: AGGRON_125
+  pioId: sm10-124
+- enumId: AGGRON_125:UNBROKEN_BONDS
   name: Aggron
   number: '125'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Lairon
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [METAL]
+  evolvesFrom: [Lairon]
   hp: 170
-  retreatCost: 4
   moves:
-  - cost: [M, C, C]
+  - cost: [METAL, COLORLESS, COLORLESS]
     name: Extra-Tight Press
     damage: '80'
     text: During your opponent's next turn, if this Pokémon is damaged by an attack
       (even if this Pokémon is Knocked Out), put 8 damage counters on the Attacking
       Pokémon.
-  - cost: [M, C, C, C]
+  - cost: [METAL, COLORLESS, COLORLESS, COLORLESS]
     name: Giga Impact
     damage: '160'
     text: This Pokémon can’t attack during your next turn.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 4
   rarity: Rare
-- id: 423-126
-  pioId: sm10-126
-  enumId: LUCARIO_126
+  pioId: sm10-125
+- enumId: LUCARIO_126:UNBROKEN_BONDS
   name: Lucario
   number: '126'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Riolu
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [METAL]
+  evolvesFrom: [Riolu]
   hp: 130
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Low Sweep
     damage: '40'
-  - cost: [M, M]
+  - cost: [METAL, METAL]
     name: Rush Up
     damage: 60+
     text: If you attached a Pokémon Tool card from your hand to this Pokémon during
       this turn, this attack does 70 more damage.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Rare Holo
-- id: 423-127
-  pioId: sm10-127
-  enumId: GENESECT_127
+  pioId: sm10-126
+- enumId: GENESECT_127:UNBROKEN_BONDS
   name: Genesect
   number: '127'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [METAL]
   hp: 130
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Fast-Flight Configuration
     text: If your opponent has any Pokémon-GX or Pokémon-EX in play, this Pokémon
       has no Retreat Cost.
   moves:
-  - cost: [M, C, C]
+  - cost: [METAL, COLORLESS, COLORLESS]
     name: Splitting Beam
     damage: '30'
     text: This attack does 30 damage to 2 of your opponent's Benched Pokémon. (Don't
       apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Rare
-- id: 423-128
-  pioId: sm10-128
-  enumId: MELTAN_128
+  pioId: sm10-127
+- enumId: MELTAN_128:UNBROKEN_BONDS
   name: Meltan
   number: '128'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [METAL]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [M]
+  - cost: [METAL]
     name: Steel Melt
     damage: 10+
     text: If your opponent's Active Pokémon is a [M] Pokémon, this attack does 40
       more damage.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-129
-  pioId: sm10-129
-  enumId: MELMETAL_129
+  pioId: sm10-128
+- enumId: MELMETAL_129:UNBROKEN_BONDS
   name: Melmetal
   number: '129'
-  types: [M]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Meltan
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [METAL]
+  evolvesFrom: [Meltan]
   hp: 150
-  retreatCost: 4
   abilities:
   - type: Ability
     name: Metal Eater
     text: Once during your turn (before your attack), you may discard a [M] Pokémon
       from your hand. If you do, heal 100 damage from this Pokémon.
   moves:
-  - cost: [M, C, C, C]
+  - cost: [METAL, COLORLESS, COLORLESS, COLORLESS]
     name: Heavy Impact
     damage: '130'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 4
   rarity: Rare Holo
-- id: 423-130
-  pioId: sm10-130
-  enumId: GARDEVOIR_SYLVEON_GX_130
+  pioId: sm10-129
+  variantOf: MELMETAL_SM181:SUN_MOON_PROMOS
+  variantType: Reprint
+- enumId: GARDEVOIR_SYLVEON_GX_130:UNBROKEN_BONDS
   name: Gardevoir & Sylveon-GX
   number: '130'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FAIRY]
   hp: 260
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Fairy Song
     text: Search your deck for up to 2 [Y] Energy cards and attach them to your Benched
       Pokémon in any way you like. Then, shuffle your deck.
-  - cost: [Y, Y, C]
+  - cost: [FAIRY, FAIRY, COLORLESS]
     name: Kaleidostorm
     damage: '150'
     text: Move any number of Energy from your Pokémon to your other Pokémon in any
       way you like.
-  - cost: [Y, Y, Y]
+  - cost: [FAIRY, FAIRY, FAIRY]
     name: Magical Miracle GX
     damage: '200'
     text: If this Pokémon has at least 3 extra [Y] Energy attached to it (in addition
       to this attack's cost), your opponent shuffles their hand into their deck. (You
       can’t use more than 1 GX attack in a game.)
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 2
   rarity: Ultra Rare
-- id: 423-131
-  pioId: sm10-131
-  enumId: CLEFFA_131
+  pioId: sm10-130
+- enumId: CLEFFA_131:UNBROKEN_BONDS
   name: Cleffa
   number: '131'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 60
-  retreatCost: 0
   abilities:
   - type: Ability
     name: Excitable Draw
     text: Once during your turn (before your attack), you may flip a coin. If heads,
       shuffle your hand into your deck and then draw 6 cards. If you use this Ability,
       your turn ends.
+  retreatCost: 0
   rarity: Uncommon
-- id: 423-132
-  pioId: sm10-132
-  enumId: CLEFAIRY_132
+  pioId: sm10-131
+- enumId: CLEFAIRY_132:UNBROKEN_BONDS
   name: Clefairy
   number: '132'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Double Slap
     damage: 10x
     text: Flip 2 coins. This attack does 10 damage for each heads.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-133
-  pioId: sm10-133
-  enumId: CLEFABLE_133
+  pioId: sm10-132
+- enumId: CLEFABLE_133:UNBROKEN_BONDS
   name: Clefable
   number: '133'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Clefairy
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FAIRY]
+  evolvesFrom: [Clefairy]
   hp: 110
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Moon-Watching Dance
     damage: 10+
     text: This attack does 30 more damage for each of your Pokémon that has any [Y]
       Energy attached to it.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Rare
-- id: 423-134
-  pioId: sm10-134
-  enumId: JIGGLYPUFF_134
+  pioId: sm10-133
+- enumId: JIGGLYPUFF_134:UNBROKEN_BONDS
   name: Jigglypuff
   number: '134'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Ball Roll
     damage: 20x
     text: Flip a coin until you get tails. This attack does 20 damage for each heads.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 2
   rarity: Common
-- id: 423-135
-  pioId: sm10-135
-  enumId: WIGGLYTUFF_135
+  pioId: sm10-134
+- enumId: WIGGLYTUFF_135:UNBROKEN_BONDS
   name: Wigglytuff
   number: '135'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Jigglypuff
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FAIRY]
+  evolvesFrom: [Jigglypuff]
   hp: 110
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Orb Polish
     text: Put 3 Energy cards from your discard pile into your hand.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Sleepy Ball
     damage: '80'
     text: Your opponent's Active Pokémon is now Asleep.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Rare
-- id: 423-136
-  pioId: sm10-136
-  enumId: TOGEPI_136
+  pioId: sm10-135
+- enumId: TOGEPI_136:UNBROKEN_BONDS
   name: Togepi
   number: '136'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Daunt
     damage: '10'
     text: During your opponent's next turn, the Defending Pokémon’s attacks do 30
       less damage (before applying Weakness and Resistance).
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-137
-  pioId: sm10-137
-  enumId: TOGETIC_137
+  pioId: sm10-136
+- enumId: TOGETIC_137:UNBROKEN_BONDS
   name: Togetic
   number: '137'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Togepi
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FAIRY]
+  evolvesFrom: [Togepi]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Energy Present
     text: Attach an Energy card from your hand to 1 of your Benched Pokémon.
-  - cost: [Y, C]
+  - cost: [FAIRY, COLORLESS]
     name: Magical Shot
     damage: '30'
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-138
-  pioId: sm10-138
-  enumId: TOGEKISS_138
+  pioId: sm10-137
+- enumId: TOGEKISS_138:UNBROKEN_BONDS
   name: Togekiss
   number: '138'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Togetic
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FAIRY]
+  evolvesFrom: [Togetic]
   hp: 140
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Fairy Feast
     text: Once during your turn (before your attack), you may heal 30 damage from
       each of your [Y] Pokémon.
   moves:
-  - cost: [Y, C]
+  - cost: [FAIRY, COLORLESS]
     name: Magical Shot
     damage: '70'
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Rare Holo
-- id: 423-139
-  pioId: sm10-139
-  enumId: COTTONEE_139
+  pioId: sm10-138
+- enumId: COTTONEE_139:UNBROKEN_BONDS
   name: Cottonee
   number: '139'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Expand
     damage: '10'
     text: During your opponent's next turn, this Pokémon takes 10 less damage from
       attacks (after applying Weakness and Resistance).
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-140
-  pioId: sm10-140
-  enumId: WHIMSICOTT_GX_140
+  pioId: sm10-139
+- enumId: WHIMSICOTT_GX_140:UNBROKEN_BONDS
   name: Whimsicott-GX
   number: '140'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Cottonee
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [FAIRY]
+  evolvesFrom: [Cottonee]
   hp: 190
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Fluffy Cotton
     text: If any damage is done to this Pokémon by attacks, flip a coin. If heads,
       prevent that damage.
   moves:
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Energy Blow
     damage: 10+
     text: This attack does 30 more damage times the amount of Energy attached to this
       Pokémon.
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Toy Box GX
     text: Search your deck for up to 5 cards and put them into your hand. Then, shuffle
       your deck. (You can’t use more than 1 GX attack in a game.)
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Ultra Rare
-- id: 423-141
-  pioId: sm10-141
-  enumId: SPRITZEE_141
+  pioId: sm10-140
+- enumId: SPRITZEE_141:UNBROKEN_BONDS
   name: Spritzee
   number: '141'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Nap
     text: Heal 20 damage from this Pokémon.
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Fairy Wind
     damage: '10'
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-142
-  pioId: sm10-142
-  enumId: AROMATISSE_142
+  pioId: sm10-141
+- enumId: AROMATISSE_142:UNBROKEN_BONDS
   name: Aromatisse
   number: '142'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Spritzee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FAIRY]
+  evolvesFrom: [Spritzee]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Pungent Aroma
     text: Flip 2 coins. If either of them is heads, your opponent reveals their hand.
       For each heads, choose a card you find there. Your opponent shuffles those cards
       into their deck.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Miraculous Cologne
     damage: '30'
     text: Flip a coin. If heads, choose a Special Condition. Your opponent's Active
       Pokémon is now affected by that Special Condition.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Rare
-- id: 423-143
-  pioId: sm10-143
-  enumId: RATTATA_143
+  pioId: sm10-142
+- enumId: RATTATA_143:UNBROKEN_BONDS
   name: Rattata
   number: '143'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 30
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Gnaw
     damage: '30'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-144
-  pioId: sm10-144
-  enumId: RATICATE_144
+  pioId: sm10-143
+- enumId: RATICATE_144:UNBROKEN_BONDS
   name: Raticate
   number: '144'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Rattata
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Rattata]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Escaping Incisors
     damage: '70'
     text: If your opponent's Active Pokémon is an Evolution Pokémon, switch this Pokémon
       with 1 of your Benched Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-145
-  pioId: sm10-145
-  enumId: SPEAROW_145
+  pioId: sm10-144
+- enumId: SPEAROW_145:UNBROKEN_BONDS
   name: Spearow
   number: '145'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Glide
     damage: '10'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Speed Dive
     damage: '20'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-146
-  pioId: sm10-146
-  enumId: FEAROW_146
+  pioId: sm10-145
+- enumId: FEAROW_146:UNBROKEN_BONDS
   name: Fearow
   number: '146'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Spearow
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Spearow]
   hp: 100
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Drill Run Double
     damage: '70'
     text: Flip a coin. If heads, discard 2 Energy from your opponent's Active Pokémon.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-147
-  pioId: sm10-147
-  enumId: MEOWTH_147
+  pioId: sm10-146
+- enumId: MEOWTH_147:UNBROKEN_BONDS
   name: Meowth
   number: '147'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Caturday
     text: Draw 2 cards. If you do, this Pokémon is now Asleep.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Tail Whap
     damage: '30'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-148
-  pioId: sm10-148
-  enumId: PERSIAN_148
+  pioId: sm10-147
+- enumId: PERSIAN_148:UNBROKEN_BONDS
   name: Persian
   number: '148'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Meowth
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Meowth]
   hp: 100
-  retreatCost: 0
   abilities:
   - type: Ability
     name: Gathering of Cats
     text: Ignore all Energy in the attack costs of each of your Pokémon in play that
       has the Caturday attack.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Claw Slash
     damage: '90'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 0
   rarity: Rare
-- id: 423-149
-  pioId: sm10-149
-  enumId: PERSIAN_GX_149
+  pioId: sm10-148
+  variantOf: PERSIAN_SM182:SUN_MOON_PROMOS
+  variantType: Reprint
+- enumId: PERSIAN_GX_149:UNBROKEN_BONDS
   name: Persian-GX
   number: '149'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Meowth
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Meowth]
   hp: 200
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Cat Walk
@@ -3578,725 +3298,606 @@ cards:
       up to 2 cards and put them into your hand. Then, shuffle your deck. You can't
       use more than 1 Cat Walk Ability each turn.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Vengeance
     damage: 10+
     text: This attack does 20 more damage for each Pokémon in your discard pile. You
       can't add more than 180 damage in this way.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Slash Back GX
     damage: '150'
     text: Switch this Pokémon with 1 of your Benched Pokémon. (You can’t use more
       than 1 GX attack in a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Ultra Rare
-- id: 423-150
-  pioId: sm10-150
-  enumId: DODUO_150
+  pioId: sm10-149
+- enumId: DODUO_150:UNBROKEN_BONDS
   name: Doduo
   number: '150'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Peck
     damage: '10'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Double Peck
     damage: 20x
     text: Flip 2 coins. This attack does 20 damage for each heads.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 423-151
-  pioId: sm10-151
-  enumId: DODRIO_151
+  pioId: sm10-150
+- enumId: DODRIO_151:UNBROKEN_BONDS
   name: Dodrio
   number: '151'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Doduo
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Doduo]
   hp: 100
-  retreatCost: 0
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Tri Attack
     damage: 60x
     text: Flip 3 coins. This attack does 60 damage for each heads.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Accelerating Stab
     damage: '90'
     text: This Pokémon can’t use Accelerating Stab during your next turn.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 0
   rarity: Uncommon
-- id: 423-152
-  pioId: sm10-152
-  enumId: LICKITUNG_152
+  pioId: sm10-151
+- enumId: LICKITUNG_152:UNBROKEN_BONDS
   name: Lickitung
   number: '152'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Lick
     damage: '30'
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Common
-- id: 423-153
-  pioId: sm10-153
-  enumId: LICKILICKY_153
+  pioId: sm10-152
+- enumId: LICKILICKY_153:UNBROKEN_BONDS
   name: Lickilicky
   number: '153'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Lickitung
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Lickitung]
   hp: 130
-  retreatCost: 4
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Eat Up
     damage: '40'
     text: Before doing damage, discard all Pokémon Tool cards from your opponent's
       Active Pokémon. If you discarded a Pokémon Tool card in this way, heal all damage
       from this Pokémon.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Tonguenado
     damage: 60x
     text: Flip 4 coins. This attack does 60 damage for each heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 4
   rarity: Rare
-- id: 423-154
-  pioId: sm10-154
-  enumId: PORYGON_154
+  pioId: sm10-153
+- enumId: PORYGON_154:UNBROKEN_BONDS
   name: Porygon
   number: '154'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Digicharge
     text: Flip 3 coins. For each heads, search your deck for an Energy card, reveal
       it, and put it into your hand. Then, shuffle your deck.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Sharp Point
     damage: '10'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-155
-  pioId: sm10-155
-  enumId: PORYGON_155
+  pioId: sm10-154
+- enumId: PORYGON_155:UNBROKEN_BONDS
   name: Porygon
   number: '155'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Quick Draw
     text: Draw a card.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Ram
     damage: '20'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-156
-  pioId: sm10-156
-  enumId: PORYGON2_156
+  pioId: sm10-155
+- enumId: PORYGON2_156:UNBROKEN_BONDS
   name: Porygon2
   number: '156'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Porygon
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Porygon]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Double Draw
     text: Draw 2 cards.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Spinning Attack
     damage: '30'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Uncommon
-- id: 423-157
-  pioId: sm10-157
-  enumId: PORYGON_Z_157
+  pioId: sm10-156
+- enumId: PORYGON_Z_157:UNBROKEN_BONDS
   name: Porygon-Z
   number: '157'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Porygon2
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [COLORLESS]
+  evolvesFrom: [Porygon2]
   hp: 130
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Crazy Code
     text: As often as you like during your turn (before your attack), you may attach
       a Special Energy card from your hand to 1 of your Pokémon.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Tantrum
     damage: '120'
     text: This Pokémon is now Confused.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
-- id: 423-158
-  pioId: sm10-158
-  enumId: SNORLAX_158
+  pioId: sm10-157
+- enumId: SNORLAX_158:UNBROKEN_BONDS
   name: Snorlax
   number: '158'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 150
-  retreatCost: 4
   abilities:
   - type: Ability
     name: Lazy Eating
     text: Between turns, heal 10 damage from this Pokémon.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Big Counter
     damage: 60+
     text: If your opponent's Active Pokémon is a TAG TEAM, this attack does 120 more
       damage.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 4
   rarity: Rare Holo
-- id: 423-159
-  pioId: sm10-159
-  enumId: GLAMEOW_159
+  pioId: sm10-158
+- enumId: GLAMEOW_159:UNBROKEN_BONDS
   name: Glameow
   number: '159'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Caturday
     text: Draw a card. If you do, this Pokémon is now Asleep.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Boing Boing Tail
     text: This attack does 60 damage to 1 of your opponent's Pokémon-GX or Pokémon-EX.
       (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 423-160
-  pioId: sm10-160
-  enumId: PURUGLY_160
+  pioId: sm10-159
+- enumId: PURUGLY_160:UNBROKEN_BONDS
   name: Purugly
   number: '160'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Glameow
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Glameow]
   hp: 120
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Stray Cat Dash
     damage: '30'
     text: Discard a random card from your opponent's hand. If this Pokémon evolved
       from Glameow during this turn, discard 2 cards instead of 1.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Lunge Out
     damage: '80'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 3
   rarity: Rare
-- id: 423-161
-  pioId: sm10-161
-  enumId: HAPPINY_161
+  pioId: sm10-160
+- enumId: HAPPINY_161:UNBROKEN_BONDS
   name: Happiny
   number: '161'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 0
   abilities:
   - type: Ability
     name: Playhouse Heal
     text: Once during your turn (before your attack), you may flip a coin. If heads,
       heal 60 damage from 1 of your Pokémon. If you use this Ability, your turn ends.
+  retreatCost: 0
   rarity: Uncommon
-- id: 423-162
-  pioId: sm10-162
-  enumId: CHATOT_162
+  pioId: sm10-161
+- enumId: CHATOT_162:UNBROKEN_BONDS
   name: Chatot
   number: '162'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Mimic
     text: Shuffle your hand into your deck. Then, draw a card for each card in your
       opponent's hand.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Tone-Deaf
     damage: '10'
     text: Your opponent's Active Pokémon is now Confused.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
-- id: 423-163
-  pioId: sm10-163
-  enumId: CELESTEELA_GX_163
+  pioId: sm10-162
+- enumId: CELESTEELA_GX_163:UNBROKEN_BONDS
   name: Celesteela-GX
   number: '163'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX]
+  types: [COLORLESS]
   hp: 200
-  retreatCost: 4
   abilities:
   - type: Ability
     name: Force Canceler
     text: As long as this Pokémon is your Active Pokémon, prevent all effects of your
       opponent's GX attacks, including damage, done to your Pokémon.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Power Cyclone
     damage: '110'
     text: Move an Energy from this Pokémon to 1 of your Benched Pokémon.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Discovery GX
     text: Count your Prize cards and put them into your hand. Then, take that many
       cards from the top of your deck and put them face down as your Prize cards.
       If you don't have that many cards in your deck, this attack does nothing. (You
       can't use more than 1 GX attack in a game.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 4
   rarity: Ultra Rare
-- id: 423-164
-  pioId: sm10-164
-  enumId: BEAST_BRINGER_164
+  pioId: sm10-163
+- enumId: BEAST_BRINGER_164:UNBROKEN_BONDS
   name: Beast Bringer
   number: '164'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL]
   rarity: Uncommon
-  text:
-  - If you have exactly 6 Prize cards remaining, and if your opponent's Active Pokémon-GX
-    or Pokémon-EX is Knocked Out by damage from an attack of the Ultra Beast this
-    card is attached to, take 1 more Prize card.
-- id: 423-165
-  pioId: sm10-165
-  enumId: CHIP_CHIP_ICE_AXE_165
+  text: If you have exactly 6 Prize cards remaining, and if your opponent's Active
+    Pokémon-GX or Pokémon-EX is Knocked Out by damage from an attack of the Ultra
+    Beast this card is attached to, take 1 more Prize card.
+  pioId: sm10-164
+- enumId: CHIP_CHIP_ICE_AXE_165:UNBROKEN_BONDS
   name: Chip-Chip Ice Axe
   number: '165'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Look at the top 3 cards of your opponent's deck and choose 1 of them. Your opponent
-    shuffles the other cards back into their deck. Then, put the card you chose on
-    top of their deck.
-- id: 423-166
-  pioId: sm10-166
-  enumId: DEVOLUTION_SPRAY_Z_166
+  text: Look at the top 3 cards of your opponent's deck and choose 1 of them. Your
+    opponent shuffles the other cards back into their deck. Then, put the card you
+    chose on top of their deck.
+  pioId: sm10-165
+- enumId: DEVOLUTION_SPRAY_Z_166:UNBROKEN_BONDS
   name: Devolution Spray Z
   number: '166'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Devolve 1 of your evolved Pokémon by shuffling any number of Evolution cards on
-    it into your deck. (That Pokémon can't evolve this turn.)
-- id: 423-167
-  pioId: sm10-167
-  enumId: DUSK_STONE_167
+  text: Devolve 1 of your evolved Pokémon by shuffling any number of Evolution cards
+    on it into your deck. (That Pokémon can't evolve this turn.)
+  pioId: sm10-166
+- enumId: DUSK_STONE_167:UNBROKEN_BONDS
   name: Dusk Stone
   number: '167'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Search your deck for a Mismagius, Honchkrow, Chandelure, or Aegislash, including
+  text: Search your deck for a Mismagius, Honchkrow, Chandelure, or Aegislash, including
     Pokémon-GX, that evolves from 1 of your Pokémon in play, and put it onto that
     Pokémon to evolve it. Then, shuffle your deck. You can use this card during your
     first turn or on a Pokémon that was put into play this turn.
-- id: 423-168
-  pioId: sm10-168
-  enumId: DUST_ISLAND_168
+  pioId: sm10-167
+- enumId: DUST_ISLAND_168:UNBROKEN_BONDS
   name: Dust Island
   number: '168'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - Whenever either player switches their Poisoned Active Pokémon with 1 of their
+  text: Whenever either player switches their Poisoned Active Pokémon with 1 of their
     Benched Pokémon with the effect of a Trainer card, the new Active Pokémon is now
     affected by that Special Condition.
-- id: 423-169
-  pioId: sm10-169
-  enumId: ELECTROMAGNETIC_RADAR_169
+  pioId: sm10-168
+- enumId: ELECTROMAGNETIC_RADAR_169:UNBROKEN_BONDS
   name: Electromagnetic Radar
   number: '169'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - You can play this card only if you discard 2 other cards from your hand.
-  - Search your deck for up to 2 in any combination of [L] Pokémon-GX and [L] Pokémon-EX,
-    reveal them, and put them into your hand. Then, shuffle your deck.
-- id: 423-170
-  pioId: sm10-170
-  enumId: ENERGY_SPINNER_170
+  text: |-
+    You can play this card only if you discard 2 other cards from your hand.
+    Search your deck for up to 2 in any combination of [L] Pokémon-GX and [L] Pokémon-EX, reveal them, and put them into your hand. Then, shuffle your deck.
+  pioId: sm10-169
+- enumId: ENERGY_SPINNER_170:UNBROKEN_BONDS
   name: Energy Spinner
   number: '170'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Search your deck for a basic Energy card, reveal it, and put it into your hand.
-    If you go second and it's your first turn, search for up to 3 basic Energy cards
-    instead of 1. Then, shuffle your deck.
-- id: 423-171
-  pioId: sm10-171
-  enumId: FAIRY_CHARM_ABILITY_171
+  text: Search your deck for a basic Energy card, reveal it, and put it into your
+    hand. If you go second and it's your first turn, search for up to 3 basic Energy
+    cards instead of 1. Then, shuffle your deck.
+  pioId: sm10-170
+- enumId: FAIRY_CHARM_ABILITY_171:UNBROKEN_BONDS
   name: Fairy Charm Ability
   number: '171'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL]
   rarity: Uncommon
-  text:
-  - Prevent all damage done to the [Y] Pokémon this card is attached to by attacks
+  text: Prevent all damage done to the [Y] Pokémon this card is attached to by attacks
     from your opponent's Pokémon-GX and Pokémon-EX that have Abilities.
-- id: 423-172
-  pioId: sm10-172
-  enumId: FAIRY_CHARM_LIGHTNING_172
+  pioId: sm10-171
+- enumId: FAIRY_CHARM_LIGHTNING_172:UNBROKEN_BONDS
   name: Fairy Charm Lightning
   number: '172'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL]
   rarity: Uncommon
-  text:
-  - Prevent all damage done to the [Y] Pokémon this card is attached to by attacks
+  text: Prevent all damage done to the [Y] Pokémon this card is attached to by attacks
     from your opponent's [L] Pokémon-GX and [L] Pokémon-EX.
-- id: 423-173
-  pioId: sm10-173
-  enumId: FIRE_CRYSTAL_173
+  pioId: sm10-172
+- enumId: FIRE_CRYSTAL_173:UNBROKEN_BONDS
   name: Fire Crystal
   number: '173'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Put 3 [R] Energy cards from your discard pile into your hand.
-- id: 423-174
-  pioId: sm10-174
-  enumId: GIOVANNI_S_EXILE_174
+  text: Put 3 [R] Energy cards from your discard pile into your hand.
+  pioId: sm10-173
+- enumId: GIOVANNI_S_EXILE_174:UNBROKEN_BONDS
   name: Giovanni's Exile
   number: '174'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Discard up to 2 of your Benched Pokémon that have no damage counters on them and
-    all cards attached to them.
-- id: 423-175
-  pioId: sm10-175
-  enumId: GREEN_S_EXPLORATION_175
+  text: Discard up to 2 of your Benched Pokémon that have no damage counters on them
+    and all cards attached to them.
+  pioId: sm10-174
+- enumId: GREEN_S_EXPLORATION_175:UNBROKEN_BONDS
   name: Green’s Exploration
   number: '175'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - You can play this card only if you have no Pokémon with Abilities in play.
-  - Search your deck for up to 2 Trainer cards, reveal them, and put them into your
-    hand. Then, shuffle your deck.
-- id: 423-176
-  pioId: sm10-176
-  enumId: JANINE_176
+  text: |-
+    You can play this card only if you have no Pokémon with Abilities in play.
+    Search your deck for up to 2 Trainer cards, reveal them, and put them into your hand. Then, shuffle your deck.
+  pioId: sm10-175
+- enumId: JANINE_176:UNBROKEN_BONDS
   name: Janine
   number: '176'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Look at the top 4 cards of your deck and put 2 of them into your hand. Shuffle
+  text: Look at the top 4 cards of your deck and put 2 of them into your hand. Shuffle
     the other cards back into your deck.
-- id: 423-177
-  pioId: sm10-177
-  enumId: KOGA_S_TRAP_177
+  pioId: sm10-176
+- enumId: KOGA_S_TRAP_177:UNBROKEN_BONDS
   name: Koga’s Trap
   number: '177'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Your opponent's Active Pokémon is now Confused and Poisoned.
-- id: 423-178
-  pioId: sm10-178
-  enumId: LT_SURGE_S_STRATEGY_178
+  text: Your opponent's Active Pokémon is now Confused and Poisoned.
+  pioId: sm10-177
+- enumId: LT_SURGE_S_STRATEGY_178:UNBROKEN_BONDS
   name: Lt. Surge’s Strategy
   number: '178'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - You can play this card only if you have more Prize cards remaining than your opponent.
-  - During this turn, you can play 3 Supporter cards (including this card).
-- id: 423-179
-  pioId: sm10-179
-  enumId: MARTIAL_ARTS_DOJO_179
+  text: |-
+    You can play this card only if you have more Prize cards remaining than your opponent.
+    During this turn, you can play 3 Supporter cards (including this card).
+  pioId: sm10-178
+- enumId: MARTIAL_ARTS_DOJO_179:UNBROKEN_BONDS
   name: Martial Arts Dojo
   number: '179'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - The attacks of non-Ultra Beast Pokémon that have any basic [F] Energy attached
+  text: The attacks of non-Ultra Beast Pokémon that have any basic [F] Energy attached
     to them (both yours and your opponent's) do 10 more damage to the opponent's Active
     Pokémon (before applying Weakness and Resistance). If the attacking player has
     more Prize cards remaining than their opponent, those attacks do 40 more damage
     instead.
-- id: 423-180
-  pioId: sm10-180
-  enumId: METAL_CORE_BARRIER_180
+  pioId: sm10-179
+- enumId: METAL_CORE_BARRIER_180:UNBROKEN_BONDS
   name: Metal Core Barrier
   number: '180'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL]
   rarity: Uncommon
-  text:
-  - If this card is attached to 1 of your Pokémon, discard it at the end of your opponent's
-    turn.
-  - The [M] Pokémon this card is attached to takes 70 less damage from your opponent's
-    attacks (after applying Weakness and Resistance).
-- id: 423-181
-  pioId: sm10-181
-  enumId: MOLAYNE_181
+  text: |-
+    If this card is attached to 1 of your Pokémon, discard it at the end of your opponent's turn.
+    The [M] Pokémon this card is attached to takes 70 less damage from your opponent's attacks (after applying Weakness and Resistance).
+  pioId: sm10-180
+- enumId: MOLAYNE_181:UNBROKEN_BONDS
   name: Molayne
   number: '181'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - You can play this card only if you discard 2 [M] Energy cards from your hand.
-  - Shuffle a Trainer card from your discard pile into your deck.
-- id: 423-182
-  pioId: sm10-182
-  enumId: POKEGEAR_3_0_182
+  text: |-
+    You can play this card only if you discard 2 [M] Energy cards from your hand.
+    Shuffle a Trainer card from your discard pile into your deck.
+  pioId: sm10-181
+- enumId: POKEGEAR_3_0_182:UNBROKEN_BONDS
   name: Pokégear 3.0
   number: '182'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Look at the top 7 cards of your deck. You may reveal a Supporter card you find
-    there and put it into your hand. Shuffle the other cards back into your deck.
-- id: 423-182a
-  pioId: sm10-182a
-  enumId: POKEGEAR_3_0_182a
+  text: Look at the top 7 cards of your deck. You may reveal a Supporter card you
+    find there and put it into your hand. Shuffle the other cards back into your deck.
+  pioId: sm10-182
+- enumId: POKEGEAR_3_0_182a:UNBROKEN_BONDS
   name: Pokégear 3.0
   number: 182a
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Look at the top 7 cards of your deck. You may reveal a Supporter card you find
-    there and put it into your hand. Shuffle the other cards back into your deck.
+  text: Look at the top 7 cards of your deck. You may reveal a Supporter card you
+    find there and put it into your hand. Shuffle the other cards back into your deck.
   artist: Studio Bora Inc.
-  variantOf: 423-182
-  variantType: Alternate Art
-- id: 423-182b
-  pioId: sm10-182b
-  enumId: POKEGEAR_3_0_182b
+  pioId: sm10-182a
+  variantOf: POKEGEAR_3_0_182:UNBROKEN_BONDS
+  variantType: Reprint
+- enumId: POKEGEAR_3_0_182b:UNBROKEN_BONDS
   name: Pokégear 3.0
   number: 182b
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Look at the top 7 cards of your deck. You may reveal a Supporter card you find
-    there and put it into your hand. Shuffle the other cards back into your deck.
+  text: Look at the top 7 cards of your deck. You may reveal a Supporter card you
+    find there and put it into your hand. Shuffle the other cards back into your deck.
   artist: OOYAMA
-  variantOf: 423-182
-  variantType: Alternate Art
-- id: 423-183
-  pioId: sm10-183
-  enumId: POWER_PLANT_183
+  pioId: sm10-182b
+  variantOf: POKEGEAR_3_0_182:UNBROKEN_BONDS
+  variantType: Reprint
+- enumId: POWER_PLANT_183:UNBROKEN_BONDS
   name: Power Plant
   number: '183'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - Pokémon-GX and Pokémon-EX in play (both yours and your opponent's) have no Abilities.
-- id: 423-184
-  pioId: sm10-184
-  enumId: RED_S_CHALLENGE_184
+  text: Pokémon-GX and Pokémon-EX in play (both yours and your opponent's) have no
+    Abilities.
+  pioId: sm10-183
+- enumId: RED_S_CHALLENGE_184:UNBROKEN_BONDS
   name: Red's Challenge
   number: '184'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Rare Holo
-  text:
-  - You can play this card only if you discard 2 other cards from your hand.
-  - Search your deck for a card and put it into your hand. Then, shuffle your deck.
-- id: 423-185
-  pioId: sm10-185
-  enumId: SAMSON_OAK_185
+  text: |-
+    You can play this card only if you discard 2 other cards from your hand.
+    Search your deck for a card and put it into your hand. Then, shuffle your deck.
+  pioId: sm10-184
+- enumId: SAMSON_OAK_185:UNBROKEN_BONDS
   name: Samson Oak
   number: '185'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Draw 2 cards. If both Active Pokémon are the same type, draw 2 more cards.
-- id: 423-186
-  pioId: sm10-186
-  enumId: STEALTHY_HOOD_186
+  text: Draw 2 cards. If both Active Pokémon are the same type, draw 2 more cards.
+  pioId: sm10-185
+- enumId: STEALTHY_HOOD_186:UNBROKEN_BONDS
   name: Stealthy Hood
   number: '186'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL]
   rarity: Uncommon
-  text:
-  - Prevent all effects of your opponent's Abilities done to the Pokémon this card
-    is attached to. Remove any such existing effects.
-- id: 423-187
-  pioId: sm10-187
-  enumId: SURPRISE_BOX_187
+  text: Prevent all effects of your opponent's Abilities done to the Pokémon this
+    card is attached to. Remove any such existing effects.
+  pioId: sm10-186
+- enumId: SURPRISE_BOX_187:UNBROKEN_BONDS
   name: Surprise Box
   number: '187'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Put a card from your opponent’s discard pile into their hand.
-- id: 423-188
-  pioId: sm10-188
-  enumId: ULTRA_FOREST_KARTENVOY_188
+  text: Put a card from your opponent’s discard pile into their hand.
+  pioId: sm10-187
+- enumId: ULTRA_FOREST_KARTENVOY_188:UNBROKEN_BONDS
   name: Ultra Forest Kartenvoy
   number: '188'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - During this turn, damage from your Ultra Beasts' attacks isn't affected by any
-    effects on your opponent's Active Pokémon.
-- id: 423-189
-  pioId: sm10-189
-  enumId: WELDER_189
+  text: During this turn, damage from your Ultra Beasts' attacks isn't affected by
+    any effects on your opponent's Active Pokémon.
+  pioId: sm10-188
+- enumId: WELDER_189:UNBROKEN_BONDS
   name: Welder
   number: '189'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Attach up to 2 [R] Energy cards from your hand to 1 of your Pokémon. If you do,
-    draw 3 cards.
-- id: 423-189a
-  pioId: sm10-189a
-  enumId: WELDER_189a
+  text: Attach up to 2 [R] Energy cards from your hand to 1 of your Pokémon. If you
+    do, draw 3 cards.
+  pioId: sm10-189
+- enumId: WELDER_189a:UNBROKEN_BONDS
   name: Welder
   number: 189a
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Attach up to 2 [R] Energy cards from your hand to 1 of your Pokémon. If you do,
-    draw 3 cards.
+  text: Attach up to 2 [R] Energy cards from your hand to 1 of your Pokémon. If you
+    do, draw 3 cards.
   artist: Hitoshi Ariga
-  variantOf: 423-189
-  variantType: Alternate Art
-- id: 423-190
-  pioId: sm10-190
-  enumId: TRIPLE_ACCELERATION_ENERGY_190
+  pioId: sm10-189a
+  variantOf: WELDER_189:UNBROKEN_BONDS
+  variantType: Reprint
+- enumId: TRIPLE_ACCELERATION_ENERGY_190:UNBROKEN_BONDS
   name: Triple Acceleration Energy
   number: '190'
-  superType: ENERGY
-  subTypes: [SPECIAL_ENERGY]
+  cardTypes: [ENERGY, SPECIAL_ENERGY]
   rarity: Uncommon
-  text:
-  - This card can only be attached to Evolution Pokémon. If this card is attached
-    to 1 of your Pokémon, discard it at the end of the turn.
-  - This card provides [C][C][C] Energy only while it is attached to an Evolution
-    Pokémon.
-  - If this card is attached to anything other than an Evolution Pokémon, discard
-    this card.
-- id: 423-191
-  pioId: sm10-191
-  enumId: PHEROMOSA_BUZZWOLE_GX_191
+  text: |-
+    This card can only be attached to Evolution Pokémon. If this card is attached to 1 of your Pokémon, discard it at the end of the turn.
+    This card provides [C][C][C] Energy only while it is attached to an Evolution Pokémon.
+    If this card is attached to anything other than an Evolution Pokémon, discard this card.
+  pioId: sm10-190
+- enumId: PHEROMOSA_BUZZWOLE_GX_191:UNBROKEN_BONDS
   name: Pheromosa & Buzzwole-GX
   number: '191'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [GRASS]
   hp: 260
-  retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Jet Punch
     damage: '30'
     text: This attack does 30 damage to 1 of your opponent’s Benched Pokémon. (Don’t
       apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Elegant Sole
     damage: '190'
     text: During your next turn, this Pokémon's Elegant Sole attack's base damage
       is 60.
-  - cost: [G]
+  - cost: [GRASS]
     name: Beast Game GX
     damage: '50'
     text: If your opponent's Pokémon is Knocked Out by damage from this attack, take
@@ -4304,33 +3905,31 @@ cards:
       (in addition to this attack's cost), take 3 more Prize cards instead. (You can’t
       use more than 1 GX attack in a game.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Ultra Rare
-  variantOf: 423-1
+  pioId: sm10-191
+  variantOf: PHEROMOSA_BUZZWOLE_GX_1:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-192
-  pioId: sm10-192
-  enumId: PHEROMOSA_BUZZWOLE_GX_192
+- enumId: PHEROMOSA_BUZZWOLE_GX_192:UNBROKEN_BONDS
   name: Pheromosa & Buzzwole-GX
   number: '192'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [GRASS]
   hp: 260
-  retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Jet Punch
     damage: '30'
     text: This attack does 30 damage to 1 of your opponent’s Benched Pokémon. (Don’t
       apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Elegant Sole
     damage: '190'
     text: During your next turn, this Pokémon's Elegant Sole attack's base damage
       is 60.
-  - cost: [G]
+  - cost: [GRASS]
     name: Beast Game GX
     damage: '50'
     text: If your opponent's Pokémon is Knocked Out by damage from this attack, take
@@ -4338,61 +3937,57 @@ cards:
       (in addition to this attack's cost), take 3 more Prize cards instead. (You can’t
       use more than 1 GX attack in a game.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Ultra Rare
-  variantOf: 423-1
+  pioId: sm10-192
+  variantOf: PHEROMOSA_BUZZWOLE_GX_1:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-193
-  pioId: sm10-193
-  enumId: VENOMOTH_GX_193
+- enumId: VENOMOTH_GX_193:UNBROKEN_BONDS
   name: Venomoth-GX
   number: '193'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Venonat
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Venonat]
   hp: 200
-  retreatCost: 1
   moves:
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Shinobi Mastery
     damage: 110+
     text: If you played Koga's Trap from your hand during this turn, this attack does
       90 more damage. If you played Janine from your hand during this turn, prevent
       all damage done to this Pokémon by attacks from Basic Pokémon during your opponent's
       next turn.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Ten-Card Return GX
     damage: '60'
     text: Shuffle your hand into your deck. Then, draw 10 cards. (You can’t use more
       than 1 GX attack in a game.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Ultra Rare
-  variantOf: 423-12
+  pioId: sm10-193
+  variantOf: VENOMOTH_GX_12:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-194
-  pioId: sm10-194
-  enumId: RESHIRAM_CHARIZARD_GX_194
+- enumId: RESHIRAM_CHARIZARD_GX_194:UNBROKEN_BONDS
   name: Reshiram & Charizard-GX
   number: '194'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FIRE]
   hp: 270
-  retreatCost: 3
   moves:
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Outrage
     damage: 30+
     text: This attack does 10 more damage for each damage counter on this Pokémon.
-  - cost: [R, R, R, C]
+  - cost: [FIRE, FIRE, FIRE, COLORLESS]
     name: Flare Strike
     damage: '230'
     text: This Pokémon can't use Flare Strike during your next turn.
-  - cost: [R, R, R]
+  - cost: [FIRE, FIRE, FIRE]
     name: Double Blaze GX
     damage: 200+
     text: If this Pokémon has at least 3 extra [R] Energy attached to it (in addition
@@ -4400,21 +3995,19 @@ cards:
       damage isn't affected by any effects on your opponent's Active Pokémon. (You
       can't use more than 1 GX attack in a game.)
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-  variantOf: 423-20
+  pioId: sm10-194
+  variantOf: RESHIRAM_CHARIZARD_GX_SM201:SUN_MOON_PROMOS
   variantType: Full Art
-- id: 423-195
-  pioId: sm10-195
-  enumId: DEDENNE_GX_195
+- enumId: DEDENNE_GX_195:UNBROKEN_BONDS
   name: Dedenne-GX
   number: '195'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX]
+  types: [LIGHTNING]
   hp: 160
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Dedechange
@@ -4422,34 +4015,32 @@ cards:
       you may discard your hand and draw 6 cards. You can't use more than 1 Dedechange
       Ability each turn.
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Static Shock
     damage: '50'
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Tingly Return GX
     damage: '50'
     text: Your opponent’s Active Pokémon is now Paralyzed. Put this Pokémon and all
       cards attached to it into your hand. (You can’t use more than 1 GX attack in
       a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Ultra Rare
-  variantOf: 423-57
+  pioId: sm10-195
+  variantOf: DEDENNE_GX_57:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-195a
-  pioId: sm10-195a
-  enumId: DEDENNE_GX_195a
+- enumId: DEDENNE_GX_195a:UNBROKEN_BONDS
   name: Dedenne-GX
   number: 195a
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX]
+  types: [LIGHTNING]
   hp: 160
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Dedechange
@@ -4457,41 +4048,39 @@ cards:
       you may discard your hand and draw 6 cards. You can't use more than 1 Dedechange
       Ability each turn.
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Static Shock
     damage: '50'
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Tingly Return GX
     damage: '50'
     text: Your opponent’s Active Pokémon is now Paralyzed. Put this Pokémon and all
       cards attached to it into your hand. (You can’t use more than 1 GX attack in
       a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Ultra Rare
   artist: kanahei
-  variantOf: 423-195
-  variantType: Alternate Art
-- id: 423-196
-  pioId: sm10-196
-  enumId: MUK_ALOLAN_MUK_GX_196
+  pioId: sm10-195a
+  variantOf: DEDENNE_GX_57:UNBROKEN_BONDS
+  variantType: Full Art
+- enumId: MUK_ALOLAN_MUK_GX_196:UNBROKEN_BONDS
   name: Muk & Alolan Muk-GX
   number: '196'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [PSYCHIC]
   hp: 270
-  retreatCost: 4
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Severe Poison
     text: Your opponent's Active Pokémon is now Poisoned. Put 8 damage counters instead
       of 1 on that Pokémon between turns.
-  - cost: [P, C, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS, COLORLESS]
     name: Poison Absorption
     damage: '120'
     text: If your opponent's Active Pokémon is Poisoned, heal 100 damage from this
@@ -4503,27 +4092,25 @@ cards:
       put 15 damage counters instead of 1 on that Pokémon between turns. (You can't
       use more than 1 GX attack in a game.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 4
   rarity: Ultra Rare
-  variantOf: 423-61
+  pioId: sm10-196
+  variantOf: MUK_ALOLAN_MUK_GX_61:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-197
-  pioId: sm10-197
-  enumId: MUK_ALOLAN_MUK_GX_197
+- enumId: MUK_ALOLAN_MUK_GX_197:UNBROKEN_BONDS
   name: Muk & Alolan Muk-GX
   number: '197'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [PSYCHIC]
   hp: 270
-  retreatCost: 4
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Severe Poison
     text: Your opponent's Active Pokémon is now Poisoned. Put 8 damage counters instead
       of 1 on that Pokémon between turns.
-  - cost: [P, C, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS, COLORLESS]
     name: Poison Absorption
     damage: '120'
     text: If your opponent's Active Pokémon is Poisoned, heal 100 damage from this
@@ -4535,31 +4122,29 @@ cards:
       put 15 damage counters instead of 1 on that Pokémon between turns. (You can't
       use more than 1 GX attack in a game.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 4
   rarity: Ultra Rare
-  variantOf: 423-61
+  pioId: sm10-197
+  variantOf: MUK_ALOLAN_MUK_GX_61:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-198
-  pioId: sm10-198
-  enumId: MARSHADOW_MACHAMP_GX_198
+- enumId: MARSHADOW_MACHAMP_GX_198:UNBROKEN_BONDS
   name: Marshadow & Machamp-GX
   number: '198'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FIGHTING]
   hp: 270
-  retreatCost: 3
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Revenge
     damage: 30+
     text: If any of your Pokémon were Knocked Out by damage from an opponent's attack
       during their last turn, this attack does 90 more damage.
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Hundred-Blows Impact
     damage: '160'
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Acme of Heroism GX
     damage: '200'
     text: If this Pokémon has at least 1 extra Energy attached to it (in addition
@@ -4567,31 +4152,29 @@ cards:
       attack during their next turn, it is not Knocked Out, and its remaining HP becomes
       10. (You can't use more than 1 GX attack in a game.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-  variantOf: 423-82
+  pioId: sm10-198
+  variantOf: MARSHADOW_MACHAMP_GX_82:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-199
-  pioId: sm10-199
-  enumId: MARSHADOW_MACHAMP_GX_199
+- enumId: MARSHADOW_MACHAMP_GX_199:UNBROKEN_BONDS
   name: Marshadow & Machamp-GX
   number: '199'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FIGHTING]
   hp: 270
-  retreatCost: 3
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Revenge
     damage: 30+
     text: If any of your Pokémon were Knocked Out by damage from an opponent's attack
       during their last turn, this attack does 90 more damage.
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Hundred-Blows Impact
     damage: '160'
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Acme of Heroism GX
     damage: '200'
     text: If this Pokémon has at least 1 extra Energy attached to it (in addition
@@ -4599,28 +4182,26 @@ cards:
       attack during their next turn, it is not Knocked Out, and its remaining HP becomes
       10. (You can't use more than 1 GX attack in a game.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-  variantOf: 423-82
+  pioId: sm10-199
+  variantOf: MARSHADOW_MACHAMP_GX_82:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-200
-  pioId: sm10-200
-  enumId: GRENINJA_ZOROARK_GX_200
+- enumId: GRENINJA_ZOROARK_GX_200:UNBROKEN_BONDS
   name: Greninja & Zoroark-GX
   number: '200'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [DARKNESS]
   hp: 250
-  retreatCost: 2
   moves:
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Dark Pulse
     damage: 30+
     text: This attack does 30 more damage times the amount of [D] Energy attached
       to all of your Pokémon.
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Dark Union GX
     text: Put 2 in any combination of [D] Pokémon-GX and [D] Pokémon-EX from your
       discard pile onto your Bench. If this Pokémon has at least 1 extra Energy attached
@@ -4628,31 +4209,29 @@ cards:
       pile to each Pokémon that you put onto your Bench in this way. (You can't use
       more than 1 GX attack in a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Ultra Rare
-  variantOf: 423-107
+  pioId: sm10-200
+  variantOf: GRENINJA_ZOROARK_GX_107:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-201
-  pioId: sm10-201
-  enumId: GRENINJA_ZOROARK_GX_201
+- enumId: GRENINJA_ZOROARK_GX_201:UNBROKEN_BONDS
   name: Greninja & Zoroark-GX
   number: '201'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [DARKNESS]
   hp: 250
-  retreatCost: 2
   moves:
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Dark Pulse
     damage: 30+
     text: This attack does 30 more damage times the amount of [D] Energy attached
       to all of your Pokémon.
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Dark Union GX
     text: Put 2 in any combination of [D] Pokémon-GX and [D] Pokémon-EX from your
       discard pile onto your Bench. If this Pokémon has at least 1 extra Energy attached
@@ -4660,69 +4239,65 @@ cards:
       pile to each Pokémon that you put onto your Bench in this way. (You can't use
       more than 1 GX attack in a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Ultra Rare
-  variantOf: 423-107
+  pioId: sm10-201
+  variantOf: GRENINJA_ZOROARK_GX_107:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-202
-  pioId: sm10-202
-  enumId: HONCHKROW_GX_202
+- enumId: HONCHKROW_GX_202:UNBROKEN_BONDS
   name: Honchkrow-GX
   number: '202'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Murkrow
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Murkrow]
   hp: 210
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Ruler of the Night
     text: As long as this Pokémon is your Active Pokémon, your opponent can't play
       any Pokémon Tool, Special Energy, or Stadium cards from their hand.
   moves:
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Feather Storm
     damage: '90'
     text: This attack does 30 damage to 2 of your opponent's Benched Pokémon-GX and
       Pokémon-EX. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Unfair GX
     text: Your opponent reveals their hand. Discard 2 cards from it. (You can't use
       more than 1 GX attack in a game.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 2
   rarity: Ultra Rare
-  variantOf: 423-109
+  pioId: sm10-202
+  variantOf: HONCHKROW_GX_109:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-203
-  pioId: sm10-203
-  enumId: LUCARIO_MELMETAL_GX_203
+- enumId: LUCARIO_MELMETAL_GX_203:UNBROKEN_BONDS
   name: Lucario & Melmetal-GX
   number: '203'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [METAL]
   hp: 260
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Steel Fist
     damage: '50'
     text: Search your deck for a [M] Energy card and attach it to this Pokémon. Then,
       shuffle your deck.
-  - cost: [M, M, C, C]
+  - cost: [METAL, METAL, COLORLESS, COLORLESS]
     name: Heavy Impact
     damage: '150'
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Full Metal Wall GX
     text: For the rest of this game, your [M] Pokémon take 30 less damage from your
       opponent's attacks (after applying Weakness and Resistance). If this Pokémon
@@ -4730,130 +4305,122 @@ cards:
       discard all Energy from your opponent's Active Pokémon. (You can't use more
       than 1 GX attack in a game.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 3
   rarity: Ultra Rare
-  variantOf: 423-120
+  pioId: sm10-203
+  variantOf: LUCARIO_MELMETAL_GX_SM192:SUN_MOON_PROMOS
   variantType: Full Art
-- id: 423-204
-  pioId: sm10-204
-  enumId: GARDEVOIR_SYLVEON_GX_204
+- enumId: GARDEVOIR_SYLVEON_GX_204:UNBROKEN_BONDS
   name: Gardevoir & Sylveon-GX
   number: '204'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FAIRY]
   hp: 260
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Fairy Song
     text: Search your deck for up to 2 [Y] Energy cards and attach them to your Benched
       Pokémon in any way you like. Then, shuffle your deck.
-  - cost: [Y, Y, C]
+  - cost: [FAIRY, FAIRY, COLORLESS]
     name: Kaleidostorm
     damage: '150'
     text: Move any number of Energy from your Pokémon to your other Pokémon in any
       way you like.
-  - cost: [Y, Y, Y]
+  - cost: [FAIRY, FAIRY, FAIRY]
     name: Magical Miracle GX
     damage: '200'
     text: If this Pokémon has at least 3 extra [Y] Energy attached to it (in addition
       to this attack's cost), your opponent shuffles their hand into their deck. (You
       can’t use more than 1 GX attack in a game.)
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 2
   rarity: Ultra Rare
-  variantOf: 423-130
+  pioId: sm10-204
+  variantOf: GARDEVOIR_SYLVEON_GX_130:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-205
-  pioId: sm10-205
-  enumId: GARDEVOIR_SYLVEON_GX_205
+- enumId: GARDEVOIR_SYLVEON_GX_205:UNBROKEN_BONDS
   name: Gardevoir & Sylveon-GX
   number: '205'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FAIRY]
   hp: 260
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Fairy Song
     text: Search your deck for up to 2 [Y] Energy cards and attach them to your Benched
       Pokémon in any way you like. Then, shuffle your deck.
-  - cost: [Y, Y, C]
+  - cost: [FAIRY, FAIRY, COLORLESS]
     name: Kaleidostorm
     damage: '150'
     text: Move any number of Energy from your Pokémon to your other Pokémon in any
       way you like.
-  - cost: [Y, Y, Y]
+  - cost: [FAIRY, FAIRY, FAIRY]
     name: Magical Miracle GX
     damage: '200'
     text: If this Pokémon has at least 3 extra [Y] Energy attached to it (in addition
       to this attack's cost), your opponent shuffles their hand into their deck. (You
       can’t use more than 1 GX attack in a game.)
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 2
   rarity: Ultra Rare
-  variantOf: 423-130
+  pioId: sm10-205
+  variantOf: GARDEVOIR_SYLVEON_GX_130:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-206
-  pioId: sm10-206
-  enumId: WHIMSICOTT_GX_206
+- enumId: WHIMSICOTT_GX_206:UNBROKEN_BONDS
   name: Whimsicott-GX
   number: '206'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Cottonee
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [FAIRY]
+  evolvesFrom: [Cottonee]
   hp: 190
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Fluffy Cotton
     text: If any damage is done to this Pokémon by attacks, flip a coin. If heads,
       prevent that damage.
   moves:
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Energy Blow
     damage: 10+
     text: This attack does 30 more damage times the amount of Energy attached to this
       Pokémon.
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Toy Box GX
     text: Search your deck for up to 5 cards and put them into your hand. Then, shuffle
       your deck. (You can’t use more than 1 GX attack in a game.)
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Ultra Rare
-  variantOf: 423-140
+  pioId: sm10-206
+  variantOf: WHIMSICOTT_GX_140:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-207
-  pioId: sm10-207
-  enumId: PERSIAN_GX_207
+- enumId: PERSIAN_GX_207:UNBROKEN_BONDS
   name: Persian-GX
   number: '207'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Meowth
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Meowth]
   hp: 200
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Cat Walk
@@ -4862,157 +4429,137 @@ cards:
       up to 2 cards and put them into your hand. Then, shuffle your deck. You can't
       use more than 1 Cat Walk Ability each turn.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Vengeance
     damage: 10+
     text: This attack does 20 more damage for each Pokémon in your discard pile. You
       can't add more than 180 damage in this way.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Slash Back GX
     damage: '150'
     text: Switch this Pokémon with 1 of your Benched Pokémon. (You can’t use more
       than 1 GX attack in a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Ultra Rare
-  variantOf: 423-149
+  pioId: sm10-207
+  variantOf: PERSIAN_GX_149:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-208
-  pioId: sm10-208
-  enumId: CELESTEELA_GX_208
+- enumId: CELESTEELA_GX_208:UNBROKEN_BONDS
   name: Celesteela-GX
   number: '208'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX]
+  types: [COLORLESS]
   hp: 200
-  retreatCost: 4
   abilities:
   - type: Ability
     name: Force Canceler
     text: As long as this Pokémon is your Active Pokémon, prevent all effects of your
       opponent's GX attacks, including damage, done to your Pokémon.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Power Cyclone
     damage: '110'
     text: Move an Energy from this Pokémon to 1 of your Benched Pokémon.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Discovery GX
     text: Count your Prize cards and put them into your hand. Then, take that many
       cards from the top of your deck and put them face down as your Prize cards.
       If you don't have that many cards in your deck, this attack does nothing. (You
       can't use more than 1 GX attack in a game.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 4
   rarity: Ultra Rare
-  variantOf: 423-163
+  pioId: sm10-208
+  variantOf: CELESTEELA_GX_163:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-209
-  pioId: sm10-209
-  enumId: GREEN_S_EXPLORATION_209
+- enumId: GREEN_S_EXPLORATION_209:UNBROKEN_BONDS
   name: Green’s Exploration
   number: '209'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Ultra Rare
-  text:
-  - You can play this card only if you have no Pokémon with Abilities in play.
-  - Search your deck for up to 2 Trainer cards, reveal them, and put them into your
-    hand. Then, shuffle your deck.
-  variantOf: 423-175
+  text: |-
+    You can play this card only if you have no Pokémon with Abilities in play.
+    Search your deck for up to 2 Trainer cards, reveal them, and put them into your hand. Then, shuffle your deck.
+  pioId: sm10-209
+  variantOf: GREEN_S_EXPLORATION_175:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-210
-  pioId: sm10-210
-  enumId: JANINE_210
+- enumId: JANINE_210:UNBROKEN_BONDS
   name: Janine
   number: '210'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Ultra Rare
-  text:
-  - Look at the top 4 cards of your deck and put 2 of them into your hand. Shuffle
+  text: Look at the top 4 cards of your deck and put 2 of them into your hand. Shuffle
     the other cards back into your deck.
-  variantOf: 423-176
+  pioId: sm10-210
+  variantOf: JANINE_176:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-211
-  pioId: sm10-211
-  enumId: KOGA_S_TRAP_211
+- enumId: KOGA_S_TRAP_211:UNBROKEN_BONDS
   name: Koga’s Trap
   number: '211'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Ultra Rare
-  text:
-  - Your opponent's Active Pokémon is now Confused and Poisoned.
-  variantOf: 423-177
+  text: Your opponent's Active Pokémon is now Confused and Poisoned.
+  pioId: sm10-211
+  variantOf: KOGA_S_TRAP_177:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-212
-  pioId: sm10-212
-  enumId: MOLAYNE_212
+- enumId: MOLAYNE_212:UNBROKEN_BONDS
   name: Molayne
   number: '212'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Ultra Rare
-  text:
-  - You can play this card only if you discard 2 [M] Energy cards from your hand.
-  - Shuffle a Trainer card from your discard pile into your deck.
-  variantOf: 423-181
+  text: |-
+    You can play this card only if you discard 2 [M] Energy cards from your hand.
+    Shuffle a Trainer card from your discard pile into your deck.
+  pioId: sm10-212
+  variantOf: MOLAYNE_181:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-213
-  pioId: sm10-213
-  enumId: RED_S_CHALLENGE_213
+- enumId: RED_S_CHALLENGE_213:UNBROKEN_BONDS
   name: Red's Challenge
   number: '213'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Ultra Rare
-  text:
-  - You can play this card only if you discard 2 other cards from your hand.
-  - Search your deck for a card and put it into your hand. Then, shuffle your deck.
-  variantOf: 423-184
+  text: |-
+    You can play this card only if you discard 2 other cards from your hand.
+    Search your deck for a card and put it into your hand. Then, shuffle your deck.
+  pioId: sm10-213
+  variantOf: RED_S_CHALLENGE_184:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-214
-  pioId: sm10-214
-  enumId: WELDER_214
+- enumId: WELDER_214:UNBROKEN_BONDS
   name: Welder
   number: '214'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Ultra Rare
-  text:
-  - Attach up to 2 [R] Energy cards from your hand to 1 of your Pokémon. If you do,
-    draw 3 cards.
-  variantOf: 423-189
+  text: Attach up to 2 [R] Energy cards from your hand to 1 of your Pokémon. If you
+    do, draw 3 cards.
+  pioId: sm10-214
+  variantOf: WELDER_189:UNBROKEN_BONDS
   variantType: Full Art
-- id: 423-215
-  pioId: sm10-215
-  enumId: PHEROMOSA_BUZZWOLE_GX_215
+- enumId: PHEROMOSA_BUZZWOLE_GX_215:UNBROKEN_BONDS
   name: Pheromosa & Buzzwole-GX
   number: '215'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [GRASS]
   hp: 260
-  retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Jet Punch
     damage: '30'
     text: This attack does 30 damage to 1 of your opponent’s Benched Pokémon. (Don’t
       apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Elegant Sole
     damage: '190'
     text: During your next turn, this Pokémon's Elegant Sole attack's base damage
       is 60.
-  - cost: [G]
+  - cost: [GRASS]
     name: Beast Game GX
     damage: '50'
     text: If your opponent's Pokémon is Knocked Out by damage from this attack, take
@@ -5020,61 +4567,57 @@ cards:
       (in addition to this attack's cost), take 3 more Prize cards instead. (You can’t
       use more than 1 GX attack in a game.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Secret
-  variantOf: 423-1
+  pioId: sm10-215
+  variantOf: PHEROMOSA_BUZZWOLE_GX_1:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-216
-  pioId: sm10-216
-  enumId: VENOMOTH_GX_216
+- enumId: VENOMOTH_GX_216:UNBROKEN_BONDS
   name: Venomoth-GX
   number: '216'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Venonat
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Venonat]
   hp: 200
-  retreatCost: 1
   moves:
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Shinobi Mastery
     damage: 110+
     text: If you played Koga's Trap from your hand during this turn, this attack does
       90 more damage. If you played Janine from your hand during this turn, prevent
       all damage done to this Pokémon by attacks from Basic Pokémon during your opponent's
       next turn.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Ten-Card Return GX
     damage: '60'
     text: Shuffle your hand into your deck. Then, draw 10 cards. (You can’t use more
       than 1 GX attack in a game.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Secret
-  variantOf: 423-12
+  pioId: sm10-216
+  variantOf: VENOMOTH_GX_12:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-217
-  pioId: sm10-217
-  enumId: RESHIRAM_CHARIZARD_GX_217
+- enumId: RESHIRAM_CHARIZARD_GX_217:UNBROKEN_BONDS
   name: Reshiram & Charizard-GX
   number: '217'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FIRE]
   hp: 270
-  retreatCost: 3
   moves:
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Outrage
     damage: 30+
     text: This attack does 10 more damage for each damage counter on this Pokémon.
-  - cost: [R, R, R, C]
+  - cost: [FIRE, FIRE, FIRE, COLORLESS]
     name: Flare Strike
     damage: '230'
     text: This Pokémon can't use Flare Strike during your next turn.
-  - cost: [R, R, R]
+  - cost: [FIRE, FIRE, FIRE]
     name: Double Blaze GX
     damage: 200+
     text: If this Pokémon has at least 3 extra [R] Energy attached to it (in addition
@@ -5082,53 +4625,49 @@ cards:
       damage isn't affected by any effects on your opponent's Active Pokémon. (You
       can't use more than 1 GX attack in a game.)
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 3
   rarity: Secret
-  variantOf: 423-20
+  pioId: sm10-217
+  variantOf: RESHIRAM_CHARIZARD_GX_SM201:SUN_MOON_PROMOS
   variantType: Secret Art
-- id: 423-218
-  pioId: sm10-218
-  enumId: BLASTOISE_GX_218
+- enumId: BLASTOISE_GX_218:UNBROKEN_BONDS
   name: Blastoise-GX
   number: '218'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE2]
-  evolvesFrom: Wartortle
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Wartortle]
   hp: 240
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Solid Shell
     text: This Pokémon takes 30 less damage from attacks (after applying Weakness
       and Resistance).
   moves:
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Rocket Splash
     damage: 60x
     text: Shuffle any amount of [W] Energy from your Pokémon into your deck. This
       attack does 60 damage for each card you shuffled into your deck in this way.
-  - cost: [W]
+  - cost: [WATER]
     name: Giant Geyser GX
     text: Attach any number of [W] Energy cards from your hand to your Pokémon in
       any way you like. (You can’t use more than 1 GX attack in a game.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Secret
-  variantOf: 423-35
+  pioId: sm10-218
+  variantOf: BLASTOISE_GX_35:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-219
-  pioId: sm10-219
-  enumId: DEDENNE_GX_219
+- enumId: DEDENNE_GX_219:UNBROKEN_BONDS
   name: Dedenne-GX
   number: '219'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX]
+  types: [LIGHTNING]
   hp: 160
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Dedechange
@@ -5136,40 +4675,38 @@ cards:
       you may discard your hand and draw 6 cards. You can't use more than 1 Dedechange
       Ability each turn.
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Static Shock
     damage: '50'
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Tingly Return GX
     damage: '50'
     text: Your opponent’s Active Pokémon is now Paralyzed. Put this Pokémon and all
       cards attached to it into your hand. (You can’t use more than 1 GX attack in
       a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Secret
-  variantOf: 423-57
+  pioId: sm10-219
+  variantOf: DEDENNE_GX_57:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-220
-  pioId: sm10-220
-  enumId: MUK_ALOLAN_MUK_GX_220
+- enumId: MUK_ALOLAN_MUK_GX_220:UNBROKEN_BONDS
   name: Muk & Alolan Muk-GX
   number: '220'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [PSYCHIC]
   hp: 270
-  retreatCost: 4
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Severe Poison
     text: Your opponent's Active Pokémon is now Poisoned. Put 8 damage counters instead
       of 1 on that Pokémon between turns.
-  - cost: [P, C, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS, COLORLESS]
     name: Poison Absorption
     damage: '120'
     text: If your opponent's Active Pokémon is Poisoned, heal 100 damage from this
@@ -5181,31 +4718,29 @@ cards:
       put 15 damage counters instead of 1 on that Pokémon between turns. (You can't
       use more than 1 GX attack in a game.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 4
   rarity: Secret
-  variantOf: 423-61
+  pioId: sm10-220
+  variantOf: MUK_ALOLAN_MUK_GX_61:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-221
-  pioId: sm10-221
-  enumId: MARSHADOW_MACHAMP_GX_221
+- enumId: MARSHADOW_MACHAMP_GX_221:UNBROKEN_BONDS
   name: Marshadow & Machamp-GX
   number: '221'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FIGHTING]
   hp: 270
-  retreatCost: 3
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Revenge
     damage: 30+
     text: If any of your Pokémon were Knocked Out by damage from an opponent's attack
       during their last turn, this attack does 90 more damage.
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Hundred-Blows Impact
     damage: '160'
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Acme of Heroism GX
     damage: '200'
     text: If this Pokémon has at least 1 extra Energy attached to it (in addition
@@ -5213,28 +4748,26 @@ cards:
       attack during their next turn, it is not Knocked Out, and its remaining HP becomes
       10. (You can't use more than 1 GX attack in a game.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Secret
-  variantOf: 423-82
+  pioId: sm10-221
+  variantOf: MARSHADOW_MACHAMP_GX_82:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-222
-  pioId: sm10-222
-  enumId: GRENINJA_ZOROARK_GX_222
+- enumId: GRENINJA_ZOROARK_GX_222:UNBROKEN_BONDS
   name: Greninja & Zoroark-GX
   number: '222'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [DARKNESS]
   hp: 250
-  retreatCost: 2
   moves:
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Dark Pulse
     damage: 30+
     text: This attack does 30 more damage times the amount of [D] Energy attached
       to all of your Pokémon.
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Dark Union GX
     text: Put 2 in any combination of [D] Pokémon-GX and [D] Pokémon-EX from your
       discard pile onto your Bench. If this Pokémon has at least 1 extra Energy attached
@@ -5242,69 +4775,65 @@ cards:
       pile to each Pokémon that you put onto your Bench in this way. (You can't use
       more than 1 GX attack in a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Secret
-  variantOf: 423-107
+  pioId: sm10-222
+  variantOf: GRENINJA_ZOROARK_GX_107:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-223
-  pioId: sm10-223
-  enumId: HONCHKROW_GX_223
+- enumId: HONCHKROW_GX_223:UNBROKEN_BONDS
   name: Honchkrow-GX
   number: '223'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Murkrow
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Murkrow]
   hp: 210
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Ruler of the Night
     text: As long as this Pokémon is your Active Pokémon, your opponent can't play
       any Pokémon Tool, Special Energy, or Stadium cards from their hand.
   moves:
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Feather Storm
     damage: '90'
     text: This attack does 30 damage to 2 of your opponent's Benched Pokémon-GX and
       Pokémon-EX. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Unfair GX
     text: Your opponent reveals their hand. Discard 2 cards from it. (You can't use
       more than 1 GX attack in a game.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 2
   rarity: Secret
-  variantOf: 423-109
+  pioId: sm10-223
+  variantOf: HONCHKROW_GX_109:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-224
-  pioId: sm10-224
-  enumId: LUCARIO_MELMETAL_GX_224
+- enumId: LUCARIO_MELMETAL_GX_224:UNBROKEN_BONDS
   name: Lucario & Melmetal-GX
   number: '224'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [METAL]
   hp: 260
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Steel Fist
     damage: '50'
     text: Search your deck for a [M] Energy card and attach it to this Pokémon. Then,
       shuffle your deck.
-  - cost: [M, M, C, C]
+  - cost: [METAL, METAL, COLORLESS, COLORLESS]
     name: Heavy Impact
     damage: '150'
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Full Metal Wall GX
     text: For the rest of this game, your [M] Pokémon take 30 less damage from your
       opponent's attacks (after applying Weakness and Resistance). If this Pokémon
@@ -5312,95 +4841,89 @@ cards:
       discard all Energy from your opponent's Active Pokémon. (You can't use more
       than 1 GX attack in a game.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 3
   rarity: Secret
-  variantOf: 423-120
+  pioId: sm10-224
+  variantOf: LUCARIO_MELMETAL_GX_SM192:SUN_MOON_PROMOS
   variantType: Secret Art
-- id: 423-225
-  pioId: sm10-225
-  enumId: GARDEVOIR_SYLVEON_GX_225
+- enumId: GARDEVOIR_SYLVEON_GX_225:UNBROKEN_BONDS
   name: Gardevoir & Sylveon-GX
   number: '225'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX, TAG_TEAM]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX, TAG_TEAM]
+  types: [FAIRY]
   hp: 260
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Fairy Song
     text: Search your deck for up to 2 [Y] Energy cards and attach them to your Benched
       Pokémon in any way you like. Then, shuffle your deck.
-  - cost: [Y, Y, C]
+  - cost: [FAIRY, FAIRY, COLORLESS]
     name: Kaleidostorm
     damage: '150'
     text: Move any number of Energy from your Pokémon to your other Pokémon in any
       way you like.
-  - cost: [Y, Y, Y]
+  - cost: [FAIRY, FAIRY, FAIRY]
     name: Magical Miracle GX
     damage: '200'
     text: If this Pokémon has at least 3 extra [Y] Energy attached to it (in addition
       to this attack's cost), your opponent shuffles their hand into their deck. (You
       can’t use more than 1 GX attack in a game.)
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 2
   rarity: Secret
-  variantOf: 423-130
+  pioId: sm10-225
+  variantOf: GARDEVOIR_SYLVEON_GX_130:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-226
-  pioId: sm10-226
-  enumId: WHIMSICOTT_GX_226
+- enumId: WHIMSICOTT_GX_226:UNBROKEN_BONDS
   name: Whimsicott-GX
   number: '226'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Cottonee
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [FAIRY]
+  evolvesFrom: [Cottonee]
   hp: 190
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Fluffy Cotton
     text: If any damage is done to this Pokémon by attacks, flip a coin. If heads,
       prevent that damage.
   moves:
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Energy Blow
     damage: 10+
     text: This attack does 30 more damage times the amount of Energy attached to this
       Pokémon.
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Toy Box GX
     text: Search your deck for up to 5 cards and put them into your hand. Then, shuffle
       your deck. (You can’t use more than 1 GX attack in a game.)
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Secret
-  variantOf: 423-140
+  pioId: sm10-226
+  variantOf: WHIMSICOTT_GX_140:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-227
-  pioId: sm10-227
-  enumId: PERSIAN_GX_227
+- enumId: PERSIAN_GX_227:UNBROKEN_BONDS
   name: Persian-GX
   number: '227'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, POKEMON_GX, STAGE1]
-  evolvesFrom: Meowth
+  cardTypes: [POKEMON, EVOLUTION, POKEMON_GX, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Meowth]
   hp: 200
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Cat Walk
@@ -5409,139 +4932,118 @@ cards:
       up to 2 cards and put them into your hand. Then, shuffle your deck. You can't
       use more than 1 Cat Walk Ability each turn.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Vengeance
     damage: 10+
     text: This attack does 20 more damage for each Pokémon in your discard pile. You
       can't add more than 180 damage in this way.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Slash Back GX
     damage: '150'
     text: Switch this Pokémon with 1 of your Benched Pokémon. (You can’t use more
       than 1 GX attack in a game.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Secret
-  variantOf: 423-149
+  pioId: sm10-227
+  variantOf: PERSIAN_GX_149:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-228
-  pioId: sm10-228
-  enumId: CELESTEELA_GX_228
+- enumId: CELESTEELA_GX_228:UNBROKEN_BONDS
   name: Celesteela-GX
   number: '228'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_GX]
+  cardTypes: [POKEMON, BASIC, POKEMON_GX]
+  types: [COLORLESS]
   hp: 200
-  retreatCost: 4
   abilities:
   - type: Ability
     name: Force Canceler
     text: As long as this Pokémon is your Active Pokémon, prevent all effects of your
       opponent's GX attacks, including damage, done to your Pokémon.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Power Cyclone
     damage: '110'
     text: Move an Energy from this Pokémon to 1 of your Benched Pokémon.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Discovery GX
     text: Count your Prize cards and put them into your hand. Then, take that many
       cards from the top of your deck and put them face down as your Prize cards.
       If you don't have that many cards in your deck, this attack does nothing. (You
       can't use more than 1 GX attack in a game.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 4
   rarity: Secret
-  variantOf: 423-163
+  pioId: sm10-228
+  variantOf: CELESTEELA_GX_163:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-229
-  pioId: sm10-229
-  enumId: BEAST_BRINGER_229
+- enumId: BEAST_BRINGER_229:UNBROKEN_BONDS
   name: Beast Bringer
   number: '229'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL]
   rarity: Secret
-  text:
-  - If you have exactly 6 Prize cards remaining, and if your opponent's Active Pokémon-GX
-    or Pokémon-EX is Knocked Out by damage from an attack of the Ultra Beast this
-    card is attached to, take 1 more Prize card.
-  variantOf: 423-164
+  text: If you have exactly 6 Prize cards remaining, and if your opponent's Active
+    Pokémon-GX or Pokémon-EX is Knocked Out by damage from an attack of the Ultra
+    Beast this card is attached to, take 1 more Prize card.
+  pioId: sm10-229
+  variantOf: BEAST_BRINGER_164:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-230
-  pioId: sm10-230
-  enumId: ELECTROMAGNETIC_RADAR_230
+- enumId: ELECTROMAGNETIC_RADAR_230:UNBROKEN_BONDS
   name: Electromagnetic Radar
   number: '230'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Secret
-  text:
-  - You can play this card only if you discard 2 other cards from your hand.
-  - Search your deck for up to 2 in any combination of [L] Pokémon-GX and [L] Pokémon-EX,
-    reveal them, and put them into your hand. Then, shuffle your deck.
-  variantOf: 423-169
+  text: |-
+    You can play this card only if you discard 2 other cards from your hand.
+    Search your deck for up to 2 in any combination of [L] Pokémon-GX and [L] Pokémon-EX, reveal them, and put them into your hand. Then, shuffle your deck.
+  pioId: sm10-230
+  variantOf: ELECTROMAGNETIC_RADAR_169:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-231
-  pioId: sm10-231
-  enumId: FIRE_CRYSTAL_231
+- enumId: FIRE_CRYSTAL_231:UNBROKEN_BONDS
   name: Fire Crystal
   number: '231'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Secret
-  text:
-  - Put 3 [R] Energy cards from your discard pile into your hand.
-  variantOf: 423-173
+  text: Put 3 [R] Energy cards from your discard pile into your hand.
+  pioId: sm10-231
+  variantOf: FIRE_CRYSTAL_173:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-232
-  pioId: sm10-232
-  enumId: METAL_CORE_BARRIER_232
+- enumId: METAL_CORE_BARRIER_232:UNBROKEN_BONDS
   name: Metal Core Barrier
   number: '232'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL]
   rarity: Secret
-  text:
-  - If this card is attached to 1 of your Pokémon, discard it at the end of your opponent's
-    turn.
-  - The [M] Pokémon this card is attached to takes 70 less damage from your opponent's
-    attacks (after applying Weakness and Resistance).
-  variantOf: 423-180
+  text: |-
+    If this card is attached to 1 of your Pokémon, discard it at the end of your opponent's turn.
+    The [M] Pokémon this card is attached to takes 70 less damage from your opponent's attacks (after applying Weakness and Resistance).
+  pioId: sm10-232
+  variantOf: METAL_CORE_BARRIER_180:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-233
-  pioId: sm10-233
-  enumId: POKEGEAR_3_0_233
+- enumId: POKEGEAR_3_0_233:UNBROKEN_BONDS
   name: Pokégear 3.0
   number: '233'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Secret
-  text:
-  - Look at the top 7 cards of your deck. You may reveal a Supporter card you find
-    there and put it into your hand. Shuffle the other cards back into your deck.
-  variantOf: 423-182
+  text: Look at the top 7 cards of your deck. You may reveal a Supporter card you
+    find there and put it into your hand. Shuffle the other cards back into your deck.
+  pioId: sm10-233
+  variantOf: POKEGEAR_3_0_182:UNBROKEN_BONDS
   variantType: Secret Art
-- id: 423-234
-  pioId: sm10-234
-  enumId: TRIPLE_ACCELERATION_ENERGY_234
+- enumId: TRIPLE_ACCELERATION_ENERGY_234:UNBROKEN_BONDS
   name: Triple Acceleration Energy
   number: '234'
-  superType: ENERGY
-  subTypes: [SPECIAL_ENERGY]
+  cardTypes: [ENERGY, SPECIAL_ENERGY]
   rarity: Secret
-  text:
-  - This card can only be attached to Evolution Pokémon. If this card is attached
-    to 1 of your Pokémon, discard it at the end of the turn.
-  - This card provides [C][C][C] Energy only while it is attached to an Evolution
-    Pokémon.
-  - If this card is attached to anything other than an Evolution Pokémon, discard
-    this card.
-  variantOf: 423-190
+  text: |-
+    This card can only be attached to Evolution Pokémon. If this card is attached to 1 of your Pokémon, discard it at the end of the turn.
+    This card provides [C][C][C] Energy only while it is attached to an Evolution Pokémon.
+    If this card is attached to anything other than an Evolution Pokémon, discard this card.
+  pioId: sm10-234
+  variantOf: TRIPLE_ACCELERATION_ENERGY_190:UNBROKEN_BONDS
   variantType: Secret Art

@@ -1,537 +1,484 @@
-schema: E2
-id: '366'
-name: Double Crisis
-enumId: DOUBLE_CRISIS
-abbr: DCR
+schema: E3
+expansion:
+  orderId: '366'
+  name: Double Crisis
+  enumId: DOUBLE_CRISIS
+  shortName: DCR
+  isFanMade: false
 cards:
-- id: 366-1
-  pioId: dc1-1
-  enumId: TEAM_MAGMA_S_NUMEL_1
+- enumId: TEAM_MAGMA_S_NUMEL_1:DOUBLE_CRISIS
   name: Team Magma's Numel
-  nationalPokedexNumber: 322
   number: '1'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, TEAM_MAGMA]
-  evolvesTo: [Camerupt]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, TEAM_MAGMA]
+  types: [FIRE]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Ember
     damage: '30'
     text: Discard an Energy attached to this Pokémon.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Akira Komayama
-- id: 366-2
-  pioId: dc1-2
-  enumId: TEAM_MAGMA_S_CAMERUPT_2
+  pioId: dc1-1
+  nationalPokedexNumber: 322
+- enumId: TEAM_MAGMA_S_CAMERUPT_2:DOUBLE_CRISIS
   name: Team Magma's Camerupt
-  nationalPokedexNumber: 323
   number: '2'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_MAGMA]
-  evolvesFrom: Team Magma's Numel
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_MAGMA]
+  types: [FIRE]
+  evolvesFrom: [Team Magma's Numel]
   hp: 110
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Burning Draft
     text: Once during your turn (before your attack), you may attach a [F] or [R]
       Energy card from your discard pile to this Pokémon.
   moves:
-  - cost: [R, C, C]
+  - cost: [FIRE, COLORLESS, COLORLESS]
     name: Flame Ball
     damage: '60'
     text: Move a basic Energy from this Pokémon to 1 of your Benched Pokémon.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Shin Nagasawa
-- id: 366-3
-  pioId: dc1-3
-  enumId: TEAM_AQUA_S_SPHEAL_3
+  pioId: dc1-2
+  nationalPokedexNumber: 323
+- enumId: TEAM_AQUA_S_SPHEAL_3:DOUBLE_CRISIS
   name: Team Aqua's Spheal
-  nationalPokedexNumber: 363
   number: '3'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, TEAM_AQUA]
-  evolvesTo: [Sealeo]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, TEAM_AQUA]
+  types: [WATER]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Water Gun
     damage: '10'
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Sanosuke Sakuma
-- id: 366-4
-  pioId: dc1-4
-  enumId: TEAM_AQUA_S_SEALEO_4
+  pioId: dc1-3
+  nationalPokedexNumber: 363
+- enumId: TEAM_AQUA_S_SEALEO_4:DOUBLE_CRISIS
   name: Team Aqua's Sealeo
-  nationalPokedexNumber: 364
   number: '4'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_AQUA]
-  evolvesFrom: Team Aqua's Spheal
-  evolvesTo: [Walrein]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_AQUA]
+  types: [WATER]
+  evolvesFrom: [Team Aqua's Spheal]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Splatter
     text: This attack does 20 damage to 1 of your opponent's Pokémon. (Don't apply
       Weakness and Resistance for Benched Pokémon.)
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Hail Storm
     damage: 60+
     text: If your opponent's Active Pokémon is a Team Magma Pokémon, this attack does
       60 more damage.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
+  retreatCost: 3
   rarity: Common
   artist: Naoki Saito
-- id: 366-5
-  pioId: dc1-5
-  enumId: TEAM_AQUA_S_WALREIN_5
+  pioId: dc1-4
+  nationalPokedexNumber: 364
+- enumId: TEAM_AQUA_S_WALREIN_5:DOUBLE_CRISIS
   name: Team Aqua's Walrein
-  nationalPokedexNumber: 365
   number: '5'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE2, TEAM_AQUA]
-  evolvesFrom: Team Aqua's Sealeo
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE2, TEAM_AQUA]
+  types: [WATER]
+  evolvesFrom: [Team Aqua's Sealeo]
   hp: 140
-  retreatCost: 4
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Power Blow
     damage: 30x
     text: This attack does 30 damage times the amount of Energy attached to this Pokémon.
-  - cost: [W, W, W, C]
+  - cost: [WATER, WATER, WATER, COLORLESS]
     name: Dual Blizzard
     text: Discard 2 [W] Energy attached to this Pokémon. This attack does 80 damage
       to 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched
       Pokémon.)
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
+  retreatCost: 4
   rarity: Rare Holo
   artist: Hitoshi Ariga
-- id: 366-6
-  pioId: dc1-6
-  enumId: TEAM_AQUA_S_KYOGRE_EX_6
+  pioId: dc1-5
+  nationalPokedexNumber: 365
+- enumId: TEAM_AQUA_S_KYOGRE_EX_6:DOUBLE_CRISIS
   name: Team Aqua's Kyogre-EX
-  nationalPokedexNumber: 382
   number: '6'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, POKEMON_EX, TEAM_AQUA]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, POKEMON_EX, TEAM_AQUA]
+  types: [WATER]
   hp: 190
-  retreatCost: 4
   abilities:
   - type: Ability
     name: Power Saver
     text: If there are 4 or fewer Team Aqua Pokémon in play, this Pokémon can't attack.
   moves:
-  - cost: [W, W, W, C]
+  - cost: [WATER, WATER, WATER, COLORLESS]
     name: Aqua Impact
     damage: 80+
     text: This attack does 20 more damage for each [C] in your opponent's Active Pokémon's
       Retreat Cost.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Ultra Rare
   artist: nagimiso
-- id: 366-7
-  pioId: dc1-7
-  enumId: TEAM_AQUA_S_GRIMER_7
+  pioId: dc1-6
+  nationalPokedexNumber: 382
+- enumId: TEAM_AQUA_S_GRIMER_7:DOUBLE_CRISIS
   name: Team Aqua's Grimer
-  nationalPokedexNumber: 88
   number: '7'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, TEAM_AQUA]
-  evolvesTo: [Muk]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, TEAM_AQUA]
+  types: [PSYCHIC]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Pound
     damage: '10'
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Mud-Slap
     damage: '30'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: kawayoo
-- id: 366-8
-  pioId: dc1-8
-  enumId: TEAM_AQUA_S_MUK_8
+  pioId: dc1-7
+  nationalPokedexNumber: 88
+- enumId: TEAM_AQUA_S_MUK_8:DOUBLE_CRISIS
   name: Team Aqua's Muk
-  nationalPokedexNumber: 89
   number: '8'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_AQUA]
-  evolvesFrom: Team Aqua's Grimer
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_AQUA]
+  types: [PSYCHIC]
+  evolvesFrom: [Team Aqua's Grimer]
   hp: 110
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Sludge Festival
     text: The Retreat Cost of each Pokémon in play (except for Team Aqua Pokémon)
       is [C] more.
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Pester
     damage: 60+
     text: If your opponent's Active Pokémon is affected by a Special Condition, this
       attack does 60 more damage.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Kouki Saitou
-- id: 366-9
-  pioId: dc1-9
-  enumId: TEAM_AQUA_S_SEVIPER_9
+  pioId: dc1-8
+  nationalPokedexNumber: 89
+- enumId: TEAM_AQUA_S_SEVIPER_9:DOUBLE_CRISIS
   name: Team Aqua's Seviper
-  nationalPokedexNumber: 336
   number: '9'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, TEAM_AQUA]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, TEAM_AQUA]
+  types: [PSYCHIC]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Venomous Fang
     damage: '10'
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Poisoned.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Venom Tail
     damage: '30'
     text: If your opponent's Active Pokémon is affected by a Special Condition, discard
       an Energy attached to that Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Naoki Saito
-- id: 366-10
-  pioId: dc1-10
-  enumId: TEAM_MAGMA_S_BALTOY_10
+  pioId: dc1-9
+  nationalPokedexNumber: 336
+- enumId: TEAM_MAGMA_S_BALTOY_10:DOUBLE_CRISIS
   name: Team Magma's Baltoy
-  nationalPokedexNumber: 343
   number: '10'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, TEAM_MAGMA]
-  evolvesTo: [Claydol]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, TEAM_MAGMA]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Telekinesis
     text: This attack does 20 damage to 1 of your opponent's Pokémon. This attack's
       damage isn't affected by Weakness or Resistance.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 366-11
-  pioId: dc1-11
-  enumId: TEAM_MAGMA_S_CLAYDOL_11
+  pioId: dc1-10
+  nationalPokedexNumber: 343
+- enumId: TEAM_MAGMA_S_CLAYDOL_11:DOUBLE_CRISIS
   name: Team Magma's Claydol
-  nationalPokedexNumber: 344
   number: '11'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_MAGMA]
-  evolvesFrom: Team Magma's Baltoy
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_MAGMA]
+  types: [PSYCHIC]
+  evolvesFrom: [Team Magma's Baltoy]
   hp: 90
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Magma Switch
     text: Once during your turn (before your attack), you may move a basic Energy
       from 1 of your Pokémon to 1 of your Team Magma Pokémon.
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Power Beam
     damage: '70'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Masakazu Fukuda
-- id: 366-12
-  pioId: dc1-12
-  enumId: TEAM_MAGMA_S_ARON_12
+  pioId: dc1-11
+  nationalPokedexNumber: 344
+- enumId: TEAM_MAGMA_S_ARON_12:DOUBLE_CRISIS
   name: Team Magma's Aron
-  nationalPokedexNumber: 304
   number: '12'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, TEAM_MAGMA]
-  evolvesTo: [Lairon]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, TEAM_MAGMA]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Gnaw
     damage: '10'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Akira Komayama
-- id: 366-13
-  pioId: dc1-13
-  enumId: TEAM_MAGMA_S_LAIRON_13
+  pioId: dc1-12
+  nationalPokedexNumber: 304
+- enumId: TEAM_MAGMA_S_LAIRON_13:DOUBLE_CRISIS
   name: Team Magma's Lairon
-  nationalPokedexNumber: 305
   number: '13'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_MAGMA]
-  evolvesFrom: Team Magma's Aron
-  evolvesTo: [Aggron]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_MAGMA]
+  types: [FIGHTING]
+  evolvesFrom: [Team Magma's Aron]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Gnaw
     damage: '30'
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Take Down
     damage: '60'
     text: This Pokémon does 10 damage to itself.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Common
   artist: Masakazu Fukuda
-- id: 366-14
-  pioId: dc1-14
-  enumId: TEAM_MAGMA_S_AGGRON_14
+  pioId: dc1-13
+  nationalPokedexNumber: 305
+- enumId: TEAM_MAGMA_S_AGGRON_14:DOUBLE_CRISIS
   name: Team Magma's Aggron
-  nationalPokedexNumber: 306
   number: '14'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE2, TEAM_MAGMA]
-  evolvesFrom: Team Magma's Lairon
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE2, TEAM_MAGMA]
+  types: [FIGHTING]
+  evolvesFrom: [Team Magma's Lairon]
   hp: 140
-  retreatCost: 4
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Rock Stomp
     damage: 40x
     text: Discard as many [F] Energy attached to your Pokémon as you like. This attack
       does 40 damage times the amount of [F] Energy you discarded.
-  - cost: [F, F, F, C]
+  - cost: [FIGHTING, FIGHTING, FIGHTING, COLORLESS]
     name: Boulder Storm
     damage: '120'
     text: This attack does 20 damage to each of your opponent's Benched Pokémon that
       has any damage counters on it. (Don't apply Weakness and Resistance for Benched
       Pokémon.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Rare Holo
   artist: TOKIYA
-- id: 366-15
-  pioId: dc1-15
-  enumId: TEAM_MAGMA_S_GROUDON_EX_15
+  pioId: dc1-14
+  nationalPokedexNumber: 306
+- enumId: TEAM_MAGMA_S_GROUDON_EX_15:DOUBLE_CRISIS
   name: Team Magma's Groudon-EX
-  nationalPokedexNumber: 383
   number: '15'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, POKEMON_EX, TEAM_MAGMA]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, POKEMON_EX, TEAM_MAGMA]
+  types: [FIGHTING]
   hp: 190
-  retreatCost: 4
   abilities:
   - type: Ability
     name: Power Saver
     text: If there are 4 or fewer Team Magma Pokémon in play, this Pokémon can't attack.
   moves:
-  - cost: [F, F, F, C]
+  - cost: [FIGHTING, FIGHTING, FIGHTING, COLORLESS]
     name: Magma Quake
     damage: 80+
     text: If your opponent's Active Pokémon already has any damage counters on it,
       this attack does 80 more damage.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Ultra Rare
   artist: nagimiso
-- id: 366-16
-  pioId: dc1-16
-  enumId: TEAM_AQUA_S_POOCHYENA_16
+  pioId: dc1-15
+  nationalPokedexNumber: 383
+- enumId: TEAM_AQUA_S_POOCHYENA_16:DOUBLE_CRISIS
   name: Team Aqua's Poochyena
-  nationalPokedexNumber: 261
   number: '16'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, TEAM_AQUA]
-  evolvesTo: [Mightyena]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, TEAM_AQUA]
+  types: [DARKNESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Roar
     text: Your opponent switches his or her Active Pokémon with 1 of his or her Benched
       Pokémon.
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Bite
     damage: '20'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Kouki Saitou
-- id: 366-17
-  pioId: dc1-17
-  enumId: TEAM_MAGMA_S_POOCHYENA_17
-  name: Team Magma's Poochyena
+  pioId: dc1-16
   nationalPokedexNumber: 261
+- enumId: TEAM_MAGMA_S_POOCHYENA_17:DOUBLE_CRISIS
+  name: Team Magma's Poochyena
   number: '17'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, TEAM_MAGMA]
-  evolvesTo: [Mightyena]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, TEAM_MAGMA]
+  types: [DARKNESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Infiltrate
     text: Your opponent reveals his or her hand.
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Bite
     damage: '20'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: TOKIYA
-- id: 366-18
-  pioId: dc1-18
-  enumId: TEAM_AQUA_S_MIGHTYENA_18
+  pioId: dc1-17
+  nationalPokedexNumber: 261
+- enumId: TEAM_AQUA_S_MIGHTYENA_18:DOUBLE_CRISIS
   name: Team Aqua's Mightyena
-  nationalPokedexNumber: 262
   number: '18'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_AQUA]
-  evolvesFrom: Team Aqua's Poochyena
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_AQUA]
+  types: [DARKNESS]
+  evolvesFrom: [Team Aqua's Poochyena]
   hp: 100
-  retreatCost: 1
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Teampact
     damage: 30x
     text: Flip a coin for each Team Aqua Pokémon you have in play. This attack does
       30 damage times the number of heads.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Crunch
     damage: '80'
     text: Flip a coin. If heads, discard an Energy attached to your opponent's Active
       Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 366-19
-  pioId: dc1-19
-  enumId: TEAM_MAGMA_S_MIGHTYENA_19
-  name: Team Magma's Mightyena
+  pioId: dc1-18
   nationalPokedexNumber: 262
+- enumId: TEAM_MAGMA_S_MIGHTYENA_19:DOUBLE_CRISIS
+  name: Team Magma's Mightyena
   number: '19'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_MAGMA]
-  evolvesFrom: Team Magma's Poochyena
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_MAGMA]
+  types: [DARKNESS]
+  evolvesFrom: [Team Magma's Poochyena]
   hp: 100
-  retreatCost: 1
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Bite
     damage: '30'
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Hostile Fang
     damage: '80'
     text: If your opponent's Active Pokémon is a Team Aqua Pokémon, this attack does
       40 more damage.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Hitoshi Ariga
-- id: 366-20
-  pioId: dc1-20
-  enumId: TEAM_AQUA_S_CARVANHA_20
+  pioId: dc1-19
+  nationalPokedexNumber: 262
+- enumId: TEAM_AQUA_S_CARVANHA_20:DOUBLE_CRISIS
   name: Team Aqua's Carvanha
-  nationalPokedexNumber: 318
   number: '20'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, TEAM_AQUA]
-  evolvesTo: [Sharpedo]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, TEAM_AQUA]
+  types: [DARKNESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Fin Smack
     damage: 10x
     text: Flip 2 coins. This attack does 10 damage times the number of heads.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Sanosuke Sakuma
-- id: 366-21
-  pioId: dc1-21
-  enumId: TEAM_AQUA_S_SHARPEDO_21
+  pioId: dc1-20
+  nationalPokedexNumber: 318
+- enumId: TEAM_AQUA_S_SHARPEDO_21:DOUBLE_CRISIS
   name: Team Aqua's Sharpedo
-  nationalPokedexNumber: 319
   number: '21'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_AQUA]
-  evolvesFrom: Team Aqua's Carvanha
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1, TEAM_AQUA]
+  types: [DARKNESS]
+  evolvesFrom: [Team Aqua's Carvanha]
   hp: 90
-  retreatCost: 0
   abilities:
   - type: Ability
     name: Aqua Search
@@ -539,190 +486,156 @@ cards:
       a Team Aqua Pokémon, reveal it, and put it into your hand. Shuffle your deck
       afterward.
   moves:
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Sharp Fang
     damage: '70'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 0
   rarity: Rare Holo
   artist: kawayoo
-- id: 366-22
-  pioId: dc1-22
-  enumId: TEAM_MAGMA_S_ZANGOOSE_22
+  pioId: dc1-21
+  nationalPokedexNumber: 319
+- enumId: TEAM_MAGMA_S_ZANGOOSE_22:DOUBLE_CRISIS
   name: Team Magma's Zangoose
-  nationalPokedexNumber: 335
   number: '22'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON, TEAM_MAGMA]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON, TEAM_MAGMA]
+  types: [COLORLESS]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Call for Family
     text: Search your deck for up to 2 Basic Team Magma Pokémon and put them onto
       your Bench. Shuffle your deck afterward.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Team Play
     damage: 20x
     text: This attack does 20 damage times the number of Team Magma Pokémon on your
       Bench.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Shin Nagasawa
-- id: 366-23
-  pioId: dc1-23
-  enumId: AQUA_DIFFUSER_23
+  pioId: dc1-22
+  nationalPokedexNumber: 335
+- enumId: AQUA_DIFFUSER_23:DOUBLE_CRISIS
   name: Aqua Diffuser
   number: '23'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL, TEAM_AQUA]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL, TEAM_AQUA]
   rarity: Uncommon
-  text:
-  - The Team Aqua Pokémon this card is attached to can also use the attack on this
-    card. (You still need the necessary Energy to use this attack.)
-  - '[W] Aqua Diffuser: Your opponent''s Active Pokémon is now Confused and Poisoned.'
+  text: 'The Team Aqua Pokémon this card is attached to can also use the attack on
+    this card. (You still need the necessary Energy to use this attack.)
+
+    [W] Aqua Diffuser: Your opponent''s Active Pokémon is now Confused and Poisoned.'
   artist: Toyste Beach
-- id: 366-24
-  pioId: dc1-24
-  enumId: MAGMA_POINTER_24
+  pioId: dc1-23
+- enumId: MAGMA_POINTER_24:DOUBLE_CRISIS
   name: Magma Pointer
   number: '24'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL, TEAM_MAGMA]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL, TEAM_MAGMA]
   rarity: Uncommon
-  text:
-  - The Team Magma Pokémon this card is attached to can also use the attack on this
-    card. (You still need the necessary Energy to use this attack.)
-  - '[F] Magma Pointer: This attack does 20 damage to 1 of your opponent''s Pokémon
+  text: 'The Team Magma Pokémon this card is attached to can also use the attack on
+    this card. (You still need the necessary Energy to use this attack.)
+
+    [F] Magma Pointer: This attack does 20 damage to 1 of your opponent''s Pokémon
     (Don''t apply Weakness and Resistance for Benched Pokémon.)'
   artist: Toyste Beach
-- id: 366-25
-  pioId: dc1-25
-  enumId: TEAM_AQUA_ADMIN_25
+  pioId: dc1-24
+- enumId: TEAM_AQUA_ADMIN_25:DOUBLE_CRISIS
   name: Team Aqua Admin
   number: '25'
-  superType: TRAINER
-  subTypes: [SUPPORTER, TEAM_AQUA]
+  cardTypes: [TRAINER, SUPPORTER, TEAM_AQUA]
   rarity: Uncommon
-  text:
-  - Attach a basic Energy card from your discard pile to your Active Team Aqua Pokémon.
+  text: Attach a basic Energy card from your discard pile to your Active Team Aqua
+    Pokémon.
   artist: GAME FREAK inc.
-- id: 366-26
-  pioId: dc1-26
-  enumId: TEAM_AQUA_GRUNT_26
+  pioId: dc1-25
+- enumId: TEAM_AQUA_GRUNT_26:DOUBLE_CRISIS
   name: Team Aqua Grunt
   number: '26'
-  superType: TRAINER
-  subTypes: [SUPPORTER, TEAM_AQUA]
+  cardTypes: [TRAINER, SUPPORTER, TEAM_AQUA]
   rarity: Uncommon
-  text:
-  - Discard a card from your hand. (If you can't discard a card, you can't play this
-    card.) Draw 3 cards. If you discarded a Team Aqua Pokémon, draw 1 more card.
+  text: Discard a card from your hand. (If you can't discard a card, you can't play
+    this card.) Draw 3 cards. If you discarded a Team Aqua Pokémon, draw 1 more card.
   artist: GAME FREAK inc.
-- id: 366-27
-  pioId: dc1-27
-  enumId: TEAM_AQUA_S_GREAT_BALL_27
+  pioId: dc1-26
+- enumId: TEAM_AQUA_S_GREAT_BALL_27:DOUBLE_CRISIS
   name: Team Aqua's Great Ball
   number: '27'
-  superType: TRAINER
-  subTypes: [ITEM, TEAM_AQUA]
+  cardTypes: [TRAINER, ITEM, TEAM_AQUA]
   rarity: Uncommon
-  text:
-  - Search your deck for a Basic Team Aqua Pokémon and a basic [W] Energy card, reveal
-    them, and put them into your hand. Shuffle your deck afterward.
+  text: Search your deck for a Basic Team Aqua Pokémon and a basic [W] Energy card,
+    reveal them, and put them into your hand. Shuffle your deck afterward.
   artist: Toyste Beach
-- id: 366-28
-  pioId: dc1-28
-  enumId: TEAM_AQUA_S_SECRET_BASE_28
+  pioId: dc1-27
+- enumId: TEAM_AQUA_S_SECRET_BASE_28:DOUBLE_CRISIS
   name: Team Aqua's Secret Base
   number: '28'
-  superType: TRAINER
-  subTypes: [STADIUM, TEAM_AQUA]
+  cardTypes: [TRAINER, STADIUM, TEAM_AQUA]
   rarity: Uncommon
-  text:
-  - The Retreat Cost of each Pokémon in play (except for Team Aqua Pokémon) is [C]
-    more.
+  text: The Retreat Cost of each Pokémon in play (except for Team Aqua Pokémon) is
+    [C] more.
   artist: Ryo Ueda
-- id: 366-29
-  pioId: dc1-29
-  enumId: TEAM_MAGMA_ADMIN_29
+  pioId: dc1-28
+- enumId: TEAM_MAGMA_ADMIN_29:DOUBLE_CRISIS
   name: Team Magma Admin
   number: '29'
-  superType: TRAINER
-  subTypes: [SUPPORTER, TEAM_MAGMA]
+  cardTypes: [TRAINER, SUPPORTER, TEAM_MAGMA]
   rarity: Uncommon
-  text:
-  - Put up to 3 Team Magma Pokémon from your discard pile into your hand.
+  text: Put up to 3 Team Magma Pokémon from your discard pile into your hand.
   artist: GAME FREAK inc.
-- id: 366-30
-  pioId: dc1-30
-  enumId: TEAM_MAGMA_GRUNT_30
+  pioId: dc1-29
+- enumId: TEAM_MAGMA_GRUNT_30:DOUBLE_CRISIS
   name: Team Magma Grunt
   number: '30'
-  superType: TRAINER
-  subTypes: [SUPPORTER, TEAM_MAGMA]
+  cardTypes: [TRAINER, SUPPORTER, TEAM_MAGMA]
   rarity: Uncommon
-  text:
-  - Discard a card from your hand. (If you can't discard a card, you can't play this
-    card.) Draw 3 cards. If you discarded a Team Magma Pokémon, draw 1 more card.
+  text: Discard a card from your hand. (If you can't discard a card, you can't play
+    this card.) Draw 3 cards. If you discarded a Team Magma Pokémon, draw 1 more card.
   artist: GAME FREAK inc.
-- id: 366-31
-  pioId: dc1-31
-  enumId: TEAM_MAGMA_S_GREAT_BALL_31
+  pioId: dc1-30
+- enumId: TEAM_MAGMA_S_GREAT_BALL_31:DOUBLE_CRISIS
   name: Team Magma's Great Ball
   number: '31'
-  superType: TRAINER
-  subTypes: [ITEM, TEAM_MAGMA]
+  cardTypes: [TRAINER, ITEM, TEAM_MAGMA]
   rarity: Uncommon
-  text:
-  - Search your deck for a Basic Team Magma Pokémon and a basic [F] Energy card, reveal
-    them, and put them into your hand. Shuffle your deck afterward.
+  text: Search your deck for a Basic Team Magma Pokémon and a basic [F] Energy card,
+    reveal them, and put them into your hand. Shuffle your deck afterward.
   artist: Toyste Beach
-- id: 366-32
-  pioId: dc1-32
-  enumId: TEAM_MAGMA_S_SECRET_BASE_32
+  pioId: dc1-31
+- enumId: TEAM_MAGMA_S_SECRET_BASE_32:DOUBLE_CRISIS
   name: Team Magma's Secret Base
   number: '32'
-  superType: TRAINER
-  subTypes: [STADIUM, TEAM_MAGMA]
+  cardTypes: [TRAINER, STADIUM, TEAM_MAGMA]
   rarity: Uncommon
-  text:
-  - Whenever any player puts a Basic Pokémon (except for Team Magma Pokémon) from
+  text: Whenever any player puts a Basic Pokémon (except for Team Magma Pokémon) from
     his or her hand onto his or her Bench, put 2 damage counters on that Pokémon.
   artist: Ryo Ueda
-- id: 366-33
-  pioId: dc1-33
-  enumId: DOUBLE_AQUA_ENERGY_33
+  pioId: dc1-32
+- enumId: DOUBLE_AQUA_ENERGY_33:DOUBLE_CRISIS
   name: Double Aqua Energy
   number: '33'
-  superType: ENERGY
-  subTypes: [SPECIAL_ENERGY, TEAM_AQUA]
+  cardTypes: [ENERGY, SPECIAL_ENERGY, TEAM_AQUA]
   rarity: Uncommon
-  text:
-  - This card can only be attached to Team Aqua Pokémon. Discard this card at the
-    end of the turn you attached it.
-  - This card provides [W][W] Energy only while it is attached to a Team Aqua Pokémon.
-  - (If this card is attached to anything other than a Team Aqua Pokémon, discard
-    this card.)
-  energy: [[W], [W]]
+  text: |-
+    This card can only be attached to Team Aqua Pokémon. Discard this card at the end of the turn you attached it.
+    This card provides [W][W] Energy only while it is attached to a Team Aqua Pokémon.
+    (If this card is attached to anything other than a Team Aqua Pokémon, discard this card.)
+  energy: [[WATER], [WATER]]
   artist: 5ban Graphics
-- id: 366-34
-  pioId: dc1-34
-  enumId: DOUBLE_MAGMA_ENERGY_34
+  pioId: dc1-33
+- enumId: DOUBLE_MAGMA_ENERGY_34:DOUBLE_CRISIS
   name: Double Magma Energy
   number: '34'
-  superType: ENERGY
-  subTypes: [SPECIAL_ENERGY, TEAM_MAGMA]
+  cardTypes: [ENERGY, SPECIAL_ENERGY, TEAM_MAGMA]
   rarity: Uncommon
-  text:
-  - This card can only be attached to Team Magma Pokémon. Discard this card at the
-    end of the turn you attached it.
-  - This card provides [F][F] Energy only while it is attached to a Team Magma Pokémon.
-  - (If this card is attached to anything other than a Team Magma Pokémon, discard
-    this card.)
-  energy: [[F], [F]]
+  text: |-
+    This card can only be attached to Team Magma Pokémon. Discard this card at the end of the turn you attached it.
+    This card provides [F][F] Energy only while it is attached to a Team Magma Pokémon.
+    (If this card is attached to anything other than a Team Magma Pokémon, discard this card.)
+  energy: [[FIGHTING], [FIGHTING]]
   artist: 5ban Graphics
+  pioId: dc1-34

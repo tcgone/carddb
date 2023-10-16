@@ -1,396 +1,364 @@
-schema: E2
-id: '422'
-name: Detective Pikachu
-enumId: DETECTIVE_PIKACHU
-abbr: DET
-pioId: det1
+schema: E3
+expansion:
+  orderId: '422'
+  name: Detective Pikachu
+  enumId: DETECTIVE_PIKACHU
+  shortName: DET
+  pioId: det1
+  isFanMade: false
 cards:
-- id: 422-1
-  pioId: det1-1
-  enumId: BULBASAUR_1
+- enumId: BULBASAUR_1:DETECTIVE_PIKACHU
   name: Bulbasaur
   number: '1'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Find a Friend
     text: Search your deck for a [G] Pokémon, reveal it, and put it into your hand.
       Then, shuffle your deck.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 422-2
-  pioId: det1-2
-  enumId: LUDICOLO_2
+  pioId: det1-1
+- enumId: LUDICOLO_2:DETECTIVE_PIKACHU
   name: Ludicolo
   number: '2'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Lombre
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Lombre]
   hp: 140
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Table Service
     text: Once during your turn (before your attack), you may heal 30 damage from
       1 of your Pokémon.
   moves:
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Punch and Run
     damage: '70'
     text: Switch this Pokémon with 1 of your Benched Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 3
   rarity: Rare
-- id: 422-3
-  pioId: det1-3
-  enumId: MORELULL_3
+  pioId: det1-2
+- enumId: MORELULL_3:DETECTIVE_PIKACHU
   name: Morelull
   number: '3'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Sleep Spore
     damage: '10'
     text: Your opponent’s Active Pokémon is now Asleep.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 422-4
-  pioId: det1-4
-  enumId: CHARMANDER_4
+  pioId: det1-3
+- enumId: CHARMANDER_4:DETECTIVE_PIKACHU
   name: Charmander
   number: '4'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Reckless Charge
     damage: '20'
     text: This Pokémon does 10 damage to itself.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 422-5
-  pioId: det1-5
-  enumId: CHARIZARD_5
+  pioId: det1-4
+- enumId: CHARIZARD_5:DETECTIVE_PIKACHU
   name: Charizard
   number: '5'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Charmeleon
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIRE]
+  evolvesFrom: [Charmeleon]
   hp: 180
-  retreatCost: 3
   moves:
-  - cost: [R, C, C]
+  - cost: [FIRE, COLORLESS, COLORLESS]
     name: Slash
     damage: '70'
-  - cost: [R, C, C, C]
+  - cost: [FIRE, COLORLESS, COLORLESS, COLORLESS]
     name: Wild Tackle
     damage: '180'
     text: This Pokémon does 50 damage to itself.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-- id: 422-6
-  pioId: det1-6
-  enumId: ARCANINE_6
+  pioId: det1-5
+- enumId: ARCANINE_6:DETECTIVE_PIKACHU
   name: Arcanine
   number: '6'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Growlithe
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Growlithe]
   hp: 120
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Security Guard
     text: As long as this Pokémon is your Active Pokémon, all of your Pokémon take
       30 less damage from your opponent's attacks (after applying Weakness and Resistance).
   moves:
-  - cost: [R, C, C]
+  - cost: [FIRE, COLORLESS, COLORLESS]
     name: Sharp Fang
     damage: '90'
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 3
   rarity: Rare
-- id: 422-7
-  pioId: det1-7
-  enumId: PSYDUCK_7
+  pioId: det1-6
+- enumId: PSYDUCK_7:DETECTIVE_PIKACHU
   name: Psyduck
   number: '7'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Panic
     damage: '10'
     text: This Pokémon is now Confused.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Common
-- id: 422-8
-  pioId: det1-8
-  enumId: MAGIKARP_8
+  pioId: det1-7
+- enumId: MAGIKARP_8:DETECTIVE_PIKACHU
   name: Magikarp
   number: '8'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 30
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Hold Still
     text: Heal 10 damage from this Pokémon.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
-- id: 422-9
-  pioId: det1-9
-  enumId: GRENINJA_9
+  pioId: det1-8
+- enumId: GRENINJA_9:DETECTIVE_PIKACHU
   name: Greninja
   number: '9'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Frogadier
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Frogadier]
   hp: 140
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Evasion Jutsu
     text: If any damage is done to this Pokémon by attacks, flip a coin. If heads,
       prevent that damage.
   moves:
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Furious Shurikens
     text: This attack does 50 damage to 2 of your opponent’s Pokémon. (Don’t apply
       Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Ultra Rare
-- id: 422-10
-  pioId: det1-10
-  enumId: DETECTIVE_PIKACHU_10
+  pioId: det1-9
+- enumId: DETECTIVE_PIKACHU_10:DETECTIVE_PIKACHU
   name: Detective Pikachu
   number: '10'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Scout
     text: Your opponent reveals their hand.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Surprise Attack
     damage: '80'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 2
   rarity: Rare
-- id: 422-11
-  pioId: det1-11
-  enumId: MR_MIME_11
+  pioId: det1-10
+  variantOf: DETECTIVE_PIKACHU_SM170:SUN_MOON_PROMOS
+  variantType: Reprint
+- enumId: MR_MIME_11:DETECTIVE_PIKACHU
   name: Mr. Mime
   number: '11'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 80
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Pantomime
     text: When you play this Pokémon from your hand onto your Bench during your turn,
       you may switch 1 of your face-down Prize cards with the top card of your deck.
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Juggling
     damage: 20x
     text: Flip 4 coins. This attack does 20 damage for each heads.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare
-- id: 422-12
-  pioId: det1-12
-  enumId: MEWTWO_12
+  pioId: det1-11
+- enumId: MEWTWO_12:DETECTIVE_PIKACHU
   name: Mewtwo
   number: '12'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 130
-  retreatCost: 2
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Psyjack
     damage: '30'
     text: Choose 1 of your opponent's Active Pokémon's attacks. That Pokémon can't
       use that attack during your opponent's next turn.
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Break Burn
     damage: '130'
     text: Discard 2 [P] Energy from this Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Ultra Rare
-- id: 422-13
-  pioId: det1-13
-  enumId: MACHAMP_13
+  pioId: det1-12
+- enumId: MACHAMP_13:DETECTIVE_PIKACHU
   name: Machamp
   number: '13'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Machoke
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Machoke]
   hp: 160
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Directing Traffic
     text: Look at the top 5 cards of your deck and put them back in any order.
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Cross Chop
     damage: 80+
     text: Flip a coin. If heads, this attack does 60 more damage.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare
-- id: 422-14
-  pioId: det1-14
-  enumId: JIGGLYPUFF_14
+  pioId: det1-13
+- enumId: JIGGLYPUFF_14:DETECTIVE_PIKACHU
   name: Jigglypuff
   number: '14'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Healing Melody
     text: Heal 10 damage from each of your Pokémon.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Common
-- id: 422-15
-  pioId: det1-15
-  enumId: SNUBBULL_15
+  pioId: det1-14
+- enumId: SNUBBULL_15:DETECTIVE_PIKACHU
   name: Snubbull
   number: '15'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Play Rough
     damage: 10+
     text: Flip a coin. If heads, this attack does 30 more damage.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 2
   rarity: Common
-- id: 422-16
-  pioId: det1-16
-  enumId: LICKITUNG_16
+  pioId: det1-15
+- enumId: LICKITUNG_16:DETECTIVE_PIKACHU
   name: Lickitung
   number: '16'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 100
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Continuous Lick
     damage: 20x
     text: Flip a coin until you get tails. This attack does 20 damage for each heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 3
   rarity: Common
-- id: 422-17
-  pioId: det1-17
-  enumId: DITTO_17
+  pioId: det1-16
+- enumId: DITTO_17:DETECTIVE_PIKACHU
   name: Ditto
   number: '17'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Copy Anything
     text: Choose 1 of your opponent's Pokémon's attacks and use it as this attack.
       If this Pokémon doesn't have the necessary Energy to use that attack, this attack
       does nothing.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Ultra Rare
-- id: 422-18
-  pioId: det1-18
-  enumId: SLAKING_18
+  pioId: det1-17
+- enumId: SLAKING_18:DETECTIVE_PIKACHU
   name: Slaking
   number: '18'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Vigoroth
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [COLORLESS]
+  evolvesFrom: [Vigoroth]
   hp: 180
-  retreatCost: 4
   moves:
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Pitch
     damage: '150'
     text: Your opponent switches their Active Pokémon with 1 of their Benched Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 4
   rarity: Rare
+  pioId: det1-18

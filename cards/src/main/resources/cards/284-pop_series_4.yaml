@@ -1,44 +1,39 @@
-schema: E2
-id: '284'
-name: POP Series 4
-enumId: POP_SERIES_4
-abbr: POP4
+schema: E3
+expansion:
+  orderId: '284'
+  name: POP Series 4
+  enumId: POP_SERIES_4
+  shortName: POP4
+  isFanMade: false
 cards:
-- id: 284-1
-  pioId: pop4-1
-  enumId: CHIMECHO_(DELTA_SPECIES)_1
+- enumId: CHIMECHO_(DELTA_SPECIES)_1:POP_SERIES_4
   name: Chimecho (Delta Species)
-  nationalPokedexNumber: 358
   number: '1'
-  types: [M]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [METAL]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Wrap
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [M, C]
+  - cost: [METAL, COLORLESS]
     name: Sonicboom
     damage: '30'
     text: This attack's damage isn't affected by Weakness or Resistance.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Masakazu Fukuda
-- id: 284-2
-  pioId: pop4-2
-  enumId: DEOXYS_Δ_2
+  pioId: pop4-1
+  nationalPokedexNumber: 358
+- enumId: DEOXYS_Δ_2:POP_SERIES_4
   name: Deoxys δ
-  nationalPokedexNumber: 386
   number: '2'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 70
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Form Change
@@ -48,84 +43,80 @@ cards:
       If you do, put Deoxys on top of your deck. Shuffle your deck afterward. You
       can't use more than 1 Form Change Poké-Power each turn.
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Crystal Laser
     damage: '20'
     text: During your next turn, Deoxys's attacks do 40 more damage to the Defending
       Pokémon (before applying Weakness and Resistance).
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Kouki Saitou
-- id: 284-3
-  pioId: pop4-3
-  enumId: FLYGON_3
+  pioId: pop4-2
+  nationalPokedexNumber: 386
+  variantOf: DEOXYS_Δ_5:HOLON_PHANTOMS
+  variantType: Reprint
+- enumId: FLYGON_3:POP_SERIES_4
   name: Flygon
-  nationalPokedexNumber: 330
   number: '3'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Vibrava
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Vibrava]
   hp: 120
-  retreatCost: 2
   abilities:
   - type: Poké-Body
     name: Levitate
     text: As long as Flygon has any Energy attached to it, the Retreat Cost for Flygon
       is 0.
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Bite
     damage: '30'
-  - cost: [F, C, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS, COLORLESS]
     name: Sand Pit
     damage: '70'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Hisao Nakamura
-- id: 284-4
-  pioId: pop4-4
-  enumId: MEW_4
+  pioId: pop4-3
+  nationalPokedexNumber: 330
+- enumId: MEW_4:POP_SERIES_4
   name: Mew
-  nationalPokedexNumber: 151
   number: '4'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 70
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Reactive Barrier
     text: As long as Mew has any React Energy cards attached to it, prevent all effects,
       excluding damage, done to Mew by attacks from your opponent's Pokémon.
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Psyshock
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Nakaoka
-- id: 284-5
-  pioId: pop4-5
-  enumId: SCEPTILE_5
+  pioId: pop4-4
+  nationalPokedexNumber: 151
+- enumId: SCEPTILE_5:POP_SERIES_4
   name: Sceptile
-  nationalPokedexNumber: 254
   number: '5'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Grovyle
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Grovyle]
   hp: 100
-  retreatCost: 3
   abilities:
   - type: Poké-Power
     name: Energy Trans
@@ -133,199 +124,174 @@ cards:
       card attached to 1 of your Pokémon to another of your Pokémon. This power can't
       be used if Sceptile is affected by a Special Condition.
   moves:
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Tail Rap
     damage: 50x
     text: Flip 2 coins. This attack does 50 damage times the number of heads.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: W
+  - type: WATER
     value: '-30'
+  retreatCost: 3
   rarity: Rare
   artist: Atsuko Nishida
-- id: 284-6
-  pioId: pop4-6
-  enumId: COMBUSKEN_6
+  pioId: pop4-5
+  nationalPokedexNumber: 254
+  variantOf: SCEPTILE_20:POKEMOD_RUBY_SAPPHIRE
+  variantType: Reprint
+- enumId: COMBUSKEN_6:POP_SERIES_4
   name: Combusken
-  nationalPokedexNumber: 256
   number: '6'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Torchic
-  evolvesTo: [Blaziken]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Torchic]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Smokescreen
     damage: '10'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
-  - cost: [R, C, C]
+  - cost: [FIRE, COLORLESS, COLORLESS]
     name: Sky Uppercut
     damage: '40'
     text: This attack's damage isn't affected by Resistance.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 284-7
-  pioId: pop4-7
-  enumId: GROVYLE_7
+  pioId: pop4-6
+  nationalPokedexNumber: 256
+- enumId: GROVYLE_7:POP_SERIES_4
   name: Grovyle
-  nationalPokedexNumber: 253
   number: '7'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Treecko
-  evolvesTo: [Sceptile]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Treecko]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Quick Attack
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 10 more damage.
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Blot
     damage: '20'
     text: Remove 2 damage counters from Grovyle.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: W
+  - type: WATER
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 284-8
-  pioId: pop4-8
-  enumId: HEAL_ENERGY_8
+  pioId: pop4-7
+  nationalPokedexNumber: 253
+- enumId: HEAL_ENERGY_8:POP_SERIES_4
   name: Heal Energy
   number: '8'
-  superType: ENERGY
-  subTypes: [SPECIAL_ENERGY]
+  cardTypes: [ENERGY, SPECIAL_ENERGY]
   rarity: Uncommon
-  text:
-  - Heal Energy provides Energy. When you attach this card from your hand to 1 of
-    your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon.
-    If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than
-    providing Energy.
+  text: Heal Energy provides Energy. When you attach this card from your hand to 1
+    of your Pokémon, remove 1 damage counter and all Special Conditions from that
+    Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other
+    than providing Energy.
   artist: Takumi Akabane
-- id: 284-9
-  pioId: pop4-9
-  enumId: POKEMON_FAN_CLUB_9
+  pioId: pop4-8
+- enumId: POKEMON_FAN_CLUB_9:POP_SERIES_4
   name: Pokémon Fan Club
   number: '9'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Search your deck for up to 2 Basic Pokémon and put them onto your Bench. Shuffle
+  text: Search your deck for up to 2 Basic Pokémon and put them onto your Bench. Shuffle
     your deck afterward.
   artist: Ken Sugimori
-- id: 284-10
-  pioId: pop4-10
-  enumId: SCRAMBLE_ENERGY_10
+  pioId: pop4-9
+- enumId: SCRAMBLE_ENERGY_10:POP_SERIES_4
   name: Scramble Energy
   number: '10'
-  superType: ENERGY
-  subTypes: [SPECIAL_ENERGY]
+  cardTypes: [ENERGY, SPECIAL_ENERGY]
   rarity: Uncommon
-  text:
-  - Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex).
+  text: Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex).
     Scramble Energy provides Energy. While in play, if you have more Prize cards left
     than your opponent, Scramble Energy provides every type of Energy but provides
     only 3 in any combination at a time. If the Pokémon Scramble Energy is attached
     to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy.
   artist: Takumi Akabane
-- id: 284-11
-  pioId: pop4-11
-  enumId: MUDKIP_11
+  pioId: pop4-10
+- enumId: MUDKIP_11:POP_SERIES_4
   name: Mudkip
-  nationalPokedexNumber: 258
   number: '11'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Marshtomp]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Super Hypno Wave
     damage: '20'
     text: The Defending Pokémon is now Asleep.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Masakazu Fukuda
-- id: 284-12
-  pioId: pop4-12
-  enumId: PIDGEY_12
+  pioId: pop4-11
+  nationalPokedexNumber: 258
+- enumId: PIDGEY_12:POP_SERIES_4
   name: Pidgey
-  nationalPokedexNumber: 16
   number: '12'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Pidgeotto]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Quick Attack
     damage: 20+
     text: Flip a coin. If heads, this attack does 20 damage plus 10 more damage.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Hisao Nakamura
-- id: 284-13
-  pioId: pop4-13
-  enumId: PIKACHU_13
+  pioId: pop4-12
+  nationalPokedexNumber: 16
+- enumId: PIKACHU_13:POP_SERIES_4
   name: Pikachu
-  nationalPokedexNumber: 25
   number: '13'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Raichu]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Spark
     damage: '20'
     text: Does 10 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Kouki Saitou
-- id: 284-14
-  pioId: pop4-14
-  enumId: SQUIRTLE_14
+  pioId: pop4-13
+  nationalPokedexNumber: 25
+- enumId: SQUIRTLE_14:POP_SERIES_4
   name: Squirtle
-  nationalPokedexNumber: 7
   number: '14'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Wartortle]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Shell Retreat
@@ -333,78 +299,73 @@ cards:
       Squirtle by an opponent's attack is reduced by 10 (after applying Weakness and
       Resistance).
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Tackle
     damage: '10'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 284-15
-  pioId: pop4-15
-  enumId: TREECKO_(DELTA_SPECIES)_15
+  pioId: pop4-14
+  nationalPokedexNumber: 7
+  variantOf: SQUIRTLE_46:TEAM_MAGMA_VS_TEAM_AQUA
+  variantType: Reprint
+- enumId: TREECKO_(DELTA_SPECIES)_15:POP_SERIES_4
   name: Treecko (Delta Species)
-  nationalPokedexNumber: 252
   number: '15'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Grovyle]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Pound
     damage: '10'
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Shining Claws
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: W
+  - type: WATER
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Masakazu Fukuda
-- id: 284-16
-  pioId: pop4-16
-  enumId: WOBBUFFET_16
+  pioId: pop4-15
+  nationalPokedexNumber: 252
+- enumId: WOBBUFFET_16:POP_SERIES_4
   name: Wobbuffet
-  nationalPokedexNumber: 202
   number: '16'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Nap
     text: Remove 2 damage counters from Wobbuffet.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Expand
     damage: '20'
     text: During your opponent's next turn, any damage done to Wobbuffet is reduced
       by 20 (after applying Weakness and Resistance).
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Kagemaru Himeno
-- id: 284-17
-  pioId: pop4-17
-  enumId: DEOXYS_EX_17
+  pioId: pop4-16
+  nationalPokedexNumber: 202
+- enumId: DEOXYS_EX_17:POP_SERIES_4
   name: Deoxys ex
-  nationalPokedexNumber: 386
   number: '17'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 110
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Form Change
@@ -414,15 +375,17 @@ cards:
       Pokémon.) If you do, put Deoxys ex on top of your deck. Shuffle your deck afterward.
       You can't use more than 1 Form Change Poké-Power each turn.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Fastwave
     damage: '50'
     text: This attack's damage isn't affected by Resistance, Poké-Powers, Poké-Bodies,
       or any other effects on the Defending Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
-  text:
-  - When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Hiromichi Sugiyama
+  pioId: pop4-17
+  nationalPokedexNumber: 386

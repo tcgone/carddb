@@ -1,22 +1,19 @@
-schema: E2
-id: '111'
-name: Base Set
-enumId: BASE_SET
-abbr: BS
-officialCount: 102
+schema: E3
+expansion:
+  orderId: '111'
+  name: Base Set
+  enumId: BASE_SET
+  shortName: BS
+  officialCount: 102
+  isFanMade: false
 cards:
-- id: 111-1
-  pioId: base1-1
-  enumId: ALAKAZAM
+- enumId: ALAKAZAM:BASE_SET
   name: Alakazam
-  nationalPokedexNumber: 65
   number: '1'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Kadabra
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [PSYCHIC]
+  evolvesFrom: [Kadabra]
   hp: 80
-  retreatCost: 3
   abilities:
   - type: Pokémon Power
     name: Damage Swap
@@ -25,27 +22,25 @@ cards:
       Out that Pokémon. This power can't be used if Alakazam is Asleep, Confused,
       or Paralyzed.
   moves:
-  - cost: [P, P, P]
+  - cost: [PSYCHIC, PSYCHIC, PSYCHIC]
     name: Confuse Ray
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-2
-  pioId: base1-2
-  enumId: BLASTOISE
+  pioId: base1-1
+  nationalPokedexNumber: 65
+- enumId: BLASTOISE:BASE_SET
   name: Blastoise
-  nationalPokedexNumber: 9
   number: '2'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Wartortle
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Wartortle]
   hp: 100
-  retreatCost: 3
   abilities:
   - type: Pokémon Power
     name: Rain Dance
@@ -54,58 +49,53 @@ cards:
       card attachment for the turn.) This power can't be used if Blastoise is Asleep,
       Confused, or Paralyzed.
   moves:
-  - cost: [W, W, W]
+  - cost: [WATER, WATER, WATER]
     name: Hydro Pump
     damage: 40+
     text: Does 40 damage plus 10 more damage for each [W] Energy attached to Blastoise
       but not used to pay for this attack's Energy cost. Extra [W] Energy after the
       2nd doesn't count.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-3
-  pioId: base1-3
-  enumId: CHANSEY
+  pioId: base1-2
+  nationalPokedexNumber: 9
+- enumId: CHANSEY:BASE_SET
   name: Chansey
-  nationalPokedexNumber: 113
   number: '3'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Blissey]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 120
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Scrunch
     text: Flip a coin. If heads, prevent all damage done to Chansey during your opponent's
       next turn. (Any other effects of attacks still happen.)
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Double-edge
     damage: '80'
     text: Chansey does 80 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-4
-  pioId: base1-4
-  enumId: CHARIZARD
+  pioId: base1-3
+  nationalPokedexNumber: 113
+- enumId: CHARIZARD:BASE_SET
   name: Charizard
-  nationalPokedexNumber: 6
   number: '4'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Charmeleon
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIRE]
+  evolvesFrom: [Charmeleon]
   hp: 120
-  retreatCost: 3
   abilities:
   - type: Pokémon Power
     name: Energy Burn
@@ -113,111 +103,102 @@ cards:
       all Energy attached to Charizard into [R] for the rest of the turn. This power
       can't be used if Charizard is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [R, R, R, R]
+  - cost: [FIRE, FIRE, FIRE, FIRE]
     name: Fire Spin
     damage: '100'
     text: Discard 2 Energy cards attached to Charizard in order to use this attack.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 3
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 111-5
-  pioId: base1-5
-  enumId: CLEFAIRY
+  pioId: base1-4
+  nationalPokedexNumber: 6
+- enumId: CLEFAIRY:BASE_SET
   name: Clefairy
-  nationalPokedexNumber: 35
   number: '5'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Clefable]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Sing
     text: Flip a coin. If heads, Defending Pokémon is now Asleep.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Metronome
     text: Choose 1 of Defending Pokémon's attacks. Metronome copies that attack except
       for its Energy costs and anything else required in order to use that attack,
       such as discarding energy cards. (No matter what type the Defending Pokémon
       is, Clefairy's type is still [C].)
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-6
-  pioId: base1-6
-  enumId: GYARADOS
+  pioId: base1-5
+  nationalPokedexNumber: 35
+- enumId: GYARADOS:BASE_SET
   name: Gyarados
-  nationalPokedexNumber: 130
   number: '6'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Magikarp
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Magikarp]
   hp: 100
-  retreatCost: 3
   moves:
-  - cost: [W, W, W]
+  - cost: [WATER, WATER, WATER]
     name: Dragon Rage
     damage: '50'
-  - cost: [W, W, W, W]
+  - cost: [WATER, WATER, WATER, WATER]
     name: Bubblebeam
     damage: '40'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 3
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 111-7
-  pioId: base1-7
-  enumId: HITMONCHAN
+  pioId: base1-6
+  nationalPokedexNumber: 130
+- enumId: HITMONCHAN:BASE_SET
   name: Hitmonchan
-  nationalPokedexNumber: 107
   number: '7'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Jab
     damage: '20'
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Special Punch
     damage: '40'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-8
-  pioId: base1-8
-  enumId: MACHAMP
+  pioId: base1-7
+  nationalPokedexNumber: 107
+- enumId: MACHAMP:BASE_SET
   name: Machamp
-  nationalPokedexNumber: 68
   number: '8'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Machoke
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Machoke]
   hp: 100
-  retreatCost: 3
   abilities:
   - type: Pokémon Power
     name: Strikes Back
@@ -226,191 +207,176 @@ cards:
       and Resistance.) This power can't be used if Machamp is already Asleep, Confused,
       or Paralyzed when your opponent attacks.
   moves:
-  - cost: [F, F, F, C]
+  - cost: [FIGHTING, FIGHTING, FIGHTING, COLORLESS]
     name: Seismic Toss
     damage: '60'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-9
-  pioId: base1-9
-  enumId: MAGNETON
+  pioId: base1-8
+  nationalPokedexNumber: 68
+- enumId: MAGNETON:BASE_SET
   name: Magneton
-  nationalPokedexNumber: 82
   number: '9'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Magnemite
-  evolvesTo: [Magnezone]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Magnemite]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, COLORLESS]
     name: Thunder Wave
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [L, L, C, C]
+  - cost: [LIGHTNING, LIGHTNING, COLORLESS, COLORLESS]
     name: Selfdestruct
     damage: '80'
     text: Does 20 damage to each Pokémon on each player's Bench. (Don't apply Weakness
       and Resistance for Benched Pokémon.) Magneton does 80 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Keiji Kinebuchi
-- id: 111-10
-  pioId: base1-10
-  enumId: MEWTWO
+  pioId: base1-9
+  nationalPokedexNumber: 82
+- enumId: MEWTWO:BASE_SET
   name: Mewtwo
-  nationalPokedexNumber: 150
   number: '10'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 60
-  retreatCost: 3
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Psychic
     damage: 10+
     text: Does 10 damage plus 10 more damage for each Energy card attached to the
       Defending Pokémon.
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Barrier
     text: Discard 1 [P] Energy card attached to Mewtwo in order to use this attack.
       During your opponent's next turn, prevent all effects of attacks, including
       damage, done to Mewtwo.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-11
-  pioId: base1-11
-  enumId: NIDOKING
+  pioId: base1-10
+  nationalPokedexNumber: 150
+- enumId: NIDOKING:BASE_SET
   name: Nidoking
-  nationalPokedexNumber: 34
   number: '11'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Nidorino
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Nidorino]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Thrash
     damage: 30+
     text: Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if
       tails, this attack does 30 damage and Nidoking does 10 damage to itself.
-  - cost: [G, G, G]
+  - cost: [GRASS, GRASS, GRASS]
     name: Toxic
     damage: '40'
     text: The Defending Pokémon is now Poisoned. It now takes 20 Poison damage instead
       of 10 after each player's turn (even if it was already Poisoned).
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-12
-  pioId: base1-12
-  enumId: NINETALES
+  pioId: base1-11
+  nationalPokedexNumber: 34
+- enumId: NINETALES:BASE_SET
   name: Ninetales
-  nationalPokedexNumber: 38
   number: '12'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Vulpix
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Vulpix]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Lure
     text: If your opponent has any Benched Pokémon, choose 1 of them and switch it
       with the Defending Pokémon.
-  - cost: [R, R, R, R]
+  - cost: [FIRE, FIRE, FIRE, FIRE]
     name: Fire Blast
     damage: '80'
     text: Discard 1 [R] Energy card attached to Ninetales in order to use this attack.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-13
-  pioId: base1-13
-  enumId: POLIWRATH
+  pioId: base1-12
+  nationalPokedexNumber: 38
+- enumId: POLIWRATH:BASE_SET
   name: Poliwrath
-  nationalPokedexNumber: 62
   number: '13'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Poliwhirl
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Poliwhirl]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Water Gun
     damage: 30+
     text: Does 30 damage plus 10 more damage for each [W] Energy attached to Poliwrath
       but not used to pay for this attack's Energy cost. Extra [W] Energy after the
       2nd doesn't count.
-  - cost: [W, W, C, C]
+  - cost: [WATER, WATER, COLORLESS, COLORLESS]
     name: Whirlpool
     damage: '40'
     text: If the Defending Pokémon has any Energy cards attached to it, choose 1 of
       them and discard it.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-14
-  pioId: base1-14
-  enumId: RAICHU
+  pioId: base1-13
+  nationalPokedexNumber: 62
+- enumId: RAICHU:BASE_SET
   name: Raichu
-  nationalPokedexNumber: 26
   number: '14'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pikachu
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Pikachu]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [L, C, C]
+  - cost: [LIGHTNING, COLORLESS, COLORLESS]
     name: Agility
     damage: '20'
     text: Flip a coin. If heads, during your opponent's next turn, prevent all effects
       of attacks, including damage, done to Raichu.
-  - cost: [L, L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, COLORLESS]
     name: Thunder
     damage: '60'
     text: Flip a coin. If tails, Raichu does 30 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-15
-  pioId: base1-15
-  enumId: VENUSAUR
+  pioId: base1-14
+  nationalPokedexNumber: 26
+- enumId: VENUSAUR:BASE_SET
   name: Venusaur
-  nationalPokedexNumber: 3
   number: '15'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Ivysaur
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Ivysaur]
   hp: 100
-  retreatCost: 2
   abilities:
   - type: Pokémon Power
     name: Energy Trans
@@ -418,162 +384,148 @@ cards:
       1 [G] Energy card attached to 1 of your Pokémon and attach it to a different
       one. This power can't be used if Venusaur is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [G, G, G, G]
+  - cost: [GRASS, GRASS, GRASS, GRASS]
     name: Solarbeam
     damage: '60'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 111-16
-  pioId: base1-16
-  enumId: ZAPDOS
+  pioId: base1-15
+  nationalPokedexNumber: 3
+- enumId: ZAPDOS:BASE_SET
   name: Zapdos
-  nationalPokedexNumber: 145
   number: '16'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [L, L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, COLORLESS]
     name: Thunder
     damage: '60'
     text: Flip a coin. If tails, Zapdos does 30 damage to itself.
-  - cost: [L, L, L, L]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, LIGHTNING]
     name: Thunderbolt
     damage: '100'
     text: Discard all Energy cards attached to Zapdos in order to use this attack.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 3
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 111-17
-  pioId: base1-17
-  enumId: BEEDRILL
+  pioId: base1-16
+  nationalPokedexNumber: 145
+- enumId: BEEDRILL:BASE_SET
   name: Beedrill
-  nationalPokedexNumber: 15
   number: '17'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Kakuna
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Kakuna]
   hp: 80
-  retreatCost: 0
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Twineedle
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
-  - cost: [G, G, G]
+  - cost: [GRASS, GRASS, GRASS]
     name: Poison Sting
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare
   artist: Ken Sugimori
-- id: 111-18
-  pioId: base1-18
-  enumId: DRAGONAIR
+  pioId: base1-17
+  nationalPokedexNumber: 15
+- enumId: DRAGONAIR:BASE_SET
   name: Dragonair
-  nationalPokedexNumber: 148
   number: '18'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Dratini
-  evolvesTo: [Dragonite]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Dratini]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Slam
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Hyper Beam
     damage: '20'
     text: If the Defending Pokémon has any Energy cards attached to it, choose 1 of
       them and discard it.
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 2
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 111-19
-  pioId: base1-19
-  enumId: DUGTRIO
+  pioId: base1-18
+  nationalPokedexNumber: 148
+- enumId: DUGTRIO:BASE_SET
   name: Dugtrio
-  nationalPokedexNumber: 51
   number: '19'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Diglett
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Diglett]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Slash
     damage: '40'
-  - cost: [F, F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING, FIGHTING]
     name: Earthquake
     damage: '70'
     text: Does 10 damage to each of your own Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 2
   rarity: Rare
   artist: Keiji Kinebuchi
-- id: 111-20
-  pioId: base1-20
-  enumId: ELECTABUZZ
+  pioId: base1-19
+  nationalPokedexNumber: 51
+- enumId: ELECTABUZZ:BASE_SET
   name: Electabuzz
-  nationalPokedexNumber: 125
   number: '20'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Electivire]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Thundershock
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Thunderpunch
     damage: 30+
     text: Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if
       tails, this attack does 30 damage and Electabuzz does 10 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 111-21
-  pioId: base1-21
-  enumId: ELECTRODE
+  pioId: base1-20
+  nationalPokedexNumber: 125
+- enumId: ELECTRODE:BASE_SET
   name: Electrode
-  nationalPokedexNumber: 101
   number: '21'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Voltorb
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Voltorb]
   hp: 80
-  retreatCost: 1
   abilities:
   - type: Pokémon Power
     name: Buzzap
@@ -583,1594 +535,1372 @@ cards:
       of that type. This power can't be used if Electrode is Asleep, Confused, or
       Paralyzed.
   moves:
-  - cost: [L, L, L]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING]
     name: Electric Shock
     damage: '50'
     text: Flip a coin. If tails, Electrode does 10 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Keiji Kinebuchi
-- id: 111-22
-  pioId: base1-22
-  enumId: PIDGEOTTO
+  pioId: base1-21
+  nationalPokedexNumber: 101
+- enumId: PIDGEOTTO:BASE_SET
   name: Pidgeotto
-  nationalPokedexNumber: 17
   number: '22'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pidgey
-  evolvesTo: [Pidgeot]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Pidgey]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Whirlwind
     damage: '20'
     text: If your opponent has any Benched Pokémon, he or she chooses 1 of them and
       switches it with the Defending Pokémon. (Do the damage before switching the
       Pokémon.)
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Mirror Move
     text: If Pidgeotto was attacked last turn, do the final result of that attack
       on Pidgeotto to the Defending Pokémon.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Rare
   artist: Ken Sugimori
-- id: 111-23
-  pioId: base1-23
-  enumId: ARCANINE
+  pioId: base1-22
+  nationalPokedexNumber: 17
+- enumId: ARCANINE:BASE_SET
   name: Arcanine
-  nationalPokedexNumber: 59
   number: '23'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Growlithe
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Growlithe]
   hp: 100
-  retreatCost: 3
   moves:
-  - cost: [R, R, C]
+  - cost: [FIRE, FIRE, COLORLESS]
     name: Flamethrower
     damage: '50'
     text: Discard 1 [R] Energy card attached to Arcanine in order to use this attack.
-  - cost: [R, R, C, C]
+  - cost: [FIRE, FIRE, COLORLESS, COLORLESS]
     name: Take Down
     damage: '80'
     text: Arcanine does 30 damage to itself.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 3
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-24
-  pioId: base1-24
-  enumId: CHARMELEON
+  pioId: base1-23
+  nationalPokedexNumber: 59
+- enumId: CHARMELEON:BASE_SET
   name: Charmeleon
-  nationalPokedexNumber: 5
   number: '24'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Charmander
-  evolvesTo: [Charizard]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Charmander]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Slash
     damage: '30'
-  - cost: [R, R, C]
+  - cost: [FIRE, FIRE, COLORLESS]
     name: Flamethrower
     damage: '50'
     text: Discard 1 [R] Energy card attached to Charmeleon in order to use this attack.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 111-25
-  pioId: base1-25
-  enumId: DEWGONG
+  pioId: base1-24
+  nationalPokedexNumber: 5
+- enumId: DEWGONG:BASE_SET
   name: Dewgong
-  nationalPokedexNumber: 87
   number: '25'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Seel
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Seel]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Aurora Beam
     damage: '50'
-  - cost: [W, W, C, C]
+  - cost: [WATER, WATER, COLORLESS, COLORLESS]
     name: Ice Beam
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 3
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 111-26
-  pioId: base1-26
-  enumId: DRATINI
+  pioId: base1-25
+  nationalPokedexNumber: 87
+- enumId: DRATINI:BASE_SET
   name: Dratini
-  nationalPokedexNumber: 147
   number: '26'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Dragonair]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Pound
     damage: '10'
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-27
-  pioId: base1-27
-  enumId: FARFETCHD
+  pioId: base1-26
+  nationalPokedexNumber: 147
+- enumId: FARFETCHD:BASE_SET
   name: Farfetch'd
-  nationalPokedexNumber: 83
   number: '27'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Leek Slap
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing. Either way, you can't use
       this attack again as long as Farfetch'd stays in play (even putting Farfetch'd
       on the Bench won't let you use it again).
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Pot Smash
     damage: '30'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-28
-  pioId: base1-28
-  enumId: GROWLITHE
+  pioId: base1-27
+  nationalPokedexNumber: 83
+- enumId: GROWLITHE:BASE_SET
   name: Growlithe
-  nationalPokedexNumber: 58
   number: '28'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Arcanine]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Flare
     damage: '20'
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-29
-  pioId: base1-29
-  enumId: HAUNTER
+  pioId: base1-28
+  nationalPokedexNumber: 58
+- enumId: HAUNTER:BASE_SET
   name: Haunter
-  nationalPokedexNumber: 93
   number: '29'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Gastly
-  evolvesTo: [Gengar]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Gastly]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hypnosis
     text: The Defending Pokémon is now Asleep.
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Dream Eater
     damage: '50'
     text: You can't use this attack unless the Defending Pokémon is Asleep.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Keiji Kinebuchi
-- id: 111-30
-  pioId: base1-30
-  enumId: IVYSAUR
+  pioId: base1-29
+  nationalPokedexNumber: 93
+- enumId: IVYSAUR:BASE_SET
   name: Ivysaur
-  nationalPokedexNumber: 2
   number: '30'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Bulbasaur
-  evolvesTo: [Venusaur]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Bulbasaur]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Vine Whip
     damage: '30'
-  - cost: [G, G, G]
+  - cost: [GRASS, GRASS, GRASS]
     name: Poisonpowder
     damage: '30'
     text: The Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-31
-  pioId: base1-31
-  enumId: JYNX
+  pioId: base1-30
+  nationalPokedexNumber: 2
+- enumId: JYNX:BASE_SET
   name: Jynx
-  nationalPokedexNumber: 124
   number: '31'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Doubleslap
     damage: 10x
     text: Flip 2 coins. This attack does 10 damage times the number of heads.
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Meditate
     damage: 20+
     text: Does 20 damage plus 10 more damage for each damage counter on the Defending
       Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-32
-  pioId: base1-32
-  enumId: KADABRA
+  pioId: base1-31
+  nationalPokedexNumber: 124
+- enumId: KADABRA:BASE_SET
   name: Kadabra
-  nationalPokedexNumber: 64
   number: '32'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Abra
-  evolvesTo: [Alakazam]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Abra]
   hp: 60
-  retreatCost: 3
   moves:
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Recover
     text: Discard 1 [P] Energy card attached to Kadabra in order to use this attack.
       Remove all damage counters from Kadabra.
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Super Psy
     damage: '50'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-33
-  pioId: base1-33
-  enumId: KAKUNA
+  pioId: base1-32
+  nationalPokedexNumber: 64
+- enumId: KAKUNA:BASE_SET
   name: Kakuna
-  nationalPokedexNumber: 14
   number: '33'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Weedle
-  evolvesTo: [Beedrill]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Weedle]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Stiffen
     text: Flip a coin. If heads, prevent all damage done to Kakuna during your opponent's
       next turn. (Any other effects of attacks still happen.)
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Poisonpowder
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Keiji Kinebuchi
-- id: 111-34
-  pioId: base1-34
-  enumId: MACHOKE
+  pioId: base1-33
+  nationalPokedexNumber: 14
+- enumId: MACHOKE:BASE_SET
   name: Machoke
-  nationalPokedexNumber: 67
   number: '34'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Machop
-  evolvesTo: [Machamp]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Machop]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Karate Chop
     text: Does 50 damage minus 10 damage for each damage counter on Machoke.
-  - cost: [F, F, C, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS, COLORLESS]
     name: Submission
     damage: '60'
     text: Machoke does 20 damage to itself.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-35
-  pioId: base1-35
-  enumId: MAGIKARP
+  pioId: base1-34
+  nationalPokedexNumber: 67
+- enumId: MAGIKARP:BASE_SET
   name: Magikarp
-  nationalPokedexNumber: 129
   number: '35'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Gyarados]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 30
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Tackle
     damage: '10'
-  - cost: [W]
+  - cost: [WATER]
     name: Flail
     damage: 10x
     text: Does 10 damage times the number of damage counters on Magikarp.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 111-36
-  pioId: base1-36
-  enumId: MAGMAR
+  pioId: base1-35
+  nationalPokedexNumber: 129
+- enumId: MAGMAR:BASE_SET
   name: Magmar
-  nationalPokedexNumber: 126
   number: '36'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Magmortar]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 50
-  retreatCost: 2
   moves:
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Fire Punch
     damage: '30'
-  - cost: [R, R, C]
+  - cost: [FIRE, FIRE, COLORLESS]
     name: Flamethrower
     damage: '50'
     text: Discard 1 [R] Energy card attached to Magmar in order to use this attack.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-37
-  pioId: base1-37
-  enumId: NIDORINO
+  pioId: base1-36
+  nationalPokedexNumber: 126
+- enumId: NIDORINO:BASE_SET
   name: Nidorino
-  nationalPokedexNumber: 33
   number: '37'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Nidoran♂
-  evolvesTo: [Nidoking]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Nidoran♂]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Double Kick
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
-  - cost: [G, G, C, C]
+  - cost: [GRASS, GRASS, COLORLESS, COLORLESS]
     name: Horn Drill
     damage: '50'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 111-38
-  pioId: base1-38
-  enumId: POLIWHIRL
+  pioId: base1-37
+  nationalPokedexNumber: 33
+- enumId: POLIWHIRL:BASE_SET
   name: Poliwhirl
-  nationalPokedexNumber: 61
   number: '38'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Poliwag
-  evolvesTo: [Poliwrath, Politoed]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Poliwag]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Amnesia
     text: Choose 1 of the Defending Pokémon's attacks. That Pokémon can't use that
       attack during your opponent's next turn.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Doubleslap
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-39
-  pioId: base1-39
-  enumId: PORYGON
+  pioId: base1-38
+  nationalPokedexNumber: 61
+- enumId: PORYGON:BASE_SET
   name: Porygon
-  nationalPokedexNumber: 137
   number: '39'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Porygon2]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 30
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Conversion 1
     text: If the Defending Pokémon has a Weakness, you may change it to a type of
       your choice other than [C].
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Conversion 2
     text: Change Porygon's Resistance to a type of your choice other than [C].
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Tomoaki Imakuni
-- id: 111-40
-  pioId: base1-40
-  enumId: RATICATE
+  pioId: base1-39
+  nationalPokedexNumber: 137
+- enumId: RATICATE:BASE_SET
   name: Raticate
-  nationalPokedexNumber: 20
   number: '40'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Rattata
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Rattata]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Bite
     damage: '20'
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Super Fang
     text: Does damage to the Defending Pokémon equal to half the Defending Pokémon's
       remaining HP (rounded up to the nearest 10).
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-41
-  pioId: base1-41
-  enumId: SEEL
+  pioId: base1-40
+  nationalPokedexNumber: 20
+- enumId: SEEL:BASE_SET
   name: Seel
-  nationalPokedexNumber: 86
   number: '41'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Dewgong]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Headbutt
     damage: '10'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-42
-  pioId: base1-42
-  enumId: WARTORTLE
+  pioId: base1-41
+  nationalPokedexNumber: 86
+- enumId: WARTORTLE:BASE_SET
   name: Wartortle
-  nationalPokedexNumber: 8
   number: '42'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Squirtle
-  evolvesTo: [Blastoise]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Squirtle]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Withdraw
     text: Flip a coin. If heads, prevent all damage done to Wartortle during your
       opponent's next turn. (Any other effects of attacks still happen.)
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Bite
     damage: '40'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 111-43
-  pioId: base1-43
-  enumId: ABRA
+  pioId: base1-42
+  nationalPokedexNumber: 8
+- enumId: ABRA:BASE_SET
   name: Abra
-  nationalPokedexNumber: 63
   number: '43'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Kadabra]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 30
-  retreatCost: 0
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Psyshock
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 0
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-44
-  pioId: base1-44
-  enumId: BULBASAUR
+  pioId: base1-43
+  nationalPokedexNumber: 63
+- enumId: BULBASAUR:BASE_SET
   name: Bulbasaur
-  nationalPokedexNumber: 1
   number: '44'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Ivysaur]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Leech Seed
     damage: '20'
     text: Unless all damage from this attack is prevented, you may remove 1 damage
       counter from Bulbasaur.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-45
-  pioId: base1-45
-  enumId: CATERPIE
+  pioId: base1-44
+  nationalPokedexNumber: 1
+- enumId: CATERPIE:BASE_SET
   name: Caterpie
-  nationalPokedexNumber: 10
   number: '45'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Metapod]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: String Shot
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 111-46
-  pioId: base1-46
-  enumId: CHARMANDER
+  pioId: base1-45
+  nationalPokedexNumber: 10
+- enumId: CHARMANDER:BASE_SET
   name: Charmander
-  nationalPokedexNumber: 4
   number: '46'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Charmeleon]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Scratch
     damage: '10'
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Ember
     damage: '30'
     text: Discard 1 [R] Energy card attached to Charmander in order to use this attack.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-47
-  pioId: base1-47
-  enumId: DIGLETT
+  pioId: base1-46
+  nationalPokedexNumber: 4
+- enumId: DIGLETT:BASE_SET
   name: Diglett
-  nationalPokedexNumber: 50
   number: '47'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Dugtrio]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 30
-  retreatCost: 0
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Dig
     damage: '10'
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Mud Slap
     damage: '30'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 0
   rarity: Common
   artist: Keiji Kinebuchi
-- id: 111-48
-  pioId: base1-48
-  enumId: DODUO
+  pioId: base1-47
+  nationalPokedexNumber: 50
+- enumId: DODUO:BASE_SET
   name: Doduo
-  nationalPokedexNumber: 84
   number: '48'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Dodrio]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Fury Attack
     damage: 10x
     text: Flip 2 coins. This attack does 10 damage times the number of heads.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-49
-  pioId: base1-49
-  enumId: DROWZEE
+  pioId: base1-48
+  nationalPokedexNumber: 84
+- enumId: DROWZEE:BASE_SET
   name: Drowzee
-  nationalPokedexNumber: 96
   number: '49'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Hypno]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Pound
     damage: '10'
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Confuse Ray
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 111-50
-  pioId: base1-50
-  enumId: GASTLY
+  pioId: base1-49
+  nationalPokedexNumber: 96
+- enumId: GASTLY:BASE_SET
   name: Gastly
-  nationalPokedexNumber: 92
   number: '50'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Haunter]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 30
-  retreatCost: 0
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Sleeping Gas
     text: Flip a coin. If heads, the Defending Pokémon is now Asleep.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Destiny Bond
     text: Discard 1 [P] Energy card attached to Gastly in order to use this attack.
       If a Pokémon Knocks Out Gastly during your opponent's next turn, Knock Out that
       Pokémon.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Common
   artist: Keiji Kinebuchi
-- id: 111-51
-  pioId: base1-51
-  enumId: KOFFING
+  pioId: base1-50
+  nationalPokedexNumber: 92
+- enumId: KOFFING:BASE_SET
   name: Koffing
-  nationalPokedexNumber: 109
   number: '51'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Weezing]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Foul Gas
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned; if tails,
       it is now Confused.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-52
-  pioId: base1-52
-  enumId: MACHOP
+  pioId: base1-51
+  nationalPokedexNumber: 109
+- enumId: MACHOP:BASE_SET
   name: Machop
-  nationalPokedexNumber: 66
   number: '52'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Machoke]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Low Kick
     damage: '20'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-53
-  pioId: base1-53
-  enumId: MAGNEMITE
+  pioId: base1-52
+  nationalPokedexNumber: 66
+- enumId: MAGNEMITE:BASE_SET
   name: Magnemite
-  nationalPokedexNumber: 81
   number: '53'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Magneton]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Thunder Wave
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Selfdestruct
     damage: '40'
     text: Does 10 damage to each Pokémon on each player's Bench. (Don't apply Weakness
       and Resistance for Benched Pokémon.) Magnemite does 40 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Keiji Kinebuchi
-- id: 111-54
-  pioId: base1-54
-  enumId: METAPOD
+  pioId: base1-53
+  nationalPokedexNumber: 81
+- enumId: METAPOD:BASE_SET
   name: Metapod
-  nationalPokedexNumber: 11
   number: '54'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Caterpie
-  evolvesTo: [Butterfree]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Caterpie]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Stiffen
     text: Flip a coin. If heads, prevent all damage done to Metapod during your opponent's
       next turn. (Any other effects of attacks still happen.)
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Stun Spore
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Ken Sugimori
-- id: 111-55
-  pioId: base1-55
-  enumId: NIDORAN_MALE
+  pioId: base1-54
+  nationalPokedexNumber: 11
+- enumId: NIDORAN_MALE:BASE_SET
   name: Nidoran♂
-  nationalPokedexNumber: 32
   number: '55'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Nidorino]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Horn Hazard
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 111-56
-  pioId: base1-56
-  enumId: ONIX
+  pioId: base1-55
+  nationalPokedexNumber: 32
+- enumId: ONIX:BASE_SET
   name: Onix
-  nationalPokedexNumber: 95
   number: '56'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Steelix]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Rock Throw
     damage: '10'
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Harden
     text: During your opponent's next turn, whenever 30 or less damage is done to
       Onix (after applying Weakness and Resistance), prevent that damage. (Any other
       effects of attacks still happen.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Common
   artist: Ken Sugimori
-- id: 111-57
-  pioId: base1-57
-  enumId: PIDGEY
+  pioId: base1-56
+  nationalPokedexNumber: 95
+- enumId: PIDGEY:BASE_SET
   name: Pidgey
-  nationalPokedexNumber: 16
   number: '57'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Pidgeotto]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Whirlwind
     damage: '10'
     text: If your opponent has any Benched Pokémon, he or she chooses 1 of them and
       switches it with the Defending Pokémon. (Do the damage before switching the
       Pokémon.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 111-58
-  pioId: base1-58
-  enumId: PIKACHU
+  pioId: base1-57
+  nationalPokedexNumber: 16
+- enumId: PIKACHU:BASE_SET
   name: Pikachu
-  nationalPokedexNumber: 25
   number: '58'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Raichu]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Gnaw
     damage: '10'
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Thunder Jolt
     damage: '30'
     text: Flip a coin. If tails, Pikachu does 10 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-59
-  pioId: base1-59
-  enumId: POLIWAG
+  pioId: base1-58
+  nationalPokedexNumber: 25
+- enumId: POLIWAG:BASE_SET
   name: Poliwag
-  nationalPokedexNumber: 60
   number: '59'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Poliwhirl]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Water Gun
     damage: 10+
     text: Does 10 damage plus 10 more damage for each [W] Energy attached to Poliwag
       but not used to pay for this attack's Energy cost. Extra [W] Energy after the
       2nd doesn't count.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 111-60
-  pioId: base1-60
-  enumId: PONYTA
+  pioId: base1-59
+  nationalPokedexNumber: 60
+- enumId: PONYTA:BASE_SET
   name: Ponyta
-  nationalPokedexNumber: 77
   number: '60'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Rapidash]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Smash Kick
     damage: '20'
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Flame Tail
     damage: '30'
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 111-61
-  pioId: base1-61
-  enumId: RATTATA
+  pioId: base1-60
+  nationalPokedexNumber: 77
+- enumId: RATTATA:BASE_SET
   name: Rattata
-  nationalPokedexNumber: 19
   number: '61'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Raticate]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 30
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Bite
     damage: '20'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 0
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-62
-  pioId: base1-62
-  enumId: SANDSHREW
+  pioId: base1-61
+  nationalPokedexNumber: 19
+- enumId: SANDSHREW:BASE_SET
   name: Sandshrew
-  nationalPokedexNumber: 27
   number: '62'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Sandslash]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Sand-attack
     damage: '10'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 111-63
-  pioId: base1-63
-  enumId: SQUIRTLE
+  pioId: base1-62
+  nationalPokedexNumber: 27
+- enumId: SQUIRTLE:BASE_SET
   name: Squirtle
-  nationalPokedexNumber: 7
   number: '63'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Wartortle]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Bubble
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Withdraw
     text: Flip a coin. If heads, prevent all damage done to Squirtle during your opponent's
       next turn. (Any other effects of attacks still happen.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-64
-  pioId: base1-64
-  enumId: STARMIE
+  pioId: base1-63
+  nationalPokedexNumber: 7
+- enumId: STARMIE:BASE_SET
   name: Starmie
-  nationalPokedexNumber: 121
   number: '64'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Staryu
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Staryu]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Recover
     text: Discard 1 [W] Energy card attached to Starmie in order to use this attack.
       Remove all damage counters from Starmie.
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Star Freeze
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Keiji Kinebuchi
-- id: 111-65
-  pioId: base1-65
-  enumId: STARYU
+  pioId: base1-64
+  nationalPokedexNumber: 121
+- enumId: STARYU:BASE_SET
   name: Staryu
-  nationalPokedexNumber: 120
   number: '65'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Starmie]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Slap
     damage: '20'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Keiji Kinebuchi
-- id: 111-66
-  pioId: base1-66
-  enumId: TANGELA
+  pioId: base1-65
+  nationalPokedexNumber: 120
+- enumId: TANGELA:BASE_SET
   name: Tangela
-  nationalPokedexNumber: 114
   number: '66'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Tangrowth]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 2
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Bind
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [G, G, G]
+  - cost: [GRASS, GRASS, GRASS]
     name: Poisonpowder
     damage: '30'
     text: The Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-67
-  pioId: base1-67
-  enumId: VOLTORB
+  pioId: base1-66
+  nationalPokedexNumber: 114
+- enumId: VOLTORB:BASE_SET
   name: Voltorb
-  nationalPokedexNumber: 100
   number: '67'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Electrode]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Tackle
     damage: '10'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Keiji Kinebuchi
-- id: 111-68
-  pioId: base1-68
-  enumId: VULPIX
+  pioId: base1-67
+  nationalPokedexNumber: 100
+- enumId: VULPIX:BASE_SET
   name: Vulpix
-  nationalPokedexNumber: 37
   number: '68'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Ninetales]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Confuse Ray
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 111-69
-  pioId: base1-69
-  enumId: WEEDLE
+  pioId: base1-68
+  nationalPokedexNumber: 37
+- enumId: WEEDLE:BASE_SET
   name: Weedle
-  nationalPokedexNumber: 13
   number: '69'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Kakuna]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Poison Sting
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 111-70
-  pioId: base1-70
-  enumId: CLEFAIRY_DOLL
+  pioId: base1-69
+  nationalPokedexNumber: 13
+- enumId: CLEFAIRY_DOLL:BASE_SET
   name: Clefairy Doll
   number: '70'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Play Clefairy Doll as if it were a Basic Pokémon. While in play, Clefairy Doll
-    counts as a Pokémon (instead of a Trainer card.) Clefairy Doll has no attacks,
+  text: Play Clefairy Doll as if it were a Basic Pokémon. While in play, Clefairy
+    Doll counts as a Pokémon (instead of a Trainer card.) Clefairy Doll has no attacks,
     can't retreat, and can't be Asleep, Confused, Paralyzed, or Poisoned. If Clefairy
     Doll is Knocked Out, it doesn't count as a Knocked Out Pokémon. At any time during
     tyour turn before your attack, you may discard Clefairy Doll.
   artist: Keiji Kinebuchi
-- id: 111-71
-  pioId: base1-71
-  enumId: COMPUTER_SEARCH
+  pioId: base1-70
+- enumId: COMPUTER_SEARCH:BASE_SET
   name: Computer Search
   number: '71'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Discard 2 of the other cards from your hand in order to search your deck for any
-    card and put it into your hand. Shuffle your deck afterward.
+  text: Discard 2 of the other cards from your hand in order to search your deck for
+    any card and put it into your hand. Shuffle your deck afterward.
   artist: Keiji Kinebuchi
-- id: 111-72
-  pioId: base1-72
-  enumId: DEVOLUTION_SPRAY
+  pioId: base1-71
+- enumId: DEVOLUTION_SPRAY:BASE_SET
   name: Devolution Spray
   number: '72'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Choose 1 of your own Pokémon in play and a Stage of Evolution. Discard all Evolution
-    cards of that Stage or higher attached to that Pokémon. That Pokémon is no longer
-    Asleep, Confused, Paralyzed, Poisoned, or anything else that might be the result
-    of an attack (just as if you had evolved it).
+  text: Choose 1 of your own Pokémon in play and a Stage of Evolution. Discard all
+    Evolution cards of that Stage or higher attached to that Pokémon. That Pokémon
+    is no longer Asleep, Confused, Paralyzed, Poisoned, or anything else that might
+    be the result of an attack (just as if you had evolved it).
   artist: Keiji Kinebuchi
-- id: 111-73
-  pioId: base1-73
-  enumId: IMPOSTER_PROFESSOR_OAK
+  pioId: base1-72
+- enumId: IMPOSTER_PROFESSOR_OAK:BASE_SET
   name: Imposter Professor Oak
   number: '73'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Your opponent shuffles his or her hand into his or her deck, then draws 7 cards.
+  text: Your opponent shuffles his or her hand into his or her deck, then draws 7
+    cards.
   artist: Ken Sugimori
-- id: 111-74
-  pioId: base1-74
-  enumId: ITEM_FINDER
+  pioId: base1-73
+- enumId: ITEM_FINDER:BASE_SET
   name: Item Finder
   number: '74'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Discard 2 of the other cards from your hand in order to put a Trainer card from
-    your discard pile into your hand.
+  text: Discard 2 of the other cards from your hand in order to put a Trainer card
+    from your discard pile into your hand.
   artist: Keiji Kinebuchi
-- id: 111-75
-  pioId: base1-75
-  enumId: LASS
+  pioId: base1-74
+- enumId: LASS:BASE_SET
   name: Lass
   number: '75'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - You and your opponent show each other your hands, then shuffle all the Trainer
+  text: You and your opponent show each other your hands, then shuffle all the Trainer
     cards from your hands into your decks.
   artist: Ken Sugimori
-- id: 111-76
-  pioId: base1-76
-  enumId: POKEMON_BREEDER
+  pioId: base1-75
+- enumId: POKEMON_BREEDER:BASE_SET
   name: Pokémon Breeder
   number: '76'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Put a Stage 2 Evolution card from your hand on the matching Basic Pokémon. You
-    can only play this card when you would be allowed to evolve that Pokémon anyway.
+  text: Put a Stage 2 Evolution card from your hand on the matching Basic Pokémon.
+    You can only play this card when you would be allowed to evolve that Pokémon anyway.
   artist: Ken Sugimori
-- id: 111-77
-  pioId: base1-77
-  enumId: POKEMON_TRADER
+  pioId: base1-76
+- enumId: POKEMON_TRADER:BASE_SET
   name: Pokémon Trader
   number: '77'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Trade 1 of the Basic Pokémon or Evolution cards in your hand for 1 of the Basic
-    Pokémon or Evolution cards from your deck. Show both cards to your opponent. Shuffle
-    your deck afterward.
+  text: Trade 1 of the Basic Pokémon or Evolution cards in your hand for 1 of the
+    Basic Pokémon or Evolution cards from your deck. Show both cards to your opponent.
+    Shuffle your deck afterward.
   artist: Ken Sugimori
-- id: 111-78
-  pioId: base1-78
-  enumId: SCOOP_UP
+  pioId: base1-77
+- enumId: SCOOP_UP:BASE_SET
   name: Scoop Up
   number: '78'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Choose 1 of your own Pokémon in play and return its Basic Pokémon card to your
-    hand. (Discard all cards attached to that card.)
+  text: Choose 1 of your own Pokémon in play and return its Basic Pokémon card to
+    your hand. (Discard all cards attached to that card.)
   artist: Keiji Kinebuchi
-- id: 111-79
-  pioId: base1-79
-  enumId: SUPER_ENERGY_REMOVAL
+  pioId: base1-78
+- enumId: SUPER_ENERGY_REMOVAL:BASE_SET
   name: Super Energy Removal
   number: '79'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Discard 1 Energy card attached to 1 of your own Pokémon in order to choose 1 of
-    your opponent's Pokémon and up to 2 Energy cards attached to it. Discard those
-    Energy cards.
+  text: Discard 1 Energy card attached to 1 of your own Pokémon in order to choose
+    1 of your opponent's Pokémon and up to 2 Energy cards attached to it. Discard
+    those Energy cards.
   artist: Keiji Kinebuchi
-- id: 111-80
-  pioId: base1-80
-  enumId: DEFENDER
+  pioId: base1-79
+- enumId: DEFENDER:BASE_SET
   name: Defender
   number: '80'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Attach Defender to 1 of your Pokémon. At the end of your opponent's next turn,
+  text: Attach Defender to 1 of your Pokémon. At the end of your opponent's next turn,
     discard Defender. Damage done to that Pokémon by attacks is reduced by 20 (after
     applying Weakness and Resistance).
   artist: Keiji Kinebuchi
-- id: 111-81
-  pioId: base1-81
-  enumId: ENERGY_RETRIEVAL
+  pioId: base1-80
+- enumId: ENERGY_RETRIEVAL:BASE_SET
   name: Energy Retrieval
   number: '81'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Trade 1 of the other cards in your hand for up to 2 basic Energy cards from your
-    discard pile.
+  text: Trade 1 of the other cards in your hand for up to 2 basic Energy cards from
+    your discard pile.
   artist: Keiji Kinebuchi
-- id: 111-82
-  pioId: base1-82
-  enumId: FULL_HEAL
+  pioId: base1-81
+- enumId: FULL_HEAL:BASE_SET
   name: Full Heal
   number: '82'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Your Active Pokémon is no longer Asleep, Confused, Paralyzed, or Poisoned.
+  text: Your Active Pokémon is no longer Asleep, Confused, Paralyzed, or Poisoned.
   artist: Keiji Kinebuchi
-- id: 111-83
-  pioId: base1-83
-  enumId: MAINTENANCE
+  pioId: base1-82
+- enumId: MAINTENANCE:BASE_SET
   name: Maintenance
   number: '83'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Shuffle 2 of the other cards from your hand into your deck in order to draw a
-    card.
+  text: Shuffle 2 of the other cards from your hand into your deck in order to draw
+    a card.
   artist: Keiji Kinebuchi
-- id: 111-84
-  pioId: base1-84
-  enumId: PLUSPOWER
+  pioId: base1-83
+- enumId: PLUSPOWER:BASE_SET
   name: PlusPower
   number: '84'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Attach PlusPower to your Active Pokémonn. At the end of your turn, discard PlusPower.
-    If this Pokémon's attack does damage to the defending Pokémon (after applying
-    Weakness and Resistance), the attack does 10 more damage to the Defending Pokémon.
-  artist: Keiji Kinebuchi
-- id: 111-85
-  pioId: base1-85
-  enumId: POKEMON_CENTER
-  name: Pokémon Center
-  number: '85'
-  superType: TRAINER
-  subTypes: []
-  rarity: Uncommon
-  text:
-  - Remove all damage counters from all of your own Pokémon with damage counters on
-    them, then discard all Energy cards attached to those Pokémon.
-  artist: Keiji Kinebuchi
-- id: 111-86
-  pioId: base1-86
-  enumId: POKEMON_FLUTE
-  name: Pokémon Flute
-  number: '86'
-  superType: TRAINER
-  subTypes: []
-  rarity: Uncommon
-  text:
-  - Choose 1 Basic Pokémon card from your opponent's discard pile and put it onto
-    his or her Bench. (You can't play Pokémon Flute if your opponent's Bench is full.)
-  artist: Keiji Kinebuchi
-- id: 111-87
-  pioId: base1-87
-  enumId: POKEDEX
-  name: Pokédex
-  number: '87'
-  superType: TRAINER
-  subTypes: []
-  rarity: Uncommon
-  text:
-  - Look at up to 5 cards from the top of your deck and rearrange them as you like.
-  artist: Keiji Kinebuchi
-- id: 111-88
-  pioId: base1-88
-  enumId: PROFESSOR_OAK
-  name: Professor Oak
-  number: '88'
-  superType: TRAINER
-  subTypes: []
-  rarity: Uncommon
-  text:
-  - Discard your hand, then draw 7 cards.
-  artist: Ken Sugimori
-- id: 111-89
-  pioId: base1-89
-  enumId: REVIVE
-  name: Revive
-  number: '89'
-  superType: TRAINER
-  subTypes: []
-  rarity: Uncommon
-  text:
-  - Put 1 Basic Pokémon card from your discard pile onto your Bench. Put damage counters
-    on that Pokémon equal to half its HP (rounded down to the nearest 10). (You can't
-    play Revive if your Bench is full.)
-  artist: Keiji Kinebuchi
-- id: 111-90
-  pioId: base1-90
-  enumId: SUPER_POTION
-  name: Super Potion
-  number: '90'
-  superType: TRAINER
-  subTypes: []
-  rarity: Uncommon
-  text:
-  - Discard 1 Energy card attached to 1 of your own Pokémon in order to remove up
-    to 4 damage counters from that Pokémon.
-  artist: Keiji Kinebuchi
-- id: 111-91
-  pioId: base1-91
-  enumId: BILL
-  name: Bill
-  number: '91'
-  superType: TRAINER
-  subTypes: []
-  rarity: Common
-  text:
-  - Draw 2 cards.
-  artist: Ken Sugimori
-- id: 111-92
-  pioId: base1-92
-  enumId: ENERGY_REMOVAL
-  name: Energy Removal
-  number: '92'
-  superType: TRAINER
-  subTypes: []
-  rarity: Common
-  text:
-  - Choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it.
-  artist: Keiji Kinebuchi
-- id: 111-93
-  pioId: base1-93
-  enumId: GUST_OF_WIND
-  name: Gust of Wind
-  number: '93'
-  superType: TRAINER
-  subTypes: []
-  rarity: Common
-  text:
-  - Choose 1 of your opponent's Benched Pokémon and switch it with his or her Active
+  text: Attach PlusPower to your Active Pokémonn. At the end of your turn, discard
+    PlusPower. If this Pokémon's attack does damage to the defending Pokémon (after
+    applying Weakness and Resistance), the attack does 10 more damage to the Defending
     Pokémon.
   artist: Keiji Kinebuchi
-- id: 111-94
-  pioId: base1-94
-  enumId: POTION
+  pioId: base1-84
+- enumId: POKEMON_CENTER:BASE_SET
+  name: Pokémon Center
+  number: '85'
+  cardTypes: [TRAINER]
+  rarity: Uncommon
+  text: Remove all damage counters from all of your own Pokémon with damage counters
+    on them, then discard all Energy cards attached to those Pokémon.
+  artist: Keiji Kinebuchi
+  pioId: base1-85
+  variantOf: POKEMON_CENTER_40:WIZARDS_BLACK_STAR_PROMOS
+  variantType: Reprint
+- enumId: POKEMON_FLUTE:BASE_SET
+  name: Pokémon Flute
+  number: '86'
+  cardTypes: [TRAINER]
+  rarity: Uncommon
+  text: Choose 1 Basic Pokémon card from your opponent's discard pile and put it onto
+    his or her Bench. (You can't play Pokémon Flute if your opponent's Bench is full.)
+  artist: Keiji Kinebuchi
+  pioId: base1-86
+- enumId: POKEDEX:BASE_SET
+  name: Pokédex
+  number: '87'
+  cardTypes: [TRAINER]
+  rarity: Uncommon
+  text: Look at up to 5 cards from the top of your deck and rearrange them as you
+    like.
+  artist: Keiji Kinebuchi
+  pioId: base1-87
+- enumId: PROFESSOR_OAK:BASE_SET
+  name: Professor Oak
+  number: '88'
+  cardTypes: [TRAINER]
+  rarity: Uncommon
+  text: Discard your hand, then draw 7 cards.
+  artist: Ken Sugimori
+  pioId: base1-88
+- enumId: REVIVE:BASE_SET
+  name: Revive
+  number: '89'
+  cardTypes: [TRAINER]
+  rarity: Uncommon
+  text: Put 1 Basic Pokémon card from your discard pile onto your Bench. Put damage
+    counters on that Pokémon equal to half its HP (rounded down to the nearest 10).
+    (You can't play Revive if your Bench is full.)
+  artist: Keiji Kinebuchi
+  pioId: base1-89
+- enumId: SUPER_POTION:BASE_SET
+  name: Super Potion
+  number: '90'
+  cardTypes: [TRAINER]
+  rarity: Uncommon
+  text: Discard 1 Energy card attached to 1 of your own Pokémon in order to remove
+    up to 4 damage counters from that Pokémon.
+  artist: Keiji Kinebuchi
+  pioId: base1-90
+- enumId: BILL:BASE_SET
+  name: Bill
+  number: '91'
+  cardTypes: [TRAINER]
+  rarity: Common
+  text: Draw 2 cards.
+  artist: Ken Sugimori
+  pioId: base1-91
+- enumId: ENERGY_REMOVAL:BASE_SET
+  name: Energy Removal
+  number: '92'
+  cardTypes: [TRAINER]
+  rarity: Common
+  text: Choose 1 Energy card attached to 1 of your opponent's Pokémon and discard
+    it.
+  artist: Keiji Kinebuchi
+  pioId: base1-92
+- enumId: GUST_OF_WIND:BASE_SET
+  name: Gust of Wind
+  number: '93'
+  cardTypes: [TRAINER]
+  rarity: Common
+  text: Choose 1 of your opponent's Benched Pokémon and switch it with his or her
+    Active Pokémon.
+  artist: Keiji Kinebuchi
+  pioId: base1-93
+- enumId: POTION:BASE_SET
   name: Potion
   number: '94'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Common
-  text:
-  - Remove up to 2 damage counters from 1 of your Pokémon.
+  text: Remove up to 2 damage counters from 1 of your Pokémon.
   artist: Keiji Kinebuchi
-- id: 111-95
-  pioId: base1-95
-  enumId: SWITCH
+  pioId: base1-94
+- enumId: SWITCH:BASE_SET
   name: Switch
   number: '95'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Common
-  text:
-  - Switch 1 of your Benched Pokémon with your Active Pokémon.
+  text: Switch 1 of your Benched Pokémon with your Active Pokémon.
   artist: Keiji Kinebuchi
-- id: 111-96
-  pioId: base1-96
-  enumId: DOUBLE_COLORLESS_ENERGY
+  pioId: base1-95
+- enumId: DOUBLE_COLORLESS_ENERGY:BASE_SET
   name: Double Colorless Energy
   number: '96'
-  superType: ENERGY
-  subTypes: [SPECIAL_ENERGY]
+  cardTypes: [ENERGY, SPECIAL_ENERGY]
   rarity: Uncommon
-  text:
-  - Provides [C][C] energy. Doesn't count as a basic energy card.
-  energy: [[C], [C]]
+  text: Provides [C][C] energy. Doesn't count as a basic energy card.
+  energy: [[COLORLESS], [COLORLESS]]
   artist: Keiji Kinebuchi
-- id: 111-97
-  pioId: base1-97
-  enumId: FIGHTING_ENERGY
+  pioId: base1-96
+- enumId: FIGHTING_ENERGY:BASE_SET
   name: Fighting Energy
   number: '97'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[F]]
+  energy: [[FIGHTING]]
   artist: Keiji Kinebuchi
-- id: 111-98
-  pioId: base1-98
-  enumId: FIRE_ENERGY
+  pioId: base1-97
+- enumId: FIRE_ENERGY:BASE_SET
   name: Fire Energy
   number: '98'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[R]]
+  energy: [[FIRE]]
   artist: Keiji Kinebuchi
-- id: 111-99
-  pioId: base1-99
-  enumId: GRASS_ENERGY
+  pioId: base1-98
+- enumId: GRASS_ENERGY:BASE_SET
   name: Grass Energy
   number: '99'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[G]]
+  energy: [[GRASS]]
   artist: Keiji Kinebuchi
-- id: 111-100
-  pioId: base1-100
-  enumId: LIGHTNING_ENERGY
+  pioId: base1-99
+- enumId: LIGHTNING_ENERGY:BASE_SET
   name: Lightning Energy
   number: '100'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[L]]
+  energy: [[LIGHTNING]]
   artist: Keiji Kinebuchi
-- id: 111-101
-  pioId: base1-101
-  enumId: PSYCHIC_ENERGY
+  pioId: base1-100
+- enumId: PSYCHIC_ENERGY:BASE_SET
   name: Psychic Energy
   number: '101'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[P]]
+  energy: [[PSYCHIC]]
   artist: Keiji Kinebuchi
-- id: 111-102
-  pioId: base1-102
-  enumId: WATER_ENERGY
+  pioId: base1-101
+- enumId: WATER_ENERGY:BASE_SET
   name: Water Energy
   number: '102'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[W]]
+  energy: [[WATER]]
   artist: Keiji Kinebuchi
+  pioId: base1-102

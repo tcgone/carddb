@@ -1,46 +1,41 @@
-schema: E2
-id: '282'
-name: POP Series 2
-enumId: POP_SERIES_2
-abbr: POP2
+schema: E3
+expansion:
+  orderId: '282'
+  name: POP Series 2
+  enumId: POP_SERIES_2
+  shortName: POP2
+  isFanMade: false
 cards:
-- id: 282-1
-  pioId: pop2-1
-  enumId: ENTEI_1
+- enumId: ENTEI_1:POP_SERIES_2
   name: Entei
-  nationalPokedexNumber: 244
   number: '1'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Stomp
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 20 more damage.
-  - cost: [R, R, C]
+  - cost: [FIRE, FIRE, COLORLESS]
     name: Fire Spin
     damage: '50'
     text: Discard 2 basic Energy cards attached to Entei or this attack does nothing.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Kouki Saitou
-- id: 282-2
-  pioId: pop2-2
-  enumId: PIDGEOT_2
+  pioId: pop2-1
+  nationalPokedexNumber: 244
+- enumId: PIDGEOT_2:POP_SERIES_2
   name: Pidgeot
-  nationalPokedexNumber: 18
   number: '2'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Pidgeotto
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [COLORLESS]
+  evolvesFrom: [Pidgeotto]
   hp: 80
-  retreatCost: 0
   abilities:
   - type: Poké-Power
     name: Beating Wings
@@ -48,54 +43,52 @@ cards:
       you may shuffle 1 of your Benched Pokémon and all cards attached to it in your
       deck. This power can't be used if Pidgeot is affected by a Special Condition.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Sharp Beak
     damage: 20+
     text: Flip a coin. If heads, this attack does 20 damage plus 30 more damage.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare
   artist: Ken Sugimori
-- id: 282-3
-  pioId: pop2-3
-  enumId: RAIKOU_3
+  pioId: pop2-2
+  nationalPokedexNumber: 18
+  variantOf: PIDGEOT_23:EXPEDITION
+  variantType: Reprint
+- enumId: RAIKOU_3:POP_SERIES_2
   name: Raikou
-  nationalPokedexNumber: 243
   number: '3'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Roar
     text: Your opponent switches the Defending Pokémon with 1 of his or her Benched
       Pokémon, if any.
-  - cost: [L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, COLORLESS]
     name: Thunder
     damage: '50'
     text: Flip a coin. If tails, Raikou does 20 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Kouki Saitou
-- id: 282-4
-  pioId: pop2-4
-  enumId: SUICUNE_4
+  pioId: pop2-3
+  nationalPokedexNumber: 243
+- enumId: SUICUNE_4:POP_SERIES_2
   name: Suicune
-  nationalPokedexNumber: 245
   number: '4'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 70
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Mirror Coat
@@ -103,275 +96,244 @@ cards:
       is Knocked Out), the Attacking Pokémon is now affected by the same Special Conditions
       (1 if there is only 1).
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Bubblebeam
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Kouki Saitou
-- id: 282-5
-  pioId: pop2-5
-  enumId: TAUROS_5
+  pioId: pop2-4
+  nationalPokedexNumber: 245
+- enumId: TAUROS_5:POP_SERIES_2
   name: Tauros
-  nationalPokedexNumber: 128
   number: '5'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Rage
     damage: 10+
     text: Does 10 damage plus 10 more damage for each damage counter on Tauros.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Take Down
     damage: '40'
     text: Tauros does 10 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Kouki Saitou
-- id: 282-6
-  pioId: pop2-6
-  enumId: VENUSAUR_6
+  pioId: pop2-5
+  nationalPokedexNumber: 128
+- enumId: VENUSAUR_6:POP_SERIES_2
   name: Venusaur
-  nationalPokedexNumber: 3
   number: '6'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Ivysaur
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Ivysaur]
   hp: 120
-  retreatCost: 3
   moves:
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Wide Solarbeam
     damage: '20'
     text: Does 20 damage to 2 of your opponent's Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
-  - cost: [G, G, G, C]
+  - cost: [GRASS, GRASS, GRASS, COLORLESS]
     name: Hard Plant
     damage: '80'
     text: Venusaur can't use Hard Plant during your next turn.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 3
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 282-7
-  pioId: pop2-7
-  enumId: IVYSAUR_7
+  pioId: pop2-6
+  nationalPokedexNumber: 3
+- enumId: IVYSAUR_7:POP_SERIES_2
   name: Ivysaur
-  nationalPokedexNumber: 2
   number: '7'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Bulbasaur
-  evolvesTo: [Venusaur]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Bulbasaur]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Poison Seed
     text: The Defending Pokémon is now Poisoned.
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Razor Leaf
     damage: '50'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 282-8
-  pioId: pop2-8
-  enumId: MR__BRINEY_S_COMPASSION_8
+  pioId: pop2-7
+  nationalPokedexNumber: 2
+  variantOf: IVYSAUR_35:FIRERED_LEAFGREEN
+  variantType: Reprint
+- enumId: MR__BRINEY_S_COMPASSION_8:POP_SERIES_2
   name: Mr. Briney's Compassion
   number: '8'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Choose 1 of your Pokémon in play (excluding Pokémon ex). Return that Pokémon and
-    all cards attached to it to your hand.
+  text: Choose 1 of your Pokémon in play (excluding Pokémon ex). Return that Pokémon
+    and all cards attached to it to your hand.
   artist: Ken Sugimori
-- id: 282-9
-  pioId: pop2-9
-  enumId: MULTI_TECHNICAL_MACHINE_01_9
+  pioId: pop2-8
+- enumId: MULTI_TECHNICAL_MACHINE_01_9:POP_SERIES_2
   name: Multi Technical Machine 01
   number: '9'
-  superType: TRAINER
-  subTypes: [TECHNICAL_MACHINE]
+  cardTypes: [TRAINER, TECHNICAL_MACHINE]
   rarity: Uncommon
-  text:
-  - The Defending Pokémon is now Paralyzed.
+  text: The Defending Pokémon is now Paralyzed.
   artist: '"Big Mama" Tagawa'
-- id: 282-10
-  pioId: pop2-10
-  enumId: POKEMON_PARK_10
+  pioId: pop2-9
+- enumId: POKEMON_PARK_10:POP_SERIES_2
   name: Pokémon Park
   number: '10'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - Once during each player's turn, when that player attaches an Energy card from
+  text: Once during each player's turn, when that player attaches an Energy card from
     his or her hand to 1 of his or her Benched Pokémon, he or she removes 1 damage
     counter from that Pokémon.
   artist: Kazuo Yazawa
-- id: 282-11
-  pioId: pop2-11
-  enumId: TV_REPORTER_11
+  pioId: pop2-10
+- enumId: TV_REPORTER_11:POP_SERIES_2
   name: TV Reporter
   number: '11'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Draw 3 cards. Then discard any 1 card from your hand.
+  text: Draw 3 cards. Then discard any 1 card from your hand.
   artist: Ken Sugimori
-- id: 282-12
-  pioId: pop2-12
-  enumId: BULBASAUR_12
+  pioId: pop2-11
+- enumId: BULBASAUR_12:POP_SERIES_2
   name: Bulbasaur
-  nationalPokedexNumber: 1
   number: '12'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Ivysaur]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Bite
     damage: '10'
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Razor Leaf
     damage: '20'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Midori Harada
-- id: 282-13
-  pioId: pop2-13
-  enumId: CACNEA_13
+  pioId: pop2-12
+  nationalPokedexNumber: 1
+- enumId: CACNEA_13:POP_SERIES_2
   name: Cacnea
-  nationalPokedexNumber: 331
   number: '13'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Cacturne]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Sand Attack
     damage: '10'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 282-14
-  pioId: pop2-14
-  enumId: LUVDISC_14
+  pioId: pop2-13
+  nationalPokedexNumber: 331
+- enumId: LUVDISC_14:POP_SERIES_2
   name: Luvdisc
-  nationalPokedexNumber: 370
   number: '14'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Paralyzing Kiss
     text: If there are 2 Defending Pokémon in play, choose 1 of the Defending Pokémon.
       That Pokémon is now Paralyzed. (If there is only 1 Defending Pokémon, this attack
       does nothing.)
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Fast Stream
     damage: '20'
     text: Move 1 Energy card attached to the Defending Pokémon to the other Defending
       Pokémon. (Ignore this effect if your opponent has only 1 Defending Pokémon.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 282-15
-  pioId: pop2-15
-  enumId: PHANPY_15
+  pioId: pop2-14
+  nationalPokedexNumber: 370
+- enumId: PHANPY_15:POP_SERIES_2
   name: Phanpy
-  nationalPokedexNumber: 231
   number: '15'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Donphan]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Double Spin
     damage: 10x
     text: Flip 2 coins. This attack does 10 damage times the number of heads.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Body Slam
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Tomokazu Komiya
-- id: 282-16
-  pioId: pop2-16
-  enumId: PIKACHU_16
+  pioId: pop2-15
+  nationalPokedexNumber: 231
+- enumId: PIKACHU_16:POP_SERIES_2
   name: Pikachu
-  nationalPokedexNumber: 25
   number: '16'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Raichu]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Gnaw
     damage: '10'
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Thunder Jolt
     damage: '30'
     text: Flip a coin. If tails, Pikachu does 10 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Yuka Morii
-- id: 282-17
-  pioId: pop2-17
-  enumId: CELEBI_EX_17
+  pioId: pop2-16
+  nationalPokedexNumber: 25
+  variantOf: PIKACHU:BASE_SET
+  variantType: Reprint
+- enumId: CELEBI_EX_17:POP_SERIES_2
   name: Celebi ex
-  nationalPokedexNumber: 251
   number: '17'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 80
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Time Reversal
@@ -379,13 +341,16 @@ cards:
       you may search your discard pile for a card, show it to your opponent, and put
       it on top of your deck.
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Psychic Shield
     damage: '30'
     text: Prevent all effects of attacks, including damage, done to Celebi ex by your
       opponent's Pokémon
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ryo Ueda
+  pioId: pop2-17
+  nationalPokedexNumber: 251

@@ -1,76 +1,69 @@
-schema: E2
-id: '113'
-name: Fossil
-enumId: FOSSIL
-abbr: FO
+schema: E3
+expansion:
+  orderId: '113'
+  name: Fossil
+  enumId: FOSSIL
+  shortName: FO
+  isFanMade: false
 cards:
-- id: 113-1
-  pioId: base3-1
-  enumId: AERODACTYL_1
+- enumId: AERODACTYL_1:FOSSIL
   name: Aerodactyl
-  nationalPokedexNumber: 142
   number: '1'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Mysterious Fossil
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Mysterious Fossil]
   hp: 60
-  retreatCost: 2
   abilities:
   - type: Pokémon Power
     name: Prehistoric Power
     text: No more Evolution cards can be played. This power stops working while Aerodactyl
       is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Wing Attack
     damage: '30'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Kagemaru Himeno
-- id: 113-2
-  pioId: base3-2
-  enumId: ARTICUNO_2
+  pioId: base3-1
+  nationalPokedexNumber: 142
+- enumId: ARTICUNO_2:FOSSIL
   name: Articuno
-  nationalPokedexNumber: 144
   number: '2'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [W, W, W]
+  - cost: [WATER, WATER, WATER]
     name: Freeze Dry
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [W, W, W, W]
+  - cost: [WATER, WATER, WATER, WATER]
     name: Blizzard
     damage: '50'
     text: Flip a coin. If heads, this attack does 10 damage to each of your opponent's
       Benched Pokémon. If tails, this attack does 10 damage to each of your own Benched
       Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 113-3
-  pioId: base3-3
-  enumId: DITTO_3
+  pioId: base3-2
+  nationalPokedexNumber: 144
+- enumId: DITTO_3:FOSSIL
   name: Ditto
-  nationalPokedexNumber: 132
   number: '3'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Pokémon Power
     name: Transform
@@ -80,52 +73,48 @@ cards:
       attached to Ditto as Energy of any type. Ditto isn't a copy of any other Pokémon
       while Ditto is Asleep, Confused, or Paralyzed.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Keiji Kinebuchi
-- id: 113-4
-  pioId: base3-4
-  enumId: DRAGONITE_4
+  pioId: base3-3
+  nationalPokedexNumber: 132
+- enumId: DRAGONITE_4:FOSSIL
   name: Dragonite
-  nationalPokedexNumber: 149
   number: '4'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Dragonair
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [COLORLESS]
+  evolvesFrom: [Dragonair]
   hp: 100
-  retreatCost: 1
   abilities:
   - type: Pokémon Power
     name: Step In
     text: Once during your turn (before your attack) if Dragonite is on your Bench,
       you may switch it with your Active Pokémon.
   moves:
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Slam
     damage: 40x
     text: Flip 2 coins. This attack does 40 damage times the number of heads.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Kagemaru Himeno
-- id: 113-5
-  pioId: base3-5
-  enumId: GENGAR_5
+  pioId: base3-4
+  nationalPokedexNumber: 149
+- enumId: GENGAR_5:FOSSIL
   name: Gengar
-  nationalPokedexNumber: 94
   number: '5'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Haunter
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [PSYCHIC]
+  evolvesFrom: [Haunter]
   hp: 80
-  retreatCost: 1
   abilities:
   - type: Pokémon Power
     name: Curse
@@ -133,29 +122,26 @@ cards:
       from 1 of your opponent's Pokémon to another (even if it would Knock Out the
       other Pokémon). This power can't be used if Gengar is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [P, P, P]
+  - cost: [PSYCHIC, PSYCHIC, PSYCHIC]
     name: Dark Mind
     damage: '30'
     text: If your opponent has any Benched Pokémon, choose 1 of them and this attack
       does 10 damage to it. (Don't apply Weakness and Resistance for Benched Pokémon.)
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Keiji Kinebuchi
-- id: 113-6
-  pioId: base3-6
-  enumId: HAUNTER_6
+  pioId: base3-5
+  nationalPokedexNumber: 94
+- enumId: HAUNTER_6:FOSSIL
   name: Haunter
-  nationalPokedexNumber: 93
   number: '6'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Gastly
-  evolvesTo: [Gengar]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Gastly]
   hp: 50
-  retreatCost: 0
   abilities:
   - type: Pokémon Power
     name: Transparency
@@ -163,83 +149,77 @@ cards:
       all effects of that attack, including damage, done to Haunter. This power stops
       working while Haunter is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Nightmare
     damage: '10'
     text: The Defending Pokémon is now Asleep.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 113-7
-  pioId: base3-7
-  enumId: HITMONLEE_7
+  pioId: base3-6
+  nationalPokedexNumber: 93
+- enumId: HITMONLEE_7:FOSSIL
   name: Hitmonlee
-  nationalPokedexNumber: 106
   number: '7'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Stretch Kick
     text: If your opponent has any Benched Pokémon, choose 1 of them and this attack
       does 20 damage to it. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: High Jump Kick
     damage: '50'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 113-8
-  pioId: base3-8
-  enumId: HYPNO_8
+  pioId: base3-7
+  nationalPokedexNumber: 106
+- enumId: HYPNO_8:FOSSIL
   name: Hypno
-  nationalPokedexNumber: 97
   number: '8'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Drowzee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Drowzee]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Prophecy
     text: Look at up to 3 cards from the top of either player's deck and rearrange
       them as you like.
-  - cost: [P, P, P]
+  - cost: [PSYCHIC, PSYCHIC, PSYCHIC]
     name: Dark Mind
     damage: '30'
     text: If your opponent has any Benched Pokémon, choose 1 of them and this attack
       does 10 damage to it. (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 113-9
-  pioId: base3-9
-  enumId: KABUTOPS_9
+  pioId: base3-8
+  nationalPokedexNumber: 97
+- enumId: KABUTOPS_9:FOSSIL
   name: Kabutops
-  nationalPokedexNumber: 141
   number: '9'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Kabuto
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Kabuto]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Sharp Sickle
     damage: '30'
-  - cost: [F, F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING, FIGHTING]
     name: Absorb
     damage: '40'
     text: Remove a number of damage counters from Kabutops equal to half the damage
@@ -247,133 +227,122 @@ cards:
       up to the nearest 10). If Kabutops has fewer damage counters than that, remove
       all of them.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 113-10
-  pioId: base3-10
-  enumId: LAPRAS_10
+  pioId: base3-9
+  nationalPokedexNumber: 141
+- enumId: LAPRAS_10:FOSSIL
   name: Lapras
-  nationalPokedexNumber: 131
   number: '10'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Water Gun
     damage: 10+
     text: Does 10 damage plus 10 more damage for each [W] Energy attached to Lapras
       but not used to pay for this attack's Energy cost. You can't add more than 20
       damage in this way.
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Confuse Ray
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 113-11
-  pioId: base3-11
-  enumId: MAGNETON_11
+  pioId: base3-10
+  nationalPokedexNumber: 131
+- enumId: MAGNETON_11:FOSSIL
   name: Magneton
-  nationalPokedexNumber: 82
   number: '11'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Magnemite
-  evolvesTo: [Magnezone]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Magnemite]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Sonicboom
     damage: '20'
     text: Don't apply Weakness and Resistance for this attack. (Any other effects
       that would happen after applying Weakness and Resistance still happen.)
-  - cost: [L, L, L, L]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, LIGHTNING]
     name: Selfdestruct
     damage: '100'
     text: Does 20 damage to each Pokémon on each player's Bench. (Don't apply Weakness
       and Resistance for Benched Pokémon.) Magneton does 100 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 113-12
-  pioId: base3-12
-  enumId: MOLTRES_12
+  pioId: base3-11
+  nationalPokedexNumber: 82
+- enumId: MOLTRES_12:FOSSIL
   name: Moltres
-  nationalPokedexNumber: 146
   number: '12'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Wildfire
     text: You may discard any number of [R] Energy cards attached to Moltres when
       you use this attack. If you do, discard that many cards from the top of your
       opponent's deck.
-  - cost: [R, R, R, R]
+  - cost: [FIRE, FIRE, FIRE, FIRE]
     name: Dive Bomb
     damage: '80'
     text: Flip a coin. If tails, this attack does nothing.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 113-13
-  pioId: base3-13
-  enumId: MUK_13
+  pioId: base3-12
+  nationalPokedexNumber: 146
+- enumId: MUK_13:FOSSIL
   name: Muk
-  nationalPokedexNumber: 89
   number: '13'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Grimer
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Grimer]
   hp: 70
-  retreatCost: 2
   abilities:
   - type: Pokémon Power
     name: Toxic Gas
     text: Ignore all Pokémon Powers other than Toxic Gases. This power stops working
       while Muk is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [G, G, G]
+  - cost: [GRASS, GRASS, GRASS]
     name: Sludge
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 113-14
-  pioId: base3-14
-  enumId: RAICHU_14
+  pioId: base3-13
+  nationalPokedexNumber: 89
+- enumId: RAICHU_14:FOSSIL
   name: Raichu
-  nationalPokedexNumber: 26
   number: '14'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pikachu
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Pikachu]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [L, L, L, L]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, LIGHTNING]
     name: Gigashock
     damage: '30'
     text: Choose 3 of your opponent's Benched Pokémon and this attack does 10 damage
@@ -381,23 +350,21 @@ cards:
       If your opponent has fewer than 3 Benched Pokémon, do the damage to each of
       them.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 113-15
-  pioId: base3-15
-  enumId: ZAPDOS_15
+  pioId: base3-14
+  nationalPokedexNumber: 26
+- enumId: ZAPDOS_15:FOSSIL
   name: Zapdos
-  nationalPokedexNumber: 145
   number: '15'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [L, L, L, L]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, LIGHTNING]
     name: Thunderstorm
     damage: '40'
     text: For each of your opponent's Benched Pokémon, flip a coin. If heads, this
@@ -405,77 +372,75 @@ cards:
       for Benched Pokémon.) Then, Zapdos does 10 damage times the number of tails
       to itself.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 113-16
-  pioId: base3-16
-  enumId: AERODACTYL
+  pioId: base3-15
+  nationalPokedexNumber: 145
+- enumId: AERODACTYL:FOSSIL
   name: Aerodactyl
-  nationalPokedexNumber: 142
   number: '16'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Mysterious Fossil
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Mysterious Fossil]
   hp: 60
-  retreatCost: 2
   abilities:
   - type: Pokémon Power
     name: Prehistoric Power
     text: No more Evolution cards can be played. This power stops working while Aerodactyl
       is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Wing Attack
     damage: '30'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 2
   rarity: Rare
   artist: Kagemaru Himeno
-- id: 113-17
-  pioId: base3-17
-  enumId: ARTICUNO
+  pioId: base3-16
+  nationalPokedexNumber: 142
+  variantOf: AERODACTYL_1:FOSSIL
+  variantType: Reprint
+- enumId: ARTICUNO:FOSSIL
   name: Articuno
-  nationalPokedexNumber: 144
   number: '17'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [W, W, W]
+  - cost: [WATER, WATER, WATER]
     name: Freeze Dry
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [W, W, W, W]
+  - cost: [WATER, WATER, WATER, WATER]
     name: Blizzard
     damage: '50'
     text: Flip a coin. If heads, this attack does 10 damage to each of your opponent's
       Benched Pokémon. If tails, this attack does 10 damage to each of your own Benched
       Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 2
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 113-18
-  pioId: base3-18
-  enumId: DITTO
+  pioId: base3-17
+  nationalPokedexNumber: 144
+  variantOf: ARTICUNO_2:FOSSIL
+  variantType: Reprint
+- enumId: DITTO:FOSSIL
   name: Ditto
-  nationalPokedexNumber: 132
   number: '18'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Pokémon Power
     name: Transform
@@ -485,52 +450,52 @@ cards:
       attached to Ditto as Energy of any type. Ditto isn't a copy of any other Pokémon
       while Ditto is Asleep, Confused, or Paralyzed.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare
   artist: Keiji Kinebuchi
-- id: 113-19
-  pioId: base3-19
-  enumId: DRAGONITE
+  pioId: base3-18
+  nationalPokedexNumber: 132
+  variantOf: DITTO_3:FOSSIL
+  variantType: Reprint
+- enumId: DRAGONITE:FOSSIL
   name: Dragonite
-  nationalPokedexNumber: 149
   number: '19'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Dragonair
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [COLORLESS]
+  evolvesFrom: [Dragonair]
   hp: 100
-  retreatCost: 1
   abilities:
   - type: Pokémon Power
     name: Step In
     text: Once during your turn (before you attack) if Dragonite is on your Bench,
       you may switch it with your Active Pokémon.
   moves:
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Slam
     damage: 40x
     text: Flip 2 coins. This attack does 40 damage times the number of heads.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Rare
   artist: Kagemaru Himeno
-- id: 113-20
-  pioId: base3-20
-  enumId: GENGAR
+  pioId: base3-19
+  nationalPokedexNumber: 149
+  variantOf: DRAGONITE_4:FOSSIL
+  variantType: Reprint
+- enumId: GENGAR:FOSSIL
   name: Gengar
-  nationalPokedexNumber: 94
   number: '20'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Haunter
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [PSYCHIC]
+  evolvesFrom: [Haunter]
   hp: 80
-  retreatCost: 1
   abilities:
   - type: Pokémon Power
     name: Curse
@@ -538,29 +503,28 @@ cards:
       from 1 of your opponent's Pokémon to another (even if it would Knock Out the
       other Pokémon). This power can't be used if Gengar is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [P, P, P]
+  - cost: [PSYCHIC, PSYCHIC, PSYCHIC]
     name: Dark Mind
     damage: '30'
     text: If your opponent has any Benched Pokémon, choose 1 of them and this attack
       does 10 damage to it. (Don't apply Weakness and Resistance for Benched Pokémon.)
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Rare
   artist: Keiji Kinebuchi
-- id: 113-21
-  pioId: base3-21
-  enumId: HAUNTER
+  pioId: base3-20
+  nationalPokedexNumber: 94
+  variantOf: GENGAR_5:FOSSIL
+  variantType: Reprint
+- enumId: HAUNTER:FOSSIL
   name: Haunter
-  nationalPokedexNumber: 93
   number: '21'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Gastly
-  evolvesTo: [Gengar]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Gastly]
   hp: 50
-  retreatCost: 0
   abilities:
   - type: Pokémon Power
     name: Transparency
@@ -568,83 +532,83 @@ cards:
       all effects of that attack, including damage, done to Haunter. This power stops
       working while Haunter is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Nightmare
     damage: '10'
     text: The Defending Pokémon is now Asleep.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare
   artist: Ken Sugimori
-- id: 113-22
-  pioId: base3-22
-  enumId: HITMONLEE
+  pioId: base3-21
+  nationalPokedexNumber: 93
+  variantOf: HAUNTER_6:FOSSIL
+  variantType: Reprint
+- enumId: HITMONLEE:FOSSIL
   name: Hitmonlee
-  nationalPokedexNumber: 106
   number: '22'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Stretch Kick
     text: If your opponent has any Benched Pokémon, choose 1 of them and this attack
       does 20 damage to it. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: High Jump Kick
     damage: '50'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Ken Sugimori
-- id: 113-23
-  pioId: base3-23
-  enumId: HYPNO
+  pioId: base3-22
+  nationalPokedexNumber: 106
+  variantOf: HITMONLEE_7:FOSSIL
+  variantType: Reprint
+- enumId: HYPNO:FOSSIL
   name: Hypno
-  nationalPokedexNumber: 97
   number: '23'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Drowzee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Drowzee]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Prophecy
     text: Look at up to 3 cards from the top of either player's deck and rearrange
       them as you like.
-  - cost: [P, P, P]
+  - cost: [PSYCHIC, PSYCHIC, PSYCHIC]
     name: Dark Mind
     damage: '30'
     text: If your opponent has any Benched Pokémon, choose 1 of them and this attack
       does 10 damage to it. (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 113-24
-  pioId: base3-24
-  enumId: KABUTOPS
+  pioId: base3-23
+  nationalPokedexNumber: 97
+  variantOf: HYPNO_8:FOSSIL
+  variantType: Reprint
+- enumId: KABUTOPS:FOSSIL
   name: Kabutops
-  nationalPokedexNumber: 141
   number: '24'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Kabuto
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Kabuto]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Sharp Sickle
     damage: '30'
-  - cost: [F, F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING, FIGHTING]
     name: Absorb
     damage: '40'
     text: Remove a number of damage counters from Kabutops equal to half the damage
@@ -652,133 +616,132 @@ cards:
       up to the nearest 10). If Kabutops has fewer damage counters than that, remove
       all of them.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Ken Sugimori
-- id: 113-25
-  pioId: base3-25
-  enumId: LAPRAS
+  pioId: base3-24
+  nationalPokedexNumber: 141
+  variantOf: KABUTOPS_9:FOSSIL
+  variantType: Reprint
+- enumId: LAPRAS:FOSSIL
   name: Lapras
-  nationalPokedexNumber: 131
   number: '25'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Water Gun
     damage: 10+
     text: Does 10 damage plus 10 more damage for each [W] Energy attached to Lapras
       but not used to pay for this attack's Energy cost. You can't add more than 20
       damage this way.
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Confuse Ray
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 113-26
-  pioId: base3-26
-  enumId: MAGNETON
+  pioId: base3-25
+  nationalPokedexNumber: 131
+  variantOf: LAPRAS_10:FOSSIL
+  variantType: Reprint
+- enumId: MAGNETON:FOSSIL
   name: Magneton
-  nationalPokedexNumber: 82
   number: '26'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Magnemite
-  evolvesTo: [Magnezone]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Magnemite]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Sonicboom
     damage: '20'
     text: Don't apply Weakness and Resistance for this attack. (Any other effects
       that would happen after applying Weakness and Resistance still happen.)
-  - cost: [L, L, L, L]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, LIGHTNING]
     name: Selfdestruct
     damage: '100'
     text: Does 20 damage to each Pokémon on each player's Bench. (Don't apply Weakness
       and Resistance for Benched Pokémon.) Magneton does 100 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 113-27
-  pioId: base3-27
-  enumId: MOLTRES
+  pioId: base3-26
+  nationalPokedexNumber: 82
+  variantOf: MAGNETON_11:FOSSIL
+  variantType: Reprint
+- enumId: MOLTRES:FOSSIL
   name: Moltres
-  nationalPokedexNumber: 146
   number: '27'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Wildfire
     text: You may discard any number of [R] Energy cards attached to Moltres when
       you use this attack. If you do, discard that many cards from the top of your
       opponent's deck.
-  - cost: [R, R, R, R]
+  - cost: [FIRE, FIRE, FIRE, FIRE]
     name: Dive Bomb
     damage: '80'
     text: Flip a coin. If tails, this attack does nothing.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 2
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 113-28
-  pioId: base3-28
-  enumId: MUK
+  pioId: base3-27
+  nationalPokedexNumber: 146
+  variantOf: MOLTRES_12:FOSSIL
+  variantType: Reprint
+- enumId: MUK:FOSSIL
   name: Muk
-  nationalPokedexNumber: 89
   number: '28'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Grimer
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Grimer]
   hp: 70
-  retreatCost: 2
   abilities:
   - type: Pokémon Power
     name: Toxic Gas
     text: Ignore all Pokémon Powers other than Toxic Gases. This power stops working
       while Muk is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [G, G, G]
+  - cost: [GRASS, GRASS, GRASS]
     name: Sludge
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 113-29
-  pioId: base3-29
-  enumId: RAICHU
+  pioId: base3-28
+  nationalPokedexNumber: 89
+  variantOf: MUK_13:FOSSIL
+  variantType: Reprint
+- enumId: RAICHU:FOSSIL
   name: Raichu
-  nationalPokedexNumber: 26
   number: '29'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pikachu
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Pikachu]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [L, L, L, L]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, LIGHTNING]
     name: Gigashock
     damage: '30'
     text: Choose 3 of your opponent's Benched Pokémon and this attack does 10 damage
@@ -786,23 +749,23 @@ cards:
       If your opponent has fewer than 3 Benched Pokémon, do the damage to each of
       them.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 113-30
-  pioId: base3-30
-  enumId: ZAPDOS
+  pioId: base3-29
+  nationalPokedexNumber: 26
+  variantOf: RAICHU_14:FOSSIL
+  variantType: Reprint
+- enumId: ZAPDOS:FOSSIL
   name: Zapdos
-  nationalPokedexNumber: 145
   number: '30'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [L, L, L, L]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, LIGHTNING]
     name: Thunderstorm
     damage: '40'
     text: For each of your opponent's Benched Pokémon, flip a coin. If heads, this
@@ -810,353 +773,324 @@ cards:
       for Benched Pokémon.) Then, Zapdos does 10 damage times the number of tails
       to itself.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 2
   rarity: Rare
   artist: Mitsuhiro Arita
-- id: 113-31
-  pioId: base3-31
-  enumId: ARBOK
+  pioId: base3-30
+  nationalPokedexNumber: 145
+  variantOf: ZAPDOS_15:FOSSIL
+  variantType: Reprint
+- enumId: ARBOK:FOSSIL
   name: Arbok
-  nationalPokedexNumber: 24
   number: '31'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Ekans
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Ekans]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Terror Strike
     damage: '10'
     text: Flip a coin. If heads and if your opponent has any Benched Pokémon, he or
       she chooses 1 of them and switches it with the Defending Pokémon. (Do the damage
       before switching the Pokémon.)
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Poison Fang
     damage: '30'
     text: The Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 113-32
-  pioId: base3-32
-  enumId: CLOYSTER
+  pioId: base3-31
+  nationalPokedexNumber: 24
+- enumId: CLOYSTER:FOSSIL
   name: Cloyster
-  nationalPokedexNumber: 91
   number: '32'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Shellder
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Shellder]
   hp: 50
-  retreatCost: 2
   moves:
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Clamp
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails,
       this attack does nothing (not even damage).
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Spike Cannon
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 113-33
-  pioId: base3-33
-  enumId: GASTLY
+  pioId: base3-32
+  nationalPokedexNumber: 91
+- enumId: GASTLY:FOSSIL
   name: Gastly
-  nationalPokedexNumber: 92
   number: '33'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Haunter]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 0
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Lick
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Energy Conversion
     text: Put up to 2 Energy cards from your discard pile into your hand. Gastly does
       10 damage to itself.
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 113-34
-  pioId: base3-34
-  enumId: GOLBAT
+  pioId: base3-33
+  nationalPokedexNumber: 92
+- enumId: GOLBAT:FOSSIL
   name: Golbat
-  nationalPokedexNumber: 42
   number: '34'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Zubat
-  evolvesTo: [Crobat]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Zubat]
   hp: 60
-  retreatCost: 0
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Wing Attack
     damage: '30'
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Leech Life
     damage: '20'
     text: Remove a number of damage counters from Golbat equal to the damage done
       to the Defending Pokémon (after applying Weakness and Resistance). If Golbat
       has fewer damage counters than that, remove all of them.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 113-35
-  pioId: base3-35
-  enumId: GOLDUCK
+  pioId: base3-34
+  nationalPokedexNumber: 42
+- enumId: GOLDUCK:FOSSIL
   name: Golduck
-  nationalPokedexNumber: 55
   number: '35'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Psyduck
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Psyduck]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Psyshock
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Hyper Beam
     damage: '20'
     text: If the Defending Pokémon has any Energy cards attached to it, choose 1 of
       them and discard it.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 113-36
-  pioId: base3-36
-  enumId: GOLEM
+  pioId: base3-35
+  nationalPokedexNumber: 55
+- enumId: GOLEM:FOSSIL
   name: Golem
-  nationalPokedexNumber: 76
   number: '36'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Graveler
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Graveler]
   hp: 80
-  retreatCost: 4
   moves:
-  - cost: [F, F, F, C]
+  - cost: [FIGHTING, FIGHTING, FIGHTING, COLORLESS]
     name: Avalanche
     damage: '60'
-  - cost: [F, F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING, FIGHTING]
     name: Selfdestruct
     damage: '100'
     text: Does 20 damage to each Pokémon on each player's Bench. (Don't apply Weakness
       and Resistance for Benched Pokémon.) Golem does 100 damage to itself.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 113-37
-  pioId: base3-37
-  enumId: GRAVELER
+  pioId: base3-36
+  nationalPokedexNumber: 76
+- enumId: GRAVELER:FOSSIL
   name: Graveler
-  nationalPokedexNumber: 75
   number: '37'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Geodude
-  evolvesTo: [Golem]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Geodude]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Harden
     text: During your opponent's next turn, whenever 30 or less damage is done to
       Graveler (after applying Weakness and Resistance), prevent that damage. (Any
       other effects of attacks still happen.)
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Rock Throw
     damage: '40'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 113-38
-  pioId: base3-38
-  enumId: KINGLER
+  pioId: base3-37
+  nationalPokedexNumber: 75
+- enumId: KINGLER:FOSSIL
   name: Kingler
-  nationalPokedexNumber: 99
   number: '38'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Krabby
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Krabby]
   hp: 60
-  retreatCost: 3
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Flail
     damage: 10x
     text: Does 10 damage times the number of damage counters on Kingler.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Crabhammer
     damage: '40'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 3
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 113-39
-  pioId: base3-39
-  enumId: MAGMAR
+  pioId: base3-38
+  nationalPokedexNumber: 99
+- enumId: MAGMAR:FOSSIL
   name: Magmar
-  nationalPokedexNumber: 126
   number: '39'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesFrom: Magby
-  evolvesTo: [Magmortar]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
+  evolvesFrom: [Magby]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Smokescreen
     damage: '10'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Smog
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 113-40
-  pioId: base3-40
-  enumId: OMASTAR
+  pioId: base3-39
+  nationalPokedexNumber: 126
+- enumId: OMASTAR:FOSSIL
   name: Omastar
-  nationalPokedexNumber: 139
   number: '40'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Omanyte
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Omanyte]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Water Gun
     damage: 20+
     text: Does 20 damage plus 10 more damage for each [W] Energy attached to Omastar
       but not used to pay for this attack's Energy cost. You can't add more than 20
       damage in this way.
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Spike Cannon
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 113-41
-  pioId: base3-41
-  enumId: SANDSLASH
+  pioId: base3-40
+  nationalPokedexNumber: 139
+- enumId: SANDSLASH:FOSSIL
   name: Sandslash
-  nationalPokedexNumber: 28
   number: '41'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Sandshrew
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Sandshrew]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Slash
     damage: '20'
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Fury Swipes
     damage: 20x
     text: Flip 3 coins. This attack does 20 damage times the number of heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 113-42
-  pioId: base3-42
-  enumId: SEADRA
+  pioId: base3-41
+  nationalPokedexNumber: 28
+- enumId: SEADRA:FOSSIL
   name: Seadra
-  nationalPokedexNumber: 117
   number: '42'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Horsea
-  evolvesTo: [Kingdra]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Horsea]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Water Gun
     damage: 20+
     text: Does 20 damage plus 10 more damage for each [W] Energy attached to Seadra
       but not used to pay for this attack's Energy cost. You can't add more than 20
       damage in this way.
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Agility
     damage: '20'
     text: Flip a coin. If heads, during your opponent's next turn, prevent all effects
       of attacks, including damage, done to Seadra.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 113-43
-  pioId: base3-43
-  enumId: SLOWBRO
+  pioId: base3-42
+  nationalPokedexNumber: 117
+- enumId: SLOWBRO:FOSSIL
   name: Slowbro
-  nationalPokedexNumber: 80
   number: '43'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Slowpoke
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Slowpoke]
   hp: 60
-  retreatCost: 1
   abilities:
   - type: Pokémon Power
     name: Strange Behavior
@@ -1164,177 +1098,158 @@ cards:
       1 damage counter from 1 of your Pokémon to Slowbro as long as you don't Knock
       Out Slowbro. This power can't be used if Slowbro is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Psyshock
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 113-44
-  pioId: base3-44
-  enumId: TENTACRUEL
+  pioId: base3-43
+  nationalPokedexNumber: 80
+- enumId: TENTACRUEL:FOSSIL
   name: Tentacruel
-  nationalPokedexNumber: 73
   number: '44'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Tentacool
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Tentacool]
   hp: 60
-  retreatCost: 0
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Supersonic
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Jellyfish Sting
     damage: '10'
     text: The Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 0
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 113-45
-  pioId: base3-45
-  enumId: WEEZING
+  pioId: base3-44
+  nationalPokedexNumber: 73
+- enumId: WEEZING:FOSSIL
   name: Weezing
-  nationalPokedexNumber: 110
   number: '45'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Koffing
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Koffing]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Smog
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Selfdestruct
     damage: '60'
     text: Does 10 damage to each Pokémon on each player's Bench. (Don't apply Weakness
       and Resistance for Benched Pokémon.) Weezing does 60 damage to itself.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 113-46
-  pioId: base3-46
-  enumId: EKANS
+  pioId: base3-45
+  nationalPokedexNumber: 110
+- enumId: EKANS:FOSSIL
   name: Ekans
-  nationalPokedexNumber: 23
   number: '46'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Arbok]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Spit Poison
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Wrap
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Kagemaru Himeno
-- id: 113-47
-  pioId: base3-47
-  enumId: GEODUDE
+  pioId: base3-46
+  nationalPokedexNumber: 23
+- enumId: GEODUDE:FOSSIL
   name: Geodude
-  nationalPokedexNumber: 74
   number: '47'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Graveler]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Stone Barrage
     damage: 10x
     text: Flip a coin until you get tails. This attack does 10 damage times the number
       of heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Kagemaru Himeno
-- id: 113-48
-  pioId: base3-48
-  enumId: GRIMER
+  pioId: base3-47
+  nationalPokedexNumber: 74
+- enumId: GRIMER:FOSSIL
   name: Grimer
-  nationalPokedexNumber: 88
   number: '48'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Muk]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Nasty Goo
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [G]
+  - cost: [GRASS]
     name: Minimize
     text: All damage done by attacks to Grimer during your opponent's next turn is
       reduced by 20 (after applying Weakness and Resistance).
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 113-49
-  pioId: base3-49
-  enumId: HORSEA
+  pioId: base3-48
+  nationalPokedexNumber: 88
+- enumId: HORSEA:FOSSIL
   name: Horsea
-  nationalPokedexNumber: 116
   number: '49'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Seadra]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Smokescreen
     damage: '10'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 0
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 113-50
-  pioId: base3-50
-  enumId: KABUTO
+  pioId: base3-49
+  nationalPokedexNumber: 116
+- enumId: KABUTO:FOSSIL
   name: Kabuto
-  nationalPokedexNumber: 140
   number: '50'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Mysterious Fossil
-  evolvesTo: [Kabutops]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Mysterious Fossil]
   hp: 30
-  retreatCost: 1
   abilities:
   - type: Pokémon Power
     name: Kabuto Armor
@@ -1343,157 +1258,141 @@ cards:
       down to nearest 10). (Any other effects of attacks still happen.) This power
       stops working while Kabuto is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Scratch
     damage: '10'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 113-51
-  pioId: base3-51
-  enumId: KRABBY
+  pioId: base3-50
+  nationalPokedexNumber: 140
+- enumId: KRABBY:FOSSIL
   name: Krabby
-  nationalPokedexNumber: 98
   number: '51'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Kingler]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 50
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Call for Family
     text: Search your deck for a Basic Pokémon named Krabby and put it onto your Bench.
       Shuffle your deck afterward. (You can't use this attack if your Bench is full.)
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Irongrip
     damage: '20'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 113-52
-  pioId: base3-52
-  enumId: OMANYTE
+  pioId: base3-51
+  nationalPokedexNumber: 98
+- enumId: OMANYTE:FOSSIL
   name: Omanyte
-  nationalPokedexNumber: 138
   number: '52'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Mysterious Fossil
-  evolvesTo: [Omastar]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Mysterious Fossil]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Pokémon Power
     name: Clairvoyance
     text: Your opponent plays with his or her hand face up. This power stops working
       while Omanyte is Asleep, Confused, or Paralyzed.
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Water Gun
     damage: 10+
     text: Does 10 damage plus 10 more damage for each [W] Energy attached to Omanyte
       but not used to pay for this attack's Energy cost. You can't add more than 20
       damage in this way.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Kagemaru Himeno
-- id: 113-53
-  pioId: base3-53
-  enumId: PSYDUCK
+  pioId: base3-52
+  nationalPokedexNumber: 138
+- enumId: PSYDUCK:FOSSIL
   name: Psyduck
-  nationalPokedexNumber: 54
   number: '53'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Golduck]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Headache
     text: Your opponent can't play Trainer cards during his or her next turn.
-  - cost: [W]
+  - cost: [WATER]
     name: Fury Swipes
     damage: 10x
     text: Flip 3 coins. This attack does 10 damage times the number of heads.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Kagemaru Himeno
-- id: 113-54
-  pioId: base3-54
-  enumId: SHELLDER
+  pioId: base3-53
+  nationalPokedexNumber: 54
+  variantOf: PSYDUCK_20:WIZARDS_BLACK_STAR_PROMOS
+  variantType: Reprint
+- enumId: SHELLDER:FOSSIL
   name: Shellder
-  nationalPokedexNumber: 90
   number: '54'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Cloyster]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 30
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Supersonic
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
-  - cost: [W]
+  - cost: [WATER]
     name: Hide in Shell
     text: Flip a coin. If heads, prevent all damage done to Shellder during your opponent's
       next turn. (Any other effects of attacks still happen.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mitsuhiro Arita
-- id: 113-55
-  pioId: base3-55
-  enumId: SLOWPOKE
+  pioId: base3-54
+  nationalPokedexNumber: 90
+- enumId: SLOWPOKE:FOSSIL
   name: Slowpoke
-  nationalPokedexNumber: 79
   number: '55'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Slowbro, Slowking]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Spacing Out
     text: Flip a coin. If heads, remove a damage counter from Slowpoke. This attack
       can't be used if Slowpoke has no damage counters on it.
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Scavenge
     text: Discard 1 [P] Energy card attached to Slowpoke in order to use this attack.
       Put a Trainer card from your discard pile into your hand.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Miki Tanaka
-- id: 113-56
-  pioId: base3-56
-  enumId: TENTACOOL
+  pioId: base3-55
+  nationalPokedexNumber: 79
+- enumId: TENTACOOL:FOSSIL
   name: Tentacool
-  nationalPokedexNumber: 72
   number: '56'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Tentacruel]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 30
-  retreatCost: 0
   abilities:
   - type: Pokémon Power
     name: Cowardice
@@ -1502,104 +1401,89 @@ cards:
       used the turn you put Tentacool into play or if Tentacool is Asleep, Confused,
       or Paralyzed.
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Acid
     damage: '10'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 0
   rarity: Common
   artist: Kagemaru Himeno
-- id: 113-57
-  pioId: base3-57
-  enumId: ZUBAT
+  pioId: base3-56
+  nationalPokedexNumber: 72
+- enumId: ZUBAT:FOSSIL
   name: Zubat
-  nationalPokedexNumber: 41
   number: '57'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Golbat]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Supersonic
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Leech Life
     damage: '10'
     text: Remove a number of damage counters from Zubat equal to the damage done to
       the Defending Pokémon (after applying Weakness and Resistance). If Zubat has
       fewer damage counters than that, remove all of them.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Common
   artist: Kagemaru Himeno
-- id: 113-58
-  pioId: base3-58
-  enumId: MR_FUJI
+  pioId: base3-57
+  nationalPokedexNumber: 41
+- enumId: MR_FUJI:FOSSIL
   name: Mr. Fuji
   number: '58'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Choose a Pokémon on your Bench. Shuffle it and any cards attached to it into your
-    deck.
+  text: Choose a Pokémon on your Bench. Shuffle it and any cards attached to it into
+    your deck.
   artist: Ken Sugimori
-- id: 113-59
-  pioId: base3-59
-  enumId: ENERGY_SEARCH
+  pioId: base3-58
+- enumId: ENERGY_SEARCH:FOSSIL
   name: Energy Search
   number: '59'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Common
-  text:
-  - Search your deck for a basic Energy card and put it into your hand. Shuffle your
-    deck afterward.
+  text: Search your deck for a basic Energy card and put it into your hand. Shuffle
+    your deck afterward.
   artist: Keiji Kinebuchi
-- id: 113-60
-  pioId: base3-60
-  enumId: GAMBLER
+  pioId: base3-59
+- enumId: GAMBLER:FOSSIL
   name: Gambler
   number: '60'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Common
-  text:
-  - Shuffle your hand into your deck. Flip a coin. If heads, draw 8 cards. If tails,
-    draw 1 card.
+  text: Shuffle your hand into your deck. Flip a coin. If heads, draw 8 cards. If
+    tails, draw 1 card.
   artist: Keiji Kinebuchi
-- id: 113-61
-  pioId: base3-61
-  enumId: RECYCLE
+  pioId: base3-60
+- enumId: RECYCLE:FOSSIL
   name: Recycle
   number: '61'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Common
-  text:
-  - Flip a coin. If heads, put a card in your discard pile on top of your deck.
+  text: Flip a coin. If heads, put a card in your discard pile on top of your deck.
   artist: Keiji Kinebuchi
-- id: 113-62
-  pioId: base3-62
-  enumId: MYSTERIOUS_FOSSIL
+  pioId: base3-61
+- enumId: MYSTERIOUS_FOSSIL:FOSSIL
   name: Mysterious Fossil
   number: '62'
-  superType: TRAINER
-  subTypes: [FOSSIL]
+  cardTypes: [TRAINER, FOSSIL]
   rarity: Common
-  text:
-  - Play Mysterious Fossil as if it were a Basic Pokémon. While in play, Mysterious
+  text: Play Mysterious Fossil as if it were a Basic Pokémon. While in play, Mysterious
     Fossil counts as a Pokémon (instead of a Trainer card). Mysterious Fossil has
     no attacks, can't retreat, and can't be Asleep, Confused, Paralyzed, or Poisoned.
     If Mysterious Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon.
     (Discard it anyway.) At any time during your turn before your attack, you may
     discard Mysterious Fossil from play.
   artist: Keiji Kinebuchi
+  pioId: base3-62

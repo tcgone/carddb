@@ -1,45 +1,41 @@
-schema: E2
-id: '186'
-name: Pokémod Gym Heroes
-enumId: POKEMOD_GYM_HEROES
-abbr: MODG1
-officialCount: 132
+schema: E3
+expansion:
+  orderId: '186'
+  name: Pokémod Gym Heroes
+  enumId: POKEMOD_GYM_HEROES
+  shortName: MODG1
+  officialCount: 132
+  isFanMade: false
 cards:
-- id: 186-1
-  pioId: pkmod6-1
-  enumId: BLAINES_MOLTRES_1
+- enumId: BLAINES_MOLTRES_1:POKEMOD_GYM_HEROES
   name: Blaine's Moltres
-  nationalPokedexNumber: 146
   number: '1'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIRE]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [R, R, R, R, R]
+  - cost: [FIRE, FIRE, FIRE, FIRE, FIRE]
     name: Phoenix Flame
     damage: '90'
     text: Flip a coin. If tails, shuffle Blaine's Moltres and all cards attached to
       it into your deck (after doing damage).
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 3
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-2
-  pioId: pkmod6-2
-  enumId: BROCKS_RHYDON_2
+  pioId: pkmod6-1
+  nationalPokedexNumber: 146
+  variantOf: BLAINE_S_MOLTRES_1:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCKS_RHYDON_2:POKEMOD_GYM_HEROES
   name: Brock's Rhydon
-  nationalPokedexNumber: 112
   number: '2'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Brock's Rhyhorn
-  evolvesTo: [Rhyperior]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Brock's Rhyhorn]
   hp: 80
-  retreatCost: 3
   abilities:
   - type: Poké-Power
     name: Bench Guard
@@ -48,88 +44,85 @@ cards:
       than 1 of your Benched Pokémon is damaged at the same time, you may use this
       power once for each of them.)
   moves:
-  - cost: [F, F, C, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS, COLORLESS]
     name: Lariat
     damage: '70'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 3
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-3
-  pioId: pkmod6-3
-  enumId: ERIKAS_CLEFABLE_3
+  pioId: pkmod6-2
+  nationalPokedexNumber: 112
+- enumId: ERIKAS_CLEFABLE_3:POKEMOD_GYM_HEROES
   name: Erika's Clefable
-  nationalPokedexNumber: 36
   number: '3'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Erika's Clefairy
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Erika's Clefairy]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Fairy Power
     text: Flip a coin. If heads, you may return any number of your Pokémon in play
       and all cards attached to them to your hand.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Moon Impact
     damage: '30'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Atsuko Nishida
-- id: 186-4
-  pioId: pkmod6-4
-  enumId: ERIKAS_DRAGONAIR_4
+  pioId: pkmod6-3
+  nationalPokedexNumber: 36
+  variantOf: ERIKA_S_CLEFABLE_3:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_DRAGONAIR_4:POKEMOD_GYM_HEROES
   name: Erika's Dragonair
-  nationalPokedexNumber: 148
   number: '4'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Erika's Dratini
-  evolvesTo: [Dragonite]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Erika's Dratini]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Blizzard
     damage: '30'
     text: Flip a coin. If heads, this attack does 10 damage to each of your opponent's
       Benched Pokémon. If tails, this attack does 10 damage to each of your own Benched
       Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Take Away
     text: Shuffle Erika's Dragonair and all cards attached to it into your deck. Then,
       your opponent shuffles his or her Active Pokémon and all cards attached to it
       into his or her deck.
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Atsuko Nishida
-- id: 186-5
-  pioId: pkmod6-5
-  enumId: ERIKAS_VILEPLUME_5
+  pioId: pkmod6-4
+  nationalPokedexNumber: 148
+  variantOf: ERIKA_S_DRAGONAIR_4:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_VILEPLUME_5:POKEMOD_GYM_HEROES
   name: Erika's Vileplume
-  nationalPokedexNumber: 45
   number: '5'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE2]
-  evolvesFrom: Erika's Gloom
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Erika's Gloom]
   hp: 80
-  retreatCost: 2
   abilities:
   - type: Poké-Body
     name: Pollen Defense
@@ -138,7 +131,7 @@ cards:
       is now Confused. This power works even while Erika's Vileplume is affected by
       a Special Condition.
   moves:
-  - cost: [G, G, G]
+  - cost: [GRASS, GRASS, GRASS]
     name: Mega Drain
     damage: '30'
     text: If Erika's Vileplume does damage to the Defending Pokémon (after applying
@@ -147,81 +140,77 @@ cards:
       10). If Erika's Vileplume has fewer damage counters than that, remove all of
       them.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-6
-  pioId: pkmod6-6
-  enumId: LT_SURGES_ELECTABUZZ_6
+  pioId: pkmod6-5
+  nationalPokedexNumber: 45
+- enumId: LT_SURGES_ELECTABUZZ_6:POKEMOD_GYM_HEROES
   name: Lt. Surge's Electabuzz
-  nationalPokedexNumber: 125
   number: '6'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesFrom: Elekid
-  evolvesTo: [Electivire]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [LIGHTNING]
+  evolvesFrom: [Elekid]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Charge
     text: Take up to 2 [L] Energy cards from your discard pile and attach them to
       Lt. Surge's Electabuzz.
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Discharge
     damage: 30x
     text: Discard all [L] Energy cards attached to Lt. Surge's Electabuzz in order
       to use this attack. Flip a number of coins equal to the number of [L] Energy
       cards you discarded. This attack does 30 damage times the number of heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-7
-  pioId: pkmod6-7
-  enumId: LT_SURGES_FEAROW_7
+  pioId: pkmod6-6
+  nationalPokedexNumber: 125
+  variantOf: LT__SURGE_S_ELECTABUZZ_6:GYM_HEROES
+  variantType: Reprint
+- enumId: LT_SURGES_FEAROW_7:POKEMOD_GYM_HEROES
   name: Lt. Surge's Fearow
-  nationalPokedexNumber: 22
   number: '7'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Lt. Surge's Spearow
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Lt. Surge's Spearow]
   hp: 70
-  retreatCost: 0
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Repeating Drill
     damage: 10x
     text: Flip 5 coins. This attack does 10 damage times the number of heads.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Clutch
     damage: '30'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-8
-  pioId: pkmod6-8
-  enumId: LT_SURGES_MAGNETON_8
+  pioId: pkmod6-7
+  nationalPokedexNumber: 22
+  variantOf: LT__SURGE_S_FEAROW_7:GYM_HEROES
+  variantType: Reprint
+- enumId: LT_SURGES_MAGNETON_8:POKEMOD_GYM_HEROES
   name: Lt. Surge's Magneton
-  nationalPokedexNumber: 82
   number: '8'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Lt. Surge's Magnemite
-  evolvesTo: [Magnezone]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Lt. Surge's Magnemite]
   hp: 70
-  retreatCost: 2
   abilities:
   - type: Poké-Power
     name: Energy Charge
@@ -230,54 +219,51 @@ cards:
       1 of your Pokémon and attach it to Lt. Surge's Magneton. This power can't be
       used if Lt. Surge's Magneton is affected by a Special Condition.
   moves:
-  - cost: [L, C, C, C]
+  - cost: [LIGHTNING, COLORLESS, COLORLESS, COLORLESS]
     name: Mega Shock
     damage: '50'
     text: Flip a coin. If tails, Lt. Surge's Magneton does 20 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-9
-  pioId: pkmod6-9
-  enumId: MISTYS_SEADRA_9
+  pioId: pkmod6-8
+  nationalPokedexNumber: 82
+- enumId: MISTYS_SEADRA_9:POKEMOD_GYM_HEROES
   name: Misty's Seadra
-  nationalPokedexNumber: 117
   number: '9'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Misty's Horsea
-  evolvesTo: [Kingdra]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Misty's Horsea]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Tail Snap
     damage: '20'
-  - cost: [W, W, W]
+  - cost: [WATER, WATER, WATER]
     name: Knockout Needle
     damage: 30+
     text: Flip 2 coins. If both of them are heads, this attack does 30 damage plus
       60 more damage. If 1 or both of them are tails, this attack does 30 damage.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Atsuko Nishida
-- id: 186-10
-  pioId: pkmod6-10
-  enumId: MISTYS_TENTACRUEL_10
+  pioId: pkmod6-9
+  nationalPokedexNumber: 117
+  variantOf: MISTY_S_SEADRA_9:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTYS_TENTACRUEL_10:POKEMOD_GYM_HEROES
   name: Misty's Tentacruel
-  nationalPokedexNumber: 73
   number: '10'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Misty's Tentacool
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Misty's Tentacool]
   hp: 70
-  retreatCost: 0
   abilities:
   - type: Poké-Power
     name: Flee
@@ -286,54 +272,52 @@ cards:
       of that attack on Misty's Tentacruel. This power can't be used if Misty's Tentacruel
       is already affected by a Special Condition.
   moves:
-  - cost: [W, W, C, C]
+  - cost: [WATER, WATER, COLORLESS, COLORLESS]
     name: Jellyfish Poison
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned. If tails,
       the Defending Pokémon is now Confused.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 0
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-11
-  pioId: pkmod6-11
-  enumId: ROCKETS_HITMONCHAN_11
+  pioId: pkmod6-10
+  nationalPokedexNumber: 73
+- enumId: ROCKETS_HITMONCHAN_11:POKEMOD_GYM_HEROES
   name: Rocket's Hitmonchan
-  nationalPokedexNumber: 107
   number: '11'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesFrom: Tyrogue
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
+  evolvesFrom: [Tyrogue]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Crosscounter
     text: If an attack does damage to Rocket's Hitmonchan during your opponent's next
       turn (even if Rocket's Hitmonchan is Knocked Out), flip a coin. If heads, Rocket's
       Hitmonchan attacks your opponent's Active Pokémon for double that amount of
       damage. (If Rocket's Hitmonchan takes 20 damage, it does 40 damage to that Pokémon.)
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Magnum Punch
     damage: '50'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-12
-  pioId: pkmod6-12
-  enumId: ROCKETS_MOLTRES_12
+  pioId: pkmod6-11
+  nationalPokedexNumber: 107
+  variantOf: ROCKET_S_HITMONCHAN_11:GYM_HEROES
+  variantType: Reprint
+- enumId: ROCKETS_MOLTRES_12:POKEMOD_GYM_HEROES
   name: Rocket's Moltres
-  nationalPokedexNumber: 146
   number: '12'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIRE]
   hp: 60
-  retreatCost: 2
   abilities:
   - type: Poké-Power
     name: Rebirth
@@ -341,328 +325,302 @@ cards:
       discarding it. This power can't be used if Rocket's Moltres is affected by a
       Special Condition when it is Knocked Out.
   moves:
-  - cost: [R, R, C]
+  - cost: [FIRE, FIRE, COLORLESS]
     name: Fire Wall
     damage: '40'
     text: If an attack does damage to Rocket's Moltres during your opponent's next
       turn (even if Rocket's Moltres is Knocked Out), Rocket's Moltres attacks your
       opponent's Active Pokémon for 10 damage. (Apply Weakness and Resistance.)
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 2
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-13
-  pioId: pkmod6-13
-  enumId: ROCKETS_SCYTHER_13
+  pioId: pkmod6-12
+  nationalPokedexNumber: 146
+- enumId: ROCKETS_SCYTHER_13:POKEMOD_GYM_HEROES
   name: Rocket's Scyther
-  nationalPokedexNumber: 123
   number: '13'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Scizor]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Shadow Images
     text: Whenever Rocket's Scyther is attacked, your opponent flips a coin. If tails,
       that attack does no damage to Rocket's Scyther. (Any other effects of the attack
       still happen.) This effect lasts until Rocket's Scyther takes damage (or is
       Benched or is evolved).
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Blinding Scythe
     damage: '40'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-14
-  pioId: pkmod6-14
-  enumId: SABRINAS_GENGAR_14
+  pioId: pkmod6-13
+  nationalPokedexNumber: 123
+  variantOf: ROCKET_S_SCYTHER_13:GYM_HEROES
+  variantType: Reprint
+- enumId: SABRINAS_GENGAR_14:POKEMOD_GYM_HEROES
   name: Sabrina's Gengar
-  nationalPokedexNumber: 94
   number: '14'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE2]
-  evolvesFrom: Sabrina's Haunter
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE2]
+  types: [PSYCHIC]
+  evolvesFrom: [Sabrina's Haunter]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Pain Amplifier
     text: Put a damage counter on each of your opponent's Pokémon that already has
       any damage counters on it.
-  - cost: [P, P, C]
+  - cost: [PSYCHIC, PSYCHIC, COLORLESS]
     name: Call of the Night
     damage: '40'
     text: Unless this attack Knocks Out the Defending Pokémon, flip 2 coins. If both
       of them are heads, your opponent shuffles his or her Active Pokémon and all
       cards attached to it into his or her deck.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Rare Holo
   artist: Ken Sugimori
-- id: 186-15
-  pioId: pkmod6-15
-  enumId: BROCK_15
+  pioId: pkmod6-14
+  nationalPokedexNumber: 94
+- enumId: BROCK_15:POKEMOD_GYM_HEROES
   name: Brock
   number: '15'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare Holo
-  text:
-  - Remove 1 damage counter from each of your Pokémon (excluding Pokémon-ex) that
+  text: Remove 1 damage counter from each of your Pokémon (excluding Pokémon-ex) that
     has any damage counters on it.
   artist: Ken Sugimori
-- id: 186-16
-  pioId: pkmod6-16
-  enumId: ERIKA_16
+  pioId: pkmod6-15
+- enumId: ERIKA_16:POKEMOD_GYM_HEROES
   name: Erika
   number: '16'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare Holo
-  text:
-  - You may draw up to 3 cards, then your opponent may draw up to 3 cards.
+  text: You may draw up to 3 cards, then your opponent may draw up to 3 cards.
   artist: Ken Sugimori
-- id: 186-17
-  pioId: pkmod6-17
-  enumId: LT__SURGE_17
+  pioId: pkmod6-16
+  variantOf: ERIKA_16:GYM_HEROES
+  variantType: Reprint
+- enumId: LT__SURGE_17:POKEMOD_GYM_HEROES
   name: Lt. Surge
   number: '17'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare Holo
-  text:
-  - You can play this card only if you have at least 1 Basic Pokémon card in your
+  text: You can play this card only if you have at least 1 Basic Pokémon card in your
     hand. Put a Basic Pokémon card from your hand into play as your Active Pokémon.
     Put your old Active Pokémon onto your Bench. (You can't play this card if your
     Bench is full.)
   artist: Ken Sugimori
-- id: 186-18
-  pioId: pkmod6-18
-  enumId: MISTY_18
+  pioId: pkmod6-17
+  variantOf: LT__SURGE_17:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTY_18:POKEMOD_GYM_HEROES
   name: Misty
   number: '18'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare Holo
-  text:
-  - Discard 2 of the other cards in your hand in order to play this card. If this
+  text: Discard 2 of the other cards in your hand in order to play this card. If this
     turn's attack does damage to the Defending Pokémon (after applying Weakness and
     Resistance), and if the attacking Pokémon has Misty in its name, the attack does
     20 more damage to the Defending Pokémon.
   artist: Ken Sugimori
-- id: 186-19
-  pioId: pkmod6-19
-  enumId: THE_ROCKETS_TRAP_19
+  pioId: pkmod6-18
+  variantOf: MISTY_18:GYM_HEROES
+  variantType: Reprint
+- enumId: THE_ROCKETS_TRAP_19:POKEMOD_GYM_HEROES
   name: The Rocket's Trap
   number: '19'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare Holo
-  text:
-  - Flip a coin. If heads, choose up to 3 cards at random from your opponent's hand
-    (without looking at them). Your opponent shuffles those cards into his or her
-    deck. If tails, your turn is now over. (You don't get to attack.)
+  text: Flip a coin. If heads, choose up to 3 cards at random from your opponent's
+    hand (without looking at them). Your opponent shuffles those cards into his or
+    her deck. If tails, your turn is now over. (You don't get to attack.)
   artist: Ken Sugimori
-- id: 186-20
-  pioId: pkmod6-20
-  enumId: BROCKS_GOLEM_20
+  pioId: pkmod6-19
+- enumId: BROCKS_GOLEM_20:POKEMOD_GYM_HEROES
   name: Brock's Golem
-  nationalPokedexNumber: 76
   number: '20'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE2]
-  evolvesFrom: Brock's Graveler
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Brock's Graveler]
   hp: 90
-  retreatCost: 4
   moves:
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Rock Slide
     damage: '20'
     text: If your opponent has any Benched Pokémon, choose up to 3 of them. This attack
       does 10 damage to each of them. (Don't apply Weakness and Resistance for Benched
       Pokémon.)
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Fissure
     damage: '50'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 4
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-21
-  pioId: pkmod6-21
-  enumId: BROCKS_ONIX_21
+  pioId: pkmod6-20
+  nationalPokedexNumber: 76
+- enumId: BROCKS_ONIX_21:POKEMOD_GYM_HEROES
   name: Brock's Onix
-  nationalPokedexNumber: 95
   number: '21'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Steelix]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Bind
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Tunneling
     damage: '20'
     text: If your opponent has any Benched Pokémon, choose up to 2 of them. This attack
       does 20 damage to each of them. (Don't apply Weakness and Resistance for Benched
       Pokémon.) Brock's Onix can't attack during your next turn.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Benimaru Itoh
-- id: 186-22
-  pioId: pkmod6-22
-  enumId: BROCKS_RHYHORN_22
+  pioId: pkmod6-21
+  nationalPokedexNumber: 95
+- enumId: BROCKS_RHYHORN_22:POKEMOD_GYM_HEROES
   name: Brock's Rhyhorn
-  nationalPokedexNumber: 111
   number: '22'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Rhydon]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Horn Toss
     damage: '20'
     text: If your opponent has any Benched Pokémon, he or she chooses 1 of them and
       switches it with the Defending Pokémon. (Do the damage before switching the
       Pokémon.)
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Take Down
     damage: '40'
     text: Brock's Rhyhorn does 10 damage to itself.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-23
-  pioId: pkmod6-23
-  enumId: BROCKS_SANDSLASH_23
+  pioId: pkmod6-22
+  nationalPokedexNumber: 111
+- enumId: BROCKS_SANDSLASH_23:POKEMOD_GYM_HEROES
   name: Brock's Sandslash
-  nationalPokedexNumber: 28
   number: '23'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Brock's Sandshrew
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Brock's Sandshrew]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Needles
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed and Poisoned.
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Sandstorm
     damage: '30'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 1
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-24
-  pioId: pkmod6-24
-  enumId: BROCKS_ZUBAT_24
+  pioId: pkmod6-23
+  nationalPokedexNumber: 28
+- enumId: BROCKS_ZUBAT_24:POKEMOD_GYM_HEROES
   name: Brock's Zubat
-  nationalPokedexNumber: 41
   number: '24'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Golbat]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 30
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Alert
     text: Draw a card. Then, switch Brock's Zubat with 1 of your Benched Pokémon.
       You can't use this attack if your Bench is empty.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Wing Attack
     damage: '20'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-25
-  pioId: pkmod6-25
-  enumId: ERIKAS_CLEFAIRY_25
+  pioId: pkmod6-24
+  nationalPokedexNumber: 41
+  variantOf: BROCK_S_ZUBAT_24:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_CLEFAIRY_25:POKEMOD_GYM_HEROES
   name: Erika's Clefairy
-  nationalPokedexNumber: 35
   number: '25'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesFrom: Cleffa
-  evolvesTo: [Clefable]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [COLORLESS]
+  evolvesFrom: [Cleffa]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Moonwatching
     text: Search your deck for a basic Energy card. Show that card to your opponent,
       then put it into your hand. Shuffle your deck afterward.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Comet Slap
     damage: 10x
     text: Flip 3 coins. This attack does 10 damage times the number of heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-26
-  pioId: pkmod6-26
-  enumId: ERIKAS_VICTREEBEL_26
+  pioId: pkmod6-25
+  nationalPokedexNumber: 35
+  variantOf: ERIKA_S_CLEFAIRY_25:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_VICTREEBEL_26:POKEMOD_GYM_HEROES
   name: Erika's Victreebel
-  nationalPokedexNumber: 71
   number: '26'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE2]
-  evolvesFrom: Erika's Weepinbell
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Erika's Weepinbell]
   hp: 80
-  retreatCost: 2
   abilities:
   - type: Poké-Power
     name: Fragrance Trap
@@ -671,81 +629,78 @@ cards:
       with his or her Active Pokémon. This power can't be used if Erika's Victreebel
       is affected by a Special Condition.
   moves:
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Razor Leaf
     damage: '50'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-27
-  pioId: pkmod6-27
-  enumId: LT_SURGES_ELECTABUZZ_27
+  pioId: pkmod6-26
+  nationalPokedexNumber: 71
+- enumId: LT_SURGES_ELECTABUZZ_27:POKEMOD_GYM_HEROES
   name: Lt. Surge's Electabuzz
-  nationalPokedexNumber: 125
   number: '27'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesFrom: Elekid
-  evolvesTo: [Electivire]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [LIGHTNING]
+  evolvesFrom: [Elekid]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Charge
     text: Take up to 2 [L] Energy cards from your discard pile and attach them to
       Lt. Surge's Electabuzz.
-  - cost: [L, L]
+  - cost: [LIGHTNING, LIGHTNING]
     name: Electric Current
     damage: '20'
     text: Take 1 [L] Energy card attached to Lt. Surge's Electabuzz and attach it
       to 1 of your Benched Pokémon. If you have no Benched Pokémon, discard that Energy
       card.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-28
-  pioId: pkmod6-28
-  enumId: LT_SURGES_RAICHU_28
+  pioId: pkmod6-27
+  nationalPokedexNumber: 125
+  variantOf: LT__SURGE_S_ELECTABUZZ_27:GYM_HEROES
+  variantType: Reprint
+- enumId: LT_SURGES_RAICHU_28:POKEMOD_GYM_HEROES
   name: Lt. Surge's Raichu
-  nationalPokedexNumber: 26
   number: '28'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Lt. Surge's Pikachu
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Lt. Surge's Pikachu]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [L, L]
+  - cost: [LIGHTNING, LIGHTNING]
     name: Mega Punch
     damage: '30'
-  - cost: [L, L, L, L]
+  - cost: [LIGHTNING, LIGHTNING, LIGHTNING, LIGHTNING]
     name: Thunderbolt
     damage: '100'
     text: Discard 3 Energy cards attached to Lt. Surge's Raichu in order to use this
       attack.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-29
-  pioId: pkmod6-29
-  enumId: MISTYS_CLOYSTER_29
+  pioId: pkmod6-28
+  nationalPokedexNumber: 26
+  variantOf: LT__SURGE_S_RAICHU_28:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTYS_CLOYSTER_29:POKEMOD_GYM_HEROES
   name: Misty's Cloyster
-  nationalPokedexNumber: 91
   number: '29'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Misty's Shellder
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Misty's Shellder]
   hp: 70
-  retreatCost: 2
   abilities:
   - type: Poké-Body
     name: Shell Armor
@@ -753,98 +708,90 @@ cards:
       Weakness and Resistance). (Any other effects of attacks still happen.) This
       power can't be used if Misty's Cloyster is affected by a Special Condition.
   moves:
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Triple Cannon
     damage: 20x
     text: Flip 3 coins. This attack does 20 damage times the number of heads.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-30
-  pioId: pkmod6-30
-  enumId: MISTYS_GOLDEEN_30
+  pioId: pkmod6-29
+  nationalPokedexNumber: 91
+- enumId: MISTYS_GOLDEEN_30:POKEMOD_GYM_HEROES
   name: Misty's Goldeen
-  nationalPokedexNumber: 118
   number: '30'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Seaking]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [WATER]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Horn Hazard
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 0
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-31
-  pioId: pkmod6-31
-  enumId: MISTYS_POLIWRATH_31
+  pioId: pkmod6-30
+  nationalPokedexNumber: 118
+- enumId: MISTYS_POLIWRATH_31:POKEMOD_GYM_HEROES
   name: Misty's Poliwrath
-  nationalPokedexNumber: 62
   number: '31'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE2]
-  evolvesFrom: Misty's Poliwhirl
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Misty's Poliwhirl]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [W, W, C, C]
+  - cost: [WATER, WATER, COLORLESS, COLORLESS]
     name: Water Ring
     damage: '30'
     text: Does 10 damage to each Pokémon that isn't [W] on each player's Bench. (Don't
       apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-32
-  pioId: pkmod6-32
-  enumId: MISTYS_TENTACOOL_32
+  pioId: pkmod6-31
+  nationalPokedexNumber: 62
+  variantOf: MISTY_S_POLIWRATH_31:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTYS_TENTACOOL_32:POKEMOD_GYM_HEROES
   name: Misty's Tentacool
-  nationalPokedexNumber: 72
   number: '32'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Tentacruel]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [WATER]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Mysterious Light
     text: Flip a coin. If heads, the Defending Pokémon is now Asleep.
-  - cost: [W]
+  - cost: [WATER]
     name: Jellyfish Pod
     text: Search your deck for any number of Pokémon named Tentacool, Tentacruel,
       Misty's Tentacool, and/or Misty's Tentacruel. Show those cards to your opponent,
       then put them into your hand. Shuffle your deck afterward.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 0
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-33
-  pioId: pkmod6-33
-  enumId: ROCKETS_SNORLAX_33
+  pioId: pkmod6-32
+  nationalPokedexNumber: 72
+- enumId: ROCKETS_SNORLAX_33:POKEMOD_GYM_HEROES
   name: Rocket's Snorlax
-  nationalPokedexNumber: 143
   number: '33'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesFrom: Munchlax
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [COLORLESS]
+  evolvesFrom: [Munchlax]
   hp: 90
-  retreatCost: 4
   abilities:
   - type: Poké-Body
     name: Restless Sleep
@@ -852,256 +799,245 @@ cards:
       is already Asleep (even if it's Knocked Out), this power does 20 damage to the
       attacking Pokémon.
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Collapse
     damage: '20'
     text: Rocket's Snorlax is now Asleep (after doing damage).
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 4
   rarity: Rare
   artist: Shin-ichi Yoshida
-- id: 186-34
-  pioId: pkmod6-34
-  enumId: SABRINAS_VENOMOTH_34
+  pioId: pkmod6-33
+  nationalPokedexNumber: 143
+- enumId: SABRINAS_VENOMOTH_34:POKEMOD_GYM_HEROES
   name: Sabrina's Venomoth
-  nationalPokedexNumber: 49
   number: '34'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Sabrina's Venonat
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Sabrina's Venonat]
   hp: 60
-  retreatCost: 0
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Healing Pollen
     text: Flip 3 coins. For each heads, remove 1 damage counter from each of your
       Pokémon. If a Pokémon has fewer damage counters than the number of heads, remove
       all of them.
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Sonic Distortion
     damage: '10'
     text: Flip 2 coins. If 1 or both of them are heads, the Defending Pokémon is now
       Confused.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Rare
   artist: Ken Sugimori
-- id: 186-35
-  pioId: pkmod6-35
-  enumId: BLAINES_GROWLITHE_35
+  pioId: pkmod6-34
+  nationalPokedexNumber: 49
+  variantOf: SABRINA_S_VENOMOTH_34:GYM_HEROES
+  variantType: Reprint
+- enumId: BLAINES_GROWLITHE_35:POKEMOD_GYM_HEROES
   name: Blaine's Growlithe
-  nationalPokedexNumber: 58
   number: '35'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Arcanine]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIRE]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Shake
     damage: '10'
     text: If your opponent has any Benched Pokémon, he or she chooses 1 of them and
       switches it with the Defending Pokémon. (Do the damage before switching the
       Pokémon.)
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Fire Tackle
     damage: '30'
     text: Blaine's Growlithe does 10 damage to itself.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-36
-  pioId: pkmod6-36
-  enumId: BLAINES_KANGASKHAN_36
+  pioId: pkmod6-35
+  nationalPokedexNumber: 58
+  variantOf: BLAINE_S_GROWLITHE_35:GYM_HEROES
+  variantType: Reprint
+- enumId: BLAINES_KANGASKHAN_36:POKEMOD_GYM_HEROES
   name: Blaine's Kangaskhan
-  nationalPokedexNumber: 115
   number: '36'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [COLORLESS]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Child's Punch
     damage: '20'
     text: Flip a coin. If tails, this attack does nothing.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: One-Two Punch
     damage: 30+
     text: Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if
       tails, this attack does 30 damage.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 3
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-37
-  pioId: pkmod6-37
-  enumId: BLAINES_MAGMAR_37
+  pioId: pkmod6-36
+  nationalPokedexNumber: 115
+- enumId: BLAINES_MAGMAR_37:POKEMOD_GYM_HEROES
   name: Blaine's Magmar
-  nationalPokedexNumber: 126
   number: '37'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesFrom: Magby
-  evolvesTo: [Magmortar]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIRE]
+  evolvesFrom: [Magby]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Firebreathing
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 10 more damage; if
       tails, this attack does 10 damage.
-  - cost: [R, R, R]
+  - cost: [FIRE, FIRE, FIRE]
     name: Lava Burst
     damage: 20x
     text: Discard the top 5 cards of your deck. (If there are fewer than 5 cards in
       your deck, discard all of them.) This attack does 20 damage for each [R] Energy
       card you discarded in this way.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-38
-  pioId: pkmod6-38
-  enumId: BROCKS_GEODUDE_38
+  pioId: pkmod6-37
+  nationalPokedexNumber: 126
+  variantOf: BLAINE_S_MAGMAR_37:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCKS_GEODUDE_38:POKEMOD_GYM_HEROES
   name: Brock's Geodude
-  nationalPokedexNumber: 74
   number: '38'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Graveler]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Tackle
     damage: '10'
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Lucky Shot
     text: Choose 1 of your opponent's Benched Pokémon and flip a coin. If heads, this
       attack does 30 damage to that Pokémon. (Don't apply Weakness and Resistance
       for Benched Pokémon.) This attack can't be used if your opponent has no Benched
       Pokémon.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 186-39
-  pioId: pkmod6-39
-  enumId: BROCKS_GOLBAT_39
+  pioId: pkmod6-38
+  nationalPokedexNumber: 74
+  variantOf: BROCK_S_GEODUDE_38:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCKS_GOLBAT_39:POKEMOD_GYM_HEROES
   name: Brock's Golbat
-  nationalPokedexNumber: 42
   number: '39'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Brock's Zubat
-  evolvesTo: [Crobat]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Brock's Zubat]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Dive
     damage: '20'
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Spiral Dive
     damage: '10'
     text: Does 10 damage to each of your opponent's Pokémon. Don't apply Weakness
       and Resistance.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-40
-  pioId: pkmod6-40
-  enumId: BROCKS_GRAVELER_40
+  pioId: pkmod6-39
+  nationalPokedexNumber: 42
+  variantOf: BROCK_S_GOLBAT_39:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCKS_GRAVELER_40:POKEMOD_GYM_HEROES
   name: Brock's Graveler
-  nationalPokedexNumber: 75
   number: '40'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Brock's Geodude
-  evolvesTo: [Golem]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Brock's Geodude]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Rock Toss
     damage: 20x
     text: Flip 3 coins. This attack does 20 damage times the number of heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-41
-  pioId: pkmod6-41
-  enumId: BROCKS_LICKITUNG_41
+  pioId: pkmod6-40
+  nationalPokedexNumber: 75
+  variantOf: BROCK_S_GRAVELER_40:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCKS_LICKITUNG_41:POKEMOD_GYM_HEROES
   name: Brock's Lickitung
-  nationalPokedexNumber: 108
   number: '41'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Lickilicky]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [COLORLESS]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Tongue Slap
     damage: '20'
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Slam
     damage: 30x
     text: Flip 2 coins. This attack does 30 damage times the number of heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 3
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-42
-  pioId: pkmod6-42
-  enumId: ERIKAS_DRATINI_42
+  pioId: pkmod6-41
+  nationalPokedexNumber: 108
+  variantOf: BROCK_S_LICKITUNG_41:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_DRATINI_42:POKEMOD_GYM_HEROES
   name: Erika's Dratini
-  nationalPokedexNumber: 147
   number: '42'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Dragonair]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [COLORLESS]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Strange Barrier
@@ -1110,139 +1046,133 @@ cards:
       damage to 10. (Any other effects of attacks still happen.) This power stops
       working while Erika's Dratini is affected by a Special Condition.
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Tail Strike
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 20 more damage; if
       tails, this attack does 10 damage.
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-43
-  pioId: pkmod6-43
-  enumId: ERIKAS_EXEGGCUTE_43
+  pioId: pkmod6-42
+  nationalPokedexNumber: 147
+- enumId: ERIKAS_EXEGGCUTE_43:POKEMOD_GYM_HEROES
   name: Erika's Exeggcute
-  nationalPokedexNumber: 102
   number: '43'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Exeggutor]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Deflector
     text: During your opponent's next turn, whenever Erika's Exeggcute takes damage,
       divide that damage in half (rounded down to the nearest 10). (Any other effects
       still happen.)
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Egg Bomb
     damage: '40'
     text: Flip a coin. If tails, this attack does nothing to the Defending Pokémon
       and Erika's Exeggcute does 20 damage to itself.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 186-44
-  pioId: pkmod6-44
-  enumId: ERIKAS_EXEGGUTOR_44
+  pioId: pkmod6-43
+  nationalPokedexNumber: 102
+  variantOf: ERIKA_S_EXEGGCUTE_43:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_EXEGGUTOR_44:POKEMOD_GYM_HEROES
   name: Erika's Exeggutor
-  nationalPokedexNumber: 103
   number: '44'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Erika's Exeggcute
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Erika's Exeggcute]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Psychic Exchange
     text: Shuffle your hand into your deck, then draw 5 cards.
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Stomp
     damage: 30+
     text: Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if
       tails, this attack does 30 damage.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-45
-  pioId: pkmod6-45
-  enumId: ERIKAS_GLOOM_45
+  pioId: pkmod6-44
+  nationalPokedexNumber: 103
+  variantOf: ERIKA_S_EXEGGUTOR_44:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_GLOOM_45:POKEMOD_GYM_HEROES
   name: Erika's Gloom
-  nationalPokedexNumber: 44
   number: '45'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Erika's Oddish
-  evolvesTo: [Vileplume, Bellossom]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Erika's Oddish]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Healing Pollen
     text: Flip a coin. If heads, remove 4 damage counters from Erika's Gloom. If Erika's
       Gloom has fewer damage counters than that, remove all of them.
-  - cost: [G, G, G]
+  - cost: [GRASS, GRASS, GRASS]
     name: Magic Pollen
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Asleep, Confused, Paralyzed,
       or Poisoned (your choice).
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-46
-  pioId: pkmod6-46
-  enumId: ERIKAS_GLOOM_46
-  name: Erika's Gloom
+  pioId: pkmod6-45
   nationalPokedexNumber: 44
+  variantOf: ERIKA_S_GLOOM_45:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_GLOOM_46:POKEMOD_GYM_HEROES
+  name: Erika's Gloom
   number: '46'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Erika's Oddish
-  evolvesTo: [Vileplume, Bellossom]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Erika's Oddish]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Dream Dance
     damage: '10'
     text: Both the Defending Pokémon and Erika's Gloom are now Asleep (after doing
       damage).
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Vile Smell
     damage: '30'
     text: Both the Defending Pokémon and Erika's Gloom are now Confused (after doing
       damage).
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-47
-  pioId: pkmod6-47
-  enumId: ERIKAS_ODDISH_47
+  pioId: pkmod6-46
+  nationalPokedexNumber: 44
+  variantOf: ERIKA_S_GLOOM_46:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_ODDISH_47:POKEMOD_GYM_HEROES
   name: Erika's Oddish
-  nationalPokedexNumber: 43
   number: '47'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Gloom]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Body
     name: Photosynthesis
@@ -1250,473 +1180,447 @@ cards:
       their usual type. This power works even while Erika's Oddish is affected by
       a Special Condition.
   moves:
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Poisonpowder
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 186-48
-  pioId: pkmod6-48
-  enumId: ERIKAS_WEEPINBELL_48
+  pioId: pkmod6-47
+  nationalPokedexNumber: 43
+- enumId: ERIKAS_WEEPINBELL_48:POKEMOD_GYM_HEROES
   name: Erika's Weepinbell
-  nationalPokedexNumber: 70
   number: '48'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Erika's Bellsprout
-  evolvesTo: [Victreebel]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Erika's Bellsprout]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Drool
     damage: '10'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Flytrap
     damage: '20'
     text: Before doing damage, choose 1 of your opponent's Benched Pokémon and switch
       it with his or her Active Pokémon. This attack can't be used if your opponent
       has no Benched Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 186-49
-  pioId: pkmod6-49
-  enumId: ERIKAS_WEEPINBELL_49
-  name: Erika's Weepinbell
+  pioId: pkmod6-48
   nationalPokedexNumber: 70
+- enumId: ERIKAS_WEEPINBELL_49:POKEMOD_GYM_HEROES
+  name: Erika's Weepinbell
   number: '49'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Erika's Bellsprout
-  evolvesTo: [Victreebel]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Erika's Bellsprout]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Sleep Poison
     damage: '10'
     text: The Defending Pokémon is now Asleep and Poisoned.
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Vine Whip
     damage: '40'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-50
-  pioId: pkmod6-50
-  enumId: LT_SURGES_MAGNEMITE_50
+  pioId: pkmod6-49
+  nationalPokedexNumber: 70
+- enumId: LT_SURGES_MAGNEMITE_50:POKEMOD_GYM_HEROES
   name: Lt. Surge's Magnemite
-  nationalPokedexNumber: 81
   number: '50'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Magneton]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [LIGHTNING]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Removal Pulse
     damage: '10'
     text: If the Defending Pokémon has any Energy cards attached to it, flip a coin.
       If heads, choose 1 of those Energy cards and discard it.
-  - cost: [L, L]
+  - cost: [LIGHTNING, LIGHTNING]
     name: Confusion Pulse
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 0
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 186-51
-  pioId: pkmod6-51
-  enumId: LT_SURGES_RATICATE_51
+  pioId: pkmod6-50
+  nationalPokedexNumber: 81
+- enumId: LT_SURGES_RATICATE_51:POKEMOD_GYM_HEROES
   name: Lt. Surge's Raticate
-  nationalPokedexNumber: 20
   number: '51'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Lt. Surge's Rattata
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Lt. Surge's Rattata]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Super Fang
     text: Does damage to the Defending Pokémon equal to half the Defending Pokémon's
       remaining HP (rounded up to the nearest 10).
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-52
-  pioId: pkmod6-52
-  enumId: LT_SURGES_SPEAROW_52
+  pioId: pkmod6-51
+  nationalPokedexNumber: 20
+  variantOf: LT__SURGE_S_RATICATE_51:GYM_HEROES
+  variantType: Reprint
+- enumId: LT_SURGES_SPEAROW_52:POKEMOD_GYM_HEROES
   name: Lt. Surge's Spearow
-  nationalPokedexNumber: 21
   number: '52'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Fearow]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [COLORLESS]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Drill Peck
     damage: '20'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-53
-  pioId: pkmod6-53
-  enumId: MISTYS_POLIWHIRL_53
+  pioId: pkmod6-52
+  nationalPokedexNumber: 21
+- enumId: MISTYS_POLIWHIRL_53:POKEMOD_GYM_HEROES
   name: Misty's Poliwhirl
-  nationalPokedexNumber: 61
   number: '53'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Misty's Poliwag
-  evolvesTo: [Poliwrath, Politoed]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Misty's Poliwag]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Rapids
     damage: '20'
     text: If the Defending Pokémon has any Energy cards attached to it, flip a coin.
       If heads, choose 1 of those Energy cards and discard it.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Water Punch
     damage: 30+
     text: Flip a number of coins equal to the number of [W] Energy attached to Misty's
       Poliwhirl. This attack does 30 damage plus 10 damage for each heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-54
-  pioId: pkmod6-54
-  enumId: MISTYS_PSYDUCK_54
+  pioId: pkmod6-53
+  nationalPokedexNumber: 61
+  variantOf: MISTY_S_POLIWHIRL_53:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTYS_PSYDUCK_54:POKEMOD_GYM_HEROES
   name: Misty's Psyduck
-  nationalPokedexNumber: 54
   number: '54'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Golduck]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Scratch
     damage: '10'
-  - cost: [W]
+  - cost: [WATER]
     name: Call for Friend
     text: Flip a coin. If heads, you may search your deck for a Basic Pokémon with
       Misty in its name and put it onto your Bench. (You can't use this attack if
       your Bench is full.) Shuffle your deck afterward.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 186-55
-  pioId: pkmod6-55
-  enumId: MISTYS_SEAKING_55
+  pioId: pkmod6-54
+  nationalPokedexNumber: 54
+  variantOf: MISTY_S_PSYDUCK_54:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTYS_SEAKING_55:POKEMOD_GYM_HEROES
   name: Misty's Seaking
-  nationalPokedexNumber: 119
   number: '55'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Misty's Goldeen
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Misty's Goldeen]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Horn Attack
     damage: '10'
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Mud Splash
     damage: '30'
     text: If your opponent has any Benched Pokémon, choose 1 of them and flip a coin.
       If heads, this attack does 10 damage to that Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-56
-  pioId: pkmod6-56
-  enumId: MISTYS_STARMIE_56
+  pioId: pkmod6-55
+  nationalPokedexNumber: 119
+  variantOf: MISTY_S_SEAKING_55:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTYS_STARMIE_56:POKEMOD_GYM_HEROES
   name: Misty's Starmie
-  nationalPokedexNumber: 121
   number: '56'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Misty's Staryu
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Misty's Staryu]
   hp: 80
-  retreatCost: 0
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Water Gun
     damage: 10+
     text: Does 10 damage plus 10 more damage for each [W] Energy attached to Misty's
       Starmie but not used to pay for this attack's Energy cost. You can't add more
       than 20 damage in this way.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Bubblebeam
     damage: '30'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 0
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-57
-  pioId: pkmod6-57
-  enumId: MISTYS_TENTACOOL_57
+  pioId: pkmod6-56
+  nationalPokedexNumber: 121
+- enumId: MISTYS_TENTACOOL_57:POKEMOD_GYM_HEROES
   name: Misty's Tentacool
-  nationalPokedexNumber: 72
   number: '57'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Tentacruel]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Crystal Beam
     damage: '20'
     text: Flip a coin. If heads, your opponent can't attach Energy cards to the Defending
       Pokémon during his or her next turn.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-58
-  pioId: pkmod6-58
-  enumId: SABRINAS_HAUNTER_58
+  pioId: pkmod6-57
+  nationalPokedexNumber: 72
+  variantOf: MISTY_S_TENTACOOL_57:GYM_HEROES
+  variantType: Reprint
+- enumId: SABRINAS_HAUNTER_58:POKEMOD_GYM_HEROES
   name: Sabrina's Haunter
-  nationalPokedexNumber: 93
   number: '58'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Sabrina's Gastly
-  evolvesTo: [Gengar]
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Sabrina's Gastly]
   hp: 60
-  retreatCost: 0
   moves:
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Night Spirits
     damage: 30x
     text: Flip a number of coins equal to the total number of Sabrina's Gastlys, Sabrina's
       Haunters, and Sabrina's Gengars you have in play. This attack does 30 damage
       times the number of heads.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 186-59
-  pioId: pkmod6-59
-  enumId: SABRINAS_JYNX_59
+  pioId: pkmod6-58
+  nationalPokedexNumber: 93
+- enumId: SABRINAS_JYNX_59:POKEMOD_GYM_HEROES
   name: Sabrina's Jynx
-  nationalPokedexNumber: 124
   number: '59'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesFrom: Smoochum
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [PSYCHIC]
+  evolvesFrom: [Smoochum]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Good Night
     damage: '10'
     text: The Defending Pokémon is now Asleep.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Good Morning
     damage: '20'
     text: If the Defending Pokémon was Asleep, it is no longer Asleep.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 186-60
-  pioId: pkmod6-60
-  enumId: SABRINAS_SLOWBRO_60
+  pioId: pkmod6-59
+  nationalPokedexNumber: 124
+  variantOf: SABRINA_S_JYNX_59:GYM_HEROES
+  variantType: Reprint
+- enumId: SABRINAS_SLOWBRO_60:POKEMOD_GYM_HEROES
   name: Sabrina's Slowbro
-  nationalPokedexNumber: 80
   number: '60'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, OWNERS_POKEMON, STAGE1]
-  evolvesFrom: Sabrina's Slowpoke
+  cardTypes: [POKEMON, EVOLUTION, OWNERS_POKEMON, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Sabrina's Slowpoke]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Naptime
     text: Flip a coin. If heads, remove 3 damage counters from Sabrina's Slowbro and
       Sabrina's Slowbro is now Asleep. If Sabrina's Slowbro has fewer damage counters
       than that, remove all of them.
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Screaming Headbutt
     damage: '40'
     text: You can't use this attack during your next turn.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Ken Sugimori
-- id: 186-61
-  pioId: pkmod6-61
-  enumId: BLAINES_CHARMANDER_61
+  pioId: pkmod6-60
+  nationalPokedexNumber: 80
+  variantOf: SABRINA_S_SLOWBRO_60:GYM_HEROES
+  variantType: Reprint
+- enumId: BLAINES_CHARMANDER_61:POKEMOD_GYM_HEROES
   name: Blaine's Charmander
-  nationalPokedexNumber: 4
   number: '61'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Charmeleon]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIRE]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Kindle
     damage: '10'
     text: Discard 1 Energy card attached to Blaine's Charmander in order to use this
       attack. If the Defending Pokémon has any Energy cards attached to it, choose
       1 of them and discard it.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Slash
     damage: '20'
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-62
-  pioId: pkmod6-62
-  enumId: BLAINES_GROWLITHE_62
+  pioId: pkmod6-61
+  nationalPokedexNumber: 4
+  variantOf: BLAINE_S_CHARMANDER_61:GYM_HEROES
+  variantType: Reprint
+- enumId: BLAINES_GROWLITHE_62:POKEMOD_GYM_HEROES
   name: Blaine's Growlithe
-  nationalPokedexNumber: 58
   number: '62'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Arcanine]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIRE]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [R, R]
+  - cost: [FIRE, FIRE]
     name: Blaze
     damage: '20'
     text: Does 10 damage to each [G] Pokémon on your opponent's Bench. (Don't apply
       Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 186-63
-  pioId: pkmod6-63
-  enumId: BLAINES_PONYTA_63
+  pioId: pkmod6-62
+  nationalPokedexNumber: 58
+  variantOf: BLAINE_S_GROWLITHE_62:GYM_HEROES
+  variantType: Reprint
+- enumId: BLAINES_PONYTA_63:POKEMOD_GYM_HEROES
   name: Blaine's Ponyta
-  nationalPokedexNumber: 77
   number: '63'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Rapidash]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIRE]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Agility
     damage: '20'
     text: Flip a coin. If heads, during your opponent's next turn, prevent all effects
       of attacks, including damage, done to Blaine's Ponyta.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 0
   rarity: Common
   artist: Ken Sugimori
-- id: 186-64
-  pioId: pkmod6-64
-  enumId: BLAINES_TAUROS_64
+  pioId: pkmod6-63
+  nationalPokedexNumber: 77
+  variantOf: BLAINE_S_PONYTA_63:GYM_HEROES
+  variantType: Reprint
+- enumId: BLAINES_TAUROS_64:POKEMOD_GYM_HEROES
   name: Blaine's Tauros
-  nationalPokedexNumber: 128
   number: '64'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [COLORLESS]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: 3-Pronged Tail
     damage: 10x
     text: Flip 3 coins. This attack does 10 damage times the number of heads.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Full Speed Charge
     damage: 20x
     text: Flip 4 coins. This attack does 20 damage times the number of heads to the
       Defending Pokémon and 20 damage times the number of tails to Blaine's Tauros.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 2
   rarity: Common
   artist: Ken Sugimori
-- id: 186-65
-  pioId: pkmod6-65
-  enumId: BLAINES_VULPIX_65
+  pioId: pkmod6-64
+  nationalPokedexNumber: 128
+  variantOf: BLAINE_S_TAUROS_64:GYM_HEROES
+  variantType: Reprint
+- enumId: BLAINES_VULPIX_65:POKEMOD_GYM_HEROES
   name: Blaine's Vulpix
-  nationalPokedexNumber: 37
   number: '65'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Ninetales]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIRE]
   hp: 40
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Natural Healing
@@ -1724,1521 +1628,1382 @@ cards:
       from Blaine's Vulpix. This power can't be used if Blaine's Vulpix is affected
       by a Special Condition.
   moves:
-  - cost: [R, C, C]
+  - cost: [FIRE, COLORLESS, COLORLESS]
     name: Tail Fan
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-66
-  pioId: pkmod6-66
-  enumId: BROCKS_GEODUDE_66
+  pioId: pkmod6-65
+  nationalPokedexNumber: 37
+- enumId: BROCKS_GEODUDE_66:POKEMOD_GYM_HEROES
   name: Brock's Geodude
-  nationalPokedexNumber: 74
   number: '66'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Graveler]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Call for Friend
     text: Flip a coin. If heads, you may search your deck for a Basic Pokémon card
       with Brock in its name and put it onto your Bench. Shuffle your deck afterward.
       (You can't use this attack if your Bench is full.)
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Hook Shot
     damage: '20'
     text: Don't apply Resistance for this attack. (Any other effects that would happen
       after applying Resistance still happen.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-67
-  pioId: pkmod6-67
-  enumId: BROCKS_MANKEY_67
+  pioId: pkmod6-66
+  nationalPokedexNumber: 74
+- enumId: BROCKS_MANKEY_67:POKEMOD_GYM_HEROES
   name: Brock's Mankey
-  nationalPokedexNumber: 56
   number: '67'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Primeape]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Taunt
     text: If your opponent has any Benched Pokémon, choose 1 of them and switch it
       with the Defending Pokémon.
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Light Kick
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 0
   rarity: Common
   artist: Atsuko Nishida
-- id: 186-68
-  pioId: pkmod6-68
-  enumId: BROCKS_MANKEY_68
-  name: Brock's Mankey
+  pioId: pkmod6-67
   nationalPokedexNumber: 56
+  variantOf: BROCK_S_MANKEY_67:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCKS_MANKEY_68:POKEMOD_GYM_HEROES
+  name: Brock's Mankey
   number: '68'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Primeape]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Fidget
     text: Shuffle your deck.
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Karate Chop
     damage: 40-
     text: Does 40 damage minus 10 damage for each damage counter on Brock's Mankey.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 0
   rarity: Common
   artist: Ken Sugimori
-- id: 186-69
-  pioId: pkmod6-69
-  enumId: BROCKS_ONIX_69
+  pioId: pkmod6-68
+  nationalPokedexNumber: 56
+  variantOf: BROCK_S_MANKEY_68:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCKS_ONIX_69:POKEMOD_GYM_HEROES
   name: Brock's Onix
-  nationalPokedexNumber: 95
   number: '69'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Steelix]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
   hp: 100
-  retreatCost: 3
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Bellow
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Rock Throw
     damage: '30'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Common
   artist: Ken Sugimori
-- id: 186-70
-  pioId: pkmod6-70
-  enumId: BROCKS_RHYHORN_70
+  pioId: pkmod6-69
+  nationalPokedexNumber: 95
+- enumId: BROCKS_RHYHORN_70:POKEMOD_GYM_HEROES
   name: Brock's Rhyhorn
-  nationalPokedexNumber: 111
   number: '70'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Rhydon]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
   hp: 70
-  retreatCost: 3
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Drill Tackle
     damage: '70'
     text: Flip 2 coins. If 1 or both of them are tails, this attack does nothing.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 3
   rarity: Common
   artist: Ken Sugimori
-- id: 186-71
-  pioId: pkmod6-71
-  enumId: BROCKS_SANDSHREW_71
+  pioId: pkmod6-70
+  nationalPokedexNumber: 111
+  variantOf: BROCK_S_RHYHORN_70:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCKS_SANDSHREW_71:POKEMOD_GYM_HEROES
   name: Brock's Sandshrew
-  nationalPokedexNumber: 27
   number: '71'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Sandslash]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Defense Curl
     text: Flip a coin. If heads, prevent all damage done to Brock's Sandshrew during
       your opponent's next turn. (Any other effects of attacks still happen.)
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Rolling Attack
     damage: '20'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-72
-  pioId: pkmod6-72
-  enumId: BROCKS_SANDSHREW_72
-  name: Brock's Sandshrew
+  pioId: pkmod6-71
   nationalPokedexNumber: 27
+- enumId: BROCKS_SANDSHREW_72:POKEMOD_GYM_HEROES
+  name: Brock's Sandshrew
   number: '72'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Sandslash]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIGHTING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Sand Pit
     damage: '20'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
   resistances:
-  - type: L
+  - type: LIGHTNING
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-73
-  pioId: pkmod6-73
-  enumId: BROCKS_VULPIX_73
+  pioId: pkmod6-72
+  nationalPokedexNumber: 27
+- enumId: BROCKS_VULPIX_73:POKEMOD_GYM_HEROES
   name: Brock's Vulpix
-  nationalPokedexNumber: 37
   number: '73'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Ninetales]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [FIRE]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Flame
     damage: '20'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Quick Attack
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 damage plus 20 more damage; if
       tails, this attack does 10 damage.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-74
-  pioId: pkmod6-74
-  enumId: BROCKS_ZUBAT_74
+  pioId: pkmod6-73
+  nationalPokedexNumber: 37
+  variantOf: BROCK_S_VULPIX_73:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCKS_ZUBAT_74:POKEMOD_GYM_HEROES
   name: Brock's Zubat
-  nationalPokedexNumber: 41
   number: '74'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Golbat]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Wing Attack
     damage: '10'
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Poison Fang
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Common
   artist: Atsuko Nishida
-- id: 186-75
-  pioId: pkmod6-75
-  enumId: ERIKAS_BELLSPROUT_75
+  pioId: pkmod6-74
+  nationalPokedexNumber: 41
+  variantOf: BROCK_S_ZUBAT_74:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_BELLSPROUT_75:POKEMOD_GYM_HEROES
   name: Erika's Bellsprout
-  nationalPokedexNumber: 69
   number: '75'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Weepinbell]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Poison Vine
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Poisoned.
-  - cost: [G, G]
+  - cost: [GRASS, GRASS]
     name: Vine Whip
     damage: '30'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 186-76
-  pioId: pkmod6-76
-  enumId: ERIKAS_BELLSPROUT_76
-  name: Erika's Bellsprout
+  pioId: pkmod6-75
   nationalPokedexNumber: 69
+  variantOf: ERIKA_S_BELLSPROUT_75:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_BELLSPROUT_76:POKEMOD_GYM_HEROES
+  name: Erika's Bellsprout
   number: '76'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Weepinbell]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Careless Tackle
     damage: '20'
     text: Erika's Bellsprout does 10 damage to itself.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-77
-  pioId: pkmod6-77
-  enumId: ERIKAS_EXEGGCUTE_77
+  pioId: pkmod6-76
+  nationalPokedexNumber: 69
+  variantOf: ERIKA_S_BELLSPROUT_76:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_EXEGGCUTE_77:POKEMOD_GYM_HEROES
   name: Erika's Exeggcute
-  nationalPokedexNumber: 102
   number: '77'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Exeggutor]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Eggsplosion
     damage: 10x
     text: Flip a number of coins equal to the number of Energy attached to Erika's
       Exeggcute. This attack does 10 damage times the number of heads.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Psychic
     damage: 10+
     text: Does 10 damage plus 10 more damage for each Energy card attached to the
       Defending Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-78
-  pioId: pkmod6-78
-  enumId: ERIKAS_ODDISH_78
+  pioId: pkmod6-77
+  nationalPokedexNumber: 102
+  variantOf: ERIKA_S_EXEGGCUTE_77:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_ODDISH_78:POKEMOD_GYM_HEROES
   name: Erika's Oddish
-  nationalPokedexNumber: 43
   number: '78'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Gloom]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Blot
     damage: '10'
     text: If there are any damage counters on Erika's Oddish, remove 1 of them.
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Sporadic Sponging
     damage: '20'
     text: If Erika's Oddish has any damage counters on it, flip a coin. If heads,
       remove 1 of those damage counters.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-79
-  pioId: pkmod6-79
-  enumId: ERIKAS_TANGELA_79
+  pioId: pkmod6-78
+  nationalPokedexNumber: 43
+  variantOf: ERIKA_S_ODDISH_78:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_TANGELA_79:POKEMOD_GYM_HEROES
   name: Erika's Tangela
-  nationalPokedexNumber: 114
   number: '79'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Tangrowth]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Vine Slap
     damage: '10'
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Stretch Vine
     damage: '20'
     text: If your opponent has any Benched Pokémon, choose 1 of them and this attack
       does 20 damage to it. (Don't apply Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
   resistances:
-  - type: W
+  - type: WATER
     value: '-30'
+  retreatCost: 2
   rarity: Common
   artist: Ken Sugimori
-- id: 186-80
-  pioId: pkmod6-80
-  enumId: LT_SURGES_MAGNEMITE_80
+  pioId: pkmod6-79
+  nationalPokedexNumber: 114
+- enumId: LT_SURGES_MAGNEMITE_80:POKEMOD_GYM_HEROES
   name: Lt. Surge's Magnemite
-  nationalPokedexNumber: 81
   number: '80'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Magneton]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [LIGHTNING]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Thundershock
     damage: '10'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Tackle
     damage: '20'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-81
-  pioId: pkmod6-81
-  enumId: LT_SURGES_PIKACHU_81
+  pioId: pkmod6-80
+  nationalPokedexNumber: 81
+  variantOf: LT__SURGE_S_MAGNEMITE_80:GYM_HEROES
+  variantType: Reprint
+- enumId: LT_SURGES_PIKACHU_81:POKEMOD_GYM_HEROES
   name: Lt. Surge's Pikachu
-  nationalPokedexNumber: 25
   number: '81'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesFrom: Pichu
-  evolvesTo: [Raichu]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [LIGHTNING]
+  evolvesFrom: [Pichu]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Charge
     text: Take 1 [L] Energy card from your discard pile and attach it to Lt. Surge's
       Pikachu.
-  - cost: [L, L]
+  - cost: [LIGHTNING, LIGHTNING]
     name: Lightning Tail
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-82
-  pioId: pkmod6-82
-  enumId: LT_SURGES_RATTATA_82
+  pioId: pkmod6-81
+  nationalPokedexNumber: 25
+  variantOf: LT__SURGE_S_PIKACHU_81:GYM_HEROES
+  variantType: Reprint
+- enumId: LT_SURGES_RATTATA_82:POKEMOD_GYM_HEROES
   name: Lt. Surge's Rattata
-  nationalPokedexNumber: 19
   number: '82'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Raticate]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [COLORLESS]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Focus Energy
     text: During your next turn, Lt. Surge's Rattata's Gnaw attack's base damage is
       doubled.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Gnaw
     damage: '20'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-83
-  pioId: pkmod6-83
-  enumId: LT_SURGES_SPEAROW_83
+  pioId: pkmod6-82
+  nationalPokedexNumber: 19
+  variantOf: LT__SURGE_S_RATTATA_82:GYM_HEROES
+  variantType: Reprint
+- enumId: LT_SURGES_SPEAROW_83:POKEMOD_GYM_HEROES
   name: Lt. Surge's Spearow
-  nationalPokedexNumber: 21
   number: '83'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Fearow]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Whirlwind
     damage: '10'
     text: If your opponent has any Benched Pokémon, he or she chooses 1 of them and
       switches it with the Defending Pokémon. (Do the damage before switching the
       Pokémon.)
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Razor Wind
     damage: '40'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 0
   rarity: Common
   artist: Atsuko Nishida
-- id: 186-84
-  pioId: pkmod6-84
-  enumId: LT_SURGES_VOLTORB_84
+  pioId: pkmod6-83
+  nationalPokedexNumber: 21
+  variantOf: LT__SURGE_S_SPEAROW_83:GYM_HEROES
+  variantType: Reprint
+- enumId: LT_SURGES_VOLTORB_84:POKEMOD_GYM_HEROES
   name: Lt. Surge's Voltorb
-  nationalPokedexNumber: 100
   number: '84'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Electrode]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [LIGHTNING]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Spin Ball
     damage: 20x
     text: Flip 1 coin. This attack does 20 damage times the number of heads.
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Double Spin
     damage: 20x
     text: Flip 2 coins. This attack does 20 damage times the number of heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-85
-  pioId: pkmod6-85
-  enumId: MISTYS_GOLDEEN_85
+  pioId: pkmod6-84
+  nationalPokedexNumber: 100
+- enumId: MISTYS_GOLDEEN_85:POKEMOD_GYM_HEROES
   name: Misty's Goldeen
-  nationalPokedexNumber: 118
   number: '85'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Seaking]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Fury Attack
     damage: 10x
     text: Flip 3 coins. This attack does 10 damage times the number of heads.
-  - cost: [W]
+  - cost: [WATER]
     name: Supersonic
     text: Flip a coin. If heads, the Defending Pokémon is now Confused.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 186-86
-  pioId: pkmod6-86
-  enumId: MISTYS_HORSEA_86
+  pioId: pkmod6-85
+  nationalPokedexNumber: 118
+- enumId: MISTYS_HORSEA_86:POKEMOD_GYM_HEROES
   name: Misty's Horsea
-  nationalPokedexNumber: 116
   number: '86'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Seadra]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [WATER]
   hp: 50
-  retreatCost: 0
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Tackle
     damage: '10'
-  - cost: [W, W]
+  - cost: [WATER, WATER]
     name: Smokescreen
     damage: '20'
     text: If the Defending Pokémon tries to attack during your opponent's next turn,
       your opponent flips a coin. If tails, that attack does nothing.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 0
   rarity: Common
   artist: Ken Sugimori
-- id: 186-87
-  pioId: pkmod6-87
-  enumId: MISTYS_POLIWAG_87
+  pioId: pkmod6-86
+  nationalPokedexNumber: 116
+- enumId: MISTYS_POLIWAG_87:POKEMOD_GYM_HEROES
   name: Misty's Poliwag
-  nationalPokedexNumber: 60
   number: '87'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Poliwhirl]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Hypnotic Stare
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails,
       the Defending Pokémon is now Asleep.
-  - cost: [W, C]
+  - cost: [WATER, COLORLESS]
     name: Tail Rap
     damage: 20x
     text: Flip 2 coins. This attack does 20 damage times the number of heads.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-88
-  pioId: pkmod6-88
-  enumId: MISTYS_SEEL_88
+  pioId: pkmod6-87
+  nationalPokedexNumber: 60
+  variantOf: MISTY_S_POLIWAG_87:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTYS_SEEL_88:POKEMOD_GYM_HEROES
   name: Misty's Seel
-  nationalPokedexNumber: 86
   number: '88'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Dewgong]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Aurora Beam
     damage: '20'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 186-89
-  pioId: pkmod6-89
-  enumId: MISTYS_SHELLDER_89
+  pioId: pkmod6-88
+  nationalPokedexNumber: 86
+- enumId: MISTYS_SHELLDER_89:POKEMOD_GYM_HEROES
   name: Misty's Shellder
-  nationalPokedexNumber: 90
   number: '89'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Cloyster]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [WATER]
   hp: 40
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Tackle
     damage: '10'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Clamp
     damage: '20'
     text: Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails,
       this attack does nothing (not even damage).
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-90
-  pioId: pkmod6-90
-  enumId: MISTYS_STARYU_90
+  pioId: pkmod6-89
+  nationalPokedexNumber: 90
+- enumId: MISTYS_STARYU_90:POKEMOD_GYM_HEROES
   name: Misty's Staryu
-  nationalPokedexNumber: 120
   number: '90'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Starmie]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [WATER]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Swift
     damage: '20'
     text: This attack's damage isn't affected by Weakness, Resistance, Poké-Powers,
       or any other effects on the Defending Pokémon.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-91
-  pioId: pkmod6-91
-  enumId: SABRINAS_ABRA_91
+  pioId: pkmod6-90
+  nationalPokedexNumber: 120
+- enumId: SABRINAS_ABRA_91:POKEMOD_GYM_HEROES
   name: Sabrina's Abra
-  nationalPokedexNumber: 63
   number: '91'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Kadabra]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [PSYCHIC]
   hp: 40
-  retreatCost: 0
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Energy Loop
     damage: '20'
     text: Return a [P] Energy card attached to Sabrina's Abra to your hand in order
       to use this attack.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 0
   rarity: Common
   artist: Ken Sugimori
-- id: 186-92
-  pioId: pkmod6-92
-  enumId: SABRINAS_DROWZEE_92
+  pioId: pkmod6-91
+  nationalPokedexNumber: 63
+  variantOf: SABRINA_S_ABRA_91:GYM_HEROES
+  variantType: Reprint
+- enumId: SABRINAS_DROWZEE_92:POKEMOD_GYM_HEROES
   name: Sabrina's Drowzee
-  nationalPokedexNumber: 96
   number: '92'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Hypno]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Suggestion
     text: Flip a coin. If heads, the Defending Pokémon can't attack during your opponent's
       next turn.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Headbutt
     damage: '20'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 186-93
-  pioId: pkmod6-93
-  enumId: SABRINAS_GASTLY_93
+  pioId: pkmod6-92
+  nationalPokedexNumber: 96
+  variantOf: SABRINA_S_DROWZEE_92:GYM_HEROES
+  variantType: Reprint
+- enumId: SABRINAS_GASTLY_93:POKEMOD_GYM_HEROES
   name: Sabrina's Gastly
-  nationalPokedexNumber: 92
   number: '93'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Haunter]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Spook
     damage: '20'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-94
-  pioId: pkmod6-94
-  enumId: SABRINAS_MR__MIME_94
+  pioId: pkmod6-93
+  nationalPokedexNumber: 92
+- enumId: SABRINAS_MR__MIME_94:POKEMOD_GYM_HEROES
   name: Sabrina's Mr. Mime
-  nationalPokedexNumber: 122
   number: '94'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesFrom: Mime Jr.
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [PSYCHIC]
+  evolvesFrom: [Mime Jr.]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Sleight of Hand
     text: Choose up to 3 cards from your hand and put them on top of your deck. Then
       search your deck for that many basic Energy cards. Show those cards to your
       opponent, then put them into your hand. Shuffle your deck afterward.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Slap
     damage: '20'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-95
-  pioId: pkmod6-95
-  enumId: SABRINAS_SLOWPOKE_95
+  pioId: pkmod6-94
+  nationalPokedexNumber: 122
+  variantOf: SABRINA_S_MR__MIME_94:GYM_HEROES
+  variantType: Reprint
+- enumId: SABRINAS_SLOWPOKE_95:POKEMOD_GYM_HEROES
   name: Sabrina's Slowpoke
-  nationalPokedexNumber: 79
   number: '95'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Slowbro, Slowking]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Lazy Attack
     damage: '30'
     text: Sabrina's Slowpoke is now Asleep (after doing damage).
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-96
-  pioId: pkmod6-96
-  enumId: SABRINAS_VENONAT_96
+  pioId: pkmod6-95
+  nationalPokedexNumber: 79
+  variantOf: SABRINA_S_SLOWPOKE_95:GYM_HEROES
+  variantType: Reprint
+- enumId: SABRINAS_VENONAT_96:POKEMOD_GYM_HEROES
   name: Sabrina's Venonat
-  nationalPokedexNumber: 48
   number: '96'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, OWNERS_POKEMON]
-  evolvesTo: [Venomoth]
+  cardTypes: [POKEMON, BASIC, OWNERS_POKEMON]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Poison Antennae
     damage: '10'
     text: The Defending Pokémon is now Poisoned.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Removal Beam
     damage: '20'
     text: If the Defending Pokémon has any Energy cards attached to it, flip a coin.
       If heads, choose 1 of those Energy cards and discard it.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Ken Sugimori
-- id: 186-97
-  pioId: pkmod6-97
-  enumId: BLAINES_QUIZ__1_97
+  pioId: pkmod6-96
+  nationalPokedexNumber: 48
+- enumId: BLAINES_QUIZ__1_97:POKEMOD_GYM_HEROES
   name: 'Blaine''s Quiz #1'
   number: '97'
-  superType: TRAINER
-  subTypes: [NOT_IMPLEMENTED]
+  cardTypes: [TRAINER, NOT_IMPLEMENTED]
   rarity: Rare
-  text:
-  - Put a Basic Pokémon or Evolution card from your hand face down in front of you
-    and tell your opponent its name. Your opponent guesses the length of that Pokémon.
-    Flip the card over. If your opponent guessed right, he or she draws 2 cards. If
-    your opponent guessed wrong, you draw 2 cards. Either way, return the card to
-    your hand.
+  text: Put a Basic Pokémon or Evolution card from your hand face down in front of
+    you and tell your opponent its name. Your opponent guesses the length of that
+    Pokémon. Flip the card over. If your opponent guessed right, he or she draws 2
+    cards. If your opponent guessed wrong, you draw 2 cards. Either way, return the
+    card to your hand.
   artist: Ken Sugimori
-- id: 186-98
-  pioId: pkmod6-98
-  enumId: BROCK_98
+  pioId: pkmod6-97
+  variantOf: BLAINE_S_QUIZ__1_97:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCK_98:POKEMOD_GYM_HEROES
   name: Brock
   number: '98'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Remove 1 damage counter from each of your Pokémon (excluding Pokémon-ex) that
+  text: Remove 1 damage counter from each of your Pokémon (excluding Pokémon-ex) that
     has any damage counters on it.
   artist: Ken Sugimori
-- id: 186-99
-  pioId: pkmod6-99
-  enumId: CHARITY_99
+  pioId: pkmod6-98
+  variantOf: BROCK_15:POKEMOD_GYM_HEROES
+  variantType: Reprint
+- enumId: CHARITY_99:POKEMOD_GYM_HEROES
   name: Charity
   number: '99'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Attach Charity to your Active Pokémon. Unless that Pokémon gets Knocked Out, return
-    Charity to your hand at the end of your turn. If that Pokémon attacks and does
-    damage to the Defending Pokémon, you may reduce that damage by any amount (rounded
-    to the nearest 10).
+  text: Attach Charity to your Active Pokémon. Unless that Pokémon gets Knocked Out,
+    return Charity to your hand at the end of your turn. If that Pokémon attacks and
+    does damage to the Defending Pokémon, you may reduce that damage by any amount
+    (rounded to the nearest 10).
   artist: Ken Sugimori
-- id: 186-100
-  pioId: pkmod6-100
-  enumId: ERIKA_100
+  pioId: pkmod6-99
+  variantOf: CHARITY_99:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKA_100:POKEMOD_GYM_HEROES
   name: Erika
   number: '100'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - You may draw up to 3 cards, then your opponent may draw up to 3 cards.
+  text: You may draw up to 3 cards, then your opponent may draw up to 3 cards.
   artist: Ken Sugimori
-- id: 186-101
-  pioId: pkmod6-101
-  enumId: LT__SURGE_101
+  pioId: pkmod6-100
+  variantOf: ERIKA_16:GYM_HEROES
+  variantType: Reprint
+- enumId: LT__SURGE_101:POKEMOD_GYM_HEROES
   name: Lt. Surge
   number: '101'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - You can play this card only if you have at least 1 Basic Pokémon card in your
+  text: You can play this card only if you have at least 1 Basic Pokémon card in your
     hand. Put a Basic Pokémon card from your hand into play as your Active Pokémon.
     Put your old Active Pokémon onto your Bench. (You can't play this card if your
     Bench is full.)
   artist: Ken Sugimori
-- id: 186-102
-  pioId: pkmod6-102
-  enumId: MISTY_102
+  pioId: pkmod6-101
+  variantOf: LT__SURGE_17:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTY_102:POKEMOD_GYM_HEROES
   name: Misty
   number: '102'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Rare
-  text:
-  - Discard 2 of the other cards in your hand in order to play this card. If this
+  text: Discard 2 of the other cards in your hand in order to play this card. If this
     turn's attack does damage to the Defending Pokémon (after applying Weakness and
     Resistance), and if the attacking Pokémon has Misty in its name, the attack does
     20 more damage to the Defending Pokémon.
   artist: Ken Sugimori
-- id: 186-103
-  pioId: pkmod6-103
-  enumId: NO_REMOVAL_GYM_103
+  pioId: pkmod6-102
+  variantOf: MISTY_18:GYM_HEROES
+  variantType: Reprint
+- enumId: NO_REMOVAL_GYM_103:POKEMOD_GYM_HEROES
   name: No Removal Gym
   number: '103'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Rare
-  text:
-  - A player must discard 2 cards from his or her hand in order to play an Energy
+  text: A player must discard 2 cards from his or her hand in order to play an Energy
     Removal or Super Energy Removal card.
   artist: Keiji Kinebuchi
-- id: 186-104
-  pioId: pkmod6-104
-  enumId: THE_ROCKETS_TRAINING_GYM_104
+  pioId: pkmod6-103
+  variantOf: NO_REMOVAL_GYM_103:GYM_HEROES
+  variantType: Reprint
+- enumId: THE_ROCKETS_TRAINING_GYM_104:POKEMOD_GYM_HEROES
   name: The Rocket's Training Gym
   number: '104'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Rare
-  text:
-  - Each player pays [C, C] more to retreat his or her Active Pokémon.
+  text: Each player pays [C, C] more to retreat his or her Active Pokémon.
   artist: Keiji Kinebuchi
-- id: 186-105
-  pioId: pkmod6-105
-  enumId: BLAINES_LAST_RESORT_105
+  pioId: pkmod6-104
+- enumId: BLAINES_LAST_RESORT_105:POKEMOD_GYM_HEROES
   name: Blaine's Last Resort
   number: '105'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - You can't play this card if you have any cards in your hand other than Blaine's
+  text: You can't play this card if you have any cards in your hand other than Blaine's
     Last Resort. Show your hand to your opponent, then draw 5 cards.
   artist: Ken Sugimori
-- id: 186-106
-  pioId: pkmod6-106
-  enumId: BROCKS_TRAINING_METHOD_106
+  pioId: pkmod6-105
+  variantOf: BLAINE_S_LAST_RESORT_105:GYM_HEROES
+  variantType: Reprint
+- enumId: BROCKS_TRAINING_METHOD_106:POKEMOD_GYM_HEROES
   name: Brock's Training Method
   number: '106'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Search your deck for a Basic Pokémon or Evolution card with Brock in its name.
+  text: Search your deck for a Basic Pokémon or Evolution card with Brock in its name.
     Show that card to your opponent, then put it into your hand. Shuffle your deck
     afterward.
   artist: Ken Sugimori
-- id: 186-107
-  pioId: pkmod6-107
-  enumId: CELADON_CITY_GYM_107
+  pioId: pkmod6-106
+  variantOf: BROCK_S_TRAINING_METHOD_106:GYM_HEROES
+  variantType: Reprint
+- enumId: CELADON_CITY_GYM_107:POKEMOD_GYM_HEROES
   name: Celadon City Gym
   number: '107'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - During each player's turn, that player may choose to discard an Energy card attached
-    to 1 of his or her Pokémon with Erika in its name. If that player does so, that
-    Pokémon is no longer is affected by a Special Condition.
+  text: During each player's turn, that player may choose to discard an Energy card
+    attached to 1 of his or her Pokémon with Erika in its name. If that player does
+    so, that Pokémon is no longer is affected by a Special Condition.
   artist: Keiji Kinebuchi
-- id: 186-108
-  pioId: pkmod6-108
-  enumId: CERULEAN_CITY_GYM_108
+  pioId: pkmod6-107
+- enumId: CERULEAN_CITY_GYM_108:POKEMOD_GYM_HEROES
   name: Cerulean City Gym
   number: '108'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - Each player pays [C] less to retreat his or her Pokémon if it has Misty in its
-    name.
+  text: Each player pays [C] less to retreat his or her Pokémon if it has Misty in
+    its name.
   artist: Keiji Kinebuchi
-- id: 186-109
-  pioId: pkmod6-109
-  enumId: ERIKAS_MAIDS_109
+  pioId: pkmod6-108
+  variantOf: CERULEAN_CITY_GYM_108:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_MAIDS_109:POKEMOD_GYM_HEROES
   name: Erika's Maids
   number: '109'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Trade 2 of the other cards in your hand for up to 2 Basic Pokémon and/or Evolution
+  text: Trade 2 of the other cards in your hand for up to 2 Basic Pokémon and/or Evolution
     cards with Erika in their names from your deck. Show those cards to your opponent,
     then put them into your hand. Shuffle your deck afterward.
   artist: Ken Sugimori
-- id: 186-110
-  pioId: pkmod6-110
-  enumId: ERIKAS_PERFUME_110
+  pioId: pkmod6-109
+  variantOf: ERIKA_S_MAIDS_109:GYM_HEROES
+  variantType: Reprint
+- enumId: ERIKAS_PERFUME_110:POKEMOD_GYM_HEROES
   name: Erika's Perfume
   number: '110'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Look at your opponent's hand. If he or she has any Basic Pokémon cards there,
+  text: Look at your opponent's hand. If he or she has any Basic Pokémon cards there,
     you may put any number of them onto your opponent's Bench (as long as there's
     room).
   artist: Ken Sugimori
-- id: 186-111
-  pioId: pkmod6-111
-  enumId: GOOD_MANNERS_111
+  pioId: pkmod6-110
+  variantOf: ERIKA_S_PERFUME_110:GYM_HEROES
+  variantType: Reprint
+- enumId: GOOD_MANNERS_111:POKEMOD_GYM_HEROES
   name: Good Manners
   number: '111'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - In order to play this card, you can't have any Basic Pokémon cards in your hand.
-    Show your hand to your opponent, then search your deck for a Basic Pokémon card
-    (excluding Pokémon-ex), show it to your opponent, and put it into your hand. Shuffle
-    your deck afterward.
+  text: In order to play this card, you can't have any Basic Pokémon cards in your
+    hand. Show your hand to your opponent, then search your deck for a Basic Pokémon
+    card (excluding Pokémon-ex), show it to your opponent, and put it into your hand.
+    Shuffle your deck afterward.
   artist: Ken Sugimori
-- id: 186-112
-  pioId: pkmod6-112
-  enumId: LT_SURGES_TREATY_112
+  pioId: pkmod6-111
+- enumId: LT_SURGES_TREATY_112:POKEMOD_GYM_HEROES
   name: Lt. Surge's Treaty
   number: '112'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - 'Your opponent chooses 1 of the following: everyone chooses 1 of his or her own
-    Prizes and puts it into his or her hand, or you draw a card.'
+  text: 'Your opponent chooses 1 of the following: everyone chooses 1 of his or her
+    own Prizes and puts it into his or her hand, or you draw a card.'
   artist: Ken Sugimori
-- id: 186-113
-  pioId: pkmod6-113
-  enumId: MINION_OF_TEAM_ROCKET_113
+  pioId: pkmod6-112
+  variantOf: LT__SURGE_S_TREATY_112:GYM_HEROES
+  variantType: Reprint
+- enumId: MINION_OF_TEAM_ROCKET_113:POKEMOD_GYM_HEROES
   name: Minion of Team Rocket
   number: '113'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Flip 2 coins. If both of them are heads, choose 1 of your opponent's Benched Pokémon
-    and return it and all cards attached to it to his or her hand. If 1 or both of
-    them are tails, your turn ends immediately (you can't attack this turn).
+  text: Flip 2 coins. If both of them are heads, choose 1 of your opponent's Benched
+    Pokémon and return it and all cards attached to it to his or her hand. If 1 or
+    both of them are tails, your turn ends immediately (you can't attack this turn).
   artist: Ken Sugimori
-- id: 186-114
-  pioId: pkmod6-114
-  enumId: MISTYS_WRATH_114
+  pioId: pkmod6-113
+  variantOf: MINION_OF_TEAM_ROCKET_113:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTYS_WRATH_114:POKEMOD_GYM_HEROES
   name: Misty's Wrath
   number: '114'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Look at the top 7 cards of your deck. Choose 2 of those cards and put them into
-    your hand. Discard the rest.
+  text: Look at the top 7 cards of your deck. Choose 2 of those cards and put them
+    into your hand. Discard the rest.
   artist: Ken Sugimori
-- id: 186-115
-  pioId: pkmod6-115
-  enumId: PEWTER_CITY_GYM_115
+  pioId: pkmod6-114
+  variantOf: MISTY_S_WRATH_114:GYM_HEROES
+  variantType: Reprint
+- enumId: PEWTER_CITY_GYM_115:POKEMOD_GYM_HEROES
   name: Pewter City Gym
   number: '115'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - Don't apply Resistance to any attacks made by Pokémon with Brock in their names.
+  text: Don't apply Resistance to any attacks made by Pokémon with Brock in their
+    names.
   artist: Keiji Kinebuchi
-- id: 186-116
-  pioId: pkmod6-116
-  enumId: RECALL_116
+  pioId: pkmod6-115
+  variantOf: PEWTER_CITY_GYM_115:GYM_HEROES
+  variantType: Reprint
+- enumId: RECALL_116:POKEMOD_GYM_HEROES
   name: Recall
   number: '116'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - For your attack this turn, your Active Pokémon (excluding Pokémon-ex) can use
-    any attack from its Basic Pokémon card or any Evolution card attached to it. (You
-    still have to pay for that attack's Energy cost.)
+  text: For your attack this turn, your Active Pokémon (excluding Pokémon-ex) can
+    use any attack from its Basic Pokémon card or any Evolution card attached to it.
+    (You still have to pay for that attack's Energy cost.)
   artist: Sumiyoshi Kizuki
-- id: 186-117
-  pioId: pkmod6-117
-  enumId: SABRINAS_ESP_117
+  pioId: pkmod6-116
+- enumId: SABRINAS_ESP_117:POKEMOD_GYM_HEROES
   name: Sabrina's ESP
   number: '117'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Attach Sabrina's ESP to 1 of your Pokémon with Sabrina in its name. At the end
-    of your turn, discard Sabrina's ESP. If that Pokémon uses an attack that involves
+  text: Attach Sabrina's ESP to 1 of your Pokémon with Sabrina in its name. At the
+    end of your turn, discard Sabrina's ESP. If that Pokémon uses an attack that involves
     flipping coins, Sabrina's ESP lets you re-flip those coins once. If you do, re-flip
     all the coins. You can't re-flip the coins for an attack more than once each turn.
   artist: Ken Sugimori
-- id: 186-118
-  pioId: pkmod6-118
-  enumId: SECRET_MISSION_118
+  pioId: pkmod6-117
+- enumId: SECRET_MISSION_118:POKEMOD_GYM_HEROES
   name: Secret Mission
   number: '118'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Look at your opponent's hand. Then, you may discard as many other cards as you
-    want from your hand and draw that many cards.
+  text: Look at your opponent's hand. Then, you may discard as many other cards as
+    you want from your hand and draw that many cards.
   artist: Ken Sugimori
-- id: 186-119
-  pioId: pkmod6-119
-  enumId: TICKLING_MACHINE_119
+  pioId: pkmod6-118
+  variantOf: SECRET_MISSION_118:GYM_HEROES
+  variantType: Reprint
+- enumId: TICKLING_MACHINE_119:POKEMOD_GYM_HEROES
   name: Tickling Machine
   number: '119'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Flip a coin. If heads, your opponent sets aside all the cards in his or her hand
-    face down. Nobody may look at those cards. At the end of your opponent's next
-    turn, your opponent puts those cards back into his or her hand. If tails, your
-    turn ends immediately (you can't attack this turn).
+  text: Flip a coin. If heads, your opponent sets aside all the cards in his or her
+    hand face down. Nobody may look at those cards. At the end of your opponent's
+    next turn, your opponent puts those cards back into his or her hand. If tails,
+    your turn ends immediately (you can't attack this turn).
   artist: Sumiyoshi Kizuki
-- id: 186-120
-  pioId: pkmod6-120
-  enumId: VERMILION_CITY_GYM_120
+  pioId: pkmod6-119
+  variantOf: TICKLING_MACHINE_119:GYM_HEROES
+  variantType: Reprint
+- enumId: VERMILION_CITY_GYM_120:POKEMOD_GYM_HEROES
   name: Vermilion City Gym
   number: '120'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - Whenever a player attacks with a Pokémon with Lt. Surge in its name, he or she
-    may flip a coin. If heads, and if that Pokémon's attack does damage to the Defending
-    Pokémon (after applying Weakness and Resistance), that attack does 10 more damage
-    to the Defending Pokémon. If tails, the attacking Pokémon does 10 damage to itself
-    in addition to whatever its attack usually does.
+  text: Whenever a player attacks with a Pokémon with Lt. Surge in its name, he or
+    she may flip a coin. If heads, and if that Pokémon's attack does damage to the
+    Defending Pokémon (after applying Weakness and Resistance), that attack does 10
+    more damage to the Defending Pokémon. If tails, the attacking Pokémon does 10
+    damage to itself in addition to whatever its attack usually does.
   artist: Keiji Kinebuchi
-- id: 186-121
-  pioId: pkmod6-121
-  enumId: BLAINES_GAMBLE_121
+  pioId: pkmod6-120
+  variantOf: VERMILION_CITY_GYM_120:GYM_HEROES
+  variantType: Reprint
+- enumId: BLAINES_GAMBLE_121:POKEMOD_GYM_HEROES
   name: Blaine's Gamble
   number: '121'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Common
-  text:
-  - Discard any number of other cards from your hand, then flip a coin. If heads,
+  text: Discard any number of other cards from your hand, then flip a coin. If heads,
     draw twice that many cards.
   artist: Ken Sugimori
-- id: 186-122
-  pioId: pkmod6-122
-  enumId: ENERGY_FLOW_122
+  pioId: pkmod6-121
+  variantOf: BLAINE_S_GAMBLE_121:GYM_HEROES
+  variantType: Reprint
+- enumId: ENERGY_FLOW_122:POKEMOD_GYM_HEROES
   name: Energy Flow
   number: '122'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Common
-  text:
-  - For each of your Pokémon, you may return any number of Energy cards attached to
-    it to your hand.
+  text: For each of your Pokémon, you may return any number of Energy cards attached
+    to it to your hand.
   artist: Keiji Kinebuchi
-- id: 186-123
-  pioId: pkmod6-123
-  enumId: MISTYS_DUEL_123
+  pioId: pkmod6-122
+  variantOf: ENERGY_FLOW_122:GYM_HEROES
+  variantType: Reprint
+- enumId: MISTYS_DUEL_123:POKEMOD_GYM_HEROES
   name: Misty's Duel
   number: '123'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Common
-  text:
-  - You and your opponent play a game of Rock-Paper-Scissors. The winner shuffles
+  text: You and your opponent play a game of Rock-Paper-Scissors. The winner shuffles
     his or her hand into his or her deck and draws a new hand of 5 cards. (If you
     don't know how to play Rock-Paper-Scissors, flip a coin to decide who's the winner.)
   artist: Ken Sugimori
-- id: 186-124
-  pioId: pkmod6-124
-  enumId: NARROW_GYM_124
+  pioId: pkmod6-123
+  variantOf: MISTY_S_DUEL_123:GYM_HEROES
+  variantType: Reprint
+- enumId: NARROW_GYM_124:POKEMOD_GYM_HEROES
   name: Narrow Gym
   number: '124'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Common
-  text:
-  - No player may have more than 4 Pokémon on his or her Bench. When this card is
-    played, if a player has 5 Pokémon on his or her Bench, that player chooses 1 of
-    them and returns it and all cards attached to it to his or her hand. (If both
-    players have to return a Pokémon, your opponent returns a Pokémon first.)
+  text: No player may have more than 4 Pokémon on his or her Bench. When this card
+    is played, if a player has 5 Pokémon on his or her Bench, that player chooses
+    1 of them and returns it and all cards attached to it to his or her hand. (If
+    both players have to return a Pokémon, your opponent returns a Pokémon first.)
   artist: Keiji Kinebuchi
-- id: 186-125
-  pioId: pkmod6-125
-  enumId: SABRINAS_GAZE_125
+  pioId: pkmod6-124
+  variantOf: NARROW_GYM_124:GYM_HEROES
+  variantType: Reprint
+- enumId: SABRINAS_GAZE_125:POKEMOD_GYM_HEROES
   name: Sabrina's Gaze
   number: '125'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Common
-  text:
-  - Each player shuffles his or her hand into his or her deck and draws a new hand
-    of the same number of cards.
+  text: Each player shuffles his or her hand into his or her deck and draws a new
+    hand of the same number of cards.
   artist: Ken Sugimori
-- id: 186-126
-  pioId: pkmod6-126
-  enumId: TRASH_EXCHANGE_126
+  pioId: pkmod6-125
+  variantOf: SABRINA_S_GAZE_125:GYM_HEROES
+  variantType: Reprint
+- enumId: TRASH_EXCHANGE_126:POKEMOD_GYM_HEROES
   name: Trash Exchange
   number: '126'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Common
-  text:
-  - Count the number of cards in your discard pile and shuffle them into your deck.
-    Then discard that many cards from the top of your deck.
+  text: Count the number of cards in your discard pile and shuffle them into your
+    deck. Then discard that many cards from the top of your deck.
   artist: Keiji Kinebuchi
-- id: 186-127
-  pioId: pkmod6-127
-  enumId: FIGHTING_ENERGY_127
+  pioId: pkmod6-126
+  variantOf: TRASH_EXCHANGE_126:GYM_HEROES
+  variantType: Reprint
+- enumId: FIGHTING_ENERGY_127:POKEMOD_GYM_HEROES
   name: Fighting Energy
   number: '127'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[F]]
+  energy: [[FIGHTING]]
   artist: Keiji Kinebuchi
-- id: 186-128
-  pioId: pkmod6-128
-  enumId: FIRE_ENERGY_128
+  pioId: pkmod6-127
+  variantOf: FIGHTING_ENERGY:BASE_SET
+  variantType: Reprint
+- enumId: FIRE_ENERGY_128:POKEMOD_GYM_HEROES
   name: Fire Energy
   number: '128'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[R]]
+  energy: [[FIRE]]
   artist: Keiji Kinebuchi
-- id: 186-129
-  pioId: pkmod6-129
-  enumId: GRASS_ENERGY_129
+  pioId: pkmod6-128
+  variantOf: FIRE_ENERGY:BASE_SET
+  variantType: Reprint
+- enumId: GRASS_ENERGY_129:POKEMOD_GYM_HEROES
   name: Grass Energy
   number: '129'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[G]]
+  energy: [[GRASS]]
   artist: Keiji Kinebuchi
-- id: 186-130
-  pioId: pkmod6-130
-  enumId: LIGHTNING_ENERGY_130
+  pioId: pkmod6-129
+  variantOf: GRASS_ENERGY:BASE_SET
+  variantType: Reprint
+- enumId: LIGHTNING_ENERGY_130:POKEMOD_GYM_HEROES
   name: Lightning Energy
   number: '130'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[L]]
+  energy: [[LIGHTNING]]
   artist: Keiji Kinebuchi
-- id: 186-131
-  pioId: pkmod6-131
-  enumId: PSYCHIC_ENERGY_131
+  pioId: pkmod6-130
+  variantOf: LIGHTNING_ENERGY:BASE_SET
+  variantType: Reprint
+- enumId: PSYCHIC_ENERGY_131:POKEMOD_GYM_HEROES
   name: Psychic Energy
   number: '131'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[P]]
+  energy: [[PSYCHIC]]
   artist: Keiji Kinebuchi
-- id: 186-132
-  pioId: pkmod6-132
-  enumId: WATER_ENERGY_132
+  pioId: pkmod6-131
+  variantOf: PSYCHIC_ENERGY:BASE_SET
+  variantType: Reprint
+- enumId: WATER_ENERGY_132:POKEMOD_GYM_HEROES
   name: Water Energy
   number: '132'
-  superType: ENERGY
-  subTypes: [BASIC_ENERGY]
+  cardTypes: [ENERGY, BASIC_ENERGY]
   rarity: Common
-  energy: [[W]]
+  energy: [[WATER]]
   artist: Keiji Kinebuchi
-- id: 186-133
-  pioId: pkmod6-133
-  enumId: POWER_SPRAY_133
+  pioId: pkmod6-132
+  variantOf: WATER_ENERGY:BASE_SET
+  variantType: Reprint
+- enumId: POWER_SPRAY_133:POKEMOD_GYM_HEROES
   name: Power Spray
   number: '133'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - You may play this card during your opponent's turn. When any of your opponent's
-    Pokémon uses an Poké-Power
-  - prevent all effects of that Poké-Power until the end of your opponent's turn.
-    (Playing this card counts as your opponent's Pokémon using their Poké-Power).
-    If you have 2 or less Pokémon in play
-  - you cannot play this card.
+  text: |-
+    You may play this card during your opponent's turn. When any of your opponent's Pokémon uses an Poké-Power
+    prevent all effects of that Poké-Power until the end of your opponent's turn. (Playing this card counts as your opponent's Pokémon using their Poké-Power). If you have 2 or less Pokémon in play
+    you cannot play this card.
   artist: Ken Sugimori
-- id: 186-134
-  pioId: pkmod6-134
-  enumId: ENERGY_RETRIEVAL_134
+  pioId: pkmod6-133
+- enumId: ENERGY_RETRIEVAL_134:POKEMOD_GYM_HEROES
   name: Energy Retrieval
   number: '134'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Trade 1 of the other cards in your hand for up to 2 basic Energy cards from your
-    discard pile.
+  text: Trade 1 of the other cards in your hand for up to 2 basic Energy cards from
+    your discard pile.
   artist: Ken Sugimori
-- id: 186-135
-  pioId: pkmod6-135
-  enumId: ENERGY_EXCHANGER_135
+  pioId: pkmod6-134
+  variantOf: ENERGY_RETRIEVAL:BASE_SET
+  variantType: Reprint
+- enumId: ENERGY_EXCHANGER_135:POKEMOD_GYM_HEROES
   name: Energy Exchanger
   number: '135'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Choose an Energy card from you hand
-  - who it to your opponent
-  - and put it on top of your deck. Search your deck for an Energy card
-  - show it to your opponent
-  - and put it into your hand. Shuffle your deck afterward.
+  text: |-
+    Choose an Energy card from you hand
+    who it to your opponent
+    and put it on top of your deck. Search your deck for an Energy card
+    show it to your opponent
+    and put it into your hand. Shuffle your deck afterward.
   artist: Ken Sugimori
-- id: 186-136
-  pioId: pkmod6-136
-  enumId: MARY_136
+  pioId: pkmod6-135
+- enumId: MARY_136:POKEMOD_GYM_HEROES
   name: Mary
   number: '136'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Draw cards until you have exactly 4 cards in your hand.
+  text: Draw cards until you have exactly 4 cards in your hand.
   artist: Ken Sugimori
-- id: 186-137
-  pioId: pkmod6-137
-  enumId: SUPER_ENERGY_RETRIEVAL_137
+  pioId: pkmod6-136
+- enumId: SUPER_ENERGY_RETRIEVAL_137:POKEMOD_GYM_HEROES
   name: Super Energy Retrieval
   number: '137'
-  superType: TRAINER
-  subTypes: []
+  cardTypes: [TRAINER]
   rarity: Uncommon
-  text:
-  - Trade 2 of the other cards in your hand for up to 4 basic Energy cards from your
-    discard pile.
+  text: Trade 2 of the other cards in your hand for up to 4 basic Energy cards from
+    your discard pile.
   artist: Ken Sugimori
-- id: 186-138
-  pioId: pkmod6-138
-  enumId: PROFESSOR_OAKS_RESEARCH_138
+  pioId: pkmod6-137
+  variantOf: SUPER_ENERGY_RETRIEVAL_105:POKEMOD_BASE_SET
+  variantType: Reprint
+- enumId: PROFESSOR_OAKS_RESEARCH_138:POKEMOD_GYM_HEROES
   name: Professor Oak's Research
   number: '138'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Rare
-  text:
-  - Shuffle your hand into your deck, then draw 5 cards.
+  text: Shuffle your hand into your deck, then draw 5 cards.
   artist: Ken Sugimori
-- id: 186-139
-  pioId: pkmod6-139
-  enumId: COPYCAT_139
+  pioId: pkmod6-138
+  variantOf: PROFESSOR_OAK_S_RESEARCH_149:EXPEDITION
+  variantType: Reprint
+- enumId: COPYCAT_139:POKEMOD_GYM_HEROES
   name: Copycat
   number: '139'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Shuffle your hand into your deck. Then, count the number of cards in your opponent's
-    hand and draw that many cards.
+  text: Shuffle your hand into your deck. Then, count the number of cards in your
+    opponent's hand and draw that many cards.
   artist: Ken Sugimori
-- id: 186-140
-  pioId: pkmod6-140
-  enumId: FORREST_140
+  pioId: pkmod6-139
+  variantOf: COPYCAT_138:EXPEDITION
+  variantType: Reprint
+- enumId: FORREST_140:POKEMOD_GYM_HEROES
   name: Forrest
   number: '140'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Rare
-  text:
-  - Search your deck for up to 3 cards in any combination of Supporter and Stadium
+  text: Search your deck for up to 3 cards in any combination of Supporter and Stadium
     cards, show them to your opponent, and put them into your hand. Shuffle your deck
     afterward.
   artist: Ken Sugimori
-- id: 186-141
-  pioId: pkmod6-141
-  enumId: NURSE_JOY_141
+  pioId: pkmod6-140
+- enumId: NURSE_JOY_141:POKEMOD_GYM_HEROES
   name: Nurse Joy
   number: '141'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Rare Holo
-  text:
-  - Until the end of your opponent's next turn, you Pokémon can't become affected
+  text: Until the end of your opponent's next turn, you Pokémon can't become affected
     by Special Conditions. When you play this card, remove all Special Conditions
     from your Active Pokémon.
   artist: Ken Sugimori
-- id: 186-142
-  pioId: pkmod6-142
-  enumId: PROFESSOR_IVY_142
+  pioId: pkmod6-141
+- enumId: PROFESSOR_IVY_142:POKEMOD_GYM_HEROES
   name: Professor Ivy
   number: '142'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Rare Holo
-  text:
-  - Search your deck for up to 2 in any combination of Basic Pokémon and basic Energy
-    cards, show them to your opponent, and put them into your hand. Shuffle your deck
-    afterward.
+  text: Search your deck for up to 2 in any combination of Basic Pokémon and basic
+    Energy cards, show them to your opponent, and put them into your hand. Shuffle
+    your deck afterward.
   artist: Ken Sugimori
-- id: 186-143
-  pioId: pkmod6-143
-  enumId: RITCHIE_143
+  pioId: pkmod6-142
+- enumId: RITCHIE_143:POKEMOD_GYM_HEROES
   name: Ritchie
   number: '143'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Rare Holo
-  text:
-  - Shuffle your hand into your deck. Then, draw 4 cards. If any of your Pokémon were
-    Knocked Out during your opponent's last turn, draw 4 more cards.
+  text: Shuffle your hand into your deck. Then, draw 4 cards. If any of your Pokémon
+    were Knocked Out during your opponent's last turn, draw 4 more cards.
   artist: Ken Sugimori
-- id: 186-143
-  pioId: pkmod6-144
-  enumId: ASH_144
+  pioId: pkmod6-143
+- enumId: ASH_144:POKEMOD_GYM_HEROES
   name: Ash
   number: '144'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Rare Holo
-  text:
-  - Search your deck for a Supporter card and a basic Energy card, show them to your
-    opponent, and put them into your hand. Shuffle your deck afterward.
+  text: Search your deck for a Supporter card and a basic Energy card, show them to
+    your opponent, and put them into your hand. Shuffle your deck afterward.
   artist: Ken Sugimori
-- id: 186-145
-  pioId: pkmod6-145
-  enumId: PROFESSOR_OAK'S_NEW_THEORY_145
+  pioId: pkmod6-144
+- enumId: PROFESSOR_OAK'S_NEW_THEORY_145:POKEMOD_GYM_HEROES
   name: Professor Oak's New Theory
   number: '145'
-  superType: TRAINER
-  subTypes: [G_SPEC]
+  cardTypes: [TRAINER, G_SPEC]
   rarity: Secret
-  text:
-  - Shuffle your hand into your deck. Then, draw 6 cards.
+  text: Shuffle your hand into your deck. Then, draw 6 cards.
   artist: Ken Sugimori
-- id: 186-146
-  pioId: pkmod6-146
-  enumId: SUPER_ROD_146
+  pioId: pkmod6-145
+- enumId: SUPER_ROD_146:POKEMOD_GYM_HEROES
   name: Super Rod
   number: '146'
-  superType: TRAINER
-  subTypes: [G_SPEC]
+  cardTypes: [TRAINER, G_SPEC]
   rarity: Secret
-  text:
-  - Choose up to 3 Pokémon and 3 basic Energy cards from your discard pile. Show them
-    to your opponent and shuffle them into your deck.
+  text: Choose up to 3 Pokémon and 3 basic Energy cards from your discard pile. Show
+    them to your opponent and shuffle them into your deck.
   artist: Ken Sugimori
-- id: 186-147
-  pioId: pkmod6-147
-  enumId: EXPERT_BELT_147
+  pioId: pkmod6-146
+- enumId: EXPERT_BELT_147:POKEMOD_GYM_HEROES
   name: Expert Belt
   number: '147'
-  superType: TRAINER
-  subTypes: [G_SPEC]
+  cardTypes: [TRAINER, G_SPEC]
   rarity: Secret
-  text:
-  - If you have 6 remaining Prize cards, you cannot play this card. Attach Expert
+  text: If you have 6 remaining Prize cards, you cannot play this card. Attach Expert
     Belt to 1 of your Pokémon. The Pokémon this card is attached to gets +20HP and
     that Pokémon's attacks do 10 more damage to your opponent's Active Pokémon (before
     applying Weakness and Resistance). When the Pokémon this card is attached to is
     Knocked Out, your opponent takes 1 more Prize card.
   artist: Ken Sugimori
-- id: 186-148
-  pioId: pkmod6-148
-  enumId: GYARADOS_EX_148
+  pioId: pkmod6-147
+- enumId: GYARADOS_EX_148:POKEMOD_GYM_HEROES
   name: Gyarados ex
-  nationalPokedexNumber: 130
   number: '148'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, EX, STAGE1]
-  evolvesFrom: Magikarp
+  cardTypes: [POKEMON, EVOLUTION, EX, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Magikarp]
   hp: 130
-  retreatCost: 3
   moves:
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Twister
     damage: '40'
     text: Flip 2 coins. For each heads, choose 1 Energy card attached to the Defending
       Pokémon, if any, and discard it. If both coins are tails, this attack does nothing.
-  - cost: [W, W, W, C]
+  - cost: [WATER, WATER, WATER, COLORLESS]
     name: Dragon Rage
     damage: '70'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
-  - type: L
+  - type: LIGHTNING
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
   artist: Mitsuhiro Arita
-- id: 186-149
-  pioId: pkmod6-149
-  enumId: GENGAR_EX_149
+  pioId: pkmod6-148
+  nationalPokedexNumber: 130
+- enumId: GENGAR_EX_149:POKEMOD_GYM_HEROES
   name: Gengar ex
-  nationalPokedexNumber: 94
   number: '149'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, EX, STAGE2]
-  evolvesFrom: Haunter
+  cardTypes: [POKEMON, EVOLUTION, EX, STAGE2]
+  types: [PSYCHIC]
+  evolvesFrom: [Haunter]
   hp: 150
-  retreatCost: 2
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Poltergeist
     damage: 20+
     text: Look at your opponent's hand. This attack does 20 damage plus 10 more damage
       for each Trainer card in your opponent's hand.
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Prize Count
     damage: 40+
     text: If you have more Prize cards left than your opponent, this attack does 40
       damage plus 20 more damage.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-30'
-  - type: C
+  - type: COLORLESS
     value: '-30'
+  retreatCost: 2
   rarity: Ultra Rare
   artist: Mitsuhiro Arita
-- id: 186-150
-  pioId: pkmod6-150
-  enumId: ELECTRODE_EX_150
+  pioId: pkmod6-149
+  nationalPokedexNumber: 94
+- enumId: ELECTRODE_EX_150:POKEMOD_GYM_HEROES
   name: Electrode ex
-  nationalPokedexNumber: 101
   number: '150'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, EX, STAGE1]
-  evolvesFrom: Voltorb
+  cardTypes: [POKEMON, EVOLUTION, EX, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Voltorb]
   hp: 90
-  retreatCost: 1
   abilities:
   - type: Poké-Power
     name: Extra Energy Bomb
@@ -3248,14 +3013,17 @@ cards:
       of your Pokémon (excluding Pokémon-ex) in any way you like. This power can't
       be used if Electrode ex is affected by a Special Condition.
   moves:
-  - cost: [L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, COLORLESS]
     name: Crush and Burn
     damage: 30+
     text: You may discard as many Energy as you like attached to your Pokémon in play.
       If you do, this attack does 30 damage plus 20 more damage for each Energy you
       discarded.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Ultra Rare
   artist: Mitsuhiro Arita
+  pioId: pkmod6-150
+  nationalPokedexNumber: 101

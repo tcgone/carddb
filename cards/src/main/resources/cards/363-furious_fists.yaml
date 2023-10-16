@@ -1,71 +1,62 @@
-schema: E2
-id: '363'
-name: Furious Fists
-enumId: FURIOUS_FISTS
-abbr: FFI
+schema: E3
+expansion:
+  orderId: '363'
+  name: Furious Fists
+  enumId: FURIOUS_FISTS
+  shortName: FFI
+  isFanMade: false
 cards:
-- id: 363-1
-  pioId: xy3-1
-  enumId: BELLSPROUT_1
+- enumId: BELLSPROUT_1:FURIOUS_FISTS
   name: Bellsprout
-  nationalPokedexNumber: 69
   number: '1'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Weepinbell]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Vine Whip
     damage: '10'
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Knock Off
     text: Discard a random card from your opponent's hand.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Kanako Eo
-- id: 363-2
-  pioId: xy3-2
-  enumId: WEEPINBELL_2
+  pioId: xy3-1
+  nationalPokedexNumber: 69
+- enumId: WEEPINBELL_2:FURIOUS_FISTS
   name: Weepinbell
-  nationalPokedexNumber: 70
   number: '2'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Bellsprout
-  evolvesTo: [Victreebel]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Bellsprout]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Vine Whip
     damage: '20'
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Spit Poison
     damage: '40'
     text: Your opponent's Active Pokémon is now Poisoned.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Mizue
-- id: 363-3
-  pioId: xy3-3
-  enumId: VICTREEBEL_3
+  pioId: xy3-2
+  nationalPokedexNumber: 70
+- enumId: VICTREEBEL_3:FURIOUS_FISTS
   name: Victreebel
-  nationalPokedexNumber: 71
   number: '3'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Weepinbell
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [GRASS]
+  evolvesFrom: [Weepinbell]
   hp: 130
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Wafting Scent
@@ -73,597 +64,537 @@ cards:
       attached to this Pokémon. If you do, your opponent's Active Pokémon is now Confused
       and Poisoned.
   moves:
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Spiral Drain
     damage: '60'
     text: Heal 30 damage from this Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: Sanosuke Sakuma
-- id: 363-4
-  pioId: xy3-4
-  enumId: HERACROSS_EX_4
+  pioId: xy3-3
+  nationalPokedexNumber: 71
+- enumId: HERACROSS_EX_4:FURIOUS_FISTS
   name: Heracross-EX
-  nationalPokedexNumber: 214
   number: '4'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_EX]
-  evolvesTo: [M Heracross-EX]
+  cardTypes: [POKEMON, BASIC, POKEMON_EX]
+  types: [GRASS]
   hp: 170
-  retreatCost: 3
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Guard Press
     damage: '40'
     text: During your opponent's next turn, any damage done to this Pokémon by attacks
       is reduced by 20 (after applying Weakness and Resistance).
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Giga Power
     damage: 80+
     text: You may do 40 more damage. If you do, this Pokémon does 20 damage to itself.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
-  rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
-  artist: Eske Yoshinob
-- id: 363-5
-  pioId: xy3-5
-  enumId: M_HERACROSS_EX_5
-  name: M Heracross-EX
-  nationalPokedexNumber: 214
-  number: '5'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, MEGA_POKEMON, POKEMON_EX]
-  evolvesFrom: Heracross-EX
-  hp: 220
   retreatCost: 3
+  rarity: Ultra Rare
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  artist: Eske Yoshinob
+  pioId: xy3-4
+  nationalPokedexNumber: 214
+- enumId: M_HERACROSS_EX_5:FURIOUS_FISTS
+  name: M Heracross-EX
+  number: '5'
+  cardTypes: [POKEMON, EVOLUTION, MEGA_POKEMON, POKEMON_EX]
+  types: [GRASS]
+  evolvesFrom: [Heracross-EX]
+  hp: 220
   moves:
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Big Bang Horn
     damage: 180−
     text: This attack does 180 damage minus 10 damage for each damage counter on this
       Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
-  - When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.
+  text: |-
+    When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+    When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.
   artist: 5ban Graphics
-- id: 363-6
-  pioId: xy3-6
-  enumId: SHROOMISH_6
+  pioId: xy3-5
+  nationalPokedexNumber: 214
+- enumId: SHROOMISH_6:FURIOUS_FISTS
   name: Shroomish
-  nationalPokedexNumber: 285
   number: '6'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Breloom]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Tackle
     damage: '10'
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Kyoko Umemoto
-- id: 363-7
-  pioId: xy3-7
-  enumId: LEAFEON_7
+  pioId: xy3-6
+  nationalPokedexNumber: 285
+- enumId: LEAFEON_7:FURIOUS_FISTS
   name: Leafeon
-  nationalPokedexNumber: 470
   number: '7'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Eevee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Eevee]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Soothing Scent
     damage: '30'
     text: Your opponent's Active Pokémon is now Asleep.
-  - cost: [G, C, C]
+  - cost: [GRASS, COLORLESS, COLORLESS]
     name: Magical Leaf
     damage: 50+
     text: Flip a coin. If heads, this attack does 30 more damage and heal 30 damage
       from this Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Naoyo Kimura
-- id: 363-8
-  pioId: xy3-8
-  enumId: SHELMET_8
+  pioId: xy3-7
+  nationalPokedexNumber: 470
+- enumId: SHELMET_8:FURIOUS_FISTS
   name: Shelmet
-  nationalPokedexNumber: 616
   number: '8'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Accelgor]
+  cardTypes: [POKEMON, BASIC]
+  types: [GRASS]
   hp: 60
-  retreatCost: 3
   moves:
-  - cost: [G]
+  - cost: [GRASS]
     name: Jump On
     damage: 10+
     text: Flip a coin. If heads, this attack does 10 more damage.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 3
   rarity: Common
   artist: sui
-- id: 363-9
-  pioId: xy3-9
-  enumId: ACCELGOR_9
+  pioId: xy3-8
+  nationalPokedexNumber: 616
+- enumId: ACCELGOR_9:FURIOUS_FISTS
   name: Accelgor
-  nationalPokedexNumber: 617
   number: '9'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Shelmet
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [GRASS]
+  evolvesFrom: [Shelmet]
   hp: 90
-  retreatCost: 0
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Raid
     damage: 20+
     text: If this Pokémon evolved from Shelmet during this turn, this attack does
       40 more damage.
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Afterimage Strike
     damage: '40'
     text: If any damage is done to this Pokémon by attacks during your opponent's
       next turn, flip a coin. If heads, prevent that damage.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 0
   rarity: Uncommon
   artist: Shin Nagasawa
-- id: 363-10
-  pioId: xy3-10
-  enumId: MAGMAR_10
+  pioId: xy3-9
+  nationalPokedexNumber: 617
+- enumId: MAGMAR_10:FURIOUS_FISTS
   name: Magmar
-  nationalPokedexNumber: 126
   number: '10'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Magmortar]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Ram
     damage: '10'
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Ember
     damage: '30'
     text: Discard a [R] Energy attached to this Pokémon.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: MAHOU
-- id: 363-11
-  pioId: xy3-11
-  enumId: MAGMORTAR_11
+  pioId: xy3-10
+  nationalPokedexNumber: 126
+- enumId: MAGMORTAR_11:FURIOUS_FISTS
   name: Magmortar
-  nationalPokedexNumber: 467
   number: '11'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Magmar
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Magmar]
   hp: 120
-  retreatCost: 3
   moves:
-  - cost: [R]
+  - cost: [FIRE]
     name: Flame Charge
     damage: '30'
     text: Search your deck for a [R] Energy card and attach it to this Pokémon. Shuffle
       your deck afterward.
-  - cost: [R, C, C, C]
+  - cost: [FIRE, COLORLESS, COLORLESS, COLORLESS]
     name: Twin Bursts
     damage: 80+
     text: If Electivire is on your Bench, this attack does 80 more damage.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 3
   rarity: Rare
   artist: PLANETA
-- id: 363-12
-  pioId: xy3-12
-  enumId: TORCHIC_12
+  pioId: xy3-11
+  nationalPokedexNumber: 467
+- enumId: TORCHIC_12:FURIOUS_FISTS
   name: Torchic
-  nationalPokedexNumber: 255
   number: '12'
-  types: [R]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Combusken]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIRE]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [R, C]
+  - cost: [FIRE, COLORLESS]
     name: Quick Attack
     damage: 10+
     text: Flip a coin. If heads, this attack does 30 more damage.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Sanosuke Sakuma
-- id: 363-13
-  pioId: xy3-13
-  enumId: COMBUSKEN_13
+  pioId: xy3-12
+  nationalPokedexNumber: 255
+- enumId: COMBUSKEN_13:FURIOUS_FISTS
   name: Combusken
-  nationalPokedexNumber: 256
   number: '13'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Torchic
-  evolvesTo: [Blaziken]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIRE]
+  evolvesFrom: [Torchic]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Slash
     damage: '30'
-  - cost: [R, C, C]
+  - cost: [FIRE, COLORLESS, COLORLESS]
     name: Midair Strike
     damage: 50+
     text: Flip a coin. If heads, this attack does 20 more damage.
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Shin Nagasawa
-- id: 363-14
-  pioId: xy3-14
-  enumId: BLAZIKEN_14
+  pioId: xy3-13
+  nationalPokedexNumber: 256
+- enumId: BLAZIKEN_14:FURIOUS_FISTS
   name: Blaziken
-  nationalPokedexNumber: 257
   number: '14'
-  types: [R]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Combusken
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIRE]
+  evolvesFrom: [Combusken]
   hp: 140
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Clutch
     damage: '50'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
-  - cost: [R, R, C, C]
+  - cost: [FIRE, FIRE, COLORLESS, COLORLESS]
     name: Burning Shot
     text: Discard 2 Energy attached to this Pokémon. This attack does 150 damage to
       1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched
       Pokémon.)
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: PLANETA
-- id: 363-15
-  pioId: xy3-15
-  enumId: POLIWAG_15
+  pioId: xy3-14
+  nationalPokedexNumber: 257
+- enumId: POLIWAG_15:FURIOUS_FISTS
   name: Poliwag
-  nationalPokedexNumber: 60
   number: '15'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Poliwhirl]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Rain Splash
     damage: '10'
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Spiral Current
     damage: '20'
     text: Your opponent's Active Pokémon is now Confused. That Pokémon can't retreat
       during your opponent's next turn.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: MAHOU
-- id: 363-16
-  pioId: xy3-16
-  enumId: POLIWHIRL_16
+  pioId: xy3-15
+  nationalPokedexNumber: 60
+- enumId: POLIWHIRL_16:FURIOUS_FISTS
   name: Poliwhirl
-  nationalPokedexNumber: 61
   number: '16'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Poliwag
-  evolvesTo: [Poliwrath, Politoed]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Poliwag]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Rain Splash
     damage: '20'
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Finishing Blow
     damage: 50+
     text: If your opponent's Active Pokémon already has any damage counters on it,
       this attack does 50 more damage.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Kanako Eo
-- id: 363-17
-  pioId: xy3-17
-  enumId: POLIWRATH_17
+  pioId: xy3-16
+  nationalPokedexNumber: 61
+- enumId: POLIWRATH_17:FURIOUS_FISTS
   name: Poliwrath
-  nationalPokedexNumber: 62
   number: '17'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Poliwhirl
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Poliwhirl]
   hp: 140
-  retreatCost: 3
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Steamroll
     damage: '60'
     text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
       apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [W, W, C, C]
+  - cost: [WATER, WATER, COLORLESS, COLORLESS]
     name: Submission
     damage: '130'
     text: This Pokémon does 30 damage to itself.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: Mitsuhiro Arita
-- id: 363-18
-  pioId: xy3-18
-  enumId: POLITOED_18
+  pioId: xy3-17
+  nationalPokedexNumber: 62
+- enumId: POLITOED_18:FURIOUS_FISTS
   name: Politoed
-  nationalPokedexNumber: 186
   number: '18'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Poliwhirl
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [WATER]
+  evolvesFrom: [Poliwhirl]
   hp: 130
-  retreatCost: 1
   abilities:
   - type: Ability
     name: King's Song
     text: Ignore all [C] Energy in the attack cost of each of your Poliwag, Poliwhirl,
       and Poliwrath's attacks.
   moves:
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Hyper Voice
     damage: '70'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Atsuko Nishida
-- id: 363-19
-  pioId: xy3-19
-  enumId: GLACEON_19
+  pioId: xy3-18
+  nationalPokedexNumber: 186
+- enumId: GLACEON_19:FURIOUS_FISTS
   name: Glaceon
-  nationalPokedexNumber: 471
   number: '19'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Eevee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Eevee]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Blizzard
     damage: '30'
     text: This attack does 10 damage to each of your opponent's Benched Pokémon. (Don't
       apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Ice Edge
     damage: 60+
     text: Flip a coin. If heads, this attack does 30 more damage.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Kagemaru Himeno
-- id: 363-20
-  pioId: xy3-20
-  enumId: SEISMITOAD_EX_20
+  pioId: xy3-19
+  nationalPokedexNumber: 471
+- enumId: SEISMITOAD_EX_20:FURIOUS_FISTS
   name: Seismitoad-EX
-  nationalPokedexNumber: 537
   number: '20'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_EX]
+  cardTypes: [POKEMON, BASIC, POKEMON_EX]
+  types: [WATER]
   hp: 180
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Quaking Punch
     damage: '30'
     text: Your opponent can't play any Item cards from his or her hand during his
       or her next turn.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Grenade Hammer
     damage: '130'
     text: This attack does 30 damage to 2 of your Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Eske Yoshinob
-- id: 363-21
-  pioId: xy3-21
-  enumId: CUBCHOO_21
+  pioId: xy3-20
+  nationalPokedexNumber: 537
+- enumId: CUBCHOO_21:FURIOUS_FISTS
   name: Cubchoo
-  nationalPokedexNumber: 613
   number: '21'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Beartic]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Fury Swipes
     damage: 10x
     text: Flip 3 coins. This attack does 10 damage times the number of heads.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Frost Breath
     damage: '40'
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: kirisAki
-- id: 363-22
-  pioId: xy3-22
-  enumId: BEARTIC_22
+  pioId: xy3-21
+  nationalPokedexNumber: 613
+- enumId: BEARTIC_22:FURIOUS_FISTS
   name: Beartic
-  nationalPokedexNumber: 614
   number: '22'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Cubchoo
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Cubchoo]
   hp: 130
-  retreatCost: 4
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Igloo Hold
     damage: 20+
     text: This attack does 20 more damage for each [C] in your opponent's Active Pokémon's
       Retreat Cost.
-  - cost: [W, W, C, C]
+  - cost: [WATER, WATER, COLORLESS, COLORLESS]
     name: Mountain Drop
     damage: 80+
     text: If there is any Stadium card in play, this attack does 40 more damage.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
+  retreatCost: 4
   rarity: Rare
   artist: PLANETA
-- id: 363-23
-  pioId: xy3-23
-  enumId: CLAUNCHER_23
+  pioId: xy3-22
+  nationalPokedexNumber: 614
+- enumId: CLAUNCHER_23:FURIOUS_FISTS
   name: Clauncher
-  nationalPokedexNumber: 692
   number: '23'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Clawitzer]
+  cardTypes: [POKEMON, BASIC]
+  types: [WATER]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Bubble
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Crabhammer
     damage: '30'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: 5ban Graphics
-- id: 363-24
-  pioId: xy3-24
-  enumId: CLAWITZER_24
+  pioId: xy3-23
+  nationalPokedexNumber: 692
+- enumId: CLAWITZER_24:FURIOUS_FISTS
   name: Clawitzer
-  nationalPokedexNumber: 693
   number: '24'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Clauncher
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Clauncher]
   hp: 100
-  retreatCost: 2
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Reverse Thrust
     damage: '30'
     text: Switch this Pokémon with 1 of your Benched Pokémon.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Splash Cannon
     damage: 50+
     text: This attack does 20 more damage for each [W] Energy attached to this Pokémon.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: 5ban Graphics
-- id: 363-25
-  pioId: xy3-25
-  enumId: AMAURA_25
+  pioId: xy3-24
+  nationalPokedexNumber: 693
+- enumId: AMAURA_25:FURIOUS_FISTS
   name: Amaura
-  nationalPokedexNumber: 698
   number: '25'
-  types: [W]
-  superType: POKEMON
-  subTypes: [RESTORED]
-  evolvesTo: [Aurorus]
+  cardTypes: [POKEMON, RESTORED]
+  types: [WATER]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [W]
+  - cost: [WATER]
     name: Stampede
     damage: '20'
-  - cost: [W, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS]
     name: Aurora Beam
     damage: '50'
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
-  rarity: Uncommon
-  text:
-  - Put this card onto your Bench only with the effect of Sail Fossil
-  artist: 5ban Graphics
-- id: 363-26
-  pioId: xy3-26
-  enumId: AURORUS_26
-  name: Aurorus
-  nationalPokedexNumber: 699
-  number: '26'
-  types: [W]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Amaura
-  hp: 130
   retreatCost: 3
+  rarity: Uncommon
+  text: Put this card onto your Bench only with the effect of Sail Fossil
+  artist: 5ban Graphics
+  pioId: xy3-25
+  nationalPokedexNumber: 698
+- enumId: AURORUS_26:FURIOUS_FISTS
+  name: Aurorus
+  number: '26'
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [WATER]
+  evolvesFrom: [Amaura]
+  hp: 130
   abilities:
   - type: Ability
     name: Ice Shield
@@ -671,402 +602,366 @@ cards:
       has any [W] Energy attached to it is reduced by 20 (after applying Weakness
       and Resistance).
   moves:
-  - cost: [W, C, C, C]
+  - cost: [WATER, COLORLESS, COLORLESS, COLORLESS]
     name: Icy Wind
     damage: '70'
     text: Your opponent's Active Pokémon is now Asleep.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
   artist: 5ban Graphics
-- id: 363-27
-  pioId: xy3-27
-  enumId: PIKACHU_27
+  pioId: xy3-26
+  nationalPokedexNumber: 699
+- enumId: PIKACHU_27:FURIOUS_FISTS
   name: Pikachu
-  nationalPokedexNumber: 25
   number: '27'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Raichu]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Thunder Shock
     damage: '20'
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Sanosuke Sakuma
-- id: 363-28
-  pioId: xy3-28
-  enumId: RAICHU_28
+  pioId: xy3-27
+  nationalPokedexNumber: 25
+- enumId: RAICHU_28:FURIOUS_FISTS
   name: Raichu
-  nationalPokedexNumber: 26
   number: '28'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pikachu
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Pikachu]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Thunder Shock
     damage: '30'
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
-  - cost: [L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, COLORLESS]
     name: Electro Ball
     damage: '80'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
   artist: Sanosuke Sakuma
-- id: 363-29
-  pioId: xy3-29
-  enumId: ELECTABUZZ_29
+  pioId: xy3-28
+  nationalPokedexNumber: 26
+- enumId: ELECTABUZZ_29:FURIOUS_FISTS
   name: Electabuzz
-  nationalPokedexNumber: 125
   number: '29'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Electivire]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 80
-  retreatCost: 2
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Light Punch
     damage: '10'
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Ambush
     damage: 20+
     text: Flip a coin. If heads, this attack does 20 more damage.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 2
   rarity: Common
   artist: Naoki Saito
-- id: 363-30
-  pioId: xy3-30
-  enumId: ELECTIVIRE_30
+  pioId: xy3-29
+  nationalPokedexNumber: 125
+- enumId: ELECTIVIRE_30:FURIOUS_FISTS
   name: Electivire
-  nationalPokedexNumber: 466
   number: '30'
-  types: [L]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Electabuzz
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [LIGHTNING]
+  evolvesFrom: [Electabuzz]
   hp: 120
-  retreatCost: 3
   moves:
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Tag Team Spark
     damage: 20+
     text: This attack does 20 more damage for each Energy attached to your Magmortar.
-  - cost: [L, C, C]
+  - cost: [LIGHTNING, COLORLESS, COLORLESS]
     name: Gigavolt
     damage: 60+
     text: Flip a coin. If heads, this attack does 30 more damage. If tails, your opponent's
       Active Pokémon is now Paralyzed.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 3
   rarity: Rare
   artist: PLANETA
-- id: 363-31
-  pioId: xy3-31
-  enumId: PLUSLE_31
+  pioId: xy3-30
+  nationalPokedexNumber: 466
+- enumId: PLUSLE_31:FURIOUS_FISTS
   name: Plusle
-  nationalPokedexNumber: 311
   number: '31'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Positive Hand
     text: Discard a basic Energy card from your hand. If you do, draw 2 cards.
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Electric Tail
     damage: '30'
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Akira Komayama
-- id: 363-32
-  pioId: xy3-32
-  enumId: MINUN_32
+  pioId: xy3-31
+  nationalPokedexNumber: 311
+- enumId: MINUN_32:FURIOUS_FISTS
   name: Minun
-  nationalPokedexNumber: 312
   number: '32'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Negative Discard
     text: Put 2 basic Energy cards from your discard pile into your hand.
-  - cost: [L]
+  - cost: [LIGHTNING]
     name: Static Shock
     damage: '20'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Akira Komayama
-- id: 363-33
-  pioId: xy3-33
-  enumId: THUNDURUS_33
+  pioId: xy3-32
+  nationalPokedexNumber: 312
+- enumId: THUNDURUS_33:FURIOUS_FISTS
   name: Thundurus
-  nationalPokedexNumber: 642
   number: '33'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 120
-  retreatCost: 1
   moves:
-  - cost: [L, C]
+  - cost: [LIGHTNING, COLORLESS]
     name: Raging Thunder Punch
     damage: 30+
     text: If your opponent's Active Pokémon has a Pokémon Tool card attached to it,
       this attack does 30 more damage.
-  - cost: [L, L, C]
+  - cost: [LIGHTNING, LIGHTNING, COLORLESS]
     name: Lightning Slam
     damage: '100'
     text: This Pokémon can't use Lightning Slam during your next turn.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Rare
   artist: Hajime Kusajima
-- id: 363-34
-  pioId: xy3-34
-  enumId: DEDENNE_34
+  pioId: xy3-33
+  nationalPokedexNumber: 642
+- enumId: DEDENNE_34:FURIOUS_FISTS
   name: Dedenne
-  nationalPokedexNumber: 702
   number: '34'
-  types: [L]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [LIGHTNING]
   hp: 70
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Entrainment
     text: Search your deck for up to 2 Basic Pokémon and put them onto your Bench.
       Shuffle your deck afterward.
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Energy Short
     damage: 20x
     text: This attack does 20 damage times the amount of Energy attached to your opponent's
       Active Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: M
+  - type: METAL
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
   artist: 5ban Graphics
-- id: 363-35
-  pioId: xy3-35
-  enumId: DROWZEE_35
+  pioId: xy3-34
+  nationalPokedexNumber: 702
+- enumId: DROWZEE_35:FURIOUS_FISTS
   name: Drowzee
-  nationalPokedexNumber: 96
   number: '35'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Hypno]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Sinister Suggestion
     text: Whenever your opponent flips a coin during his or her next turn, treat it
       as tails.
-  - cost: [P, P]
+  - cost: [PSYCHIC, PSYCHIC]
     name: Psyshot
     damage: '20'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Sumiyoshi Kizuki
-- id: 363-36
-  pioId: xy3-36
-  enumId: HYPNO_36
+  pioId: xy3-35
+  nationalPokedexNumber: 96
+- enumId: HYPNO_36:FURIOUS_FISTS
   name: Hypno
-  nationalPokedexNumber: 97
   number: '36'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Drowzee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Drowzee]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [P]
+  - cost: [PSYCHIC]
     name: Hand Control
     text: Your opponent reveals his or her hand. You may choose a Supporter card you
       find there. If you do, your opponent plays that Supporter card. However, you
       make all decisions for that card. (That Supporter card is discarded.)
-  - cost: [P, P, P]
+  - cost: [PSYCHIC, PSYCHIC, PSYCHIC]
     name: Hypnoblast
     damage: '60'
     text: Your opponent's Active Pokémon is now Asleep.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Shigenori Negishi
-- id: 363-37
-  pioId: xy3-37
-  enumId: JYNX_37
+  pioId: xy3-36
+  nationalPokedexNumber: 97
+- enumId: JYNX_37:FURIOUS_FISTS
   name: Jynx
-  nationalPokedexNumber: 124
   number: '37'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 70
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Victory Kiss
     text: Once during your turn (before your attack), if this Pokémon is on your Bench,
       you may heal 10 damage from your Active Pokémon.
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Hug
     damage: '30'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Naoki Saito
-- id: 363-38
-  pioId: xy3-38
-  enumId: SKORUPI_38
+  pioId: xy3-37
+  nationalPokedexNumber: 124
+- enumId: SKORUPI_38:FURIOUS_FISTS
   name: Skorupi
-  nationalPokedexNumber: 451
   number: '38'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Drapion]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Poison Sting
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Poisoned.
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Pierce
     damage: '30'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Naoki Saito
-- id: 363-39
-  pioId: xy3-39
-  enumId: GOTHITA_39
+  pioId: xy3-38
+  nationalPokedexNumber: 451
+- enumId: GOTHITA_39:FURIOUS_FISTS
   name: Gothita
-  nationalPokedexNumber: 574
   number: '39'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Gothorita]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 50
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Slap
     damage: '10'
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Psy Bolt
     damage: '10'
     text: Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Atsuko Nishida
-- id: 363-40
-  pioId: xy3-40
-  enumId: GOTHORITA_40
+  pioId: xy3-39
+  nationalPokedexNumber: 574
+- enumId: GOTHORITA_40:FURIOUS_FISTS
   name: Gothorita
-  nationalPokedexNumber: 575
   number: '40'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Gothita
-  evolvesTo: [Gothitelle]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Gothita]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Fortunate Eye
     text: Look at the top 5 cards of your opponent's deck and put them back on top
       of his or her deck in any order.
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Smack
     damage: '30'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Suwama Chiaki
-- id: 363-41
-  pioId: xy3-41
-  enumId: GOTHITELLE_41
+  pioId: xy3-40
+  nationalPokedexNumber: 575
+- enumId: GOTHITELLE_41:FURIOUS_FISTS
   name: Gothitelle
-  nationalPokedexNumber: 576
   number: '41'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Gothorita
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [PSYCHIC]
+  evolvesFrom: [Gothorita]
   hp: 130
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Teleport Room
@@ -1074,613 +969,553 @@ cards:
       card in play. If you do, put a Stadium card with a different name from your
       discard pile into play.
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Psy Report
     damage: '60'
     text: Your opponent reveals his or her hand.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: kirisAki
-- id: 363-42
-  pioId: xy3-42
-  enumId: GOLETT_42
+  pioId: xy3-41
+  nationalPokedexNumber: 576
+- enumId: GOLETT_42:FURIOUS_FISTS
   name: Golett
-  nationalPokedexNumber: 622
   number: '42'
-  types: [P]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Golurk]
+  cardTypes: [POKEMON, BASIC]
+  types: [PSYCHIC]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [P, C]
+  - cost: [PSYCHIC, COLORLESS]
     name: Pound
     damage: '20'
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Rock Smash
     damage: 30+
     text: Flip a coin. If heads, this attack does 30 more damage.
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 3
   rarity: Common
   artist: Sumiyoshi Kizuki
-- id: 363-43
-  pioId: xy3-43
-  enumId: GOLURK_43
+  pioId: xy3-42
+  nationalPokedexNumber: 622
+- enumId: GOLURK_43:FURIOUS_FISTS
   name: Golurk
-  nationalPokedexNumber: 623
   number: '43'
-  types: [P]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Golett
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [PSYCHIC]
+  evolvesFrom: [Golett]
   hp: 130
-  retreatCost: 4
   moves:
-  - cost: [P, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS]
     name: Wreck
     damage: 60+
     text: If there is any Stadium card in play, this attack does 60 more damage. Discard
       that Stadium card.
-  - cost: [P, C, C, C]
+  - cost: [PSYCHIC, COLORLESS, COLORLESS, COLORLESS]
     name: Golurk Hammer
     damage: '100'
   weaknesses:
-  - type: D
+  - type: DARKNESS
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 4
   rarity: Rare
   artist: PLANETA
-- id: 363-44
-  pioId: xy3-44
-  enumId: MACHOP_44
+  pioId: xy3-43
+  nationalPokedexNumber: 623
+- enumId: MACHOP_44:FURIOUS_FISTS
   name: Machop
-  nationalPokedexNumber: 66
   number: '44'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Machoke]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Knuckle Punch
     damage: '10'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: Kouki Saitou
-- id: 363-45
-  pioId: xy3-45
-  enumId: MACHOKE_45
+  pioId: xy3-44
+  nationalPokedexNumber: 66
+- enumId: MACHOKE_45:FURIOUS_FISTS
   name: Machoke
-  nationalPokedexNumber: 67
   number: '45'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Machop
-  evolvesTo: [Machamp]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Machop]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Beatdown
     damage: '40'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Mitsuhiro Arita
-- id: 363-46
-  pioId: xy3-46
-  enumId: MACHAMP_46
+  pioId: xy3-45
+  nationalPokedexNumber: 67
+- enumId: MACHAMP_46:FURIOUS_FISTS
   name: Machamp
-  nationalPokedexNumber: 68
   number: '46'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Machoke
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [FIGHTING]
+  evolvesFrom: [Machoke]
   hp: 150
-  retreatCost: 2
   abilities:
   - type: Ability
     name: Fighting Fury
     text: Each of your [F] Pokémon's attacks do 20 more damage to your opponent's
       Active Pokémon (before applying Weakness and Resistance).
   moves:
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: Machamp Crush
     damage: '80'
     text: During your opponent's next turn, any damage done by attacks from the Defending
       Pokémon is reduced by 40 (before applying Weakness and Resistance).
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
   artist: PLANETA
-- id: 363-47
-  pioId: xy3-47
-  enumId: HITMONLEE_47
+  pioId: xy3-46
+  nationalPokedexNumber: 68
+  variantOf: MACHAMP_XY13:XY_PROMOS
+  variantType: Reprint
+- enumId: HITMONLEE_47:FURIOUS_FISTS
   name: Hitmonlee
-  nationalPokedexNumber: 106
   number: '47'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Stretch Kick
     text: This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't
       apply Weakness and Resistance for Benched Pokémon.)
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Spiral Kick
     damage: '30'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Hitoshi Ariga
-- id: 363-48
-  pioId: xy3-48
-  enumId: HITMONCHAN_48
+  pioId: xy3-47
+  nationalPokedexNumber: 106
+- enumId: HITMONCHAN_48:FURIOUS_FISTS
   name: Hitmonchan
-  nationalPokedexNumber: 107
   number: '48'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Bullet Punch
     damage: 20+
     text: Flip 2 coins. This attack does 20 more damage for each heads.
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Mach Cross
     damage: '60'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: match
-- id: 363-49
-  pioId: xy3-49
-  enumId: HITMONTOP_49
+  pioId: xy3-48
+  nationalPokedexNumber: 107
+- enumId: HITMONTOP_49:FURIOUS_FISTS
   name: Hitmontop
-  nationalPokedexNumber: 237
   number: '49'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Quick Draw
     text: Draw a card.
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Helicoptero
     damage: '40'
     text: Switch this Pokémon with 1 of your Benched Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: kawayoo
-- id: 363-50
-  pioId: xy3-50
-  enumId: BRELOOM_50
+  pioId: xy3-49
+  nationalPokedexNumber: 237
+- enumId: BRELOOM_50:FURIOUS_FISTS
   name: Breloom
-  nationalPokedexNumber: 286
   number: '50'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Shroomish
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Shroomish]
   hp: 100
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Giga Drain
     damage: '20'
     text: Heal from this Pokémon the same amount of damage you did to your opponent's
       Active Pokémon.
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Sky Uppercut
     damage: '70'
     text: This attack's damage isn't affected by Resistance.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare
   artist: Hitoshi Ariga
-- id: 363-51
-  pioId: xy3-51
-  enumId: MAKUHITA_51
+  pioId: xy3-50
+  nationalPokedexNumber: 286
+- enumId: MAKUHITA_51:FURIOUS_FISTS
   name: Makuhita
-  nationalPokedexNumber: 296
   number: '51'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Hariyama]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 80
-  retreatCost: 3
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Punch
     damage: '10'
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Strength
     damage: '40'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 3
   rarity: Common
   artist: Masakazu Fukuda
-- id: 363-52
-  pioId: xy3-52
-  enumId: HARIYAMA_52
+  pioId: xy3-51
+  nationalPokedexNumber: 296
+- enumId: HARIYAMA_52:FURIOUS_FISTS
   name: Hariyama
-  nationalPokedexNumber: 297
   number: '52'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Makuhita
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Makuhita]
   hp: 120
-  retreatCost: 4
   abilities:
   - type: Ability
     name: Thick Fat
     text: Any damage done to this Pokémon by attacks from your opponent's [R] or [W]
       Pokémon is reduced by 30 (after applying Weakness and Resistance).
   moves:
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Rocket Slap
     damage: '80'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 4
   rarity: Rare
   artist: TOKIYA
-- id: 363-53
-  pioId: xy3-53
-  enumId: TRAPINCH_53
+  pioId: xy3-52
+  nationalPokedexNumber: 297
+- enumId: TRAPINCH_53:FURIOUS_FISTS
   name: Trapinch
-  nationalPokedexNumber: 328
   number: '53'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Vibrava]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Mountain Munch
     text: Discard the top card of your opponent's deck.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Mud-Slap
     damage: '10'
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Mizue
-- id: 363-54
-  pioId: xy3-54
-  enumId: LUCARIO_EX_54
+  pioId: xy3-53
+  nationalPokedexNumber: 328
+- enumId: LUCARIO_EX_54:FURIOUS_FISTS
   name: Lucario-EX
-  nationalPokedexNumber: 448
   number: '54'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_EX]
-  evolvesTo: [M Lucario-EX]
+  cardTypes: [POKEMON, BASIC, POKEMON_EX]
+  types: [FIGHTING]
   hp: 180
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Missile Jab
     damage: '30'
     text: This attack's damage isn't affected by Resistance.
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Corkscrew Smash
     damage: '60'
     text: You may draw cards until you have 6 cards in your hand.
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: Somersault Kick
     damage: '100'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Eske Yoshinob
-- id: 363-55
-  pioId: xy3-55
-  enumId: M_LUCARIO_EX_55
-  name: M Lucario-EX
+  pioId: xy3-54
   nationalPokedexNumber: 448
+- enumId: M_LUCARIO_EX_55:FURIOUS_FISTS
+  name: M Lucario-EX
   number: '55'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, MEGA_POKEMON, POKEMON_EX]
-  evolvesFrom: Lucario-EX
+  cardTypes: [POKEMON, EVOLUTION, MEGA_POKEMON, POKEMON_EX]
+  types: [FIGHTING]
+  evolvesFrom: [Lucario-EX]
   hp: 220
-  retreatCost: 2
   moves:
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: Rising Fist
     damage: '140'
     text: Discard an Energy attached to your opponent's Active Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
   artist: 5ban Graphics
-- id: 363-55a
-  pioId: xy3-55a
-  enumId: M_LUCARIO_EX_55a
-  name: M Lucario-EX
+  pioId: xy3-55
   nationalPokedexNumber: 448
+- enumId: M_LUCARIO_EX_55a:FURIOUS_FISTS
+  name: M Lucario-EX
   number: 55a
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, MEGA_POKEMON, POKEMON_EX]
-  evolvesFrom: Lucario-EX
+  cardTypes: [POKEMON, EVOLUTION, MEGA_POKEMON, POKEMON_EX]
+  types: [FIGHTING]
+  evolvesFrom: [Lucario-EX]
   hp: 220
-  retreatCost: 2
   moves:
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: Rising Fist
     damage: '140'
     text: Discard an Energy attached to your opponent's Active Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
   artist: 5ban Graphics
-  variantOf: 363-55
-  variantType: Alternate Art
-- id: 363-56
-  pioId: xy3-56
-  enumId: MIENFOO_56
+  pioId: xy3-55a
+  nationalPokedexNumber: 448
+  variantOf: M_LUCARIO_EX_55:FURIOUS_FISTS
+  variantType: Full Art
+- enumId: MIENFOO_56:FURIOUS_FISTS
   name: Mienfoo
-  nationalPokedexNumber: 619
   number: '56'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Mienshao]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Flop
     damage: '10'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Lunge
     damage: '30'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Shigenori Negishi
-- id: 363-57
-  pioId: xy3-57
-  enumId: MIENSHAO_57
+  pioId: xy3-56
+  nationalPokedexNumber: 619
+- enumId: MIENSHAO_57:FURIOUS_FISTS
   name: Mienshao
-  nationalPokedexNumber: 620
   number: '57'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Mienfoo
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Mienfoo]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Aero Turn
     damage: '40'
     text: Return this Pokémon and all cards attached to it to your hand.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: High Jump Kick
     damage: '40'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: TOKIYA
-- id: 363-58
-  pioId: xy3-58
-  enumId: LANDORUS_58
+  pioId: xy3-57
+  nationalPokedexNumber: 620
+- enumId: LANDORUS_58:FURIOUS_FISTS
   name: Landorus
-  nationalPokedexNumber: 645
   number: '58'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 120
-  retreatCost: 1
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Shout of Power
     damage: '20'
     text: Attach a basic Energy card from your discard pile to 1 of your Benched Pokémon.
-  - cost: [F, F, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS]
     name: Sky Lariat
     damage: '90'
   weaknesses:
-  - type: W
+  - type: WATER
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: PLANETA
-- id: 363-59
-  pioId: xy3-59
-  enumId: PANCHAM_59
+  pioId: xy3-58
+  nationalPokedexNumber: 645
+- enumId: PANCHAM_59:FURIOUS_FISTS
   name: Pancham
-  nationalPokedexNumber: 674
   number: '59'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Pangoro]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Bad-Influence Evolution
     text: If you have any [D] Pokémon on your Bench, search your deck for a card that
       evolves from this Pokémon and put it onto this Pokémon. (This counts as evolving
       this Pokémon.) Shuffle your deck afterward.
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Confront
     damage: '30'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: 5ban Graphics
-- id: 363-60
-  pioId: xy3-60
-  enumId: PANCHAM_60
-  name: Pancham
+  pioId: xy3-59
   nationalPokedexNumber: 674
+- enumId: PANCHAM_60:FURIOUS_FISTS
+  name: Pancham
   number: '60'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Pangoro]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 70
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Comet Punch
     damage: 10x
     text: Flip 4 coins. This attack does 10 damage times the number of heads.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Common
   artist: 5ban Graphics
-- id: 363-61
-  pioId: xy3-61
-  enumId: TYRUNT_61
+  pioId: xy3-60
+  nationalPokedexNumber: 674
+- enumId: TYRUNT_61:FURIOUS_FISTS
   name: Tyrunt
-  nationalPokedexNumber: 696
   number: '61'
-  types: [F]
-  superType: POKEMON
-  subTypes: [RESTORED]
-  evolvesTo: [Tyrantrum]
+  cardTypes: [POKEMON, RESTORED]
+  types: [FIGHTING]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [F, C]
+  - cost: [FIGHTING, COLORLESS]
     name: Gnaw
     damage: '30'
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Crunch
     damage: '50'
     text: Flip a coin. If heads, discard an Energy attached to your opponent's Active
       Pokémon.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 2
   rarity: Uncommon
-  text:
-  - Put this card onto your Bench only with the effect of Jaw Fossil
+  text: Put this card onto your Bench only with the effect of Jaw Fossil
   artist: 5ban Graphics
-- id: 363-62
-  pioId: xy3-62
-  enumId: TYRANTRUM_62
+  pioId: xy3-61
+  nationalPokedexNumber: 696
+- enumId: TYRANTRUM_62:FURIOUS_FISTS
   name: Tyrantrum
-  nationalPokedexNumber: 697
   number: '62'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Tyrunt
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FIGHTING]
+  evolvesFrom: [Tyrunt]
   hp: 150
-  retreatCost: 3
   moves:
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Chew Up
     damage: 60+
     text: If your opponent's Active Pokémon has any Special Energy attached to it,
       this attack does 90 more damage.
-  - cost: [F, F, C, C]
+  - cost: [FIGHTING, FIGHTING, COLORLESS, COLORLESS]
     name: Giga Impact
     damage: '150'
     text: This Pokémon can't attack during your next turn.
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Rare
   artist: 5ban Graphics
-- id: 363-63
-  pioId: xy3-63
-  enumId: HAWLUCHA_63
+  pioId: xy3-62
+  nationalPokedexNumber: 697
+- enumId: HAWLUCHA_63:FURIOUS_FISTS
   name: Hawlucha
-  nationalPokedexNumber: 701
   number: '63'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FIGHTING]
   hp: 70
-  retreatCost: 0
   abilities:
   - type: Ability
     name: Shining Spirit
     text: Damage from this Pokémon's attacks isn't affected by Weakness or Resistance.
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Flying Press
     damage: '60'
     text: If your opponent's Active Pokémon isn't a Pokémon-EX, this attack does nothing.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 0
   rarity: Rare Holo
   artist: 5ban Graphics
-- id: 363-64
-  pioId: xy3-64
-  enumId: HAWLUCHA_EX_64
-  name: Hawlucha-EX
+  pioId: xy3-63
   nationalPokedexNumber: 701
+- enumId: HAWLUCHA_EX_64:FURIOUS_FISTS
+  name: Hawlucha-EX
   number: '64'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_EX]
+  cardTypes: [POKEMON, BASIC, POKEMON_EX]
+  types: [FIGHTING]
   hp: 130
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Counterattack
@@ -1688,286 +1523,262 @@ cards:
       (even if this Pokémon is Knocked Out), put 2 damage counters on the Attacking
       Pokémon.
   moves:
-  - cost: [F, C, C]
+  - cost: [FIGHTING, COLORLESS, COLORLESS]
     name: Moonsault Stomp
     damage: 60+
     text: If there is any Stadium card in play, this attack does 40 more damage.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
   artist: 5ban Graphics
-- id: 363-65
-  pioId: xy3-65
-  enumId: DRAPION_65
+  pioId: xy3-64
+  nationalPokedexNumber: 701
+- enumId: DRAPION_65:FURIOUS_FISTS
   name: Drapion
-  nationalPokedexNumber: 452
   number: '65'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Skorupi
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Skorupi]
   hp: 110
-  retreatCost: 3
   moves:
-  - cost: [D]
+  - cost: [DARKNESS]
     name: Venoshock
     damage: 20+
     text: If your opponent's Active Pokémon is Poisoned, this attack does 40 more
       damage.
-  - cost: [D, D, C, C]
+  - cost: [DARKNESS, DARKNESS, COLORLESS, COLORLESS]
     name: Venomous Fang
     damage: '80'
     text: Your opponent's Active Pokémon is now Poisoned.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 3
   rarity: Rare
   artist: Hitoshi Ariga
-- id: 363-66
-  pioId: xy3-66
-  enumId: SCRAGGY_66
+  pioId: xy3-65
+  nationalPokedexNumber: 452
+- enumId: SCRAGGY_66:FURIOUS_FISTS
   name: Scraggy
-  nationalPokedexNumber: 559
   number: '66'
-  types: [D]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Scrafty]
+  cardTypes: [POKEMON, BASIC]
+  types: [DARKNESS]
   hp: 60
-  retreatCost: 2
   moves:
-  - cost: [D, D]
+  - cost: [DARKNESS, DARKNESS]
     name: Corkscrew Punch
     damage: '30'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Common
   artist: Tomokazu Komiya
-- id: 363-67
-  pioId: xy3-67
-  enumId: SCRAFTY_67
+  pioId: xy3-66
+  nationalPokedexNumber: 559
+- enumId: SCRAFTY_67:FURIOUS_FISTS
   name: Scrafty
-  nationalPokedexNumber: 560
   number: '67'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Scraggy
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Scraggy]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Low Kick
     damage: '30'
-  - cost: [D, D]
+  - cost: [DARKNESS, DARKNESS]
     name: Machine Gun Headbutt
     damage: 50x
     text: Flip 3 coins. This attack does 50 damage times the number of heads. This
       Pokémon is now Confused.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 2
   rarity: Uncommon
   artist: match
-- id: 363-68
-  pioId: xy3-68
-  enumId: PANGORO_68
+  pioId: xy3-67
+  nationalPokedexNumber: 560
+- enumId: PANGORO_68:FURIOUS_FISTS
   name: Pangoro
-  nationalPokedexNumber: 675
   number: '68'
-  types: [D]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Pancham
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DARKNESS]
+  evolvesFrom: [Pancham]
   hp: 120
-  retreatCost: 3
   moves:
-  - cost: [D, C]
+  - cost: [DARKNESS, COLORLESS]
     name: Clobber
     damage: 30+
     text: You may discard an Item card from your hand. If you do, this attack does
       40 more damage.
-  - cost: [D, C, C]
+  - cost: [DARKNESS, COLORLESS, COLORLESS]
     name: Hammer Arm
     damage: '80'
     text: Discard the top card of your opponent's deck.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
   resistances:
-  - type: P
+  - type: PSYCHIC
     value: '-20'
+  retreatCost: 3
   rarity: Rare
   artist: 5ban Graphics
-- id: 363-69
-  pioId: xy3-69
-  enumId: CLEFAIRY_69
+  pioId: xy3-68
+  nationalPokedexNumber: 675
+- enumId: CLEFAIRY_69:FURIOUS_FISTS
   name: Clefairy
-  nationalPokedexNumber: 35
   number: '69'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Clefable]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Moonlight
     text: Heal 30 damage from this Pokémon.
-  - cost: [Y, C]
+  - cost: [FAIRY, COLORLESS]
     name: Pound
     damage: '20'
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: Naoyo Kimura
-- id: 363-70
-  pioId: xy3-70
-  enumId: CLEFAIRY_70
-  name: Clefairy
+  pioId: xy3-69
   nationalPokedexNumber: 35
+- enumId: CLEFAIRY_70:FURIOUS_FISTS
+  name: Clefairy
   number: '70'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Clefable]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Moonblast
     damage: '10'
     text: During your opponent's next turn, any damage done by attacks from the Defending
       Pokémon is reduced by 10 (before applying Weakness and Resistance).
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: match
-- id: 363-71
-  pioId: xy3-71
-  enumId: CLEFABLE_71
+  pioId: xy3-70
+  nationalPokedexNumber: 35
+- enumId: CLEFABLE_71:FURIOUS_FISTS
   name: Clefable
-  nationalPokedexNumber: 36
   number: '71'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Clefairy
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FAIRY]
+  evolvesFrom: [Clefairy]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Follow Me
     text: Switch 1 of your opponent's Benched Pokémon with your opponent's Active
       Pokémon.
-  - cost: [Y, C]
+  - cost: [FAIRY, COLORLESS]
     name: Moonblast
     damage: '30'
     text: During your opponent's next turn, any damage done by attacks from the Defending
       Pokémon is reduced by 30 (before applying Weakness and Resistance).
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 2
   rarity: Uncommon
   artist: Atsuko Nishida
-- id: 363-72
-  pioId: xy3-72
-  enumId: SYLVEON_72
+  pioId: xy3-71
+  nationalPokedexNumber: 36
+- enumId: SYLVEON_72:FURIOUS_FISTS
   name: Sylveon
-  nationalPokedexNumber: 700
   number: '72'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Eevee
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [FAIRY]
+  evolvesFrom: [Eevee]
   hp: 90
-  retreatCost: 1
   moves:
-  - cost: [Y]
+  - cost: [FAIRY]
     name: Curly Ribbon
     damage: '30'
     text: Move an Energy attached to your opponent's Active Pokémon to 1 of his or
       her Benched Pokémon.
-  - cost: [Y, C, C]
+  - cost: [FAIRY, COLORLESS, COLORLESS]
     name: Echoed Voice
     damage: '50'
     text: During your next turn, this Pokémon's Echoed Voice attack does 50 more damage
       (before applying Weakness and Resistance).
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Rare Holo
   artist: 5ban Graphics
-- id: 363-73
-  pioId: xy3-73
-  enumId: KLEFKI_73
+  pioId: xy3-72
+  nationalPokedexNumber: 700
+- enumId: KLEFKI_73:FURIOUS_FISTS
   name: Klefki
-  nationalPokedexNumber: 707
   number: '73'
-  types: [Y]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [FAIRY]
   hp: 60
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Secret Key
     text: Each of your [Y] Pokémon's Resistance is now -40.
   moves:
-  - cost: [Y, C]
+  - cost: [FAIRY, COLORLESS]
     name: Fairy Lock
     damage: '30'
     text: The Defending Pokémon can't retreat during your opponent's next turn.
   weaknesses:
-  - type: M
+  - type: METAL
     value: x2
   resistances:
-  - type: D
+  - type: DARKNESS
     value: '-20'
+  retreatCost: 1
   rarity: Uncommon
   artist: 5ban Graphics
-- id: 363-74
-  pioId: xy3-74
-  enumId: DRAGONITE_EX_74
+  pioId: xy3-73
+  nationalPokedexNumber: 707
+- enumId: DRAGONITE_EX_74:FURIOUS_FISTS
   name: Dragonite-EX
-  nationalPokedexNumber: 149
   number: '74'
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_EX]
+  cardTypes: [POKEMON, BASIC, POKEMON_EX]
+  types: [DRAGON]
   hp: 180
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Bust In
@@ -1975,159 +1786,143 @@ cards:
       any number of basic Energy attached to your Pokémon to this Pokémon. If you
       do, switch this Pokémon with your Active Pokémon.
   moves:
-  - cost: [G, G, L]
+  - cost: [GRASS, GRASS, LIGHTNING]
     name: Jet Sonic
     damage: 80+
     text: You may discard an Energy attached to this Pokémon. If you do, this attack
       does 40 more damage.
   weaknesses:
-  - type: Y
+  - type: FAIRY
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Eske Yoshinob
-- id: 363-75
-  pioId: xy3-75
-  enumId: VIBRAVA_75
+  pioId: xy3-74
+  nationalPokedexNumber: 149
+- enumId: VIBRAVA_75:FURIOUS_FISTS
   name: Vibrava
-  nationalPokedexNumber: 329
   number: '75'
-  types: [N]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Trapinch
-  evolvesTo: [Flygon]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DRAGON]
+  evolvesFrom: [Trapinch]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Charge Energy
     text: Search your deck for up to 2 basic Energy cards, reveal them, and put them
       into your hand. Shuffle your deck afterward.
-  - cost: [G, F]
+  - cost: [GRASS, FIGHTING]
     name: Vibration
     damage: '30'
   weaknesses:
-  - type: Y
+  - type: FAIRY
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Kagemaru Himeno
-- id: 363-76
-  pioId: xy3-76
-  enumId: FLYGON_76
+  pioId: xy3-75
+  nationalPokedexNumber: 329
+- enumId: FLYGON_76:FURIOUS_FISTS
   name: Flygon
-  nationalPokedexNumber: 330
   number: '76'
-  types: [N]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Vibrava
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [DRAGON]
+  evolvesFrom: [Vibrava]
   hp: 130
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Rainbow Shower
     text: Attach as many basic Energy cards as you like from your hand to your Pokémon
       in any way you like.
-  - cost: [G, F, C]
+  - cost: [GRASS, FIGHTING, COLORLESS]
     name: Sand Sweep
     damage: '70'
     text: Heal 30 damage from each of your Pokémon that has any Energy attached to
       it.
   weaknesses:
-  - type: Y
+  - type: FAIRY
     value: x2
+  retreatCost: 1
   rarity: Rare
   artist: Masakazu Fukuda
-- id: 363-77
-  pioId: xy3-77
-  enumId: NOIVERN_77
+  pioId: xy3-76
+  nationalPokedexNumber: 330
+- enumId: NOIVERN_77:FURIOUS_FISTS
   name: Noivern
-  nationalPokedexNumber: 715
   number: '77'
-  types: [N]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Noibat
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [DRAGON]
+  evolvesFrom: [Noibat]
   hp: 100
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Echolocation
     text: If any damage is done to this Pokémon by attacks, flip a coin. If heads,
       prevent that damage.
   moves:
-  - cost: [P, D, C]
+  - cost: [PSYCHIC, DARKNESS, COLORLESS]
     name: Boomburst
     text: This attack does 30 damage to each of your opponent's Pokémon. (Don't apply
       Weakness and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: Y
+  - type: FAIRY
     value: x2
+  retreatCost: 1
   rarity: Rare Holo
   artist: 5ban Graphics
-- id: 363-78
-  pioId: xy3-78
-  enumId: LICKITUNG_78
+  pioId: xy3-77
+  nationalPokedexNumber: 715
+- enumId: LICKITUNG_78:FURIOUS_FISTS
   name: Lickitung
-  nationalPokedexNumber: 108
   number: '78'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Lickilicky]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 90
-  retreatCost: 3
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Lunge
     damage: '50'
     text: Flip a coin. If tails, this attack does nothing.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 3
   rarity: Common
   artist: Masakazu Fukuda
-- id: 363-79
-  pioId: xy3-79
-  enumId: LICKILICKY_79
+  pioId: xy3-78
+  nationalPokedexNumber: 108
+- enumId: LICKILICKY_79:FURIOUS_FISTS
   name: Lickilicky
-  nationalPokedexNumber: 463
   number: '79'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Lickitung
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Lickitung]
   hp: 120
-  retreatCost: 4
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Knock Off
     damage: '50'
     text: Discard a random card from your opponent's hand.
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Lickichop
     damage: 60+
     text: Flip a coin until you get tails. This attack does 30 more damage for each
       heads.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 4
   rarity: Uncommon
   artist: Hajime Kusajima
-- id: 363-80
-  pioId: xy3-80
-  enumId: EEVEE_80
+  pioId: xy3-79
+  nationalPokedexNumber: 463
+- enumId: EEVEE_80:FURIOUS_FISTS
   name: Eevee
-  nationalPokedexNumber: 133
   number: '80'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Vaporeon, Jolteon, Flareon, Sylveon, Espeon, Umbreon, Leafeon, Glaceon]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 50
-  retreatCost: 1
   abilities:
   - type: Ability
     name: Energy Evolution
@@ -2136,505 +1931,432 @@ cards:
       type as that Energy card and put it onto this Pokémon. (This counts as evolving
       this Pokémon.) Shuffle your deck afterward.
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Gnaw
     damage: '10'
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: sui
-- id: 363-81
-  pioId: xy3-81
-  enumId: SLAKOTH_81
+  pioId: xy3-80
+  nationalPokedexNumber: 133
+- enumId: SLAKOTH_81:FURIOUS_FISTS
   name: Slakoth
-  nationalPokedexNumber: 287
   number: '81'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Vigoroth]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 3
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Big Yawn
     text: Both Active Pokémon are now Asleep.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 3
   rarity: Common
   artist: Midori Harada
-- id: 363-82
-  pioId: xy3-82
-  enumId: VIGOROTH_82
+  pioId: xy3-81
+  nationalPokedexNumber: 287
+- enumId: VIGOROTH_82:FURIOUS_FISTS
   name: Vigoroth
-  nationalPokedexNumber: 288
   number: '82'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Slakoth
-  evolvesTo: [Slaking]
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Slakoth]
   hp: 90
-  retreatCost: 2
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Scratch
     damage: '20'
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Reckless Charge
     damage: '70'
     text: Flip a coin. If tails, this Pokémon does 20 damage to itself.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 2
   rarity: Uncommon
   artist: Suwama Chiaki
-- id: 363-83
-  pioId: xy3-83
-  enumId: SLAKING_83
+  pioId: xy3-82
+  nationalPokedexNumber: 288
+- enumId: SLAKING_83:FURIOUS_FISTS
   name: Slaking
-  nationalPokedexNumber: 289
   number: '83'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE2]
-  evolvesFrom: Vigoroth
+  cardTypes: [POKEMON, EVOLUTION, STAGE2]
+  types: [COLORLESS]
+  evolvesFrom: [Vigoroth]
   hp: 150
-  retreatCost: 4
   moves:
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Amnesia
     damage: '50'
     text: Choose 1 of your opponent's Active Pokémon's attacks. That Pokémon can't
       use that attack during your opponent's next turn.
-  - cost: [C, C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS, COLORLESS]
     name: Knuckle Sandwich
     damage: '120'
     text: Discard an Energy attached to this Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 4
   rarity: Rare Holo
   artist: PLANETA
-- id: 363-84
-  pioId: xy3-84
-  enumId: PATRAT_84
+  pioId: xy3-83
+  nationalPokedexNumber: 289
+- enumId: PATRAT_84:FURIOUS_FISTS
   name: Patrat
-  nationalPokedexNumber: 504
   number: '84'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Watchog]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Safety Check
     text: Look at 1 of your face-down Prize cards.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Common
   artist: Kyoko Umemoto
-- id: 363-85
-  pioId: xy3-85
-  enumId: WATCHOG_85
+  pioId: xy3-84
+  nationalPokedexNumber: 504
+- enumId: WATCHOG_85:FURIOUS_FISTS
   name: Watchog
-  nationalPokedexNumber: 505
   number: '85'
-  types: [C]
-  superType: POKEMON
-  subTypes: [EVOLUTION, STAGE1]
-  evolvesFrom: Patrat
+  cardTypes: [POKEMON, EVOLUTION, STAGE1]
+  types: [COLORLESS]
+  evolvesFrom: [Patrat]
   hp: 80
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Held-Item Inspection
     text: Your opponent reveals his or her hand. Choose an Item card you find there.
       Your opponent shuffles that card into his or her deck.
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Thorough Crunch
     damage: '30'
     text: Flip 2 coins. For each heads, discard an Energy attached to your opponent's
       Active Pokémon.
   weaknesses:
-  - type: F
+  - type: FIGHTING
     value: x2
+  retreatCost: 1
   rarity: Uncommon
   artist: Midori Harada
-- id: 363-86
-  pioId: xy3-86
-  enumId: TORNADUS_86
+  pioId: xy3-85
+  nationalPokedexNumber: 505
+- enumId: TORNADUS_86:FURIOUS_FISTS
   name: Tornadus
-  nationalPokedexNumber: 641
   number: '86'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 110
-  retreatCost: 1
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Push Down
     damage: '20'
     text: You may have your opponent switch his or her Active Pokémon with 1 of his
       or her Benched Pokémon.
-  - cost: [C, C, C]
+  - cost: [COLORLESS, COLORLESS, COLORLESS]
     name: Twister Throw
     damage: 60+
     text: If you have the same number of cards in your hand as your opponent, this
       attack does 60 more damage.
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Rare
   artist: kawayoo
-- id: 363-87
-  pioId: xy3-87
-  enumId: NOIBAT_87
+  pioId: xy3-86
+  nationalPokedexNumber: 641
+- enumId: NOIBAT_87:FURIOUS_FISTS
   name: Noibat
-  nationalPokedexNumber: 714
   number: '87'
-  types: [C]
-  superType: POKEMON
-  subTypes: [BASIC]
-  evolvesTo: [Noivern]
+  cardTypes: [POKEMON, BASIC]
+  types: [COLORLESS]
   hp: 60
-  retreatCost: 1
   moves:
-  - cost: [C]
+  - cost: [COLORLESS]
     name: Tackle
     damage: '10'
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Gust
     damage: '20'
   weaknesses:
-  - type: L
+  - type: LIGHTNING
     value: x2
   resistances:
-  - type: F
+  - type: FIGHTING
     value: '-20'
+  retreatCost: 1
   rarity: Common
   artist: 5ban Graphics
-- id: 363-88
-  pioId: xy3-88
-  enumId: BATTLE_REPORTER_88
+  pioId: xy3-87
+  nationalPokedexNumber: 714
+- enumId: BATTLE_REPORTER_88:FURIOUS_FISTS
   name: Battle Reporter
   number: '88'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Draw cards until you have the same number of cards in your hand as your opponent.
+  text: Draw cards until you have the same number of cards in your hand as your opponent.
   artist: Shin Nagasawa
-- id: 363-89
-  pioId: xy3-89
-  enumId: ENERGY_SWITCH_89
+  pioId: xy3-88
+- enumId: ENERGY_SWITCH_89:FURIOUS_FISTS
   name: Energy Switch
   number: '89'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Move a basic Energy from 1 of your Pokémon to another of your Pokémon.
+  text: Move a basic Energy from 1 of your Pokémon to another of your Pokémon.
   artist: 5ban Graphics
-  variantOf: 311-94
+  pioId: xy3-89
+  variantOf: ENERGY_SWITCH_94:BLACK_WHITE
   variantType: Reprint
-- id: 363-90
-  pioId: xy3-90
-  enumId: FIGHTING_STADIUM_90
+- enumId: FIGHTING_STADIUM_90:FURIOUS_FISTS
   name: Fighting Stadium
   number: '90'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - The attacks of each [F] Pokémon in play (both yours and your opponent's) do 20
-    more damage to the Defending Pokémon-EX (before applying Weakness and Resistance).
+  text: The attacks of each [F] Pokémon in play (both yours and your opponent's) do
+    20 more damage to the Defending Pokémon-EX (before applying Weakness and Resistance).
   artist: Ryo Ueda
-- id: 363-91
-  pioId: xy3-91
-  enumId: FOCUS_SASH_91
+  pioId: xy3-90
+- enumId: FOCUS_SASH_91:FURIOUS_FISTS
   name: Focus Sash
   number: '91'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL]
   rarity: Uncommon
-  text:
-  - If the [F] Pokémon this card is attached to has full HP and would be Knocked Out
-    by damage from an opponent's attack, that Pokémon is not Knocked Out and its remaining
-    HP becomes 10 instead. Then, discard this card.
+  text: If the [F] Pokémon this card is attached to has full HP and would be Knocked
+    Out by damage from an opponent's attack, that Pokémon is not Knocked Out and its
+    remaining HP becomes 10 instead. Then, discard this card.
   artist: Toyste Beach
-- id: 363-92
-  pioId: xy3-92
-  enumId: FOSSIL_RESEARCHER_92
+  pioId: xy3-91
+- enumId: FOSSIL_RESEARCHER_92:FURIOUS_FISTS
   name: Fossil Researcher
   number: '92'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Search your deck for up to 2 in any combination of Amaura or Tyrunt and put them
-    onto your Bench. Shuffle your deck afterward.
+  text: Search your deck for up to 2 in any combination of Amaura or Tyrunt and put
+    them onto your Bench. Shuffle your deck afterward.
   artist: Naoki Saito
-- id: 363-93
-  pioId: xy3-93
-  enumId: FULL_HEAL_93
+  pioId: xy3-92
+- enumId: FULL_HEAL_93:FURIOUS_FISTS
   name: Full Heal
   number: '93'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Remove all Special Conditions from your Active Pokémon.
+  text: Remove all Special Conditions from your Active Pokémon.
   artist: 5ban Graphics
-- id: 363-94
-  pioId: xy3-94
-  enumId: JAW_FOSSIL_94
+  pioId: xy3-93
+  variantOf: FULL_HEAL_154:EXPEDITION
+  variantType: Reprint
+- enumId: JAW_FOSSIL_94:FURIOUS_FISTS
   name: Jaw Fossil
   number: '94'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Look at the bottom 7 cards of your deck. You may reveal a Tyrunt you find there
-    and put it onto your Bench. Shuffle the other cards back into your deck.
+  text: Look at the bottom 7 cards of your deck. You may reveal a Tyrunt you find
+    there and put it onto your Bench. Shuffle the other cards back into your deck.
   artist: Toyste Beach
-- id: 363-95
-  pioId: xy3-95
-  enumId: KORRINA_95
+  pioId: xy3-94
+- enumId: KORRINA_95:FURIOUS_FISTS
   name: Korrina
   number: '95'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Uncommon
-  text:
-  - Search your deck for a [F] Pokémon and an Item card, reveal them, and put them
-    into your hand. Shuffle your deck afterward.
+  text: Search your deck for a [F] Pokémon and an Item card, reveal them, and put
+    them into your hand. Shuffle your deck afterward.
   artist: Ken Sugimori
-- id: 363-96
-  pioId: xy3-96
-  enumId: MAINTENANCE_96
+  pioId: xy3-95
+- enumId: MAINTENANCE_96:FURIOUS_FISTS
   name: Maintenance
   number: '96'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Shuffle 2 cards from your hand into your deck. (If you can't shuffle 2 cards into
-    your deck, you can't play this card.) Then, draw a card.
+  text: Shuffle 2 cards from your hand into your deck. (If you can't shuffle 2 cards
+    into your deck, you can't play this card.) Then, draw a card.
   artist: Toyste Beach
-- id: 363-97
-  pioId: xy3-97
-  enumId: MOUNTAIN_RING_97
+  pioId: xy3-96
+- enumId: MOUNTAIN_RING_97:FURIOUS_FISTS
   name: Mountain Ring
   number: '97'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - Prevent all damage done to Benched Pokémon by attacks (both yours and your opponent's).
+  text: Prevent all damage done to Benched Pokémon by attacks (both yours and your
+    opponent's).
   artist: Ryo Ueda
-- id: 363-98
-  pioId: xy3-98
-  enumId: SAIL_FOSSIL_98
+  pioId: xy3-97
+- enumId: SAIL_FOSSIL_98:FURIOUS_FISTS
   name: Sail Fossil
   number: '98'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Look at the bottom 7 cards of your deck. You may reveal an Amaura you find there
-    and put it onto your Bench. Shuffle the other cards back into your deck.
+  text: Look at the bottom 7 cards of your deck. You may reveal an Amaura you find
+    there and put it onto your Bench. Shuffle the other cards back into your deck.
   artist: Toyste Beach
-- id: 363-99
-  pioId: xy3-99
-  enumId: SPARKLING_ROBE_99
+  pioId: xy3-98
+- enumId: SPARKLING_ROBE_99:FURIOUS_FISTS
   name: Sparkling Robe
   number: '99'
-  superType: TRAINER
-  subTypes: [ITEM, POKEMON_TOOL]
+  cardTypes: [TRAINER, ITEM, POKEMON_TOOL]
   rarity: Uncommon
-  text:
-  - The Pokémon this card is attached to can't be affected by any Special Conditions.
+  text: The Pokémon this card is attached to can't be affected by any Special Conditions.
     (Remove any Special Conditions affecting that Pokémon.)
   artist: Toyste Beach
-- id: 363-100
-  pioId: xy3-100
-  enumId: SUPER_SCOOP_UP_100
+  pioId: xy3-99
+- enumId: SUPER_SCOOP_UP_100:FURIOUS_FISTS
   name: Super Scoop Up
   number: '100'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Flip a coin. If heads, put 1 of your Pokémon and all cards attached to it into
-    your hand.
+  text: Flip a coin. If heads, put 1 of your Pokémon and all cards attached to it
+    into your hand.
   artist: 5ban Graphics
-  variantOf: 311-103
+  pioId: xy3-100
+  variantOf: SUPER_SCOOP_UP_103:BLACK_WHITE
   variantType: Reprint
-- id: 363-101
-  pioId: xy3-101
-  enumId: TOOL_RETRIEVER_101
+- enumId: TOOL_RETRIEVER_101:FURIOUS_FISTS
   name: Tool Retriever
   number: '101'
-  superType: TRAINER
-  subTypes: [ITEM]
+  cardTypes: [TRAINER, ITEM]
   rarity: Uncommon
-  text:
-  - Choose up to 2 Pokémon Tool cards attached to your Pokémon and put them into your
-    hand.
+  text: Choose up to 2 Pokémon Tool cards attached to your Pokémon and put them into
+    your hand.
   artist: Toyste Beach
-- id: 363-102
-  pioId: xy3-102
-  enumId: TRAINING_CENTER_102
+  pioId: xy3-101
+- enumId: TRAINING_CENTER_102:FURIOUS_FISTS
   name: Training Center
   number: '102'
-  superType: TRAINER
-  subTypes: [STADIUM]
+  cardTypes: [TRAINER, STADIUM]
   rarity: Uncommon
-  text:
-  - Each Stage 1 and Stage 2 Pokémon in play (both yours and your opponent's) gets
-    +30 HP.
+  text: Each Stage 1 and Stage 2 Pokémon in play (both yours and your opponent's)
+    gets +30 HP.
   artist: Ryo Ueda
-- id: 363-103
-  pioId: xy3-103
-  enumId: HERBAL_ENERGY_103
+  pioId: xy3-102
+- enumId: HERBAL_ENERGY_103:FURIOUS_FISTS
   name: Herbal Energy
   number: '103'
-  superType: ENERGY
-  subTypes: [SPECIAL_ENERGY]
+  cardTypes: [ENERGY, SPECIAL_ENERGY]
   rarity: Uncommon
-  text:
-  - This card can only be attached to [G] Pokémon. This card provides [G] Energy only
-    while this card is attached to a [G] Pokémon. When you attach this card from your
-    hand to 1 of your [G] Pokémon, heal 30 damage from that Pokémon. (If this card
-    is attached to anything other than a [G] Pokémon, discard this card.)
-  energy: [[G]]
+  text: This card can only be attached to [G] Pokémon. This card provides [G] Energy
+    only while this card is attached to a [G] Pokémon. When you attach this card from
+    your hand to 1 of your [G] Pokémon, heal 30 damage from that Pokémon. (If this
+    card is attached to anything other than a [G] Pokémon, discard this card.)
+  energy: [[GRASS]]
   artist: 5ban Graphics
-- id: 363-104
-  pioId: xy3-104
-  enumId: STRONG_ENERGY_104
+  pioId: xy3-103
+- enumId: STRONG_ENERGY_104:FURIOUS_FISTS
   name: Strong Energy
   number: '104'
-  superType: ENERGY
-  subTypes: [SPECIAL_ENERGY]
+  cardTypes: [ENERGY, SPECIAL_ENERGY]
   rarity: Uncommon
-  text:
-  - This card can only be attached to [F] Pokémon. This card provides [F] Energy only
-    while this card is attached to a [F] Pokémon. The attacks of the [F] Pokémon this
-    card is attached to do 20 more damage to your opponent's Active Pokémon (before
+  text: This card can only be attached to [F] Pokémon. This card provides [F] Energy
+    only while this card is attached to a [F] Pokémon. The attacks of the [F] Pokémon
+    this card is attached to do 20 more damage to your opponent's Active Pokémon (before
     applying Weakness and Resistance). (If this card is attached to anything other
     than a [F] Pokémon, discard this card.)
-  energy: [[F]]
+  energy: [[FIGHTING]]
   artist: 5ban Graphics
-- id: 363-105
-  pioId: xy3-105
-  enumId: HERACROSS_EX_105
+  pioId: xy3-104
+- enumId: HERACROSS_EX_105:FURIOUS_FISTS
   name: Heracross-EX
-  nationalPokedexNumber: 214
   number: '105'
-  types: [G]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_EX]
-  evolvesTo: [M Heracross-EX]
+  cardTypes: [POKEMON, BASIC, POKEMON_EX]
+  types: [GRASS]
   hp: 170
-  retreatCost: 3
   moves:
-  - cost: [G, C]
+  - cost: [GRASS, COLORLESS]
     name: Guard Press
     damage: '40'
     text: During your opponent's next turn, any damage done to this Pokémon by attacks
       is reduced by 20 (after applying Weakness and Resistance).
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Giga Power
     damage: 80+
     text: You may do 40 more damage. If you do, this Pokémon does 20 damage to itself.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
-  rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
-  artist: Ryo Ueda
-- id: 363-106
-  pioId: xy3-106
-  enumId: SEISMITOAD_EX_106
-  name: Seismitoad-EX
-  nationalPokedexNumber: 537
-  number: '106'
-  types: [W]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_EX]
-  hp: 180
   retreatCost: 3
+  rarity: Ultra Rare
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  artist: Ryo Ueda
+  pioId: xy3-105
+  nationalPokedexNumber: 214
+  variantOf: HERACROSS_EX_4:FURIOUS_FISTS
+  variantType: Full Art
+- enumId: SEISMITOAD_EX_106:FURIOUS_FISTS
+  name: Seismitoad-EX
+  number: '106'
+  cardTypes: [POKEMON, BASIC, POKEMON_EX]
+  types: [WATER]
+  hp: 180
   moves:
-  - cost: [C, C]
+  - cost: [COLORLESS, COLORLESS]
     name: Quaking Punch
     damage: '30'
     text: Your opponent can't play any Item cards from his or her hand during his
       or her next turn.
-  - cost: [W, W, C]
+  - cost: [WATER, WATER, COLORLESS]
     name: Grenade Hammer
     damage: '130'
     text: This attack does 30 damage to 2 of your Benched Pokémon. (Don't apply Weakness
       and Resistance for Benched Pokémon.)
   weaknesses:
-  - type: G
+  - type: GRASS
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Ryo Ueda
-- id: 363-107
-  pioId: xy3-107
-  enumId: LUCARIO_EX_107
+  pioId: xy3-106
+  nationalPokedexNumber: 537
+  variantOf: SEISMITOAD_EX_20:FURIOUS_FISTS
+  variantType: Full Art
+- enumId: LUCARIO_EX_107:FURIOUS_FISTS
   name: Lucario-EX
-  nationalPokedexNumber: 448
   number: '107'
-  types: [F]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_EX]
-  evolvesTo: [M Lucario-EX]
+  cardTypes: [POKEMON, BASIC, POKEMON_EX]
+  types: [FIGHTING]
   hp: 180
-  retreatCost: 2
   moves:
-  - cost: [F]
+  - cost: [FIGHTING]
     name: Missile Jab
     damage: '30'
     text: This attack's damage isn't affected by Resistance.
-  - cost: [F, F]
+  - cost: [FIGHTING, FIGHTING]
     name: Corkscrew Smash
     damage: '60'
     text: You may draw cards until you have 6 cards in your hand.
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: Somersault Kick
     damage: '100'
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Ryo Ueda
-- id: 363-108
-  pioId: xy3-108
-  enumId: DRAGONITE_EX_108
+  pioId: xy3-107
+  nationalPokedexNumber: 448
+  variantOf: LUCARIO_EX_54:FURIOUS_FISTS
+  variantType: Full Art
+- enumId: DRAGONITE_EX_108:FURIOUS_FISTS
   name: Dragonite-EX
-  nationalPokedexNumber: 149
   number: '108'
-  types: [N]
-  superType: POKEMON
-  subTypes: [BASIC, POKEMON_EX]
+  cardTypes: [POKEMON, BASIC, POKEMON_EX]
+  types: [DRAGON]
   hp: 180
-  retreatCost: 3
   abilities:
   - type: Ability
     name: Bust In
@@ -2642,100 +2364,100 @@ cards:
       any number of basic Energy attached to your Pokémon to this Pokémon. If you
       do, switch this Pokémon with your Active Pokémon.
   moves:
-  - cost: [G, G, L]
+  - cost: [GRASS, GRASS, LIGHTNING]
     name: Jet Sonic
     damage: 80+
     text: You may discard an Energy attached to this Pokémon. If you do, this attack
       does 40 more damage.
   weaknesses:
-  - type: Y
+  - type: FAIRY
     value: x2
+  retreatCost: 3
   rarity: Ultra Rare
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
   artist: Ryo Ueda
-- id: 363-109
-  pioId: xy3-109
-  enumId: BATTLE_REPORTER_109
+  pioId: xy3-108
+  nationalPokedexNumber: 149
+  variantOf: DRAGONITE_EX_74:FURIOUS_FISTS
+  variantType: Full Art
+- enumId: BATTLE_REPORTER_109:FURIOUS_FISTS
   name: Battle Reporter
   number: '109'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Ultra Rare
-  text:
-  - Draw cards until you have the same number of cards in your hand as your opponent.
+  text: Draw cards until you have the same number of cards in your hand as your opponent.
   artist: Shin Nagasawa
-- id: 363-110
-  pioId: xy3-110
-  enumId: FOSSIL_RESEARCHER_110
+  pioId: xy3-109
+  variantOf: BATTLE_REPORTER_88:FURIOUS_FISTS
+  variantType: Full Art
+- enumId: FOSSIL_RESEARCHER_110:FURIOUS_FISTS
   name: Fossil Researcher
   number: '110'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Ultra Rare
-  text:
-  - Search your deck for up to 2 in any combination of Amaura or Tyrunt and put them
-    onto your Bench. Shuffle your deck afterward.
+  text: Search your deck for up to 2 in any combination of Amaura or Tyrunt and put
+    them onto your Bench. Shuffle your deck afterward.
   artist: Naoki Saito
-- id: 363-111
-  pioId: xy3-111
-  enumId: KORRINA_111
+  pioId: xy3-110
+  variantOf: FOSSIL_RESEARCHER_92:FURIOUS_FISTS
+  variantType: Full Art
+- enumId: KORRINA_111:FURIOUS_FISTS
   name: Korrina
   number: '111'
-  superType: TRAINER
-  subTypes: [SUPPORTER]
+  cardTypes: [TRAINER, SUPPORTER]
   rarity: Ultra Rare
-  text:
-  - Search your deck for a [F] Pokémon and an Item card, reveal them, and put them
-    into your hand. Shuffle your deck afterward.
+  text: Search your deck for a [F] Pokémon and an Item card, reveal them, and put
+    them into your hand. Shuffle your deck afterward.
   artist: Yusuke Ohmura
-- id: 363-112
-  pioId: xy3-112
-  enumId: M_HERACROSS_EX_112
+  pioId: xy3-111
+  variantOf: KORRINA_95:FURIOUS_FISTS
+  variantType: Full Art
+- enumId: M_HERACROSS_EX_112:FURIOUS_FISTS
   name: M Heracross-EX
-  nationalPokedexNumber: 214
   number: '112'
-  types: [G]
-  superType: POKEMON
-  subTypes: [EVOLUTION, MEGA_POKEMON, POKEMON_EX]
-  evolvesFrom: Heracross-EX
+  cardTypes: [POKEMON, EVOLUTION, MEGA_POKEMON, POKEMON_EX]
+  types: [GRASS]
+  evolvesFrom: [Heracross-EX]
   hp: 220
-  retreatCost: 3
   moves:
-  - cost: [G, G, C]
+  - cost: [GRASS, GRASS, COLORLESS]
     name: Big Bang Horn
     damage: 180−
     text: This attack does 180 damage minus 10 damage for each damage counter on this
       Pokémon.
   weaknesses:
-  - type: R
+  - type: FIRE
     value: x2
+  retreatCost: 3
   rarity: Rare Holo
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
-  - When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.
+  text: |-
+    When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+    When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.
   artist: 5ban Graphics
-- id: 363-113
-  pioId: xy3-113
-  enumId: M_LUCARIO_EX_113
+  pioId: xy3-112
+  nationalPokedexNumber: 214
+  variantOf: M_HERACROSS_EX_5:FURIOUS_FISTS
+  variantType: Reprint
+- enumId: M_LUCARIO_EX_113:FURIOUS_FISTS
   name: M Lucario-EX
-  nationalPokedexNumber: 448
   number: '113'
-  types: [F]
-  superType: POKEMON
-  subTypes: [EVOLUTION, MEGA_POKEMON, POKEMON_EX]
-  evolvesFrom: Lucario-EX
+  cardTypes: [POKEMON, EVOLUTION, MEGA_POKEMON, POKEMON_EX]
+  types: [FIGHTING]
+  evolvesFrom: [Lucario-EX]
   hp: 220
-  retreatCost: 2
   moves:
-  - cost: [F, F, F]
+  - cost: [FIGHTING, FIGHTING, FIGHTING]
     name: Rising Fist
     damage: '140'
     text: Discard an Energy attached to your opponent's Active Pokémon.
   weaknesses:
-  - type: P
+  - type: PSYCHIC
     value: x2
+  retreatCost: 2
   rarity: Rare Holo
-  text:
-  - When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
+  text: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.
   artist: 5ban Graphics
+  pioId: xy3-113
+  nationalPokedexNumber: 448
+  variantOf: M_LUCARIO_EX_55:FURIOUS_FISTS
+  variantType: Reprint
