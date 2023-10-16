@@ -2,7 +2,6 @@ package tcgone.carddb.tools;
 
 import com.expediagroup.beans.BeanUtils;
 import com.expediagroup.transformer.model.FieldMapping;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
@@ -17,7 +16,6 @@ import tcgone.carddb.model3.Expansion3;
 import tcgone.carddb.model3.ExpansionFile3;
 
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -144,12 +142,14 @@ public class SetWriter {
       Expansion3 expansion3 = beanUtils.getTransformer()
         .withFieldMapping(new FieldMapping<>("id", "orderId"))
         .withFieldMapping(new FieldMapping<>("abbr", "shortName"))
+        .setDefaultValueForMissingPrimitiveField(false)
         .skipTransformationForField("isFanMade")
         .transform(expansion, Expansion3.class);
       List<Card3> cards = new ArrayList<>();
       for (Card card : expansion.getCards()) {
         Card3 card3 = beanUtils.getTransformer()
-          .skipTransformationForField("evolvesFrom", "text", "expansionEnumId", "cardTypes")
+          .skipTransformationForField("evolvesFrom", "text", "abilities", "moves", "expansionEnumId", "cardTypes", "energy")
+          .setDefaultValueForMissingPrimitiveField(false)
           .transform(card, Card3.class);
         if (card.getEvolvesFrom() != null){
           card3.setEvolvesFrom(Collections.singletonList(card.getEvolvesFrom()));
@@ -157,11 +157,16 @@ public class SetWriter {
         if (card.getText() != null && !card.getText().isEmpty() ) {
           card3.setText(String.join("\n", card.getText()));
         }
-        card3.setExpansionEnumId(expansion3.getEnumId());
+        card3.setEnergy(card.getEnergy());
+        card3.setEnumId(card.getEnumId());
+//        card3.setEnumId(card.getEnumId()+":"+expansion3.getEnumId());
+//        card3.setExpansionEnumId(expansion3.getEnumId());
         card3.setCardTypes(new ArrayList<>());
         card3.getCardTypes().add(card.getSuperType());
         if (card.getSubTypes() != null)
           card3.getCardTypes().addAll(card.getSubTypes());
+        card3.setMoves(card.getMoves());
+        card3.setAbilities(card.getAbilities());
         cards.add(card3);
       }
       result.add(new ExpansionFile3("E3", expansion3, cards));

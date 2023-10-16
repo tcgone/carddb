@@ -21,8 +21,6 @@ public class Application {
   private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(Application.class);
 
   public static void main(String[] args) throws Exception {
-    System.setProperty("java.net.useSystemProxies","true");
-    System.setProperty("http.agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.75 Safari/535.7");
     new Application(args);
   }
 
@@ -31,6 +29,9 @@ public class Application {
   private final Options options;
 
   public Application(String[] args) throws Exception {
+
+    System.setProperty("java.net.useSystemProxies","true");
+    System.setProperty("http.agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.75 Safari/535.7");
 
     this.options = prepareOptions();
     CommandLineParser parser = new DefaultParser();
@@ -62,8 +63,9 @@ public class Application {
 //		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
     if(exportE3){
       List<ExpansionFile3> expansionFile3s = setWriter.convertFromE2ToE3(expansions);
-      setWriter.writeAllE3(expansionFile3s, "output3");
-      log.info("E3 YAMLs have been written to ./output folder. Please copy them under src/main/resources/cards if you want them to take over.");
+      String outputDirectory = "output/e3";
+      setWriter.writeAllE3(expansionFile3s, outputDirectory);
+      log.info("E3 YAMLs have been written to {} folder. Please copy them under src/main/resources/cards if you want them to take over.", outputDirectory);
     }
     if(downloadScans){
       ScanDownloader scanDownloader = new ScanDownloader();
