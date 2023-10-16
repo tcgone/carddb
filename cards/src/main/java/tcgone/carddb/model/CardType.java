@@ -1,15 +1,16 @@
 package tcgone.carddb.model;
 
+import lombok.Getter;
+
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
 /**
- * Experimental
- *
  * @author axpendix@hotmail.com
  */
+@Getter
 public enum CardType {
 
   POKEMON(10, "Pokémon", "pokemon", "pokémon"),
@@ -75,18 +76,6 @@ public enum CardType {
     this.priority = priority;
     this.displayLabel = displayLabel;
     this.searchLabels = Arrays.asList(searchLabels);
-  }
-
-  public int getPriority() {
-    return priority;
-  }
-
-  public String getDisplayLabel() {
-    return displayLabel;
-  }
-
-  public List<String> getSearchLabels() {
-    return searchLabels;
   }
 
   public static class CardTypeComparator implements Comparator<CardType>, Serializable {

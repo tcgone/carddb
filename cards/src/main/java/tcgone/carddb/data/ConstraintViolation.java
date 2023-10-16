@@ -1,20 +1,15 @@
 package tcgone.carddb.data;
 
+import lombok.Getter;
+
+@Getter
 public class ConstraintViolation {
-  private String context;
-  private String message;
+  private final String context;
+  private final String message;
 
   public ConstraintViolation(String context, String message) {
     this.context = context;
     this.message = message;
-  }
-
-  public String getContext() {
-    return context;
-  }
-
-  public String getMessage() {
-    return message;
   }
 
   @Override

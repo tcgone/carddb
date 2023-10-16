@@ -1,5 +1,7 @@
 package tcgone.carddb.tools;
 
+import com.expediagroup.beans.BeanUtils;
+import com.expediagroup.transformer.model.FieldMapping;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -8,14 +10,14 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.fasterxml.jackson.dataformat.yaml.util.NodeStyleResolver;
 import com.fasterxml.jackson.dataformat.yaml.util.StringQuotingChecker;
 import gnu.trove.set.hash.THashSet;
-import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
-import tcgone.carddb.model.Expansion;
 import tcgone.carddb.model.*;
-import tcgone.carddb.model.VariantType;
-import tcgone.carddb.model3.*;
+import tcgone.carddb.model3.Card3;
+import tcgone.carddb.model3.Expansion3;
+import tcgone.carddb.model3.ExpansionFile3;
 
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -108,7 +110,7 @@ public class SetWriter {
   static class SortingNodeFactory extends JsonNodeFactory {
     @Override
     public ObjectNode objectNode() {
-      return new ObjectNode(this, new TreeMap<String, JsonNode>());
+      return new ObjectNode(this, new TreeMap<>());
     }
   }
   public void writeAllE2(Collection<Expansion> expansions, String outputDirectory) throws IOException {
@@ -135,20 +137,19 @@ public class SetWriter {
       out.close();
     }
   }
-  public List<ExpansionFile3> convertFromE2ToE3(Collection<Expansion> expansions){
+  public List<ExpansionFile3> convertFromE2ToE3(Collection<Expansion> expansions) {
     List<ExpansionFile3> result = new ArrayList<>();
+    BeanUtils beanUtils = new BeanUtils();
     for (Expansion expansion : expansions) {
-      Expansion3 expansion3 = new Expansion3();
-      BeanUtils.copyProperties(expansion, expansion3);
-      expansion3.setOrderId(expansion.getId());
-      if (expansion3.getEnumId() == null) {
-        throw new IllegalStateException(expansion3 + " has null enumId");
-      }
-      expansion3.setShortName(expansion.getAbbr());
+      Expansion3 expansion3 = beanUtils.getTransformer()
+        .withFieldMapping(new FieldMapping<>("id", "orderId"))
+        .withFieldMapping(new FieldMapping<>("abbr", "shortName"))
+        .transform(expansion, Expansion3.class);
       List<Card3> cards = new ArrayList<>();
       for (Card card : expansion.getCards()) {
-        Card3 card3 = new Card3();
-        BeanUtils.copyProperties(card, card3, "evolvesFrom", "text");
+        Card3 card3 = beanUtils.getTransformer()
+          .skipTransformationForField("evolvesFrom", "text")
+          .transform(card, Card3.class);
         if (card.getEvolvesFrom() != null){
           card3.setEvolvesFrom(Collections.singletonList(card.getEvolvesFrom()));
         }

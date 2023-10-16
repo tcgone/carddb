@@ -2,15 +2,16 @@ package tcgone.carddb.model3;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import tcgone.carddb.model.*;
 
 import java.util.List;
-import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
+@EqualsAndHashCode(of = {"enumId"})
 public class Card3 {
   /**
    * Engine with expansion. e.g. CHARIZARD_4:BASE_SET
@@ -35,7 +36,7 @@ public class Card3 {
   /**
    * Array of types (i.e. colors). e.g. ["R"]
    * Logically it makes more sense to name this field 'colors', but precisely
-   * speaking, it's used as 'type' everywhere else. https://bulbapedia.bulbagarden.net/wiki/Type_(TCG)
+   * speaking, it's used as 'type' everywhere else. <a href="https://bulbapedia.bulbagarden.net/wiki/Type_(TCG)">...</a>
    */
   private List<Type> types;
   /**
@@ -122,21 +123,8 @@ public class Card3 {
     return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    Card card = (Card) o;
-    return Objects.equals(enumId, card.getEnergy());
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(enumId);
-  }
-
   /**
-   * may be useful to detect reprints
+   * may be useful to detect reprints during variant handling
    */
   public String generateDiscriminatorFullText() {
     return String.format("name=%s, cardTypes=%s, hp=%d, evolvesFrom=%s, types=%s, abilities=%s, moves=%s, weakness=%s, resistance=%s, retreatCost=%d, text=%s, energy=%s", name, cardTypes, hp, evolvesFrom, types, abilities, moves, weaknesses, resistances, retreatCost, text, energy);

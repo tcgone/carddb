@@ -2,12 +2,9 @@ package tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Locale;
 
 /**
@@ -56,8 +53,8 @@ public enum Type {
     throw new IllegalArgumentException("Type for '" + input + "' was not found.");
   }
 
-  public static List<Type> valuesForPokemon() {
-    return Arrays.asList(GRASS, FIRE, WATER, LIGHTNING, PSYCHIC, FIGHTING, DARKNESS, METAL, FAIRY, DRAGON, COLORLESS);
-  }
+//  public static List<Type> valuesForPokemon() {
+//    return Arrays.asList(GRASS, FIRE, WATER, LIGHTNING, PSYCHIC, FIGHTING, DARKNESS, METAL, FAIRY, DRAGON, COLORLESS);
+//  }
 
 }

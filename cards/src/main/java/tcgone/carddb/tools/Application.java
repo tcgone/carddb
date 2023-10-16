@@ -8,13 +8,10 @@ import tcgone.carddb.model.Expansion;
 import tcgone.carddb.model3.ExpansionFile3;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @author axpendix@hotmail.com
@@ -22,7 +19,6 @@ import java.util.Stack;
 public class Application {
 
   private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(Application.class);
-  private Options options;
 
   public static void main(String[] args) throws Exception {
     System.setProperty("java.net.useSystemProxies","true");
@@ -32,13 +28,11 @@ public class Application {
 
   private final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
   private final PioReader pioReader=new PioReader();
-  private final SetWriter setWriter=new SetWriter();
-  private final ScanDownloader scanDownloader=new ScanDownloader();
-  private final ImplTmplGenerator implTmplGenerator=new ImplTmplGenerator();
+  private final Options options;
 
   public Application(String[] args) throws Exception {
 
-    Options options = prepareOptions();
+    this.options = prepareOptions();
     CommandLineParser parser = new DefaultParser();
     CommandLine cmd = parser.parse(options, args);
 
@@ -62,6 +56,7 @@ public class Application {
     List<Expansion> allExpansions=new ArrayList<>();
     readPios(pios, pioExpansions, allCards);
     readYamls(yamls, allCards, allExpansions);
+    SetWriter setWriter = new SetWriter();
     Collection<Expansion> expansions = setWriter.prepareSetFiles(allCards);
     setWriter.prepareReprints(expansions);
 //		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
@@ -71,6 +66,7 @@ public class Application {
       log.info("E3 YAMLs have been written to ./output folder. Please copy them under src/main/resources/cards if you want them to take over.");
     }
     if(downloadScans){
+      ScanDownloader scanDownloader = new ScanDownloader();
       scanDownloader.downloadAll(allCards);
       log.info("Scans have been saved into ./scans folder. Please upload them to scans server.");
     }
@@ -79,20 +75,21 @@ public class Application {
       log.info("YAMLs have been written to ./output folder. Please copy them under src/main/resources/cards if you want them to take over.");
     }
     if(exportImplTmpl){
+      ImplTmplGenerator implTmplGenerator = new ImplTmplGenerator();
       implTmplGenerator.writeAll(expansions);
       log.info("Implementation Templates (Groovy files) have been written to ./impl folder. Please copy them under contrib repo.");
     }
   }
 
-  private static Options prepareOptions() {
+  private Options prepareOptions() {
     Options options = new Options();
-    options.addOption("pio", true, "pokemontcg.io input files");
-    options.addOption("pio-expansions", true, "pokemontcg.io expansions file");
-    options.addOption("yaml", true, "tcgone carddb yaml files");
-    options.addOption("export-yaml", "export tcgone carddb yaml files");
-    options.addOption("export-impl-tmpl", "export tcgone engine implementation template files");
-    options.addOption("download-scans", "download scans");
-    options.addOption("export-e3", "upgrade from tcgone carddb e2 schema to e3 schema then export them");
+    options.addOption(null, "pio", true, "Load pokemontcg.io (https://github.com/PokemonTCG/pokemon-tcg-data/tree/master/cards/en) or kirby's (https://github.com/kirbyUK/ptcgo-data/tree/master/en_US) files. e.g. '--pio=Unbroken Bonds.json' '--pio=Detective Pikachu.json' '--pio=../sm9.json' '--pio=../det1.json' and so on. Multiple files can be loaded this way.");
+    options.addOption(null, "pio-expansions", true, "pokemontcg.io expansions file (https://github.com/PokemonTCG/pokemon-tcg-data/blob/master/sets/en.json)");
+    options.addOption(null, "yaml", true, "TCG ONE carddb yaml files. e.g. '--yaml=423-unbroken_bonds.yaml' and so on. Multiple files can be loaded this way.");
+    options.addOption(null, "export-yaml", false, "GOAL: export TCG ONE carddb yaml files");
+    options.addOption(null, "export-implementations", false, "GOAL: export TCG ONE engine implementation template files");
+    options.addOption(null, "download-scans", false, "GOAL: download scans");
+    options.addOption(null, "export-e3", false, "GOAL: upgrade from TCG ONE carddb e2 schema to e3 schema then export them");
     return options;
   }
 
@@ -107,13 +104,13 @@ public class Application {
       if (pioExpansions != null) {
         for (String filename : pioExpansions) {
           log.info("Reading {}", filename);
-          pioReader.loadExpansions(new FileInputStream(filename), expansionIds);
+          pioReader.loadExpansions(Files.newInputStream(Paths.get(filename)), expansionIds);
         }
       }
 
       for (String filename : pios) {
         log.info("Reading {}", filename);
-        allCards.addAll(pioReader.load(new FileInputStream(filename)));
+        allCards.addAll(pioReader.load(Files.newInputStream(Paths.get(filename))));
       }
     }
   }
@@ -124,7 +121,7 @@ public class Application {
         Stack<File> fileStack = new Stack<>();
         File file = new File(filename);
         if(file.isDirectory()){
-          for (File file1 : file.listFiles()) {
+          for (File file1 : Objects.requireNonNull(file.listFiles())) {
             fileStack.push(file1);
           }
         } else {
@@ -143,7 +140,7 @@ public class Application {
   }
 
   private Expansion readExpansion(File pop) throws IOException {
-    Expansion expansion = mapper.readValue(new FileInputStream(pop), Expansion.class);
+    Expansion expansion = mapper.readValue(Files.newInputStream(pop.toPath()), Expansion.class);
     for (Card card : expansion.getCards()) {
       card.setExpansion(expansion); // temporary
     }
@@ -151,17 +148,7 @@ public class Application {
   }
 
   private void printUsage() {
-    System.out.println("This tool loads and converts pio format Pokemon TCG data into TCG ONE Card Database format and/or TCG ONE Card Implementation Groovy Template. \n" +
-      "Load pio files (https://github.com/PokemonTCG/pokemon-tcg-data/tree/master/json/cards) or kirby files (https://github.com/kirbyUK/ptcgo-data/tree/master/en_US) by; \n" +
-      "\t'--pio=Unbroken Bonds.json' '--pio=Detective Pikachu.json' '--pio=../sm9.json' '--pio=../det1.json' and so on. Multiple files can be loaded this way.\n" +
-      "and/or load TCG ONE yaml files directly by; \n" +
-      "\t'--yaml=423-unbroken_bonds.yaml' and so on. Multiple files can be loaded this way.\n" +
-      "then, export to yaml or impl-tmpl;\n" +
-      "\t--export-yaml --export-impl-tmpl\n" +
-      "and/or download scans;\n" +
-      "\t--download-scans");
-
     HelpFormatter formatter = new HelpFormatter();
-    formatter.printHelp("ant", options);
+    formatter.printHelp("TCG ONE carddb tools loads and converts Pokemon TCG card data from various formats into TCG ONE Card Database format and/or TCG ONE Engine Implementation Templates", options);
   }
 }
