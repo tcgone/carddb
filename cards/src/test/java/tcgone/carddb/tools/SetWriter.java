@@ -144,11 +144,12 @@ public class SetWriter {
       Expansion3 expansion3 = beanUtils.getTransformer()
         .withFieldMapping(new FieldMapping<>("id", "orderId"))
         .withFieldMapping(new FieldMapping<>("abbr", "shortName"))
+        .skipTransformationForField("isFanMade")
         .transform(expansion, Expansion3.class);
       List<Card3> cards = new ArrayList<>();
       for (Card card : expansion.getCards()) {
         Card3 card3 = beanUtils.getTransformer()
-          .skipTransformationForField("evolvesFrom", "text")
+          .skipTransformationForField("evolvesFrom", "text", "expansionEnumId", "cardTypes")
           .transform(card, Card3.class);
         if (card.getEvolvesFrom() != null){
           card3.setEvolvesFrom(Collections.singletonList(card.getEvolvesFrom()));
