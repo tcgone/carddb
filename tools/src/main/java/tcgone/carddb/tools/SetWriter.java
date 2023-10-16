@@ -22,6 +22,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.fasterxml.jackson.dataformat.yaml.util.NodeStyleResolver;
 import com.fasterxml.jackson.dataformat.yaml.util.StringQuotingChecker;
+import gnu.trove.set.hash.THashSet;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import tcgone.carddb.model.Expansion;
@@ -89,10 +90,11 @@ public class SetWriter {
   }
 
   SetWriter() {
+    Set<String> propertyNamesWithFlowStyle = new THashSet<>(Arrays.asList("cost", "types", "subTypes", "cardTypes", "evolvesTo", "evolvesFrom", "energy"));
 
     mapper = YAMLMapper.builder(
       YAMLFactory.builder()
-        .nodeStyleResolver(s -> ("cost".equals(s)||"types".equals(s)||"subTypes".equals(s)||"evolvesTo".equals(s)||"energy".equals(s)) ? NodeStyleResolver.NodeStyle.FLOW : null)
+        .nodeStyleResolver(s -> (propertyNamesWithFlowStyle.contains(s)) ? NodeStyleResolver.NodeStyle.FLOW : null)
         .stringQuotingChecker(new StringQuotingChecker.Default() {
           @Override
           public boolean needToQuoteValue(String s) {

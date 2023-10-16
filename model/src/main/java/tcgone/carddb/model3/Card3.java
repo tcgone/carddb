@@ -13,13 +13,13 @@ import java.util.Objects;
 @Data
 public class Card3 {
   /**
-   * pokemontcg.io id. e.g. base1-4
-   */
-  private String pioId;
-  /**
    * Engine with expansion. e.g. CHARIZARD_4:BASE_SET
    */
   private String enumId;
+  /**
+   * e.g. BASE_SET
+   */
+  private String expansionEnumId;
   /**
    * Name of the card. e.g. Charizard
    */
@@ -27,25 +27,17 @@ public class Card3 {
   /**
    * e.g. 4
    */
-  private Integer nationalPokedexNumber;
-  /**
-   * e.g. BASE_SET
-   */
-  private String expansionEnumId;
-  /**
-   * e.g. 4
-   */
   private String number;
+  /**
+   * e.g. [POKEMON, EVOLUTION, STAGE2]
+   */
+  private List<CardType> cardTypes;
   /**
    * Array of types (i.e. colors). e.g. ["R"]
    * Logically it makes more sense to name this field 'colors', but precisely
    * speaking, it's used as 'type' everywhere else. https://bulbapedia.bulbagarden.net/wiki/Type_(TCG)
    */
   private List<Type> types;
-  /**
-   * e.g. [POKEMON, EVOLUTION, STAGE2]
-   */
-  private List<CardType> cardTypes;
   /**
    * Charmeleon
    */
@@ -54,10 +46,6 @@ public class Card3 {
    * 120
    */
   private Integer hp;
-  /**
-   * 3
-   */
-  private Integer retreatCost;
   /**
    * [ { "type": "Pokémon Power", "name": "Energy Burn", "text": "As often as you like during your turn (before your
    * attack), you may turn all Energy attached to Charizard into [R] for the rest of the turn. This power can't be used
@@ -78,6 +66,10 @@ public class Card3 {
    */
   private List<tcgone.carddb.model.WeaknessResistance> resistances;
   /**
+   * 3
+   */
+  private Integer retreatCost;
+  /**
    * Rare Holo
    */
   private Rarity rarity;
@@ -97,6 +89,14 @@ public class Card3 {
    * e.g. Spits fire that is hot enough to melt boulders. Known to unintentionally cause forest fires.
    */
   private String flavorText;
+  /**
+   * pokemontcg.io id. e.g. base1-4
+   */
+  private String pioId;
+  /**
+   * e.g. 4
+   */
+  private Integer nationalPokedexNumber;
   /**
    * e.g. D
    */
@@ -138,7 +138,7 @@ public class Card3 {
   /**
    * may be useful to detect reprints
    */
-  public String getDiscriminatorFullText() {
+  public String generateDiscriminatorFullText() {
     return String.format("name=%s, cardTypes=%s, hp=%d, evolvesFrom=%s, types=%s, abilities=%s, moves=%s, weakness=%s, resistance=%s, retreatCost=%d, text=%s, energy=%s", name, cardTypes, hp, evolvesFrom, types, abilities, moves, weaknesses, resistances, retreatCost, text, energy);
   }
 }

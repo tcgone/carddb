@@ -3,6 +3,7 @@ package tcgone.carddb.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonValue;
+import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
@@ -10,8 +11,6 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * Experimental
- *
  * @author axpendix@hotmail.com
  */
 public enum Type {
@@ -32,17 +31,14 @@ public enum Type {
   MAGMA("MAGMA"),
   AQUA("AQUA");
 
+//  @JsonValue //
+  @Getter
   private final String notation;
   private final String label;
 
   Type(String notation) {
     this.notation = notation;
     this.label = StringUtils.capitalize(notation.toLowerCase(Locale.ENGLISH));
-  }
-
-  @JsonValue
-  public String getNotation() {
-    return notation;
   }
 
   public String getEnclosedNotation() {
