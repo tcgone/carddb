@@ -23,6 +23,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import tcgone.carddb.model.Card;
 import tcgone.carddb.model.Expansion;
+import tcgone.carddb.model3.ExpansionFile3;
 
 import java.io.*;
 import java.nio.file.Paths;
@@ -59,27 +60,35 @@ public class Application implements ApplicationRunner {
     boolean exportYaml = args.getOptionValues("export-yaml")!=null;
     boolean exportImplTmpl = args.getOptionValues("export-impl-tmpl")!=null;
     boolean downloadScans = args.getOptionValues("download-scans")!=null;
-    if(!exportImplTmpl&&!exportYaml&&!downloadScans){
+    boolean exportE3 = args.getOptionValues("export-e3")!=null;
+    if(!exportImplTmpl&&!exportYaml&&!downloadScans&&!exportE3){
+      log.warn("Nothing to do. Please specify an output option");
       printUsage();
       return;
     }
     List<Card> allCards=new ArrayList<>();
+    List<Expansion> allExpansions=new ArrayList<>();
     readPios(pios, pioExpansions, allCards);
-    readYamls(yamls, allCards);
+    readYamls(yamls, allCards, allExpansions);
     Collection<Expansion> expansions = setWriter.prepareSetFiles(allCards);
     setWriter.prepareReprints(expansions);
 //		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
+    if(exportE3){
+      List<ExpansionFile3> expansionFile3s = setWriter.convertFromE2ToE3(expansions);
+      setWriter.writeAllE3(expansionFile3s, "output3");
+      log.info("E3 YAMLs have been written to ./output folder. Please copy them under src/main/resources/cards if you want them to take over.");
+    }
     if(downloadScans){
       scanDownloader.downloadAll(allCards);
-      log.info("Scans have been saved into ./scans folder");
+      log.info("Scans have been saved into ./scans folder. Please upload them to scans server.");
     }
     if(exportYaml){
-      setWriter.writeAll(expansions, "output");
-      log.info("YAMLs have been written to ./output folder");
+      setWriter.writeAllE2(expansions, "output");
+      log.info("YAMLs have been written to ./output folder. Please copy them under src/main/resources/cards if you want them to take over.");
     }
     if(exportImplTmpl){
       implTmplGenerator.writeAll(expansions);
-      log.info("Impl Tmpls have been written to ./impl folder");
+      log.info("Implementation Templates (Groovy files) have been written to ./impl folder. Please copy them under contrib repo.");
     }
   }
 
@@ -105,7 +114,7 @@ public class Application implements ApplicationRunner {
     }
   }
 
-  private void readYamls(List<String> yamls, List<Card> allCards) throws IOException {
+  private void readYamls(List<String> yamls, List<Card> allCards, List<Expansion> allExpansions) throws IOException {
     if(yamls !=null){
       for (String filename : yamls) {
         Stack<File> fileStack = new Stack<>();
@@ -122,6 +131,7 @@ public class Application implements ApplicationRunner {
           if(!currentFile.getName().endsWith("yaml")) continue;
           log.info("Reading {}", currentFile.getName());
           Expansion expansion = readExpansion(currentFile);
+          allExpansions.add(expansion);
           allCards.addAll(expansion.cards);
         }
       }

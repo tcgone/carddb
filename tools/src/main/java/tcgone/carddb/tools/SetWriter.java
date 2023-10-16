@@ -22,12 +22,17 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.fasterxml.jackson.dataformat.yaml.util.NodeStyleResolver;
 import com.fasterxml.jackson.dataformat.yaml.util.StringQuotingChecker;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import tcgone.carddb.model.Expansion;
 import tcgone.carddb.model.*;
 import tcgone.carddb.model.VariantType;
+import tcgone.carddb.model3.*;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 import static com.fasterxml.jackson.dataformat.yaml.YAMLGenerator.Feature.*;
@@ -119,7 +124,7 @@ public class SetWriter {
       return new ObjectNode(this, new TreeMap<String, JsonNode>());
     }
   }
-  public void writeAll(Collection<Expansion> expansions, String outputDirectory) throws IOException {
+  public void writeAllE2(Collection<Expansion> expansions, String outputDirectory) throws IOException {
     new File(outputDirectory).mkdirs();
     for (Expansion expansion : expansions) {
       expansion.filename = String.format(outputDirectory+File.separator+"%s-%s.yaml", expansion.id, expansion.enumId.toLowerCase(Locale.ENGLISH));
@@ -129,22 +134,69 @@ public class SetWriter {
         card.formats = null;
         if (card.moves != null) {
           for (Move move : card.moves) {
-            if (move.damage != null && move.damage.isEmpty()) {
-              move.damage = null;
-            }
-            if (move.text != null && move.text.isEmpty()) {
-              move.text = null;
-            }
-            //          if (move.cost != null && move.cost.size() == 1 && move.cost.get(0) == null) {
-            //            move.cost = new ArrayList<>();
-            //          }
+            move.damage = StringUtils.trimToNull(move.damage);
+            move.text = StringUtils.trimToNull(move.text);
           }
         }
       }
       BufferedWriter out = new BufferedWriter
-        (new OutputStreamWriter(new FileOutputStream(expansion.filename), StandardCharsets.UTF_8));
+        (new OutputStreamWriter(Files.newOutputStream(Paths.get(expansion.filename)), StandardCharsets.UTF_8));
       expansion.filename=null;
       mapper.writeValue(out, expansion);
+//      String dump = yaml.dumpAs(expansion, Tag.MAP, null);
+//      out.write(dump);
+      out.close();
+    }
+  }
+  public List<ExpansionFile3> convertFromE2ToE3(Collection<Expansion> expansions){
+    List<ExpansionFile3> result = new ArrayList<>();
+    for (Expansion expansion : expansions) {
+      Expansion3 expansion3 = new Expansion3();
+      BeanUtils.copyProperties(expansion, expansion3);
+      expansion3.setOrderId(expansion.id);
+      if (expansion3.getEnumId() == null) {
+        throw new IllegalStateException(expansion3 + " has null enumId");
+      }
+      expansion3.setShortName(expansion.abbr);
+      List<Card3> cards = new ArrayList<>();
+      for (Card card : expansion.cards) {
+        Card3 card3 = new Card3();
+        BeanUtils.copyProperties(card, card3, "evolvesFrom", "text");
+        if (card.evolvesFrom != null){
+          card3.setEvolvesFrom(Collections.singletonList(card.evolvesFrom));
+        }
+        if (card.text != null && !card.text.isEmpty() ) {
+          card3.setText(String.join("\n", card.text));
+        }
+        card3.setExpansionEnumId(expansion3.getEnumId());
+        card3.setCardTypes(new ArrayList<>());
+        card3.getCardTypes().add(card.superType);
+        if (card.subTypes != null)
+          card3.getCardTypes().addAll(card.subTypes);
+        cards.add(card3);
+      }
+      result.add(new ExpansionFile3("E3", expansion3, cards));
+    }
+    return result;
+  }
+  public void writeAllE3(List<ExpansionFile3> data, String outputDirectory) throws IOException {
+    new File(outputDirectory).mkdirs();
+    // write expansions file
+//    String expansionsFileName = outputDirectory+File.separator+"expansions.yaml";
+//    mapper.writeValue(new OutputStreamWriter(Files.newOutputStream(Paths.get(expansionsFileName)), StandardCharsets.UTF_8), new Expansions(data.expansions));
+    // write individual expansion files. expansion-->cards
+    for (ExpansionFile3 expansionFile : data) {
+      for (Card3 card : expansionFile.getCards()) {
+        if (card.getMoves() != null) {
+          for (Move move : card.getMoves()) {
+            move.damage = StringUtils.trimToNull(move.damage);
+            move.text = StringUtils.trimToNull(move.text);
+          }
+        }
+      }
+      String filename = expansionFile.generateFinalFilePath(outputDirectory);
+      Writer out = new OutputStreamWriter(Files.newOutputStream(Paths.get(filename)), StandardCharsets.UTF_8);
+      mapper.writeValue(out, expansionFile);
 //      String dump = yaml.dumpAs(expansion, Tag.MAP, null);
 //      out.write(dump);
       out.close();
@@ -164,7 +216,7 @@ public class SetWriter {
       expansionMap.get(key).cards.add(card);
     }
     for (Expansion expansion : expansionMap.values()) {
-      expansion.cards.sort((o1, o2) -> {
+      Comparator<Card> cardComparator = (o1, o2) -> {
         try {
           Integer n1 = Integer.parseInt(o1.number);
           Integer n2 = Integer.parseInt(o2.number);
@@ -172,7 +224,8 @@ public class SetWriter {
         } catch (NumberFormatException e) {
           return o1.number.compareTo(o2.number);
         }
-      });
+      };
+      expansion.cards.sort(cardComparator);
     }
     return expansionMap.values();
   }
