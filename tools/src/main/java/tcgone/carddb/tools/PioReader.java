@@ -118,15 +118,15 @@ public class PioReader {
         Expansion expansion = new Expansion();
         for (PioSet ps : list) {
           if (!Objects.equals(ps.id, expansionId)) continue;
-          expansion.name = ps.name;
-          expansion.id = "FILL_THIS";
-          expansion.abbr = ps.ptcgoCode;
-          expansion.enumId = ps.name.replace("–", "-").replace("’", "'").toUpperCase(Locale.ENGLISH)
-            .replaceAll("[ \\p{Punct}]", "_").replaceAll("_+", "_").replace("É", "E");
-          expansion.pioId = ps.id;
+          expansion.setName(ps.name);
+          expansion.setId("FILL_THIS");
+          expansion.setAbbr(ps.ptcgoCode);
+          expansion.setEnumId(ps.name.replace("–", "-").replace("’", "'").toUpperCase(Locale.ENGLISH)
+            .replaceAll("[ \\p{Punct}]", "_").replaceAll("_+", "_").replace("É", "E"));
+          expansion.setPioId(ps.id);
         }
-        log.warn("PLEASE FILL IN id FIELD in {}", expansion.name);
-        setMap.put(expansion.pioId, expansion);
+        log.warn("PLEASE FILL IN id FIELD in {}", expansion.getName());
+        setMap.put(expansion.getPioId(), expansion);
       }
     }
   }
@@ -135,82 +135,84 @@ public class PioReader {
 
   private Card prepareCard(PioCard pc) {
     Card c = new Card();
-    c.name=pc.name;
-    c.pioId=pc.id;
-    c.number=pc.number;
-    c.artist=pc.artist;
-    c.regulationMark=pc.regulationMark;
-    if(pc.text!=null)c.text=pc.text.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList());
-    else if(pc.rules!=null)c.text=pc.rules.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList());
-    c.rarity= Rarity.of(pc.rarity);
+    c.setName(pc.name);
+    c.setPioId(pc.id);
+    c.setNumber(pc.number);
+    c.setArtist(pc.artist);
+    c.setRegulationMark(pc.regulationMark);
+    if(pc.text!=null)
+      c.setText(pc.text.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList()));
+    else if(pc.rules!=null)
+      c.setText(pc.rules.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList()));
+    c.setRarity(Rarity.of(pc.rarity));
     if(!setMap.containsKey(pc.id.replace('-'+pc.number, ""))){
       log.warn("PLEASE FILL IN id, abbr, enumId FIELDS in {}", pc.id.replace('-'+pc.number, ""));
       Expansion expansion = new Expansion();
-      expansion.name=pc.id.replace('-'+pc.number, "");
-      expansion.id="FILL_THIS";
-      expansion.abbr="FILL_THIS";
-      expansion.enumId="FILL_THIS";
-      expansion.pioId = pc.id.replace('-'+pc.number, "");
-      setMap.put(expansion.pioId, expansion);
+      expansion.setName(pc.id.replace('-'+pc.number, ""));
+      expansion.setId("FILL_THIS");
+      expansion.setAbbr("FILL_THIS");
+      expansion.setEnumId("FILL_THIS");
+      expansion.setPioId(pc.id.replace('-'+pc.number, ""));
+      setMap.put(expansion.getPioId(), expansion);
     }
     Expansion expansion = setMap.get(pc.id.replace('-'+pc.number, ""));
-    c.expansion = expansion;
-    c.enumId=String.format("%s_%s", pc.name
+    c.setExpansion(expansion);
+    c.setEnumId(String.format("%s_%s", pc.name
       .replace("–","-").replace("’","'").toUpperCase(Locale.ENGLISH)
-      .replaceAll("[ \\p{Punct}]", "_").replaceAll("_+","_").replace("É", "E"), pc.number);
-    c.id=String.format("%s-%s", expansion.id, pc.number);
-    c.subTypes=new ArrayList<>();
+      .replaceAll("[ \\p{Punct}]", "_").replaceAll("_+","_").replace("É", "E"), pc.number));
+    c.setId(String.format("%s-%s", expansion.getId(), pc.number));
+    c.setSubTypes(new ArrayList<>());
 
     switch (pc.supertype){
       case "Pokémon":
-        c.superType= CardType.POKEMON;
+        c.setSuperType(CardType.POKEMON);
         // hp of one side of legend cards is null
-        if(pc.hp!=null) c.hp= Integer.valueOf(pc.hp);
-        c.retreatCost=pc.convertedRetreatCost;
-        if(pc.resistances!=null&&!pc.resistances.isEmpty()) c.resistances=pc.resistances.stream().peek(wr -> {
-          wr.value = sanitizeCross(wr.value);
-        }).collect(Collectors.toList());
-        if(pc.weaknesses!=null&&!pc.weaknesses.isEmpty()) c.weaknesses=pc.weaknesses.stream().peek(wr -> {
-          wr.value = sanitizeCross(wr.value);
-        }).collect(Collectors.toList());
-        if(pc.attacks!=null&&!pc.attacks.isEmpty()) c.moves=pc.attacks.stream().peek(a -> {
-          a.damage=sanitizeCross(a.damage);
-          a.text=replaceTypesWithShortForms(a.text);
-        }).collect(Collectors.toList());
+        if(pc.hp!=null) c.setHp(Integer.valueOf(pc.hp));
+        c.setRetreatCost(pc.convertedRetreatCost);
+        if(pc.resistances!=null&&!pc.resistances.isEmpty()) c.setResistances(pc.resistances.stream().peek(wr -> {
+          wr.setValue(sanitizeCross(wr.getValue()));
+        }).collect(Collectors.toList()));
+        if(pc.weaknesses!=null&&!pc.weaknesses.isEmpty()) c.setWeaknesses(pc.weaknesses.stream().peek(wr -> {
+          wr.setValue(sanitizeCross(wr.getValue()));
+        }).collect(Collectors.toList()));
+        if(pc.attacks!=null&&!pc.attacks.isEmpty()) c.setMoves(pc.attacks.stream().peek(a -> {
+          a.setDamage(sanitizeCross(a.getDamage()));
+          a.setText(replaceTypesWithShortForms(a.getText()));
+        }).collect(Collectors.toList()));
         if(pc.abilities != null) {
           pc.ability = pc.abilities.get(0);
         }
         if(pc.ability!=null){
-          if(c.abilities==null)c.abilities=new ArrayList<>();
+          if(c.getAbilities() ==null) c.setAbilities(new ArrayList<>());
           Ability a=new Ability();
-          a.type=pc.ability.type;
-          a.name=pc.ability.name;
-          a.text=replaceTypesWithShortForms(pc.ability.text);
-          c.abilities.add(a);
+          a.setType(pc.ability.getType());
+          a.setName(pc.ability.getName());
+          a.setText(replaceTypesWithShortForms(pc.ability.getText()));
+          c.getAbilities().add(a);
         }
         if(pc.ancientTrait!=null){
-          if(c.abilities==null)c.abilities=new ArrayList<>();
+          if(c.getAbilities() ==null) c.setAbilities(new ArrayList<>());
           Ability a=new Ability();
-          a.type=pc.ancientTrait.type;
-          a.name=pc.ancientTrait.name;
-          a.text=replaceTypesWithShortForms(pc.ancientTrait.text);
-          c.abilities.add(a);
+          a.setType(pc.ancientTrait.getType());
+          a.setName(pc.ancientTrait.getName());
+          a.setText(replaceTypesWithShortForms(pc.ancientTrait.getText()));
+          c.getAbilities().add(a);
         }
-        c.types=pc.types;
-        c.nationalPokedexNumber=pc.nationalPokedexNumber;
-        c.evolvesFrom= StringUtils.trimToNull(pc.evolvesFrom);
-        c.evolvesTo=pc.evolvesTo;
+        c.setTypes(pc.types);
+        c.setNationalPokedexNumber(pc.nationalPokedexNumber);
+        c.setEvolvesFrom(StringUtils.trimToNull(pc.evolvesFrom));
+        c.setEvolvesTo(pc.evolvesTo);
         break;
       case "Trainer":
-        c.superType=TRAINER;
+        c.setSuperType(TRAINER);
         break;
       case "Energy":
-        c.superType=ENERGY;
-        if(c.text!=null&&!c.text.isEmpty()){
-          c.subTypes.add(SPECIAL_ENERGY);
+        c.setSuperType(ENERGY);
+        if(c.getText() !=null&&!c.getText().isEmpty()){
+          c.getSubTypes().add(SPECIAL_ENERGY);
         } else {
-          c.subTypes.add(BASIC_ENERGY);
-          c.energy = new ArrayList<>(Collections.singletonList(sanitizeType(Collections.singletonList(c.name.split(" ")[0]))));
+          c.getSubTypes().add(BASIC_ENERGY);
+          c.setEnergy(new ArrayList<>(Collections.singletonList(sanitizeType(Collections.singletonList(c.getName().split(" ")[0])))));
         }
         break;
     }
@@ -222,125 +224,125 @@ public class PioReader {
       if (subtype == null) break;
       switch (subtype) {
         case "LEGEND":
-          c.subTypes.add(LEGEND);
+          c.getSubTypes().add(LEGEND);
           break;
         case "Basic":
           if (pc.supertype.equals("Energy")) break;
-          c.subTypes.add(BASIC);
+          c.getSubTypes().add(BASIC);
           if (pc.name.contains("-GX")) {
-            c.subTypes.add(POKEMON_GX);
+            c.getSubTypes().add(POKEMON_GX);
             if (pc.name.contains(" & ")) {
-              c.subTypes.add(TAG_TEAM);
+              c.getSubTypes().add(TAG_TEAM);
             }
           }
           if (pc.name.contains("-EX")) {
-            c.subTypes.add(POKEMON_EX);
+            c.getSubTypes().add(POKEMON_EX);
           }
           if (pc.name.endsWith("V")) {
-            c.subTypes.add(POKEMON_V);
+            c.getSubTypes().add(POKEMON_V);
           }
           break;
         case "Stage 1":
-          c.subTypes.add(EVOLUTION);
-          c.subTypes.add(STAGE1);
+          c.getSubTypes().add(EVOLUTION);
+          c.getSubTypes().add(STAGE1);
           if (pc.name.contains("-GX")) {
-            c.subTypes.add(POKEMON_GX);
+            c.getSubTypes().add(POKEMON_GX);
             if (pc.name.contains(" & ")) {
-              c.subTypes.add(TAG_TEAM);
+              c.getSubTypes().add(TAG_TEAM);
             }
           }
           if (pc.name.contains("-EX")) {
-            c.subTypes.add(POKEMON_EX);
+            c.getSubTypes().add(POKEMON_EX);
           }
           stage1Db.add(pc.name);
           break;
         case "Stage 2":
-          c.subTypes.add(EVOLUTION);
-          c.subTypes.add(STAGE2);
+          c.getSubTypes().add(EVOLUTION);
+          c.getSubTypes().add(STAGE2);
           if (pc.name.contains("-GX")) {
-            c.subTypes.add(POKEMON_GX);
+            c.getSubTypes().add(POKEMON_GX);
             if (pc.name.contains(" & ")) {
-              c.subTypes.add(TAG_TEAM);
+              c.getSubTypes().add(TAG_TEAM);
             }
           }
           if (pc.name.contains("-EX")) {
-            c.subTypes.add(POKEMON_EX);
+            c.getSubTypes().add(POKEMON_EX);
           }
           break;
         case "GX":
-          c.subTypes.add(BASIC);
-          c.subTypes.add(POKEMON_GX);
+          c.getSubTypes().add(BASIC);
+          c.getSubTypes().add(POKEMON_GX);
           if (pc.name.contains(" & ")) {
-            c.subTypes.add(TAG_TEAM);
+            c.getSubTypes().add(TAG_TEAM);
           }
           break;
         case "EX":
-          c.subTypes.add(pc.name.endsWith(" ex") ? EX : POKEMON_EX);
+          c.getSubTypes().add(pc.name.endsWith(" ex") ? EX : POKEMON_EX);
           if (StringUtils.isNotBlank(pc.evolvesFrom)) {
-            c.subTypes.add(stage1Db.contains(pc.evolvesFrom)
+            c.getSubTypes().add(stage1Db.contains(pc.evolvesFrom)
               ? STAGE2 : STAGE1);
-            c.subTypes.add(EVOLUTION);
+            c.getSubTypes().add(EVOLUTION);
           } else {
-            c.subTypes.add(BASIC);
+            c.getSubTypes().add(BASIC);
           }
           break;
         case "VMAX":
-          c.subTypes.add(VMAX);
-          c.subTypes.add(EVOLUTION);
+          c.getSubTypes().add(VMAX);
+          c.getSubTypes().add(EVOLUTION);
           break;
         case "VSTAR":
-          c.subTypes.add(VSTAR);
-          c.subTypes.add(EVOLUTION);
+          c.getSubTypes().add(VSTAR);
+          c.getSubTypes().add(EVOLUTION);
         case "V-UNION":
-          c.subTypes.add(V_UNION);
+          c.getSubTypes().add(V_UNION);
         case "MEGA":
-          c.subTypes.add(EVOLUTION);
-          c.subTypes.add(MEGA_POKEMON);
-          c.subTypes.add(POKEMON_EX);
+          c.getSubTypes().add(EVOLUTION);
+          c.getSubTypes().add(MEGA_POKEMON);
+          c.getSubTypes().add(POKEMON_EX);
           break;
         case "BREAK":
-          c.subTypes.add(EVOLUTION);
-          c.subTypes.add(BREAK);
+          c.getSubTypes().add(EVOLUTION);
+          c.getSubTypes().add(BREAK);
           break;
         case "Level Up":
         case "Level-Up":
-          c.subTypes.add(EVOLUTION);
-          c.subTypes.add(LVL_X);
+          c.getSubTypes().add(EVOLUTION);
+          c.getSubTypes().add(LVL_X);
           break;
         case "Restored":
-          c.subTypes.add(RESTORED);
+          c.getSubTypes().add(RESTORED);
           break;
         case "Stadium":
-          c.subTypes.add(STADIUM);
+          c.getSubTypes().add(STADIUM);
           break;
         case "Item":
-          c.subTypes.add(ITEM);
+          c.getSubTypes().add(ITEM);
           break;
         case "Pokémon Tool":
-          c.subTypes.add(POKEMON_TOOL);
+          c.getSubTypes().add(POKEMON_TOOL);
 //				if(modernSeries.contains(pc.series)){
-          c.subTypes.add(ITEM);
+          c.getSubTypes().add(ITEM);
 //				}
           break;
         case "Rocket's Secret Machine":
-          c.subTypes.add(ROCKETS_SECRET_MACHINE);
+          c.getSubTypes().add(ROCKETS_SECRET_MACHINE);
           break;
         case "Technical Machine":
-          c.subTypes.add(TECHNICAL_MACHINE);
+          c.getSubTypes().add(TECHNICAL_MACHINE);
           break;
         case "Supporter":
-          c.subTypes.add(SUPPORTER);
+          c.getSubTypes().add(SUPPORTER);
           break;
         case "Single Strike":
-          c.subTypes.add(SINGLE_STRIKE);
+          c.getSubTypes().add(SINGLE_STRIKE);
           break;
         case "Rapid Strike":
-          c.subTypes.add(RAPID_STRIKE);
+          c.getSubTypes().add(RAPID_STRIKE);
         case "": // basic trainer
           break;
       }
     }
-    Collections.sort(c.subTypes);
+    Collections.sort(c.getSubTypes());
     return c;
   }
 

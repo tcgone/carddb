@@ -80,83 +80,83 @@ public class Importer {
 
   private void validate(Expansion expansion, List<ConstraintViolation> violations) {
 
-    if (isBlank(expansion.id) || !expansion.id.matches("^[0-9]{3}$"))
-      violations.add(new ConstraintViolation("cards/"+ expansion.filename, "expansion.id missing or not acceptable, expansion ids must consist of three digits"));
-    if (isBlank(expansion.name))
-      violations.add(new ConstraintViolation("cards/"+ expansion.filename, "expansion.name missing"));
-    if (isBlank(expansion.enumId))
-      violations.add(new ConstraintViolation("cards/"+ expansion.filename, "expansion.enumId missing"));
-    if (isBlank(expansion.abbr))
-      violations.add(new ConstraintViolation("cards/"+ expansion.filename, "expansion.abbr missing"));
+    if (isBlank(expansion.getId()) || !expansion.getId().matches("^[0-9]{3}$"))
+      violations.add(new ConstraintViolation("cards/"+ expansion.getFilename(), "expansion.id missing or not acceptable, expansion ids must consist of three digits"));
+    if (isBlank(expansion.getName()))
+      violations.add(new ConstraintViolation("cards/"+ expansion.getFilename(), "expansion.name missing"));
+    if (isBlank(expansion.getEnumId()))
+      violations.add(new ConstraintViolation("cards/"+ expansion.getFilename(), "expansion.enumId missing"));
+    if (isBlank(expansion.getAbbr()))
+      violations.add(new ConstraintViolation("cards/"+ expansion.getFilename(), "expansion.abbr missing"));
 
-    if (expansion.cards == null || expansion.cards.isEmpty()) {
-      violations.add(new ConstraintViolation("cards/"+ expansion.filename, "cards missing"));
+    if (expansion.getCards() == null || expansion.getCards().isEmpty()) {
+      violations.add(new ConstraintViolation("cards/"+ expansion.getFilename(), "cards missing"));
       return;
     }
 
-    String cardIdRegex = "^" + expansion.id + "-[\\w]+$";
+    String cardIdRegex = "^" + expansion.getId() + "-[\\w]+$";
     Pattern cardIdPattern = Pattern.compile(cardIdRegex);
 
-    for (Card card : expansion.cards) {
-      if (isBlank(card.id)) {
-        violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/card/?", "id missing"));
+    for (Card card : expansion.getCards()) {
+      if (isBlank(card.getId())) {
+        violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/card/?", "id missing"));
         continue;
       }
-      if (!cardIdPattern.matcher(card.id).matches())
-        violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id, "id does not match pattern="+cardIdRegex));
-      if (isBlank(card.name))
-        violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id, "name missing"));
-      if (isBlank(card.number))
-        violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id, "number missing"));
-      if (isBlank(card.enumId))
-        violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id, "enumId missing"));
-      if (card.superType == null || !card.superType.isSuperType())
-        violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id, "superType missing or illegal"));
-      if (card.rarity == null)
-        violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id, "rarity missing"));
+      if (!cardIdPattern.matcher(card.getId()).matches())
+        violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId(), "id does not match pattern="+cardIdRegex));
+      if (isBlank(card.getName()))
+        violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId(), "name missing"));
+      if (isBlank(card.getNumber()))
+        violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId(), "number missing"));
+      if (isBlank(card.getEnumId()))
+        violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId(), "enumId missing"));
+      if (card.getSuperType() == null || !card.getSuperType().isSuperType())
+        violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId(), "superType missing or illegal"));
+      if (card.getRarity() == null)
+        violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId(), "rarity missing"));
 
-      if (card.superType == CardType.POKEMON) {
-        if (card.hp == null && !card.subTypes.contains(CardType.LEGEND))
-          violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id, "hp missing"));
-        if (card.retreatCost == null && !card.subTypes.contains(CardType.LEGEND))
-          violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id, "retreatCost missing"));
-        if (card.subTypes.contains(CardType.STAGE1) || card.subTypes.contains(CardType.STAGE2)) {
-          if(StringUtils.isEmpty(card.evolvesFrom)) {
-            violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id, "evolvesFrom missing"));
+      if (card.getSuperType() == CardType.POKEMON) {
+        if (card.getHp() == null && !card.getSubTypes().contains(CardType.LEGEND))
+          violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId(), "hp missing"));
+        if (card.getRetreatCost() == null && !card.getSubTypes().contains(CardType.LEGEND))
+          violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId(), "retreatCost missing"));
+        if (card.getSubTypes().contains(CardType.STAGE1) || card.getSubTypes().contains(CardType.STAGE2)) {
+          if(StringUtils.isEmpty(card.getEvolvesFrom())) {
+            violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId(), "evolvesFrom missing"));
           }
         }
-        if (card.abilities != null)
-          for (Ability ability : card.abilities) {
-            if (isBlank(ability.name) || isBlank(ability.type) || isBlank(ability.text))
-              violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id+"/abilities", "name, type or text missing"));
+        if (card.getAbilities() != null)
+          for (Ability ability : card.getAbilities()) {
+            if (isBlank(ability.getName()) || isBlank(ability.getType()) || isBlank(ability.getText()))
+              violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId() +"/abilities", "name, type or text missing"));
           }
-        if (card.moves != null)
-          for (Move move : card.moves) {
-            if (isBlank(move.name))
-              violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id+"/moves", "name missing"));
-            if (move.cost == null)
-              violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id+"/moves", "cost missing"));
+        if (card.getMoves() != null)
+          for (Move move : card.getMoves()) {
+            if (isBlank(move.getName()))
+              violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId() +"/moves", "name missing"));
+            if (move.getCost() == null)
+              violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId() +"/moves", "cost missing"));
           }
-        if (card.weaknesses != null)
-          for (WeaknessResistance wr : card.weaknesses) {
-            if (isBlank(wr.value) || wr.type == null)
-              violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id+"/weaknesses", "value or type missing"));
+        if (card.getWeaknesses() != null)
+          for (WeaknessResistance wr : card.getWeaknesses()) {
+            if (isBlank(wr.getValue()) || wr.getType() == null)
+              violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId() +"/weaknesses", "value or type missing"));
           }
-        if (card.resistances != null)
-          for (WeaknessResistance wr : card.resistances) {
-            if (isBlank(wr.value) || wr.type == null)
-              violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id+"/resistances", "value or type missing"));
+        if (card.getResistances() != null)
+          for (WeaknessResistance wr : card.getResistances()) {
+            if (isBlank(wr.getValue()) || wr.getType() == null)
+              violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId() +"/resistances", "value or type missing"));
           }
 
         // stage handling
         CardType stage = null;
         for (CardType cardType : CardType.allStages()) {
-          if (card.subTypes.contains(cardType)) {
+          if (card.getSubTypes().contains(cardType)) {
             if (stage != null) {
               if ((stage == CardType.BASIC && cardType == CardType.BABY) || stage == CardType.BABY && cardType == CardType.BASIC) {
                 stage = CardType.BABY; // this is fine
               } else {
-                violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id+"/subTypes", String.format("cannot have both: %s, %s", stage, cardType)));
+                violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId() +"/subTypes", String.format("cannot have both: %s, %s", stage, cardType)));
               }
             } else {
               stage = cardType;
@@ -164,12 +164,12 @@ public class Importer {
           }
         }
         if (stage == null) {
-          violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/"+card.id+"/subTypes", String.format("must have one: %s", CardType.allStages())));
+          violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/"+ card.getId() +"/subTypes", String.format("must have one: %s", CardType.allStages())));
         }
-        if (stage == CardType.BABY && !card.subTypes.contains(CardType.BASIC)) {
-          card.subTypes.add(CardType.BASIC);
+        if (stage == CardType.BABY && !card.getSubTypes().contains(CardType.BASIC)) {
+          card.getSubTypes().add(CardType.BASIC);
         }
-        card.stage = stage;
+        card.setStage(stage);
 
       }
       // TODO
@@ -187,11 +187,11 @@ public class Importer {
     for (Resource resource : resources) {
       log.trace("Reading {}", resource.getFilename());
       Expansion expansion = mapper.readValue(resource.getInputStream(), Expansion.class);
-      expansion.filename = resource.getFilename();
-      if ("E2".equals(expansion.schema)) {
+      expansion.setFilename(resource.getFilename());
+      if ("E2".equals(expansion.getSchema())) {
         expansions.add(expansion);
       } else {
-        log.warn("SKIPPING {}: IT DOESN'T HAVE THE EXPECTED SCHEMA", expansion.filename);
+        log.warn("SKIPPING {}: IT DOESN'T HAVE THE EXPECTED SCHEMA", expansion.getFilename());
       }
     }
     if(expansions.size() < 100) {
@@ -214,154 +214,154 @@ public class Importer {
     List<ConstraintViolation> violations = new ArrayList<>();
 
     for (Expansion expansion : expansions) {
-      for (Card card : expansion.cards) {
-        if (isBlank(card.id)) {
-          violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/card/?", "id missing"));
+      for (Card card : expansion.getCards()) {
+        if (isBlank(card.getId())) {
+          violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/card/?", "id missing"));
           continue;
         }
-        if (isNotBlank(card.copyOf)) {
-          violations.add(new ConstraintViolation("cards/"+ expansion.filename+"/card/"+card.id, "copyOf field must be blank!"));
+        if (isNotBlank(card.getCopyOf())) {
+          violations.add(new ConstraintViolation("cards/"+ expansion.getFilename() +"/card/"+ card.getId(), "copyOf field must be blank!"));
           continue;
         }
-        idToCard.put(card.id, card);
+        idToCard.put(card.getId(), card);
       }
     }
     assertNoViolation(violations);
 
     variant_outer:
     for (Card card : idToCard.values()) {
-      if (card.variantOf == null) {
-        card.variantOf = card.id;
+      if (card.getVariantOf() == null) {
+        card.setVariantOf(card.getId());
       }
-      if (!card.variantOf.equals(card.id)) {
+      if (!card.getVariantOf().equals(card.getId())) {
         THashSet<String> cycleDetector = new THashSet<>();
         Card current = card;
-        cycleDetector.add(current.id);
+        cycleDetector.add(current.getId());
         while (true) {
-          if (Boolean.TRUE.equals(current.variantIsDifferent) && card.copyOf == null) {
-            card.copyOf = current.id;
+          if (Boolean.TRUE.equals(current.getVariantIsDifferent()) && card.getCopyOf() == null) {
+            card.setCopyOf(current.getId());
           }
-          if (current.id.equals(current.variantOf) || current.variantOf == null) {
-            if (Boolean.TRUE.equals(current.variantIsDifferent)) {
-              violations.add(new ConstraintViolation("card/"+current.id, "when variantIsDifferent is TRUE, variantOf must always point to a different variant! "));
+          if (current.getId().equals(current.getVariantOf()) || current.getVariantOf() == null) {
+            if (Boolean.TRUE.equals(current.getVariantIsDifferent())) {
+              violations.add(new ConstraintViolation("card/"+ current.getId(), "when variantIsDifferent is TRUE, variantOf must always point to a different variant! "));
               continue variant_outer;
             }
-            card.variantOf = current.id;
-            if (card.copyOf == null) {
-              card.copyOf = current.id;
+            card.setVariantOf(current.getId());
+            if (card.getCopyOf() == null) {
+              card.setCopyOf(current.getId());
             }
             break;
           }
-          current = idToCard.get(current.variantOf);
+          current = idToCard.get(current.getVariantOf());
           if (current == null) {
-            violations.add(new ConstraintViolation("card/"+card.id, "variantOf does not point to a valid card"));
+            violations.add(new ConstraintViolation("card/"+ card.getId(), "variantOf does not point to a valid card"));
             continue variant_outer;
           }
-          if (cycleDetector.contains(current.id)) {
-            violations.add(new ConstraintViolation("card/"+card.id, "variantIds must not have cycles! "+cycleDetector));
+          if (cycleDetector.contains(current.getId())) {
+            violations.add(new ConstraintViolation("card/"+ card.getId(), "variantIds must not have cycles! "+cycleDetector));
             continue variant_outer;
           }
-          cycleDetector.add(current.id);
+          cycleDetector.add(current.getId());
         }
       }
-      if (card.variantType == null) {
-        card.variantType = !card.variantOf.equals(card.id) ? VariantType.REPRINT : VariantType.REGULAR;
+      if (card.getVariantType() == null) {
+        card.setVariantType(!card.getVariantOf().equals(card.getId()) ? VariantType.REPRINT : VariantType.REGULAR);
       }
-      variantsMap.computeIfAbsent(card.variantOf, s -> new THashSet<>()).add(card);
+      variantsMap.computeIfAbsent(card.getVariantOf(), s -> new THashSet<>()).add(card);
     }
 
     for (Card card : idToCard.values()) {
-      if (card.id.equals(card.copyOf)) {
-        card.copyOf = null;
+      if (card.getId().equals(card.getCopyOf())) {
+        card.setCopyOf(null);
       }
-      if (card.copyOf != null) {
-        Card base = idToCard.get(card.copyOf);
+      if (card.getCopyOf() != null) {
+        Card base = idToCard.get(card.getCopyOf());
 
-        if (card.name != null && !Objects.equals(base.name, card.name)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different name in copied card! "+base.name+", "+card.name));
+        if (card.getName() != null && !Objects.equals(base.getName(), card.getName())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different name in copied card! "+ base.getName() +", "+ card.getName()));
         } else {
-          card.name = base.name;
+          card.setName(base.getName());
         }
-        if (card.retreatCost != null && !Objects.equals(base.retreatCost, card.retreatCost)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different retreatCost in copied card! "+base.retreatCost+", "+card.retreatCost));
+        if (card.getRetreatCost() != null && !Objects.equals(base.getRetreatCost(), card.getRetreatCost())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different retreatCost in copied card! "+ base.getRetreatCost() +", "+ card.getRetreatCost()));
         } else {
-          card.retreatCost = base.retreatCost;
+          card.setRetreatCost(base.getRetreatCost());
         }
-        if (card.types != null && !Objects.equals(base.types, card.types)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different types in copied card! "+base.types+", "+card.types));
+        if (card.getTypes() != null && !Objects.equals(base.getTypes(), card.getTypes())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different types in copied card! "+ base.getTypes() +", "+ card.getTypes()));
         } else {
-          card.types = base.types;
+          card.setTypes(base.getTypes());
         }
-        if (card.subTypes != null && !Objects.equals(base.subTypes, card.subTypes)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different subTypes in copied card! "+base.subTypes+", "+card.subTypes));
+        if (card.getSubTypes() != null && !Objects.equals(base.getSubTypes(), card.getSubTypes())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different subTypes in copied card! "+ base.getSubTypes() +", "+ card.getSubTypes()));
         } else {
-          card.subTypes = base.subTypes;
+          card.setSubTypes(base.getSubTypes());
         }
-        if (card.superType != null && !Objects.equals(base.superType, card.superType)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different superType in copied card! "+base.superType+", "+card.superType));
+        if (card.getSuperType() != null && !Objects.equals(base.getSuperType(), card.getSuperType())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different superType in copied card! "+ base.getSuperType() +", "+ card.getSuperType()));
         } else {
-          card.superType = base.superType;
+          card.setSuperType(base.getSuperType());
         }
-        if (card.weaknesses != null && !Objects.equals(base.weaknesses, card.weaknesses)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different weaknesses in copied card! "+base.weaknesses+", "+card.weaknesses));
+        if (card.getWeaknesses() != null && !Objects.equals(base.getWeaknesses(), card.getWeaknesses())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different weaknesses in copied card! "+ base.getWeaknesses() +", "+ card.getWeaknesses()));
         } else {
-          card.weaknesses = base.weaknesses;
+          card.setWeaknesses(base.getWeaknesses());
         }
-        if (card.resistances != null && !Objects.equals(base.resistances, card.resistances)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different resistances in copied card! "+base.resistances+", "+card.resistances));
+        if (card.getResistances() != null && !Objects.equals(base.getResistances(), card.getResistances())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different resistances in copied card! "+ base.getResistances() +", "+ card.getResistances()));
         } else {
-          card.resistances = base.resistances;
+          card.setResistances(base.getResistances());
         }
-        if (card.moves != null && !Objects.equals(base.moves, card.moves)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different moves in copied card! "+base.moves+", "+card.moves));
+        if (card.getMoves() != null && !Objects.equals(base.getMoves(), card.getMoves())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different moves in copied card! "+ base.getMoves() +", "+ card.getMoves()));
         } else {
-          card.moves = base.moves;
+          card.setMoves(base.getMoves());
         }
-        if (card.abilities != null && !Objects.equals(base.abilities, card.abilities)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different abilities in copied card! "+base.abilities+", "+card.abilities));
+        if (card.getAbilities() != null && !Objects.equals(base.getAbilities(), card.getAbilities())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different abilities in copied card! "+ base.getAbilities() +", "+ card.getAbilities()));
         } else {
-          card.abilities = base.abilities;
+          card.setAbilities(base.getAbilities());
         }
-        if (card.hp != null && !Objects.equals(base.hp, card.hp)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different hp in copied card! "+base.hp+", "+card.hp));
+        if (card.getHp() != null && !Objects.equals(base.getHp(), card.getHp())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different hp in copied card! "+ base.getHp() +", "+ card.getHp()));
         } else {
-          card.hp = base.hp;
+          card.setHp(base.getHp());
         }
-        if (card.evolvesTo != null && !Objects.equals(base.evolvesTo, card.evolvesTo)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different evolvesTo in copied card! "+base.evolvesTo+", "+card.evolvesTo));
+        if (card.getEvolvesTo() != null && !Objects.equals(base.getEvolvesTo(), card.getEvolvesTo())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different evolvesTo in copied card! "+ base.getEvolvesTo() +", "+ card.getEvolvesTo()));
         } else {
-          card.evolvesTo = base.evolvesTo;
+          card.setEvolvesTo(base.getEvolvesTo());
         }
-        if (card.evolvesFrom != null && !Objects.equals(base.evolvesFrom, card.evolvesFrom)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different evolvesFrom in copied card! "+base.evolvesFrom+", "+card.evolvesFrom));
+        if (card.getEvolvesFrom() != null && !Objects.equals(base.getEvolvesFrom(), card.getEvolvesFrom())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different evolvesFrom in copied card! "+ base.getEvolvesFrom() +", "+ card.getEvolvesFrom()));
         } else {
-          card.evolvesFrom = base.evolvesFrom;
+          card.setEvolvesFrom(base.getEvolvesFrom());
         }
-        if (card.stage != null && !Objects.equals(base.stage, card.stage)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different stage in copied card! "+base.stage+", "+card.stage));
+        if (card.getStage() != null && !Objects.equals(base.getStage(), card.getStage())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different stage in copied card! "+ base.getStage() +", "+ card.getStage()));
         } else {
-          card.stage = base.stage;
+          card.setStage(base.getStage());
         }
-        if (card.text != null && !Objects.equals(base.text, card.text)) {
+        if (card.getText() != null && !Objects.equals(base.getText(), card.getText())) {
 //          violations.add(new ConstraintViolation("card/"+card.id, "different text in copied card! "+base.text+", "+card.text));
           // text changes between variants are fine
         } else {
-          card.text = base.text;
+          card.setText(base.getText());
         }
-        if (card.energy != null && !Objects.equals(base.energy, card.energy)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different energy in copied card! "+base.energy+", "+card.energy));
+        if (card.getEnergy() != null && !Objects.equals(base.getEnergy(), card.getEnergy())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different energy in copied card! "+ base.getEnergy() +", "+ card.getEnergy()));
         } else {
-          card.energy = base.energy;
+          card.setEnergy(base.getEnergy());
         }
-        if (card.nationalPokedexNumber != null && !Objects.equals(base.nationalPokedexNumber, card.nationalPokedexNumber)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different nationalPokedexNumber in copied card! "+base.nationalPokedexNumber+", "+card.nationalPokedexNumber));
+        if (card.getNationalPokedexNumber() != null && !Objects.equals(base.getNationalPokedexNumber(), card.getNationalPokedexNumber())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different nationalPokedexNumber in copied card! "+ base.getNationalPokedexNumber() +", "+ card.getNationalPokedexNumber()));
         } else {
-          card.nationalPokedexNumber = base.nationalPokedexNumber;
+          card.setNationalPokedexNumber(base.getNationalPokedexNumber());
         }
-        if (card.erratas != null && !Objects.equals(base.erratas, card.erratas)) {
-          violations.add(new ConstraintViolation("card/"+card.id, "different erratas in copied card! "+base.erratas+", "+card.erratas));
+        if (card.getErratas() != null && !Objects.equals(base.getErratas(), card.getErratas())) {
+          violations.add(new ConstraintViolation("card/"+ card.getId(), "different erratas in copied card! "+ base.getErratas() +", "+ card.getErratas()));
         } else {
-          card.erratas = base.erratas;
+          card.setErratas(base.getErratas());
         }
       }
     }
@@ -375,63 +375,63 @@ public class Importer {
       if (!violations.isEmpty())
         continue;
 
-      log.debug("Processed {}", expansion.name);
+      log.debug("Processed {}", expansion.getName());
 
-      expansion.order = 1000 - Integer.parseInt(expansion.id);
-      if(expansion.seoName == null)
-        expansion.seoName = expansion.name.toLowerCase(Locale.ENGLISH).replaceAll("\\W+", "-");
+      expansion.setOrder(1000 - Integer.parseInt(expansion.getId()));
+      if(expansion.getSeoName() == null)
+        expansion.setSeoName(expansion.getName().toLowerCase(Locale.ENGLISH).replaceAll("\\W+", "-"));
 
       allExpansions.add(expansion);
-      idToExpansion.put(expansion.id, expansion);
-      idToExpansion.put(expansion.enumId, expansion);
-      idToExpansion.put(expansion.seoName, expansion);
+      idToExpansion.put(expansion.getId(), expansion);
+      idToExpansion.put(expansion.getEnumId(), expansion);
+      idToExpansion.put(expansion.getSeoName(), expansion);
 
-      for (Card card : expansion.cards) {
-        card.expansion = expansion;
-        if(expansion.notImplemented != null && expansion.notImplemented && !card.subTypes.contains(CardType.NOT_IMPLEMENTED)) {
-          card.subTypes.add(CardType.NOT_IMPLEMENTED);
+      for (Card card : expansion.getCards()) {
+        card.setExpansion(expansion);
+        if(expansion.getNotImplemented() != null && expansion.getNotImplemented() && !card.getSubTypes().contains(CardType.NOT_IMPLEMENTED)) {
+          card.getSubTypes().add(CardType.NOT_IMPLEMENTED);
         }
-        card.fullName = String.format("%s (%s %s)", card.name, card.expansion.abbr.toUpperCase(Locale.ENGLISH), card.number);
+        card.setFullName(String.format("%s (%s %s)", card.getName(), card.getExpansion().getAbbr().toUpperCase(Locale.ENGLISH), card.getNumber()));
         // upgraded to uniform scan url scheme @ 09.08.2020
-        card.imageUrl = String.format("https://tcgone.net/scans/m/%s/%s.jpg", card.expansion.enumId.toLowerCase(Locale.ENGLISH), card.number);
-        card.imageUrlHiRes = String.format("https://tcgone.net/scans/l/%s/%s.jpg", card.expansion.enumId.toLowerCase(Locale.ENGLISH), card.number);
+        card.setImageUrl(String.format("https://tcgone.net/scans/m/%s/%s.jpg", card.getExpansion().getEnumId().toLowerCase(Locale.ENGLISH), card.getNumber()));
+        card.setImageUrlHiRes(String.format("https://tcgone.net/scans/l/%s/%s.jpg", card.getExpansion().getEnumId().toLowerCase(Locale.ENGLISH), card.getNumber()));
 //                card.seoName = card.name.toLowerCase(Locale.ENGLISH).replaceAll("\\W","-");
 //                card.seoName = String.format("%s-%s--%s", card.name.toLowerCase(Locale.ENGLISH).replaceAll("\\W+","-"), setFile.expansion.seoName, card.id);
-        card.seoName = String.format("%s-%s-%s", card.name.replace("é", "e").replaceAll("\\W+", "-"), expansion.abbr, card.number).toLowerCase(Locale.ENGLISH);
-        card.order = order++;
-        card.order += expansion.order * 1000;
+        card.setSeoName(String.format("%s-%s-%s", card.getName().replace("é", "e").replaceAll("\\W+", "-"), expansion.getAbbr(), card.getNumber()).toLowerCase(Locale.ENGLISH));
+        card.setOrder(order++);
+        card.setOrder(card.getOrder() + expansion.getOrder() * 1000);
 //                card.superType = Character.toTitleCase(card.superType.charAt(0)) + card.superType.substring(1).toLowerCase(Locale.ENGLISH);
         StringBuilder ftxb = new StringBuilder();
         String dlm = " • ";
-        ftxb.append(card.name).append(dlm).append(card.expansion.name).append(" ").append(card.number).append(dlm)
-          .append(card.superType).append(dlm).append(card.subTypes).append(dlm).append(card.rarity);
-        if (card.abilities != null) {
-          for (Ability ability : card.abilities) {
-            ftxb.append(dlm).append(ability.type).append(": ").append(ability.name).append(dlm).append(ability.text);
+        ftxb.append(card.getName()).append(dlm).append(card.getExpansion().getName()).append(" ").append(card.getNumber()).append(dlm)
+          .append(card.getSuperType()).append(dlm).append(card.getSubTypes()).append(dlm).append(card.getRarity());
+        if (card.getAbilities() != null) {
+          for (Ability ability : card.getAbilities()) {
+            ftxb.append(dlm).append(ability.getType()).append(": ").append(ability.getName()).append(dlm).append(ability.getText());
           }
         }
-        if (card.moves != null) {
-          for (Move move : card.moves) {
-            ftxb.append(dlm).append(move.name).append(": ");
-            if (move.damage != null) {
-              ftxb.append(move.damage).append(" damage. ");
+        if (card.getMoves() != null) {
+          for (Move move : card.getMoves()) {
+            ftxb.append(dlm).append(move.getName()).append(": ");
+            if (move.getDamage() != null) {
+              ftxb.append(move.getDamage()).append(" damage. ");
             }
-            if (move.text != null) {
-              ftxb.append(move.text);
+            if (move.getText() != null) {
+              ftxb.append(move.getText());
             }
           }
         }
-        if (card.text != null) {
-          for (String s : card.text) {
+        if (card.getText() != null) {
+          for (String s : card.getText()) {
             ftxb.append(dlm).append(s);
           }
         }
-        card.fullText = ftxb.toString();
+        card.setFullText(ftxb.toString());
 
 
-        pioIdToCard.put(card.pioId, card);
-        seoNameToCard.put(card.seoName, card);
-        cardEnumIdToCard.put(card.enumId + ":" + expansion.enumId, card);
+        pioIdToCard.put(card.getPioId(), card);
+        seoNameToCard.put(card.getSeoName(), card);
+        cardEnumIdToCard.put(card.getEnumId() + ":" + expansion.getEnumId(), card);
         allCards.add(card);
 
       } // end expansion
@@ -444,16 +444,16 @@ public class Importer {
       List<Variant> variants = new ArrayList<>();
       for (Card card : cards) {
         Variant variant = new Variant();
-        variant.id = card.id;
-        variant.type = card.variantType;
-        variant.copyId = card.copyOf != null ? card.copyOf : card.id;
+        variant.setId(card.getId());
+        variant.setType(card.getVariantType());
+        variant.setCopyId(card.getCopyOf() != null ? card.getCopyOf() : card.getId());
         variants.add(variant);
       }
 //      if (variants.size() > 1) {
 //        System.out.println(variantId+","+name+","+variants);
 //      }
       for (Card card : cards) {
-        card.variants = variants; // make it immutable?
+        card.setVariants(variants); // make it immutable?
       }
     }
 
@@ -478,26 +478,26 @@ public class Importer {
     List<ConstraintViolation> violations = new ArrayList<>();
 
     for (Format format : formatsFromFile) {
-      if (format.flags != null && format.flags.contains("disabled")) {
+      if (format.getFlags() != null && format.getFlags().contains("disabled")) {
         continue;
       }
 
-      if(isBlank(format.enumId)) {
+      if(isBlank(format.getEnumId())) {
         violations.add(new ConstraintViolation("format/?", "enumId is missing"));
         continue;
       }
-      if(isBlank(format.seoName)) {
-        violations.add(new ConstraintViolation("format/"+ format.enumId, "seoName is missing"));
+      if(isBlank(format.getSeoName())) {
+        violations.add(new ConstraintViolation("format/"+ format.getEnumId(), "seoName is missing"));
         continue;
       }
-      if(isBlank(format.name))
-        violations.add(new ConstraintViolation("format/"+ format.enumId, "name is missing"));
-      if(isBlank(format.description))
-        violations.add(new ConstraintViolation("format/"+ format.enumId, "description is missing"));
-      if(format.expansions == null || format.expansions.isEmpty())
-        violations.add(new ConstraintViolation("format/"+ format.enumId, "expansions missing"));
-      if(isBlank(format.ruleSet))
-        violations.add(new ConstraintViolation("format/"+ format.enumId, "ruleSet is missing"));
+      if(isBlank(format.getName()))
+        violations.add(new ConstraintViolation("format/"+ format.getEnumId(), "name is missing"));
+      if(isBlank(format.getDescription()))
+        violations.add(new ConstraintViolation("format/"+ format.getEnumId(), "description is missing"));
+      if(format.getExpansions() == null || format.getExpansions().isEmpty())
+        violations.add(new ConstraintViolation("format/"+ format.getEnumId(), "expansions missing"));
+      if(isBlank(format.getRuleSet()))
+        violations.add(new ConstraintViolation("format/"+ format.getEnumId(), "ruleSet is missing"));
 
       // expand all ranges
       Function<Stream<String>, Stream<String>> expandRanges =
@@ -511,12 +511,12 @@ public class Importer {
             if(startCard == null) {
               throw new IllegalStateException("Cannot find card " + startId);
             }
-            int startIndex = startCard.expansion.cards.indexOf(startCard);
+            int startIndex = startCard.getExpansion().getCards().indexOf(startCard);
             List<String> accumulator = new ArrayList<>();
-            while (startIndex < startCard.expansion.cards.size()) {
-              Card card = startCard.expansion.cards.get(startIndex);
-              accumulator.add(card.id);
-              if(card.id.equals(endId)) {
+            while (startIndex < startCard.getExpansion().getCards().size()) {
+              Card card = startCard.getExpansion().getCards().get(startIndex);
+              accumulator.add(card.getId());
+              if(card.getId().equals(endId)) {
                 break;
               }
               startIndex++;
@@ -528,68 +528,68 @@ public class Importer {
             return Stream.of(s);
           }
         });
-      format.includes = format.includes != null ? expandRanges.apply(format.includes.stream()).collect(Collectors.toList()) : new ArrayList<>();
-      format.excludes = format.excludes != null ? expandRanges.apply(format.excludes.stream()).collect(Collectors.toList()) : new ArrayList<>();
+      format.setIncludes(format.getIncludes() != null ? expandRanges.apply(format.getIncludes().stream()).collect(Collectors.toList()) : new ArrayList<>());
+      format.setExcludes(format.getExcludes() != null ? expandRanges.apply(format.getExcludes().stream()).collect(Collectors.toList()) : new ArrayList<>());
 
       // find all cards of each format
 
-      String id = format.seoName;
+      String id = format.getSeoName();
       LinkedHashSet<Expansion> expansions = new LinkedHashSet<>();
       LinkedHashSet<Expansion> inclusionExpansions = new LinkedHashSet<>();
       LinkedHashSet<Card> cards = new LinkedHashSet<>();
 
 
-      for (String setId : format.expansions) {
+      for (String setId : format.getExpansions()) {
         Expansion expansion = idToExpansion.get(setId);
         if(expansion == null) {
-          violations.add(new ConstraintViolation("format/"+ format.enumId, "expansion cannot be found "+setId));
+          violations.add(new ConstraintViolation("format/"+ format.getEnumId(), "expansion cannot be found "+setId));
           continue;
         }
         expansions.add(expansion);
       }
 
-      for (String include : format.includes) {
+      for (String include : format.getIncludes()) {
         Card card = idToCard.get(include);
         if(card == null) {
-          violations.add(new ConstraintViolation("format/"+ format.enumId, "include cannot be found "+include));
+          violations.add(new ConstraintViolation("format/"+ format.getEnumId(), "include cannot be found "+include));
           continue;
         }
-        inclusionExpansions.add(card.expansion);
+        inclusionExpansions.add(card.getExpansion());
         cards.add(card);
       }
 
       for (Expansion expansion : expansions) {
         if (!inclusionExpansions.contains(expansion)) {
-          cards.addAll(expansion.cards);
+          cards.addAll(expansion.getCards());
         }
       }
 
-      for (String exclude : format.excludes) {
+      for (String exclude : format.getExcludes()) {
         Card card = idToCard.get(exclude);
         if(card == null) {
-          violations.add(new ConstraintViolation("format/"+ format.enumId, "exclude cannot be found "+exclude));
+          violations.add(new ConstraintViolation("format/"+ format.getEnumId(), "exclude cannot be found "+exclude));
           continue;
         }
-        if (inclusionExpansions.contains(card.expansion)) {
-          violations.add(new ConstraintViolation("format/"+ format.enumId, "includes and excludes cannot be specified for cards from the expansion "+card.expansion.name));
+        if (inclusionExpansions.contains(card.getExpansion())) {
+          violations.add(new ConstraintViolation("format/"+ format.getEnumId(), "includes and excludes cannot be specified for cards from the expansion "+ card.getExpansion().getName()));
           continue;
         }
         if (!cards.remove(card)) {
-          violations.add(new ConstraintViolation("format/"+ format.enumId, "exclude was not included at all "+exclude));
+          violations.add(new ConstraintViolation("format/"+ format.getEnumId(), "exclude was not included at all "+exclude));
         }
       }
 
       // add format to each valid card
 
       for (Card card : cards) {
-        if (card.formats == null)
-          card.formats = new ArrayList<>();
+        if (card.getFormats() == null)
+          card.setFormats(new ArrayList<>());
 
-        card.formats.add(id);
+        card.getFormats().add(id);
       }
 
       idToFormat.put(id, format);
-      idToFormat.put(format.enumId, format);
+      idToFormat.put(format.getEnumId(), format);
       allFormats.add(format);
     }
 
@@ -604,19 +604,19 @@ public class Importer {
     HashSet<String> pokemonNames = new HashSet<>();
 
     for (Card card : allCards) {
-      if (StringUtils.isNotEmpty(card.evolvesFrom)) {
-        addToChain(card.evolvesFrom, card.name);
+      if (StringUtils.isNotEmpty(card.getEvolvesFrom())) {
+        addToChain(card.getEvolvesFrom(), card.getName());
       }
-      if (card.superType == CardType.POKEMON || card.subTypes.contains(CardType.FOSSIL)) {
-        pokemonNames.add(card.name);
+      if (card.getSuperType() == CardType.POKEMON || card.getSubTypes().contains(CardType.FOSSIL)) {
+        pokemonNames.add(card.getName());
       }
     }
 
     List<String> errors = new ArrayList<>();
     for (Card card : allCards) {
-      if (StringUtils.isNotEmpty(card.evolvesFrom)) {
-        if (!pokemonNames.contains(card.evolvesFrom)) {
-          errors.add(String.format("Cannot find card %s referenced via evolvesFrom in %s %s", card.evolvesFrom, card.id, card.expansion.name));
+      if (StringUtils.isNotEmpty(card.getEvolvesFrom())) {
+        if (!pokemonNames.contains(card.getEvolvesFrom())) {
+          errors.add(String.format("Cannot find card %s referenced via evolvesFrom in %s %s", card.getEvolvesFrom(), card.getId(), card.getExpansion().getName()));
         }
       }
     }

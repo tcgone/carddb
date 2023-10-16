@@ -32,17 +32,17 @@ public class ClassificationsExportTest {
     void export(String setEnumId) {
 //      System.out.println(setEnumId);
       allCards.stream()
-        .filter(card -> card.expansion.enumId.equals(setEnumId))
+        .filter(card -> card.getExpansion().getEnumId().equals(setEnumId))
         .map(card -> {
           List<String> list = new ArrayList<>();
-          list.add(card.name);
-          list.add(card.expansion.name);
-          list.add(card.number);
-          list.add(card.rarity.toString());
+          list.add(card.getName());
+          list.add(card.getExpansion().getName());
+          list.add(card.getNumber());
+          list.add(card.getRarity().toString());
           list.add(""); // class
           list.add(""); // freebies
           list.add("KIT"); // KIT
-          list.add(card.imageUrlHiRes); // scan url
+          list.add(card.getImageUrlHiRes()); // scan url
           return String.join("\t", list);
         })
         .forEach(line -> System.out.println(line));

@@ -132,7 +132,7 @@ public class Application implements ApplicationRunner {
           log.info("Reading {}", currentFile.getName());
           Expansion expansion = readExpansion(currentFile);
           allExpansions.add(expansion);
-          allCards.addAll(expansion.cards);
+          allCards.addAll(expansion.getCards());
         }
       }
     }
@@ -140,8 +140,8 @@ public class Application implements ApplicationRunner {
 
   private Expansion readExpansion(File pop) throws IOException {
     Expansion expansion = mapper.readValue(new FileInputStream(pop), Expansion.class);
-    for (Card card : expansion.cards) {
-      card.expansion = expansion; // temporary
+    for (Card card : expansion.getCards()) {
+      card.setExpansion(expansion); // temporary
     }
     return expansion;
   }

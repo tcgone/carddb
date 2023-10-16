@@ -47,19 +47,19 @@ public class SetWriter {
   public static class EqualityCard extends Card {
 
     public EqualityCard(Card card) {
-      this.name = card.name;
-      this.types = card.types;
-      this.superType = card.superType;
-      this.subTypes = card.subTypes;
-      this.evolvesFrom = card.evolvesFrom;
-      this.hp = card.hp;
-      this.retreatCost = card.retreatCost;
-      this.abilities = card.abilities;
-      this.moves = card.moves;
-      this.weaknesses = card.weaknesses;
-      this.resistances = card.resistances;
-      this.text = card.text;
-      this.energy = card.energy;
+      this.setName(card.getName());
+      this.setTypes(card.getTypes());
+      this.setSuperType(card.getSuperType());
+      this.setSubTypes(card.getSubTypes());
+      this.setEvolvesFrom(card.getEvolvesFrom());
+      this.setHp(card.getHp());
+      this.setRetreatCost(card.getRetreatCost());
+      this.setAbilities(card.getAbilities());
+      this.setMoves(card.getMoves());
+      this.setWeaknesses(card.getWeaknesses());
+      this.setResistances(card.getResistances());
+      this.setText(card.getText());
+      this.setEnergy(card.getEnergy());
     }
 
     @Override
@@ -67,24 +67,24 @@ public class SetWriter {
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
       EqualityCard card = (EqualityCard) o;
-      return Objects.equals(name, card.name) &&
-        Objects.equals(types, card.types) &&
-        Objects.equals(superType, card.superType) &&
-        Objects.equals(subTypes, card.subTypes) &&
-        Objects.equals(evolvesFrom, card.evolvesFrom) &&
-        Objects.equals(hp, card.hp) &&
-        Objects.equals(retreatCost, card.retreatCost) &&
-        Objects.equals(abilities, card.abilities) &&
-        Objects.equals(moves, card.moves) &&
-        Objects.equals(weaknesses, card.weaknesses) &&
-        Objects.equals(resistances, card.resistances) &&
-        Objects.equals(text, card.text) &&
-        Objects.equals(energy, card.energy);
+      return Objects.equals(getName(), card.getName()) &&
+        Objects.equals(getTypes(), card.getTypes()) &&
+        Objects.equals(getSuperType(), card.getSuperType()) &&
+        Objects.equals(getSubTypes(), card.getSubTypes()) &&
+        Objects.equals(getEvolvesFrom(), card.getEvolvesFrom()) &&
+        Objects.equals(getHp(), card.getHp()) &&
+        Objects.equals(getRetreatCost(), card.getRetreatCost()) &&
+        Objects.equals(getAbilities(), card.getAbilities()) &&
+        Objects.equals(getMoves(), card.getMoves()) &&
+        Objects.equals(getWeaknesses(), card.getWeaknesses()) &&
+        Objects.equals(getResistances(), card.getResistances()) &&
+        Objects.equals(getText(), card.getText()) &&
+        Objects.equals(getEnergy(), card.getEnergy());
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(name, types, superType, subTypes, evolvesFrom, hp, retreatCost, abilities, moves, weaknesses, resistances, text, energy);
+      return Objects.hash(getName(), getTypes(), getSuperType(), getSubTypes(), getEvolvesFrom(), getHp(), getRetreatCost(), getAbilities(), getMoves(), getWeaknesses(), getResistances(), getText(), getEnergy());
     }
   }
 
@@ -127,21 +127,21 @@ public class SetWriter {
   public void writeAllE2(Collection<Expansion> expansions, String outputDirectory) throws IOException {
     new File(outputDirectory).mkdirs();
     for (Expansion expansion : expansions) {
-      expansion.filename = String.format(outputDirectory+File.separator+"%s-%s.yaml", expansion.id, expansion.enumId.toLowerCase(Locale.ENGLISH));
-      for (Card card : expansion.cards) {
-        card.expansion = null;
-        card.merged = null;
-        card.formats = null;
-        if (card.moves != null) {
-          for (Move move : card.moves) {
-            move.damage = StringUtils.trimToNull(move.damage);
-            move.text = StringUtils.trimToNull(move.text);
+      expansion.setFilename(String.format(outputDirectory+File.separator+"%s-%s.yaml", expansion.getId(), expansion.getEnumId().toLowerCase(Locale.ENGLISH)));
+      for (Card card : expansion.getCards()) {
+        card.setExpansion(null);
+        card.setMerged(null);
+        card.setFormats(null);
+        if (card.getMoves() != null) {
+          for (Move move : card.getMoves()) {
+            move.setDamage(StringUtils.trimToNull(move.getDamage()));
+            move.setText(StringUtils.trimToNull(move.getText()));
           }
         }
       }
       BufferedWriter out = new BufferedWriter
-        (new OutputStreamWriter(Files.newOutputStream(Paths.get(expansion.filename)), StandardCharsets.UTF_8));
-      expansion.filename=null;
+        (new OutputStreamWriter(Files.newOutputStream(Paths.get(expansion.getFilename())), StandardCharsets.UTF_8));
+      expansion.setFilename(null);
       mapper.writeValue(out, expansion);
 //      String dump = yaml.dumpAs(expansion, Tag.MAP, null);
 //      out.write(dump);
@@ -153,26 +153,26 @@ public class SetWriter {
     for (Expansion expansion : expansions) {
       Expansion3 expansion3 = new Expansion3();
       BeanUtils.copyProperties(expansion, expansion3);
-      expansion3.setOrderId(expansion.id);
+      expansion3.setOrderId(expansion.getId());
       if (expansion3.getEnumId() == null) {
         throw new IllegalStateException(expansion3 + " has null enumId");
       }
-      expansion3.setShortName(expansion.abbr);
+      expansion3.setShortName(expansion.getAbbr());
       List<Card3> cards = new ArrayList<>();
-      for (Card card : expansion.cards) {
+      for (Card card : expansion.getCards()) {
         Card3 card3 = new Card3();
         BeanUtils.copyProperties(card, card3, "evolvesFrom", "text");
-        if (card.evolvesFrom != null){
-          card3.setEvolvesFrom(Collections.singletonList(card.evolvesFrom));
+        if (card.getEvolvesFrom() != null){
+          card3.setEvolvesFrom(Collections.singletonList(card.getEvolvesFrom()));
         }
-        if (card.text != null && !card.text.isEmpty() ) {
-          card3.setText(String.join("\n", card.text));
+        if (card.getText() != null && !card.getText().isEmpty() ) {
+          card3.setText(String.join("\n", card.getText()));
         }
         card3.setExpansionEnumId(expansion3.getEnumId());
         card3.setCardTypes(new ArrayList<>());
-        card3.getCardTypes().add(card.superType);
-        if (card.subTypes != null)
-          card3.getCardTypes().addAll(card.subTypes);
+        card3.getCardTypes().add(card.getSuperType());
+        if (card.getSubTypes() != null)
+          card3.getCardTypes().addAll(card.getSubTypes());
         cards.add(card3);
       }
       result.add(new ExpansionFile3("E3", expansion3, cards));
@@ -189,8 +189,8 @@ public class SetWriter {
       for (Card3 card : expansionFile.getCards()) {
         if (card.getMoves() != null) {
           for (Move move : card.getMoves()) {
-            move.damage = StringUtils.trimToNull(move.damage);
-            move.text = StringUtils.trimToNull(move.text);
+            move.setDamage(StringUtils.trimToNull(move.getDamage()));
+            move.setText(StringUtils.trimToNull(move.getText()));
           }
         }
       }
@@ -206,26 +206,26 @@ public class SetWriter {
   public Collection<Expansion> prepareSetFiles(List<Card> cards) {
     Map<String, Expansion> expansionMap = new HashMap<>();
     for (Card card : cards) {
-      String key = card.expansion.enumId;
+      String key = card.getExpansion().getEnumId();
       if (!expansionMap.containsKey(key)) {
         Expansion expansion = new Expansion();
-        card.expansion.copyStaticPropertiesTo(expansion);
-        expansion.cards = new ArrayList<>();
+        card.getExpansion().copyStaticPropertiesTo(expansion);
+        expansion.setCards(new ArrayList<>());
         expansionMap.put(key, expansion);
       }
-      expansionMap.get(key).cards.add(card);
+      expansionMap.get(key).getCards().add(card);
     }
     for (Expansion expansion : expansionMap.values()) {
       Comparator<Card> cardComparator = (o1, o2) -> {
         try {
-          Integer n1 = Integer.parseInt(o1.number);
-          Integer n2 = Integer.parseInt(o2.number);
+          Integer n1 = Integer.parseInt(o1.getNumber());
+          Integer n2 = Integer.parseInt(o2.getNumber());
           return n1.compareTo(n2);
         } catch (NumberFormatException e) {
-          return o1.number.compareTo(o2.number);
+          return o1.getNumber().compareTo(o2.getNumber());
         }
       };
-      expansion.cards.sort(cardComparator);
+      expansion.getCards().sort(cardComparator);
     }
     return expansionMap.values();
   }
@@ -233,21 +233,21 @@ public class SetWriter {
   public void prepareReprints(Collection<Expansion> expansionFiles) {
     Map<EqualityCard, Card> map = new HashMap<>();
     for (Expansion expansionFile : expansionFiles) {
-      for (Card c : expansionFile.cards) {
+      for (Card c : expansionFile.getCards()) {
 //                int hash = Objects.hash(c.name, c.types, c.superType, c.subTypes, c.evolvesFrom, c.hp, c.retreatCost, c.abilities, c.moves, c.weaknesses, c.resistances, c.text, c.energy);
         EqualityCard ec = new EqualityCard(c);
         if (map.containsKey(ec)) {
           Card oc = map.get(ec);
-          if (c.rarity == Rarity.ULTRA_RARE) {
+          if (c.getRarity() == Rarity.ULTRA_RARE) {
             // most likely full art
-            c.variantType = VariantType.FULL_ART;
-          } else if (c.rarity == Rarity.SECRET) {
+            c.setVariantType(VariantType.FULL_ART);
+          } else if (c.getRarity() == Rarity.SECRET) {
             // most likely secret art
-            c.variantType = VariantType.SECRET_ART;
+            c.setVariantType(VariantType.SECRET_ART);
           } else {
-            c.variantType = VariantType.REPRINT;
+            c.setVariantType(VariantType.REPRINT);
           }
-          c.variantOf = oc.id;
+          c.setVariantOf(oc.getId());
         } else {
           map.put(ec, c);
         }
@@ -258,17 +258,17 @@ public class SetWriter {
   public void fixGymSeriesEvolvesFromIssue(Collection<Expansion> expansions) {
     List<String> owners = Arrays.asList("Blaine's", "Brock's", "Misty's", "Lt. Surge's", "Sabrina's", "Erika's", "Koga's", "Giovanni's");
     for (Expansion expansion : expansions) {
-      if(expansion.name.contains("Gym ")){
-        for (Card card : expansion.cards) {
-          if(card.subTypes.contains(CardType.EVOLUTION)){
+      if(expansion.getName().contains("Gym ")){
+        for (Card card : expansion.getCards()) {
+          if(card.getSubTypes().contains(CardType.EVOLUTION)){
             for (String owner : owners) {
-              if(card.name.startsWith(owner)){
-                if(card.evolvesFrom == null){
-                  System.out.println("NoEvolvesFrom:"+card.name);
+              if(card.getName().startsWith(owner)){
+                if(card.getEvolvesFrom() == null){
+                  System.out.println("NoEvolvesFrom:"+ card.getName());
                 }
-                if(!card.evolvesFrom.startsWith(owner)){
-                  System.out.println(card.name);
-                  card.evolvesFrom = owner + " " + card.evolvesFrom;
+                if(!card.getEvolvesFrom().startsWith(owner)){
+                  System.out.println(card.getName());
+                  card.setEvolvesFrom(owner + " " + card.getEvolvesFrom());
                   break;
                 }
               }

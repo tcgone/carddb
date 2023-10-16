@@ -39,8 +39,8 @@ public class ImportTest {
   public void printNonIntegerNumberedCards() {
     Map<String, Collection<String>> mmap = new HashMap<>();
     for (Card card : importer.getAllCards()) {
-      if(!NumberUtils.isDigits(card.number)){
-        mmap.computeIfAbsent(card.expansion.enumId, k -> new ArrayList<>()).add(card.enumId);
+      if(!NumberUtils.isDigits(card.getNumber())){
+        mmap.computeIfAbsent(card.getExpansion().getEnumId(), k -> new ArrayList<>()).add(card.getEnumId());
       }
     }
 //    for (Map.Entry<String, Collection<String>> entry : mmap.entrySet()) {
@@ -51,23 +51,23 @@ public class ImportTest {
   public void outputSomeHoloCards() {
     // print AQP and SKR holo rares to be added to career pack card pool
     for (Expansion expansion : importer.allExpansions) {
-      if (expansion.abbr.equals("AQP") || expansion.abbr.equals("SKR")){
-        for (Card c : expansion.cards) {
-          if (c.number.startsWith("H")) {
+      if (expansion.getAbbr().equals("AQP") || expansion.getAbbr().equals("SKR")){
+        for (Card c : expansion.getCards()) {
+          if (c.getNumber().startsWith("H")) {
             String holoOf = "";
             List<Card> eqCards = new ArrayList<>();
-            for (Card c1 : expansion.cards) {
-              if (c1 != c && c1.name.equals(c.name)) {
+            for (Card c1 : expansion.getCards()) {
+              if (c1 != c && c1.getName().equals(c.getName())) {
                 eqCards.add(c1);
               }
             }
             if(eqCards.size() == 1) {
-              holoOf=eqCards.get(0).number;
+              holoOf= eqCards.get(0).getNumber();
             } else if(eqCards.size()>1){
-              holoOf=eqCards.stream().map(card -> card.number).collect(Collectors.joining("///"));
+              holoOf=eqCards.stream().map(card -> card.getNumber()).collect(Collectors.joining("///"));
             }
-            System.out.println(String.join(",",c.name, c.expansion.name, c.number,
-              c.rarity.toString(), "Holo", "",
+            System.out.println(String.join(",", c.getName(), c.getExpansion().getName(), c.getNumber(),
+              c.getRarity().toString(), "Holo", "",
               "", holoOf));
           }
         }

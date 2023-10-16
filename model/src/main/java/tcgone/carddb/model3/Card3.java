@@ -127,7 +127,7 @@ public class Card3 {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Card card = (Card) o;
-    return Objects.equals(enumId, card.energy);
+    return Objects.equals(enumId, card.getEnergy());
   }
 
   @Override

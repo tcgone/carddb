@@ -1,6 +1,8 @@
 package tcgone.carddb.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -8,140 +10,142 @@ import java.util.List;
 import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Getter
+@Setter
 public class Card {
   /**
    * id. e.g. 101-4
    */
-  public String id;
+  private String id;
   /**
    * Pio id. e.g. base1-4
    */
-  public String pioId;
+  private String pioId;
   /**
    * Engine id. e.g. CHARIZARD_4
    */
-  public String enumId;
+  private String enumId;
   /**
    * (DERIVED FIELD, DO NOT FILL)
    */
-  public Expansion expansion;
+  private Expansion expansion;
   /**
    * Name of the card. e.g. Charizard
    */
-  public String name;
+  private String name;
   /**
    * e.g. 4
    */
-  public Integer nationalPokedexNumber;
+  private Integer nationalPokedexNumber;
   /**
    * e.g. 4
    */
-  public String number;
+  private String number;
   /**
    * Medium image url: https://tcgone.net/scans/m/base_set/4.jpg
    */
-  public String imageUrl;
+  private String imageUrl;
   /**
    * Large image url: https://tcgone.net/scans/l/base_set/4.jpg
    */
-  public String imageUrlHiRes;
+  private String imageUrlHiRes;
   /**
    * Array of types (i.e. colors). e.g. ["R"]
    *
    * Logically it makes more sense to name this field 'colors', but precisely
    * speaking, it's used as 'type' everywhere else. https://bulbapedia.bulbagarden.net/wiki/Type_(TCG)
    */
-  public List<Type> types;
+  private List<Type> types;
   /**
    * Either Pokémon, Trainer or Energy
    */
-  public CardType superType;
+  private CardType superType;
   /**
    * e.g. [EVOLUTION, STAGE2]
    */
-  public List<CardType> subTypes;
+  private List<CardType> subTypes;
   /**
    * (DERIVED FIELD, DO NOT FILL)
    * Evolution stage of the Pokemon. i.e. STAGE2.
    * Is null for non-pokemon cards.
    * Is automatically calculated and validated from {@link #subTypes} property.
    */
-  public CardType stage;
+  private CardType stage;
   /**
    * Charmeleon
    */
-  public String evolvesFrom;
+  private String evolvesFrom;
   /**
    *
    */
-  public List<String> evolvesTo;
+  private List<String> evolvesTo;
   /**
    * 120
    */
-  public Integer hp;
+  private Integer hp;
   /**
    * 3
    */
-  public Integer retreatCost;
+  private Integer retreatCost;
   /**
    * [ { "type": "Pokémon Power", "name": "Energy Burn", "text": "As often as you like during your turn (before your
    * attack), you may turn all Energy attached to Charizard into [R] for the rest of the turn. This power can't be used
    * if Charizard is Asleep, Confused, or Paralyzed." } ]
    */
-  public List<Ability> abilities;
+  private List<Ability> abilities;
   /**
    * [ { "cost": ["R","R","R","R"], "name": "Fire Spin", "text": "Discard 2 Energy cards attached to Charizard in order
    * to use this attack.", "damage": "100", "convertedEnergyCost": 4 } ]
    */
-  public List<Move> moves;
+  private List<Move> moves;
   /**
    * [ { "type": "W", "value": "×2" } ]
    */
-  public List<WeaknessResistance> weaknesses;
+  private List<WeaknessResistance> weaknesses;
   /**
    * [ { "type": "F", "value": "-30" } ]
    */
-  public List<WeaknessResistance> resistances;
+  private List<WeaknessResistance> resistances;
   /**
    * (DERIVED FIELD, DO NOT FILL) e.g. Charizard (BS 4)
    */
-  public String fullName;
+  private String fullName;
   /**
    * (DERIVED FIELD, DO NOT FILL)
    */
-  public String seoName;
+  private String seoName;
   /**
    * Rare Holo
    */
-  public Rarity rarity;
+  private Rarity rarity;
   /**
    * Epic
    */
-  public CareerRarity careerRarity;
+  private CareerRarity careerRarity;
   /**
    * Trainer/Energy text/Pokemon ruling text. Each entry is a line.
    */
-  public List<String> text;
+  private List<String> text;
   /**
    * (Energy only) Energy types
    */
-  public List<List<Type>> energy;
+  private List<List<Type>> energy;
   /**
    * e.g. Mitsuhiro Arita
    */
-  public String artist;
+  private String artist;
   /**
    * e.g. Spits fire that is hot enough to melt boulders. Known to unintentionally cause forest fires.
    */
-  public String flavorText;
+  private String flavorText;
   /**
    * e.g. D
    */
-  public String regulationMark;
+  private String regulationMark;
   /**
    * (Unused ATM) List of erratas that apply to this card. It includes engine-level erratas.
    */
-  public List<String> erratas;
+  private List<String> erratas;
 //  /**
 //   * {@code pokemonPower { def set = [] as Set def eff1, eff2 onActivate { if(eff1) eff1.unregister() if(eff2)
 //   * eff2.unregister() eff1 = delayed { before BETWEEN_TURNS, { set.clear() } } eff2 = getter GET_ENERGY_TYPES, {
@@ -156,45 +160,45 @@ public class Card {
   /**
    * Id of the main variant. You may leave it empty to assume a variant on its own by its {@link #id}. Example: 101-12
    */
-  public String variantOf;
+  private String variantOf;
   /**
    * How did this card get copied. Example, if THIS CARD is Holo version of 101-12, put Holo here.
    */
-  public VariantType variantType;
+  private VariantType variantType;
   /**
    * True when the variant has any altering ruling, text or type change.
    */
-  public Boolean variantIsDifferent;
+  private Boolean variantIsDifferent;
   /**
    * (DERIVED FIELD, DO NOT FILL) list of variants.
    */
-  public List<Variant> variants;
+  private List<Variant> variants;
   /**
    * (DERIVED FIELD, DO NOT FILL) effective card implementation copy target.
    */
-  public String copyOf;
+  private String copyOf;
 
   /**
    * true when this has been merged with pio, so the definition is finalized. merged cards won't be attempted to be
    * merged again, so the process can be restarted when failed.
    */
-  public Boolean merged;
+  private Boolean merged;
   /**
    * Sort order (respective to its expansion)
    */
-  public Integer order;
+  private Integer order;
   /**
    * (DERIVED FIELD, DO NOT FILL) Legal format seoNames
    */
-  public List<String> formats;
+  private List<String> formats;
   /**
    * (DERIVED FIELD, DO NOT FILL) full plain format text. e.g. Charizard (BS 4)
    */
-  public String fullText;
+  private String fullText;
   /**
    * (DERIVED FIELD, DO NOT FILL) full seo title
    */
-  public String seoTitle;
+  private String seoTitle;
 
 //  public void copyStaticPropertiesTo(Card other){
 //    other.name=this.name;
@@ -233,4 +237,5 @@ public class Card {
   public int hashCode() {
     return Objects.hash(id);
   }
+
 }

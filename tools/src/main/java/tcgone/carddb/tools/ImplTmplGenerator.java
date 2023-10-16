@@ -34,7 +34,7 @@ public class ImplTmplGenerator {
     Map<String, Object> modelmap = new HashMap<>();
     List<List1Item> list1 = new ArrayList<>();
     List<List2Item> list2 = new ArrayList<>();
-    String EXPNNAME= expansionFile.enumId;
+    String EXPNNAME= expansionFile.getEnumId();
     modelmap.put("classname", WordUtils.capitalizeFully(EXPNNAME.replaceAll("_"," ")).replaceAll(" ",""));
     modelmap.put("foldername", EXPNNAME.toLowerCase(Locale.ENGLISH));
     modelmap.put("collection", EXPNNAME);
@@ -43,15 +43,15 @@ public class ImplTmplGenerator {
 
     // the magic happens here
     block_card:
-    for(Card card: expansionFile.cards){
+    for(Card card: expansionFile.getCards()){
       List<String> cardTypeSet = new ArrayList<>();
       String rarity = null;
-      String rc = String.valueOf(card.retreatCost);
+      String rc = String.valueOf(card.getRetreatCost());
       String hp = null;
       String predecessor = null;
       String cardtext = null;
-      if(card.text!=null) {
-        cardtext=StringUtils.join(card.text,"\" +\n\t\t\t\t\t\"");
+      if(card.getText() !=null) {
+        cardtext=StringUtils.join(card.getText(),"\" +\n\t\t\t\t\t\"");
       }
       String typesCombined = null;
       StringBuilder weakness = new StringBuilder();
@@ -60,104 +60,104 @@ public class ImplTmplGenerator {
       StringBuilder abilities = new StringBuilder();
 
       // rarity
-      if (card.rarity == Rarity.RARE_HOLO){
+      if (card.getRarity() == Rarity.RARE_HOLO){
         rarity="HOLORARE";
-      } else if (card.rarity == Rarity.ULTRA_RARE){
+      } else if (card.getRarity() == Rarity.ULTRA_RARE){
         rarity="ULTRARARE";
       } else {
-        rarity = card.rarity.name();
+        rarity = card.getRarity().name();
       }
-      cardTypeSet.add(card.superType.name());
-      for (CardType subType : card.subTypes) {
+      cardTypeSet.add(card.getSuperType().name());
+      for (CardType subType : card.getSubTypes()) {
         cardTypeSet.add(subType.name());
       }
-      if(card.superType == CardType.POKEMON) {
+      if(card.getSuperType() == CardType.POKEMON) {
         //hp
-        hp = String.valueOf(card.hp);
+        hp = String.valueOf(card.getHp());
         if (hp.length() < 3) {
           hp = "0" + hp;
         }
         hp = String.format("HP%s", hp);
         //types
-        if (card.types != null) {
-          if (card.types.size() == 1) {
-            typesCombined = card.types.get(0).getNotation();
+        if (card.getTypes() != null) {
+          if (card.getTypes().size() == 1) {
+            typesCombined = card.getTypes().get(0).getNotation();
           } else {
-            typesCombined = card.types.toString();
+            typesCombined = card.getTypes().toString();
           }
-          for (Type _type : card.types) {
+          for (Type _type : card.getTypes()) {
             cardTypeSet.add("_" + _type.name() + "_");
           }
         }
-        if (card.subTypes.contains(CardType.BABY)) {
+        if (card.getSubTypes().contains(CardType.BABY)) {
           cardTypeSet.add("BASIC");
         }
-        predecessor=card.evolvesFrom;
-        if(card.weaknesses!=null){
-          for (WeaknessResistance wr : card.weaknesses) {
-            weakness.append(String.format("weakness %s%s\n\t\t\t\t", wr.type.getNotation(), !wr.value.equalsIgnoreCase("x2")?", '"+wr.value+"'":""));
+        predecessor= card.getEvolvesFrom();
+        if(card.getWeaknesses() !=null){
+          for (WeaknessResistance wr : card.getWeaknesses()) {
+            weakness.append(String.format("weakness %s%s\n\t\t\t\t", wr.getType().getNotation(), !wr.getValue().equalsIgnoreCase("x2")?", '"+ wr.getValue() +"'":""));
           }
         }
-        if(card.resistances!=null){
-          for (WeaknessResistance wr : card.resistances) {
+        if(card.getResistances() !=null){
+          for (WeaknessResistance wr : card.getResistances()) {
             String typ = "";
-            if("-20".equals(wr.value)) typ=", MINUS20";
-            if("-30".equals(wr.value)) typ=", MINUS30";
-            resistance.append(String.format("resistance %s\n\t\t\t\t", wr.type.getNotation()+typ));
+            if("-20".equals(wr.getValue())) typ=", MINUS20";
+            if("-30".equals(wr.getValue())) typ=", MINUS30";
+            resistance.append(String.format("resistance %s\n\t\t\t\t", wr.getType().getNotation()+typ));
           }
         }
-        if(card.abilities!=null) {
-          for (Ability a : card.abilities) {
-            if(a.type.equalsIgnoreCase("Pokémon Power")) {
+        if(card.getAbilities() !=null) {
+          for (Ability a : card.getAbilities()) {
+            if(a.getType().equalsIgnoreCase("Pokémon Power")) {
               abilities.append(String.format("pokemonPower \"%s\", {\n" +
                 "\t\t\t\t\ttext \"%s\"\n" +
                 "\t\t\t\t\tactionA {\n" +
                 "\t\t\t\t\t}\n" +
-                "\t\t\t\t}\n\t\t\t\t", a.name, a.text));
+                "\t\t\t\t}\n\t\t\t\t", a.getName(), a.getText()));
             }
-            if(a.type.equalsIgnoreCase("Poké-Power")) {
+            if(a.getType().equalsIgnoreCase("Poké-Power")) {
               abilities.append(String.format("pokePower \"%s\", {\n" +
                 "\t\t\t\t\ttext \"%s\"\n" +
                 "\t\t\t\t\tactionA {\n" +
                 "\t\t\t\t\t}\n" +
-                "\t\t\t\t}\n\t\t\t\t", a.name, a.text));
+                "\t\t\t\t}\n\t\t\t\t", a.getName(), a.getText()));
             }
-            if(a.type.equalsIgnoreCase("Poké-Body")) {
+            if(a.getType().equalsIgnoreCase("Poké-Body")) {
               abilities.append(String.format("pokeBody \"%s\", {\n" +
                 "\t\t\t\t\ttext \"%s\"\n" +
                 "\t\t\t\t\tdelayedA {\n" +
                 "\t\t\t\t\t}\n" +
-                "\t\t\t\t}\n\t\t\t\t", a.name, a.text));
+                "\t\t\t\t}\n\t\t\t\t", a.getName(), a.getText()));
             }
-            if(a.type.equalsIgnoreCase("Ability")) {
+            if(a.getType().equalsIgnoreCase("Ability")) {
               abilities.append(String.format("bwAbility \"%s\", {\n" +
                 "\t\t\t\t\ttext \"%s\"\n" +
                 "\t\t\t\t\tactionA {\n" +
                 "\t\t\t\t\t}\n" +
-                "\t\t\t\t}\n\t\t\t\t", a.name, a.text));
+                "\t\t\t\t}\n\t\t\t\t", a.getName(), a.getText()));
             }
-            if(a.type.equalsIgnoreCase("Ancient Trait") || a.name.startsWith("Ω") || a.name.startsWith("α") || a.name.startsWith("Δ") || a.name.startsWith("θ")) {
+            if(a.getType().equalsIgnoreCase("Ancient Trait") || a.getName().startsWith("Ω") || a.getName().startsWith("α") || a.getName().startsWith("Δ") || a.getName().startsWith("θ")) {
               abilities.append(String.format("ancientTrait \"%s\", {\n" +
                 "\t\t\t\t\ttext \"%s\"\n" +
                 "\t\t\t\t\tdelayedA {\n" +
                 "\t\t\t\t\t}\n" +
-                "\t\t\t\t}\n\t\t\t\t", a.name, a.text));
+                "\t\t\t\t}\n\t\t\t\t", a.getName(), a.getText()));
             }
           }
         }
-        if(card.moves!=null) {
-          for (Move m : card.moves) {
+        if(card.getMoves() !=null) {
+          for (Move m : card.getMoves()) {
             String movedesc = "";
             String movedamg = null;
-            if(m.damage!=null){
-              movedesc+=m.damage+" damage. ";
-              movedamg=m.damage.replaceAll("[^\\d]","");
+            if(m.getDamage() !=null){
+              movedesc+= m.getDamage() +" damage. ";
+              movedamg= m.getDamage().replaceAll("[^\\d]","");
             }
-            if(m.text!=null)
-              movedesc+=m.text;
+            if(m.getText() !=null)
+              movedesc+= m.getText();
 
             String trailingString = "\n\t\t\t\t";
-            if (card.moves.indexOf(m) == (card.moves.size() -1)) {
+            if (card.getMoves().indexOf(m) == (card.getMoves().size() -1)) {
               trailingString = "";
             }
             moves.append(String.format("move \"%s\", {\n" +
@@ -167,7 +167,7 @@ public class ImplTmplGenerator {
               "\t\t\t\t\tonAttack {\n" +
               "\t\t\t\t\t\t%s\n" +
               "\t\t\t\t\t}\n" +
-              "\t\t\t\t}%s", m.name, movedesc, StringUtils.join(m.cost,", "),movedamg!=null?"damage "+movedamg:"", trailingString));
+              "\t\t\t\t}%s", m.getName(), movedesc, StringUtils.join(m.getCost(),", "),movedamg!=null?"damage "+movedamg:"", trailingString));
 
           }
         }
@@ -253,16 +253,16 @@ public class ImplTmplGenerator {
           "\t\t\t}", cardtext);
       }
       else if (cardTypeSet.contains("BASIC_ENERGY")) {
-        impl =  String.format("basicEnergy (this, %s)", card.energy.get(0).get(0).getNotation());
+        impl =  String.format("basicEnergy (this, %s)", card.getEnergy().get(0).get(0).getNotation());
       }
       if(impl == null){
-        throw new IllegalStateException("Impl null:"+card.name+","+card.number);
+        throw new IllegalStateException("Impl null:"+ card.getName() +","+ card.getNumber());
       }
 
-      if(card.variantOf != null){
+      if(card.getVariantOf() != null){
         //search for reprints in same expansion
         for(List2Item list2Item : list2){
-          if(list2Item.getId().equals(card.variantOf)){
+          if(list2Item.getId().equals(card.getVariantOf())){
             impl = String.format("copy (%s, this)", list2Item.name);
             System.out.println("REPRINT_SAME "+ list2Item.name);
             break;
@@ -272,14 +272,14 @@ public class ImplTmplGenerator {
 
       List1Item item1 = new List1Item();
       item1.cardtype=cardTypeSet;
-      item1.cardNumber = card.number;
-      item1.fullname = card.name;
-      item1.name = card.enumId;
+      item1.cardNumber = card.getNumber();
+      item1.fullname = card.getName();
+      item1.name = card.getEnumId();
       item1.rarity = rarity;
       list1.add(item1);
       List2Item item2 = new List2Item();
-      item2.id = card.id;
-      item2.name = card.enumId;
+      item2.id = card.getId();
+      item2.name = card.getEnumId();
       item2.impl = impl;
       list2.add(item2);
     }
