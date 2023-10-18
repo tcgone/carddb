@@ -157,6 +157,34 @@ public class SetWriter {
     }
   }
 
+  public void replaceEnumId(Card card, String clause, String replacement) {
+    if (card.getEnumId().contains(clause)) {
+      card.setEnumId(card.getEnumId().replace(clause, replacement));
+    }
+  }
+
+  public void applyMiscFixes(List<ExpansionFile> expansionFiles) {
+    for (ExpansionFile expansionFile : expansionFiles) {
+      Expansion expansion = expansionFile.getExpansion();
+//      expansionFile.getExpansion().setIsFanMade(null);
+      for (Card card : expansionFile.getCards()) {
+        replaceEnumId(card, "(DELTA_SPECIES)", "DELTA");
+        replaceEnumId(card, "Δ", "DELTA");
+        replaceEnumId(card, "a:", "A:");
+        replaceEnumId(card, "b:", "B:");
+        replaceEnumId(card, "♀", "_FEMALE");
+        replaceEnumId(card, "♂", "_MALE");
+        replaceEnumId(card, "&", "AND");
+        replaceEnumId(card, "+", "PLUS");
+        replaceEnumId(card, "'", "_");
+        replaceEnumId(card, "'", "_");
+        replaceEnumId(card, "◇", "PRISM_STAR");
+//        card.setVariantType(null);
+//        card.setVariantOf(null);
+      }
+    }
+  }
+
   /**
    * @param expansionFiles must be ordered by release date first
    */
@@ -166,10 +194,7 @@ public class SetWriter {
     Map<Card, Expansion> cardToExpansion = new HashMap<>();
     for (ExpansionFile expansionFile : expansionFiles) {
       Expansion expansion = expansionFile.getExpansion();
-//      expansionFile.getExpansion().setIsFanMade(null);
       for (Card card : expansionFile.getCards()) {
-//        card.setVariantType(null);
-//        card.setVariantOf(null);
         cardToExpansion.put(card, expansion);
         String fullText = card.generateDiscriminatorFullText();
         if (map.containsKey(fullText)) {

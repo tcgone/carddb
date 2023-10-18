@@ -75,6 +75,7 @@ public class Application {
       log.info("Scans have been saved into ./scans folder. Please upload them to scans server.");
     }
     if(exportYaml){
+      setWriter.applyMiscFixes(expansionFiles);
       setWriter.detectAndSetReprints(expansionFiles);
       doVariantDebugging(expansionFiles);
       String outputDirectory = "output/e3";
