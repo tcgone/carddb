@@ -13,7 +13,7 @@ import java.util.List;
 @Ignore
 public class ClassificationsExportTest {
 
-  public class ClassificationsImporter extends Importer {
+  public static class ClassificationsImporter extends Importer {
     void export(String setEnumId) {
 //      System.out.println(setEnumId);
       allCards.stream()
@@ -27,7 +27,7 @@ public class ClassificationsExportTest {
           list.add(""); // class
           list.add(""); // freebies
           list.add("KIT"); // KIT
-          list.add(card.getImageUrlHiRes()); // scan url
+          list.add(card.getScanUrl()); // scan url
           return String.join("\t", list);
         })
         .forEach(line -> System.out.println(line));
@@ -35,7 +35,6 @@ public class ClassificationsExportTest {
   }
   public void export() throws Exception {
     ClassificationsImporter process = new ClassificationsImporter();
-    process.init();
     process.export("FIRERED_LEAFGREEN");
     process.export("TEAM_ROCKET_RETURNS");
     process.export("DEOXYS");

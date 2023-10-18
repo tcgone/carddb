@@ -13,7 +13,7 @@ import java.util.List;
  * @author axpendix@hotmail.com
  */
 @JsonIgnoreProperties(value = {"legalities", "images"})
-public class PioCard {
+public class PioCardV1 {
   public String id;
   public String name;
   public String imageUrl;//optional

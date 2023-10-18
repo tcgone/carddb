@@ -7,8 +7,11 @@ import tcgone.carddb.model.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -22,51 +25,72 @@ public class PioReader {
 
   private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PioReader.class);
 
-  public List<Card> load(InputStream inputStream) throws IOException {
-    ObjectMapper mapper = new ObjectMapper()
-      .enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
-//        Resource[] resources = applicationContext.getResources("classpath:/pio/*.json");
-    Map<String, Set<String>> superToSub = new LinkedHashMap<>();
-    List<Card> cards=new ArrayList<>();
+  public static String getFilenameWithoutExtension(String filenameWithExtension) {
+    return filenameWithExtension.replaceFirst("[.][^.]+$", "");
+  }
 
-//
-    List<PioCard> list = mapper.readValue(inputStream, new TypeReference<List<PioCard>>(){});
-    for (PioCard pc : list) {
-      log.info("Reading {} {}", pc.name, pc.number);
-      if(pc.rarity==null){
-        throw new IllegalStateException("rarity cannot be null");
+  public List<ExpansionFile> load(Stack<File> files) throws IOException {
+    List<ExpansionFile> result = new ArrayList<>();
+    for (File file : files) {
+      String expansionPioId = getFilenameWithoutExtension(file.getName());
+      Expansion expansion = setMap.get(expansionPioId);
+      log.info("Loading {}", file.getPath());
+      if (expansion == null) {
+        throw new IllegalStateException(String.format("Expansion with pioId '%s' not found. Have you loaded pio expansions file?", expansionPioId));
       }
-      pc.rarity=pc.rarity
-        .toLowerCase(Locale.ENGLISH)
-        .replace("rare secret","Secret")
-        .replace("rare ace","Rare")
-        .replace("rare holo lv.x","Rare Holo")
-        .replace("rare ultra","Ultra Rare")
-        .replace("rareultra","Ultra Rare")
-        .replace("rare prime","Rare")
-        .replace("rare break","Ultra Rare")
-        .replace("rare holo ex","Ultra Rare")
-        .replace("rare holo gx","Ultra Rare")
-        .replace("rare promo","Promo")
-        .replace("legend","Ultra Rare")
-        .replace("rareholovmax", "Rare Holo")
-        .replace("rareholov","Rare Holo")
-        .replace("rare holo vstar", "Rare Holo")
-        .replace("rare holo vmax", "Rare Holo")
-        .replace("rare holo v", "Rare Holo")
-        .replace("rare rainbow", "Ultra Rare")
-        .replace("amazing rare", "Rare Holo")
-        .replace("radiant rare", "Rare")
-        .replace("rare shiny", "Rare Holo")
-        .replace("classic collection", "Ultra Rare")
-        .replace("vm", "Rare Holo")
-        .replace("v", "Rare Holo");
+      List<Card> cards = new ArrayList<>();
+      try (InputStream inputStream = Files.newInputStream(file.toPath())) {
+        ObjectMapper mapper = new ObjectMapper().enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
-      pc.rarity= WordUtils.capitalizeFully(pc.rarity);
+        List<PioCardV1> list = mapper.readValue(inputStream, new TypeReference<List<PioCardV1>>(){});
+        for (PioCardV1 pc : list) {
+          log.info("Reading {} {}", pc.name, pc.number);
+          validatePioCard(pc);
 
-      if(pc.supertype.equals("Pokémon") && pc.types == null){
-        log.warn("NULL TYPES for "+pc.id+", "+pc.name);
+          Card card1 = prepareCard(pc);
+          cards.add(card1);
+        }
       }
+      result.add(new ExpansionFile("E3", expansion, cards));
+    }
+    return result;
+  }
+
+  private static void validatePioCard(PioCardV1 pc) {
+    if(pc.rarity==null){
+      throw new IllegalStateException("rarity cannot be null");
+    }
+    pc.rarity= pc.rarity
+      .toLowerCase(Locale.ENGLISH)
+      .replace("rare secret","Secret")
+      .replace("rare ace","Rare")
+      .replace("rare holo lv.x","Rare Holo")
+      .replace("rare ultra","Ultra Rare")
+      .replace("rareultra","Ultra Rare")
+      .replace("rare prime","Rare")
+      .replace("rare break","Ultra Rare")
+      .replace("rare holo ex","Ultra Rare")
+      .replace("rare holo gx","Ultra Rare")
+      .replace("rare promo","Promo")
+      .replace("legend","Ultra Rare")
+      .replace("rareholovmax", "Rare Holo")
+      .replace("rareholov","Rare Holo")
+      .replace("rare holo vstar", "Rare Holo")
+      .replace("rare holo vmax", "Rare Holo")
+      .replace("rare holo v", "Rare Holo")
+      .replace("rare rainbow", "Ultra Rare")
+      .replace("amazing rare", "Rare Holo")
+      .replace("radiant rare", "Rare")
+      .replace("rare shiny", "Rare Holo")
+      .replace("classic collection", "Ultra Rare")
+      .replace("vm", "Rare Holo")
+      .replace("v", "Rare Holo");
+
+    pc.rarity= WordUtils.capitalizeFully(pc.rarity);
+
+    if(pc.supertype.equals("Pokémon") && pc.types == null){
+      log.warn("NULL TYPES for "+ pc.id+", "+ pc.name);
+    }
 
 //                if(pc.supertype.equals("Pokémon")){
 //                    try {
@@ -79,46 +103,36 @@ public class PioReader {
 //                    log.warn("Level Up. name:{}, level:{}", pc.name, pc.level);
 //                }
 
-      if(!superToSub.containsKey(pc.supertype))
-        superToSub.put(pc.supertype,new HashSet<>());
-      superToSub.get(pc.supertype).add(pc.subtype);
-
-      Card c1 = prepareCard(pc);
-      cards.add(c1);
-
-    }
-//		log.info("superToSub: /{}/", superToSub);
-    inputStream.close();
-    return cards;
   }
 
   private Map<String, Expansion> setMap = new HashMap<>();
 
-  public void loadExpansions(InputStream inputStream, List<String> expansionIds) throws IOException {
-    ObjectMapper mapper = new ObjectMapper().enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
-    List<PioSet> list = mapper.readValue(inputStream, new TypeReference<List<PioSet>>(){});
+  public void loadExpansions(String[] files) throws IOException {
+    for (String file : files) {
+      log.info("Loading {}", file);
+      try (InputStream inputStream = Files.newInputStream(Paths.get(file))) {
+        ObjectMapper mapper = new ObjectMapper().enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+        List<PioSetV1> pioSets = mapper.readValue(inputStream, new TypeReference<List<PioSetV1>>(){});
 
-    for (String expansionId : expansionIds) {
-      if (!setMap.containsKey(expansionId)) {
-        Expansion expansion = new Expansion();
-        for (PioSet ps : list) {
-          if (!Objects.equals(ps.id, expansionId)) continue;
+        for (PioSetV1 ps : pioSets) {
+          Expansion expansion = new Expansion();
           expansion.setName(ps.name);
-          expansion.setId("FILL_THIS");
-          expansion.setAbbr(ps.ptcgoCode);
+          expansion.setShortName(ps.ptcgoCode);
           expansion.setEnumId(ps.name.replace("–", "-").replace("’", "'").toUpperCase(Locale.ENGLISH)
             .replaceAll("[ \\p{Punct}]", "_").replaceAll("_+", "_").replace("É", "E"));
           expansion.setPioId(ps.id);
+          expansion.setReleaseDate(ps.releaseDate);
+          expansion.setSeries(ps.series);
+          expansion.setOfficialCount(ps.printedTotal);
+          setMap.put(expansion.getPioId(), expansion);
         }
-        log.warn("PLEASE FILL IN id FIELD in {}", expansion.getName());
-        setMap.put(expansion.getPioId(), expansion);
       }
     }
   }
 
   private Set<String> stage1Db = new HashSet<>();
 
-  private Card prepareCard(PioCard pc) {
+  private Card prepareCard(PioCardV1 pc) {
     Card c = new Card();
     c.setName(pc.name);
     c.setPioId(pc.id);
@@ -126,31 +140,29 @@ public class PioReader {
     c.setArtist(pc.artist);
     c.setRegulationMark(pc.regulationMark);
     if(pc.text!=null)
-      c.setText(pc.text.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList()));
+      c.setText(pc.text.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.joining("\n")));
     else if(pc.rules!=null)
-      c.setText(pc.rules.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.toList()));
+      c.setText(pc.rules.stream().map(this::replaceTypesWithShortForms).flatMap(x->Arrays.stream(x.split("\\\\n"))).filter(s->!s.trim().isEmpty()).collect(Collectors.joining("\n")));
     c.setRarity(Rarity.of(pc.rarity));
     if(!setMap.containsKey(pc.id.replace('-'+pc.number, ""))){
-      log.warn("PLEASE FILL IN id, abbr, enumId FIELDS in {}", pc.id.replace('-'+pc.number, ""));
+      log.warn("PLEASE FILL IN enumId & shortName FIELDS in {}", pc.id.replace('-'+pc.number, ""));
       Expansion expansion = new Expansion();
       expansion.setName(pc.id.replace('-'+pc.number, ""));
-      expansion.setId("FILL_THIS");
-      expansion.setAbbr("FILL_THIS");
+      expansion.setShortName("FILL_THIS");
       expansion.setEnumId("FILL_THIS");
       expansion.setPioId(pc.id.replace('-'+pc.number, ""));
       setMap.put(expansion.getPioId(), expansion);
     }
     Expansion expansion = setMap.get(pc.id.replace('-'+pc.number, ""));
-    c.setExpansion(expansion);
     c.setEnumId(String.format("%s_%s", pc.name
       .replace("–","-").replace("’","'").toUpperCase(Locale.ENGLISH)
       .replaceAll("[ \\p{Punct}]", "_").replaceAll("_+","_").replace("É", "E"), pc.number));
-    c.setId(String.format("%s-%s", expansion.getId(), pc.number));
-    c.setSubTypes(new ArrayList<>());
+    List<CardType> cardTypes=new ArrayList<>();
+    c.setCardTypes(cardTypes);
 
     switch (pc.supertype){
       case "Pokémon":
-        c.setSuperType(CardType.POKEMON);
+        cardTypes.add(CardType.POKEMON);
         // hp of one side of legend cards is null
         if(pc.hp!=null) c.setHp(Integer.valueOf(pc.hp));
         c.setRetreatCost(pc.convertedRetreatCost);
@@ -185,18 +197,17 @@ public class PioReader {
         }
         c.setTypes(pc.types);
         c.setNationalPokedexNumber(pc.nationalPokedexNumber);
-        c.setEvolvesFrom(StringUtils.trimToNull(pc.evolvesFrom));
-        c.setEvolvesTo(pc.evolvesTo);
+        c.setEvolvesFrom(Collections.singletonList(StringUtils.trimToNull(pc.evolvesFrom)));
         break;
       case "Trainer":
-        c.setSuperType(TRAINER);
+        cardTypes.add(TRAINER);
         break;
       case "Energy":
-        c.setSuperType(ENERGY);
+        cardTypes.add(ENERGY);
         if(c.getText() !=null&&!c.getText().isEmpty()){
-          c.getSubTypes().add(SPECIAL_ENERGY);
+          cardTypes.add(SPECIAL_ENERGY);
         } else {
-          c.getSubTypes().add(BASIC_ENERGY);
+          cardTypes.add(BASIC_ENERGY);
           c.setEnergy(new ArrayList<>(Collections.singletonList(sanitizeType(Collections.singletonList(c.getName().split(" ")[0])))));
         }
         break;
@@ -209,125 +220,125 @@ public class PioReader {
       if (subtype == null) break;
       switch (subtype) {
         case "LEGEND":
-          c.getSubTypes().add(LEGEND);
+          cardTypes.add(LEGEND);
           break;
         case "Basic":
           if (pc.supertype.equals("Energy")) break;
-          c.getSubTypes().add(BASIC);
+          cardTypes.add(BASIC);
           if (pc.name.contains("-GX")) {
-            c.getSubTypes().add(POKEMON_GX);
+            cardTypes.add(POKEMON_GX);
             if (pc.name.contains(" & ")) {
-              c.getSubTypes().add(TAG_TEAM);
+              cardTypes.add(TAG_TEAM);
             }
           }
           if (pc.name.contains("-EX")) {
-            c.getSubTypes().add(POKEMON_EX);
+            cardTypes.add(POKEMON_EX);
           }
           if (pc.name.endsWith("V")) {
-            c.getSubTypes().add(POKEMON_V);
+            cardTypes.add(POKEMON_V);
           }
           break;
         case "Stage 1":
-          c.getSubTypes().add(EVOLUTION);
-          c.getSubTypes().add(STAGE1);
+          cardTypes.add(EVOLUTION);
+          cardTypes.add(STAGE1);
           if (pc.name.contains("-GX")) {
-            c.getSubTypes().add(POKEMON_GX);
+            cardTypes.add(POKEMON_GX);
             if (pc.name.contains(" & ")) {
-              c.getSubTypes().add(TAG_TEAM);
+              cardTypes.add(TAG_TEAM);
             }
           }
           if (pc.name.contains("-EX")) {
-            c.getSubTypes().add(POKEMON_EX);
+            cardTypes.add(POKEMON_EX);
           }
           stage1Db.add(pc.name);
           break;
         case "Stage 2":
-          c.getSubTypes().add(EVOLUTION);
-          c.getSubTypes().add(STAGE2);
+          cardTypes.add(EVOLUTION);
+          cardTypes.add(STAGE2);
           if (pc.name.contains("-GX")) {
-            c.getSubTypes().add(POKEMON_GX);
+            cardTypes.add(POKEMON_GX);
             if (pc.name.contains(" & ")) {
-              c.getSubTypes().add(TAG_TEAM);
+              cardTypes.add(TAG_TEAM);
             }
           }
           if (pc.name.contains("-EX")) {
-            c.getSubTypes().add(POKEMON_EX);
+            cardTypes.add(POKEMON_EX);
           }
           break;
         case "GX":
-          c.getSubTypes().add(BASIC);
-          c.getSubTypes().add(POKEMON_GX);
+          cardTypes.add(BASIC);
+          cardTypes.add(POKEMON_GX);
           if (pc.name.contains(" & ")) {
-            c.getSubTypes().add(TAG_TEAM);
+            cardTypes.add(TAG_TEAM);
           }
           break;
         case "EX":
-          c.getSubTypes().add(pc.name.endsWith(" ex") ? EX : POKEMON_EX);
+          cardTypes.add(pc.name.endsWith(" ex") ? EX : POKEMON_EX);
           if (StringUtils.isNotBlank(pc.evolvesFrom)) {
-            c.getSubTypes().add(stage1Db.contains(pc.evolvesFrom)
+            cardTypes.add(stage1Db.contains(pc.evolvesFrom)
               ? STAGE2 : STAGE1);
-            c.getSubTypes().add(EVOLUTION);
+            cardTypes.add(EVOLUTION);
           } else {
-            c.getSubTypes().add(BASIC);
+            cardTypes.add(BASIC);
           }
           break;
         case "VMAX":
-          c.getSubTypes().add(VMAX);
-          c.getSubTypes().add(EVOLUTION);
+          cardTypes.add(VMAX);
+          cardTypes.add(EVOLUTION);
           break;
         case "VSTAR":
-          c.getSubTypes().add(VSTAR);
-          c.getSubTypes().add(EVOLUTION);
+          cardTypes.add(VSTAR);
+          cardTypes.add(EVOLUTION);
         case "V-UNION":
-          c.getSubTypes().add(V_UNION);
+          cardTypes.add(V_UNION);
         case "MEGA":
-          c.getSubTypes().add(EVOLUTION);
-          c.getSubTypes().add(MEGA_POKEMON);
-          c.getSubTypes().add(POKEMON_EX);
+          cardTypes.add(EVOLUTION);
+          cardTypes.add(MEGA_POKEMON);
+          cardTypes.add(POKEMON_EX);
           break;
         case "BREAK":
-          c.getSubTypes().add(EVOLUTION);
-          c.getSubTypes().add(BREAK);
+          cardTypes.add(EVOLUTION);
+          cardTypes.add(BREAK);
           break;
         case "Level Up":
         case "Level-Up":
-          c.getSubTypes().add(EVOLUTION);
-          c.getSubTypes().add(LVL_X);
+          cardTypes.add(EVOLUTION);
+          cardTypes.add(LVL_X);
           break;
         case "Restored":
-          c.getSubTypes().add(RESTORED);
+          cardTypes.add(RESTORED);
           break;
         case "Stadium":
-          c.getSubTypes().add(STADIUM);
+          cardTypes.add(STADIUM);
           break;
         case "Item":
-          c.getSubTypes().add(ITEM);
+          cardTypes.add(ITEM);
           break;
         case "Pokémon Tool":
-          c.getSubTypes().add(POKEMON_TOOL);
+          cardTypes.add(POKEMON_TOOL);
 //				if(modernSeries.contains(pc.series)){
-          c.getSubTypes().add(ITEM);
+          cardTypes.add(ITEM);
 //				}
           break;
         case "Rocket's Secret Machine":
-          c.getSubTypes().add(ROCKETS_SECRET_MACHINE);
+          cardTypes.add(ROCKETS_SECRET_MACHINE);
           break;
         case "Technical Machine":
-          c.getSubTypes().add(TECHNICAL_MACHINE);
+          cardTypes.add(TECHNICAL_MACHINE);
           break;
         case "Supporter":
-          c.getSubTypes().add(SUPPORTER);
+          cardTypes.add(SUPPORTER);
           break;
         case "Single Strike":
-          c.getSubTypes().add(SINGLE_STRIKE);
+          cardTypes.add(SINGLE_STRIKE);
           break;
         case "Rapid Strike":
-          c.getSubTypes().add(RAPID_STRIKE);
+          cardTypes.add(RAPID_STRIKE);
         case "": // basic trainer
           break;
       }
     }
-    Collections.sort(c.getSubTypes());
+    Collections.sort(cardTypes);
     return c;
   }
 

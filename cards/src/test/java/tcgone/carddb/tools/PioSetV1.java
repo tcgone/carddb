@@ -3,7 +3,7 @@ package tcgone.carddb.tools;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(value = {"legalities", "images"})
-public class PioSet {
+public class PioSetV1 {
   public String id;
   public String name;
   public String series;

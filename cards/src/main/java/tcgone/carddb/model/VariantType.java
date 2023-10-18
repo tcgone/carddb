@@ -6,14 +6,39 @@ import org.apache.commons.lang3.text.WordUtils;
 
 public enum VariantType {
 
-  REGULAR,//(assumed for those which does not specify this field but override is possible)
-  REPRINT,//(reprints in later expansions),default if there is no variantType with a variantId.
-  HOLO,//(regular holo)
-  REVERSE,//(reverse holo)
+  /**
+   * assumed for those which does not specify this field but override is possible
+   */
+  REGULAR,
+  /**
+   * (reprints in later expansions),default if there is no variantType with a variantId != enumId.
+   */
+  REPRINT,
+  /**
+   * holo rare version
+   */
+  HOLO,
+  /**
+   * alternate art version
+   */
   ALTERNATE_ART,
+  /**
+   * full art
+   */
   FULL_ART,
+  /**
+   * secret art
+   */
   SECRET_ART,
-  PROMO;
+  /**
+   * promo
+   */
+  PROMO,
+  /**
+   * for fan-made art versions
+   */
+  FAN_ART,
+  ;
 
   private final String label;
 

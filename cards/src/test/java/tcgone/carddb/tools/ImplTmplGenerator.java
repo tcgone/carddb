@@ -1,10 +1,10 @@
 package tcgone.carddb.tools;
 
+import lombok.Value;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
-import tcgone.carddb.model.Expansion;
 import tcgone.carddb.model.*;
 
 import java.io.File;
@@ -17,13 +17,13 @@ import java.util.*;
  */
 public class ImplTmplGenerator {
 
-  public void writeAll(Collection<Expansion> expansionFiles) throws Exception {
+  public void writeAll(Collection<ExpansionFile> expansionFiles) throws Exception {
     new File("impl").mkdirs();
-    for (Expansion expansionFile : expansionFiles) {
+    for (ExpansionFile expansionFile : expansionFiles) {
       write(expansionFile);
     }
   }
-  private void write(Expansion expansionFile) throws Exception {
+  private void write(ExpansionFile expansionFile) throws Exception {
     /*
      * expansion.vm requires:
      * classname foldername collection
@@ -34,7 +34,7 @@ public class ImplTmplGenerator {
     Map<String, Object> modelmap = new HashMap<>();
     List<List1Item> list1 = new ArrayList<>();
     List<List2Item> list2 = new ArrayList<>();
-    String EXPNNAME= expansionFile.getEnumId();
+    String EXPNNAME= expansionFile.getExpansion().getEnumId();
     modelmap.put("classname", WordUtils.capitalizeFully(EXPNNAME.replaceAll("_"," ")).replaceAll(" ",""));
     modelmap.put("foldername", EXPNNAME.toLowerCase(Locale.ENGLISH));
     modelmap.put("collection", EXPNNAME);
@@ -42,16 +42,15 @@ public class ImplTmplGenerator {
     modelmap.put("list2", list2);
 
     // the magic happens here
-    block_card:
-    for(Card card: expansionFile.getCards()){
+    for (Card card : expansionFile.getCards()) {
       List<String> cardTypeSet = new ArrayList<>();
       String rarity = null;
       String rc = String.valueOf(card.getRetreatCost());
       String hp = null;
       String predecessor = null;
       String cardtext = null;
-      if(card.getText() !=null) {
-        cardtext=StringUtils.join(card.getText(),"\" +\n\t\t\t\t\t\"");
+      if (card.getText() != null) {
+        cardtext = StringUtils.join(card.getText(), "\" +\n\t\t\t\t\t\"");
       }
       String typesCombined = null;
       StringBuilder weakness = new StringBuilder();
@@ -60,18 +59,17 @@ public class ImplTmplGenerator {
       StringBuilder abilities = new StringBuilder();
 
       // rarity
-      if (card.getRarity() == Rarity.RARE_HOLO){
-        rarity="HOLORARE";
-      } else if (card.getRarity() == Rarity.ULTRA_RARE){
-        rarity="ULTRARARE";
+      if (card.getRarity() == Rarity.RARE_HOLO) {
+        rarity = "HOLORARE";
+      } else if (card.getRarity() == Rarity.ULTRA_RARE) {
+        rarity = "ULTRARARE";
       } else {
         rarity = card.getRarity().name();
       }
-      cardTypeSet.add(card.getSuperType().name());
-      for (CardType subType : card.getSubTypes()) {
+      for (CardType subType : card.getCardTypes()) {
         cardTypeSet.add(subType.name());
       }
-      if(card.getSuperType() == CardType.POKEMON) {
+      if (card.getCardTypes().contains(CardType.POKEMON)) {
         //hp
         hp = String.valueOf(card.getHp());
         if (hp.length() < 3) {
@@ -89,54 +87,54 @@ public class ImplTmplGenerator {
             cardTypeSet.add("_" + _type.name() + "_");
           }
         }
-        if (card.getSubTypes().contains(CardType.BABY)) {
+        if (card.getCardTypes().contains(CardType.BABY)) {
           cardTypeSet.add("BASIC");
         }
-        predecessor= card.getEvolvesFrom();
-        if(card.getWeaknesses() !=null){
+        predecessor = (card.getEvolvesFrom() != null && !card.getEvolvesFrom().isEmpty()) ? card.getEvolvesFrom().get(0) : null;
+        if (card.getWeaknesses() != null) {
           for (WeaknessResistance wr : card.getWeaknesses()) {
-            weakness.append(String.format("weakness %s%s\n\t\t\t\t", wr.getType().getNotation(), !wr.getValue().equalsIgnoreCase("x2")?", '"+ wr.getValue() +"'":""));
+            weakness.append(String.format("weakness %s%s\n\t\t\t\t", wr.getType().getNotation(), !wr.getValue().equalsIgnoreCase("x2") ? ", '" + wr.getValue() + "'" : ""));
           }
         }
-        if(card.getResistances() !=null){
+        if (card.getResistances() != null) {
           for (WeaknessResistance wr : card.getResistances()) {
             String typ = "";
-            if("-20".equals(wr.getValue())) typ=", MINUS20";
-            if("-30".equals(wr.getValue())) typ=", MINUS30";
-            resistance.append(String.format("resistance %s\n\t\t\t\t", wr.getType().getNotation()+typ));
+            if ("-20".equals(wr.getValue())) typ = ", MINUS20";
+            if ("-30".equals(wr.getValue())) typ = ", MINUS30";
+            resistance.append(String.format("resistance %s\n\t\t\t\t", wr.getType().getNotation() + typ));
           }
         }
-        if(card.getAbilities() !=null) {
+        if (card.getAbilities() != null) {
           for (Ability a : card.getAbilities()) {
-            if(a.getType().equalsIgnoreCase("Pokémon Power")) {
+            if (a.getType().equalsIgnoreCase("Pokémon Power")) {
               abilities.append(String.format("pokemonPower \"%s\", {\n" +
                 "\t\t\t\t\ttext \"%s\"\n" +
                 "\t\t\t\t\tactionA {\n" +
                 "\t\t\t\t\t}\n" +
                 "\t\t\t\t}\n\t\t\t\t", a.getName(), a.getText()));
             }
-            if(a.getType().equalsIgnoreCase("Poké-Power")) {
+            if (a.getType().equalsIgnoreCase("Poké-Power")) {
               abilities.append(String.format("pokePower \"%s\", {\n" +
                 "\t\t\t\t\ttext \"%s\"\n" +
                 "\t\t\t\t\tactionA {\n" +
                 "\t\t\t\t\t}\n" +
                 "\t\t\t\t}\n\t\t\t\t", a.getName(), a.getText()));
             }
-            if(a.getType().equalsIgnoreCase("Poké-Body")) {
+            if (a.getType().equalsIgnoreCase("Poké-Body")) {
               abilities.append(String.format("pokeBody \"%s\", {\n" +
                 "\t\t\t\t\ttext \"%s\"\n" +
                 "\t\t\t\t\tdelayedA {\n" +
                 "\t\t\t\t\t}\n" +
                 "\t\t\t\t}\n\t\t\t\t", a.getName(), a.getText()));
             }
-            if(a.getType().equalsIgnoreCase("Ability")) {
+            if (a.getType().equalsIgnoreCase("Ability")) {
               abilities.append(String.format("bwAbility \"%s\", {\n" +
                 "\t\t\t\t\ttext \"%s\"\n" +
                 "\t\t\t\t\tactionA {\n" +
                 "\t\t\t\t\t}\n" +
                 "\t\t\t\t}\n\t\t\t\t", a.getName(), a.getText()));
             }
-            if(a.getType().equalsIgnoreCase("Ancient Trait") || a.getName().startsWith("Ω") || a.getName().startsWith("α") || a.getName().startsWith("Δ") || a.getName().startsWith("θ")) {
+            if (a.getType().equalsIgnoreCase("Ancient Trait") || a.getName().startsWith("Ω") || a.getName().startsWith("α") || a.getName().startsWith("Δ") || a.getName().startsWith("θ")) {
               abilities.append(String.format("ancientTrait \"%s\", {\n" +
                 "\t\t\t\t\ttext \"%s\"\n" +
                 "\t\t\t\t\tdelayedA {\n" +
@@ -145,19 +143,19 @@ public class ImplTmplGenerator {
             }
           }
         }
-        if(card.getMoves() !=null) {
+        if (card.getMoves() != null) {
           for (Move m : card.getMoves()) {
             String movedesc = "";
             String movedamg = null;
-            if(m.getDamage() !=null){
-              movedesc+= m.getDamage() +" damage. ";
-              movedamg= m.getDamage().replaceAll("[^\\d]","");
+            if (m.getDamage() != null) {
+              movedesc += m.getDamage() + " damage. ";
+              movedamg = m.getDamage().replaceAll("[^\\d]", "");
             }
-            if(m.getText() !=null)
-              movedesc+= m.getText();
+            if (m.getText() != null)
+              movedesc += m.getText();
 
             String trailingString = "\n\t\t\t\t";
-            if (card.getMoves().indexOf(m) == (card.getMoves().size() -1)) {
+            if (card.getMoves().indexOf(m) == (card.getMoves().size() - 1)) {
               trailingString = "";
             }
             moves.append(String.format("move \"%s\", {\n" +
@@ -167,51 +165,46 @@ public class ImplTmplGenerator {
               "\t\t\t\t\tonAttack {\n" +
               "\t\t\t\t\t\t%s\n" +
               "\t\t\t\t\t}\n" +
-              "\t\t\t\t}%s", m.getName(), movedesc, StringUtils.join(m.getCost(),", "),movedamg!=null?"damage "+movedamg:"", trailingString));
+              "\t\t\t\t}%s", m.getName(), movedesc, StringUtils.join(m.getCost(), ", "), movedamg != null ? "damage " + movedamg : "", trailingString));
 
           }
         }
       }
 
-      String impl=null;
+      String impl = null;
       if (cardTypeSet.contains("BABY")) {
-        impl =  String.format("baby (this, successors:%s, hp:%s, type:%s, retreatCost:%s) {\n" +
+        impl = String.format("baby (this, successors:%s, hp:%s, type:%s, retreatCost:%s) {\n" +
             "\t\t\t\t%s%s%s%s\n" +
             "\t\t\t}",
-          "'SUCCESSOR(S)'", hp, typesCombined, rc, weakness.toString(), resistance.toString(), abilities.toString(), moves.toString());
-      }
-      else if (cardTypeSet.contains("BASIC") || cardTypeSet.contains("RESTORED")) {
-        impl =  String.format("basic (this, hp:%s, type:%s, retreatCost:%s) {\n" +
+          "'SUCCESSOR(S)'", hp, typesCombined, rc, weakness, resistance, abilities, moves);
+      } else if (cardTypeSet.contains("BASIC") || cardTypeSet.contains("RESTORED")) {
+        impl = String.format("basic (this, hp:%s, type:%s, retreatCost:%s) {\n" +
             "\t\t\t\t%s%s%s%s\n" +
             "\t\t\t}",
-          hp, typesCombined, rc, weakness.toString(), resistance.toString(), abilities.toString(), moves.toString());
-      }
-      else if (cardTypeSet.contains("EVOLUTION") || cardTypeSet.contains("VMAX") || cardTypeSet.contains("VSTAR")) {
-        impl =  String.format("evolution (this, from:\"%s\", hp:%s, type:%s, retreatCost:%s) {\n" +
+          hp, typesCombined, rc, weakness, resistance, abilities, moves);
+      } else if (cardTypeSet.contains("EVOLUTION") || cardTypeSet.contains("VMAX") || cardTypeSet.contains("VSTAR")) {
+        impl = String.format("evolution (this, from:\"%s\", hp:%s, type:%s, retreatCost:%s) {\n" +
             "\t\t\t\t%s%s%s%s\n" +
             "\t\t\t}",
-          predecessor, hp, typesCombined, rc, weakness.toString(), resistance.toString(), abilities.toString(), moves.toString());
-      }
-      else if (cardTypeSet.contains("SUPPORTER")) {
-        impl =  String.format("supporter (this) {\n" +
+          predecessor, hp, typesCombined, rc, weakness, resistance, abilities, moves);
+      } else if (cardTypeSet.contains("SUPPORTER")) {
+        impl = String.format("supporter (this) {\n" +
           "\t\t\t\ttext \"%s\"\n" +
           "\t\t\t\tonPlay {\n" +
           "\t\t\t\t}\n" +
           "\t\t\t\tplayRequirement{\n" +
           "\t\t\t\t}\n" +
           "\t\t\t}", cardtext);
-      }
-      else if (cardTypeSet.contains("STADIUM")){
-        impl =  String.format("stadium (this) {\n" +
+      } else if (cardTypeSet.contains("STADIUM")) {
+        impl = String.format("stadium (this) {\n" +
           "\t\t\t\ttext \"%s\"\n" +
           "\t\t\t\tonPlay {\n" +
           "\t\t\t\t}\n" +
           "\t\t\t\tonRemoveFromPlay{\n" +
           "\t\t\t\t}\n" +
           "\t\t\t}", cardtext);
-      }
-      else if (cardTypeSet.contains("POKEMON_TOOL")){
-        impl =  String.format("pokemonTool (this) {\n" +
+      } else if (cardTypeSet.contains("POKEMON_TOOL")) {
+        impl = String.format("pokemonTool (this) {\n" +
           "\t\t\t\ttext \"%s\"\n" +
           "\t\t\t\tonPlay {reason->\n" +
           "\t\t\t\t}\n" +
@@ -220,27 +213,24 @@ public class ImplTmplGenerator {
           "\t\t\t\tallowAttach {to->\n" +
           "\t\t\t\t}\n" +
           "\t\t\t}", cardtext);
-      }
-      else if (cardTypeSet.contains("ITEM")) {
-        impl =  String.format("itemCard (this) {\n" +
+      } else if (cardTypeSet.contains("ITEM")) {
+        impl = String.format("itemCard (this) {\n" +
           "\t\t\t\ttext \"%s\"\n" +
           "\t\t\t\tonPlay {\n" +
           "\t\t\t\t}\n" +
           "\t\t\t\tplayRequirement{\n" +
           "\t\t\t\t}\n" +
           "\t\t\t}", cardtext);
-      }
-      else if (cardTypeSet.contains("TRAINER")) {
-        impl =  String.format("basicTrainer (this) {\n" +
+      } else if (cardTypeSet.contains("TRAINER")) {
+        impl = String.format("basicTrainer (this) {\n" +
           "\t\t\t\ttext \"%s\"\n" +
           "\t\t\t\tonPlay {\n" +
           "\t\t\t\t}\n" +
           "\t\t\t\tplayRequirement{\n" +
           "\t\t\t\t}\n" +
           "\t\t\t}", cardtext);
-      }
-      else if (cardTypeSet.contains("SPECIAL_ENERGY")) {
-        impl =  String.format("specialEnergy (this, [[C]]) {\n" +
+      } else if (cardTypeSet.contains("SPECIAL_ENERGY")) {
+        impl = String.format("specialEnergy (this, [[C]]) {\n" +
           "\t\t\t\ttext \"%s\"\n" +
           "\t\t\t\tonPlay {reason->\n" +
           "\t\t\t\t}\n" +
@@ -251,37 +241,26 @@ public class ImplTmplGenerator {
           "\t\t\t\tallowAttach {to->\n" +
           "\t\t\t\t}\n" +
           "\t\t\t}", cardtext);
+      } else if (cardTypeSet.contains("BASIC_ENERGY")) {
+        impl = String.format("basicEnergy (this, %s)", card.getEnergy().get(0).get(0).getNotation());
       }
-      else if (cardTypeSet.contains("BASIC_ENERGY")) {
-        impl =  String.format("basicEnergy (this, %s)", card.getEnergy().get(0).get(0).getNotation());
-      }
-      if(impl == null){
-        throw new IllegalStateException("Impl null:"+ card.getName() +","+ card.getNumber());
+      if (impl == null) {
+        throw new IllegalStateException("Impl null:" + card.getName() + "," + card.getNumber());
       }
 
-      if(card.getVariantOf() != null){
+      if (card.getVariantOf() != null) {
         //search for reprints in same expansion
-        for(List2Item list2Item : list2){
-          if(list2Item.getId().equals(card.getVariantOf())){
+        for (List2Item list2Item : list2) {
+          if (list2Item.getId().equals(card.getVariantOf())) {
             impl = String.format("copy (%s, this)", list2Item.name);
-            System.out.println("REPRINT_SAME "+ list2Item.name);
+            System.out.println("REPRINT_SAME " + list2Item.name);
             break;
           }
         }
       }
 
-      List1Item item1 = new List1Item();
-      item1.cardtype=cardTypeSet;
-      item1.cardNumber = card.getNumber();
-      item1.fullname = card.getName();
-      item1.name = card.getEnumId();
-      item1.rarity = rarity;
-      list1.add(item1);
-      List2Item item2 = new List2Item();
-      item2.id = card.getId();
-      item2.name = card.getEnumId();
-      item2.impl = impl;
-      list2.add(item2);
+      list1.add(new List1Item(card.getEnumId(), card.getName(), cardTypeSet, rarity, card.getNumber()));
+      list2.add(new List2Item(card.getEnumId(), card.getEnumId(), impl));
     }
 
     try {
@@ -299,67 +278,19 @@ public class ImplTmplGenerator {
     }
   }
 
+  @Value
   public static class List1Item {
-    private String name;
-    private String fullname;
-    private List<String> cardtype;
-    private String rarity;
-    private String cardNumber;
-    public String getName() {
-      return name;
-    }
-    public void setName(String name) {
-      this.name = name;
-    }
-    public String getFullname() {
-      return fullname;
-    }
-    public void setFullname(String fullname) {
-      this.fullname = fullname;
-    }
-    public List<String> getCardtype() {
-      return cardtype;
-    }
-    public void setCardtype(List<String> cardtype) {
-      this.cardtype = cardtype;
-    }
-    public String getRarity() {
-      return rarity;
-    }
-    public void setRarity(String rarity) {
-      this.rarity = rarity;
-    }
-    public String getCardNumber() {
-      return cardNumber;
-    }
-    public void setCardNumber(String cardNumber) {
-      this.cardNumber = cardNumber;
-    }
-
+    String name;
+    String fullname;
+    List<String> cardTypes;
+    String rarity;
+    String cardNumber;
   }
 
+  @Value
   public static class List2Item {
-    private String id;
-    private String name;
-    private String impl;
-    public String getId() {
-      return id;
-    }
-    public void setId(String id) {
-      this.id = id;
-    }
-    public String getName() {
-      return name;
-    }
-    public void setName(String name) {
-      this.name = name;
-    }
-    public String getImpl() {
-      return impl;
-    }
-    public void setImpl(String impl) {
-      this.impl = impl;
-    }
-
+    String id;
+    String name;
+    String impl;
   }
 }

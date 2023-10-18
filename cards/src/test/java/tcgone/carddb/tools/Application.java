@@ -4,15 +4,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.apache.commons.cli.*;
 import org.apache.commons.lang3.StringUtils;
+import tcgone.carddb.data.Importer;
 import tcgone.carddb.model.Card;
-import tcgone.carddb.model.Expansion;
-import tcgone.carddb.model3.Card3;
-import tcgone.carddb.model3.ExpansionFile3;
+import tcgone.carddb.model.EnhancedCard;
+import tcgone.carddb.model.ExpansionFile;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -30,6 +29,7 @@ public class Application {
   private final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
   private final PioReader pioReader=new PioReader();
   private final Options options;
+  private List<ExpansionFile> expansionFiles = new ArrayList<>();
 
   public Application(String[] args) throws Exception {
 
@@ -50,46 +50,45 @@ public class Application {
     boolean exportYaml = cmd.hasOption("export-yaml");
     boolean exportImplTmpl = cmd.hasOption("export-impl-tmpl");
     boolean downloadScans = cmd.hasOption("download-scans");
-    boolean exportE3 = cmd.hasOption("export-e3");
-    if(!exportImplTmpl&&!exportYaml&&!downloadScans&&!exportE3){
+    if(!exportImplTmpl&&!exportYaml&&!downloadScans){
       log.warn("Nothing to do. Please specify an output option");
       printUsage();
       return;
     }
-    List<Card> allCards=new ArrayList<>();
-    List<Expansion> allExpansions=new ArrayList<>();
-    readPios(pios, pioExpansions, allCards);
-    readYamls(yamls, allCards, allExpansions);
-    SetWriter setWriter = new SetWriter();
-    List<Expansion> expansions = setWriter.prepareAndOrderExpansionFiles(allCards);
-    if(exportE3){
-      List<ExpansionFile3> expansionFile3s = setWriter.convertFromE2ToE3(expansions);
-      expansionFile3s.sort(Comparator.comparing(expansionFile3 -> expansionFile3.getExpansion().getOrderId()));
-      setWriter.prepareReprintsE3(expansionFile3s);
-      doVariantDebugging(expansionFile3s);
-      String outputDirectory = "output/e3";
-      setWriter.writeAllE3(expansionFile3s, outputDirectory);
-      log.info("E3 YAMLs have been written to {} folder. Please copy them under src/main/resources/cards if you want them to take over.", outputDirectory);
+    if (pios != null) {
+      readPios(pios, pioExpansions);
     }
-    setWriter.prepareReprints(expansions);
+    if (yamls !=null) {
+      expansionFiles = readYamlsCrude(yamls);
+//      Importer importer = importYamls(yamls);
+//      expansionFiles.addAll(importer.getExpansionFiles());
+    }
+    if (expansionFiles.isEmpty()) {
+      log.error("No expansion files could be found!");
+    }
+    SetWriter setWriter = new SetWriter();
+    expansionFiles.sort(Comparator.comparing(expansionFile -> expansionFile.getExpansion().getOrderId()));
 //		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
     if(downloadScans){
       ScanDownloader scanDownloader = new ScanDownloader();
-      scanDownloader.downloadAll(allCards);
+      scanDownloader.downloadAll(expansionFiles);
       log.info("Scans have been saved into ./scans folder. Please upload them to scans server.");
     }
     if(exportYaml){
-      setWriter.writeAllE2(expansions, "output");
-      log.info("YAMLs have been written to ./output folder. Please copy them under src/main/resources/cards if you want them to take over.");
+      setWriter.detectAndSetReprints(expansionFiles);
+      doVariantDebugging(expansionFiles);
+      String outputDirectory = "output/e3";
+      setWriter.writeAllE3(expansionFiles, outputDirectory);
+      log.info("E3 YAMLs have been written to {} folder. Please copy them under src/main/resources/cards if you want them to take over.", outputDirectory);
     }
     if(exportImplTmpl){
       ImplTmplGenerator implTmplGenerator = new ImplTmplGenerator();
-      implTmplGenerator.writeAll(expansions);
+      implTmplGenerator.writeAll(expansionFiles);
       log.info("Implementation Templates (Groovy files) have been written to ./impl folder. Please copy them under contrib repo.");
     }
   }
 
-  private static void doVariantDebugging(List<ExpansionFile3> all) {
+  private static void doVariantDebugging(List<ExpansionFile> all) {
     cardStreamOfExpansion(all, "LC").filter(c -> StringUtils.isBlank(c.getVariantOf())).forEach(c -> {
       String adversaryText = c.generateDiscriminatorFullText();
       log.debug(">>>MISSING VARIANT: {}", adversaryText);
@@ -101,7 +100,7 @@ public class Application {
     });
   }
 
-  private static Stream<Card3> cardStreamOfExpansion(List<ExpansionFile3> all, String expansionShortName) {
+  private static Stream<Card> cardStreamOfExpansion(List<ExpansionFile> all, String expansionShortName) {
     return all.stream().filter(ef3 -> ef3.getExpansion().getShortName().equals(expansionShortName)).flatMap(ef3 -> ef3.getCards().stream());
   }
 
@@ -113,62 +112,64 @@ public class Application {
     options.addOption(null, "export-yaml", false, "GOAL: export TCG ONE carddb yaml files");
     options.addOption(null, "export-implementations", false, "GOAL: export TCG ONE engine implementation template files");
     options.addOption(null, "download-scans", false, "GOAL: download scans");
-    options.addOption(null, "export-e3", false, "GOAL: upgrade from TCG ONE carddb e2 schema to e3 schema then export them");
     return options;
   }
 
-  private void readPios(String[] pios, String[] pioExpansions, List<Card> allCards) throws IOException {
-    if(pios !=null){
-      ArrayList<String> expansionIds = new ArrayList<>();
-
-      for (String filename : pios) {
-        expansionIds.add(Paths.get(filename).getFileName().toString().split("\\.")[0]);
-      }
-
-      if (pioExpansions != null) {
-        for (String filename : pioExpansions) {
-          log.info("Reading {}", filename);
-          pioReader.loadExpansions(Files.newInputStream(Paths.get(filename)), expansionIds);
-        }
-      }
-
-      for (String filename : pios) {
-        log.info("Reading {}", filename);
-        allCards.addAll(pioReader.load(Files.newInputStream(Paths.get(filename))));
-      }
+  private void readPios(String[] pios, String[] pioExpansions) throws IOException {
+    if (pioExpansions != null) {
+      pioReader.loadExpansions(pioExpansions);
     }
+    Stack<File> fileStack = prepareFileStack(pios);
+    List<ExpansionFile> loaded = pioReader.load(fileStack);
+    expansionFiles.addAll(loaded);
   }
 
-  private void readYamls(String[] yamls, List<Card> allCards, List<Expansion> allExpansions) throws IOException {
-    if(yamls !=null){
-      for (String filename : yamls) {
-        Stack<File> fileStack = new Stack<>();
-        File file = new File(filename);
-        if(file.isDirectory()){
-          for (File file1 : Objects.requireNonNull(file.listFiles())) {
-            fileStack.push(file1);
-          }
-        } else {
-          fileStack.push(file);
-        }
-        while (!fileStack.isEmpty()){
-          File currentFile = fileStack.pop();
-          if(!currentFile.getName().endsWith("yaml")) continue;
-          log.info("Reading {}", currentFile.getName());
-          Expansion expansion = readExpansion(currentFile);
-          allExpansions.add(expansion);
-          allCards.addAll(expansion.getCards());
-        }
+  private static List<EnhancedCard> addAndEnhanceAllCardsFromExpansionFiles(List<ExpansionFile> loaded) {
+    List<EnhancedCard> allCards = new ArrayList<>();
+    for (ExpansionFile expansionFile : loaded) {
+      for (Card card : expansionFile.getCards()) {
+        EnhancedCard enhancedCard = EnhancedCard.fromCard(card);
+        enhancedCard.setExpansion(expansionFile.getExpansion());
+        allCards.add(enhancedCard);
       }
     }
+    return allCards;
   }
 
-  private Expansion readExpansion(File pop) throws IOException {
-    Expansion expansion = mapper.readValue(Files.newInputStream(pop.toPath()), Expansion.class);
-    for (Card card : expansion.getCards()) {
-      card.setExpansion(expansion); // temporary
+  private List<ExpansionFile> readYamlsCrude(String[] yamls) throws IOException {
+    List<ExpansionFile> list = new ArrayList<>();
+    Stack<File> fileStack = prepareFileStack(yamls);
+    while (!fileStack.isEmpty()){
+      File currentFile = fileStack.pop();
+      if(!currentFile.getName().endsWith("yaml")) continue;
+      log.info("Reading {}", currentFile.getName());
+      list.add(readExpansionFile(currentFile));
     }
-    return expansion;
+    return list;
+  }
+
+  private Importer importYamls(String[] yamls) {
+    Stack<File> fileStack = prepareFileStack(yamls);
+    return new Importer(fileStack);
+  }
+
+  private static Stack<File> prepareFileStack(String[] inputFileOrFolderPaths) {
+    Stack<File> fileStack = new Stack<>();
+    for (String filename : inputFileOrFolderPaths) {
+      File file = new File(filename);
+      if(file.isDirectory()){
+        for (File file1 : Objects.requireNonNull(file.listFiles())) {
+          fileStack.push(file1);
+        }
+      } else {
+        fileStack.push(file);
+      }
+    }
+    return fileStack;
+  }
+
+  private ExpansionFile readExpansionFile(File pop) throws IOException {
+    return mapper.readValue(Files.newInputStream(pop.toPath()), ExpansionFile.class);
   }
 
   private void printUsage() {
