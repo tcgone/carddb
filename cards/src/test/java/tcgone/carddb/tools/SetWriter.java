@@ -168,6 +168,8 @@ public class SetWriter {
       Expansion expansion = expansionFile.getExpansion();
 //      expansionFile.getExpansion().setIsFanMade(null);
       for (Card card : expansionFile.getCards()) {
+//        card.setVariantType(null);
+//        card.setVariantOf(null);
         cardToExpansion.put(card, expansion);
         String fullText = card.generateDiscriminatorFullText();
         if (map.containsKey(fullText)) {
