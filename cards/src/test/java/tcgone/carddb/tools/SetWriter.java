@@ -114,49 +114,6 @@ public class SetWriter {
 //    return orderedList;
 //  }
 
-  /**
-   * @param allCards must be ordered by release date first
-   */
-  public void detectAndSetReprintsWithEnhancedCards(List<EnhancedCard> allCards) {
-    // fullText --> Card
-    Map<String, EnhancedCard> map = new HashMap<>();
-    for (EnhancedCard card : allCards) {
-      String fullText = card.generateDiscriminatorFullText();
-      if (map.containsKey(fullText)) {
-        EnhancedCard original = map.get(fullText);
-        // full-art, secret-art, holo can only be assigned if the original card is in the same expansion
-        if (original.getExpansion().equals(card.getExpansion())) {
-
-          // for some expansions (mostly classic), original (holo) is listed before regular version
-          if (original.getRarity() == Rarity.RARE_HOLO && card.getRarity() == Rarity.RARE) {
-            original.setVariantType(VariantType.HOLO);
-            card.setVariantType(VariantType.REGULAR);
-          }
-          else if (card.getRarity() == Rarity.PROMO) {
-            card.setVariantType(VariantType.PROMO);
-          } else if (card.getRarity() == Rarity.ULTRA_RARE) {
-            card.setVariantType(VariantType.FULL_ART);
-          } else if (card.getRarity() == Rarity.SECRET) {
-            card.setVariantType(VariantType.SECRET_ART);
-          } else if (card.getRarity() == Rarity.RARE_HOLO) {
-            card.setVariantType(VariantType.HOLO);
-          } else {
-            card.setVariantType(VariantType.ALTERNATE_ART);
-          }
-        } else { // reprint and promo possible in different expansions
-          if (card.getRarity() == Rarity.PROMO) {
-            card.setVariantType(VariantType.PROMO);
-          } else {
-            card.setVariantType(VariantType.REPRINT);
-          }
-        }
-        card.setVariantOf(original.getEnumId());
-      } else {
-        map.put(fullText, card);
-      }
-    }
-  }
-
   public void replaceEnumId(Card card, String clause, String replacement) {
     if (card.getEnumId().contains(clause)) {
       card.setEnumId(card.getEnumId().replace(clause, replacement));

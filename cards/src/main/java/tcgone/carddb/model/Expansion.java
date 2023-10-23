@@ -5,6 +5,8 @@ import lombok.Data;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import java.util.Locale;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 public class Expansion {
@@ -39,6 +41,10 @@ public class Expansion {
   private String symbolUrl;
   private Boolean isFanMade;
   private Boolean notImplemented;
+
+  public String generateFileName() {
+    return String.format("%s-%s", orderId, enumId.toLowerCase(Locale.ENGLISH));
+  }
 
   public String toString() {
     return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);

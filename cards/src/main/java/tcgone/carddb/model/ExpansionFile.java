@@ -29,11 +29,7 @@ public class ExpansionFile {
    */
   List<Card> cards;
 
-  public String generateFileName() {
-    return String.format("%s-%s", expansion.getOrderId(), expansion.getEnumId().toLowerCase(Locale.ENGLISH));
-  }
-
   public String generateFinalFilePath(String outputDirectory) {
-    return String.format("%s%s%s.yaml", outputDirectory, File.separatorChar, generateFileName());
+    return String.format("%s%s%s.yaml", outputDirectory, File.separatorChar, expansion.generateFileName());
   }
 }

@@ -51,6 +51,7 @@ public class Importer {
   protected List<EnhancedCard> allCards = new ArrayList<>();
   @Getter
   protected List<ExpansionFile> expansionFiles = new ArrayList<>();
+  @Getter
   protected Map<String, EnhancedCard> idToCard = new THashMap<>();
   protected Map<String, Collection<EnhancedCard>> variantsMap = new THashMap<>();
 
@@ -69,20 +70,15 @@ public class Importer {
 
   public Importer(Collection<File> inputFiles) {
     this.inputFiles = inputFiles;
-    try {
-      process();
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
   }
 
-  private void process() throws Exception {
+  public void process() throws ImportException {
     processExpansionsAndCards();
     processEvolutionChains();
     processFormats();
   }
 
-  protected void processExpansionsAndCards() throws Exception {
+  protected void processExpansionsAndCards() throws ImportException {
     // read
     readExpansionFiles();
 
@@ -122,11 +118,15 @@ public class Importer {
     log.info("Imported {} cards", allCards.size());
   }
 
-  private void readExpansionFiles() throws Exception {
-    if (inputFiles == null) {
-      readExpansionFilesFromClasspath();
-    } else {
-      readExpansionFilesFromStack();
+  private void readExpansionFiles() throws ImportException {
+    try {
+      if (inputFiles == null) {
+        readExpansionFilesFromClasspath();
+      } else {
+        readExpansionFilesFromStack();
+      }
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
     if(expansionFiles.size() < 100) {
       log.warn("There are only {} expansions imported. There should have been at least 100", expansionFiles.size());
@@ -135,19 +135,19 @@ public class Importer {
       throw new ImportException("No cards were imported");
     }
   }
-  private void readExpansionFilesFromClasspath() throws Exception {
+  private void readExpansionFilesFromClasspath() throws IOException {
     try (ScanResult scanResult = new ClassGraph().acceptPaths("cards").scan()) {
       scanResult.getResourcesWithExtension("yaml")
         .forEachInputStreamThrowingIOException((resource, inputStream) -> {
           try {
             expansionFiles.add(readExpansionFile(resource.getPath(), inputStream));
-          } catch (Exception e) {
+          } catch (ImportException e) {
             throw new RuntimeException(e);
           }
         });
     }
   }
-  private void readExpansionFilesFromStack() throws Exception {
+  private void readExpansionFilesFromStack() throws IOException, ImportException {
     for (File inputFile : inputFiles) {
       expansionFiles.add(readExpansionFile(inputFile.getName(), Files.newInputStream(inputFile.toPath())));
     }
@@ -181,7 +181,7 @@ public class Importer {
 
   private void assertNoViolation(List<ConstraintViolation> violations) throws ImportException {
     if (!violations.isEmpty()) {
-      throw new ImportException("Validation failed: \n" + violations.stream().map(ConstraintViolation::toString).collect(Collectors.joining("\n")));
+      throw new ImportException("Validation failed", violations);
     }
   }
 
@@ -207,9 +207,9 @@ public class Importer {
         if (StringUtils.isBlank(card.getEnumId())) {
           violations.add(new ConstraintViolation("cards/"+ expansion.getEnumId() +"/card/?", "enumId missing"));
         } else if (!cardEnumIdPattern.matcher(card.getEnumId()).matches()) {
-          violations.add(new ConstraintViolation(getContextFor(expansionFile, card), "enumId must match NAME_NUMBER:EXPANSION"));
+          violations.add(new ConstraintViolation(getContextFor(expansion, card), "enumId must match NAME_NUMBER:EXPANSION"));
         } else if (!card.getEnumId().endsWith(":" + expansion.getEnumId())) {
-          violations.add(new ConstraintViolation(getContextFor(expansionFile, card), "enumId must match NAME_NUMBER:EXPANSION thus must end with " + expansion.getEnumId()));
+          violations.add(new ConstraintViolation(getContextFor(expansion, card), "enumId must match NAME_NUMBER:EXPANSION thus must end with " + expansion.getEnumId()));
         }
       }
     }
@@ -307,11 +307,11 @@ public class Importer {
   }
 
   private static String getContextFor(EnhancedCard card) {
-    return "cards/" + card.getExpansion().getEnumId() + "/" + card.getEnumId();
+    return "cards/" + card.getExpansion().generateFileName() + "/" + card.getEnumId();
   }
 
-  private static String getContextFor(ExpansionFile expansionFile, Card card) {
-    return "cards/" + expansionFile.generateFileName() + "/" + card.getEnumId();
+  private static String getContextFor(Expansion expansion, Card card) {
+    return "cards/" + expansion.generateFileName() + "/" + card.getEnumId();
   }
 
   private void validateVariantsAndCopyPropertiesBetweenThem(List<ConstraintViolation> violations) {
@@ -355,12 +355,12 @@ public class Importer {
           card.setResistances(base.getResistances());
         }
         if (card.getMoves() != null && !Objects.equals(base.getMoves(), card.getMoves())) {
-          violations.add(new ConstraintViolation(context, "different moves in copied card! "+ base.getMoves() +", "+ card.getMoves()));
+          violations.add(new ConstraintViolation(context, "different moves in copied card! "+ base.getMoves() +", "+ card.getMoves()).setTask(new Task(base, card, MergeField.MOVES)));
         } else {
           card.setMoves(base.getMoves());
         }
         if (card.getAbilities() != null && !Objects.equals(base.getAbilities(), card.getAbilities())) {
-          violations.add(new ConstraintViolation(context, "different abilities in copied card! "+ base.getAbilities() +", "+ card.getAbilities()));
+          violations.add(new ConstraintViolation(context, "different abilities in copied card! "+ base.getAbilities() +", "+ card.getAbilities()).setTask(new Task(base, card, MergeField.ABILITIES)));
         } else {
           card.setAbilities(base.getAbilities());
         }
@@ -386,6 +386,7 @@ public class Importer {
         }
         if (card.getText() != null && !Objects.equals(base.getText(), card.getText())) {
           // text changes between variants are fine
+          violations.add(new ConstraintViolation(context, "different text in copied card! "+ base.getText() +", "+ card.getText()).setTask(new Task(base, card, MergeField.TEXT)));
         } else {
           card.setText(base.getText());
         }
@@ -544,9 +545,14 @@ public class Importer {
   }
 
 
-  protected void processFormats() throws IOException, ImportException {
+  protected void processFormats() throws ImportException {
 
-    List<Format> formatsFromFile = mapper.readValue(getClass().getClassLoader().getResourceAsStream("formats.yaml"), new TypeReference<List<Format>>() {});
+    List<Format> formatsFromFile = null;
+    try {
+      formatsFromFile = mapper.readValue(getClass().getClassLoader().getResourceAsStream("formats.yaml"), new TypeReference<List<Format>>() {});
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
     Pattern idRangePattern = Pattern.compile(ID_RANGE_PATTERN);
 
     List<ConstraintViolation> violations = new ArrayList<>();
@@ -669,7 +675,7 @@ public class Importer {
     }
 
     if (!violations.isEmpty()) {
-      throw new ImportException(violations.stream().map(ConstraintViolation::toString).collect(Collectors.toList()));
+      throw new ImportException("Validation failure while importing formats", violations);
     }
 
   }

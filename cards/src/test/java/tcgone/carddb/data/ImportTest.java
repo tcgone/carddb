@@ -19,6 +19,7 @@ public class ImportTest {
   @BeforeClass
   public static void testImport() throws Exception {
     importer = new Importer();
+    importer.process();
   }
   @Test
   public void printNonIntegerNumberedCards() {

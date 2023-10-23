@@ -16,108 +16,108 @@ public class Card {
   /**
    * Engine with expansion. e.g. CHARIZARD_4:BASE_SET
    */
-  private String enumId;
+  protected String enumId;
   /**
    * {@link #enumId} of the main variant. If empty, it is regarded as a variant on its own.
    */
-  private String variantOf;
+  protected String variantOf;
   /**
    * How did this card get copied. Example, if THIS CARD is Holo version of 101-12, put Holo here.
    */
-  private VariantType variantType;
+  protected VariantType variantType;
   /**
    * True when the variant has any altering ruling, text or type change.
    */
-  private Boolean variantIsDifferent;
+  protected Boolean variantIsDifferent;
   /**
    * e.g. BASE_SET
    */
-  private String expansionEnumId;
+  protected String expansionEnumId;
   /**
    * Name of the card. e.g. Charizard
    */
-  private String name;
+  protected String name;
   /**
    * e.g. 4
    */
-  private String number;
+  protected String number;
   /**
    * e.g. [POKEMON, EVOLUTION, STAGE2]
    */
-  private List<CardType> cardTypes;
+  protected List<CardType> cardTypes;
   /**
    * Array of types (i.e. colors). e.g. ["R"]
    * Logically it makes more sense to name this field 'colors', but precisely
    * speaking, it's used as 'type' everywhere else. <a href="https://bulbapedia.bulbagarden.net/wiki/Type_(TCG)">...</a>
    */
-  private List<Type> types;
+  protected List<Type> types;
   /**
    * Charmeleon
    */
-  private List<String> evolvesFrom;
+  protected List<String> evolvesFrom;
   /**
    * 120
    */
-  private Integer hp;
+  protected Integer hp;
   /**
    * [ { "type": "Pokémon Power", "name": "Energy Burn", "text": "As often as you like during your turn (before your
    * attack), you may turn all Energy attached to Charizard into [R] for the rest of the turn. This power can't be used
    * if Charizard is Asleep, Confused, or Paralyzed." } ]
    */
-  private List<Ability> abilities;
+  protected List<Ability> abilities;
   /**
    * [ { "cost": ["R","R","R","R"], "name": "Fire Spin", "text": "Discard 2 Energy cards attached to Charizard in order
    * to use this attack.", "damage": "100", "convertedEnergyCost": 4 } ]
    */
-  private List<Move> moves;
+  protected List<Move> moves;
   /**
    * [ { "type": "W", "value": "×2" } ]
    */
-  private List<WeaknessResistance> weaknesses;
+  protected List<WeaknessResistance> weaknesses;
   /**
    * [ { "type": "F", "value": "-30" } ]
    */
-  private List<WeaknessResistance> resistances;
+  protected List<WeaknessResistance> resistances;
   /**
    * 3
    */
-  private Integer retreatCost;
+  protected Integer retreatCost;
   /**
    * Rare Holo
    */
-  private Rarity rarity;
+  protected Rarity rarity;
   /**
    * Trainer/Energy text/Pokemon ruling text. Each entry is a line.
    */
-  private String text;
+  protected String text;
   /**
    * (Energy only) Energy types
    */
-  private List<List<Type>> energy;
+  protected List<List<Type>> energy;
   /**
    * e.g. Mitsuhiro Arita
    */
-  private String artist;
+  protected String artist;
   /**
    * e.g. Spits fire that is hot enough to melt boulders. Known to unintentionally cause forest fires.
    */
-  private String flavorText;
+  protected String flavorText;
   /**
    * pokemontcg.io id. e.g. base1-4
    */
-  private String pioId;
+  protected String pioId;
   /**
    * e.g. 4
    */
-  private Integer nationalPokedexNumber;
+  protected Integer nationalPokedexNumber;
   /**
    * e.g. D
    */
-  private String regulationMark;
+  protected String regulationMark;
   /**
    * List of erratas that apply to this card. It includes engine-level erratas.
    */
-  private List<String> erratas;
+  protected List<String> erratas;
 
   public String toString() {
     return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);

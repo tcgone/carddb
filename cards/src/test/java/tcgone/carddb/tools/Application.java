@@ -2,9 +2,14 @@ package tcgone.carddb.tools;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import lombok.Data;
+import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.cli.*;
 import org.apache.commons.lang3.StringUtils;
+import tcgone.carddb.data.ConstraintViolation;
+import tcgone.carddb.data.ImportException;
 import tcgone.carddb.data.Importer;
+import tcgone.carddb.merger.InteractiveMerger;
 import tcgone.carddb.model.Card;
 import tcgone.carddb.model.EnhancedCard;
 import tcgone.carddb.model.ExpansionFile;
@@ -13,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -50,7 +56,8 @@ public class Application {
     boolean exportYaml = cmd.hasOption("export-yaml");
     boolean exportImplTmpl = cmd.hasOption("export-impl-tmpl");
     boolean downloadScans = cmd.hasOption("download-scans");
-    if(!exportImplTmpl&&!exportYaml&&!downloadScans){
+    boolean runInteractiveMerger = cmd.hasOption("run-interactive-merger");
+    if(!exportImplTmpl&&!exportYaml&&!downloadScans&&!runInteractiveMerger){
       log.warn("Nothing to do. Please specify an output option");
       printUsage();
       return;
@@ -73,6 +80,23 @@ public class Application {
       ScanDownloader scanDownloader = new ScanDownloader();
       scanDownloader.downloadAll(expansionFiles);
       log.info("Scans have been saved into ./scans folder. Please upload them to scans server.");
+    }
+    if (runInteractiveMerger) {
+      assert yamls != null;
+      Importer importer = new Importer(prepareFileStack(yamls));
+      InteractiveMerger merger = new InteractiveMerger(importer);
+      // by this point all the interactive merge has happened
+      List<Card> modifiedCards = merger.getModifiedCards();
+      log.info("Found {} modified cards", modifiedCards.size());
+      Map<String, Card> modifiedCardsMap = modifiedCards.stream().collect(Collectors.toMap(Card::getEnumId, card -> card));
+      for (ExpansionFile expansionFile : expansionFiles) {
+        for (Card card : expansionFile.getCards()) {
+          if (modifiedCardsMap.containsKey(card.getEnumId())) {
+            log.info("Copying fields for {}", card.getEnumId());
+            PropertyUtils.copyProperties(card, modifiedCards);
+          }
+        }
+      }
     }
     if(exportYaml){
       setWriter.applyMiscFixes(expansionFiles);
@@ -113,6 +137,7 @@ public class Application {
     options.addOption(null, "export-yaml", false, "GOAL: export TCG ONE carddb yaml files");
     options.addOption(null, "export-implementations", false, "GOAL: export TCG ONE engine implementation template files");
     options.addOption(null, "download-scans", false, "GOAL: download scans");
+    options.addOption(null, "run-interactive-merger", false, "GOAL: runs interactive merger utility");
     return options;
   }
 
@@ -149,9 +174,11 @@ public class Application {
     return list;
   }
 
-  private Importer importYamls(String[] yamls) {
+  private Importer importYamls(String[] yamls) throws Exception {
     Stack<File> fileStack = prepareFileStack(yamls);
-    return new Importer(fileStack);
+    Importer importer = new Importer(fileStack);
+    importer.process();
+    return importer;
   }
 
   private static Stack<File> prepareFileStack(String[] inputFileOrFolderPaths) {

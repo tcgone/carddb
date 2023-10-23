@@ -1,7 +1,6 @@
 package tcgone.carddb.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import org.apache.commons.beanutils.PropertyUtils;
 
 import java.util.List;
@@ -9,20 +8,23 @@ import java.util.stream.Collectors;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class EnhancedCard extends Card {
-  private Expansion expansion;
-  private CardType superType;
-  private List<CardType> subTypes;
-  private CardType stage;
-  private String scanUrl;
-  private List<String> evolvesTo;
-  private String copyOf;
-  private String fullNameV1;
-  private String fullName;
-  private String seoName;
-  private String fullText;
-  private List<Variant> variants;
-  private List<String> legalInFormats;
+  protected Expansion expansion;
+  protected CardType superType;
+  protected List<CardType> subTypes;
+  protected CardType stage;
+  protected String scanUrl;
+  protected List<String> evolvesTo;
+  protected String copyOf;
+  protected String fullNameV1;
+  protected String fullName;
+  protected String seoName;
+  protected String fullText;
+  protected List<Variant> variants;
+  protected List<String> legalInFormats;
 
   public static EnhancedCard fromCard(Card card) {
     try {

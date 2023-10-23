@@ -14,6 +14,10 @@ import java.util.List;
 public class ClassificationsExportTest {
 
   public static class ClassificationsImporter extends Importer {
+    public ClassificationsImporter() throws Exception {
+      process();
+    }
+
     void export(String setEnumId) {
 //      System.out.println(setEnumId);
       allCards.stream()
