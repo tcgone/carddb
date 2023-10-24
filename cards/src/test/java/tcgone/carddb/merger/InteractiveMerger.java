@@ -6,19 +6,8 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.fasterxml.jackson.dataformat.yaml.util.NodeStyleResolver;
 import com.github.difflib.text.DiffRow;
 import com.github.difflib.text.DiffRowGenerator;
-import com.vladsch.flexmark.ext.gfm.strikethrough.StrikethroughExtension;
-import com.vladsch.flexmark.ext.tables.TablesExtension;
-import com.vladsch.flexmark.formatter.Formatter;
-import com.vladsch.flexmark.html.HtmlRenderer;
-import com.vladsch.flexmark.util.ast.KeepType;
-import com.vladsch.flexmark.util.data.DataHolder;
-import com.vladsch.flexmark.util.data.MutableDataSet;
 import lombok.Getter;
 import org.apache.commons.beanutils.PropertyUtils;
-
-import com.vladsch.flexmark.util.ast.Node;
-import com.vladsch.flexmark.parser.Parser;
-
 import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
 import org.jline.terminal.Terminal;
@@ -34,12 +23,13 @@ import tcgone.carddb.model.Move;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static com.fasterxml.jackson.dataformat.yaml.YAMLGenerator.Feature.*;
-import static com.fasterxml.jackson.dataformat.yaml.YAMLGenerator.Feature.WRITE_DOC_START_MARKER;
 
 public class InteractiveMerger {
 
@@ -128,7 +118,7 @@ private final YAMLMapper mapper = YAMLMapper.builder(YAMLFactory.builder()
     System.out.printf("------TASK: %d / %d------\n", currentTaskIndex + 1, taskList.size());
     System.out.printf("Base: %s <%s>\nVariant: %s <%s>\n", currentTask.getBase().getEnumId(), currentTask.getBase().getScanUrl(), currentTask.getVariant().getEnumId(), currentTask.getVariant().getScanUrl());
 
-    String unformattedMarkdown = "";
+    String niceText = "";
     DiffRowGenerator generator = DiffRowGenerator.create()
       .showInlineDiffs(true)
       .inlineDiffByWord(true)
@@ -139,63 +129,48 @@ private final YAMLMapper mapper = YAMLMapper.builder(YAMLFactory.builder()
     switch (currentTask.getField()) {
 
       case MOVES: {
-//        System.out.printf("   MOVES   \n[1]: %s\n[2]: %s\n", currentTask.getBase().getMoves(), currentTask.getVariant().getMoves());
-
         List<DiffRow> rows = generator.generateDiffRows(
           currentTask.getBase().getMoves().stream().map(Move::toString).collect(Collectors.toList()),
           currentTask.getVariant().getMoves().stream().map(Move::toString).collect(Collectors.toList())
         );
         StringBuilder sb = new StringBuilder();
-        sb.append("|base|variant|\n").append("|-|-|\n");
+        int i = 0;
         for (DiffRow row : rows) {
-          sb.append("|").append(row.getOldLine()).append("|").append(row.getNewLine()).append("|\n");
+          i++;
+          sb.append(String.format("diff moves #%d\n" +
+            "1: %s\n" +
+            "2: %s\n", i, row.getOldLine(), row.getNewLine()));
         }
-        unformattedMarkdown = sb.toString();
-
+        niceText = sb.toString();
         break;
       }
       case ABILITIES: {
-        //        System.out.printf("   ABILITIES   \n[1]: %s\n[2]: %s\n", currentTask.getBase().getAbilities(), currentTask.getVariant().getAbilities());
-
         List<DiffRow> rows = generator.generateDiffRows(
           currentTask.getBase().getAbilities().stream().map(Ability::toString).collect(Collectors.toList()),
           currentTask.getVariant().getAbilities().stream().map(Ability::toString).collect(Collectors.toList())
         );
         StringBuilder sb = new StringBuilder();
-        sb.append("|base|variant|\n").append("|-|-|\n");
+        int i = 0;
         for (DiffRow row : rows) {
-          sb.append("|").append(row.getOldLine()).append("|").append(row.getNewLine()).append("|\n");
+          i++;
+          sb.append(String.format("diff abilities #%d\n" +
+            "1: %s\n" +
+            "2: %s\n", i, row.getOldLine(), row.getNewLine()));
         }
-        unformattedMarkdown = sb.toString();
+        niceText = sb.toString();
         break;
       }
       case TEXT: {
-//        System.out.printf("   TEXT   \n[1]: %s\n[2]: %s\n", currentTask.getBase().getText(), currentTask.getVariant().getText());
-
-        unformattedMarkdown = "|base|variant|\n" + "|-|-|\n" +
-          "|" + currentTask.getBase().getText() + "|" + currentTask.getVariant().getText() + "|";
-
-        break;
+        String oldLine = currentTask.getBase().getText();
+        String newLine = currentTask.getVariant().getText();
+        niceText = String.format("diff text\n" +
+          "1: %s\n" +
+          "2: %s\n", oldLine, newLine);
       }
     }
 
-    // TODO THIS IS NOT WORKING
-    DataHolder options = new MutableDataSet()
-      .set(Parser.EXTENSIONS, Arrays.asList(TablesExtension.create(), StrikethroughExtension.create()))
-      .set(HtmlRenderer.INDENT_SIZE, 2)
-      // for full GFM table compatibility add the following table extension options:
-      .set(TablesExtension.COLUMN_SPANS, false)
-      .set(TablesExtension.APPEND_MISSING_COLUMNS, true)
-      .set(TablesExtension.DISCARD_EXTRA_COLUMNS, true)
-      .set(TablesExtension.HEADER_SEPARATOR_COLUMN_MATCH, true)
-      .toImmutable();
-    Parser parser = Parser.builder(options).build();
-    Node document = parser.parse(unformattedMarkdown);
-    Formatter formatterWithExtension = Formatter.builder(options).build();
-    String textRenderOfMarkdown = formatterWithExtension.render(document);
-
     System.out.println("---");
-    System.out.print(textRenderOfMarkdown);
+    System.out.print(niceText);
     System.out.println("---");
 
     Optional<Command> command = askForCommand(Arrays.asList(Command.USE_1, Command.USE_2, Command.EDIT_MANUAL, Command.SKIP, Command.GO_BACK, Command.GO_FORWARD, Command.CLEAR));
@@ -221,12 +196,6 @@ private final YAMLMapper mapper = YAMLMapper.builder(YAMLFactory.builder()
       } else {
         throw new IOException("EOF");
       }
-//      try (Scanner scanner = new Scanner(System.in)) {
-//        Pattern oneCharPattern = Pattern.compile("[a-zA-Z0-9]");
-//        System.out.println(possibleCommands.stream().map(c -> String.format("[%s]:%s", c.letter, c.name().toLowerCase())).collect(Collectors.joining(" ")));
-//        String chat = scanner.next(oneCharPattern);
-//        return Command.fromLetter(chat.charAt(0));
-//      }
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
