@@ -94,6 +94,11 @@ public class Importer {
     validateCardEnumIds(violations);
     assertNoViolation(violations);
     prepareThenAddAllEnhancedCards();
+    // enhance cards
+    for (EnhancedCard card : allCards) {
+      enhanceCard(card, violations);
+    }
+    assertNoViolation(violations);
 
     // variant handling
     enhanceVariantFields(violations);
@@ -105,12 +110,6 @@ public class Importer {
     // validate cards (2)
     for (EnhancedCard card : allCards) {
       validateCard(card, violations);
-    }
-    assertNoViolation(violations);
-
-    // enhance cards
-    for (EnhancedCard card : allCards) {
-      enhanceCard(card, violations);
     }
     assertNoViolation(violations);
 
