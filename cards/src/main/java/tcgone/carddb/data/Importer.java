@@ -316,6 +316,9 @@ public class Importer {
 
   private void validateVariantsAndCopyPropertiesBetweenThem(List<ConstraintViolation> violations) {
     for (EnhancedCard card : allCards) {
+      if (Boolean.TRUE.equals(card.getExpansion().getIsFanMade())) // don't care about fakes
+        continue;
+
       if (card.getEnumId().equals(card.getCopyOf())) {
         card.setCopyOf(null);
       }

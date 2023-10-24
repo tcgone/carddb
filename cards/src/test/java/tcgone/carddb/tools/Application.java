@@ -83,7 +83,7 @@ public class Application {
     }
     if (runInteractiveMerger) {
       assert yamls != null;
-      Importer importer = new Importer(prepareFileStack(yamls));
+      Importer importer = new Importer(prepareFileStack(yamls, "yaml"));
       InteractiveMerger merger = new InteractiveMerger(importer);
       // by this point all the interactive merge has happened
       List<Card> modifiedCards = merger.getModifiedCards();
@@ -145,7 +145,7 @@ public class Application {
     if (pioExpansions != null) {
       pioReader.loadExpansions(pioExpansions);
     }
-    Stack<File> fileStack = prepareFileStack(pios);
+    Stack<File> fileStack = prepareFileStack(pios, "json");
     List<ExpansionFile> loaded = pioReader.load(fileStack);
     expansionFiles.addAll(loaded);
   }
@@ -164,7 +164,7 @@ public class Application {
 
   private List<ExpansionFile> readYamlsCrude(String[] yamls) throws IOException {
     List<ExpansionFile> list = new ArrayList<>();
-    Stack<File> fileStack = prepareFileStack(yamls);
+    Stack<File> fileStack = prepareFileStack(yamls, "yaml");
     while (!fileStack.isEmpty()){
       File currentFile = fileStack.pop();
       if(!currentFile.getName().endsWith("yaml")) continue;
@@ -175,22 +175,26 @@ public class Application {
   }
 
   private Importer importYamls(String[] yamls) throws Exception {
-    Stack<File> fileStack = prepareFileStack(yamls);
+    Stack<File> fileStack = prepareFileStack(yamls, "yaml");
     Importer importer = new Importer(fileStack);
     importer.process();
     return importer;
   }
 
-  private static Stack<File> prepareFileStack(String[] inputFileOrFolderPaths) {
+  private static Stack<File> prepareFileStack(String[] inputFileOrFolderPaths, String extension) {
     Stack<File> fileStack = new Stack<>();
     for (String filename : inputFileOrFolderPaths) {
       File file = new File(filename);
       if(file.isDirectory()){
         for (File file1 : Objects.requireNonNull(file.listFiles())) {
-          fileStack.push(file1);
+          if (file1.getName().toLowerCase().endsWith(extension.toLowerCase())) {
+            fileStack.push(file1);
+          }
         }
       } else {
-        fileStack.push(file);
+        if (file.getName().toLowerCase().endsWith(extension.toLowerCase())) {
+          fileStack.push(file);
+        }
       }
     }
     return fileStack;

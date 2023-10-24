@@ -6,8 +6,13 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.fasterxml.jackson.dataformat.yaml.util.NodeStyleResolver;
 import com.github.difflib.text.DiffRow;
 import com.github.difflib.text.DiffRowGenerator;
+import com.vladsch.flexmark.ext.gfm.strikethrough.StrikethroughExtension;
 import com.vladsch.flexmark.ext.tables.TablesExtension;
 import com.vladsch.flexmark.formatter.Formatter;
+import com.vladsch.flexmark.html.HtmlRenderer;
+import com.vladsch.flexmark.util.ast.KeepType;
+import com.vladsch.flexmark.util.data.DataHolder;
+import com.vladsch.flexmark.util.data.MutableDataSet;
 import lombok.Getter;
 import org.apache.commons.beanutils.PropertyUtils;
 
@@ -18,6 +23,7 @@ import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
+import org.jline.utils.NonBlockingReader;
 import tcgone.carddb.data.ConstraintViolation;
 import tcgone.carddb.data.ImportException;
 import tcgone.carddb.data.Importer;
@@ -119,7 +125,7 @@ private final YAMLMapper mapper = YAMLMapper.builder(YAMLFactory.builder()
   }
 
   Command handleTask(){
-    System.out.printf("------TASK: %d / %d------", currentTaskIndex + 1, taskList.size());
+    System.out.printf("------TASK: %d / %d------\n", currentTaskIndex + 1, taskList.size());
     System.out.printf("Base: %s <%s>\nVariant: %s <%s>\n", currentTask.getBase().getEnumId(), currentTask.getBase().getScanUrl(), currentTask.getVariant().getEnumId(), currentTask.getVariant().getScanUrl());
 
     String unformattedMarkdown = "";
@@ -167,20 +173,29 @@ private final YAMLMapper mapper = YAMLMapper.builder(YAMLFactory.builder()
 //        System.out.printf("   TEXT   \n[1]: %s\n[2]: %s\n", currentTask.getBase().getText(), currentTask.getVariant().getText());
 
         unformattedMarkdown = "|base|variant|\n" + "|-|-|\n" +
-          "|" + currentTask.getBase().getText() + "|" + currentTask.getVariant().getText() + "|\n";
+          "|" + currentTask.getBase().getText() + "|" + currentTask.getVariant().getText() + "|";
 
         break;
       }
     }
 
-    Parser parser = Parser.builder().build();
+    // TODO THIS IS NOT WORKING
+    DataHolder options = new MutableDataSet()
+      .set(Parser.EXTENSIONS, Arrays.asList(TablesExtension.create(), StrikethroughExtension.create()))
+      .set(HtmlRenderer.INDENT_SIZE, 2)
+      // for full GFM table compatibility add the following table extension options:
+      .set(TablesExtension.COLUMN_SPANS, false)
+      .set(TablesExtension.APPEND_MISSING_COLUMNS, true)
+      .set(TablesExtension.DISCARD_EXTRA_COLUMNS, true)
+      .set(TablesExtension.HEADER_SEPARATOR_COLUMN_MATCH, true)
+      .toImmutable();
+    Parser parser = Parser.builder(options).build();
     Node document = parser.parse(unformattedMarkdown);
-    TablesExtension tablesExtension = new TablesExtension();
-    Formatter formatterWithExtension = Formatter.builder().extensions(Collections.singletonList(tablesExtension)).build();
+    Formatter formatterWithExtension = Formatter.builder(options).build();
     String textRenderOfMarkdown = formatterWithExtension.render(document);
 
     System.out.println("---");
-    System.out.println(textRenderOfMarkdown);
+    System.out.print(textRenderOfMarkdown);
     System.out.println("---");
 
     Optional<Command> command = askForCommand(Arrays.asList(Command.USE_1, Command.USE_2, Command.EDIT_MANUAL, Command.SKIP, Command.GO_BACK, Command.GO_FORWARD, Command.CLEAR));
@@ -193,12 +208,29 @@ private final YAMLMapper mapper = YAMLMapper.builder(YAMLFactory.builder()
   }
 
   Optional<Command> askForCommand(List<Command> possibleCommands) {
-    try (Scanner scanner = new Scanner(System.in)) {
-      Pattern oneCharPattern = Pattern.compile("[a-zA-Z0-1]");
-      System.out.println(possibleCommands.stream().map(c -> String.format("[%s] %s", c.letter, c.name().toLowerCase())).collect(Collectors.joining(",")));
-      String chat = scanner.next(oneCharPattern);
-      return Command.fromLetter(chat.charAt(0));
+    try (Terminal terminal = TerminalBuilder.builder().jna(true).system(true).build()) {
+      System.out.print(possibleCommands.stream().map(c -> String.format("[%s]:%s", c.letter, c.name().toLowerCase())).collect(Collectors.joining(" ")) + " >");
+      System.out.flush();
+      terminal.enterRawMode();
+      NonBlockingReader reader = terminal.reader();
+      int read = reader.read();
+      if (read > 0) {
+        char character = (char) read;
+        System.out.println();
+        return Command.fromLetter(character);
+      } else {
+        throw new IOException("EOF");
+      }
+//      try (Scanner scanner = new Scanner(System.in)) {
+//        Pattern oneCharPattern = Pattern.compile("[a-zA-Z0-9]");
+//        System.out.println(possibleCommands.stream().map(c -> String.format("[%s]:%s", c.letter, c.name().toLowerCase())).collect(Collectors.joining(" ")));
+//        String chat = scanner.next(oneCharPattern);
+//        return Command.fromLetter(chat.charAt(0));
+//      }
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
+
   }
 
   boolean askToSaveAll() {
@@ -260,8 +292,7 @@ private final YAMLMapper mapper = YAMLMapper.builder(YAMLFactory.builder()
         break;
       }
       case EDIT_MANUAL:
-        try {
-          Terminal terminal = TerminalBuilder.builder().system(true).build();
+        try (Terminal terminal = TerminalBuilder.builder().system(true).build()) {
           LineReader lineReader = LineReaderBuilder.builder().terminal(terminal).build();
           String line;
           switch (currentTask.getField()) {
