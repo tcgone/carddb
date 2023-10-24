@@ -191,27 +191,4 @@ public class SetWriter {
     }
   }
 
-  public void fixGymSeriesEvolvesFromIssue(List<ExpansionFile> expansionFiles) {
-    List<String> owners = Arrays.asList("Blaine's", "Brock's", "Misty's", "Lt. Surge's", "Sabrina's", "Erika's", "Koga's", "Giovanni's");
-    for (ExpansionFile ef : expansionFiles) {
-      if(ef.getExpansion().getName().contains("Gym ")){
-        for (Card card : ef.getCards()) {
-          if(card.getCardTypes().contains(CardType.EVOLUTION)){
-            for (String owner : owners) {
-              if(card.getName().startsWith(owner)){
-                if(card.getEvolvesFrom() == null || card.getEvolvesFrom().isEmpty()){
-                  System.out.println("NoEvolvesFrom:"+ card.getName());
-                }
-                if(!card.getEvolvesFrom().get(0).startsWith(owner)){
-                  System.out.println(card.getName());
-                  card.setEvolvesFrom(Collections.singletonList(owner + " " + card.getEvolvesFrom()));
-                  break;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }

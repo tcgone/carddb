@@ -77,7 +77,6 @@ public class Application {
     }
     SetWriter setWriter = new SetWriter();
     expansionFiles.sort(Comparator.comparing(expansionFile -> expansionFile.getExpansion().getOrderId()));
-//		setWriter.fixGymSeriesEvolvesFromIssue(setFileMap.values());
     if(downloadScans){
       ScanDownloader scanDownloader = new ScanDownloader();
       scanDownloader.downloadAll(expansionFiles);
