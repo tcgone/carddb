@@ -2,12 +2,9 @@ package tcgone.carddb.tools;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import lombok.Data;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.cli.*;
 import org.apache.commons.lang3.StringUtils;
-import tcgone.carddb.data.ConstraintViolation;
-import tcgone.carddb.data.ImportException;
 import tcgone.carddb.data.Importer;
 import tcgone.carddb.merger.InteractiveMerger;
 import tcgone.carddb.model.Card;
@@ -16,6 +13,7 @@ import tcgone.carddb.model.ExpansionFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -57,6 +55,10 @@ public class Application {
     boolean exportImplTmpl = cmd.hasOption("export-impl-tmpl");
     boolean downloadScans = cmd.hasOption("download-scans");
     boolean runInteractiveMerger = cmd.hasOption("run-interactive-merger");
+    String outputDirValue = cmd.getOptionValue("output-dir");
+    if(outputDirValue==null){
+      outputDirValue="output";
+    }
     if(!exportImplTmpl&&!exportYaml&&!downloadScans&&!runInteractiveMerger){
       log.warn("Nothing to do. Please specify an output option");
       printUsage();
@@ -84,32 +86,48 @@ public class Application {
     if (runInteractiveMerger) {
       assert yamls != null;
       Importer importer = new Importer(prepareFileStack(yamls, "yaml"));
-      InteractiveMerger merger = new InteractiveMerger(importer);
-      // by this point all the interactive merge has happened
-      List<Card> modifiedCards = merger.getModifiedCards();
-      log.info("Found {} modified cards", modifiedCards.size());
-      Map<String, Card> modifiedCardsMap = modifiedCards.stream().collect(Collectors.toMap(Card::getEnumId, card -> card));
-      for (ExpansionFile expansionFile : expansionFiles) {
-        for (Card card : expansionFile.getCards()) {
-          if (modifiedCardsMap.containsKey(card.getEnumId())) {
-            log.info("Copying fields for {}", card.getEnumId());
+      String finalOutputDirValue = outputDirValue;
+      new InteractiveMerger(importer, modifiedCards -> {
+        processModifiedCardsFromMerge(modifiedCards);
+        try {
+          doGOALActions(exportYaml, setWriter, finalOutputDirValue, exportImplTmpl);
+        } catch (Exception e) {
+          throw new RuntimeException(e);
+        }
+      });
+    }
+    doGOALActions(exportYaml, setWriter, outputDirValue, exportImplTmpl);
+  }
+
+  private void processModifiedCardsFromMerge(List<Card> modifiedCards) {
+    log.info("Found {} modified cards", modifiedCards.size());
+    Map<String, Card> modifiedCardsMap = modifiedCards.stream().collect(Collectors.toMap(Card::getEnumId, card -> card));
+    for (ExpansionFile expansionFile : expansionFiles) {
+      for (Card card : expansionFile.getCards()) {
+        if (modifiedCardsMap.containsKey(card.getEnumId())) {
+          log.info("Copying fields for {}", card.getEnumId());
+          try {
             PropertyUtils.copyProperties(card, modifiedCards);
+          } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            throw new RuntimeException(e);
           }
         }
       }
     }
+  }
+
+  private void doGOALActions(boolean exportYaml, SetWriter setWriter, String outputDirValue, boolean exportImplTmpl) throws Exception {
     if(exportYaml){
-      setWriter.applyMiscFixes(expansionFiles);
+      setWriter.applyMiscFixes(expansionFiles, false, false);
       setWriter.detectAndSetReprints(expansionFiles);
       doVariantDebugging(expansionFiles);
-      String outputDirectory = "output/e3";
-      setWriter.writeAllE3(expansionFiles, outputDirectory);
-      log.info("E3 YAMLs have been written to {} folder. Please copy them under src/main/resources/cards if you want them to take over.", outputDirectory);
+      setWriter.writeAllE3(expansionFiles, outputDirValue);
+      log.info("E3 YAMLs have been written to {} folder. If not already in them, please copy them under src/main/resources/cards if you want them to take over during reading.", outputDirValue);
     }
     if(exportImplTmpl){
       ImplTmplGenerator implTmplGenerator = new ImplTmplGenerator();
-      implTmplGenerator.writeAll(expansionFiles);
-      log.info("Implementation Templates (Groovy files) have been written to ./impl folder. Please copy them under contrib repo.");
+      implTmplGenerator.writeAll(expansionFiles, outputDirValue);
+      log.info("Implementation Templates (Groovy files) have been written to {} folder. Please copy them under contrib repo.", outputDirValue);
     }
   }
 
@@ -134,10 +152,11 @@ public class Application {
     options.addOption(null, "pio", true, "Load pokemontcg.io (https://github.com/PokemonTCG/pokemon-tcg-data/tree/master/cards/en) or kirby's (https://github.com/kirbyUK/ptcgo-data/tree/master/en_US) files. e.g. '--pio=Unbroken Bonds.json' '--pio=Detective Pikachu.json' '--pio=../sm9.json' '--pio=../det1.json' and so on. Multiple files can be loaded this way.");
     options.addOption(null, "pio-expansions", true, "pokemontcg.io expansions file (https://github.com/PokemonTCG/pokemon-tcg-data/blob/master/sets/en.json)");
     options.addOption(null, "yaml", true, "TCG ONE carddb yaml files. e.g. '--yaml=423-unbroken_bonds.yaml' and so on. Multiple files can be loaded this way.");
-    options.addOption(null, "export-yaml", false, "GOAL: export TCG ONE carddb yaml files");
+    options.addOption(null, "export-yaml", false, "GOAL: export TCG ONE carddb yaml files. PARAMS: output-dir");
     options.addOption(null, "export-implementations", false, "GOAL: export TCG ONE engine implementation template files");
     options.addOption(null, "download-scans", false, "GOAL: download scans");
     options.addOption(null, "run-interactive-merger", false, "GOAL: runs interactive merger utility");
+    options.addOption(null, "output-dir", true, "GOAL PARAMETER: output files will be stored in this directory. default value: ./output");
     return options;
   }
 

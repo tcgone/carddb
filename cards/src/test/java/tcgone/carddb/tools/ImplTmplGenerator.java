@@ -17,8 +17,8 @@ import java.util.*;
  */
 public class ImplTmplGenerator {
 
-  public void writeAll(Collection<ExpansionFile> expansionFiles) throws Exception {
-    new File("impl").mkdirs();
+  public void writeAll(Collection<ExpansionFile> expansionFiles, String outputPath) throws Exception {
+    new File(outputPath).mkdirs();
     for (ExpansionFile expansionFile : expansionFiles) {
       write(expansionFile);
     }

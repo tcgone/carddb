@@ -120,10 +120,12 @@ public class SetWriter {
     }
   }
 
-  public void applyMiscFixes(List<ExpansionFile> expansionFiles) {
+  public void applyMiscFixes(List<ExpansionFile> expansionFiles, boolean eraseCardVariantFields, boolean eraseExpansionIsFanMadeField) {
     for (ExpansionFile expansionFile : expansionFiles) {
       Expansion expansion = expansionFile.getExpansion();
-//      expansionFile.getExpansion().setIsFanMade(null);
+      if (eraseExpansionIsFanMadeField) {
+        expansionFile.getExpansion().setIsFanMade(null);
+      }
       for (Card card : expansionFile.getCards()) {
         replaceEnumId(card, "(DELTA_SPECIES)", "DELTA");
         replaceEnumId(card, "Δ", "DELTA");
@@ -136,8 +138,10 @@ public class SetWriter {
         replaceEnumId(card, "'", "_");
         replaceEnumId(card, "'", "_");
         replaceEnumId(card, "◇", "PRISM_STAR");
-//        card.setVariantType(null);
-//        card.setVariantOf(null);
+        if (eraseCardVariantFields) {
+          card.setVariantType(null);
+          card.setVariantOf(null);
+        }
       }
     }
   }

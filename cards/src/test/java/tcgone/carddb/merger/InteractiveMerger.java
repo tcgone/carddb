@@ -48,7 +48,11 @@ private final YAMLMapper mapper = YAMLMapper.builder(YAMLFactory.builder()
   .disable(WRITE_DOC_START_MARKER)
   .build();
 
-  public InteractiveMerger(Importer importer) {
+  /**
+   * @param importer this importer should be constructed but not initialized.
+   * @param saveConsumer this is for running goal actions, i.e. auto-saving after every progress.
+   */
+  public InteractiveMerger(Importer importer, java.util.function.Consumer<List<Card>> saveConsumer) {
 
     try {
       importer.process();
