@@ -83,6 +83,7 @@ public class Application {
       log.info("Scans have been saved into ./scans folder. Please upload them to scans server.");
     }
     if (runInteractiveMerger) {
+      log.info("Running InteractiveMerger...");
       assert yamls != null;
       Importer importer = new Importer(prepareFileStack(yamls, "yaml"));
       String finalOutputDirValue = outputDirValue;
@@ -94,6 +95,7 @@ public class Application {
           throw new RuntimeException(e);
         }
       });
+      log.info("Finished: InteractiveMerger");
     }
     doGOALActions(exportYaml, setWriter, outputDirValue, exportImplTmpl);
   }
@@ -116,6 +118,7 @@ public class Application {
   }
 
   private void doGOALActions(boolean exportYaml, SetWriter setWriter, String outputDirValue, boolean exportImplTmpl) throws Exception {
+    log.info("Running GOALS");
     if(exportYaml){
       setWriter.applyMiscFixes(expansionFiles, false, false);
       setWriter.detectAndSetReprints(expansionFiles);

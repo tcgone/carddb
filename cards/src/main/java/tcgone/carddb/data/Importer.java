@@ -284,25 +284,28 @@ public class Importer {
   }
 
   private static CardType findAndValidateStage(EnhancedCard card, List<ConstraintViolation> violations, String context) {
-    // stage handling
-    CardType stage = null;
-    for (CardType cardType : CardType.allStages()) {
-      if (card.getCardTypes().contains(cardType)) {
-        if (stage != null) {
-          if ((stage == CardType.BASIC && cardType == CardType.BABY) || stage == CardType.BABY && cardType == CardType.BASIC) {
-            stage = CardType.BABY; // this is fine
+    if (card.getCardTypes().contains(CardType.POKEMON)) {
+      // stage handling
+      CardType stage = null;
+      for (CardType cardType : CardType.allStages()) {
+        if (card.getCardTypes().contains(cardType)) {
+          if (stage != null) {
+            if ((stage == CardType.BASIC && cardType == CardType.BABY) || stage == CardType.BABY && cardType == CardType.BASIC) {
+              stage = CardType.BABY; // this is fine
+            } else {
+              violations.add(new ConstraintViolation(context +"/subTypes", String.format("cannot have both: %s, %s", stage, cardType)));
+            }
           } else {
-            violations.add(new ConstraintViolation(context +"/subTypes", String.format("cannot have both: %s, %s", stage, cardType)));
+            stage = cardType;
           }
-        } else {
-          stage = cardType;
         }
       }
+      if (stage == null) {
+        violations.add(new ConstraintViolation(context +"/subTypes", String.format("must have one: %s", CardType.allStages())));
+      }
+      return stage;
     }
-    if (stage == null) {
-      violations.add(new ConstraintViolation(context +"/subTypes", String.format("must have one: %s", CardType.allStages())));
-    }
-    return stage;
+    return null;
   }
 
   private static String getContextFor(EnhancedCard card) {

@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import static com.fasterxml.jackson.dataformat.yaml.YAMLGenerator.Feature.*;
@@ -34,6 +35,7 @@ import static com.fasterxml.jackson.dataformat.yaml.YAMLGenerator.Feature.*;
 public class InteractiveMerger {
 
   private final List<Task> taskList = new ArrayList<>();
+  private final Consumer<List<Card>> saveConsumer;
   private Task currentTask;
   private int currentTaskIndex;
   @Getter // the result
@@ -53,6 +55,7 @@ private final YAMLMapper mapper = YAMLMapper.builder(YAMLFactory.builder()
    * @param saveConsumer this is for running goal actions, i.e. auto-saving after every progress.
    */
   public InteractiveMerger(Importer importer, java.util.function.Consumer<List<Card>> saveConsumer) {
+    this.saveConsumer = saveConsumer;
 
     try {
       importer.process();
@@ -217,6 +220,7 @@ private final YAMLMapper mapper = YAMLMapper.builder(YAMLFactory.builder()
       if (task.isDone() && !task.isSkipped())
         modifiedCards.add(task.getResult());
     }
+
   }
 
   void handleCommand(Command command){
